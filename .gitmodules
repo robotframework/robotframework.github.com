@@ -1,0 +1,3 @@
+[submodule "jekyll-rst"]
+	path = jekyll-rst
+	url = https://github.com/xdissent/jekyll-rst.git
