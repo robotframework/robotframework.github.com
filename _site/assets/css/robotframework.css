@@ -119,3 +119,9 @@ body > .section:nth-child(even){
   margin-left: auto;
   margin-right: auto;
 }
+
+.carousel-caption {
+  background: #333;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+}

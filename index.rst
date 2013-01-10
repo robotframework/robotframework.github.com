@@ -39,7 +39,9 @@ Examples
     My Keyword  [Arguments]  ${path}
         Directory Should Exist  ${path}
 
-  `See example <https://code.google.com/p/robotframework/source/browse/atest/robot/cli/dryrun/dryrun.txt>`_
+  .. container:: carousel-caption
+  
+    This is a caption header.
 
 .. container:: examples
 
@@ -62,6 +64,10 @@ Examples
     Failing Test
       Numbers Should Be Equal 2 2
       Numbers Should Be Equal 2 3
+
+  .. container:: carousel-caption
+
+    This is another caption header.
 
 
 Test libraries
