@@ -18,7 +18,7 @@ task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
     FileUtils.cp_r "_site/.", tempdir
     system "git checkout master"
-    FileUtils.cp_r "#{tempdir}/.", "/Users/tkairi/delme/"
+    FileUtils.cp_r "#{tempdir}/.", "./"
     system "git commit -a"
     
   end
