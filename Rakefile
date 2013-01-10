@@ -9,7 +9,7 @@ desc "Helper task to check if everything is committed."
 task :commited? do
   output = `git status`
   unless /nothing to commit/. =~ output
-#    fail "COMMIT YOUR CHANGES FIRST!"
+    fail "COMMIT YOUR CHANGES FIRST!"
   end
 end
 
@@ -21,12 +21,17 @@ task :deploy => [:commited?, :build] do
     system "git checkout master"
     print "Copying generated site: #{tempdir}/* -> ./"
     FileUtils.cp_r "#{tempdir}/.", "./"
-    system "git commit -a"
-    
+    system "git add ."
+    unless system "git commit"
+      fail
+    end
+    system "git push"
+    system "git checkout source"
+    print "DONE!"
   end
 end
 
 desc "Shows help text."
 task :default do
-  print "Run `rake --tasks` or `rake -T` to see available commands"
+  print "Run `rake --tasks` or `rake -T` to see available commands\n"
 end
