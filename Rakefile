@@ -9,7 +9,7 @@ desc "Helper task to check if everything is committed."
 task :commited? do
   output = `git status`
   unless /nothing to commit/. =~ output
-    fail "COMMIT YOUR CHANGES FIRST!"
+#    fail "COMMIT YOUR CHANGES FIRST!"
   end
 end
 
@@ -17,7 +17,10 @@ desc "Deploys the project to master branch, expects the command `git` to be avai
 task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
     FileUtils.cp_r "_site/.", tempdir
-    print Dir.entries tempdir
+    system "git checkout master"
+    FileUtils.cp_r "#{tempdir}/.", "/Users/tkairi/delme/"
+    system "git commit -a"
+    
   end
 end
 
