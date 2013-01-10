@@ -16,11 +16,12 @@ end
 desc "Deploys the project to master branch, expects the command `git` to be available."
 task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
-    print tempdir
+    FileUtils.cp_r "_site/.", tempdir
+    print Dir tempdir
   end
 end
 
 desc "Shows help text."
-task :rake do
+task :default do
   print "Run `rake --tasks` or `rake -T` to see available commands"
 end
