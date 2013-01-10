@@ -1,5 +1,5 @@
 function init_tweets() {
-  $( "#news > h2" ).after( '<div id="tweets"></div>' );
+  $( ".news.container > p" ).first().after( '<div id="tweets"></div>' );
   $("#tweets").tweet({
     username: "robotframework"
   });  
@@ -38,7 +38,7 @@ $( document ).ready(function() {
   init_tweets();
   init_carousel();
   
-  $( "#menu" ).scrollspy().find("li").click(function(){
+  $( "#menu" ).scrollspy().find("a").click(function(){
     $(this).scrollspy( "refresh" );
   });
   

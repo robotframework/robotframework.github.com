@@ -39,7 +39,7 @@ ul {
   background: -ms-linear-gradient(top, #B86767, #7A4545);
   background: linear-gradient(top, #B86767, #7A4545);
   position: fixed;
-  top: 5em;
+  top: 12em;
   left: 0.9em;
   width: auto;
   border-radius: 5px;
@@ -62,6 +62,18 @@ ul {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.header.container {
+  background: url(/assets/img/bg.jpg) repeat;
+  width: 100%;
+}
+
+.header.container > img {
+  display: block;
+  width: 501px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body > .section {
   padding: 1.5em 15em;
   border-bottom: 1px solid #eee;
@@ -74,11 +86,69 @@ body > .section:nth-child(odd){
 }
 
 body > .section:nth-child(even){
-  background: white url(/assets/img/bg2.jpg) top left repeat;
+  background: white url(/assets/img/bg2.jpg) repeat;
 }
 
-#news-from-robotframework > h2 > a {
+#introduction:before,
+#introduction:after,
+#tools:before,
+#tools:after,
+#communication:before,
+#communication:after {
+  content: " ";
+  display: table;
+}
+
+#introduction:after,
+#tools:after,
+#communication:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+#introduction,
+#tools,
+#communication {
+  *zoom: 1;
+}
+
+#introduction > p {
+  text-align: justify;
+}
+
+#introduction > h2 {
+  display: inline-block !important;
+}
+
+.news.container {
+  display: block;
+  width: 30%;
+  float: right;
+  margin-left: 2em;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #BEAEAE;
+  box-shadow: inset 0px 1px 3px 0px;
+  background: rgba(122, 69, 69, 0.5);
+  padding: 0.7em 0.5em;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.news.container a {
+  color: white;
+}
+
+.news.container > p:first-child {
+/*
   color: #794444;
+*/
+  font-family: 'Oleo Script', serif;
+  font-size: 3em;
+  font-weight: 400;
 }
 
 .tweet_list {
@@ -89,31 +159,17 @@ body > .section:nth-child(even){
 
 .tweet_odd, .tweet_even {
   margin-bottom: 0.5em;
-  border-bottom: 1px solid black;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #eee;
 }
 
 .tweet_time {
   font-style: italic;
   font-size: 0.8em;
   display: block;
+  margin-bottom: 0.5em;
 }
 
-#introduction {
-  text-align: justify;
-}
-
-#find-more {
-  zoom: 1; 
-}
-
-#find-more:before, #find-more:after {
-  content: ""; 
-  display: table;
-}
-
-#find-more:after {
-  clear: both;
-}
 
 .highlight table {
   margin-left: auto;
@@ -124,4 +180,10 @@ body > .section:nth-child(even){
   background: #333;
   background: rgba(0, 0, 0, 0.25);
   color: white;
+}
+
+#tools > .section,
+#communication > .section {
+  width: 30%;
+  float: left;
 }
