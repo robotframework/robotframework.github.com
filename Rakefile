@@ -17,7 +17,7 @@ desc "Deploys the project to master branch, expects the command `git` to be avai
 task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
     FileUtils.cp_r "_site/.", tempdir
-    print Dir tempdir
+    print Dir.entries tempdir
   end
 end
 
