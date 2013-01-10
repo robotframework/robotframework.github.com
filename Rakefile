@@ -16,8 +16,10 @@ end
 desc "Deploys the project to master branch, expects the command `git` to be available."
 task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
+    print "Copying generated site: _site/* -> #{tempdir}"
     FileUtils.cp_r "_site/.", tempdir
     system "git checkout master"
+    print "Copying generated site: #{tempdir}/* -> ./"
     FileUtils.cp_r "#{tempdir}/.", "./"
     system "git commit -a"
     
