@@ -1,0 +1,189 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  line-height: 1.95em;
+  color: #7D6D6D;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: #794444;
+  font-family: 'Oleo Script', serif;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: underline;
+  color: #7D6D6D;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #7D6D6D;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
+  background: -webkit-linear-gradient(top, #B86767, #7A4545);
+  background: -moz-linear-gradient(top, #B86767, #7A4545);
+  background: -o-linear-gradient(top, #B86767, #7A4545);
+  background: -ms-linear-gradient(top, #B86767, #7A4545);
+  background: linear-gradient(top, #B86767, #7A4545);
+  position: fixed;
+  top: 12em;
+  left: 0.9em;
+  width: auto;
+  border-radius: 5px;
+}
+
+.nav a {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+  font-family: 'Oleo Script', serif;
+  line-height: 1.3em;
+  padding: 0 0.5em;
+}
+
+.nav a:hover {
+  background-color: transparent !important;
+}
+
+.nav > li.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header.container {
+  background: url(/assets/img/bg.jpg) repeat;
+  width: 100%;
+}
+
+.header.container > img {
+  display: block;
+  width: 501px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > .section {
+  padding: 1.5em 15em;
+  border-bottom: 1px solid #eee;
+  min-height: 100%;
+  margin-top: 0px;
+}
+
+body > .section:nth-child(odd){
+  background: white url(/assets/img/bg.jpg) repeat;
+}
+
+body > .section:nth-child(even){
+  background: white url(/assets/img/bg2.jpg) repeat;
+}
+
+#introduction:before,
+#introduction:after,
+#tools:before,
+#tools:after,
+#communication:before,
+#communication:after {
+  content: " ";
+  display: table;
+}
+
+#introduction:after,
+#tools:after,
+#communication:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+#introduction,
+#tools,
+#communication {
+  *zoom: 1;
+}
+
+#introduction > p {
+  text-align: justify;
+}
+
+#introduction > h2 {
+  display: inline-block !important;
+}
+
+.news.container {
+  display: block;
+  width: 30%;
+  float: right;
+  margin-left: 2em;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #BEAEAE;
+  box-shadow: inset 0px 1px 3px 0px;
+  background: rgba(122, 69, 69, 0.5);
+  padding: 0.7em 0.5em;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.news.container a {
+  color: white;
+}
+
+.news.container > p:first-child {
+/*
+  color: #794444;
+*/
+  font-family: 'Oleo Script', serif;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.tweet_list {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0 0 0 0;
+}
+
+.tweet_odd, .tweet_even {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #eee;
+}
+
+.tweet_time {
+  font-style: italic;
+  font-size: 0.8em;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+
+.highlight table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-caption {
+  background: #333;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+#tools > .section,
+#communication > .section {
+  width: 30%;
+  float: left;
+}
