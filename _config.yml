@@ -8,7 +8,7 @@ url: http://localhost:4000
 source:      .
 destination: ./_site
 plugins:     ./_plugins
-exclude:     Rakefile, Gemfile, Gemfile.lock, .pygments-cache
+exclude:     Rakefile, Gemfile, Gemfile.lock, .pygments-cache, _plugins
 
 future:      true
 lsi:         false
