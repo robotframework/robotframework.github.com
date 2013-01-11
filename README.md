@@ -64,5 +64,5 @@ The deployment process does the following things:
 - Builds the project using the build rake task
 - Copies the builded files to your OS's temp folder
 - Switches to master branch, copies files over from temp folder
-- Commits the changes and pushes
+- Commits the changes and pushes to master. Notice that you still need to push the source branch to remote.
 - Switches back to source branch
