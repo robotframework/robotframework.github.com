@@ -1,5 +1,4 @@
 # robotframework.github.com
-
 ## Installation
 
 The preferable way to install Ruby is via [RVM](https://rvm.io/rvm/install/). Follow install instructions on the linked page to get RVM, then install ruby 1.9.3 with 
