@@ -187,3 +187,8 @@ body > .section:nth-child(even){
   width: 30%;
   float: left;
 }
+
+#microblog > h4 {
+  font-size: 24.5px;
+  line-height: 40px;
+}

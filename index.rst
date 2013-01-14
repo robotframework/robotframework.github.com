@@ -146,6 +146,11 @@ IRC
 
 - #robotframework @freenode
 
+Microblog
++++++++++
+
+- `@robotframework on Twitter <http://twitter.com/robotframework>`_
+
 Blogs
 -----
 - `@robotframework in Twitter <http://twitter.com/robotframework>`_
