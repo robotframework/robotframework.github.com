@@ -18,7 +18,9 @@ task :deploy => [:commited?, :build] do
   Dir.mktmpdir do |tempdir|
     print "Copying generated site: _site/* -> #{tempdir}"
     FileUtils.cp_r "_site/.", tempdir
-    system "git checkout master"
+    unless system "git checkout master"
+      fail
+    end
     print "Copying generated site: #{tempdir}/* -> ./"
     FileUtils.cp_r "#{tempdir}/.", "./"
     system "git add ."
