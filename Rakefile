@@ -9,12 +9,12 @@ desc "Helper task to check if everything is committed."
 task :commited? do
   output = `git status`
   unless /nothing to commit/. =~ output
-    fail "COMMIT YOUR CHANGES FIRST!"
+    system "git commit -a"
   end
 end
 
 desc "Deploys the project to master branch, expects the command `git` to be available."
-task :deploy => [:commited?, :build] do
+task :deploy => [:build, :commited?] do
   Dir.mktmpdir do |tempdir|
     print "Copying generated site: _site/* -> #{tempdir}"
     FileUtils.cp_r "_site/.", tempdir
