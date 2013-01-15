@@ -39,6 +39,7 @@ $( document ).ready(function() {
   init_carousel();
   
   $( "#menu" ).scrollspy().find("a").click(function(){
+    console.log('click');
     $(this).scrollspy( "refresh" );
   });
   

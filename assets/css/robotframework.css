@@ -91,6 +91,8 @@ body > .section:nth-child(even){
 
 #introduction:before,
 #introduction:after,
+#test-libraries:before,
+#test-libraries:after,
 #tools:before,
 #tools:after,
 #communication:before,
@@ -100,6 +102,7 @@ body > .section:nth-child(even){
 }
 
 #introduction:after,
+#test-libraries:after,
 #tools:after,
 #communication:after {
   clear: both;
@@ -110,6 +113,7 @@ body > .section:nth-child(even){
  * Include this rule to trigger hasLayout and contain floats.
  */
 #introduction,
+#test-libraries,
 #tools,
 #communication {
   *zoom: 1;
@@ -182,6 +186,7 @@ body > .section:nth-child(even){
   color: white;
 }
 
+#test-libraries > .section,
 #tools > .section,
 #communication > .section {
   width: 30%;

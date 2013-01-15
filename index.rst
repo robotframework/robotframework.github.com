@@ -82,6 +82,22 @@ Test libraries
 
 Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est
 
+Standard test libraries
+-----------------------
+
+- `Builtin <http://code.google.com/p/robotframework/wiki/BuiltInLibrary>`_
+- `OperatingSystem <http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary>`_
+- `Screenshot <http://code.google.com/p/robotframework/wiki/ScreenshotLibrary>`_
+- `Telnet <http://code.google.com/p/robotframework/wiki/TelnetLibrary>`_
+- `Collections <http://code.google.com/p/robotframework/wiki/CollectionsLibrary>`_
+- `String <http://code.google.com/p/robotframework/wiki/StringLibrary>`_
+- `Dialogs <http://code.google.com/p/robotframework/wiki/DialogsLibrary>`_
+- `Remote <http://code.google.com/p/robotframework/wiki/RemoteLibrary>`_
+- `XML <http://code.google.com/p/robotframework/wiki/XMLLibrary>`_
+
+Third party provided libraries
+------------------------------
+
 - `AutoItLibrary <http://code.google.com/p/robotframework-autoitlibrary/>`_
 - `Database Library (Java) <http://franz-see.github.com/Robotframework-Database-Library/>`_
 - `Database Library (Python) <https://github.com/ThomasJaspers/robotframework-dblibrary>`_
@@ -108,6 +124,7 @@ Editors
     is an IDE tool for editing test data.
 - `Eclipse plugin <https://github.com/NitorCreations/RobotFramework-EclipseIDE>`_
 - `Emacs major mode <https://github.com/sakari/robot-mode>`_
+- `Sublime plugin <https://github.com/shellderp/sublime-robot-plugin>`_
 - `TextMate bundle <https://bitbucket.org/jussimalinen/robot.tmbundle/>`_
 - `Vim plugin <https://github.com/mfukar/robotframework-vim>`_
 
@@ -138,7 +155,8 @@ Mailing lists
 - `robotframework-announce <http://groups.google.com/group/robotframework-announce>`_
 - `robotframework-devel <http://groups.google.com/group/robotframework-devel>`_
 - `robotframework-commit <http://groups.google.com/group/robotframework-commit>`_
-- `japanese users list <http://groups.google.com/group/robotframework-ja>`_
+- `Japanese users list <http://groups.google.com/group/robotframework-ja>`_
+- `Chinese users list <http://groups.google.com/group/robotframework-cn>`_
 
 
 IRC
