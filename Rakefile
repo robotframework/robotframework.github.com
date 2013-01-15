@@ -22,14 +22,13 @@ task :deploy => [:build, :commited?] do
       fail
     end
     puts "Copying generated site: #{tempdir}/* -> ./"
-    puts Dir.entries tempdir
-#    FileUtils.cp_r "#{tempdir}/.", "./"
-#    system "git add ."
-#    unless system "git commit"
-#      fail
-#    end
-#    system "git push"
-#    system "git checkout source"
+    FileUtils.cp_r "#{tempdir}/.", "./"
+    system "git add ."
+    unless system "git commit"
+      fail
+    end
+    system "git push"
+    system "git checkout source"
     puts "DONE!"
   end
 end
