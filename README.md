@@ -17,14 +17,18 @@ Next, install Docutils:
 
     $ pip install docutils
 
-Last but not least, install Pygments. As of now (Jan 2013), Robot Framework lexer is still not part of the official release of Pygments. Therefore, you need to install Pygments from sources: 
+After Docutils, install Pygments. As of now (Jan 2013), Robot Framework lexer is still not part of the official release of Pygments. Therefore, you need to install Pygments from sources: 
 
     $ pip install hg+http://bitbucket.org/birkenfeld/pygments-main
+
+Last but not least, clone site from the url from the Github. Checkout <tt>source</tt> branch from remote with:
+
+    $ git checkout -b source origin/source
 
 ## Working with the site
 
 <b>!IMPORTANT!</b>
-The site that is available in the web is in the master branch. <b>Do not</b> change the master branch! Instead, do most of the work source branch.
+The site that is available in the web is in the <tt>master</tt> branch. <b>Do not</b> modify the master branch! Rather, do your changes in <tt>source</tt> branch and deploy with rake (see below).
 
 The site uses [Jekyll](https://github.com/mojombo/jekyll) to build the site. Jekyll should be installed with bundler as part of ruby dependencies (described in the last section). 
 
