@@ -37,10 +37,4 @@ function init_carousel() {
 $( document ).ready(function() {
   init_tweets();
   init_carousel();
-  
-  $( "#menu" ).scrollspy().find("a").click(function(){
-    console.log('click');
-    $(this).scrollspy( "refresh" );
-  });
-  
 });
