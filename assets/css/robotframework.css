@@ -3,6 +3,7 @@ body {
   font-size: 100%;
   line-height: 1.95em;
   color: #7D6D6D;
+  background: white url(/assets/img/bg.jpg) repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,6 +31,7 @@ ul {
   list-style-type: none;
 }
 
+/*
 .nav {
   color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
@@ -44,42 +46,91 @@ ul {
   width: auto;
   border-radius: 5px;
 }
+*/
 
-.nav a {
+#menu {
+  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
+  background: -webkit-linear-gradient(top, #B86767, #7A4545);
+  background: -moz-linear-gradient(top, #B86767, #7A4545);
+  background: -o-linear-gradient(top, #B86767, #7A4545);
+  background: -ms-linear-gradient(top, #B86767, #7A4545);
+  background: linear-gradient(top, #B86767, #7A4545);
+  margin: 0;
+  color: white;
+  height: 3.2em;
+  line-height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+
+.navbar .nav {
+  padding-left: 14em;
+}
+
+.affix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.2em;
+  width: 100%;
+  color: white;
+}
+
+.navbar .nav > li > a {
   color: white;
   font-size: 1.5em;
   font-weight: 400;
   font-family: 'Oleo Script', serif;
   line-height: 1.3em;
-  padding: 0 0.5em;
+  width: 100%;
+  
 }
 
-.nav a:hover {
-  background-color: transparent !important;
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > li > a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+  padding-right: 0;
 }
 
-.nav > li.active {
-  background-color: rgba(255, 255, 255, 0.2);
+.navbar .nav > .active > a {
+  background-color: transparent;
 }
 
 .header.container {
-  background: url(/assets/img/bg.jpg) repeat;
   width: 100%;
+  margin-bottom: 0;
 }
 
 .header.container > img {
   display: block;
-  width: 501px;
   margin-left: auto;
   margin-right: auto;
 }
 
-body > .section {
+#wrapper {
+/*  background: transparent url(/assets/img/silhuette.png) 0 0 no-repeat;
+*/
+}
+
+#wrapper > .section {
   padding: 1.5em 15em;
-  border-bottom: 1px solid #eee;
   min-height: 100%;
   margin-top: 0px;
 }
+
+#silhuette {
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  z-index: -1;
+}
+
+/*
 
 body > .section:nth-child(odd){
   background: white url(/assets/img/bg.jpg) repeat;
@@ -89,8 +140,12 @@ body > .section:nth-child(even){
   background: white url(/assets/img/bg2.jpg) repeat;
 }
 
+*/
+
 #introduction:before,
 #introduction:after,
+#test-libraries:before,
+#test-libraries:after,
 #tools:before,
 #tools:after,
 #communication:before,
@@ -100,6 +155,7 @@ body > .section:nth-child(even){
 }
 
 #introduction:after,
+#test-libraries:after,
 #tools:after,
 #communication:after {
   clear: both;
@@ -110,6 +166,7 @@ body > .section:nth-child(even){
  * Include this rule to trigger hasLayout and contain floats.
  */
 #introduction,
+#test-libraries,
 #tools,
 #communication {
   *zoom: 1;
@@ -134,7 +191,7 @@ body > .section:nth-child(even){
   box-shadow: inset 0px 1px 3px 0px;
   background: rgba(122, 69, 69, 0.5);
   padding: 0.7em 0.5em;
-  font-size: 0.9em;
+  font-size: 0.7em;
   text-align: left;
 }
 
@@ -182,13 +239,14 @@ body > .section:nth-child(even){
   color: white;
 }
 
+#test-libraries > .section,
 #tools > .section,
 #communication > .section {
   width: 30%;
   float: left;
 }
 
-#microblog > h4 {
+#twitter > h4 {
   font-size: 24.5px;
   line-height: 40px;
 }

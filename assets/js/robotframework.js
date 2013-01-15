@@ -2,6 +2,7 @@ function init_tweets() {
   $( ".news.container > p" ).first().after( '<div id="tweets"></div>' );
   $("#tweets").tweet({
     "username": "robotframework"
+    , count: 5
   });  
 
 }
@@ -37,9 +38,4 @@ function init_carousel() {
 $( document ).ready(function() {
   init_tweets();
   init_carousel();
-  
-  $( "#menu" ).scrollspy().find("a").click(function(){
-    $(this).scrollspy( "refresh" );
-  });
-  
 });
