@@ -2,6 +2,7 @@ function init_tweets() {
   $( ".news.container > p" ).first().after( '<div id="tweets"></div>' );
   $("#tweets").tweet({
     "username": "robotframework"
+    , count: 5
   });  
 
 }

@@ -45,6 +45,24 @@ ul {
   border-radius: 5px;
 }
 
+/*
+.nav {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
+  background: -webkit-linear-gradient(top, #B86767, #7A4545);
+  background: -moz-linear-gradient(top, #B86767, #7A4545);
+  background: -o-linear-gradient(top, #B86767, #7A4545);
+  background: -ms-linear-gradient(top, #B86767, #7A4545);
+  background: linear-gradient(top, #B86767, #7A4545);
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  width: 100%;
+  border-radius: 5px;
+  
+  height: 2em;
+}
+*/
 .nav a {
   color: white;
   font-size: 1.5em;
@@ -138,7 +156,7 @@ body > .section:nth-child(even){
   box-shadow: inset 0px 1px 3px 0px;
   background: rgba(122, 69, 69, 0.5);
   padding: 0.7em 0.5em;
-  font-size: 0.9em;
+  font-size: 0.7em;
   text-align: left;
 }
 
@@ -193,7 +211,7 @@ body > .section:nth-child(even){
   float: left;
 }
 
-#microblog > h4 {
+#twitter > h4 {
   font-size: 24.5px;
   line-height: 40px;
 }

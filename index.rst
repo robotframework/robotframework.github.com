@@ -137,7 +137,7 @@ Build tools
 
 Other
 -----
-- `Mabot <http://code.google.com/p/robotframework-mabot/>`_ 
+- `Mabot <http://code.google.com/p/robotframework-mabot/>`_
     is a tool for manual test result reporting.
 - `RFdoc <http://code.google.com/p/rfdoc/>`_ 
     is a web based system for storing and searching Robot Framework test library and resource file documentations.
@@ -164,8 +164,8 @@ IRC
 
 - #robotframework @freenode
 
-Microblog
-+++++++++
+Twitter
++++++++
 
 - `@robotframework on Twitter <http://twitter.com/robotframework>`_
 
