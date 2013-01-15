@@ -15,19 +15,20 @@
   </head>
   
   <body data-spy="scroll" data-target="#menu">
-    <div id="menu">
-      <ul class="nav">
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#examples">Examples</a></li>
-        <li><a href="#test-libraries">Test libraries</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#communication">Communication</a></li>
-      </ul>
-    </div>
-    <div class="header container">
-<img alt="/assets/img/banner.png" src="/assets/img/banner.png" />
-</div>
-<div class="section" id="introduction">
+    <div id="wrapper">
+        <div class="header container">
+          <img alt="/assets/img/banner.png" src="/assets/img/banner.png">
+        </div>
+        <div id="menu" class="navbar" data-spy="affix" data-offset-top="164">
+          <ul class="nav">
+            <li class="active"><a href="#introduction">Introduction</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#test-libraries">Test libraries</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#communication">Communication</a></li>
+          </ul>
+        </div>
+        <div class="section" id="introduction">
 <h2>Introduction</h2>
 <div class="news container">
 <p>News</p>
@@ -118,8 +119,8 @@ This is another caption header.</div>
 <div class="section" id="test-libraries">
 <h2>Test libraries</h2>
 <p>Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est</p>
-<div class="section" id="standard-test-libraries">
-<h3>Standard test libraries</h3>
+<div class="section" id="standard-libraries">
+<h3>Standard libraries</h3>
 <ul class="simple">
 <li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/BuiltInLibrary">Builtin</a></li>
 <li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a></li>
@@ -132,8 +133,8 @@ This is another caption header.</div>
 <li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/XMLLibrary">XML</a></li>
 </ul>
 </div>
-<div class="section" id="third-party-provided-libraries">
-<h3>Third party provided libraries</h3>
+<div class="section" id="external-libraries">
+<h3>External libraries</h3>
 <ul class="simple">
 <li><a class="reference external" href="http://code.google.com/p/robotframework-autoitlibrary/">AutoItLibrary</a></li>
 <li><a class="reference external" href="http://franz-see.github.com/Robotframework-Database-Library/">Database Library (Java)</a></li>
@@ -141,8 +142,6 @@ This is another caption header.</div>
 <li><a class="reference external" href="http://code.google.com/p/robotframework-eclipselibrary/">Eclipse Library</a></li>
 <li><a class="reference external" href="https://github.com/peritus/robotframework-httplibrary">HTTP test library using livetest</a></li>
 <li><a class="reference external" href="https://github.com/bulkan/robotframework-requests">HTTP test library using Requests</a></li>
-<li><a class="reference external" href="https://github.com/robotframework/JavalibCore">JavalibCore</a></li>
-<li><a class="reference external" href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a></li>
 <li><a class="reference external" href="http://code.google.com/p/robotframework-seleniumlibrary/">SeleniumLibrary</a></li>
 <li><a class="reference external" href="https://github.com/rtomac/robotframework-selenium2library">Selenium2Library</a></li>
 <li><a class="reference external" href="http://code.google.com/p/robotframework-sshlibrary/">SSHLibrary</a></li>
@@ -151,29 +150,26 @@ This is another caption header.</div>
 <li><a class="reference external" href="http://code.google.com/p/robotframework-watinlibrary/">WatinLibrary</a></li>
 </ul>
 </div>
+<div class="section" id="other">
+<h3>Other</h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/robotframework/JavalibCore">JavalibCore</a></li>
+<li><a class="reference external" href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a></li>
+</ul>
+</div>
 </div>
 <div class="section" id="tools">
 <h2>Tools</h2>
 <p>Tools provide lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum  ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
 <div class="section" id="editors">
 <h3>Editors</h3>
-<ul>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="http://code.google.com/p/robotframework-ride/">RIDE</a></dt>
-<dd><p class="first last">is an IDE tool for editing test data.</p>
-</dd>
-</dl>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/NitorCreations/RobotFramework-EclipseIDE">Eclipse plugin</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/sakari/robot-mode">Emacs major mode</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/mfukar/robotframework-vim">Vim plugin</a></p>
-</li>
+<ul class="simple">
+<li><a class="reference external" href="http://code.google.com/p/robotframework-ride/">RIDE</a> (Robot Framework test data editor)</li>
+<li><a class="reference external" href="https://github.com/NitorCreations/RobotFramework-EclipseIDE">Eclipse plugin</a></li>
+<li><a class="reference external" href="https://github.com/sakari/robot-mode">Emacs major mode</a></li>
+<li><a class="reference external" href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a></li>
+<li><a class="reference external" href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a></li>
+<li><a class="reference external" href="https://github.com/mfukar/robotframework-vim">Vim plugin</a></li>
 </ul>
 </div>
 <div class="section" id="build-tools">
@@ -191,7 +187,7 @@ This is another caption header.</div>
 </li>
 </ul>
 </div>
-<div class="section" id="other">
+<div class="section" id="id1">
 <h3>Other</h3>
 <ul>
 <li><dl class="first docutils">
@@ -247,5 +243,7 @@ This is another caption header.</div>
 </div>
 
 
+        <img src="/assets/img/silhuette.png" id="silhuette" />
+    </div>
   </body>
 </html>

@@ -2,10 +2,6 @@
 layout: default
 title: Robot Framework
 ---
-.. container:: header
-
-  .. image:: /assets/img/banner.png
-
 Introduction
 ============
 
@@ -82,8 +78,8 @@ Test libraries
 
 Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est
 
-Standard test libraries
------------------------
+Standard libraries
+------------------
 
 - `Builtin <http://code.google.com/p/robotframework/wiki/BuiltInLibrary>`_
 - `OperatingSystem <http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary>`_
@@ -95,8 +91,8 @@ Standard test libraries
 - `Remote <http://code.google.com/p/robotframework/wiki/RemoteLibrary>`_
 - `XML <http://code.google.com/p/robotframework/wiki/XMLLibrary>`_
 
-Third party provided libraries
-------------------------------
+External libraries
+------------------
 
 - `AutoItLibrary <http://code.google.com/p/robotframework-autoitlibrary/>`_
 - `Database Library (Java) <http://franz-see.github.com/Robotframework-Database-Library/>`_
@@ -104,14 +100,18 @@ Third party provided libraries
 - `Eclipse Library <http://code.google.com/p/robotframework-eclipselibrary/>`_
 - `HTTP test library using livetest <https://github.com/peritus/robotframework-httplibrary>`_
 - `HTTP test library using Requests <https://github.com/bulkan/robotframework-requests>`_
-- `JavalibCore <https://github.com/robotframework/JavalibCore>`_ 
-- `RemoteApplications <https://github.com/robotframework/RemoteApplications>`_ 
 - `SeleniumLibrary <http://code.google.com/p/robotframework-seleniumlibrary/>`_
 - `Selenium2Library <https://github.com/rtomac/robotframework-selenium2library>`_
 - `SSHLibrary <http://code.google.com/p/robotframework-sshlibrary/>`_
 - `SwingLibrary <https://github.com/robotframework/SwingLibrary>`_
 - `watir-robot <https://github.com/semperos/watir-robot>`_
 - `WatinLibrary <http://code.google.com/p/robotframework-watinlibrary/>`_
+
+Other
+-----
+
+- `JavalibCore <https://github.com/robotframework/JavalibCore>`_ 
+- `RemoteApplications <https://github.com/robotframework/RemoteApplications>`_
 
 Tools
 =====
@@ -120,8 +120,7 @@ Tools provide lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum  ipsum lo
 
 Editors
 -------
-- `RIDE <http://code.google.com/p/robotframework-ride/>`_ 
-    is an IDE tool for editing test data.
+- `RIDE <http://code.google.com/p/robotframework-ride/>`_ (Robot Framework test data editor)
 - `Eclipse plugin <https://github.com/NitorCreations/RobotFramework-EclipseIDE>`_
 - `Emacs major mode <https://github.com/sakari/robot-mode>`_
 - `Sublime plugin <https://github.com/shellderp/sublime-robot-plugin>`_

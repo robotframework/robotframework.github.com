@@ -15,15 +15,21 @@
   </head>
   
   <body data-spy="scroll" data-target="#menu">
-    <div id="menu">
-      <ul class="nav">
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#examples">Examples</a></li>
-        <li><a href="#test-libraries">Test libraries</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#communication">Communication</a></li>
-      </ul>
+    <div id="wrapper">
+        <div class="header container">
+          <img alt="/assets/img/banner.png" src="/assets/img/banner.png">
+        </div>
+        <div id="menu" class="navbar" data-spy="affix" data-offset-top="164">
+          <ul class="nav">
+            <li class="active"><a href="#introduction">Introduction</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#test-libraries">Test libraries</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#communication">Communication</a></li>
+          </ul>
+        </div>
+        {{ content }}
+        <img src="/assets/img/silhuette.png" id="silhuette" />
     </div>
-    {{ content }}
   </body>
 </html>
