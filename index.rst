@@ -76,12 +76,15 @@ Examples
 Test libraries
 ==============
 
-Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est
+Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor estTest libraries lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor es
 
 Standard libraries
 ------------------
 
 - `Builtin <http://code.google.com/p/robotframework/wiki/BuiltInLibrary>`_
+- `OperatingSystem <http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary>`_
+- `Screenshot <http://code.google.com/p/robotframework/wiki/ScreenshotLibrary>`_
+- `Telnet <http://code.google.com/p/robotframework/wiki/TelnetLibrary>`_
 - `OperatingSystem <http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary>`_
 - `Screenshot <http://code.google.com/p/robotframework/wiki/ScreenshotLibrary>`_
 - `Telnet <http://code.google.com/p/robotframework/wiki/TelnetLibrary>`_
@@ -110,7 +113,7 @@ External libraries
 Other
 -----
 
-- `JavalibCore <https://github.com/robotframework/JavalibCore>`_ 
+- `JavalibCore <https://github.com/robotframework/JavalibCore>`_
 - `RemoteApplications <https://github.com/robotframework/RemoteApplications>`_
 
 Tools
@@ -144,8 +147,7 @@ Other
 Communication
 =============
 
-Here be us.
-
+Communication
 
 Mailing lists
 -------------
