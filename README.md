@@ -102,6 +102,10 @@ The preferable way to run the site during development is however:
     
 This will automatically update the files when you save them after editing, so you just need to hit refresh in your browser to see updated site.
 
+Do commit early and often. To push your changes to remote <tt>source</tt> branch, use:
+
+    $ git push origin source
+    
 # Building and deploying
 
 <b>Important to note:</b> quit all <tt>jekyll</tt>s that are running as server before deploying!
@@ -120,7 +124,7 @@ To deploy the site online, you need to first commit all your changes. After comm
     
 The deployment process does the following things:
 - Builds the project using the build rake task
-- Checks that you have committed everything, makes you commit if not.
+- Checks that you have committed everything. If you have not, <tt>git commit -am</tt> is run
 - Copies the builded files to your OS's temp folder
 - Switches to master branch, copies files over from temp folder
 - Commits the changes and pushes to remote <tt>master</tt>. 
