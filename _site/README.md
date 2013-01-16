@@ -1,16 +1,16 @@
 # robotframework.github.com
 
-This repository hosts Robot Framework's public website available at [robotframework.github.com](http://robotframework.github.com). It uses [Ruby](http://www.ruby-lang.org/) programming language and it's tools [Jekyll](https://github.com/mojombo/jekyll) (a static website generator) and [jekyll-rst](https://github.com/xdissent/jekyll-rst) (a [reStructuredText](https://github.com/xdissent/jekyll-rst)-plugin), among others.
+This repository hosts Robot Framework's public website available at [robotframework.github.com](http://robotframework.github.com). It uses [Ruby](http://www.ruby-lang.org/) based tools [Jekyll](https://github.com/mojombo/jekyll) (a static website generator) and [jekyll-rst](https://github.com/xdissent/jekyll-rst) (a [reStructuredText](https://github.com/xdissent/jekyll-rst) plugin), among others.
 
-<b>Important to note:</b> As this site is hosted in Github Pages, the <tt>master</tt> branch hosts the files. The <tt>source</tt> branch is where the development happens and from where site is deployed to <tt>master</tt> branch. You should not therefore change any files in <tt>master</tt> branch -- rather, do your work in <tt>source</tt> branch and deploy to <tt>master</tt>.
+<b>Important to note:</b> As this site is hosted in GitHub Pages, the <tt>master</tt> branch hosts the files. The <tt>source</tt> branch is where the development happens and from where site is deployed to the <tt>master</tt> branch. You <b>should not</b> therefore change any files in the <tt>master</tt> branch directly. Rather, do your work in the <tt>source</tt> branch and deploy to the <tt>master</tt>.
 
 # Table of Contents
 
-- [Setting up the development environment](#setting-up)
+- [Setting up the development environment](#setting-up-the-development-environment)
 - [Working with the site](#working-with-the-site)
 - [Build and deploy](#building-and-deploying)
 
-# Setting up
+# Setting up the development environment
 
 The preferable way to install Ruby is via [RVM](https://rvm.io/rvm/install/). Follow install instructions on the linked page to get RVM, then make sure you have Ruby 1.9.3 and Rubygems installed correctly: 
 
@@ -53,7 +53,7 @@ On Linux, you might get the following exception:
 This means you are missing zlib or zlib-Ruby -bindings. Install them from aptitude and reinstall Ruby with RVM. (The following works on Linux Mint -- see [Stackoverflow thread](http://stackoverflow.com/questions/9727908/cannot-load-such-file-zlib-even-after-using-rvm-pkg-install-zlib) for more details)
 
     $ sudo aptitude install zlib1g-dev
-    $ rvm reinstall ruby 1.9.3
+    $ rvm reinstall 1.9.3
     $ gem install bundler
 
 Next, clone the repository, switch to <tt>source</tt> branch, and install Ruby dependencies with bundler:
