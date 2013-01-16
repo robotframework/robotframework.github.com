@@ -27,7 +27,7 @@ task :deploy => [:build, :commited?] do
     unless system "git commit"
       fail
     end
-    system "git push"
+    system "git push origin master"
     system "git checkout source"
     puts "DONE!"
   end
