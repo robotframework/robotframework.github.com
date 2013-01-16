@@ -31,23 +31,6 @@ ul {
   list-style-type: none;
 }
 
-/*
-.nav {
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
-  background: -webkit-linear-gradient(top, #B86767, #7A4545);
-  background: -moz-linear-gradient(top, #B86767, #7A4545);
-  background: -o-linear-gradient(top, #B86767, #7A4545);
-  background: -ms-linear-gradient(top, #B86767, #7A4545);
-  background: linear-gradient(top, #B86767, #7A4545);
-  position: fixed;
-  top: 12em;
-  left: 0.9em;
-  width: auto;
-  border-radius: 5px;
-}
-*/
-
 #menu {
   background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
   background: -webkit-linear-gradient(top, #B86767, #7A4545);
@@ -101,24 +84,24 @@ ul {
 
 .header.container {
   width: 100%;
-  margin-bottom: 0;
+  padding: 0 15em;
+  padding-bottom: 0.5em;
+  background-color: #B86767;
+  color: white;
 }
 
-.header.container > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#wrapper {
-/*  background: transparent url(/assets/img/silhuette.png) 0 0 no-repeat;
-*/
+#main-header {
+  font-size: 3em;
+  line-height: 1em;
+  color: white;
 }
 
 #wrapper > .section {
-  padding: 1.5em 15em;
-  min-height: 100%;
-  margin-top: 0px;
+  margin: 1em 15em;
+  border: 1px dotted #7A4545;
+  border-radius: 3px;
+  padding: 0.7em 1.5em;
+  background: rgba(221, 221, 221, 0.1);
 }
 
 #silhuette {
@@ -129,18 +112,6 @@ ul {
   right: 50px;
   z-index: -1;
 }
-
-/*
-
-body > .section:nth-child(odd){
-  background: white url(/assets/img/bg.jpg) repeat;
-}
-
-body > .section:nth-child(even){
-  background: white url(/assets/img/bg2.jpg) repeat;
-}
-
-*/
 
 #introduction:before,
 #introduction:after,
@@ -182,7 +153,7 @@ body > .section:nth-child(even){
 
 .news.container {
   display: block;
-  width: 30%;
+  width: 25em;
   float: right;
   margin-left: 2em;
   color: white;
@@ -200,18 +171,29 @@ body > .section:nth-child(even){
 }
 
 .news.container > p:first-child {
-/*
-  color: #794444;
-*/
   font-family: 'Oleo Script', serif;
   font-size: 3em;
   font-weight: 400;
+  margin-bottom: 0;
+}
+
+#tweets {
+  height: 31em;
+  overflow: auto;
+}
+
+.by.container {
+  font-size: 1.2em;
+  display: inline;
+  padding-right: 16px;
+  background: transparent url(/assets/img/twitter_bird.png) right center no-repeat;
 }
 
 .tweet_list {
   list-style-type: none;
   list-style-position: inside;
-  margin: 0 0 0 0;
+  margin: 0 0.5em;
+  border-top: 1px dotted white;
 }
 
 .tweet_odd, .tweet_even {
@@ -222,11 +204,16 @@ body > .section:nth-child(even){
 
 .tweet_time {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 0.6em;
   display: block;
   margin-bottom: 0.5em;
+  width: 100%;
+  text-align: right;
 }
 
+.tweet_time a {
+  text-decoration: none;
+}
 
 .highlight table {
   margin-left: auto;
@@ -242,8 +229,15 @@ body > .section:nth-child(even){
 #test-libraries > .section,
 #tools > .section,
 #communication > .section {
-  width: 30%;
   float: left;
+  width: 20em;
+}
+
+#test-libraries > .section ul,
+#tools > .section ul,
+#communication > .section ul{
+  margin: 0;
+  margin-right: 1em;
 }
 
 #twitter > h4 {
