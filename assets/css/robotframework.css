@@ -174,12 +174,26 @@ ul {
   font-family: 'Oleo Script', serif;
   font-size: 3em;
   font-weight: 400;
+  margin-bottom: 0;
+}
+
+#tweets {
+  height: 31em;
+  overflow: auto;
+}
+
+.by.container {
+  font-size: 1.2em;
+  display: inline;
+  padding-right: 16px;
+  background: transparent url(/assets/img/twitter_bird.png) right center no-repeat;
 }
 
 .tweet_list {
   list-style-type: none;
   list-style-position: inside;
-  margin: 0 0 0 0;
+  margin: 0 0.5em;
+  border-top: 1px dotted white;
 }
 
 .tweet_odd, .tweet_even {
@@ -190,11 +204,16 @@ ul {
 
 .tweet_time {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 0.6em;
   display: block;
   margin-bottom: 0.5em;
+  width: 100%;
+  text-align: right;
 }
 
+.tweet_time a {
+  text-decoration: none;
+}
 
 .highlight table {
   margin-left: auto;

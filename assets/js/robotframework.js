@@ -1,8 +1,9 @@
 function init_tweets() {
-  $( ".news.container > p" ).first().after( '<div id="tweets"></div>' );
+  $( ".container.by" ).after( '<div id="tweets"></div>' );
   $("#tweets").tweet({
-    "username": "robotframework"
-    , count: 5
+      "username": "robotframework"
+    , "count": 10
+    , "template": "{text} {time}"
   });  
 
 }
