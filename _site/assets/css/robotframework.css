@@ -31,23 +31,6 @@ ul {
   list-style-type: none;
 }
 
-/*
-.nav {
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
-  background: -webkit-linear-gradient(top, #B86767, #7A4545);
-  background: -moz-linear-gradient(top, #B86767, #7A4545);
-  background: -o-linear-gradient(top, #B86767, #7A4545);
-  background: -ms-linear-gradient(top, #B86767, #7A4545);
-  background: linear-gradient(top, #B86767, #7A4545);
-  position: fixed;
-  top: 12em;
-  left: 0.9em;
-  width: auto;
-  border-radius: 5px;
-}
-*/
-
 #menu {
   background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
   background: -webkit-linear-gradient(top, #B86767, #7A4545);
@@ -110,13 +93,8 @@ ul {
   margin-right: auto;
 }
 
-#wrapper {
-/*  background: transparent url(/assets/img/silhuette.png) 0 0 no-repeat;
-*/
-}
-
 #wrapper > .section {
-  padding: 1.5em 15em;
+  margin: 1em 15em;
   min-height: 100%;
   margin-top: 0px;
 }
@@ -129,18 +107,6 @@ ul {
   right: 50px;
   z-index: -1;
 }
-
-/*
-
-body > .section:nth-child(odd){
-  background: white url(/assets/img/bg.jpg) repeat;
-}
-
-body > .section:nth-child(even){
-  background: white url(/assets/img/bg2.jpg) repeat;
-}
-
-*/
 
 #introduction:before,
 #introduction:after,
