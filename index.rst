@@ -9,16 +9,31 @@ Introduction
 
     News
 
-    .. container:: by 
-    
+    .. container:: by
+
       by `@robotframework <http://twitter.com/robotframework>`_
 
 
-Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). It has easy-to-use tabular test data syntax and utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new keywords from existing ones using the same syntax that is used for creating test cases.
+Robot Framework is a generic test automation framework for acceptance
+testing and acceptance test-driven development (ATDD). It has
+easy-to-use tabular test data syntax and it utilizes the keyword-driven
+testing approach. Its testing capabilities can be extended by test
+libraries implemented either with Python or Java, and users can create
+new higher-level keywords from existing ones using the same syntax
+that is used for creating test cases.
 
-Robot Framework is open source software released under `Apache License 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_. Its copyrights are owned and development supported by `Nokia Siemens Networks <http://www.nokiasiemensnetworks.com/>`_.
+Robot Framework project is hosted on `Google Code
+<http://code.google.com/p/robotframework/>`_ where you can find further
+documentation, downloads, and issue tracker. The framework has a rich
+ecosystem around it consisting of various generic `test libraries`_
+and `tools`_ that are developed as separate projects.
 
-  
+Robot Framework itself is open source software released under `Apache
+License 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_, and
+most of the libraries and tools in the ecosystem are also open
+source. The development of the core framework is supported by `Nokia
+Siemens Networks <http://www.nokiasiemensnetworks.com/>`_.
+
 Examples
 ========
 
