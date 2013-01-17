@@ -106,3 +106,7 @@ ul {
 .sub-section > ul {
   margin: 0;
 }
+
+.tooltip {
+  font-size: 0.9em;
+}
