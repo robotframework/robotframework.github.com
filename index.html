@@ -1,268 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Robot Framework</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/robotframework.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pygments.css">
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans'>
-    
-    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.tweet.js"></script>
-    <script type="text/javascript" src="/assets/js/robotframework.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/robotframework.css">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="assets/js/robotframework.js"></script>
   </head>
-  
-  <body data-spy="scroll" data-target="#menu">
-    <div id="wrapper">
-        <div class="header container">
-            <h1 id="main-header">Robot Framework</h1>
-            <span id="main-header-slogan">Generic test automation framework for acceptance testing</span>
-        </div>
-        <div id="menu" class="navbar" data-spy="affix" data-offset-top="99">
-          <ul class="nav">
-            <li class="active"><a href="#introduction">Introduction</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#test-libraries">Test libraries</a></li>
-            <li><a href="#tools">Tools</a></li>
-            <li><a href="#communication">Communication</a></li>
-          </ul>
-        </div>
-        <div class="section" id="introduction">
-<h2>Introduction</h2>
-<div class="news container">
-<p>News</p>
-<div class="by container">
-by <a class="reference external" href="http://twitter.com/robotframework">&#64;robotframework</a></div>
-</div>
-<p>Robot Framework is a generic test automation framework for acceptance
-testing and acceptance test-driven development (ATDD). It has
-easy-to-use tabular test data syntax and it utilizes the keyword-driven
-testing approach. Its testing capabilities can be extended by test
-libraries implemented either with Python or Java, and users can create
-new higher-level keywords from existing ones using the same syntax
-that is used for creating test cases.</p>
-<p>Robot Framework project is hosted on <a class="reference external" href="http://code.google.com/p/robotframework/">Google Code</a> where you can find further
-documentation, downloads, and issue tracker. The framework has a rich
-ecosystem around it consisting of various generic <a class="reference internal" href="#test-libraries">test libraries</a>
-and <a class="reference internal" href="#tools">tools</a> that are developed as separate projects.</p>
-<p>Robot Framework itself is open source software released under <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
-License 2.0</a>, and
-most of the libraries and tools in the ecosystem are also open
-source. The development of the core framework is supported by <a class="reference external" href="http://www.nokiasiemensnetworks.com/">Nokia
-Siemens Networks</a>.</p>
-</div>
-<div class="section" id="examples">
-<h2>Examples</h2>
-<div class="examples container">
-<figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-</pre></td><td class="code"><pre><code class="robotframework"><span class="line"><span class="gh">*** Settings ***</span><span class="p"></span>
-</span><span class="line"><span class="kn">Library</span><span class="p">     </span><span class="nn">OperatingSystem</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gh">*** Variables ***</span><span class="p"></span>
-</span><span class="line"><span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}  </span><span class="s">Hello, world!</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gh">*** Test Cases ***</span><span class="p"></span>
-</span><span class="line"><span class="gu">My Test</span><span class="p">  [</span><span class="kn">Documentation</span><span class="p">]  </span><span class="s">Example test</span><span class="p"></span>
-</span><span class="line"><span class="p">    </span><span class="nf">Log</span><span class="p">         ${</span><span class="nv">MESSAGE</span><span class="p">}</span>
-</span><span class="line"><span class="p">    </span><span class="nf">My Keyword</span><span class="p">  </span><span class="s">/tmp</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gu">Another Test</span><span class="p"></span>
-</span><span class="line"><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">  ${</span><span class="nv">MESSAGE</span><span class="p">}  </span><span class="s">Hello, world!</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gh">*** Keywords ***</span><span class="p"></span>
-</span><span class="line"><span class="gu">My Keyword</span><span class="p">  [</span><span class="kn">Arguments</span><span class="p">]  ${</span><span class="nv">path</span><span class="p">}</span>
-</span><span class="line"><span class="p">    </span><span class="nf">Directory Should Exist</span><span class="p">  ${</span><span class="nv">path</span><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure><div class="carousel-caption container">
-This is a caption header.</div>
-</div>
-<div class="examples container">
-<figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-</pre></td><td class="code"><pre><code class="robotframework"><span class="line"><span class="gh">***Settings***</span><span class="p"></span>
-</span><span class="line"><span class="kn">Library</span><span class="p">     </span><span class="nn">ExampleLibrary</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line">
-</span><span class="line"><span class="gh">***Test Cases***</span><span class="p"></span>
-</span><span class="line"><span class="gu">Simple Test</span><span class="p"></span>
-</span><span class="line"><span class="p">  </span><span class="nf">Simple Keyword</span><span class="p"></span>
-</span><span class="line"><span class="p">    </span><span class="nf">Greet Robot Framework</span><span class="p"></span>
-</span><span class="line"><span class="p">    </span><span class="nf">Greet World</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gu">Returning Value</span><span class="p"></span>
-</span><span class="line"><span class="p">  ${</span><span class="nv">result</span><span class="p">}</span><span class="nf"> = Multiply By Two 4.1</span><span class="p"></span>
-</span><span class="line"><span class="p">  </span><span class="nf">Numbers Should Be Equal </span><span class="p">${</span><span class="nv">result</span><span class="p">}</span><span class="nf"> 8.2</span><span class="p"></span>
-</span><span class="line">
-</span><span class="line"><span class="gu">Failing Test</span><span class="p"></span>
-</span><span class="line"><span class="p">  </span><span class="nf">Numbers Should Be Equal 2 2</span><span class="p"></span>
-</span><span class="line"><span class="p">  </span><span class="nf">Numbers Should Be Equal 2 3</span><span class="p"></span>
-</span></code></pre></td></tr></table></div></figure><div class="carousel-caption container">
-This is another caption header.</div>
-</div>
-</div>
-<div class="section" id="test-libraries">
-<h2>Test libraries</h2>
-<p>Test libraries lorem ipsum sil dolor est  lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor estTest libraries lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor est lorem ipsum sil dolor es</p>
-<div class="section" id="standard-libraries">
-<h3>Standard libraries</h3>
-<ul class="simple">
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/BuiltInLibrary">Builtin</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/CollectionsLibrary">Collections</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/StringLibrary">String</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/DialogsLibrary">Dialogs</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/RemoteLibrary">Remote</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework/wiki/XMLLibrary">XML</a></li>
-</ul>
-</div>
-<div class="section" id="external-libraries">
-<h3>External libraries</h3>
-<ul class="simple">
-<li><a class="reference external" href="http://code.google.com/p/robotframework-autoitlibrary/">AutoItLibrary</a></li>
-<li><a class="reference external" href="http://franz-see.github.com/Robotframework-Database-Library/">Database Library (Java)</a></li>
-<li><a class="reference external" href="https://github.com/ThomasJaspers/robotframework-dblibrary">Database Library (Python)</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework-eclipselibrary/">Eclipse Library</a></li>
-<li><a class="reference external" href="https://github.com/peritus/robotframework-httplibrary">HTTP test library using livetest</a></li>
-<li><a class="reference external" href="https://github.com/bulkan/robotframework-requests">HTTP test library using Requests</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework-seleniumlibrary/">SeleniumLibrary</a></li>
-<li><a class="reference external" href="https://github.com/rtomac/robotframework-selenium2library">Selenium2Library</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework-sshlibrary/">SSHLibrary</a></li>
-<li><a class="reference external" href="https://github.com/robotframework/SwingLibrary">SwingLibrary</a></li>
-<li><a class="reference external" href="https://github.com/semperos/watir-robot">watir-robot</a></li>
-<li><a class="reference external" href="http://code.google.com/p/robotframework-watinlibrary/">WatinLibrary</a></li>
-</ul>
-</div>
-<div class="section" id="other">
-<h3>Other</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/robotframework/JavalibCore">JavalibCore</a></li>
-<li><a class="reference external" href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="tools">
-<h2>Tools</h2>
-<p>Tools provide lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum  ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
-<div class="section" id="editors">
-<h3>Editors</h3>
-<ul class="simple">
-<li><a class="reference external" href="http://code.google.com/p/robotframework-ride/">RIDE</a> (Robot Framework test data editor)</li>
-<li><a class="reference external" href="https://github.com/NitorCreations/RobotFramework-EclipseIDE">Eclipse plugin</a></li>
-<li><a class="reference external" href="https://github.com/sakari/robot-mode">Emacs major mode</a></li>
-<li><a class="reference external" href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a></li>
-<li><a class="reference external" href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a></li>
-<li><a class="reference external" href="https://github.com/mfukar/robotframework-vim">Vim plugin</a></li>
-</ul>
-</div>
-<div class="section" id="build-tools">
-<h3>Build tools</h3>
-<ul>
-<li><p class="first"><a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">Jenkins plugin</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="http://robotframework.github.com/MavenPlugin/">Maven plugin</a></p>
-</li>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="http://code.google.com/p/robotframework-ant/">RobotAnt</a></dt>
-<dd><p class="first last">is a ant task for using robotframework inside ant build scripts.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>Other</h3>
-<ul>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="http://code.google.com/p/robotframework-mabot/">Mabot</a></dt>
-<dd><p class="first last">is a tool for manual test result reporting.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="http://code.google.com/p/rfdoc/">RFdoc</a></dt>
-<dd><p class="first last">is a web based system for storing and searching Robot Framework test library and resource file documentations.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="communication">
-<h2>Communication</h2>
-<p>Communication</p>
-<div class="section" id="mailing-lists">
-<h3>Mailing lists</h3>
-<ul class="simple">
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-users">robotframework-users</a></li>
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-announce">robotframework-announce</a></li>
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-devel">robotframework-devel</a></li>
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-commit">robotframework-commit</a></li>
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-ja">Japanese users list</a></li>
-<li><a class="reference external" href="http://groups.google.com/group/robotframework-cn">Chinese users list</a></li>
-</ul>
-</div>
-<div class="section" id="irc">
-<h3>IRC</h3>
-<ul class="simple">
-<li>#robotframework &#64;freenode</li>
-</ul>
-<div class="section" id="twitter">
-<h4>Twitter</h4>
-<ul class="simple">
-<li><a class="reference external" href="http://twitter.com/robotframework">&#64;robotframework on Twitter</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="blogs">
-<h3>Blogs</h3>
-<ul class="simple">
-<li><a class="reference external" href="http://twitter.com/robotframework">&#64;robotframework in Twitter</a></li>
-<li><a class="reference external" href="http://hereberobots.blogspot.fi/">Here be Robots!</a></li>
-<li><a class="reference external" href="http://blog.codecentric.de/en/category/agile/agile-testing/">Codecentric -- Agile testing</a></li>
-<li><a class="reference external" href="http://www.radekw.com/blog/category/robot-framework/">Radek Wierzbicki -- Robot Framework</a></li>
-</ul>
-</div>
-</div>
-
-
-        <img src="/assets/img/silhuette.png" id="silhuette" />
+  <body>
+    <div id="header">
+      <h1>Robot Framework</h1>
+      <span id="slogan">
+        Generic test automation framework for acceptance testing and ATDD.
+      </span>
     </div>
+    <div id="introduction" class="section">
+      <h2>Introduction</h2>
+      <p>
+        Robot Framework is a generic test automation framework for
+        acceptance testing and acceptance test-driven development
+        (ATDD). It has easy-to-use tabular test data syntax and it
+        utilizes the keyword-driven testing approach. Its testing
+        capabilities can be extended by test libraries implemented
+        either with Python or Java, and users can create new
+        higher-level keywords from existing ones using the same
+        syntax that is used for creating test cases.
+      </p>
+      <p>
+        Robot Framework project is hosted
+        on <a href="http://code.google.com/p/robotframework/">Google
+        Code</a> where you can find further documentation,
+        downloads, and issue tracker. The framework has a rich
+        ecosystem around it consisting of various
+        generic <a href="#test-libraries">test libraries</a>
+        and <a href="#supporting-tools">tools</a> that are developed
+        as separate projects.
+      </p>
+      <p>
+        Robot Framework itself is open source software released
+        under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
+        License 2.0</a>, and most of the libraries and tools in the
+        ecosystem are also open source. The development of the core
+        framework is supported
+        by <a href="http://www.nokiasiemensnetworks.com/">Nokia
+        Siemens Networks</a>.
+      </p>
+      <div id="news">
+        <h3>News</h3>
+        <p>
+          Test libraries lorem ipsum sil dolor est lorem ipsum sil dolor
+          est lorem ipsum sil dolor est lorem ipsum sil dolor estTest
+          libraries lorem ipsum sil dolor est lorem ipsum sil dolor est
+          lorem ipsum sil dolor est lorem ipsum sil dolor es.
+        </p>
+        <p>
+          Test libraries lorem ipsum sil dolor est lorem ipsum sil dolor
+          est lorem ipsum sil dolor est lorem ipsum sil dolor estTest
+          libraries lorem ipsum sil dolor est lorem ipsum sil dolor est
+          lorem ipsum sil dolor est lorem ipsum sil dolor es.
+        </p>
+      </div>
+    </div>
+    <div id="examples" class="section">
+      <h2>Examples</h2>
+    </div>
+    <div id="test-libraries" class="section">
+      <h2>Test libraries</h2>
+      <p>
+        Test libraries lorem ipsum sil dolor est lorem ipsum sil dolor
+        est lorem ipsum sil dolor est lorem ipsum sil dolor estTest
+        libraries lorem ipsum sil dolor est lorem ipsum sil dolor est
+        lorem ipsum sil dolor est lorem ipsum sil dolor es.
+      </p>
+      <div class="sub-section">
+        <h3>Standard libraries</h3>
+        <ul>
+          <li><a href="http://code.google.com/p/robotframework/wiki/BuiltInLibrary">Builtin</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/CollectionsLibrary">Collections</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/StringLibrary">String</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/DialogsLibrary">Dialogs</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/RemoteLibrary">Remote</a></li>
+          <li><a href="http://code.google.com/p/robotframework/wiki/XMLLibrary">XML</a></li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>External libraries</h3>
+        <ul>
+          <li><a href="http://code.google.com/p/robotframework-autoitlibrary/">AutoItLibrary</a></li>
+          <li><a href="http://franz-see.github.com/Robotframework-Database-Library/">Database Library (Java)</a></li>
+          <li><a href="https://github.com/ThomasJaspers/robotframework-dblibrary">Database Library (Python)</a></li>
+          <li><a href="http://code.google.com/p/robotframework-eclipselibrary/">Eclipse Library</a></li>
+          <li><a href="https://github.com/peritus/robotframework-httplibrary">HTTP test library using livetest</a></li>
+          <li><a href="https://github.com/bulkan/robotframework-requests">HTTP test library using Requests</a></li>
+          <li><a href="http://code.google.com/p/robotframework-seleniumlibrary/">SeleniumLibrary</a></li>
+          <li><a href="https://github.com/rtomac/robotframework-selenium2library">Selenium2Library</a></li>
+          <li><a href="http://code.google.com/p/robotframework-sshlibrary/">SSHLibrary</a></li>
+          <li><a href="https://github.com/robotframework/SwingLibrary">SwingLibrary</a></li>
+          <li><a href="https://github.com/semperos/watir-robot">watir-robot</a></li>
+          <li><a href="http://code.google.com/p/robotframework-watinlibrary/">WatinLibrary</a></li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>Other</h3>
+        <ul>
+          <li><a href="https://github.com/robotframework/JavalibCore">JavalibCore</a></li>
+          <li><a href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="supporting-tools" class="section">
+      <h2>Supporting tools</h2>
+      <p>
+        Tools provide lorem ipsum lorem ipsumlorem ipsumlorem
+        ipsumlorem ipsum ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+        ipsum.
+      </p>
+      <div class="sub-section">
+        <h3>Editors</h3>
+        <ul>
+          <li><a href="http://code.google.com/p/robotframework-ride/" title="Robot Framework test data editor">RIDE</a></li>
+          <li><a href="https://github.com/NitorCreations/RobotFramework-EclipseIDE">Eclipse plugin</a></li>
+          <li><a href="https://github.com/sakari/robot-mode">Emacs major mode</a></li>
+          <li><a href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a></li>
+          <li><a href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a></li>
+          <li><a href="https://github.com/mfukar/robotframework-vim">Vim plugin</a></li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>Build tools</h3>
+        <ul>
+          <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">Jenkins plugin</a></li>
+          <li><a href="http://robotframework.github.com/MavenPlugin/">Maven plugin</a></li>
+          <li><a href="http://code.google.com/p/robotframework-ant/">RobotAnt</a> (Ant task for using robotframework inside ant build scripts.)</li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>Other</h3>
+        <ul>
+          <li><a href="http://code.google.com/p/robotframework-mabot/">Mabot</a> (Tool for manual test result reporting.)</li>
+          <li><a href="http://code.google.com/p/rfdoc/">RFdoc</a> (Web based system for storing and searching Robot Framework test library and resource file documentations.)</li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <p>
+        Lipsum. Lorem.
+      </p>
+      <div class="sub-section">
+        <h3>Mailing lists</h3>
+        <ul>
+          <li><a href="http://groups.google.com/group/robotframework-users">robotframework-users</a></li>
+          <li><a href="http://groups.google.com/group/robotframework-announce">robotframework-announce</a></li>
+          <li><a href="http://groups.google.com/group/robotframework-devel">robotframework-devel</a></li>
+          <li><a href="http://groups.google.com/group/robotframework-commit">robotframework-commit</a></li>
+          <li><a href="http://groups.google.com/group/robotframework-ja">Japanese users list</a></li>
+          <li><a href="http://groups.google.com/group/robotframework-cn">Chinese users list</a></li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>IRC</h3>
+        <ul>
+          <li>#robotframework @freenode</li>
+        </ul>
+        <h3>Twitter</h3>
+        <ul>
+          <li>@<a href="http://twitter.com/robotframework">robotframework</a></li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <h3>Blogs</h3>
+        <ul>
+          <li><a href="http://hereberobots.blogspot.fi/">Here be Robots!</a></li>
+          <li><a href="http://blog.codecentric.de/en/category/agile/agile-testing/">Codecentric -- Agile testing</a></li>
+          <li><a href="http://www.radekw.com/blog/category/robot-framework/">Radek Wierzbicki -- Robot Framework</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <img src="assets/img/silhuette.png" id="silhuette">
   </body>
 </html>

@@ -1,109 +1,25 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: serif;
   font-size: 100%;
-  line-height: 1.95em;
   color: #7D6D6D;
-  background: white url(/assets/img/bg.jpg) repeat;
+  background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
   color: #794444;
-  font-family: 'Oleo Script', serif;
+  font-family: sans-serif;
 }
-
-h2 {
-  font-size: 3em;
-  font-weight: 400;
-}
-
 a {
   text-decoration: underline;
   color: #7D6D6D;
 }
-
 a:hover {
   text-decoration: none;
   color: #7D6D6D;
 }
-
 ul {
   list-style-type: none;
 }
-
-#menu {
-  background: -webkit-gradient(linear, left top, left bottom, from(#B86767), to(#7A4545));
-  background: -webkit-linear-gradient(top, #B86767, #7A4545);
-  background: -moz-linear-gradient(top, #B86767, #7A4545);
-  background: -o-linear-gradient(top, #B86767, #7A4545);
-  background: -ms-linear-gradient(top, #B86767, #7A4545);
-  background: linear-gradient(top, #B86767, #7A4545);
-  margin: 0;
-  color: white;
-  height: 3.2em;
-  line-height: 100%;
-  width: 100%;
-  z-index: 99;
-}
-
-.navbar .nav {
-  padding-left: 14em;
-}
-
-.affix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3.2em;
-  width: 100%;
-  color: white;
-}
-
-.navbar .nav > li > a {
-  color: white;
-  font-size: 1.5em;
-  font-weight: 400;
-  font-family: 'Oleo Script', serif;
-  line-height: 1.3em;
-  width: 100%;
-  
-}
-
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > li > a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-  padding-right: 0;
-}
-
-.navbar .nav > .active > a {
-  background-color: transparent;
-}
-
-.header.container {
-  width: 100%;
-  padding: 0 15em;
-  padding-bottom: 0.5em;
-  background-color: #B86767;
-  color: white;
-}
-
-#main-header {
-  font-size: 3em;
-  line-height: 1em;
-  color: white;
-}
-
-#wrapper > .section {
-  margin: 1em 15em;
-  border: 1px dotted #7A4545;
-  border-radius: 3px;
-  padding: 0.7em 1.5em;
-  background: rgba(221, 221, 221, 0.1);
-}
-
 #silhuette {
   width: 400px;
   height: 400px;
@@ -112,147 +28,33 @@ ul {
   right: 50px;
   z-index: -1;
 }
-
-#introduction:before,
-#introduction:after,
-#test-libraries:before,
-#test-libraries:after,
-#tools:before,
-#tools:after,
-#communication:before,
-#communication:after {
-  content: " ";
-  display: table;
+.section {
+  height: 100%;
+  border: 1px dashed gray;
+  width: 1000px;
+  margin: 20px auto;
+  position: relative;
 }
-
-#introduction:after,
-#test-libraries:after,
-#tools:after,
-#communication:after {
+#header {
+  text-align: center;
+}
+#news {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  overflow: auto;
+  color: white;
+  background: rgba(122, 69, 69, 0.5);
+}
+#introduction > p {
+  width: 650px;
+}
+.clear {
   clear: both;
 }
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-#introduction,
-#test-libraries,
-#tools,
-#communication {
-  *zoom: 1;
-}
-
-#introduction > p {
-  text-align: justify;
-}
-
-#introduction > h2 {
-  display: inline-block !important;
-}
-
-.news.container {
-  display: block;
-  width: 25em;
-  float: right;
-  margin-left: 2em;
-  color: white;
-  border-radius: 5px;
-  border: 1px solid #BEAEAE;
-  box-shadow: inset 0px 1px 3px 0px;
-  background: rgba(122, 69, 69, 0.5);
-  padding: 0.7em 0.5em;
-  font-size: 0.7em;
-  text-align: left;
-}
-
-.news.container a {
-  color: white;
-}
-
-.news.container > p:first-child {
-  font-family: 'Oleo Script', serif;
-  font-size: 3em;
-  font-weight: 400;
-  margin-bottom: 0;
-}
-
-#tweets {
-  height: 31em;
-  overflow: auto;
-}
-
-.by.container {
-  font-size: 1.2em;
-  display: inline;
-  padding-right: 16px;
-  background: transparent url(/assets/img/twitter_bird.png) right center no-repeat;
-}
-
-.tweet_list {
-  list-style-type: none;
-  list-style-position: inside;
-  margin: 0 0.5em;
-  border-top: 1px dotted white;
-}
-
-.tweet_odd, .tweet_even {
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 1px dotted #eee;
-}
-
-.tweet_time {
-  font-style: italic;
-  font-size: 0.6em;
-  display: block;
-  margin-bottom: 0.5em;
-  width: 100%;
-  text-align: right;
-}
-
-.tweet_time a {
-  text-decoration: none;
-}
-
-.carousel-control {
-  text-decoration: none;
-  height: 42px;
-}
-
-.carousel-caption {
-  background: #333;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  position: static;
-}
-
-.highlight table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.code .gutter {
-  display: none;
-}
-
-
-
-#test-libraries > .section,
-#tools > .section,
-#communication > .section {
+.sub-section {
   float: left;
-  width: 20em;
-}
-
-#test-libraries > .section ul,
-#tools > .section ul,
-#communication > .section ul{
-  margin: 0;
-  margin-right: 1em;
-}
-
-#twitter > h4 {
-  font-size: 24.5px;
-  line-height: 40px;
+  width: 330px;
 }
