@@ -32,7 +32,10 @@ function init_carousel() {
   $carousel_html = $carousel_template[ 0 ].append( $carousel_html ).append( $carousel_template[1] );  
 
   $( "#examples" ).html( [$heading, $carousel_html] );
-  $( "#example-carousel" ).carousel();
+  $( ".carousel-caption.container" ).removeClass( "container" );
+  $( "#example-carousel" ).carousel({
+    "interval": 8000
+  });
   
 }
 

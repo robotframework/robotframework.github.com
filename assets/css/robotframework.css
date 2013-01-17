@@ -215,16 +215,28 @@ ul {
   text-decoration: none;
 }
 
+.carousel-control {
+  text-decoration: none;
+  height: 42px;
+}
+
+.carousel-caption {
+  background: #333;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  position: static;
+}
+
 .highlight table {
   margin-left: auto;
   margin-right: auto;
 }
 
-.carousel-caption {
-  background: #333;
-  background: rgba(0, 0, 0, 0.25);
-  color: white;
+.code .gutter {
+  display: none;
 }
+
+
 
 #test-libraries > .section,
 #tools > .section,
