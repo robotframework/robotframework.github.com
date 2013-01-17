@@ -2,12 +2,13 @@ body {
   font-family: serif;
   font-size: 100%;
   color: #7D6D6D;
-  background: white;
+  background: white url(../img/silhuette-bg.png) bottom right no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #794444;
   font-family: sans-serif;
+  margin: 0;
 }
 a {
   text-decoration: underline;
@@ -17,9 +18,24 @@ a:hover {
   text-decoration: none;
   color: #7D6D6D;
 }
+
 ul {
   list-style-type: none;
 }
+
+#header {
+  text-align: center;
+  height: 100px;
+}
+
+.affix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+}
+
 #silhuette {
   width: 400px;
   height: 400px;
@@ -28,16 +44,21 @@ ul {
   right: 50px;
   z-index: -1;
 }
+
 .section {
   height: 100%;
   border: 1px dashed gray;
   width: 1000px;
-  margin: 20px auto;
+  margin: 38px auto;
   position: relative;
+  padding: 1em;
 }
-#header {
-  text-align: center;
+
+.section > p {
+  text-align: justify;
 }
+
+
 #news {
   position: absolute;
   top: 10px;
@@ -47,14 +68,41 @@ ul {
   overflow: auto;
   color: white;
   background: rgba(122, 69, 69, 0.5);
+  padding: 0.2em;
 }
+
+#twitter-link {
+  padding-right: 16px;
+  color: white;
+  background: transparent url(../img/twitter_bird.png) right center no-repeat;
+}
+
 #introduction > p {
   width: 650px;
 }
+
 .clear {
   clear: both;
 }
+
+.carousel-control {
+  text-decoration: none;
+}
+
+.carousel-caption {
+  color: white;
+}
+
+.item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .sub-section {
   float: left;
   width: 330px;
+}
+
+.sub-section > ul {
+  margin: 0;
 }
