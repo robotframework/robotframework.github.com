@@ -74,13 +74,41 @@ ul {
   overflow: auto;
   color: white;
   background: rgba(122, 69, 69, 0.5);
-  padding: 0.2em;
+  padding: 0.7em 0.5em;
+  font-size: 0.7em;
+  border-radius: 5px;
+  border: 1px solid #BEAEAE;
+  box-shadow: inset 0px 1px 3px 0px;
+}
+
+#news h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+#news > p:first-child {
+  margin: 0;
+}
+
+#news a {
+  color: white;
 }
 
 #twitter-link {
   padding-right: 16px;
   color: white;
   background: transparent url(../img/twitter_bird.png) right center no-repeat;
+}
+
+.tweet_list {
+  margin: 0.5em 0;
+  border-top: 1px dotted white;
+}
+
+.tweet_odd, .tweet_even {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #eee;
 }
 
 #introduction > p {
