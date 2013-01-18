@@ -21,8 +21,20 @@ function init_tooltips() {
     });
 }
 
+function init_scrolling(){
+  $( "#menu a" ).click(function( ev ) {
+    var menu_height = 38,
+        element_position = $( this.href.substring(this.href.indexOf("#")) ).offset().top;
+
+    ev.preventDefault();
+    $("body").scrollTop( element_position - menu_height );
+
+  });
+}
+
 $(document).ready(function() {
     init_tweets();
     init_carousel();
     init_tooltips();
+    init_scrolling();
 });
