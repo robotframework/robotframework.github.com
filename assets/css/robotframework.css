@@ -53,12 +53,11 @@ ul {
 }
 
 .section {
-  height: 100%;
   border: 1px dashed gray;
-  width: 1000px;
+  max-width: 1000px;
   margin: 38px auto;
   position: relative;
-  padding: 1em;
+  padding: 1em 0 1em 1em;
 }
 
 .section > p {
@@ -107,7 +106,8 @@ ul {
 
 .sub-section {
   float: left;
-  width: 330px;
+  min-width: 30%;
+  padding-right: 3%;
 }
 
 .sub-section > ul {
