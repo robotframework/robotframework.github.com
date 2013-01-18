@@ -141,6 +141,20 @@ ul {
   color: white;
 }
 
+.carousel-ball {
+  background-color: black;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.carousel-ball.active {
+  background-color: white;
+}
+
 .item img {
   margin-left: auto;
   margin-right: auto;

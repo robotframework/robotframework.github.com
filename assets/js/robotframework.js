@@ -7,8 +7,36 @@ function init_tweets() {
 }
 
 function init_carousel() {
+    var ball_html = "",
+        index;
+
+    $( ".carousel-inner .item" ).each(function( index ){
+      if ( index < 1){
+        ball_html += '<div class="carousel-ball active"></div>';
+      } else {
+        ball_html += '<div class="carousel-ball"></div>';
+      }
+    });
+
+    $("#carousel-balls").html( ball_html );
+
     $("#example-carousel").carousel({
         interval: 8000
+    }).on( "slide", function( ev ){
+      index = $(ev.relatedTarget).index() + 1; // index is 0-based, nth-child -selector is 1-based
+      $( ".carousel-ball.active" ).removeClass( "active" );
+      $( ".carousel-ball:nth-child(" + index + ")" ).addClass( "active" );
+    });
+
+    $( ".carousel-ball" ).popover({
+      "html": true,
+      "trigger": "hover",
+      "content": function(){
+        var index = $( this ).index() + 1;
+        return $( ".carousel-inner .item:nth-child(" + index +")" ).html();
+      }
+    }).click(function(){
+      $( "#example-carousel" ).carousel( $(this).index() );
     });
 }
 
