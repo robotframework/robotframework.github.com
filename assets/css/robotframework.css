@@ -8,7 +8,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #794444;
   font-family: sans-serif;
-  margin: 0;
+}
+h2 {
+  margin-top: 0;
+}
+p {
+  margin: 0.5em 0 0 0;
 }
 a {
   text-decoration: underline;
@@ -109,4 +114,9 @@ ul {
 
 .tooltip {
   font-size: 0.9em;
+}
+
+#architecture > img {
+  float: right;
+  margin-left: 1.5em;
 }

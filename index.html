@@ -23,6 +23,7 @@
             <ul class="nav">
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#examples">Examples</a></li>
+                <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#test-libraries">Test libraries</a></li>
                 <li><a href="#supporting-tools">Supporting tools</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -86,6 +87,35 @@
           <a class="carousel-control left" href="#example-carousel" data-slide="prev">&lsaquo;</a>
           <a class="carousel-control right" href="#example-carousel" data-slide="next">&rsaquo;</a>
       </div>
+    </div>
+    <div id="architecture" class="section">
+      <img title="Robot Framework architecture."
+           src="assets/img/architecture.png">
+      <h2>Architecture</h2>
+      <p>
+        Robot Framework has a modular architecture that can be extended
+        with generic and custom <a href="#test-libraries">test
+        libraries</a>.
+      </p>
+      <p>
+        Test data is defined in files using the syntax shown in the
+        above examples. A file containing test cases creates a test
+        suite and placing these files into directories creates a
+        nested test suite structure.
+      </p>
+      <p>
+        When test execution is started, the framework first parses the
+        test data. It then utilizes keywords provided by the test
+        libraries to interact with the system under test. Libraries
+        can communicate with the system either directly or using other
+        test tools as drivers.
+      </p>
+      <p>
+        Test execution is started from the command line. As a result
+        you get report and log in HTML format as well as an XML
+        output.
+      </p>
+      <div class="clear"></div>
     </div>
     <div id="test-libraries" class="section">
       <h2>Test libraries</h2>
