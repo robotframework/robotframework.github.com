@@ -82,6 +82,7 @@ ul {
 }
 
 #news h3 {
+  color: inherit;
   margin: 0;
   line-height: 1;
 }
@@ -91,7 +92,7 @@ ul {
 }
 
 #news a {
-  color: white;
+  color: inherit;
 }
 
 #twitter-link {
@@ -109,6 +110,19 @@ ul {
   margin-bottom: 0.5em;
   padding-bottom: 0.5em;
   border-bottom: 1px dotted #eee;
+}
+
+.tweet_time {
+  font-style: italic;
+  font-size: 0.6em;
+  display: block;
+  margin-bottom: 0.3em;
+  width: 100%;
+  text-align: right;
+}
+
+.tweet_time a {
+  text-decoration: none;
 }
 
 #introduction > p {
