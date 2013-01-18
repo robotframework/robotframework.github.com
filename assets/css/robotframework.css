@@ -2,6 +2,8 @@ body {
   font-family: serif;
   font-size: 100%;
   color: #7D6D6D;
+  /* Thanks http://sweetclipart.com for the original robot image!
+     http://sweetclipart.com/black-robot-silhouette-1046 */
   background: white url(../img/robot-silhouette.png) 95% bottom no-repeat fixed;
 }
 
