@@ -26,10 +26,6 @@ a:hover {
   color: #7D6D6D;
 }
 
-ul {
-  list-style-type: none;
-}
-
 #header {
   text-align: center;
   height: 100px;
@@ -170,12 +166,12 @@ ul {
 
 .sub-section {
   float: left;
-  min-width: 30%;
+  width: 30%;
   padding-right: 3%;
 }
 
 .sub-section > ul {
-  margin: 0;
+  list-style-type: square;
 }
 
 .tooltip {
