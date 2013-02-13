@@ -1,7 +1,7 @@
 function init_tweets() {
     $("#tweets").tweet({
         username: "robotframework",
-        template: "{text} {time}",
+        template: "{text}",
         count: 10
     });
 }
@@ -16,7 +16,7 @@ function init_carousel() {
         } else {
             ball_html += '<div class="carousel-ball"></div>';
         }
-        balls_width += 22;  // from css (width + border + margin)
+        balls_width += 23;  // from css (width + border + margin)
     });
 
     $("#carousel-balls").html(ball_html).width(balls_width);
@@ -43,15 +43,6 @@ function init_carousel() {
     });
 }
 
-function init_tooltips() {
-    $(".sub-section a").tooltip({
-        placement: "left"
-    });
-    $("img").tooltip({
-        placement: "right"
-    });
-}
-
 function init_scrolling() {
   $("#menu a").click(function(ev) {
       var menu_height = 38;
@@ -61,9 +52,52 @@ function init_scrolling() {
   });
 }
 
+function get_center_of_element( el ){
+  var $el = $( el );
+  return $el.width()/2 + $el.position().left;
+}
+
+function init_markers() {
+  $(".links > a").click(function( e ){
+    e.preventDefault();
+    var $this = $( this ), // `this` is a link
+        id = $this.attr("href"),
+        $parent = $this.parent().parent();
+
+
+    $(".links > a", $parent).removeClass("active");
+    $this.addClass("active")
+
+    $(".links .marker", $parent).animate({
+        "left": get_center_of_element($this)
+    }, 1500);
+    
+    $(".external-links.active", $parent).fadeOut(function(){
+      $(this).removeClass("active"); // `this` is a link navigation elements
+      $(id).fadeIn().addClass("active");
+    });
+    
+  });
+  
+  // calculate marker positions at the start
+  $first_link = $(".links > a:first-child");
+  $(".links .marker").each(function(){
+    var $this = $(this);
+    $this.css("left", get_center_of_element($this.parent().find("a:first-child")));
+  });
+  
+}
+
+function init_affix(){
+  $("#menu").affix({
+    "offset" : $("#menu .nav").offset().top
+  });  
+}
+
 $(document).ready(function() {
     init_tweets();
     init_carousel();
-    init_tooltips();
     init_scrolling();
+    init_markers();
+    init_affix();
 });

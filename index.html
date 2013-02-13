@@ -11,499 +11,695 @@
     <script type="text/javascript" src="js/jquery.tweet.js"></script>
     <script type="text/javascript" src="js/robotframework.js"></script>
   </head>
-  <body>
-    <div id="header">
-      <h1>Robot Framework</h1>
-      <span id="slogan">
-        Generic test automation framework for acceptance testing and ATDD.
-      </span>
-    </div>
-    <div id="menu" class="navbar" data-spy="affix" data-offset-top="100">
-        <div class="navbar-inner">
-            <ul class="nav">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="#architecture">Architecture</a></li>
-                <li><a href="#test-libraries">Test libraries</a></li>
-                <li><a href="#supporting-tools">Supporting tools</a></li>
-                <li><a href="#documentation">Documentation</a></li>
-                <li><a href="#communication-and-support">Communication and support</a></li>
-            </ul>
-        </div>
-    </div>
-    <div id="introduction" class="section">
-      <h2>Introduction</h2>
-      <p>
-        Robot Framework is a generic test automation framework for
-        acceptance testing and acceptance test-driven development
-        (ATDD). It has easy-to-use tabular test data syntax and it
-        utilizes the keyword-driven testing approach. Its testing
-        capabilities can be extended by test libraries implemented
-        either with Python or Java, and users can create new
-        higher-level keywords from existing ones using the same
-        syntax that is used for creating test cases.
-      </p>
-      <p>
-        Robot Framework project is hosted
-        on <a href="http://code.google.com/p/robotframework/">Google
-        Code</a> where you can find further documentation,
-        downloads, and issue tracker. The framework has a rich
-        ecosystem around it consisting of various
-        generic <a href="#test-libraries">test libraries</a>
-        and <a href="#supporting-tools">tools</a> that are developed
-        as separate projects.
-      </p>
-      <p>
-        Robot Framework itself is open source software released
-        under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
-        License 2.0</a>, and most of the libraries and tools in the
-        ecosystem are also open source. The development of the core
-        framework is supported
-        by <a href="http://www.nokiasiemensnetworks.com/">Nokia
-        Siemens Networks</a>.
-      </p>
-      <div id="news">
-        <h3>News</h3>
-        <p>by @<a href="http://twitter.com/robotframework" id="twitter-link">robotframework</a></p>
-        <div id="tweets"></div>
+  <body data-spy="scroll" data-target=".navbar">
+    <div class="row green">
+      <div id="header" class="content-area">
+        <h1>ROBOT FRAMEWORK</h1>
+        <span class="slogan">
+          Generic test automation framework for acceptance testing and ATDD.
+        </span>        
       </div>
     </div>
-    <div id="examples" class="section">
-      <h2>Examples</h2>
-      <div id="example-carousel" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="http://placekitten.com/500/400" />
-              <div class="carousel-caption">
-                A caption
+    <div class="row dark" id="menu-container">
+      <div id="menu" class="navbar content-area">
+        <div class="navbar-inner">
+          <ul class="nav">
+            <li><a href="#introduction">Introduction</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#examples">Examples</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#test-libraries">Test libraries</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#supporting-tools">Supporting tools</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#communication-and-support">Communication and support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="introduction" class="row cf">
+      <div class="content-area">
+        <div class="column two-thirds introduction-text">
+          <p>
+            <b>Robot Framework</b> is a generic test automation framework for
+            acceptance testing and acceptance test-driven development
+            (ATDD). It has easy-to-use tabular test data syntax and it
+            utilizes the keyword-driven testing approach. Its testing
+            capabilities can be extended by test libraries implemented
+            either with Python or Java, and users can create new
+            higher-level keywords from existing ones using the same
+            syntax that is used for creating test cases.
+          </p>
+          <p>
+            Robot Framework project is hosted
+            on <a href="http://code.google.com/p/robotframework/">Google
+            Code</a> where you can find further documentation,
+            downloads, and issue tracker. The framework has a rich
+            ecosystem around it consisting of various
+            generic <a href="#test-libraries">test libraries</a>
+            and <a href="#supporting-tools">tools</a> that are developed
+            as separate projects.
+          </p>
+          <div class="introduction-buttons cf">
+            <div class="button orange">GET LIBRARIES</div>
+            <div class="button green">READ DOCS</div>
+            <div class="button blue">GET INVOLVED</div>
+          </div>
+          <p>
+            Robot Framework itself is open source software released
+            under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
+            License 2.0</a>, and most of the libraries and tools in the
+            ecosystem are also open source. The development of the core
+            framework is supported
+            by <a href="http://www.nokiasiemensnetworks.com/">Nokia
+            Siemens Networks</a>.
+          </p>
+        </div>
+        <div class="column one-thirds dark" id="news">
+          <div id="twitter-logo"></div><a href="http://twitter.com/robotframework" id="twitter-link">@robotframework</a>
+          <hr />
+          <div id="tweets"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row red">
+      <div id="examples" class="content-area">
+        <h1 class="row-header">ROBOT IN ACTION</h1>
+        <hr />
+        <div id="example-carousel" class="carousel slide">
+            <div class="carousel-inner">
+              
+              <div class="item active cf">
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+                <div class="column one-thirds">
+                  <div class="caption">First explanation</div>
+                </div>
               </div>
+              
+              <div class="item cf">
+                <div class="column one-thirds">
+                  <div class="caption">Second explanation</div>
+                </div>
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+              </div>
+              
+              <div class="item cf">
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+                <div class="column one-thirds">
+                  <div class="caption">Third explanation</div>
+                </div>
+              </div>
+              
+              <div class="item cf">
+                <div class="column one-thirds">
+                  <div class="caption">Fourth explanation</div>
+                </div>
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+              </div>
+              
+              <div class="item cf">
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+                <div class="column one-thirds">
+                  <div class="caption">Fifth explanation</div>
+                </div>
+              </div>
+              
+              <div class="item cf">
+                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+                <div class="column one-thirds">
+                  <div class="caption">Sixth explanation</div>
+                </div>
+              </div>
+              
             </div>
-            <div class="item">
-              <img src="http://placekitten.com/500/400" />
-              <div class="carousel-caption">
-                Another caption
-              </div>
+            <div id="carousel-balls"></div>
+            <a class="carousel-control left" href="#example-carousel" data-slide="prev"></a>
+            <a class="carousel-control right" href="#example-carousel" data-slide="next"></a>
+        </div>
+      
+      </div>
+    </div>
+    <div class="row">
+      <div id="architecture" class="content-area">
+        <div class="column one-thirds">
+          <div class="column-content">
+            <h2>It's modular</h2>
+            <hr class="green" />
+            <p>
+              Robot Framework has a modular architecture that can be extended
+              with generic and custom <a href="#test-libraries">test
+              libraries</a>.
+            </p>
+            <p>
+              Test data is defined in files using the syntax shown in the
+              above examples. A file containing test cases creates a test
+              suite and placing these files into directories creates a
+              nested test suite structure.
+            </p>            
+          </div>
+        </div>
+        
+        <div class="column one-thirds">
+          <div class="column-content">            
+            <h2>It's easy</h2>
+            <hr class="orange" />
+            <p>
+              When test execution is started, the framework first parses the
+              test data. It then utilizes keywords provided by the test
+              libraries to interact with the system under test. Libraries
+              can communicate with the system either directly or using other
+              test tools as drivers.
+            </p>
+            <p>
+              Test execution is started from the command line. As a result
+              you get report and log in HTML format as well as an XML
+              output.
+            </p>
+          </div>
+        </div>
+        
+        <div class="column one-thirds">
+          <div class="column-content">
+            <h2>It's fast</h2>
+            <hr class="blue" />
+            <img title="Robot Framework architecture." src="img/architecture.png" />          
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row dark">
+                  
+      <div id="test-libraries" class="content-area cf">
+        <h1 class="row-header">THE LIBRARIES</h1>
+        <p>
+          Test libraries provide the actual testing capabilities to
+          Robot Framework. There are several standard libraries that are
+          bundled in with the framework, and even more separately
+          developed external libraries that can be installed based on
+          needs. Creating your own test libraries is also very easy.
+        </p>
+        <p>
+          Hover the mouse on top of the libraries below to see a little
+          more information about
+          them. <a href="#communication-and-support">Let us know</a> if
+          there are useful libraries missing.
+        </p>
+        <div class="links">
+          <a href="#standard-libraries" class="active">STANDARD</a>
+          <a href="#external-libraries">EXTERNAL</a>
+          <a href="#other-libraries">OTHER</a>
+          <div class="marker"></div>
+        </div>
+        
+        <div id="standard-libraries" class="external-links active">
+          <div class="column one-thirds">
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/BuiltInLibrary">Builtin</a>
+              Provides a set of often needed generic keywords. Always automatically available.
             </div>
-            <div class="item">
-              <img src="http://placekitten.com/500/400" />
-              <div class="carousel-caption">
-                Third caption
-              </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a>
+              Enables various operating system related tasks to be performed in the system where Robot Framework is running.
             </div>
-            <div class="item">
-              <img src="http://placekitten.com/500/400" />
-              <div class="carousel-caption">
-                Fourth caption
-              </div>
+              
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a>
+              Provides keywords to capture screenshots of the desktop.
             </div>
-            <div class="item">
-              <img src="http://placekitten.com/500/400" />
-              <div class="carousel-caption">
-                Fifth caption
-              </div>
+
+          </div>
+
+          <div class="column one-thirds">
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a>
+              Makes it possible to connect to Telnet servers and execute commands on the opened connections.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/StringLibrary">String</a>
+              Library for generating, modifying, and verifying strings.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/CollectionsLibrary">Collections</a>
+              Provides a set of keywords for handling lists and dictionaries.
+            </div>
+
+          </div>
+
+          <div class="column one-thirds">
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/DialogsLibrary">Dialogs</a>
+              Provides means for pausing the test execution and getting inputs from users.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/XMLLibrary">XML</a>
+              Library for generating, modifying, and verifying XML files.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/RemoteLibrary">Remote</a>
+              Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines or be implemented using any language supporting XML-RPC protocol.
+            </div>
+
+          </div>
+        </div>
+
+        <div id="external-libraries" class="external-links">
+
+          <div class="column one-thirds">
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-autoitlibrary/">AutoItLibrary</a>
+              Windows GUI testing library that uses AutoIt freeware tool as a driver.
+            </div>
+
+            <div class="link">
+              <a href="https://github.com/ThomasJaspers/robotframework-dblibrary/">Database Library (Java)</a>
+              Java-based library for database testing. Works only with Jython.
+            </div>
+
+            <div class="link">
+              <a href="http://franz-see.github.com/Robotframework-Database-Library/">Database Library (Python)</a>
+              Python based library for database testing. Works with any Python interpreter, including Jython.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-eclipselibrary/">Eclipse Library</a>
+              Library for testing Eclipse RCP applications using SWT widgets.
+            </div>
+
+          </div>
+
+          <div class="column one-thirds">
+            
+            <div class="link">
+              <a href="https://github.com/peritus/robotframework-httplibrary/#readme">HTTP library (livetest)</a>
+              Library for HTTP level testing using livetest tool internally.
+            </div>
+
+            <div class="link">
+              <a href="https://github.com/bulkan/robotframework-requests/#readme">HTTP library (Requests)</a>
+              Library for HTTP level testing using Request internally.
+            </div>
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-seleniumlibrary/">SeleniumLibrary</a>
+              Web testing library that uses popular Selenium tool internally. Uses deprecated Selenium 1.0 and thus not recommended for new projects.
+            </div>
+
+            <div class="link">
+              <a href="https://github.com/rtomac/robotframework-selenium2library/#readme">Selenium2Library</a>
+              Web testing library that uses Selenium 2. For most parts drop-in-replacement for old SeleniumLibrary.
+            </div>
+
+          </div>
+
+          <div class="column one-thirds">
+
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-sshlibrary/">SSHLibrary</a>
+              Enables executing commands on remote machines over an SSH connection. Also supports transfering files using SFTP.
+            </div>
+
+            <div class="link">
+              <a href="https://github.com/robotframework/SwingLibrary/wiki">SwingLibrary</a>
+              Library for testing Java applications with Swing GUI.
+            </div>
+
+            <div class="link">
+              <a href="https://github.com/semperos/watir-robot/#readme">watir-robot</a>
+              Web testing library that uses Watir tool.
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="other-libraries" class="external-links">
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#creating-test-libraries">Creating test libraries</a>
+              Creating test libraries section in Robot Framework User Guide.
             </div>
           </div>
-          <div id="carousel-balls"></div>
-          <a class="carousel-control left" href="#example-carousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#example-carousel" data-slide="next">&rsaquo;</a>
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://github.com/robotframework/JavalibCore/wiki">JavalibCore</a>
+              Base for implementing larger Java based test libraries for Robot Framework.
+            </div>
+          </div>
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a>
+              Special test library for launching Java applications on a separate JVM and taking other libraries into use on them.
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
-    <div id="architecture" class="section">
-      <img title="Robot Framework architecture."
-           src="img/architecture.png">
-      <h2>Architecture</h2>
-      <p>
-        Robot Framework has a modular architecture that can be extended
-        with generic and custom <a href="#test-libraries">test
-        libraries</a>.
-      </p>
-      <p>
-        Test data is defined in files using the syntax shown in the
-        above examples. A file containing test cases creates a test
-        suite and placing these files into directories creates a
-        nested test suite structure.
-      </p>
-      <p>
-        When test execution is started, the framework first parses the
-        test data. It then utilizes keywords provided by the test
-        libraries to interact with the system under test. Libraries
-        can communicate with the system either directly or using other
-        test tools as drivers.
-      </p>
-      <p>
-        Test execution is started from the command line. As a result
-        you get report and log in HTML format as well as an XML
-        output.
-      </p>
-      <div class="clear"></div>
+    <div class="row blue">
+      <div id="supporting-tools" class="content-area">
+        <h1 class="row-header">THE TOOLS</h1>
+        <p>
+          Supporting tools ease editing test data, run tests, and so
+          on. Most of these tools are developed as separate projects,
+          but some are built into the framework itself.
+        </p>
+        <p>
+          Hover the mouse on top of the tools below to see a little more
+          information about
+          them. <a href="#communication-and-support">Let us know</a> if
+          there are useful tools missing.
+        </p>
+
+        <div class="links">
+          <a href="#tools-builtin" class="active">BUILT-IN</a>
+          <a href="#tools-editors">EDITORS</a>
+          <a href="#tools-build">BUILD</a>
+          <a href="#tools-other">OTHER</a>
+          <div class="marker"></div>
+        </div>
+
+        <div class="external-links active" id="tools-builtin">
+          
+          <div class="column half">
+            <div class="link">
+              <a href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#rebot">Rebot</a>
+              Tool for generating logs and reports based on XML outputs and for combining multiple outputs together.
+            </div>
+            <div class="link">
+              <a href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#libdoc">Libdoc</a>
+              Tool for generating keyword documentation for test libraries and resource files.
+            </div>
+          </div>
+          
+          <div class="column half">
+            <div class="link">
+              <a href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#testdoc">Testdoc</a>
+              Generates high level HTML documentation based on Robot Framework test cases.
+            </div>
+            <div class="link">
+              <a href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#tidy">Tidy</a>
+              Tool for cleaning up and changing format of Robot Framework test data files.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="external-links" id="tools-editors">
+          
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-ride">RIDE</a>
+              Standalone Robot Framework test data editor.
+            </div>
+            <div class="link">
+              <a href="https://github.com/NitorCreations/RobotFramework-EclipseIDE/wiki">Eclipse plugin</a>
+              Robot Framework plugin for Eclipse IDE.
+            </div>
+          </div>
+          
+          <div class="column one-thirds">
+            <div class="link">
+              <div class="link">
+                <a href="https://github.com/sakari/robot-mode">Emacs major mode</a>
+                Emacs major mode for editing Robot Framework test data.
+              </div>
+              <a href="https://github.com/mfukar/robotframework-vim">Vim plugin</a>
+              Vim plugin for development with Robot framework.
+            </div>
+          </div>
+          
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a>
+              Bundle for TextMate adding syntax highlighting for Robot Framework test data.
+            </div>
+            <div class="link">
+              <a href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a>
+              Provides basic tools for working with Robot Framework text files in Sublime Text 2.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="external-links" id="tools-build">
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">Jenkins plugin</a>
+              Plugin to collect and publishes Robot Framework test results in Jenkins.
+            </div>
+          </div>
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="http://robotframework.github.com/MavenPlugin/">Maven plugin</a>              
+              Maven plugin for using Robot Framework.
+            </div>
+          </div>
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-ant/">Ant task</a>              
+              Ant task for running Robot Framework tests.
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="external-links" id="tools-other">
+          <div class="column half">
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework-mabot/">Mabot</a>
+              Tool for reporting manual tests in format compatible with Robot Framework outputs.
+            </div>
+          </div>
+          <div class="column half">
+            <div class="link">
+              <a href="http://code.google.com/p/rfdoc/">RFDoc</a>
+              Web based system for storing and searching Robot Framework test library and resource file documentations.
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
     </div>
-    <div id="test-libraries" class="section">
-      <h2>Test libraries</h2>
-      <p>
-        Test libraries provide the actual testing capabilities to
-        Robot Framework. There are several standard libraries that are
-        bundled in with the framework, and even more separately
-        developed external libraries that can be installed based on
-        needs. Creating your own test libraries is also very easy.
-      </p>
-      <p>
-        Hover the mouse on top of the libraries below to see a little
-        more information about
-        them. <a href="#communication-and-support">Let us know</a> if
-        there are useful libraries missing.
-      </p>
-      <div class="sub-section">
-        <h3>Standard libraries</h3>
-        <ul>
-          <li>
-            <a title="Provides a set of often needed generic keywords. Always automatically available."
-               href="http://code.google.com/p/robotframework/wiki/BuiltInLibrary">Builtin</a>
-          </li>
-          <li>
-            <a title="Enables various operating system related tasks to be performed in the system where Robot Framework is running."
-               href="http://code.google.com/p/robotframework/wiki/OperatingSystemLibrary">OperatingSystem</a>
-          </li>
-          <li>
-            <a title="Provides keywords to capture screenshots of the desktop."
-               href="http://code.google.com/p/robotframework/wiki/ScreenshotLibrary">Screenshot</a>
-          </li>
-          <li>
-            <a title="Makes it possible to connect to Telnet servers and execute commands on the opened connections."
-               href="http://code.google.com/p/robotframework/wiki/TelnetLibrary">Telnet</a>
-          </li>
-          <li>
-            <a title="Library for generating, modifying, and verifying strings."
-               href="http://code.google.com/p/robotframework/wiki/StringLibrary">String</a>
-          </li>
-          <li>
-            <a title="Provides a set of keywords for handling lists and dictionaries."
-               href="http://code.google.com/p/robotframework/wiki/CollectionsLibrary">Collections</a>
-          </li>
-          <li>
-            <a title="Provides means for pausing the test execution and getting inputs from users."
-               href="http://code.google.com/p/robotframework/wiki/DialogsLibrary">Dialogs</a>
-          </li>
-          <li>
-            <a title="Library for generating, modifying, and verifying XML files."
-               href="http://code.google.com/p/robotframework/wiki/XMLLibrary">XML</a>
-          </li>
-          <li>
-            <a title="Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines or be implemented using any language supporting XML-RPC protocol."
-               href="http://code.google.com/p/robotframework/wiki/RemoteLibrary">Remote</a>
-          </li>
-        </ul>
+
+    <div class="row dark">
+      <div id="documentation" class="content-area">
+        <h1 class="row-header">THE DOCS</h1>
+        <p>
+          This list contains the most important documentation resources
+          needed when getting started with Robot Framework. Notice that
+          individual projects in the ecosystem have their own
+          documentation.
+        </p>
+        <p>
+          Hover the mouse on top of the tools below to see a little more
+          information about
+          them. <a href="#communication-and-support">Let us know</a> if
+          there are useful tools missing.
+        </p>
+
+        <div class="links">
+          <a href="#docs-getting-started" class="active">GETTING STARTED</a>
+          <a href="#docs-demos">DEMOS</a>
+          <a href="#docs-articles">ARTICLES</a>
+          <div class="marker"></div>
+        </div>
+
+        <div class="external-links active" id="docs-getting-started">
+        
+          <div class="column half">
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/IntroductionSlides">Introduction slides</a>
+              Generic Robot Framework introduction slides.
+            </div>
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/Installation">Robot Framework installation</a>              
+              How to install Robot Framework and its preconditions on different operating systems.
+            </div>
+          </div>
+          <div class="column half">
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/QuickStartGuide">Quick Start Guide</a>
+              Introduces the most important features of Robot Framework and acts as an executable demo.
+            </div>
+            <div class="link">
+              <a href="http://code.google.com/p/robotframework/wiki/UserGuide">User Guide</a>
+              Reference manual explaining all Robot Framework features in detail.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="external-links" id="docs-demos">
+
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">Web test demo</a>
+              Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using Selenium2Library.
+            </div>
+          </div>
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://bitbucket.org/robotframework/calculatordemo/wiki/Home">Calculator demo</a>
+              Demonstrates how to create tests and test libraries. The system under test is a simple calculator that is tested using a custom library.
+            </div>
+          </div>
+          <div class="column one-thirds">
+            <div class="link">
+              <a href="https://code.google.com/p/atdd-with-robot-framework/">ATDD with Robot Framework</a>
+              How to use Robot Framework for Acceptance Test Driven Development (ATDD) a.k.a. Specification by Example.
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="external-links" id="docs-articles">
+          
+          <div class="column half">
+            <div class="link">
+              <a href="http://a-tdd.org">ATDD with Robot Framework</a>
+              Acceptance Test-Driven Development with Robot Framework article by Craig Larman and Bas Vodde.
+            </div>
+          </div>
+          <div class="column half">
+            <div class="link">
+              <a href="http://eliga.fi/writings.html">Data-Driven and Keyword-Driven Test Automation Frameworks</a>
+              Master's Thesis by Pekka Klärck (né Laukkanen) that introduced Robot Framework concept.
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="sub-section">
-        <h3>External libraries</h3>
-        <ul>
-          <li>
-            <a title="Windows GUI testing library that uses AutoIt freeware tool as a driver."
-               href="http://code.google.com/p/robotframework-autoitlibrary/">AutoItLibrary</a>
-          </li>
-          <li>
-            <a title="Java based library for database testing. Works only with Jython."
-               href="https://github.com/ThomasJaspers/robotframework-dblibrary/">Database Library (Java)</a>
-          </li>
-          <li>
-            <a title="Python based library for database testing. Works with any Python interpreter, including Jython."
-               href="http://franz-see.github.com/Robotframework-Database-Library/">Database Library (Python)</a>
-          </li>
-          <li>
-            <a title="Library for testing Eclipse RCP applications using SWT widgets."
-               href="http://code.google.com/p/robotframework-eclipselibrary/">Eclipse Library</a>
-          </li>
-          <li>
-            <a title="Library for HTTP level testing using livetest tool internally."
-               href="https://github.com/peritus/robotframework-httplibrary/#readme">HTTP library (livetest)</a>
-          </li>
-          <li>
-            <a title="Library for HTTP level testing using Request internally."
-               href="https://github.com/bulkan/robotframework-requests/#readme">HTTP library (Requests)</a>
-          </li>
-          <li>
-            <a title="Web testing library that uses popular Selenium tool internally. Uses deprecated Selenium 1.0 and thus not recommended for new projects."
-               href="http://code.google.com/p/robotframework-seleniumlibrary/">SeleniumLibrary</a>
-          </li>
-          <li>
-            <a title="Web testing library that uses Selenium 2. For most parts drop-in-replacement for old SeleniumLibrary."
-               href="https://github.com/rtomac/robotframework-selenium2library/#readme">Selenium2Library</a>
-          </li>
-          <li>
-            <a title="Enables executing commands on remote machines over an SSH connection. Also supports transfering files using SFTP."
-               href="http://code.google.com/p/robotframework-sshlibrary/">SSHLibrary</a>
-          </li>
-          <li>
-            <a title="Library for testing Java applications with Swing GUI."
-               href="https://github.com/robotframework/SwingLibrary/wiki">SwingLibrary</a>
-          </li>
-          <li>
-            <a title="Web testing library that uses Watir tool."
-               href="https://github.com/semperos/watir-robot/#readme">watir-robot</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Other</h3>
-        <ul>
-          <li>
-            <a title="Creating test libraries section in Robot Framework User Guide."
-               href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#creating-test-libraries">Creating test libraries</a>
-          </li>
-          <li>
-            <a title="Base for implementing larger Java based test libraries for Robot Framework."
-               href="https://github.com/robotframework/JavalibCore/wiki">JavalibCore</a>
-          </li>
-          <li>
-            <a title="Special test library for launching Java applications on a separate JVM and taking other libraries into use on them."
-               href="https://github.com/robotframework/RemoteApplications">RemoteApplications</a>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
+      
     </div>
-    <div id="supporting-tools" class="section">
-      <h2>Supporting tools</h2>
-      <p>
-        Supporting tools ease editing test data, run tests, and so
-        on. Most of these tools are developed as separate projects,
-        but some are built into the framework itself.
-      </p>
-      <p>
-        Hover the mouse on top of the tools below to see a little more
-        information about
-        them. <a href="#communication-and-support">Let us know</a> if
-        there are useful tools missing.
-      </p>
-      <div class="sub-section">
-        <h3>Built-in tools</h3>
-        <ul>
-          <li>
-            <a title="Tool for generating logs and reports based on XML outputs and for combining multiple outputs together."
-               href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#rebot">Rebot</a>
-          </li>
-          <li>
-            <a title="Tool for generating keyword documentation for test libraries and resource files."
-               href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#libdoc">Libdoc</a>
-          </li>
-          <li>
-            <a title="Generates high level HTML documentation based on Robot Framework test cases."
-               href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#testdoc">Testdoc</a>
-          </li>
-          <li>
-            <a title="Tool for cleaning up and changing format of Robot Framework test data files."
-               href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#tidy">Tidy</a>
-          </li>
-        </ul>
+
+    <div class="row green">
+      
+      <div id="communication-and-support" class="content-area cf">
+        <h1 class="row-header">SUPPORT &amp; CONTACT</h1>
+        <div class="slogan">The lists, channels, feed and blogs you want to know about</div>
+<!--
+        <p>
+          The most important communication and support channel
+          is <a href="http://groups.google.com/group/robotframework-users">robotframework-users</a>
+          mailing list. In addition to that, announcements are posted
+          and support provided via Twitter and IRC. Notice that
+          individual projects in the ecosystem have their own issue
+          trackers that should be used for bug reports and enhancement
+          requests.
+        </p>
+-->
+
+        <div id="contact-icons" class="row">
+          <div class="content-area cf">
+            <div class="column one-thirds">
+              <div class="contact-icon" id="twitter"></div>
+              <a href="http://twitter.com/robotframework">@robotframework</a>
+              <p>announcements in Twitter</p>
+            </div>
+            <div class="column one-thirds">
+              <div class="contact-icon" id="chat"></div>
+              <a href="http://webchat.freenode.net/?randomnick=1&channels=robotframework&prompt=1">#robotframework</a>
+              <p>chat on freenode</p>
+            </div>
+            <div class="column one-thirds">
+              <div class="contact-icon" id="mail"></div>
+              <a href="http://groups.google.com/group/robotframework-users">robotframework-users</a>
+              <p>community mailing list</p>
+            </div>
+          </div>
+        </div>
+        
+        <div id="contact-links" class="row">
+          <div class="content-area cf">
+
+            <div class="column half">
+              <div>
+                <h2 class="contact-links-heading">MAILING LISTS</h2>
+                <ul class="contact-links-list">
+                  <li>
+                    <a href="http://groups.google.com/group/robotframework-ja">robotframework-ja</a>
+                    <p>Japanese users &amp; support</p>
+                  </li>
+                  <li>
+                    <a href="http://groups.google.com/group/robotframework-cn">robotframework-cn</a>
+                    <p>Chinese users &amp; support</p>
+                  </li>
+                  <li>
+                    <a title=""
+                       href="http://groups.google.com/group/robotframework-devel">robotframework-devel</a>
+                    <p>Contributors and developers of the Robot Framework ecosystem</p>
+                  </li>
+                  <li>
+                    <a href="http://groups.google.com/group/robotframework-announce">robotframework-announce</a>
+                    <p>Just release announcements, nothing more</p>
+                  </li>
+                  <li>
+                    <a href="http://groups.google.com/group/robotframework-commit">robotframework-commit</a>
+                    <p>List for automatic mails from commits, issues, etc.</p>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+            
+            <div class="column half">
+              <div>
+                  <h2 class="contact-links-heading">BLOGS &amp; WEB</h2>
+                  <ul class="contact-links-list">
+                    <li>
+                      <a href="http://robotframework.org">robotframework.org</a>
+                      <p>Home of the Robot</p>
+                    </li>
+                    <li>
+                      <a href="http://hereberobots.blogspot.fi/">Here be Robots!</a>
+                      <p>Official Roblog</p>
+                    </li>
+                    <li>
+                      <a href="http://blog.codecentric.de/en/category/agile/agile-testing/">Codecentric</a>
+                      <p>Robot Framework related blog posts from codecentric.</p>
+                    </li>
+                    <li>
+                      <a href="http://www.radekw.com/blog/category/robot-framework/">Radek Wierzbicki's blog</a>
+                      <p>Robot Framework related blog posts by Radek Wierzbicki.</p>
+                    </li>
+                  </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="sub-section">
-        <h3>Editors</h3>
-        <ul>
-          <li>
-            <a title="Standalone Robot Framework test data editor."
-               href="http://code.google.com/p/robotframework-ride">RIDE</a>
-          </li>
-          <li>
-            <a title="Robot Framework plugin for Eclipse IDE."
-               href="https://github.com/NitorCreations/RobotFramework-EclipseIDE/wiki">Eclipse plugin</a>
-          </li>
-          <li>
-            <a title="Emacs major mode for editing Robot Framework test data."
-               href="https://github.com/sakari/robot-mode">Emacs major mode</a>
-          </li>
-          <li>
-            <a title="Vim plugins for development with Robot framework."
-               href="https://github.com/mfukar/robotframework-vim">Vim plugin</a>
-          </li>
-          <li>
-            <a title="Bundle for TextMate adding syntax highlighting for Robot Framework test data "
-               href="https://bitbucket.org/jussimalinen/robot.tmbundle/">TextMate bundle</a>
-          </li>
-          <li>
-            <a title="Provides basic tools for working with Robot Framework text files in Sublime Text 2."
-               href="https://github.com/shellderp/sublime-robot-plugin">Sublime plugin</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Build tools</h3>
-        <ul>
-          <li>
-            <a title="Plugin to collect and publishes Robot Framework test results in Jenkins."
-               href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">Jenkins plugin</a>
-          </li>
-          <li>
-            <a title="Maven plugin for using Robot Framework."
-               href="http://robotframework.github.com/MavenPlugin/">Maven plugin</a>
-          </li>
-          <li>
-            <a title="Ant task for running Robot Framework tests."
-               href="http://code.google.com/p/robotframework-ant/">Ant task</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Other</h3>
-        <ul>
-          <li>
-            <a title="Tool for reporting manual tests in format compatible with Robot Framework outputs."
-               href="http://code.google.com/p/robotframework-mabot/">Mabot</a>
-          </li>
-          <li>
-            <a title="Web based system for storing and searching Robot Framework test library and resource file documentations."
-               href="http://code.google.com/p/rfdoc/">RFDoc</a>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
+    
     </div>
-    <div id="documentation" class="section">
-      <h2>Documentation</h2>
-      <p>
-        This list contains the most important documentation resources
-        needed when getting started with Robot Framework. Notice that
-        individual projects in the ecosystem have their own
-        documentation.
-      </p>
-      <p>
-        Hover the mouse on top of the items below to see a little more
-        information about
-        them. <a href="#communication-and-support">Let us know</a> if
-        there are useful resources missing.
-      </p>
-      <div class="sub-section">
-        <h3>Getting started</h3>
-        <ul>
-          <li>
-            <a title="Generic Robot Framework introduction slides."
-               href="http://code.google.com/p/robotframework/wiki/IntroductionSlides">Introduction slides</a>
-          </li>
-          <li>
-            <a title="How to install Robot Framework and its preconditions on different operating systems."
-               href="http://code.google.com/p/robotframework/wiki/Installation">Robot Framework installation</a>
-          </li>
-          <li>
-            <a title="Introduces the most important features of Robot Framework and acts as an executable demo."
-               href="http://code.google.com/p/robotframework/wiki/QuickStartGuide">Quick Start Guide</a>
-          </li>
-          <li>
-            <a title="Reference manual explaining all Robot Framework features in detail."
-               href="http://code.google.com/p/robotframework/wiki/UserGuide">User Guide</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Demo projects</h3>
-        <ul>
-          <li>
-            <a title="Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using Selenium2Library."
-               href="https://bitbucket.org/robotframework/webdemo/wiki/Home">Web test demo</a>
-          </li>
-          <li>
-            <a title="Demonstrates how to create tests and test libraries. The system under test is a simple calculator that is tested using a custom library."
-               href="https://bitbucket.org/robotframework/calculatordemo/wiki/Home">Calculator demo</a>
-          </li>
-          <li>
-            <a title="How to use Robot Framework for Acceptance Test Driven Development (ATDD) a.k.a. Specification by Example."
-               href="https://code.google.com/p/atdd-with-robot-framework/">ATDD with Robot Framework</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Articles</h3>
-        <ul>
-          <li>
-            <a title="Acceptance Test-Driven Development with Robot Framework article by Craig Larman and Bas Vodde."
-               href="http://a-tdd.org">ATDD with Robot Framework article</a>
-          </li>
-          <li>
-            <a title="Master's Thesis by Pekka Klärck (né Laukkanen) that introduced Robot Framework concept."
-               href="http://eliga.fi/writings.html">Data-Driven and Keyword-Driven Test Automation Frameworks</a>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
+
+    <div class="row" id="end">
+      <h1 class="row-header">THAT'S ROBOT FRAMEWORK</h1>
+      <div class="slogan"><a href="http://robotframework.org">robotframework.org</a></div>
     </div>
-    <div id="communication-and-support" class="section">
-      <h2>Communication and support</h2>
-      <p>
-        The most important communication and support channel
-        is <a href="http://groups.google.com/group/robotframework-users">robotframework-users</a>
-        mailing list. In addition to that, announcements are posted
-        and support provided via Twitter and IRC. Notice that
-        individual projects in the ecosystem have their own issue
-        trackers that should be used for bug reports and enhancement
-        requests.
-      </p>
-      <p>
-        Hover the mouse on top of items below to see a little more
-        information about them. Let us know if there are useful
-        resources missing.
-      </p>
-      <div class="sub-section">
-        <h3>Mailing lists</h3>
-        <ul>
-          <li>
-            <a title="List for general questions, discussion and announcements. The main support forum."
-               href="http://groups.google.com/group/robotframework-users">robotframework-users</a>
-          </li>
-          <li>
-            <a title="Japanese users list."
-               href="http://groups.google.com/group/robotframework-ja">robotframework-ja</a> (Japanese)
-          </li>
-          <li>
-            <a title="Chinese users list."
-               href="http://groups.google.com/group/robotframework-cn">robotframework-cn</a> (Chinese)
-          </li>
-          <li>
-            <a title="Discussion about developing Robot Framework and libraries/tools in the ecosystem."
-               href="http://groups.google.com/group/robotframework-devel">robotframework-devel</a>
-          </li>
-          <li>
-            <a title="Low traffic list used for announcements about new releases."
-               href="http://groups.google.com/group/robotframework-announce">robotframework-announce</a>
-          </li>
-          <li>
-            <a title="List for automatic mails from commits, issues, etc."
-               href="http://groups.google.com/group/robotframework-commit">robotframework-commit</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>IRC</h3>
-        <ul>
-          <li>
-            <a title="Web front-end to #robotframework channel on freenode."
-               href="http://webchat.freenode.net/?channels=robotframework">#robotframework</a> on <a href="http://freenode.net">freenode</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Twitter</h3>
-        <ul>
-          <li>
-            @<a title="@robotframework on Twitter."
-                href="http://twitter.com/robotframework">robotframework</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sub-section">
-        <h3>Blogs</h3>
-        <ul>
-          <li>
-            <a title="Official, but unfortunately rarely updated, Robot Framework blog."
-               href="http://hereberobots.blogspot.fi/">Here be Robots!</a>
-          </li>
-          <li>
-            <a title="Robot Framework related blog posts from codecentric."
-               href="http://blog.codecentric.de/en/category/agile/agile-testing/">Codecentric -- Agile testing</a>
-          </li>
-          <li>
-            <a title="Robot Framework related blog posts by Radek Wierzbicki."
-               href="http://www.radekw.com/blog/category/robot-framework/">Radek Wierzbicki -- Robot Framework</a>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
-    </div>
+
   </body>
 </html>
