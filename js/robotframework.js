@@ -43,15 +43,6 @@ function init_carousel() {
     });
 }
 
-function init_scrolling() {
-  $("#menu a").click(function(ev) {
-      var menu_height = 38;
-      var element_position = $(this.href.substring(this.href.indexOf("#"))).offset().top;
-      ev.preventDefault();
-      $("body").scrollTop(element_position - menu_height);
-  });
-}
-
 function get_center_of_element( el ){
   var $el = $( el );
   return $el.width()/2 + $el.position().left;
@@ -90,14 +81,14 @@ function init_markers() {
 
 function init_affix(){
   $("#menu").affix({
-    "offset" : $("#menu .nav").offset().top
+    "offset" : $("#menu").offset().top
   });  
 }
 
 $(document).ready(function() {
-    init_tweets();
+
     init_carousel();
-    init_scrolling();
     init_markers();
     init_affix();
+    init_tweets(); // should be last thing to be loaded
 });

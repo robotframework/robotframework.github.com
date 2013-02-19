@@ -23,26 +23,8 @@ a:hover {
   text-decoration: none;
 }
 
-.cf:before,
-.cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.cf:after {
-  clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-  *zoom: 1;
-}
-
 .row {
-  padding: 3% 6%;
+  padding: 65px 6%;
 }
 
 .green, 
@@ -78,8 +60,35 @@ a:hover {
   background-color: #00d9a3;
 }
 
+/* General rules for .content-area */
 .content-area {
   margin: 0 auto;
+}
+
+/* CSS clear/float fix, see http://nicolasgallagher.com/micro-clearfix-hack/ 
+
+  Make .content-area contain floated elements. Make a class .cf for other uses
+*/
+.content-area:before,
+.content-area:after,
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.content-area:after,
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.content-area,
+.cf {
+  *zoom: 1;
 }
 
 .column {

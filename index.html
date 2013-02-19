@@ -11,7 +11,7 @@
     <script type="text/javascript" src="js/jquery.tweet.js"></script>
     <script type="text/javascript" src="js/robotframework.js"></script>
   </head>
-  <body data-spy="scroll" data-target=".navbar">
+  <body data-spy="scroll" data-offset="70">
     <div class="row green">
       <div id="header" class="content-area">
         <h1>ROBOT FRAMEWORK</h1>
@@ -24,7 +24,7 @@
       <div id="menu" class="navbar content-area">
         <div class="navbar-inner">
           <ul class="nav">
-            <li><a href="#introduction">Introduction</a></li>
+            <li class="active"><a href="#introduction">Introduction</a></li>
             <li class="divider-vertical"></li>
             <li><a href="#examples">Examples</a></li>
             <li class="divider-vertical"></li>
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div id="introduction" class="row cf">
+    <div class="row" id="introduction">
       <div class="content-area">
         <div class="column two-thirds introduction-text">
           <p>
@@ -86,8 +86,9 @@
         </div>
       </div>
     </div>
-    <div class="row red">
-      <div id="examples" class="content-area">
+
+    <div class="row red" id="examples">
+      <div class="content-area">
         <h1 class="row-header">ROBOT IN ACTION</h1>
         <hr />
         <div id="example-carousel" class="carousel slide">
@@ -143,8 +144,8 @@
       
       </div>
     </div>
-    <div class="row">
-      <div id="architecture" class="content-area">
+    <div class="row" id="architecture">
+      <div class="content-area">
         <div class="column one-thirds">
           <div class="column-content">
             <h2>It's modular</h2>
@@ -193,9 +194,9 @@
       </div>
     </div>
 
-    <div class="row dark">
+    <div class="row dark" id="test-libraries">
                   
-      <div id="test-libraries" class="content-area cf">
+      <div class="content-area">
         <h1 class="row-header">THE LIBRARIES</h1>
         <p>
           Test libraries provide the actual testing capabilities to
@@ -373,8 +374,8 @@
       </div>
 
     </div>
-    <div class="row blue">
-      <div id="supporting-tools" class="content-area">
+    <div class="row blue" id="supporting-tools">
+      <div class="content-area">
         <h1 class="row-header">THE TOOLS</h1>
         <p>
           Supporting tools ease editing test data, run tests, and so
@@ -503,8 +504,8 @@
       
     </div>
 
-    <div class="row dark">
-      <div id="documentation" class="content-area">
+    <div id="documentation" class="row dark">
+      <div class="content-area">
         <h1 class="row-header">THE DOCS</h1>
         <p>
           This list contains the most important documentation resources
@@ -594,9 +595,9 @@
       
     </div>
 
-    <div class="row green">
+    <div class="row green" id="communication-and-support" >
       
-      <div id="communication-and-support" class="content-area cf">
+      <div class="content-area">
         <h1 class="row-header">SUPPORT &amp; CONTACT</h1>
         <div class="slogan">The lists, channels, feed and blogs you want to know about</div>
 <!--
@@ -612,7 +613,7 @@
 -->
 
         <div id="contact-icons" class="row">
-          <div class="content-area cf">
+          <div class="content-area">
             <div class="column one-thirds">
               <div class="contact-icon" id="twitter"></div>
               <a href="http://twitter.com/robotframework">@robotframework</a>
@@ -632,7 +633,7 @@
         </div>
         
         <div id="contact-links" class="row">
-          <div class="content-area cf">
+          <div class="content-area">
 
             <div class="column half">
               <div>
