@@ -14,10 +14,15 @@
   <body data-spy="scroll" data-offset="70">
     <div class="row green">
       <div id="header" class="content-area">
-        <h1>ROBOT FRAMEWORK</h1>
-        <span class="slogan">
-          Generic test automation framework for acceptance testing and ATDD.
-        </span>        
+        <div id="main-headers-container" class="cf">
+          <div id="main-headers">
+            <h1>ROBOT FRAMEWORK</h1>
+            <span class="slogan" id="main-headers-slogan">
+              Generic test automation framework for acceptance testing and ATDD
+            </span>
+          </div>
+          <div id="main-logo"><div></div></div>
+        </div>
       </div>
     </div>
     <div class="row dark" id="menu-container">
@@ -65,9 +70,9 @@
             as separate projects.
           </p>
           <div class="introduction-buttons cf">
-            <div class="button orange">GET LIBRARIES</div>
-            <div class="button green">READ DOCS</div>
-            <div class="button blue">GET INVOLVED</div>
+            <a href="#test-libraries"><div class="button orange">GET LIBRARIES</div></a>
+            <a href="#documentation"><div class="button green">READ DOCS</div></a>
+            <a href="#supporting-tools"><div class="button blue">USE TOOLS</div></a>
           </div>
           <p>
             Robot Framework itself is open source software released
@@ -80,7 +85,10 @@
           </p>
         </div>
         <div class="column one-thirds dark" id="news">
-          <div id="twitter-logo"></div><a href="http://twitter.com/robotframework" id="twitter-link">@robotframework</a>
+          <div class="cf" id="twitter-header">
+            <div id="twitter-logo"></div>
+            <a href="http://twitter.com/robotframework" id="twitter-link">@robotframework</a>
+          </div>
           <hr />
           <div id="tweets"></div>
         </div>
@@ -622,7 +630,7 @@
             <div class="column one-thirds">
               <div class="contact-icon" id="chat"></div>
               <a href="http://webchat.freenode.net/?randomnick=1&channels=robotframework&prompt=1">#robotframework</a>
-              <p>chat on freenode</p>
+              <p>chat on freenode IRC</p>
             </div>
             <div class="column one-thirds">
               <div class="contact-icon" id="mail"></div>

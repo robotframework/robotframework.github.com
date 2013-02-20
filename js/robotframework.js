@@ -2,7 +2,8 @@ function init_tweets() {
     $("#tweets").tweet({
         username: "robotframework",
         template: "{text}",
-        count: 10
+        count: 10,
+        loading_text: "Trying to load tweets..."
     });
 }
 

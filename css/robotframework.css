@@ -113,7 +113,6 @@ a:hover {
 #header h1 {
   margin-top: 0;
   color: white;
-  margin-bottom: 0.7em;
 }
 
 .slogan {
@@ -123,8 +122,33 @@ a:hover {
 }
 
 #menu-container {
-  margin-top: 0;
+  margin: auto;
   padding: 0;
+}
+
+#main-headers-container {
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#main-headers,
+#main-logo {
+  float: left;
+}
+
+#main-headers-slogan {
+  border-top: 3px solid #24292d;
+}
+
+#main-logo > div {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  position: relative;
+  top: 0.8em;
+  background: #24292d url(/img/icons.gif) no-repeat -300px center;
+  
 }
 
 .navbar, 
@@ -217,21 +241,31 @@ a:hover {
   overflow: auto; 
 }
 
+#twitter-header {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #twitter-logo {
   background: transparent url(/img/icons.gif) no-repeat -245px center;
   width: 60px;
   height: 60px;
-  display: inline-block;
   float: left;
 }
 
 #twitter-link {
-  display: inline-block;
   text-decoration: none;
   height: 60px;
   line-height: 60px;
   font-size: 1.5em;
   float: left;
+}
+
+#tweets .loading {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.3em;
 }
 
 #news a {
@@ -326,6 +360,7 @@ a:hover {
   border: 1px solid white;
   border-radius: 8px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .carousel-ball.active {
