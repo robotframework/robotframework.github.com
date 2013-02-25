@@ -233,7 +233,14 @@ a:hover {
   float: left;
   margin-right: 1em;
   padding: 0.5em 1.5em;
-  text-decoration: underline;
+
+/*  text-decoration: underline;
+*/
+}
+
+.button hr {
+  margin: 0;
+  border-top: 0px;
 }
 
 #news {
