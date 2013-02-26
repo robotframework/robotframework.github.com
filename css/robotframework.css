@@ -260,49 +260,55 @@ a:hover {
 
 #news {
   height: 20em;
-  overflow: auto; 
-}
-
-#twitter-header {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#twitter-logo {
-  background: transparent url(/img/icons.gif) no-repeat -245px center;
-  width: 60px;
-  height: 60px;
-  float: left;
-}
-
-#twitter-link {
-  text-decoration: none;
-  height: 60px;
-  line-height: 60px;
-  font-size: 1.5em;
-  float: left;
-}
-
-#tweets .loading {
+  overflow: auto;
   text-align: center;
-  margin-top: 2em;
-  font-size: 1.3em;
 }
 
 #news a {
   color: inherit;
 }
 
+#twitter-header {
+  display: inline-block;
+  margin-left: -20px; /* scroll bar is inside of box; adjust so it seems header is in the middle */
+  padding-bottom: 0;
+}
+
+#twitter-logo {
+  background: transparent url(/img/icons.gif) no-repeat -245px center;
+  width: 60px;
+  height: 55px;
+  float: left;
+}
+
+#twitter-link {
+  text-decoration: none;
+  height: 55px;
+  line-height: 60px;
+  font-size: 1.5em;
+  float: left;
+}
+
 #news hr {
-  margin: 10px 0;
+  margin: 0;
+  padding-top: 0;
+  margin-bottom: 10px;
   border-top: 0;
   border-bottom: 0;
   height: 2px;
   background-color: #708088;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 85%;
+  margin-left: 20px;
+}
+
+#tweets {
+  text-align: left;
+}
+
+#tweets .loading {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.3em;
 }
 
 .tweet_list {
