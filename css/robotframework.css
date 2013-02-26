@@ -4,7 +4,7 @@ body {
   color: #24292d;
   /* Thanks http://sweetclipart.com for the original robot image!
      http://sweetclipart.com/black-robot-silhouette-1046
-  background: white url(../img/robot-silhouette.png) 95% bottom no-repeat fixed;
+  background: white url(..../img/robot-silhouette.png) 95% bottom no-repeat fixed;
    */
 }
 
@@ -141,7 +141,7 @@ a:hover {
   border-radius: 70px;
   position: relative;
   top: 0.8em;
-  background: #24292d url(/img/icons.gif) no-repeat -295px center;
+  background: #24292d url(../img/icons.gif) no-repeat -295px center;
   
 }
 
@@ -275,9 +275,9 @@ a:hover {
 }
 
 #twitter-logo {
-  background: transparent url(/img/icons.gif) no-repeat -245px center;
+  background: transparent url(../img/icons.gif) no-repeat -245px center;
   width: 60px;
-  height: 55px;
+  height: 55  px;
   float: left;
 }
 
@@ -342,7 +342,7 @@ a:hover {
   margin: 0 1em;
 }
 
-.item img {
+.item ../img {
   display: block;
   margin: 0 auto;
 }
@@ -356,11 +356,11 @@ a:hover {
 }
 
 .carousel-control.left {
-  background: black url(/img/icons.gif) no-repeat -70px center;
+  background: black url(../img/icons.gif) no-repeat -70px center;
 }
 
 .carousel-control.right {
-  background: black url(/img/icons.gif) no-repeat -8px center;
+  background: black url(../img/icons.gif) no-repeat -8px center;
 }
 
 #carousel-balls {
@@ -542,15 +542,15 @@ a:hover {
 }
 
 #twitter {
-  background: transparent url(/img/icons.gif) no-repeat -248px center;
+  background: transparent url(../img/icons.gif) no-repeat -248px center;
 }
 
 #chat {
-  background: transparent url(/img/icons.gif) no-repeat -178px center;
+  background: transparent url(../img/icons.gif) no-repeat -178px center;
 }
 
 #mail {
-  background: transparent url(/img/icons.gif) no-repeat -119px center;
+  background: transparent url(../img/icons.gif) no-repeat -119px center;
 }
 
 #contact-links {
