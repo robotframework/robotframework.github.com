@@ -107,6 +107,7 @@ a:hover {
 #header {
   text-align: center;
   height: 100px;
+  margin-bottom: 2em;
 }
 
 #header h1 {
@@ -116,14 +117,12 @@ a:hover {
 
 .slogan {
   font-size: 1.5em;
-  font-weight: lighter;
   -webkit-font-smoothing: antialiased;
 }
 
 #main-headers-container {
   display: inline-block;
   padding: 0;
-  margin: 0 auto;
 }
 
 #main-headers,
@@ -131,17 +130,18 @@ a:hover {
   float: left;
 }
 
-#main-headers-slogan {
-  border-top: 3px solid #24292d;
+#main-headers hr {
+  border-color: #24292d;
+  margin-top: 10px;
 }
 
 #main-logo > div {
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
   position: relative;
   top: 0.8em;
-  background: #24292d url(/img/icons.gif) no-repeat -300px center;
+  background: #24292d url(/img/icons.gif) no-repeat -295px center;
   
 }
 
