@@ -277,7 +277,7 @@ a:hover {
 #twitter-logo {
   background: transparent url(../img/icons.gif) no-repeat -245px center;
   width: 60px;
-  height: 55  px;
+  height: 55px;
   float: left;
 }
 
@@ -509,11 +509,11 @@ a:hover {
   border-color: transparent transparent #00d9a3 transparent;
 }
 
-#communication-and-support .row-header {
+#support-contact .row-header {
   margin-bottom: 0;
 }
 
-#communication-and-support .slogan {
+#support-contact .slogan {
   width: 100%;
   text-align: center;
 }
