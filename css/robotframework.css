@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 }
 
 .row {
-  padding: 65px 6%;
+  padding: 65px 10% 0 10%;
 }
 
 .green, 
@@ -62,7 +62,7 @@ a:hover {
 
 /* General rules for .content-area */
 .content-area {
-  margin: 0 auto;
+  margin: 0 auto 3em auto;
 }
 
 /* CSS clear/float fix, see http://nicolasgallagher.com/micro-clearfix-hack/ 
@@ -107,7 +107,6 @@ a:hover {
 #header {
   text-align: center;
   height: 100px;
-  padding: 3em;
 }
 
 #header h1 {
@@ -119,11 +118,6 @@ a:hover {
   font-size: 1.5em;
   font-weight: lighter;
   -webkit-font-smoothing: antialiased;
-}
-
-#menu-container {
-  margin: auto;
-  padding: 0;
 }
 
 #main-headers-container {
@@ -151,28 +145,37 @@ a:hover {
   
 }
 
-.navbar, 
+#menu-container {
+  padding-top: 0;
+}
+
+.navbar,
 .navbar-inner {
   background-image: none;
   background-color: inherit;
   border: none;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .navbar {
-  margin-bottom: 0;
+  height: 4em;
+  display: table;
 }
 
 .navbar-inner {
-  padding: 0;
-  max-width: 70em;
-  margin-left: auto;
-  margin-right: auto;
+  height: auto;
+  display: table-cell;
+  vertical-align: middle;
 }
 
-.navbar .divider-vertical {
-  color: white;
-  border-right: 0;
-  border-left: 1px solid #708088;
+.navbar .nav {
+  float: none;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar .nav > li > a, 
@@ -180,6 +183,7 @@ a:hover {
   color: white;
   font-weight: 100;
   text-shadow: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .navbar .nav > li > a:hover {
@@ -192,6 +196,12 @@ a:hover {
   color: #9fbf00;
   box-shadow: none;
   background-color: inherit;
+}
+
+.navbar .divider-vertical {
+  color: #708088;
+  border-right: 0;
+  border-left: 1px solid #708088;
 }
 
 .affix {
@@ -214,13 +224,21 @@ a:hover {
   width: 33%;
 }
 
+.column.three-quarters {
+  width: 75%;
+}
+
+.column.one-quarters {
+  width: 25%;
+}
+
 .column.half {
   width: 50%;
 }
 
 .column > p {
   text-align: justify;
-  padding-right: 1em;
+  padding-right: 5em;
 }
 
 .introduction-buttons {
@@ -241,7 +259,7 @@ a:hover {
 }
 
 #news {
-  height: 25em;
+  height: 20em;
   overflow: auto; 
 }
 
@@ -299,10 +317,10 @@ a:hover {
 
 .row-header {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.7em;
 }
 
-#examples > hr {
+#examples hr {
   border-color: black;
 }
 
@@ -328,6 +346,7 @@ a:hover {
   height: 40px;
   border-radius: 40px;
   text-decoration: none;
+  border: 0px;
 }
 
 .carousel-control.left {
