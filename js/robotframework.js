@@ -86,10 +86,82 @@ function init_affix(){
   });  
 }
 
+function repeat_str( str, count ) {
+  /*
+    - Make new array with `count` length
+    - Join it with `str` + `separator`
+    - Remove trailing `separator`
+    - Split by separator
+  */
+  var separator = "##SEPARATOR##"
+  return (new Array(count+1)).join(str + separator).slice(0, -separator.length).split(separator);
+}
+
+function wrap_elements( xml_elements ) {
+  var result = [],
+      placeholder = "||REPLACE||",
+      containers = repeat_str('<div class="column one-thirds">' + placeholder + '</div>', 3);
+
+  while ( xml_elements.length > 2 ) {
+
+    if ( result.length < 1 ) {
+      result = result.concat(containers.map(function( item ){
+        return item.replace(placeholder, xml_elements.splice(0, 1) + placeholder);
+      }));
+    } else {
+      for (var i=0; i < 3; i++) {
+        result[i] = result[i].replace(placeholder, xml_elements.splice(0, 1) + placeholder)
+      }
+    }
+  }
+
+  result = result.map(function( item ){
+    return item.replace(placeholder, "");
+  });
+
+  while ( xml_elements.length > 1 ) {
+    containers = repeat_str('<div class="column half">' + placeholder + '</div>', 2);
+    result = result.concat(containers.map(function( item ){
+      return item.replace(placeholder, xml_elements.splice(0, 1));
+    }));
+  }
+
+  if ( xml_elements.length == 1 ){
+    result = result.concat('<div class="column full">' + xml_elements[0] + "</div>");
+  }
+
+  return result;
+}
+
+function htmlize( xml_elements ) {
+  if ( xml_elements.length < 1 ) {
+    throw "No XML elements!";
+  }
+
+  // xml_elements is a jQuery object ie. array-like;
+  //  therefore `map()` is the jQuery version instead of regular Javascript version
+  return xml_elements.map(function(){
+    var $entry = $( this ),
+        title = $entry.find("title:first").text(),
+        // http://www.youtube.com/watch?v=<id>&feature=youtube_gdata => http://www.youtube.com/embedded/<id>
+        url = $entry.find("link:first").attr("href").replace("watch?v=", "embed/").replace(/&feature.*/, "");
+    return '<div class="link"><iframe width="300" height="170" frameborder="0" allowfullscreen="allowfullscreen" src="' + url + '" /><br />' + title + '</div>';
+  });
+}
+
+function init_videos() {
+  jQuery.get("http://gdata.youtube.com/feeds/api/users/RobotFramework/favorites?v=2", function( data ){
+    var result_html = htmlize($(data).find("entry"));
+    result_html = wrap_elements(result_html);
+    $("#docs-videos").append(result_html);
+  });
+}
+
 $(document).ready(function() {
 
     init_carousel();
     init_markers();
     init_affix();
+    init_videos();
     init_tweets(); // should be last thing to be loaded
 });

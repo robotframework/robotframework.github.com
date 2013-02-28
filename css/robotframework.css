@@ -104,6 +104,11 @@ a:hover {
   width: 67%;
 }
 
+.column.full {
+  width: 100%;
+  clear: both;
+}
+
 #header {
   text-align: center;
   height: 100px;
