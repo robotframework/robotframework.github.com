@@ -104,47 +104,102 @@
             <div class="carousel-inner">
               
               <div class="item active cf">
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
-                <div class="column one-thirds">
-                  <div class="caption">First explanation</div>
+                <div class="column half"><img src="/img/examples/basic.png" /></div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                      Let's start with a real-life example from our <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">web demo project</a>. Here we have a test suite with one test case which tests that login is valid. As you can see, test data syntax is based on <span class="italic">keywords</span>.
+                    </p>
+                    <p>
+                      Keywords are composable, meaning you can define new keywords that use pre-existing keywords. This way, you can abstract details of testing to something that makes immediate sense; for example, we don't need to know what exactly the step <span class="teletype">Submit Credentials</span> actually does, unless we want to. Test cases are therefore clear and readable, with just the right level of abstraction to convey the <span class="italic">intent</span> of the test, rather than the nuts and bolts.
+                    </p>
+                    <p>
+                      See next example for what you're going to get once this example is run!
+                    </p>
+                  </div>
                 </div>
               </div>
               
               <div class="item cf">
-                <div class="column one-thirds">
-                  <div class="caption">Second explanation</div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                    Executing the test suite file from previous example, we get the meat and bone of Robot Framework: A comprehensive debriefing on what happened in the test execution in two parts: the <span class="bold"> Report</span> and the <span class="bold">Log</span>.
+                    </p>
+                    <p>
+                      Report details clearly viewable statistics including Pass/Fail ratios and elapsed times. This gives you great overview on the test execution.
+                    </p>
+                    <p>
+                      Log details statistics from each step of the test execution, from keyword to keyword. It enables you to drill down on the specifics of the test in case of failure or otherwise.
+                    </p>
+                    <p>This Report and Log are based on executing the test suite described in the previous example and is from our <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">web demo project</a>.</p>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
+                <div class="column half"><img src="/img/examples/log-report.png" /></div>
               </div>
               
               <div class="item cf">
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
-                <div class="column one-thirds">
-                  <div class="caption">Third explanation</div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                      Keywords can be defined outside of the test suite and be imported as an external resources. This means you can collect generally useful keywords to one place and share them throughout your project, keeping also the testing <span class="bold"><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a></span>!
+                    </p>
+                    <p>
+                      Here we have resource file and test case that utilizes the former side-by-side. This example is also from <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">our very own web demo</a>.
+                    </p>
+                  </div>
+                </div>
+                <div class="column half"><img src="/img/examples/resources.png" /></div>
+              </div>
+              
+              <div class="item cf">
+                <div class="column half"><img src="/img/examples/library.png" /></div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                      All keywords in Robot Framework come from some library. What if existing libraries do not have what you need? Easy! Just make a library of your own!
+                    </p>
+                    <p>
+                      This example is from our <a href="https://bitbucket.org/robotframework/calculatordemo/wiki/Home">Calculator demo</a>. All keywords the tests use are in plain Python. You can also do libraries in Java.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="item cf">
+                <div class="column half"><img src="/img/examples/data-driven.png" /></div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                      <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing">Data-driven test development</a></span> is easy due to you being able to define templates for your tests.
+                    </p>
+                    <p>
+                      In this example, each test case adheres to the template set by <span class="teletype">Calculate</span> keyword.
+                    </p>
+                    <p>
+                      This example comes from our another demo, <a href="https://bitbucket.org/robotframework/calculatordemo/wiki/Home">Calculator</a>. Check it out!
+                    </p>
+                  </div>
                 </div>
               </div>
               
               <div class="item cf">
-                <div class="column one-thirds">
-                  <div class="caption">Fourth explanation</div>
-                </div>
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
-              </div>
-              
-              <div class="item cf">
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
-                <div class="column one-thirds">
-                  <div class="caption">Fifth explanation</div>
-                </div>
-              </div>
-              
-              <div class="item cf">
-                <div class="column two-thirds"><img src="http://placekitten.com/500/400" /></div>
-                <div class="column one-thirds">
-                  <div class="caption">Sixth explanation</div>
+                <div class="column half"><img src="/img/examples/gherkin.png" /></div>
+                <div class="column half">
+                  <div class="caption">
+                    <p>
+                      Want to do <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Cucumber-style behaviour-driven test development?</a> No problem! That's baked in!
+                    <p>
+                    <p>
+                      Here is another example from our <a href="https://bitbucket.org/robotframework/calculatordemo/wiki/Home">Calculator demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework.
+                    </p>
+
+                  </div>
                 </div>
               </div>
-              
+
             </div>
             <div id="carousel-balls"></div>
             <a class="carousel-control left" href="#example-carousel" data-slide="prev"></a>
@@ -157,7 +212,7 @@
       <div class="content-area">
         <div class="column one-thirds">
           <div class="column-content">
-            <h2>It's modular</h2>
+            <h2>Clear.</h2>
             <hr class="green" />
             <p>
               Robot Framework has a modular architecture that can be extended
@@ -175,7 +230,7 @@
         
         <div class="column one-thirds">
           <div class="column-content">            
-            <h2>It's easy</h2>
+            <h2>Easy.</h2>
             <hr class="orange" />
             <p>
               When test execution is started, the framework first parses the
@@ -194,7 +249,7 @@
         
         <div class="column one-thirds">
           <div class="column-content">
-            <h2>It's fast</h2>
+            <h2>Modular.</h2>
             <hr class="blue" />
             <img title="Robot Framework architecture." src="img/architecture.png" />          
           </div>

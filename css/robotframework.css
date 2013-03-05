@@ -23,6 +23,18 @@ a:hover {
   text-decoration: none;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.teletype {
+  font-variant: small-caps;
+}
+
 .row {
   padding: 65px 10% 0 10%;
 }
@@ -341,15 +353,17 @@ a:hover {
 
 .carousel-inner .item {
   margin: 0 5em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4em;
 }
 
 .carousel-inner .item .caption {
   margin: 0 1em;
 }
 
-.item ../img {
+.item img {
   display: block;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .carousel-control {
