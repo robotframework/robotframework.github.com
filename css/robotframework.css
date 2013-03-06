@@ -355,6 +355,7 @@ a:hover {
   margin: 0 5em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4em;
+  min-height: 400px;
 }
 
 .carousel-inner .item .caption {
