@@ -152,7 +152,7 @@ function htmlize( xml_elements ) {
 }
 
 function init_videos() {
-  jQuery.get("http://gdata.youtube.com/feeds/api/users/RobotFramework/favorites?v=2", function( data ){
+  jQuery.get("https://gdata.youtube.com/feeds/api/playlists/PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk?v=2", function( data ){
     var result_html = htmlize($(data).find("entry"));
     result_html = wrap_elements(result_html);
     $("#docs-videos").append(result_html);
