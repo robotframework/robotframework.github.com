@@ -35,14 +35,6 @@
   width: 100%;
 }
 
-.navbar {
-  height: auto;
-}
-
-.navbar .nav > li > a {
-  padding: 3px 2px;
-}
-
 .introduction-buttons {
   margin-right: 0;
 }
