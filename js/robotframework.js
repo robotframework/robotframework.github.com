@@ -104,22 +104,25 @@ function wrap_elements( xml_elements ) {
       placeholder = "||REPLACE||",
       containers = repeat_str('<div class="column one-thirds">' + placeholder + '</div>', 3);
 
-  while ( xml_elements.length > 2 ) {
+  if ( $(document).width() >= 1000) { // if user is on small screen, use 2-by-2 layout, otherwise use 3-by-3
 
-    if ( result.length < 1 ) {
-      result = result.concat(containers.map(function( item ){
-        return item.replace(placeholder, xml_elements.splice(0, 1) + placeholder);
-      }));
-    } else {
-      for (var i=0; i < 3; i++) {
-        result[i] = result[i].replace(placeholder, xml_elements.splice(0, 1) + placeholder)
+    while ( xml_elements.length > 2 ) {
+
+      if ( result.length < 1 ) {
+        result = result.concat(containers.map(function( item ){
+          return item.replace(placeholder, xml_elements.splice(0, 1) + placeholder);
+        }));
+      } else {
+        for (var i=0; i < 3; i++) {
+          result[i] = result[i].replace(placeholder, xml_elements.splice(0, 1) + placeholder)
+        }
       }
     }
-  }
 
-  result = result.map(function( item ){
-    return item.replace(placeholder, "");
-  });
+    result = result.map(function( item ){
+      return item.replace(placeholder, "");
+    });
+  }
 
   while ( xml_elements.length > 1 ) {
     containers = repeat_str('<div class="column half">' + placeholder + '</div>', 2);

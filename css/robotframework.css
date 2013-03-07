@@ -286,6 +286,7 @@ a:hover {
   height: 25em;
   overflow: auto;
   text-align: center;
+  border-radius: 3px;
 }
 
 #news a {
