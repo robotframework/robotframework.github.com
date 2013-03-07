@@ -463,8 +463,8 @@ a:hover {
   bottom: 0;
 }
 
-.column .link > a,
-.column .link > a:hover {
+.column .link > a:first-child,
+.column .link > a:first-child:hover {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
