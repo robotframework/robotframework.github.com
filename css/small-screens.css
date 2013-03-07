@@ -1,0 +1,112 @@
+body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.row:first-child {
+  padding-top: 0;
+}
+
+#header {
+  margin-bottom: 0;
+}
+
+#main-logo {
+  display: none;
+}
+
+
+#main-headers hr {
+  margin: 0;
+}
+
+#main-headers .slogan {
+  font-size: 1em;
+}
+
+.nav li {
+  font-size: 0.7em;
+}
+
+#news {
+  height: 35em;
+}
+
+#twitter-header {
+  margin-left: 0;
+}
+
+#twitter-logo, 
+#twitter-link {
+  float: none;
+  margin: 0 auto;
+}
+
+#twitter-link {
+  font-size: 1.3em;
+}
+
+.item .column.two-thirds {
+  width: 100%;
+}
+
+.item .column.one-thirds {
+  width: 100%;
+}
+
+.item .column.three-quarters {
+  width: 100%;
+}
+
+.item .column.one-quarters {
+  width: 100%;
+}
+
+.item .column.half {
+  width: 100%;
+}
+
+.links > a {
+  display: block;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+.introduction-text {
+  width: 100%;
+}
+
+.introduction-buttons {
+  padding-right: 5em;
+}
+
+.introduction-buttons a {
+  text-decoration: none;
+}
+
+.button hr {
+  display: none;
+}
+
+.introduction-buttons .button {
+  display: block;
+  float: none;
+  margin: 0 auto 0.2em auto;
+  text-align: center;
+}
+
+.carousel-control {
+  display: none;
+}
+
+.carousel-inner .item {
+  margin: 0;
+}
+
+#support-contact .row-header {
+  line-height: 1em;
+}

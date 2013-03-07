@@ -1,0 +1,40 @@
+.column > p {
+  padding-right: 0;
+}
+
+#header {
+  margin-bottom: 2.5em;
+}
+
+.divider-vertical {
+  display: none;
+}
+
+.column.two-thirds {
+  width: 100%;
+}
+
+.column.one-thirds {
+  width: 100%;
+}
+
+.column.three-quarters {
+  width: 100%;
+}
+
+.column.one-quarters {
+  width: 100%;
+}
+
+.column.half {
+  width: 100%;
+}
+
+.introduction-buttons {
+  padding-right: 0;
+}
+
+
+#news {
+  margin-top: 1em;
+}

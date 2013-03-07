@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Robot Framework</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/robotframework.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px), only screen and (max-device-width: 1000px)" href="css/small-screens.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="css/small-devices.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery.tweet.js"></script>
@@ -86,9 +89,11 @@
           </p>
         </div>
         <div class="column one-quarters dark" id="news">
-          <div class="cf" id="twitter-header">
-            <div id="twitter-logo"></div>
-            <a href="http://twitter.com/robotframework" id="twitter-link">@robotframework</a>
+          <div id="twitter-header">
+            <div class="cf">
+              <div id="twitter-logo"></div>
+              <a href="http://twitter.com/robotframework" id="twitter-link">@robotframework</a>
+            </div>
           </div>
           <hr />
           <div id="tweets"></div>
