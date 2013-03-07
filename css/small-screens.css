@@ -28,6 +28,18 @@ h1 {
   font-size: 1em;
 }
 
+.navbar {
+  height: auto;
+}
+
+.navbar .nav > li > a {
+  padding: 3px 2px;
+}
+
+.divider-vertical {
+  display: none;
+}
+
 .nav li {
   font-size: 0.7em;
 }

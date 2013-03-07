@@ -11,10 +11,6 @@
   margin-bottom: 2.5em;
 }
 
-.divider-vertical {
-  display: none;
-}
-
 .column.two-thirds {
   width: 100%;
 }
@@ -33,14 +29,6 @@
 
 .column.half {
   width: 100%;
-}
-
-.navbar {
-  height: auto;
-}
-
-.navbar .nav > li > a {
-  padding: 3px 2px;
 }
 
 .introduction-buttons {
