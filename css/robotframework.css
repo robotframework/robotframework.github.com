@@ -362,11 +362,19 @@ a:hover {
   margin: 0 5em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4em;
-  min-height: 400px;
 }
 
-.carousel-inner .item .caption {
-  margin: 0 1em;
+.carousel-inner .item .column {
+  min-height: 600px;
+}
+
+.vertical-align {
+  display: table;
+}
+
+.vertical-align > .caption {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .item img {
