@@ -37,9 +37,7 @@ function init_carousel() {
         placement: "bottom",
         content: function() {
             var index = $(this).index() + 1;
-            html = $( $(".carousel-inner .item:nth-child(" + index +")").html() )
-            html.find(".caption").html(html.find(".caption").text().replace(/^\s*/, "").substr(0, 20) + "...");
-            return html;
+            return $(".carousel-inner .item:nth-child(" + index +") p:first-child").text().replace(/\s*/, "");
         }
     }).click(function(){
         $("#example-carousel").carousel($(this).index());

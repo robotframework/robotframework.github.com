@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/robotframework.css">
     <link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px), only screen and (max-device-width: 1000px)" href="css/small-screens.css" />
     <link rel="stylesheet" type="text/css" media="only screen and (max-width: 598px), only screen and (max-device-width: 598px)" href="css/small-devices.css" />
+    <link rel="stylesheet" type="text/css" href="css/pygments.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery.tweet.js"></script>
@@ -95,7 +96,7 @@
       </div>
     </div>
 
-    <div class="row red" id="examples">
+    <div class="row dark" id="examples">
       <div class="content-area">
         <h1 class="row-header">ROBOT IN ACTION</h1>
         <hr />
@@ -103,9 +104,30 @@
             <div class="carousel-inner">
               
               <div class="item active cf">
-                <div class="column half"><img src="/img/examples/basic.png" /></div>
                 <div class="column half vertical-align">
-                  <div class="caption">
+
+                  <div class="vertical-content">
+                    <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">A test suite with a single test for valid login.</span><span class="p"></span>
+<span class="p">...</span>
+<span class="p">...               </span><span class="s">This test has a workflow that is created using keywords in</span><span class="p"></span>
+<span class="p">...               </span><span class="s">the imported resource file.</span><span class="p"></span>
+<span class="kn">Resource</span><span class="p">          </span><span class="nn">resource.txt</span><span class="p"></span>
+
+<span class="gh">*** Test Cases ***</span><span class="p"></span>
+<span class="gu">Valid Login</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Open Browser To Login Page</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Input Username</span><span class="p">    </span><span class="s">demo</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Input Password</span><span class="p">    </span><span class="s">mode</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Submit Credentials</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Welcome Page Should Be Open</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Close Browser</span><span class="p"></span>
+                    </pre></div>
+                  </div>
+                </div>
+
+                <div class="column half vertical-align">
+                  <div class="caption vertical-content">
                     <p>
                       Let's start with a real-life example from our <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">web demo project</a>. Here we have a test suite with one test case which tests that login is valid. As you can see, test data syntax is based on <span class="italic">keywords</span>.
                     </p>
@@ -121,41 +143,153 @@
               
               <div class="item cf">
                 <div class="column half vertical-align">
-                  <div class="caption">
+                  <div class="vertical-content margin">
                     <p>
                     Executing the test suite file from previous example, we get the meat and bone of Robot Framework: A comprehensive debriefing on what happened in the test execution in two parts: the <span class="bold"> Report</span> and the <span class="bold">Log</span>.
                     </p>
-                    <p>
+                    <p>This Report and Log are based on executing the test suite described in the previous example and is from our <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">web demo project</a>.</p>
+
+                    <img src="img/examples/report.png" id="report" />
+
+                    <p class="justify">
                       Report details clearly viewable statistics including Pass/Fail ratios and elapsed times. This gives you great overview on the test execution.
                     </p>
-                    <p>
-                      Log details statistics from each step of the test execution, from keyword to keyword. It enables you to drill down on the specifics of the test in case of failure or otherwise.
-                    </p>
-                    <p>This Report and Log are based on executing the test suite described in the previous example and is from our <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">web demo project</a>.</p>
-                    <p></p>
                   </div>
                 </div>
-                <div class="column half"><img src="/img/examples/log-report.png" /></div>
+
+                <div class="column half vertical-align">
+                  <div>
+                    <img src="img/examples/log.png" id="log" />
+                    <p class="justify">
+                      Log details statistics from each step of the test execution, from keyword to keyword. It enables you to drill down on the specifics of the test in case of failure or otherwise.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div class="item cf">
-                <div class="column one-thirds vertical-align">
-                  <div class="caption">
+                <div class="column half vertical-align">
+                  <div class="caption margin vertical-content">
+
                     <p>
                       Keywords can be defined outside of the test suite and be imported as an external resources. This means you can collect generally useful keywords to one place and share them throughout your project, keeping also the testing <span class="bold"><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a></span>!
                     </p>
                     <p>
-                      Here we have resource file and test case that utilizes the former side-by-side. This example is also from <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">our very own web demo</a>.
+                      Below, we have test case testing invalid login in  <a href="https://bitbucket.org/robotframework/webdemo/wiki/Home">our very own web demo</a>. As you can see, we can abstract away a lot of necessary, but ultimately non-expressive nuts and bolts of the testing to the <span class="italic">resource file</span>.
                     </p>
+
+                    <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Suite Setup</span><span class="p">       </span><span class="nf">Open Browser To Login Page</span><span class="p"></span>
+<span class="kn">Suite Teardown</span><span class="p">    </span><span class="nf">Close Browser</span><span class="p"></span>
+<span class="kn">Test Setup</span><span class="p">        </span><span class="nf">Go To Login Page</span><span class="p"></span>
+<span class="kn">Test Template</span><span class="p">     </span><span class="nf">Login With Invalid Credentials Should Fail</span><span class="p"></span>
+<span class="kn">Resource</span><span class="p">          </span><span class="nn">resource.txt</span><span class="p"></span>
+
+<span class="gh">*** Test Cases ***</span><span class="p">               </span><span class="gh">User Name</span><span class="p">        </span><span class="gh">Password</span><span class="p"></span>
+<span class="gu">Invalid Username</span><span class="p">                 </span><span class="s">invalid</span><span class="p">          ${</span><span class="nv">VALID PASSWORD</span><span class="p">}</span>
+<span class="gu">Invalid Password</span><span class="p">                 ${</span><span class="nv">VALID USER</span><span class="p">}    </span><span class="s">invalid</span><span class="p"></span>
+<span class="gu">Invalid Username And Password</span><span class="p">    </span><span class="s">invalid</span><span class="p">          </span><span class="s">whatever</span><span class="p"></span>
+<span class="gu">Empty Username</span><span class="p">                   ${</span><span class="nv">EMPTY</span><span class="p">}         ${</span><span class="nv">VALID PASSWORD</span><span class="p">}</span>
+<span class="gu">Empty Password</span><span class="p">                   ${</span><span class="nv">VALID USER</span><span class="p">}    ${</span><span class="nv">EMPTY</span><span class="p">}</span>
+<span class="gu">Empty Username And Password</span><span class="p">      ${</span><span class="nv">EMPTY</span><span class="p">}         ${</span><span class="nv">EMPTY</span><span class="p">}</span>
+
+<span class="gh">*** Keywords ***</span><span class="p"></span>
+<span class="gu">Login With Invalid Credentials Should Fail</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">username</span><span class="p">}    ${</span><span class="nv">password</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Input Username</span><span class="p">    ${</span><span class="nv">username</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Input Password</span><span class="p">    ${</span><span class="nv">password</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Submit Credentials</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Login Should Have Failed</span><span class="p"></span>
+
+<span class="gu">Login Should Have Failed</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Location Should Be</span><span class="p">    ${</span><span class="nv">ERROR URL</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Title Should Be</span><span class="p">    </span><span class="s">Error Page</span><span class="p"></span>
+                    </pre></div>
+
                   </div>
                 </div>
-                <div class="column two-thirds"><img src="/img/examples/resources.png" /></div>
+
+                <div class="column half">
+
+                  <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">Selenium2Library</span><span class="p"></span>
+
+<span class="gh">*** Variables ***</span><span class="p"></span>
+<span class="p">${</span><span class="nv">SERVER</span><span class="p">}         </span><span class="s">localhost:7272</span><span class="p"></span>
+<span class="p">${</span><span class="nv">BROWSER</span><span class="p">}        </span><span class="s">Firefox</span><span class="p"></span>
+<span class="p">${</span><span class="nv">DELAY</span><span class="p">}          </span><span class="s">0</span><span class="p"></span>
+<span class="p">${</span><span class="nv">VALID USER</span><span class="p">}     </span><span class="s">demo</span><span class="p"></span>
+<span class="p">${</span><span class="nv">VALID PASSWORD</span><span class="p">}    </span><span class="s">mode</span><span class="p"></span>
+<span class="p">${</span><span class="nv">LOGIN URL</span><span class="p">}      </span><span class="s">http://</span><span class="p">${</span><span class="nv">SERVER</span><span class="p">}</span><span class="s">/</span><span class="p"></span>
+<span class="p">${</span><span class="nv">WELCOME URL</span><span class="p">}    </span><span class="s">http://</span><span class="p">${</span><span class="nv">SERVER</span><span class="p">}</span><span class="s">/welcome.html</span><span class="p"></span>
+<span class="p">${</span><span class="nv">ERROR URL</span><span class="p">}      </span><span class="s">http://</span><span class="p">${</span><span class="nv">SERVER</span><span class="p">}</span><span class="s">/error.html</span><span class="p"></span>
+
+<span class="gh">*** Keywords ***</span><span class="p"></span>
+<span class="gu">Open Browser To Login Page</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">LOGIN URL</span><span class="p">}    ${</span><span class="nv">BROWSER</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Maximize Browser Window</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Set Selenium Speed</span><span class="p">    ${</span><span class="nv">DELAY</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Login Page Should Be Open</span><span class="p"></span>
+
+<span class="gu">Login Page Should Be Open</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Title Should Be</span><span class="p">    </span><span class="s">Login Page</span><span class="p"></span>
+
+<span class="gu">Go To Login Page</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Go To</span><span class="p">    ${</span><span class="nv">LOGIN URL</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Login Page Should Be Open</span><span class="p"></span>
+
+<span class="gu">Input Username</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">username</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">username_field</span><span class="p">    ${</span><span class="nv">username</span><span class="p">}</span>
+
+<span class="gu">Input Password</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">password</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">password_field</span><span class="p">    ${</span><span class="nv">password</span><span class="p">}</span>
+
+<span class="gu">Submit Credentials</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Click Button</span><span class="p">    </span><span class="s">login_button</span><span class="p"></span>
+
+<span class="gu">Welcome Page Should Be Open</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Location Should Be</span><span class="p">    ${</span><span class="nv">WELCOME URL</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Title Should Be</span><span class="p">    </span><span class="s">Welcome Page</span><span class="p"></span>
+                  </pre></div>
+
+                </div>
               </div>
               
               <div class="item cf">
-                <div class="column half"><img src="/img/examples/library.png" /></div>
                 <div class="column half vertical-align">
-                  <div class="caption">
+                  <div class="vertical-content">
+                    <div class="highlight"><pre><span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">CalculationError</span>
+
+  <span class="k">class</span> <span class="nc">CalculatorLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+      <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">()</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+
+      <span class="k">def</span> <span class="nf">push_button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+      <span class="k">def</span> <span class="nf">push_buttons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buttons</span><span class="p">):</span>
+          <span class="k">for</span> <span class="n">button</span> <span class="ow">in</span> <span class="n">buttons</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">push_button</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+      <span class="k">def</span> <span class="nf">result_should_be</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">!=</span> <span class="n">expected</span><span class="p">:</span>
+              <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s"> != </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span>
+
+      <span class="k">def</span> <span class="nf">should_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">):</span>
+          <span class="k">try</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">push_buttons</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
+          <span class="k">except</span> <span class="n">CalculationError</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+              <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s">&quot;&#39;</span><span class="si">%s</span><span class="s">&#39; should have failed&quot;</span> <span class="o">%</span> <span class="n">expression</span><span class="p">)</span>
+                    </pre></div>
+                  </div>
+                </div>
+                <div class="column half vertical-align">
+                  <div class="caption vertical-content">
                     <p>
                       All keywords in Robot Framework come from some library. What if existing libraries do not have what you need? Easy! Just make a library of your own!
                     </p>
@@ -168,9 +302,46 @@
 
 
               <div class="item cf">
-                <div class="column half"><img src="/img/examples/data-driven.png" /></div>
                 <div class="column half vertical-align">
-                  <div class="caption">
+                  <div class="vertical-content">
+                    <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+  <span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
+  <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
+
+  <span class="gh">*** Test Cases ***</span><span class="p">    </span><span class="gh">Expression</span><span class="p">    </span><span class="gh">Expected</span><span class="p"></span>
+  <span class="gu">Additions</span><span class="p">             </span><span class="s">12 + 2 + 2</span><span class="p">    </span><span class="s">16</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">2 + -3</span><span class="p">        </span><span class="s">-1</span><span class="p"></span>
+
+  <span class="gu">Substractions</span><span class="p">         </span><span class="s">12 - 2 - 2</span><span class="p">    </span><span class="s">8</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">2 - -3</span><span class="p">        </span><span class="s">5</span><span class="p"></span>
+
+  <span class="gu">Multiplication</span><span class="p">        </span><span class="s">12 * 2 * 2</span><span class="p">    </span><span class="s">48</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">2 * -3</span><span class="p">        </span><span class="s">-6</span><span class="p"></span>
+
+  <span class="gu">Division</span><span class="p">              </span><span class="s">12 / 2 / 2</span><span class="p">    </span><span class="s">3</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">2 / -3</span><span class="p">        </span><span class="s">-1</span><span class="p"></span>
+
+  <span class="gu">Calculation error</span><span class="p">     [</span><span class="kn">Template</span><span class="p">]    </span><span class="nf">Calculation should fail</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">kekkonen</span><span class="p">      </span><span class="s">Invalid button &#39;k&#39;.</span><span class="p"></span>
+  <span class="p">                      ${</span><span class="nv">EMPTY</span><span class="p">}      </span><span class="s">Invalid expression.</span><span class="p"></span>
+  <span class="p">                      </span><span class="s">1 / 0</span><span class="p">         </span><span class="s">Division by zero.</span><span class="p"></span>
+
+  <span class="gh">*** Keywords ***</span><span class="p"></span>
+  <span class="gu">Calculate</span><span class="p"></span>
+  <span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
+  <span class="p">    </span><span class="nf">Push buttons</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}</span>
+
+  <span class="gu">Calculation should fail</span><span class="p"></span>
+  <span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
+  <span class="p">    ${</span><span class="nv">error</span><span class="p">} =    </span><span class="nf">Should fail</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Should be equal</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}    ${</span><span class="nv">error</span><span class="p">}</span>
+                    </pre></div>
+                  </div>
+
+                </div>
+                <div class="column half vertical-align">
+                  <div class="caption vertical-content">
                     <p>
                       <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing">Data-driven test development</a></span> is easy due to you being able to define templates for your tests.
                     </p>
@@ -185,9 +356,36 @@
               </div>
               
               <div class="item cf">
-                <div class="column half"><img src="/img/examples/gherkin.png" /></div>
                 <div class="column half vertical-align">
-                  <div class="caption">
+                  <div class="vertical-content">
+                    <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+  <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
+
+  <span class="gh">*** Test Cases ***</span><span class="p"></span>
+  <span class="gu">Addition</span><span class="p"></span>
+  <span class="p">    </span><span class="ge">Given </span><span class="nf">calculator has been cleared</span><span class="p"></span>
+  <span class="p">    </span><span class="ge">When </span><span class="nf">user types &quot;1 + 1&quot;</span><span class="p"></span>
+  <span class="p">    </span><span class="ge">and </span><span class="nf">user pushes equals</span><span class="p"></span>
+  <span class="p">    </span><span class="ge">Then </span><span class="nf">result is &quot;2&quot;</span><span class="p"></span>
+
+  <span class="gh">*** Keywords ***</span><span class="p"></span>
+  <span class="gu">Calculator has been cleared</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Push button</span><span class="p">    </span><span class="s">C</span><span class="p"></span>
+
+  <span class="gu">User types &quot;</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="gu">&quot;</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Push buttons</span><span class="p">    ${</span><span class="nv">expression</span><span class="p">}</span>
+
+  <span class="gu">User pushes equals</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Push button</span><span class="p">    </span><span class="s">=</span><span class="p"></span>
+
+  <span class="gu">Result is &quot;</span><span class="p">${</span><span class="nv">result</span><span class="p">}</span><span class="gu">&quot;</span><span class="p"></span>
+  <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">result</span><span class="p">}</span>
+                    </pre></div>
+                  </div>
+                </div>
+
+                <div class="column half vertical-align">
+                  <div class="caption vertical-content">
                     <p>
                       Want to do <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Cucumber-style behaviour-driven test development?</a> No problem! That's baked in!
                     <p>
@@ -587,7 +785,7 @@
       
     </div>
 
-    <div id="documentation" class="row dark">
+    <div id="documentation" class="row">
       <div class="content-area">
         <h1 class="row-header">THE DOCS</h1>
         <p>
@@ -685,17 +883,6 @@
       <div class="content-area">
         <h1 class="row-header">SUPPORT &amp; CONTACT</h1>
         <div class="slogan">The lists, channels, feed and blogs you want to know about</div>
-<!--
-        <p>
-          The most important communication and support channel
-          is <a href="http://groups.google.com/group/robotframework-users">robotframework-users</a>
-          mailing list. In addition to that, announcements are posted
-          and support provided via Twitter and IRC. Notice that
-          individual projects in the ecosystem have their own issue
-          trackers that should be used for bug reports and enhancement
-          requests.
-        </p>
--->
 
         <div id="contact-icons" class="row">
           <div class="content-area">

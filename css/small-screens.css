@@ -62,6 +62,10 @@ h1 {
   font-size: 1.3em;
 }
 
+.carousel-inner .item {
+  overflow: none;
+}
+
 .item .column.two-thirds {
   width: 100%;
 }

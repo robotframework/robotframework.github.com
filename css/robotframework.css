@@ -36,6 +36,10 @@ a:hover {
   font-variant: small-caps;
 }
 
+.justify {
+  text-align: justify;
+}
+
 .row {
   padding: 65px 10% 0 10%;
 }
@@ -362,24 +366,46 @@ a:hover {
   margin: 0 5em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4em;
+  overflow: auto;
 }
 
 .carousel-inner .item .column {
-  min-height: 600px;
+  height: 600px;
 }
 
 .vertical-align {
   display: table;
 }
 
-.vertical-align > .caption {
+.vertical-align > .vertical-content {
   display: table-cell;
   vertical-align: middle;
+  padding-left: 2em;
 }
 
-.item img {
+.item .margin {
+  padding-left: 0;
+  padding-right: 2em;
+}
+
+.caption.margin .highlight {
+  margin-top: 3em;
+}
+
+#report {
+  margin: 1em 0;
+}
+
+#log {
+  margin-bottom: 1em;
+}
+
+.item pre {
+  background-color: inherit;
   display: block;
-  margin: auto;
+  padding: 0 1em;
+  font-size: 0.6em;
+  line-height: 1.7em;
 }
 
 .carousel-control {
@@ -523,13 +549,13 @@ a:hover {
   color: white;
 }
 
-#documentation a {
-  color: #00d9a3;
+#documentation .links {
+  border-top: 3px solid #ff9500;
+  border-bottom: 3px solid #ff9500;
 }
 
-#documentation .links {
-  border-top: 3px solid #00d9a3;
-  border-bottom: 3px solid #00d9a3;
+#documentation .links .marker {
+  border-color: transparent transparent #ff9500 transparent;
 }
 
 #documentation .links a {
@@ -537,11 +563,7 @@ a:hover {
 }
 
 #documentation .links a.active {
-  color: white;
-}
-
-#documentation .links .marker {
-  border-color: transparent transparent #00d9a3 transparent;
+  color: #24292d;
 }
 
 #support-contact .row-header {
