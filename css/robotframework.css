@@ -366,11 +366,12 @@ a:hover {
   margin: 0 5em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4em;
+  height: 600px;
   overflow: auto;
 }
 
 .carousel-inner .item .column {
-  height: 600px;
+  min-height: 600px;
 }
 
 .vertical-align {
