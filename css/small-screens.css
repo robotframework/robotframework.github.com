@@ -63,7 +63,16 @@ h1 {
 }
 
 .carousel-inner .item {
+  height: auto;
   overflow: none;
+}
+
+.carousel-inner .item .column {
+  min-height: 0;
+}
+
+.caption.margin {
+  padding-right: 0;
 }
 
 .item .column.two-thirds {
