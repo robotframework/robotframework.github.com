@@ -389,6 +389,11 @@ a:hover {
   padding-right: 2em;
 }
 
+#example-report-last-paragraph {
+  text-align: justify;
+  margin-bottom: 0;
+}
+
 .caption.margin .highlight {
   margin-top: 3em;
 }
