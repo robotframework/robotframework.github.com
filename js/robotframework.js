@@ -153,11 +153,16 @@ function htmlize( xml_elements ) {
 }
 
 function init_videos() {
-  jQuery.get("https://gdata.youtube.com/feeds/api/playlists/PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk?v=2", function( data ){
-    var result_html = htmlize($(data).find("entry"));
-    result_html = wrap_elements(result_html);
-    $("#docs-videos").append(result_html);
-  });
+  var result_html;
+  if ( !jQuery.support.leadingWhitespace ){
+    result_html = '<h2 style="text-align: center;">Please visit our <a href="http://www.youtube.com/watch?v=zpenQJcrBNg&list=PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk" target="_blank">Youtube playlist</a></h2>'
+  } else {
+    jQuery.get("https://gdata.youtube.com/feeds/api/playlists/PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk?v=2", function( data ){
+      result_html = htmlize($(data).find("entry"));
+      result_html = wrap_elements(result_html);
+    });
+  }
+  $("#docs-videos").append(result_html);
 }
 
 $(document).ready(function() {
