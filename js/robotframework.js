@@ -154,7 +154,7 @@ function htmlize( xml_elements ) {
 
 function init_videos() {
   var result_html;
-  if ( !jQuery.support.leadingWhitespace ){
+  if ( !jQuery.support.leadingWhitespace || (jQuery.browser == "msie" && jQuery.browser.version.splice(0) == "9") ){ // if IE 7, 8 or 9
     result_html = '<h2 style="text-align: center;">Please visit our <a href="http://www.youtube.com/watch?v=zpenQJcrBNg&list=PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk" target="_blank">Youtube playlist</a></h2>'
   } else {
     jQuery.get("https://gdata.youtube.com/feeds/api/playlists/PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk?v=2", function( data ){
