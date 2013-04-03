@@ -191,6 +191,7 @@ a:hover {
   height: auto;
   display: table-cell;
   vertical-align: middle;
+  filter: none;
 }
 
 .navbar .nav {
