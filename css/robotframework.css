@@ -399,6 +399,11 @@ a:hover {
   margin-top: 3em;
 }
 
+#report,
+#log {
+  width: 100%;
+}
+
 #report {
   margin: 1em 0;
 }
