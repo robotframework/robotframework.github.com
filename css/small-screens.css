@@ -93,6 +93,7 @@ h1 {
 
 .item .column.half {
   width: 100%;
+  height: auto;
 }
 
 .links > a {
