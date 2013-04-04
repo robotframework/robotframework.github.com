@@ -44,7 +44,7 @@ pre {
   padding: 65px 10% 0 10%;
 }
 
-.green, 
+.green,
 .dark,
 .orange,
 .blue,
@@ -82,7 +82,7 @@ pre {
   margin: 0 auto 3em auto;
 }
 
-/* CSS clear/float fix, see http://nicolasgallagher.com/micro-clearfix-hack/ 
+/* CSS clear/float fix, see http://nicolasgallagher.com/micro-clearfix-hack/
 
   Make .content-area contain floated elements. Make a class .cf for other uses
 */
@@ -158,13 +158,14 @@ pre {
 }
 
 #main-logo > div {
+  behavior: url(/PIE.htc);
   height: 70px;
   width: 70px;
   border-radius: 70px;
   position: relative;
   top: 0.8em;
   background: #24292d url(../img/icons.gif) no-repeat -295px center;
-  
+
 }
 
 #menu-container {
@@ -201,7 +202,7 @@ pre {
   margin-right: auto;
 }
 
-.navbar .nav > li > a, 
+.navbar .nav > li > a,
 .navbar .nav > li > a:hover {
   color: white;
   font-weight: 100;
@@ -214,7 +215,7 @@ pre {
 }
 
 .navbar .nav > .active > a,
-.navbar .nav > .active > a:hover, 
+.navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
   color: #9fbf00;
   box-shadow: none;
