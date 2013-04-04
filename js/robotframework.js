@@ -146,9 +146,9 @@ function htmlize( xml_elements ) {
   return xml_elements.map(function(){
     var $entry = $( this ),
         title = $entry.find("title:first").text(),
-        // http://www.youtube.com/watch?v=<id>&feature=youtube_gdata => http://www.youtube.com/embedded/<id>
-        url = $entry.find("link:first").attr("href").replace("watch?v=", "embed/").replace(/&feature.*/, "");
-    return '<div class="link"><iframe width="300" height="170" frameborder="0" allowfullscreen="allowfullscreen" src="' + url + '" /><br />' + title + '</div>';
+        // http://www.youtube.com/watch?v=<id>&feature=youtube_gdata => http://www.youtube.com/embedded/<id>?wmode=transparent
+        url = $entry.find("link:first").attr("href").replace("watch?v=", "embed/").replace(/&feature.*/, "") + "?wmode=transparent";
+    return '<div class="link"><iframe width="300" height="170" wmode="Opaque" frameborder="0" allowfullscreen="allowfullscreen" src="' + url + '" /><br />' + title + '</div>';
   });
 }
 
