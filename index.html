@@ -35,8 +35,7 @@
         <div class="navbar-inner">
           <ul class="nav cf">
             <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#architecture">Examples</a></li>
             <li><a href="#test-libraries">Test libraries</a></li>
             <li><a href="#supporting-tools">Tools</a></li>
             <li><a href="#documentation">Documentation</a></li>
@@ -96,6 +95,57 @@
       </div>
     </div>
 
+    <div class="row red" id="architecture">
+      <div class="content-area">
+        <div class="column one-thirds">
+          <div class="column-content">
+            <h2>Clear.</h2>
+            <hr class="green" />
+            <p>
+              Robot Framework has a modular architecture that can be extended
+              with bundled and self-made <a href="#test-libraries">test
+              libraries</a>.
+            </p>
+            <p>
+              Test data is defined in files using the syntax shown in the
+              above <a href="#examples">examples</a>. A file containing test cases creates a test
+              suite and placing these files into directories creates a
+              nested structure of test suites.
+            </p>
+          </div>
+        </div>
+
+        <div class="column one-thirds">
+          <div class="column-content">
+            <h2>Easy.</h2>
+            <hr class="orange" />
+            <p>
+              When test execution is started, the framework first parses the
+              test data. It then utilizes keywords provided by the test
+              libraries to interact with the system under test. Libraries
+              can communicate with the system either directly or using other
+              test tools as drivers.
+            </p>
+            <p>
+              Test execution is started from the command line. As a result
+              you get report and log in HTML format as well as an XML
+              output. These provide extensive look into what your system does.
+            </p>
+          </div>
+        </div>
+
+        <div class="column one-thirds">
+          <div class="column-content">
+            <h2>Modular.</h2>
+            <hr class="blue" />
+            <img title="Robot Framework architecture." src="img/architecture.png" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <div class="row dark" id="examples">
       <div class="content-area">
         <h1 class="row-header">ROBOT IN ACTION</h1>
@@ -110,9 +160,9 @@
                     <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Documentation</span><span class="p">     </span><span class="s">A test suite with a single test for valid login.</span><span class="p"></span>
 <span class="p">...</span>
-<span class="p">...               </span>  <span class="s">This test has a workflow that is created using keywords in</span><span class="p"></span>
-<span class="p">...               </span>  <span class="s">the imported resource file.</span><span class="p"></span>
-<span class="kn">Resource</span><span class="p">          </span> <span class="nn">resource.txt</span><span class="p"></span>
+<span class="p">...               </span><span class="s">This test has a workflow that is created using keywords in</span><span class="p"></span>
+<span class="p">...               </span><span class="s">the imported resource file.</span><span class="p"></span>
+<span class="kn">Resource</span><span class="p">          </span><span class="nn">resource.txt</span><span class="p"></span>
 
 <span class="gh">*** Test Cases ***</span><span class="p"></span>
 <span class="gu">Valid Login</span><span class="p"></span>
@@ -305,21 +355,21 @@
                 <div class="column half vertical-align">
                   <div class="vertical-content">
                     <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
-    <span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
-    <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
+<span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
 
 <span class="gh">*** Test Cases ***</span><span class="p">    </span><span class="gh">Expression</span><span class="p">    </span><span class="gh">Expected</span><span class="p"></span>
-<span class="gu">Additions</span><span class="p">                </span><span class="s">12 + 2 + 2</span><span class="p">      </span><span class="s">16</span><span class="p"></span>
-<span class="p">                         </span><span class="s">2 + -3</span><span class="p">          </span><span class="s">-1</span><span class="p"></span>
+<span class="gu">Additions</span><span class="p">             </span><span class="s">12 + 2 + 2</span><span class="p">    </span><span class="s">16</span><span class="p"></span>
+<span class="p">                      </span><span class="s">2 + -3</span><span class="p">        </span><span class="s">-1</span><span class="p"></span>
 
-<span class="gu">Substractions</span><span class="p">            </span><span class="s">12 - 2 - 2</span><span class="p">      </span><span class="s">8</span><span class="p"></span>
-<span class="p">                         </span><span class="s">2 - -3</span><span class="p">          </span><span class="s">5</span><span class="p"></span>
+<span class="gu">Substractions</span><span class="p">         </span><span class="s">12 - 2 - 2</span><span class="p">    </span><span class="s">8</span><span class="p"></span>
+<span class="p">                      </span><span class="s">2 - -3</span><span class="p">        </span><span class="s">5</span><span class="p"></span>
 
-<span class="gu">Multiplication</span><span class="p">           </span><span class="s">12 * 2 * 2</span><span class="p">      </span><span class="s">48</span><span class="p"></span>
-<span class="p">                         </span><span class="s">2 * -3</span><span class="p">          </span><span class="s">-6</span><span class="p"></span>
+<span class="gu">Multiplication</span><span class="p">        </span><span class="s">12 * 2 * 2</span><span class="p">    </span><span class="s">48</span><span class="p"></span>
+<span class="p">                      </span><span class="s">2 * -3</span><span class="p">        </span><span class="s">-6</span><span class="p"></span>
 
-<span class="gu">Division</span><span class="p">                 </span><span class="s">12 / 2 / 2</span><span class="p">      </span><span class="s">3</span><span class="p"></span>
-<span class="p">                         </span><span class="s">2 / -3</span><span class="p">          </span><span class="s">-1</span><span class="p"></span>
+<span class="gu">Division</span><span class="p">              </span><span class="s">12 / 2 / 2</span><span class="p">    </span><span class="s">3</span><span class="p"></span>
+<span class="p">                      </span><span class="s">2 / -3</span><span class="p">        </span><span class="s">-1</span><span class="p"></span>
 
 <span class="gu">Calculation error</span><span class="p">     [</span><span class="kn">Template</span><span class="p">]    </span><span class="nf">Calculation should fail</span><span class="p"></span>
 <span class="p">                      </span><span class="s">kekkonen</span><span class="p">      </span><span class="s">Invalid button &#39;k&#39;.</span><span class="p"></span>
@@ -328,14 +378,14 @@
 
 <span class="gh">*** Keywords ***</span><span class="p"></span>
 <span class="gu">Calculate</span><span class="p"></span>
-    <span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
-    <span class="p">    </span><span class="nf">Push buttons</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
-    <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}</span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Push buttons</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}</span>
 
 <span class="gu">Calculation should fail</span><span class="p"></span>
-    <span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
-    <span class="p">    ${</span><span class="nv">error</span><span class="p">} =    </span><span class="nf">Should fail</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
-    <span class="p">    </span><span class="nf">Should be equal</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}    ${</span><span class="nv">error</span><span class="p">}</span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">expression</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
+<span class="p">    ${</span><span class="nv">error</span><span class="p">} =    </span><span class="nf">Should fail</span><span class="p">    </span><span class="s">C</span><span class="p">${</span><span class="nv">expression</span><span class="p">}</span><span class="s">=</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Should be equal</span><span class="p">    ${</span><span class="nv">expected</span><span class="p">}    ${</span><span class="nv">error</span><span class="p">}</span>
                     </pre></div>
                   </div>
 
@@ -359,7 +409,7 @@
                 <div class="column half vertical-align">
                   <div class="vertical-content">
                     <div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
-    <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
 
 <span class="gh">*** Test Cases ***</span><span class="p"></span>
 <span class="gu">Addition</span><span class="p"></span>
@@ -387,7 +437,7 @@
                 <div class="column half vertical-align">
                   <div class="caption vertical-content">
                     <p>
-                      Want to do <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Cucumber-style behaviour-driven test development?</a> No problem! That's baked in!
+                      Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That's baked in!
                     <p>
                     <p>
                       Here is another example from our <a href="https://bitbucket.org/robotframework/robotdemo/wiki/Home">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework.
@@ -405,57 +455,8 @@
       
       </div>
     </div>
-    <div class="row" id="architecture">
-      <div class="content-area">
-        <div class="column one-thirds">
-          <div class="column-content">
-            <h2>Clear.</h2>
-            <hr class="green" />
-            <p>
-              Robot Framework has a modular architecture that can be extended
-              with bundled and self-made <a href="#test-libraries">test
-              libraries</a>.
-            </p>
-            <p>
-              Test data is defined in files using the syntax shown in the
-              above <a href="#examples">examples</a>. A file containing test cases creates a test
-              suite and placing these files into directories creates a
-              nested structure of test suites.
-            </p>
-          </div>
-        </div>
-        
-        <div class="column one-thirds">
-          <div class="column-content">            
-            <h2>Easy.</h2>
-            <hr class="orange" />
-            <p>
-              When test execution is started, the framework first parses the
-              test data. It then utilizes keywords provided by the test
-              libraries to interact with the system under test. Libraries
-              can communicate with the system either directly or using other
-              test tools as drivers.
-            </p>
-            <p>
-              Test execution is started from the command line. As a result
-              you get report and log in HTML format as well as an XML
-              output. These provide extensive look into what your code does.
-            </p>
-          </div>
-        </div>
-        
-        <div class="column one-thirds">
-          <div class="column-content">
-            <h2>Modular.</h2>
-            <hr class="blue" />
-            <img title="Robot Framework architecture." src="img/architecture.png" />          
-          </div>
-        </div>
 
-      </div>
-    </div>
-
-    <div class="row dark" id="test-libraries">
+    <div class="row" id="test-libraries">
                   
       <div class="content-area">
         <h1 class="row-header">THE LIBRARIES</h1>
@@ -468,7 +469,7 @@
         </p>
         <p>
           <a href="#communication-and-support">Let us know</a> if
-          there are useful libraries missing.
+          there are useful libraries missing from the list.
         </p>
         <div class="links">
           <a href="#standard-libraries" class="active">STANDARD</a>
@@ -511,7 +512,7 @@
 
             <div class="link">
               <a href="http://code.google.com/p/robotframework/wiki/CollectionsLibrary" target="_blank">Collections</a>
-              Provides a set of keywords for handling lists and dictionaries.
+              Provides a set of keywords for handling Python lists and dictionaries.
             </div>
 
           </div>
@@ -520,7 +521,7 @@
 
             <div class="link">
               <a href="http://code.google.com/p/robotframework/wiki/DialogsLibrary" target="_blank">Dialogs</a>
-              Provides means for pausing the test execution and getting inputs from users.
+              Provides means for pausing the test execution and getting input from users.
             </div>
 
             <div class="link">
@@ -530,7 +531,7 @@
 
             <div class="link">
               <a href="http://code.google.com/p/robotframework/wiki/RemoteLibrary" target="_blank">Remote</a>
-              Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines or be implemented using any language supporting XML-RPC protocol.
+              Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol.
             </div>
 
           </div>
@@ -586,7 +587,7 @@
             
             <div class="link">
               <a href="https://github.com/robotframework/Rammbock#readme" target="_blank">Rammbock</a>
-              Generic network protocol test library for Robot Framework, which offers easy way to specify network packets and inspect the results of sent and received packets.
+              Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets.
             </div>
 
             <div class="link">
@@ -667,7 +668,7 @@
           but some are built into the framework itself.
         </p>
         <p>
-          <a href="#communication-and-support">Let us know</a> if there are useful tools missing.
+          <a href="#communication-and-support">Let us know</a> if there are useful tools missing from the list.
         </p>
 
         <div class="links">
@@ -785,17 +786,17 @@
       
     </div>
 
-    <div id="documentation" class="row">
+    <div class="row dark" id="documentation">
       <div class="content-area">
         <h1 class="row-header">THE DOCS</h1>
         <p>
           Want to get started? Looking for a way to do things? Here are the most important documentation resources
           needed to work with Robot Framework. Notice that
           individual projects in the ecosystem have their own
-          documentation -- these are linked in the section <a href="#supporting-tools">Tools</a>.
+          documentation.
         </p>
         <p>
-          <a href="#communication-and-support">Let us know</a> if there are useful links missing.
+          <a href="#communication-and-support">Let us know</a> if there are useful links missing from the list.
         </p>
 
         <div class="links">
@@ -887,19 +888,19 @@
         <div id="contact-icons" class="row">
           <div class="content-area">
             <div class="column one-thirds">
+              <div class="contact-icon" id="mail"></div>
+              <a href="http://groups.google.com/group/robotframework-users" target="_blank">robotframework-users</a>
+              <p>community mailing list.</p>
+            </div>
+            <div class="column one-thirds">
               <div class="contact-icon" id="twitter"></div>
               <a href="http://twitter.com/robotframework" target="_blank">@robotframework</a>
               <p>announcements in Twitter.</p>
             </div>
             <div class="column one-thirds">
               <div class="contact-icon" id="chat"></div>
-              <a href="http://webchat.freenode.net/?randomnick=1&channels=robotframework&prompt=1" target="_blank">#robotframework</a>
+              <a href="http://webchat.freenode.net/?channels=robotframework&prompt=1" target="_blank">#robotframework</a>
               <p>chat on freenode IRC.</p>
-            </div>
-            <div class="column one-thirds">
-              <div class="contact-icon" id="mail"></div>
-              <a href="http://groups.google.com/group/robotframework-users" target="_blank">robotframework-users</a>
-              <p>community mailing list.</p>
             </div>
           </div>
         </div>
@@ -911,6 +912,10 @@
               <div>
                 <h2 class="contact-links-heading">MAILING LISTS</h2>
                 <ul class="contact-links-list">
+                  <li>
+                    <a href="http://groups.google.com/group/robotframework-users" target="_blank">robotframework-users</a>
+                    <p>Community mailing list.</p>
+                  </li>
                   <li>
                     <a href="http://groups.google.com/group/robotframework-ja" target="_blank">robotframework-ja</a>
                     <p>Japanese users &amp; support.</p>
@@ -950,12 +955,8 @@
                       <p>Official Roblog.</p>
                     </li>
                     <li>
-                      <a href="http://blog.codecentric.de/en/category/agile/agile-testing/" target="_blank">Codecentric</a>
+                      <a href="http://blog.codecentric.de/en/category/agile/agile-testing/" target="_blank">Robot Framework and other agile testing articles in Codecentric</a>
                       <p>Robot Framework related blog posts from codecentric.</p>
-                    </li>
-                    <li>
-                      <a href="http://www.radekw.com/blog/category/robot-framework/" target="_blank">Radek Wierzbicki's blog</a>
-                      <p>Robot Framework related blog posts by Radek Wierzbicki.</p>
                     </li>
                   </ul>
 

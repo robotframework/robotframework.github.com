@@ -3,10 +3,6 @@ body {
   font-size: 1em;
   color: #24292d;
   padding: 0;
-  /* Thanks http://sweetclipart.com for the original robot image!
-     http://sweetclipart.com/black-robot-silhouette-1046
-  background: white url(..../img/robot-silhouette.png) 95% bottom no-repeat fixed;
-   */
 }
 
 h1 {
@@ -22,6 +18,10 @@ a {
 a:hover {
   color: #23b0bd;
   text-decoration: none;
+}
+
+pre {
+ font-family: Menlo,Consolas,"Courier New",monospace;
 }
 
 .italic {
@@ -534,6 +534,11 @@ a:hover {
   display: block;
 }
 
+
+#test-libraries .links a.active {
+  color: #24292d;
+}
+
 .link {
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -575,7 +580,7 @@ a:hover {
 }
 
 #documentation .links a.active {
-  color: #24292d;
+  color: white;
 }
 
 #support-contact .row-header {
