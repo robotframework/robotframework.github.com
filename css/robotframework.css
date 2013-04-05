@@ -476,6 +476,11 @@ pre {
   margin-right: 2em;
 }
 
+#architecture a,
+#architecture a:visited {
+  color: #24292d;
+}
+
 #architecture hr {
   margin: 10px 0;
   border-top: 0;
