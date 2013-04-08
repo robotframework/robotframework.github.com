@@ -40,6 +40,12 @@ pre {
   text-align: justify;
 }
 
+.command {
+  font-family: Menlo, Consolas, "Courier New", monospace;
+  display: inline-block;
+  font-size: 0.9em;
+}
+
 .row {
   padding: 65px 10% 0 10%;
 }
@@ -598,39 +604,49 @@ pre {
   text-align: center;
 }
 
-#contact-icons p {
+.contact-icons.no-top-padding {
+  padding-top: 0;
+}
+
+.contact-icons p {
   -webkit-font-smoothing: antialiased;
   text-align: inherit;
   margin-bottom: 0;
   padding: 0;
 }
 
-#contact-icons a {
+.contact-icons a {
   color: white;
 }
 
-#contact-icons .column {
+.contact-icons .column {
   text-align: center;
 }
 
-#contact-icons .contact-icon {
+.contact-icons .contact-icon {
   width: 60px;
   height: 60px;
   border-radius: 60px;
   background-color: black;
+  background-image: url(../img/icons.gif);
+  background-repeat: no-repeat;
   margin: 0 auto;
 }
 
 #twitter {
-  background: transparent url(../img/icons.gif) no-repeat -248px center;
+  background-position: -248px center;
 }
 
 #chat {
-  background: transparent url(../img/icons.gif) no-repeat -178px center;
+  background-position: -178px center;
 }
 
 #mail {
-  background: transparent url(../img/icons.gif) no-repeat -119px center;
+  background-position: -119px center;
+}
+
+#report-issue {
+  background-position: -359px center;
 }
 
 #contact-links {
