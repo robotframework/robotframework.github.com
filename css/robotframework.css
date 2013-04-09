@@ -119,12 +119,24 @@ pre {
   clear: none;
 }
 
+.column.one-quarters {
+  width: 25%;
+}
+
 .column.one-thirds {
   width: 33%;
 }
 
+.column.half {
+  width: 50%;
+}
+
 .column.two-thirds {
   width: 67%;
+}
+
+.column.three-quarters {
+  width: 75%;
 }
 
 .column.full {
@@ -245,30 +257,6 @@ pre {
   left: 0;
   z-index: 50;
   width: 100%;
-}
-
-.column {
-  float: left;
-}
-
-.column.two-thirds {
-  width: 66%;
-}
-
-.column.one-thirds {
-  width: 33%;
-}
-
-.column.three-quarters {
-  width: 75%;
-}
-
-.column.one-quarters {
-  width: 25%;
-}
-
-.column.half {
-  width: 50%;
 }
 
 .column > p {
