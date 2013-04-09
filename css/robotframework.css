@@ -264,6 +264,10 @@ pre {
   padding-right: 5em;
 }
 
+#introduction {
+  padding-top: 7em;
+}
+
 .introduction-buttons {
   width: auto;
   margin: 2em 0;
