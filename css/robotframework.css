@@ -234,6 +234,11 @@ pre {
   border-left: 1px solid #708088;
 }
 
+.affix-top {
+  position: absolute;
+  left: 0;
+}
+
 .affix {
   position: fixed;
   top: 0;
