@@ -44,20 +44,6 @@ h1 {
   font-size: 0.7em;
 }
 
-#twitter-header {
-  margin-left: 0;
-}
-
-#twitter-logo, 
-#twitter-link {
-  float: none;
-  margin: 0 auto;
-}
-
-#twitter-link {
-  font-size: 1.3em;
-}
-
 .carousel-inner .item {
   height: auto;
   overflow: none;

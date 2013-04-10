@@ -295,62 +295,6 @@ pre {
   border-radius: 3px;
 }
 
-#news a {
-  color: inherit;
-}
-
-#twitter-header {
-  padding-bottom: 0;
-}
-
-#twitter-logo {
-  background: transparent url(../img/icons.gif) no-repeat -245px center;
-  width: 60px;
-  height: 55px;
-  float: left;
-}
-
-#twitter-link {
-  text-decoration: none;
-  height: 55px;
-  line-height: 60px;
-  font-size: 1.5em;
-  float: left;
-}
-
-#news hr {
-  margin: 0;
-  padding-top: 0;
-  margin-bottom: 10px;
-  border-top: 0;
-  border-bottom: 0;
-  height: 2px;
-  background-color: #708088;
-  width: 85%;
-  margin-left: 20px;
-}
-
-#tweets {
-  text-align: left;
-  font-size: 0.9em;
-}
-
-#tweets .loading {
-  text-align: center;
-  margin-top: 2em;
-  font-size: 1.3em;
-}
-
-.tweet_list {
-  list-style-type: none;
-  margin: 0.5em;
-  -webkit-font-smoothing: antialiased;
-}
-
-.tweet_odd, .tweet_even {
-  margin-bottom: 1.5em;
-}
-
 .row-header {
   text-align: center;
   margin-bottom: 0.7em;
