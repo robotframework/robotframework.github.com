@@ -1,5 +1,5 @@
 function init_tweets() {
-  var height = Math.min(400, $(".introduction-text").height());
+  var height = Math.max(400, $(".introduction-text").height());
   $(".twitter-timeline").attr("height", height);
 }
 
