@@ -1,10 +1,5 @@
 function init_tweets() {
-    $("#tweets").tweet({
-        username: "robotframework",
-        template: "{text}",
-        count: 10,
-        loading_text: "Trying to load tweets..."
-    });
+  $(".twitter-timeline").attr("height", $(".introduction-text").height());
 }
 
 function init_carousel() {

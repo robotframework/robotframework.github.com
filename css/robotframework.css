@@ -292,9 +292,6 @@ pre {
 }
 
 #news {
-  height: 25em;
-  overflow: auto;
-  text-align: center;
   border-radius: 3px;
 }
 
@@ -481,7 +478,7 @@ pre {
 
 #architecture a,
 #architecture a:visited {
-  color: #24292d;
+  color: white;
 }
 
 #architecture hr {
