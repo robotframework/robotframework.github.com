@@ -1,5 +1,6 @@
 function init_tweets() {
-  $(".twitter-timeline").attr("height", $(".introduction-text").height());
+  var height = Math.min(400, $(".introduction-text").height());
+  Math.min($(".twitter-timeline").attr("height", height);
 }
 
 function init_carousel() {
