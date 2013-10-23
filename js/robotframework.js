@@ -4,8 +4,9 @@ function init_tweets() {
 }
 
 function init_carousel() {
-    var ball_html = "";
-    var balls_width = 0;
+    var ball_html = "",
+        balls_width = 0,
+        interval = $(window).width() > 1000 ? 8000 : false; // disable automatic scrolling in carousel on small screens.
 
     $(".carousel-inner .item").each(function(index) {
         if (index == 0) {
@@ -19,7 +20,7 @@ function init_carousel() {
     $("#carousel-balls").html(ball_html).width(balls_width);
 
     $("#example-carousel").carousel({
-        interval: 8000
+        interval: interval
     }).on("slide", function(ev) {
         // index is 0-based, nth-child -selector is 1-based
         var index = $(ev.relatedTarget).index() + 1;
