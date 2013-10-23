@@ -38,3 +38,8 @@
 #news {
   margin-top: 1em;
 }
+
+#architecture-image-modal {
+  width: 100%;
+  left: 0;
+}

@@ -44,6 +44,9 @@ h1 {
   font-size: 0.7em;
 }
 
+#architecture-image-modal {
+  width: 560px;
+}
 .carousel-inner .item {
   height: auto;
   overflow: none;

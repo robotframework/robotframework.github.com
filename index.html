@@ -131,11 +131,29 @@
           <div class="column-content">
             <h2>Modular.</h2>
             <hr class="blue" />
-            <img title="Robot Framework architecture." src="img/architecture.png" />
+            <img alt="Robot Framework architecture"
+                 title="Robot Framework architecture"
+                 src="img/architecture.png"
+                 data-toggle="modal"
+                 data-target="#architecture-image-modal" />
+
+            <span class="caption pull-right">Click for bigger version!</span>
           </div>
         </div>
 
       </div>
+
+      <div class="modal hide fade" id="architecture-image-modal">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          &nbsp;
+        </div>
+        <div class="modal-body">
+          <img src="img/architecture-big.png" alt="Robot Framework architecture" title="Robot Framework architecture" />
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+
     </div>
 
 
@@ -1003,5 +1021,6 @@
       <h1 class="row-header">THAT'S ROBOT FRAMEWORK</h1>
       <div class="slogan"><a href="http://robotframework.org">robotframework.org</a></div>
     </div>
+
   </body>
 </html>

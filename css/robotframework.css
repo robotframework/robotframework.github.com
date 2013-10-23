@@ -300,6 +300,25 @@ pre {
   margin-bottom: 0.7em;
 }
 
+#architecture img {
+  cursor: pointer;
+}
+
+#architecture .caption {
+  font-style: italic;
+  font-size: 0.6em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 4em;
+}
+
+#architecture-image-modal {
+  width: 809px; /* width of the image */
+}
+
+#architecture-image-modal .modal-body{
+  max-height: 453px; /* height of the image */
+}
+
 #examples hr {
   border-color: black;
 }
