@@ -164,11 +164,37 @@ function init_videos() {
 
 }
 
-$(document).ready(function() {
+function init_scrolling() {
+  var separator = "__",
+      hash = document.location.hash,
+      has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
+      target_link;
 
+  if ( !has_specific_target.test(hash) ){
+    return false;
+  }
+
+  hash = hash.split( separator );
+
+  if ( hash[1] === '' ){
+    return false;
+  }
+
+  target_link = $(".links > a[href*='" + hash[1] + "']").first();
+
+  if ( target_link.length < 1 ){
+    return false;
+  }
+
+  target_link.click();
+  window.location.hash = hash[0];
+}
+
+$(document).ready(function( e ) {
     init_carousel();
     init_markers();
     init_affix();
+    init_scrolling();
     init_videos();
     init_tweets(); // should be last thing to be loaded
 });
