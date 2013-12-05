@@ -514,24 +514,24 @@ pre {
   padding: 1em 0.5em;
 }
 
-#supporting-tools a {
+#tools a {
   color: #24292d;
 }
 
-#supporting-tools .links a.active {
+#tools .links a.active {
   color: white;
 }
 
-#supporting-tools .links {
+#tools .links {
   border-top: 3px solid #24292d;
   border-bottom: 3px solid #24292d;
 }
 
-#supporting-tools .links .marker {
+#tools .links .marker {
   border-color: transparent transparent #24292d transparent;
 }
 
-#supporting-tools .link {
+#tools .link {
   color: white;
 }
 
