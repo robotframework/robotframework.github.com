@@ -11,20 +11,15 @@ work on older IE browsers and `<CNAME>`__ contains domain configuration.
 Adding new links
 ----------------
 
-To get new links added to the website, please use `the issue tracker`_ to submit
-an issue about it. Please check beforehand that the link is not already on
-the site. Search for the url as it might be with different name than what you
-would assume.
+To get new links added or old information updated, please `submit an issue`__.
+If you want a new link to be added, include at least the following information:
 
-Please detail the following information:
-
-- Name of the library
+- Name of the library or tool
 - Short description (approximately 10 words)
-- Link to the home page of the library (preferably just not the keyword documentation
-  page)
+- Link to the library home page
 
-We will to the best of our ability add new links as soon as possible.
+Alternatively you can `submit a pull request`__ with the above information and
+make it even easier for us to add the link.
 
-
-.. _the issue tracker: https://github.com/robotframework/robotframework.github.com/issues
-
+__ https://github.com/robotframework/robotframework.github.com/issues
+__ https://github.com/robotframework/robotframework.github.com/pulls
