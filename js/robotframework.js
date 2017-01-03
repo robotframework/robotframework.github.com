@@ -166,32 +166,34 @@ function init_videos() {
 }
 
 function init_scrolling() {
-  var separator = "-",
-      hash = document.location.hash,
-      has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
-      target_link;
+  window.onhashchange = function(){
+    var separator = "-",
+          hash = document.location.hash,
+          has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
+          target_link;
 
-  if ( !has_specific_target.test(hash) ){
-    return false;
+    if ( !has_specific_target.test(hash) ){
+      return false;
+    }
+
+    hash = hash.split( separator );
+
+    if ( hash[1] === '' ){
+      return false;
+    }
+
+    target_link = $(".links > a[href*='" + hash[1] + "']").first();
+
+    target_link.click();
+
+    $(target_link).promise().done(function(){
+      $(document).promise().done(function(){
+        $("html, body").animate({
+          scrollTop: $(hash[0]).offset().top
+        });
+      });
+    });
   }
-
-  hash = hash.split( separator );
-
-  if ( hash[1] === '' ){
-    return false;
-  }
-
-  target_link = $(".links > a[href*='" + hash[1] + "']").first();
-
-  target_link.click();
-/*
-  $(document).ready(function(){
-    $("html, body").animate({
-        scrollTop: $(hash[0]).offset().top
-      }, 500);
-  });
-*/
-  //window.location.hash = hash[0];
 }
 
 $(document).ready(function( e ) {
