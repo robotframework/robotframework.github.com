@@ -165,35 +165,38 @@ function init_videos() {
 
 }
 
-function init_scrolling() {
-  window.onhashchange = function(){
-    var separator = "-",
-          hash = document.location.hash,
-          has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
-          target_link;
+function handle_hash(){
+  var separator = "-",
+        hash = document.location.hash,
+        has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
+        target_link;
 
-    if ( !has_specific_target.test(hash) ){
-      return false;
-    }
+  if ( !has_specific_target.test(hash) ){
+    return false;
+  }
 
-    hash = hash.split( separator );
+  hash = hash.split( separator );
 
-    if ( hash[1] === '' ){
-      return false;
-    }
+  if ( hash[1] === '' ){
+    return false;
+  }
 
-    target_link = $(".links > a[href*='" + hash[1] + "']").first();
+  target_link = $(".links > a[href*='" + hash[1] + "']").first();
 
-    target_link.click();
+  target_link.click();
 
-    $(target_link).promise().done(function(){
-      $(document).promise().done(function(){
-        $("html, body").animate({
-          scrollTop: $(hash[0]).offset().top
-        });
+  $(target_link).promise().done(function(){
+    $(document).promise().done(function(){
+      $("html, body").animate({
+        scrollTop: $(hash[0]).offset().top
       });
     });
-  }
+  });
+}
+
+function init_scrolling() {
+  window.onhashchange = handle_hash;
+  handle_hash();
 }
 
 $(document).ready(function( e ) {
