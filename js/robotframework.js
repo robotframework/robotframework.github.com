@@ -166,7 +166,7 @@ function init_videos() {
 }
 
 function init_scrolling() {
-  var separator = "__",
+  var separator = "-",
       hash = document.location.hash,
       has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
       target_link;
@@ -183,12 +183,15 @@ function init_scrolling() {
 
   target_link = $(".links > a[href*='" + hash[1] + "']").first();
 
-  if ( target_link.length < 1 ){
-    return false;
-  }
-
   target_link.click();
-  window.location.hash = hash[0];
+/*
+  $(document).ready(function(){
+    $("html, body").animate({
+        scrollTop: $(hash[0]).offset().top
+      }, 500);
+  });
+*/
+  //window.location.hash = hash[0];
 }
 
 $(document).ready(function( e ) {
@@ -196,6 +199,6 @@ $(document).ready(function( e ) {
     init_markers();
     init_affix();
     init_scrolling();
-    init_videos();
+    //init_videos();
     init_tweets(); // should be last thing to be loaded
 });
