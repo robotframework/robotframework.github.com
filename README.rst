@@ -8,15 +8,16 @@ All HTML content is in `<index.html>`__ file. CSS, images, and Javascript are
 in `<css>`__, `<img>`__ and `<js>`__ folders. `<PIE.htc>`__ makes the site
 work on older IE browsers and `<CNAME>`__ contains domain configuration.
 
-Adding new links
-----------------
+Adding or updating links
+------------------------
 
-To get new links added or old information updated, please `submit an issue`__.
-If you want a new link to be added, include at least the following information:
+To get new links added or old information updated, please `submit an issue`__
+to this project. If you want a new link to be added, include at least the
+following information:
 
-- Name of the library or tool
+- Name of the library, tool, or other resource
 - Short description (approximately 10 words)
-- Link to the library home page
+- Link to the resource
 
 Alternatively you can `submit a pull request`__ with the above information and
 make it even easier for us to add the link.
