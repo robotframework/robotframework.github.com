@@ -83,93 +83,11 @@ function init_affix(){
   });
 }
 
-function repeat_str( str, count ) {
-  /*
-    - Make new array with `count` length
-    - Join it with `str` + `separator`
-    - Remove trailing `separator`
-    - Split by separator
-  */
-  var separator = "##SEPARATOR##"
-  return (new Array(count+1)).join(str + separator).slice(0, -separator.length).split(separator);
-}
-
-function wrap_elements( xml_elements ) {
-  var result = [],
-      placeholder = "||REPLACE||",
-      containers = repeat_str('<div class="column one-thirds">' + placeholder + '</div>', 3);
-
-  if ( $(document).width() >= 1000) { // if user is on small screen, use 2-by-2 layout, otherwise use 3-by-3
-
-    while ( xml_elements.length > 2 ) {
-
-      if ( result.length < 1 ) {
-        result = result.concat(containers.map(function( item ){
-          return item.replace(placeholder, xml_elements.splice(0, 1) + placeholder);
-        }));
-      } else {
-        for (var i=0; i < 3; i++) {
-          result[i] = result[i].replace(placeholder, xml_elements.splice(0, 1) + placeholder)
-        }
-      }
-    }
-
-    result = result.map(function( item ){
-      return item.replace(placeholder, "");
-    });
-  }
-
-  while ( xml_elements.length > 1 ) {
-    containers = repeat_str('<div class="column half">' + placeholder + '</div>', 2);
-    result = result.concat(containers.map(function( item ){
-      return item.replace(placeholder, xml_elements.splice(0, 1));
-    }));
-  }
-
-  if ( xml_elements.length == 1 ){
-    result = result.concat('<div class="column full">' + xml_elements[0] + "</div>");
-  }
-
-  return result;
-}
-
-function htmlize( xml_elements ) {
-  if ( xml_elements.length < 1 ) {
-    throw "No XML elements!";
-  }
-
-  // xml_elements is a jQuery object ie. array-like;
-  //  therefore `map()` is the jQuery version instead of regular Javascript version
-  return xml_elements.map(function(){
-    var $entry = $( this ),
-        title = $entry.find("title:first").text(),
-        // http://www.youtube.com/watch?v=<id>&feature=youtube_gdata => http://www.youtube.com/embedded/<id>?wmode=transparent
-        url = $entry.find("link:first").attr("href").replace("watch?v=", "embed/").replace(/&feature.*/, "") + "?wmode=transparent";
-    return '<div class="link"><iframe width="300" height="170" wmode="Opaque" frameborder="0" allowfullscreen="allowfullscreen" src="' + url + '" /><br />' + title + '</div>';
-  });
-}
-
-function init_videos() {
-  var result_html,
-      $target = $('#youtube-playlist');
-  if ( !jQuery.support.leadingWhitespace || (jQuery.browser.msie && jQuery.browser.version.split("")[0] == "9") ){ // if IE 7, 8 or 9
-    result_html = '<h2 style="text-align: center;">Please visit our <a href="http://www.youtube.com/watch?v=zpenQJcrBNg&list=PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk" target="_blank">Youtube playlist</a></h2>'
-    $target.append(result_html);
-  } else {
-    jQuery.get("https://gdata.youtube.com/feeds/api/playlists/PL86v15KhLn_HZb_-qmiDM4V8C3x_EgzWk?v=2", function( data ){
-      result_html = htmlize($(data).find("entry"));
-      result_html = wrap_elements(result_html);
-      $target.append(result_html);
-    });
-  }
-
-}
-
 function handle_hash(){
   var separator = "-",
-        hash = document.location.hash,
-        has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
-        target_link;
+      hash = document.location.hash,
+      has_specific_target = new RegExp("^#([-A-Za-z0-9]+)" + separator + "([-A-Za-z0-9]+)"),
+      target_link;
 
   if ( !has_specific_target.test(hash) ){
     return false;
@@ -204,6 +122,5 @@ $(document).ready(function( e ) {
     init_markers();
     init_affix();
     init_scrolling();
-    //init_videos();
     init_tweets(); // should be last thing to be loaded
 });
