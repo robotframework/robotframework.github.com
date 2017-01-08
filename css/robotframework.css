@@ -155,11 +155,6 @@ pre {
   color: white;
 }
 
-.slogan {
-  font-size: 1.5em;
-  -webkit-font-smoothing: antialiased;
-}
-
 #main-headers-container {
   display: inline-block;
   padding: 0;
@@ -552,17 +547,24 @@ pre {
   color: white;
 }
 
-#support .row-header {
-  margin-bottom: 10px;
+#docs-getting-started .link {
+  min-height: 65px;
 }
 
-#support .slogan {
-  width: 100%;
-  text-align: center;
+#docs-articles .link {
+  min-height: 80px;
 }
 
-.contact-icons.no-top-padding {
+#support p a, #support p a:hover, #support .link a {
+  color: #24292d;
+}
+
+#support .no-top-padding {
   padding-top: 0;
+}
+
+.contact-icons {
+  margin-top: 1.5em;
 }
 
 .contact-icons p {
@@ -587,7 +589,7 @@ pre {
   background-color: black;
   background-image: url(../img/icons.gif);
   background-repeat: no-repeat;
-  margin: 0 auto;
+  margin: 0 auto 1em auto;
 }
 
 #twitter {
@@ -610,8 +612,12 @@ pre {
   background-position: -411px center;
 }
 
-#contact-links {
+#contact-links, #contact-commercial {
   text-align: center;
+}
+
+#contact-commercial .link {
+  min-height: 80px;
 }
 
 #contact-links .column.half > div {
@@ -632,6 +638,8 @@ pre {
 
 .contact-links-list {
   list-style-type: none;
+  text-align: center;
+  margin-left: 0;
 }
 
 .contact-links-list > li {
@@ -639,13 +647,11 @@ pre {
 }
 
 .contact-links-list a {
-  color: #24292d;
-  font-weight: bold;
-  text-decoration: none;
+  color: white;
 }
 
 .contact-links-list a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #end .row-header {
