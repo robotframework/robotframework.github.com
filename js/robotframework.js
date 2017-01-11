@@ -117,10 +117,18 @@ function init_scrolling() {
   handle_hash();
 }
 
+function init_feature_toggle(){
+  var url_params = new URLSearchParams(window.location.search.slice(1));
+  if ( url_params.get('show-users') ){
+    $("#users").show(0);
+  }
+}
+
 $(document).ready(function( e ) {
     init_carousel();
     init_markers();
     init_affix();
     init_scrolling();
+    init_feature_toggle();
     init_tweets(); // should be last thing to be loaded
 });

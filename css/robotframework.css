@@ -628,6 +628,18 @@ pre {
   line-height: 2em;
 }
 
+#users {
+  display: none;
+}
+
+#users a {
+  color: #24292d;
+}
+
+#users img {
+  margin-bottom: 1em;
+}
+
 #end .row-header {
   margin-bottom: 0;
   font-size: 2.5em;
