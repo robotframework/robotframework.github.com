@@ -85,7 +85,7 @@ pre {
 
 /* General rules for .content-area */
 .content-area {
-  margin: 0 auto 3em auto;
+  margin: 0 auto 2em auto;
 }
 
 /* CSS clear/float fix, see http://nicolasgallagher.com/micro-clearfix-hack/
@@ -562,12 +562,12 @@ pre {
   color: #24292d;
 }
 
-#support .no-top-padding {
-  padding-top: 0;
+.contact-icons {
+  padding-top: 2em;
 }
 
-.contact-icons {
-  margin-top: 1.5em;
+.contact-icons .content-area {
+  padding-bottom: 2em;
 }
 
 .contact-icons p {
@@ -588,7 +588,7 @@ pre {
   background-color: black;
   background-image: url(../img/icons.gif);
   background-repeat: no-repeat;
-  margin: 0 auto 1em auto;
+  margin: 0 auto;
 }
 
 #twitter {
@@ -613,6 +613,7 @@ pre {
 
 #other-support, #contact-commercial {
   text-align: center;
+  padding-top: 2em;
 }
 
 #contact-commercial .link {
