@@ -46,35 +46,35 @@ function get_center_of_element( el ){
   return $el.width()/2 + $el.position().left;
 }
 
-function init_markers() {
-  $(".links > a").click(function( e ){
-    e.preventDefault();
-    var $this = $( this ), // `this` is a link
-        id = $this.attr("href"),
-        $parent = $this.parent().parent();
-
-
-    $(".links > a", $parent).removeClass("active");
-    $this.addClass("active")
-
-    $(".links .marker", $parent).animate({
-        "left": get_center_of_element($this)
-    }, 1500);
-
-    $(".external-links.active", $parent).fadeOut(function(){
-      $(this).removeClass("active"); // `this` is a link navigation elements
-      $(id).fadeIn().addClass("active");
-    });
-
-  });
-
-  // calculate marker positions at the start
-  $first_link = $(".links > a:first-child");
+function calculate_position_of_marker(){
   $(".links .marker").each(function(){
     var $this = $(this);
-    $this.css("left", get_center_of_element($this.parent().find("a:first-child")));
+    $this.css("left", get_center_of_element($this.parent().find("a.active")));
+  });
+}
+
+function init_markers() {
+  $(".links > a").click(function(e){
+      e.preventDefault();
+      var $this = $( this ), // `this` is a link
+          id = $this.attr("href"),
+          $parent = $this.parent().parent();
+
+      $(".links > a", $parent).removeClass("active");
+      $this.addClass("active")
+
+      $(".links .marker", $parent).animate({
+          "left": get_center_of_element($this)
+      }, 500);
+
+      $(".external-links.active", $parent).fadeOut(function(){
+        $(this).removeClass("active"); // `this` is a link navigation elements
+        $(id).fadeIn().addClass("active");
+      });
   });
 
+  $(window).resize(calculate_position_of_marker);
+  calculate_position_of_marker();
 }
 
 function init_affix(){
