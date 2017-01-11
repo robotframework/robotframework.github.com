@@ -12,12 +12,12 @@ h1 {
 
 a {
   color: #23b0bd;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
   color: #23b0bd;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 pre {
@@ -480,14 +480,17 @@ pre {
   bottom: 0;
 }
 
-.column .link > a:first-child,
-.column .link > a:first-child:hover {
+.column .link > a:first-child {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
   display: block;
   width: 100%;
   text-align: center;
+}
+
+.column .link > a:first-child:hover {
+  text-decoration: underline;
 }
 
 .external-links {
@@ -555,7 +558,7 @@ pre {
   min-height: 80px;
 }
 
-#support p a, #support p a:hover, #support .link a {
+#support p a, #support p a:hover, #support .link a, .contact-icons a {
   color: #24292d;
 }
 
@@ -572,10 +575,6 @@ pre {
   text-align: inherit;
   margin-bottom: 0;
   padding: 0;
-}
-
-.contact-icons a {
-  color: white;
 }
 
 .contact-icons .column {
