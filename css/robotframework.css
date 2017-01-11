@@ -612,7 +612,7 @@ pre {
   background-position: -411px center;
 }
 
-#contact-links, #contact-commercial {
+#other-support, #contact-commercial {
   text-align: center;
 }
 
@@ -620,38 +620,12 @@ pre {
   min-height: 80px;
 }
 
-#contact-links .column.half > div {
-  margin: 0 2em;
-}
-
-#contact-links .column.half p {
-  -webkit-font-smoothing: antialiased;
-}
-
-.contact-links-heading {
+.other-support-heading {
   font-size: 1.7em;
   -webkit-font-smoothing: antialiased;
   border-top: 2px solid #24292d;
   border-bottom: 2px solid #24292d;
   line-height: 2em;
-}
-
-.contact-links-list {
-  list-style-type: none;
-  text-align: center;
-  margin-left: 0;
-}
-
-.contact-links-list > li {
-  margin-top: 1em;
-}
-
-.contact-links-list a {
-  color: white;
-}
-
-.contact-links-list a:hover {
-  text-decoration: none;
 }
 
 #end .row-header {
