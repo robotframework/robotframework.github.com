@@ -118,10 +118,9 @@ function init_scrolling() {
 }
 
 function init_feature_toggle(){
-  var url_params = new URLSearchParams(window.location.search.slice(1));
-  if ( url_params.get('show-users') ){
-    $("#users").show(0);
-  }
+  /*
+    Add logic to enable new, limited features here
+  */
 }
 
 $(document).ready(function( e ) {

@@ -628,10 +628,6 @@ pre {
   line-height: 2em;
 }
 
-#users {
-  display: none;
-}
-
 #users a {
   color: #24292d;
 }
