@@ -640,6 +640,10 @@ pre {
   margin-bottom: 2em;
 }
 
+#users .link {
+  min-height: 145px;
+}
+
 #end .row-header {
   margin-bottom: 0;
   font-size: 2.5em;
