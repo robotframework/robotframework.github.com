@@ -216,7 +216,8 @@ pre {
 }
 
 .navbar .nav > li > a,
-.navbar .nav > li > a:hover {
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:visited {
   color: white;
   font-weight: 100;
   text-shadow: none;
