@@ -631,6 +631,7 @@ pre {
 
 #users a {
   color: #24292d;
+  min-height: 80px;
 }
 
 #users img {
@@ -642,7 +643,7 @@ pre {
 }
 
 #users .link {
-  min-height: 200px;
+  min-height: 232px;
 }
 
 #end .row-header {
