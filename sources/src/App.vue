@@ -5,7 +5,7 @@
      </div>
 
     <div class="col-md-10" id="scroller"
-    ref="content" style="position:relative;height:100vh;overflow-y:scroll;overflow-x:hidden;">
+    ref="content" style="position:relative;height:100vh;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling: touch;">
         <app-header/>
         <page-block v-for="(page, index) in pages"
           v-bind:page="page"
