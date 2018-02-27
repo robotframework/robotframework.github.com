@@ -8,14 +8,10 @@
 body {
   background-color: #fff;
   font-family: Georgia;
-  font-size: 1rem;
+  font-size: 1.2rem;
   ;
   text-align: left;
   overflow-x: hidden;
-}
-
-.align-middle {
-  margin: 0 auto;
 }
 
 #header-robologo {
@@ -48,6 +44,11 @@ header a.nav-link:hover {
   color: #fff;
 }
 
+p {
+  font-family: Georgia;
+  margin-bottom: 1rem;
+}
+
 header ul {
   text-align: center;
   margin: 0;
@@ -59,26 +60,17 @@ header ul {
 }
 
 code {
-  font-family: "OCRA";
+  font-family: "Courier";
   color: black;
   padding: 4px;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 section {
-  background-color: #fff;
-  margin: 15px 10px;
+  margin-bottom: 50px;
 }
-
-/*.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  margin: 0;
-}*/
 
 h1,
 h2,
@@ -92,10 +84,20 @@ h3,
 div.card-header {
   font-family: "OCRA";
   text-transform: uppercase;
+  text-align: left;
 }
 
 h1 {
   font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 3rem;
 }
 
 h1.main-header {
@@ -108,10 +110,6 @@ h1.main-header {
 
 h1.main-header::first-line {
   color: #fff;
-}
-
-p {
-  /*text-indent: 10px;*/
 }
 
 .main-header-container {
@@ -154,18 +152,6 @@ small.info::after {
   color: #fff;
 }
 
-h2 {
-  font-size: 2.5rem;
-  text-align: left;
-}
-
-h3 {
-  text-transform: uppercase;
-  text-align: left;
-  font-size: 2rem;
-  margin-top: 3rem;
-}
-
 #nav_collapse .nav-item a {
   color: #fff;
   font-weight: normal;
@@ -184,10 +170,6 @@ hr {
   border-style: dashed;
   border-color: #fff;
   border-width: 3px 0 0 0;
-}
-
-.card-body {
-  padding: 0;
 }
 
 .navbar-brand h1 {
@@ -255,32 +237,24 @@ hr {
   text-decoration: none;
 }
 
-.bg-gradient {
-  background-image: linear-gradient( 40deg, rgba(0, 192, 181, 1) 0%, rgba(0, 0, 0, 1) 100%);
-}
-
-.nav-pills {
-  margin-bottom: 0px;
-}
-
 .nav-pills .nav-link {
   border-radius: 0;
   font-family: OCRA;
   text-transform: uppercase;
-}
-
-p {
-  font-family: Georgia;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .nav-pills li a {
   color: rgb(0, 192, 181);
   padding: 0.3rem 0.5rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background: none;
-  margin: 3px;
+  margin-right: 4px;
   border: 1px solid rgb(0, 192, 181);
+}
+
+.nav-pills li:last-child a {
+  margin-right: 0;
 }
 
 .nav-pills li.nav-item .nav-link.active {
@@ -291,8 +265,7 @@ p {
 }
 
 .card {
-  margin-top: 20px;
-  padding: 10px;
+  padding: 30px;
   color: #666;
   line-height: 1.1rem;
   font-family: Georgia;
@@ -328,29 +301,20 @@ p {
   padding: 5px;
   font-family: Georgia;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.card-body p {
+  margin-top: 10px;
 }
 
 .card a {
   color: rgb(0, 192, 181);
 }
 
-.more-space {
-  padding: 2% 5% 2% 5%;
-}
-
-.tab-content {
-  padding: 10px;
-  padding-top: 20px;
-}
-
 .link {
   font-family: Courier;
-}
-
-.tab-content .link {
-  padding: 20px 10px 10px 10px;
-  font-size: 1rem;
 }
 
 th {
@@ -360,14 +324,6 @@ th {
 table {
   margin: 30px 0;
   font-size: 1rem;
-}
-
-.table td {
-  padding: 0;
-  padding-right: 30px;
-  height: auto;
-  border: none;
-  padding-top: 4px;
 }
 
 .block-text {
@@ -385,10 +341,6 @@ table {
 
 .user-image {
   /*filter: grayscale(100%);*/
-}
-
-.twitterprofile {
-  font-size: 0.8rem;
 }
 
 @media (max-width: 992px) {
