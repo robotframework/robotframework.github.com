@@ -55,7 +55,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../../'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/robotframework.github.com',
+    assetsPublicPath: '/robotframework.github.org',
 
     /**
      * Source Maps
