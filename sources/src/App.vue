@@ -1009,7 +1009,7 @@ export default {
             text: {
               header: "Foundation",
               text:
-                'As a company, the best way to join our movement and keep Robot Framework the best test automation solution on the market. <a href="#">To foundation</a>'
+                'As a company, the best way to join our movement and keep Robot Framework the best test automation solution on the market is to join the Robot Framework Foundation. <a href="http://robotframework.org/foundation/" target="_blank">To foundation</a>'
             }
           }
         },
@@ -1022,7 +1022,7 @@ export default {
             text: {
               header: "Shop",
               text:
-                'The easiest way to support Robot Framework is to buy nice swag from our web shop. In addition, it\'s a great way to show your colors <a href="#">To shop</a>'
+                'The easiest way to support Robot Framework is to buy nice swag from our web shop. In addition, it\'s a great way to show your colors! <a href="https://shop.robotframework.org" target="_blank">To shop</a>'
             }
           }
         },
@@ -1035,7 +1035,7 @@ export default {
             text: {
               header: "Robocon",
               text:
-                '<href="http://robocon.io">RoboCon</a> is the annual Robot Framework conference organized first time in January 2018 at Helsinki, Finland. The first conference was a huge success with great presentations and over 250 participants. The planning of RoboCon 2019 has already started and http://robocon.io will be updated as soon as the plans start to materialize.'
+                '<a href="http://robocon.io" target="_blank">RoboCon</a> is the annual Robot Framework conference organized first time in January 2018 at Helsinki, Finland. The first conference was a huge success with great presentations and over 250 participants. The planning of RoboCon 2019 has already started and <a href="http://robocon.io" target="_blank">Robocon.io</a> will be updated as soon as the plans start to materialize.'
             }
           }
         },
