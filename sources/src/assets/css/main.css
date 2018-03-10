@@ -115,7 +115,6 @@ h1.main-header::first-line {
 
 .main-header-container {
   width: 340px;
-  /*width: 205px;*/
   margin: 10px auto;
   padding-bottom: 50px;
 }
@@ -333,10 +332,6 @@ table {
 
 .textblock-left {
   border-top: 1px solid rgb(0, 192, 181);
-}
-
-.user-image {
-  /*filter: grayscale(100%);*/
 }
 
 @media (max-width: 992px) {
