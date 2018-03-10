@@ -7,7 +7,7 @@
 ``` bash
 
 # clone repo
-git clone https://github.com/jonipalosaari/robotframework.github.com.git
+git clone https://github.com/robotframework/robotframework.github.com.git
 
 # go to sources folder
 cd sources
