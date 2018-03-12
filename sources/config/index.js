@@ -53,8 +53,12 @@ module.exports = {
     index: path.resolve(__dirname, '../../index.html'),
 
     // Paths
+
+    //TODO: remember to update to "../" for live
     assetsRoot: path.resolve(__dirname, '../../'),
     assetsSubDirectory: 'static',
+
+    //TODO: remember update to "/" for live
     assetsPublicPath: '/robotframework.github.org',
 
     /**
