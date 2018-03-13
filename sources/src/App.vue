@@ -164,6 +164,13 @@ export default {
                       "Windows GUI testing library that uses AutoIt freeware tool as a driver."
                   },
                   {
+                    title: "CncLibrary",
+                    href:
+                      "https://github.com/eficode/robotframework-cnclibrary",
+                    text:
+                      "Library for driving a CNC milling machine."
+                  },
+                  {
                     title: "Database Library (Java)",
                     href: "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
@@ -268,18 +275,17 @@ export default {
                       "Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets."
                   },
                   {
-                    title: "SikuliLibrary",
-                    href:
-                      "https://github.com/rainmanwy/robotframework-SikuliLibrary#readme",
-                    text:
-                      'Sikuli Robot Framework Library provide keywords to test UI through <a href="http://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.'
-                  },
-                  {
                     title: "RemoteSwingLibrary",
                     href:
                       "https://github.com/robotframework/remoteswinglibrary",
                     text:
                       "Library for testing and connecting to a java process and using SwingLibrary, especially Java Web Start applications."
+                  },
+                  {
+                    title: "RESTinstance",
+                    href: "https://github.com/asyrjasalo/RESTinstance/",
+                    text:
+                      "Robot Framework test library for HTTP JSON APIs."
                   },
                   {
                     title: "SeleniumLibrary",
@@ -307,6 +313,13 @@ export default {
                       "Web testing library that uses Selenium2Library internally, providing AngularJS support on top of it."
                   },
                   {
+                    title: "SikuliLibrary",
+                    href:
+                      "https://github.com/rainmanwy/robotframework-SikuliLibrary#readme",
+                    text:
+                      'Sikuli Robot Framework Library provide keywords to test UI through <a href="http://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.'
+                  },
+                  {
                     title: "SSHLibrary",
                     href: "https://github.com/robotframework/SSHLibrary",
                     text:
@@ -324,6 +337,12 @@ export default {
                     href: "https://github.com/robotframework/SwingLibrary/wiki",
                     text:
                       "Library for testing Java applications with Swing GUI."
+                  },
+                  {
+                    title: "TestFX Library",
+                    href: "https://github.com/Altran-PT-GDC/Robot-Framework-Test-FX-Library",
+                    text:
+                      'Library to enable to test Java FX applications using the <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX framework</a>.'
                   },
                   {
                     title: "TFTPLibrary",
@@ -574,27 +593,21 @@ export default {
                 title: "OTHER",
                 items: [
                   {
-                    title: "DbBot",
-                    href: "https://github.com/robotframework/DbBot",
-                    text:
-                      "Tool for serializing Robot Framework test results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
-                  },
-                  {
                     title: "Fixml",
                     href: "https://bitbucket.org/robotframework/fixml",
                     text:
                       "Tool for fixing Robot Framework output files that are broken."
                   },
                   {
+                    title: "Pabot",
+                    href: "https://github.com/mkorpela/pabot",
+                    text: "A parallel executor for Robot Framework test cases."
+                  },
+                  {
                     title: "Mabot",
                     href: "http://github.com/robotframework/mabot/",
                     text:
                       "Tool for reporting manual tests in format compatible with Robot Framework outputs."
-                  },
-                  {
-                    title: "Pabot",
-                    href: "https://github.com/mkorpela/pabot",
-                    text: "A parallel executor for Robot Framework test cases."
                   },
                   {
                     title: "RFDoc",
@@ -609,16 +622,34 @@ export default {
                       "Lightweight web server that provides access to the Robot Framework test assets via browser."
                   },
                   {
+                    title: "Robot Tools",
+                    href: "https://bitbucket.org/robotframework/robottools",
+                    text:
+                      "Collection of supporting tools that can be used with Robot Framework."
+                  },
+                  {
+                    title: "SAGE Framework",
+                    href: "https://www.nrl.navy.mil/itd/imda/products/sage",
+                    text:
+                      "Multi-agent based extension to Robot Framework. Agent based systems make it possible to test distributed systems such as Service Oriented Architecture systems. SAGE Provides a library of Robot Framework keywords for creating and managing SAGE agent networks as well as collecting and reporting results from remote agents."
+                  },
+                  {
+                    title: "Robot Corder",
+                    href: "https://github.com/sohwendy/Robotcorder",
+                    text:
+                      "Robot Corder generates Robot Framework test script by recording user interactions and scanning the html page in your Chrome browser. It aims to be equivalent of Selenium IDE for RobotFramework browser test automation."
+                  },
+                  {
                     title: "Robot Framework Lexer",
                     href: "https://bitbucket.org/robotframework/pygmentslexer",
                     text:
                       "Robot Framework syntax highlighting with Pygments. Link is to the lexer project itself, but the lexer is part of Pygments from version 1.6 onwards."
                   },
                   {
-                    title: "Robot Tools",
-                    href: "https://bitbucket.org/robotframework/robottools",
+                    title: "DbBot",
+                    href: "https://github.com/robotframework/DbBot",
                     text:
-                      "Collection of supporting tools that can be used with Robot Framework."
+                      "Tool for serializing Robot Framework test results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
                   },
                   {
                     title: "StatusChecker",
@@ -1060,6 +1091,34 @@ export default {
                   "Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces."
               },
               {
+                title: "KONE",
+                href: "http://www.kone.com",
+                img: require("@/assets/img/users/kone.png"),
+                text:
+                  "KONE is widely using Robot Framework in software development for testing embedded systems in elevators and escalators."
+              },
+              {
+                title: "Finnair",
+                href: "http://www.finnair.com",
+                img: require("@/assets/img/users/finnair.png"),
+                text:
+                  'Finnair is using Robot Framework to support Finnair digital platform development.'
+              },
+              {
+                title: "ABB",
+                href: "http://www.abb.com",
+                img: require("@/assets/img/users/abb.png"),
+                text:
+                  "ABB is using Robot Framework in software development for testing distribution automation related configuration tools, web interfaces and embedded devices."
+              },
+              {
+                title: "metso",
+                href: "http://www.metso.com",
+                img: require("@/assets/img/users/metso.png"),
+                text:
+                  'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
+              },
+              {
                 title: "FICOSA",
                 href: "http://www.ficosa.com",
                 img: require("@/assets/img/users/ficosa.png"),
@@ -1074,18 +1133,11 @@ export default {
                   'OpenDaylight is a software-defined network (SDN) platform that uses Robot Framework for unit- and integration tests between different services. If you are interested how, <a href="https://wiki.opendaylight.org/view/CrossProject:Integration_Group:Create_System_Test_Environment#Install_Robot_Framework" target="_blank"> check the wiki</a>.'
               },
               {
-                title: "ABB",
-                href: "http://www.abb.com",
-                img: require("@/assets/img/users/abb.png"),
+                title: "Adwisit",
+                href: "http://www.adwisit.se",
+                img: require("@/assets/img/users/adwisit.png"),
                 text:
-                  "ABB is using Robot Framework in software development for testing distribution automation related configuration tools, web interfaces and embedded devices."
-              },
-              {
-                title: "kone",
-                href: "http://www.kone.com",
-                img: require("@/assets/img/users/kone.png"),
-                text:
-                  "KONE is widely using Robot Framework in software development for testing embedded systems in elevators and escalators."
+                  'Adwisit uses Robot Framework to automate end-to-end testing of business processes for customers with a complex structure of third-party products, handling both web and desktop applications.'
               },
               {
                 title: "ryerson",
@@ -1103,11 +1155,25 @@ export default {
                   "Axon is using Robot Framework in testing embedded software and hardware development of broadcast equipment. We automate testing as much as possible in order to speed up development while guarantee quality. Robot Framework is the perfect tool for this job."
               },
               {
-                title: "metso",
-                href: "http://www.metso.com",
-                img: require("@/assets/img/users/metso.png"),
+                title: "CENX",
+                href: "http://www.cenx.com",
+                img: require("@/assets/img/users/cenx.png"),
                 text:
-                  'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
+                  "CENX is using Robot Framework, within a Docker environment, for feature and integration testing of a product that empowers network- and service operation centers."
+              },
+              {
+                title: "Conde Nast",
+                href: "https://technology.condenast.com/",
+                img: require("@/assets/img/users/condenast.png"),
+                text:
+                  'Cond&eacute; Nast <a href="https://technology.condenast.com/story/automated-testing-qa-brand-sites-robot-framework" target="_blank">transformed their quality assurance for their brand sites</a>, such as Brides, Wired and Architectural Digest, from an entirely manual process to automated one with Robot Framework.'
+              },
+              {
+                title: "Opuscapita",
+                href: "https://www.opuscapita.com/",
+                img: require("@/assets/img/users/opuscapita.png"),
+                text:
+                  'OpusCapita is using Robot Framework in software development for regression testing automation of web applications, API and internal software components.'
               },
               {
                 title: "steeri",
@@ -1115,6 +1181,13 @@ export default {
                 img: require("@/assets/img/users/steeri.png"),
                 text:
                   "Steeri wanted to automate its test runs and chose the keyword-driven and user-friendly Robot Framework as the tool for the job."
+              },
+              {
+                title: "NRL",
+                href: "https://www.nrl.navy.mil",
+                img: require("@/assets/img/users/nrl.png"),
+                text:
+                  'The Naval Research Laboratory extends Robot Framework to provide a seamless integration with the <a href="https://www.nrl.navy.mil/itd/imda/products/sage" target="_blank">SAGE</a> multi-agent system. This integration enables Robot Framework to drive distributed simulation and monitoring for test automation of SOA systems.'
               },
               {
                 title: "zilogic",
