@@ -58,6 +58,8 @@ header ul {
 .navbar-brand {
   font-family: "OCRA";
   margin-right: 0;
+  letter-spacing: 0.05em;
+  font-weight: normal;
 }
 
 code {
@@ -166,6 +168,7 @@ a {
 #nav_collapse .nav-item a.active,
 a {
   color: rgb(0, 192, 181);
+  text-transform: uppercase
 }
 
 hr {
@@ -203,6 +206,7 @@ hr {
   min-width: 180px;
   text-align: center;
   height: 100vh;
+  text-transform: uppercase
 }
 
 #navigation.sidebar {
@@ -222,7 +226,7 @@ hr {
   color: #fff;
   text-align: left;
   font-size: 0.8rem;
-  padding-left: 22%;
+  padding-left: 16%;
 }
 
 #navigation-collapsed {
