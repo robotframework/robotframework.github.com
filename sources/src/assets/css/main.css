@@ -168,7 +168,6 @@ a {
 #nav_collapse .nav-item a.active,
 a {
   color: rgb(0, 192, 181);
-  text-transform: uppercase
 }
 
 hr {
@@ -236,6 +235,7 @@ hr {
 
 #nav_collapse .nav-item a {
   color: #fff;
+  text-transform: uppercase
 }
 
 #nav_collapse .nav-item a:hover {
