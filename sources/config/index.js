@@ -59,7 +59,7 @@ module.exports = {
     assetsSubDirectory: 'static',
 
     //TODO: remember update to "/" for live
-    assetsPublicPath: '/robotframework.github.org',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps
