@@ -89,40 +89,83 @@ export default {
             },
             tabs: [
               {
-                title: "Other",
+                title: "Standard",
                 items: [
                   {
-                    title: "Creating test libraries",
+                    title: "Builtin",
                     href:
-                      "http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries",
+                      "http://robotframework.org/robotframework/#standard-libraries",
                     text:
-                      "Creating test libraries section in Robot Framework User Guide."
+                      "Provides a set of often needed generic keywords. Always automatically available without imports."
                   },
                   {
-                    title: "plone.app.robotframework",
+                    title: "Dialogs",
                     href:
-                      "https://pypi.python.org/pypi/plone.app.robotframework",
+                      "http://robotframework.org/robotframework/#standard-libraries",
                     text:
-                      "Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons."
+                      "Provides means for pausing the test execution and getting input from users."
                   },
                   {
-                    title: "JavalibCore",
-                    href: "https://github.com/robotframework/JavalibCore/wiki",
+                    title: "Collections",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
                     text:
-                      "Base for implementing larger Java based test libraries for Robot Framework."
+                      "Provides a set of keywords for handling Python lists and dictionaries."
+                  },
+                  {
+                    title: "OperatingSystem",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Enables various operating system related tasks to be performed in the system where Robot Framework is running."
                   },
                   {
                     title: "Remote",
                     href: "https://github.com/robotframework/RemoteInterface",
                     text:
-                      "Built-in special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
+                      "Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
                   },
                   {
-                    title: "RemoteApplications",
+                    title: "Screenshot",
                     href:
-                      "https://github.com/robotframework/RemoteApplications",
+                      "http://robotframework.org/robotframework/#standard-libraries",
                     text:
-                      "Special test library for launching Java applications on a separate JVM and taking other libraries into use on them."
+                      "Provides keywords to capture screenshots of the desktop."
+                  },
+                  {
+                    title: "String",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Library for generating, modifying and verifying strings."
+                  },
+                  {
+                    title: "Telnet",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Makes it possible to connect to Telnet servers and execute commands on the opened connections."
+                  },
+                  {
+                    title: "XML",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Library for generating, modifying and verifying XML files."
+                  },
+                  {
+                    title: "Process",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Library for running processes in the system. New in Robot Framework 2.8."
+                  },
+                  {
+                    title: "DateTime",
+                    href:
+                      "http://robotframework.org/robotframework/#standard-libraries",
+                    text:
+                      "Library for date and time conversions. New in Robot Framework 2.8.5."
                   }
                 ]
               },
@@ -359,83 +402,40 @@ export default {
                 ]
               },
               {
-                title: "Standard",
+                title: "Other",
                 items: [
                   {
-                    title: "Builtin",
+                    title: "Creating test libraries",
                     href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
+                      "http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries",
                     text:
-                      "Provides a set of often needed generic keywords. Always automatically available without imports."
+                      "Creating test libraries section in Robot Framework User Guide."
                   },
                   {
-                    title: "Dialogs",
+                    title: "plone.app.robotframework",
                     href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
+                      "https://pypi.python.org/pypi/plone.app.robotframework",
                     text:
-                      "Provides means for pausing the test execution and getting input from users."
+                      "Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons."
                   },
                   {
-                    title: "Collections",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
+                    title: "JavalibCore",
+                    href: "https://github.com/robotframework/JavalibCore/wiki",
                     text:
-                      "Provides a set of keywords for handling Python lists and dictionaries."
-                  },
-                  {
-                    title: "OperatingSystem",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Enables various operating system related tasks to be performed in the system where Robot Framework is running."
+                      "Base for implementing larger Java based test libraries for Robot Framework."
                   },
                   {
                     title: "Remote",
                     href: "https://github.com/robotframework/RemoteInterface",
                     text:
-                      "Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
+                      "Built-in special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
                   },
                   {
-                    title: "Screenshot",
+                    title: "RemoteApplications",
                     href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
+                      "https://github.com/robotframework/RemoteApplications",
                     text:
-                      "Provides keywords to capture screenshots of the desktop."
-                  },
-                  {
-                    title: "String",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for generating, modifying and verifying strings."
-                  },
-                  {
-                    title: "Telnet",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Makes it possible to connect to Telnet servers and execute commands on the opened connections."
-                  },
-                  {
-                    title: "XML",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for generating, modifying and verifying XML files."
-                  },
-                  {
-                    title: "Process",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for running processes in the system. New in Robot Framework 2.8."
-                  },
-                  {
-                    title: "DateTime",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for date and time conversions. New in Robot Framework 2.8.5."
+                      "Special test library for launching Java applications on a separate JVM and taking other libraries into use on them."
                   }
                 ]
               }
@@ -824,18 +824,11 @@ export default {
                     text:
                       "Master's Thesis by Pekka Klärck (né Laukkanen) that introduced Robot Framework concept."
                   },
-                  {
-                    title: "Codecentric / Agile Testing",
-                    href:
-                      "http://blog.codecentric.de/en/category/agile/agile-testing/",
-                    text:
-                      "Robot Framework and Agile testing related blog posts by Codecentric."
-                  }
                 ]
               },
               {
-                title: "Paid",
-                data: [
+                title: "Paid courses",
+                items: [
                   {
                     title: "eTestingAcademy",
                     href: "http://www.etestingacademy.com/",
@@ -899,49 +892,7 @@ export default {
                 ]
               },
               {
-                title: "Other",
-                items: [
-                  {
-                    title: "LinkedIn",
-                    href:
-                      "http://www.linkedin.com/groups/Robot-Framework-3710899",
-                    text: "Robot Framework group on LinkedIn."
-                  },
-                  {
-                    title: "AT.info",
-                    href:
-                      "http://automated-testing.info/category/robot-framework",
-                    text: "Robot Framework help forum по-русски."
-                  },
-                  {
-                    title: "robotframework-devel",
-                    href: "http://groups.google.com/group/robotframework-devel",
-                    text:
-                      "Mailing list for contributors and developers of the Robot Framework ecosystem."
-                  },
-                  {
-                    title: "Helsinki Meetup group",
-                    href: "https://www.meetup.com/Robot-Framework-Helsinki/",
-                    text: "Robot Framework Meetup group in Helsinki, Finland."
-                  },
-                  {
-                    title: "Stack Overflow",
-                    href:
-                      "http://stackoverflow.com/questions/tagged/robotframework",
-                    text:
-                      "Questions in Stack Overflow tagged with Robot Framework."
-                  },
-                  {
-                    title: "robotframework-announce",
-                    href:
-                      "http://groups.google.com/group/robotframework-announce",
-                    text:
-                      "Mailing list for just release announcements, nothing more."
-                  }
-                ]
-              },
-              {
-                title: "Paid",
+                title: "Vendors",
                 items: [
                   {
                     title: "Comiq",
@@ -1025,6 +976,48 @@ export default {
                     href: "http://www.valagroup.com/",
                     text:
                       "VALA Group provides outstanding software development and quality assurance services by utilizing automation, co-operation and intelligent tool selection for companies ranging from start-ups to major publicly listed companies."
+                  }
+                ]
+              },
+              {
+                title: "Other",
+                items: [
+                  {
+                    title: "LinkedIn",
+                    href:
+                      "http://www.linkedin.com/groups/Robot-Framework-3710899",
+                    text: "Robot Framework group on LinkedIn."
+                  },
+                  {
+                    title: "AT.info",
+                    href:
+                      "http://automated-testing.info/category/robot-framework",
+                    text: "Robot Framework help forum по-русски."
+                  },
+                  {
+                    title: "robotframework-devel",
+                    href: "http://groups.google.com/group/robotframework-devel",
+                    text:
+                      "Mailing list for contributors and developers of the Robot Framework ecosystem."
+                  },
+                  {
+                    title: "Helsinki Meetup group",
+                    href: "https://www.meetup.com/Robot-Framework-Helsinki/",
+                    text: "Robot Framework Meetup group in Helsinki, Finland."
+                  },
+                  {
+                    title: "Stack Overflow",
+                    href:
+                      "http://stackoverflow.com/questions/tagged/robotframework",
+                    text:
+                      "Questions in Stack Overflow tagged with Robot Framework."
+                  },
+                  {
+                    title: "robotframework-announce",
+                    href:
+                      "http://groups.google.com/group/robotframework-announce",
+                    text:
+                      "Mailing list for just release announcements, nothing more."
                   }
                 ]
               }
