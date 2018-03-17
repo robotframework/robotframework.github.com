@@ -54,12 +54,10 @@ module.exports = {
 
     // Paths
 
-    //TODO: remember to update to "../" for live
     assetsRoot: path.resolve(__dirname, '../../'),
     assetsSubDirectory: 'static',
 
-    //TODO: remember update to "/" for live
-    assetsPublicPath: '/robotframework.github.org',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps
