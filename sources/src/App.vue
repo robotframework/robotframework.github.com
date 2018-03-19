@@ -804,23 +804,6 @@ export default {
                 ]
               },
               {
-                title: "Articles & Blogs",
-                items: [
-                  {
-                    title: "Here be Robots!",
-                    href: "http://hereberobots.blogspot.fi/",
-                    text: "Official Roblog."
-                  },
-                  {
-                    title:
-                      "Data-Driven and Keyword-Driven Test Automation Frameworks",
-                    href: "http://eliga.fi/writings.html",
-                    text:
-                      "Master's Thesis by Pekka Klärck (né Laukkanen) that introduced Robot Framework concept."
-                  }
-                ]
-              },
-              {
                 title: "Online courses",
                 items: [
                   {
