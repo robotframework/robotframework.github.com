@@ -807,12 +807,6 @@ export default {
                 title: "Articles & Blogs",
                 items: [
                   {
-                    title: "ATDD with Robot Framework",
-                    href: "http://a-tdd.org",
-                    text:
-                      "Acceptance Test-Driven Development with Robot Framework article by Craig Larman and Bas Vodde."
-                  },
-                  {
                     title: "Here be Robots!",
                     href: "http://hereberobots.blogspot.fi/",
                     text: "Official Roblog."
@@ -823,18 +817,11 @@ export default {
                     href: "http://eliga.fi/writings.html",
                     text:
                       "Master's Thesis by Pekka Klärck (né Laukkanen) that introduced Robot Framework concept."
-                  },
-                  {
-                    title: "Codecentric / Agile Testing",
-                    href:
-                      "http://blog.codecentric.de/en/category/agile/agile-testing/",
-                    text:
-                      "Robot Framework and Agile testing related blog posts by Codecentric."
                   }
                 ]
               },
               {
-                title: "Paid",
+                title: "Online courses",
                 items: [
                   {
                     title: "eTestingAcademy",
