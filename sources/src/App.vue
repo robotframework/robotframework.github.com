@@ -568,7 +568,7 @@ export default {
                 ]
               },
               {
-                title: "BUILD",
+                title: "BUILD TOOLS",
                 items: [
                   {
                     title: "Jenkins plugin",
@@ -941,7 +941,7 @@ export default {
                 ]
               },
               {
-                title: "Paid",
+                title: "Vendors",
                 items: [
                   {
                     title: "Comiq",
