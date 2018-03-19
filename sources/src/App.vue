@@ -835,7 +835,7 @@ export default {
               },
               {
                 title: "Paid",
-                data: [
+                items: [
                   {
                     title: "eTestingAcademy",
                     href: "http://www.etestingacademy.com/",
