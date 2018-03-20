@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "node": "current",
+        "uglify": false
+      }
+    }],
+    "stage-2"
+  ],
+  "plugins": ["transform-runtime"],
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": ["istanbul"]
+    }
+  }
+}
