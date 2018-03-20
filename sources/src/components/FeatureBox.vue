@@ -13,7 +13,7 @@
                     :id="item.header" 
                     centered>
                     <img center fluid class="img-fluid" :src="item.img_big"/>  
-                    <p style="text-align:center;"><a @click="openTab(item.img_big)" :href="item.img_big">Open image in new tab</a></p>
+                   <!-- <p style="text-align:center;"><a @click="openTab(item.img_big)" :href="item.img_big">Open image in new tab</a></p>-->
                 </b-modal>
 
             </div>

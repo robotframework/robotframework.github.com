@@ -18,6 +18,10 @@ body {
   padding: 0;
 }
 
+.b-card-body p a {
+  color: #fff;
+}
+
 .footer-content {
   color: #000;
   text-align: center;
