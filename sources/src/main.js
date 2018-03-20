@@ -21,11 +21,11 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
-if (/robotframework.org/.test(window.location.href)) {
+/* if (/robotframework.org/.test(window.location.href)) {
   Vue.use(VueAnalytics, {
     id: ['UA-106835747-2']
   })
-}
+} */
 
 require('@/assets/css/main.css')
 require('@/assets/css/pygments.css')
