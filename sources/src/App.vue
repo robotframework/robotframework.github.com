@@ -675,7 +675,7 @@ export default {
             },
             tabs: [
               {
-                title: "Getting starded",
+                title: "Getting started",
                 items: [
                   {
                     title: "Installation Instructions",
