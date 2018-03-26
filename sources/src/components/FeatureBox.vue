@@ -1,7 +1,7 @@
 <template>
 <section>
     <div class="row justify-content-between">
-        <div v-for="item in data" :key="item.header" style="margin-bottom:10px;" class="col-md-4 col-sm-12">
+        <div v-for="item in data" :key="item.header" style="margin-bottom:10px;" class="col-lg-4">
         <b-card :header="item.header" class="text-center feature-box">
             <div v-if="item.text != ''" class="b-card-body" v-html="item.text"/>
             <div v-if="typeof item.img != 'undefined'" class="b-card-body">
