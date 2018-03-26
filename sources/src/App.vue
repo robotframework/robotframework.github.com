@@ -295,6 +295,13 @@ export default {
                       "Cross-platform, pure Python library for GUI automation based on image recognition."
                   },
                   {
+                    title: "JavaFXLibrary",
+                    href:
+                      "https://github.com/eficode/JavaFXLibrary#readme",
+                    text:
+                      'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
+                  },
+                  {
                     title: "MongoDB library",
                     href:
                       "https://github.com/iPlantCollaborativeOpenSource/Robotframework-MongoDB-Library#readme",
