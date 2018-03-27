@@ -15,9 +15,7 @@
   </b-navbar-brand>
   <b-collapse is-nav id="nav_collapse">
     <b-navbar-nav class="align-middle">
-      <template v-for="item in navigation">
-            <b-nav-item :href="'#'+item.title.toLowerCase()" v-bind:key="item.name">{{item.name}}</b-nav-item>
-      </template>
+      <b-nav-item v-for="item in pages" v-if="item.hide_from_nav != true" v-bind:key="item.title" :href="'#'+item.title.toLowerCase()">{{item.title}}</b-nav-item>
     </b-navbar-nav>
   </b-collapse>
 
