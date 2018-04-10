@@ -1172,6 +1172,13 @@ export default {
                 img: require("@/assets/img/users/zilogic.png"),
                 text:
                   "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
+              },
+              {
+                title: "salicru",
+                href: "http://www.salicru.com",
+                img: require("@/assets/img/users/salicru.png"),
+                text:
+                  'Salicru has been using Robot Framework in testing embedded software and hardware development of power electronic equipment since 2011. We use Robot Framework along with our proprietary embedded software architecture <a href="https://www.salicru.com/en/white-papers-eng.html" target="_blank">Odyssey</a> to assure the quality of our products and it has become one of the most important tools for us.'
               }
             ]
           }
