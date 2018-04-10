@@ -203,7 +203,7 @@ export default {
                   {
                     title: "AutoItLibrary",
                     href:
-                      "https://github.com/bulkan/robotframework-archivelibrary",
+                      "http://code.google.com/p/robotframework-autoitlibrary/",
                     text:
                       "Windows GUI testing library that uses AutoIt freeware tool as a driver."
                   },
