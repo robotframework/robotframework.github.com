@@ -1016,7 +1016,7 @@ export default {
             text: {
               header: "RPA",
               text:
-                'Robot Framework is an open source robotic process automation (RPA) a solution that is used to automate business processes. It is open and extensible which means that it can be integrated with virtually any other tool to create powerful and flexible RPA solutions. Read more at <a href="robotframework.org/rpa" target="_blank">robotframework.org/rpa</a>'
+                'Robot Framework is an open source robotic process automation (RPA) a solution that is used to automate business processes. It is open and extensible which means that it can be integrated with virtually any other tool to create powerful and flexible RPA solutions. Read more at <a href="http://robotframework.org/rpa" target="_blank">robotframework.org/rpa</a>'
             }
           }
         },
