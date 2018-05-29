@@ -296,8 +296,7 @@ export default {
                   },
                   {
                     title: "JavaFXLibrary",
-                    href:
-                      "https://github.com/eficode/JavaFXLibrary#readme",
+                    href: "https://github.com/eficode/JavaFXLibrary#readme",
                     text:
                       'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
                   },
@@ -1006,6 +1005,19 @@ export default {
                 ]
               }
             ]
+          }
+        },
+        {
+          title: "RPA",
+          text_block: true,
+          tab_box: false,
+          feature_box: false,
+          data: {
+            text: {
+              header: "RPA",
+              text:
+                'Robot Framework is an open source robotic process automation (RPA) a solution that is used to automate business processes. It is open and extensible which means that it can be integrated with virtually any other tool to create powerful and flexible RPA solutions. Read more at <a href="http://robotframework.org/rpa" target="_blank">robotframework.org/rpa</a>'
+            }
           }
         },
         {
