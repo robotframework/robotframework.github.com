@@ -1192,7 +1192,6 @@ export default {
                 text:
                   "Kistler is using the Robot Framework for automated system tests of backend and frontend applications for various, very accurate and highly precise <a href="https://www.kistler.com/en/products/systems/" target="_blank">measurement systems</a>."
               }
-
             ]
           }
         }
