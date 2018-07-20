@@ -1185,6 +1185,14 @@ export default {
                 text:
                   "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
               }
+              {
+                title: "Kistler",
+                href: "https://www.kistler.com",
+                img: require("@/assets/img/users/kistler.png"),
+                text:
+                  "Kistler is using the Robot Framework for automated system tests of backend and frontend applications for various, very accurate and highly precise <a href="https://www.kistler.com/en/products/systems/" target="_blank">measurement systems</a>."
+              }
+
             ]
           }
         }
