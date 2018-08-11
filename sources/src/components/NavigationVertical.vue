@@ -27,7 +27,9 @@
 export default {
   props: ["pages"],
   methods: {
-    onActivate(target) {}
+    onActivate(target) {
+      ga('send', 'event', 'componentView', target);
+    }
   },
   created() {
     this.$root.$on("bv::scrollspy::activate", this.onActivate);
