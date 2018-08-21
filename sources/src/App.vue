@@ -956,6 +956,12 @@ export default {
                       "HiQ is a Nordic ICT service and consultancy company focusing on streamlining our customers' businesses and simplifying people's lives."
                   },
                   {
+                    title: "imbus",
+                    href: "https://www.imbus.de/",
+                    text:
+                      "imbus is a German leading solution partner for professional software testing and intelligent test automation. The portfolio includes consulting for test automation, test tools, and training."
+                  },
+                  {
                     title: "Knowit",
                     href: "https://www.knowit.fi/",
                     text:
