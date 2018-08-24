@@ -336,6 +336,12 @@ export default {
                     text: "Robot Framework test library for HTTP JSON APIs."
                   },
                   {
+                    title: "SapGuiLibrary",
+                    href: "https://github.com/frankvanderkuur/robotframework-sapguilibrary/",
+                    text:
+                      "Library for testing the SAPGUI client using the internal SAP Scripting Engine"
+                  },
+                  {
                     title: "SeleniumLibrary",
                     href: "http://github.com/robotframework/SeleniumLibrary/",
                     text:
