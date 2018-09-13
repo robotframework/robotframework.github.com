@@ -1203,6 +1203,13 @@ export default {
                 img: require("@/assets/img/users/kistler.svg"),
                 text:
                   'Kistler is using the Robot Framework for automated system tests of backend and frontend applications for various, very accurate and highly precise <a href="https://www.kistler.com/en/products/systems/" target="_blank">measurement systems</a>.'
+              },
+              {
+                title: "salicru",
+                href: "http://www.salicru.com",
+                img: require("@/assets/img/users/salicru.png"),
+                text:
+                  'Salicru has been using Robot Framework in testing embedded software and hardware development of power electronic equipment since 2011. We use Robot Framework along with our proprietary embedded software architecture <a href="https://www.salicru.com/en/white-papers-eng.html" target="_blank">Odyssey</a> to assure the quality of our products and it has become one of the most important tools for us.'
               }
             ]
           }
