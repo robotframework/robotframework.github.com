@@ -1209,7 +1209,7 @@ export default {
                 href: "http://rocla.com/",
                 img: require("@/assets/img/users/rocla.png"),
                 text:
-                  "Rocla is using Robot Framework widely in development and testing of the software for trucks and automated guided vehicles (AGV’s)."
+                  "Rocla is using Robot Framework widely in development and testing of the software for trucks and Automated Guided Vehicles (AGV’s)."
               },
               {
                 title: "salicru",
