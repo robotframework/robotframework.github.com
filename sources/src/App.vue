@@ -1216,7 +1216,7 @@ export default {
                 href: "https://opendrives.com/",
                 img: require("@/assets/img/users/open_drives.png"),
                 text:
-                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As Open Drives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
+                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As OpenDrives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
               },
               {
                 title: "salicru",
