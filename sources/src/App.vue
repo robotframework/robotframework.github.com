@@ -1212,6 +1212,13 @@ export default {
                   "Rocla is using Robot Framework widely in development and testing of the software for Trucks and Automated Guided Vehicles (AGV’s)."
               },
               {
+                title: "OpenDrives",
+                href: "https://opendrives.com/",
+                img: require("@/assets/img/users/rocla.png"),
+                text:
+                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As Open Drives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
+              },
+              {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
