@@ -1219,6 +1219,13 @@ export default {
                   "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As OpenDrives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
               },
               {
+                title: "Alfastrahovanie",
+                href: "https://www.alfastrah.ru/",
+                img: require("@/assets/img/users/alfastrahovanie.png"),
+                text:
+                  "Alfastrahovanie is using Robot Framework as a main regression testing tool for SAP FS CM system. Alfastrahovanie is in the beginning of ATDD path and Robot Framework is the main vehicle there as well."
+              },
+              {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
