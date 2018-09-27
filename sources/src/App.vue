@@ -1226,6 +1226,13 @@ export default {
                   "Alfastrahovanie is using Robot Framework as a main regression testing tool for SAP FS CM system. Alfastrahovanie is in the beginning of ATDD path and Robot Framework is the main vehicle there as well."
               },
               {
+                title: "Lucid Software",
+                href: "http://www.kovidndt.com/",
+                img: require("@/assets/img/users/lucid.png"),
+                text:
+                  "Lucid Software is using Robot Framework for complete system automation testing of its NDT software products. Necessary unique libraries are created to test the applications in both Windows and WPF formats."
+              },
+              {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
