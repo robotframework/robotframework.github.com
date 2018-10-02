@@ -1233,6 +1233,13 @@ export default {
                   "Lucid Software is using Robot Framework for complete system automation testing of its NDT software products. Necessary unique libraries are created to test the applications in both Windows and WPF formats."
               },
               {
+                title: "Oriental Pearl New Media Co, Ltd",
+                href: "http://www.opg.cn/",
+                img: require("@/assets/img/users/oriental.png"),
+                text:
+                  "Oriental Pearl New Media Co, Ltd is using Robot Framework for API and UI testing."
+              },
+              {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
