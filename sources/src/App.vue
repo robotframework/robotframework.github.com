@@ -1240,6 +1240,13 @@ export default {
                   "Oriental Pearl New Media Co, Ltd is using Robot Framework for API and UI testing."
               },
               {
+                title: "Charter Communications",
+                href: "https://www.spectrum.com/",
+                img: require("@/assets/img/users/spectrum.png"),
+                text:
+                  "Charter uses Robot Framework for automating feature and protocol testing on network devices like routers and firewalls for device certification, QA and network monitoring."
+              },
+              {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
