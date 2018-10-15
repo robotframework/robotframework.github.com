@@ -227,6 +227,13 @@ export default {
                       "Python based library for database testing. Works with any Python interpreter, including Jython."
                   },
                   {
+                    title: "Debug Library",
+                    href:
+                      "https://github.com/xyb/robotframework-debuglibrary",
+                    text:
+                      "A debug library for RobotFramework, which can be used as an interactive shell(REPL) also."
+                  },
+                  {
                     title: "Diff Library",
                     href:
                       "https://github.com/bulkan/robotframework-difflibrary",
