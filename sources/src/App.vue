@@ -740,7 +740,8 @@ export default {
                     title: "Dos And Don'ts",
                     href:
                       "http://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts",
-                    text: "Presentation loosely based on the above how-to."
+                    text: 
+                      "Slide set loosely based on 'How to write good test cases' guidelines."
                   },
                   {
                     title: "Public API",
