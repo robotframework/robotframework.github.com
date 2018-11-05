@@ -740,7 +740,7 @@ export default {
                     title: "Dos And Don'ts",
                     href:
                       "http://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts",
-                    text: 
+                    text:
                       "Slide set loosely based on 'How to write good test cases' guidelines."
                   },
                   {
@@ -1266,7 +1266,14 @@ export default {
                 img: require("@/assets/img/users/salicru.png"),
                 text:
                   'Salicru has been using Robot Framework in testing embedded software and hardware development of power electronic equipment since 2011. We use Robot Framework along with our proprietary embedded software architecture <a href="https://www.salicru.com/en/white-papers-eng.html" target="_blank">Odyssey</a> to assure the quality of our products and it has become one of the most important tools for us.'
-              }
+              },
+              {
+                title: "cisco",
+                href: "https://www.cisco.com/",
+                img: require("@/assets/img/users/cisco.jpg"),
+                text:
+                  "Cisco’s Customer Experience (CX) supports the testing & validation of Cisco and 3rd party solutions deployed by our customers. This includes Solution Validation Services (SVS) delivered both on Cisco-premise and customer-premise as part of a NetDevOps (CI/CD) process where continuous validation accelerates technology adoption, de-risks IT deployments, changes and upgrades, and ensures complex migrations are transparent."
+              },
             ]
           }
         }
