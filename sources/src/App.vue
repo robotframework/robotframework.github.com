@@ -745,7 +745,7 @@ export default {
                     title: "Dos And Don'ts",
                     href:
                       "http://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts",
-                    text: 
+                    text:
                       "Slide set loosely based on 'How to write good test cases' guidelines."
                   },
                   {
@@ -1111,46 +1111,11 @@ export default {
                   "Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces."
               },
               {
-                title: "KONE",
-                href: "http://www.kone.com",
-                img: require("@/assets/img/users/kone.png"),
-                text:
-                  "KONE is widely using Robot Framework in software development for testing embedded systems in elevators and escalators."
-              },
-              {
-                title: "Finnair",
-                href: "http://www.finnair.com",
-                img: require("@/assets/img/users/finnair.png"),
-                text:
-                  "Finnair is using Robot Framework to support Finnair digital platform development."
-              },
-              {
                 title: "ABB",
                 href: "http://www.abb.com",
                 img: require("@/assets/img/users/abb.png"),
                 text:
                   "ABB is using Robot Framework in software development for testing distribution automation related configuration tools, web interfaces and embedded devices."
-              },
-              {
-                title: "metso",
-                href: "http://www.metso.com",
-                img: require("@/assets/img/users/metso.png"),
-                text:
-                  'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
-              },
-              {
-                title: "FICOSA",
-                href: "http://www.ficosa.com",
-                img: require("@/assets/img/users/ficosa.png"),
-                text:
-                  'FICOSA has been using Robot Framework for the last years in the automotive industry. It\'s being used for the automated testing of <a href="https://www.ficosa.com/products/advanced-communication-systems/communication-modules-tcu/" target="_blank">embedded software for in-vehicle telematic units</a> with very good results. We have implemented several Robot Framework libraries to control complex hardware environments in an scalable way.'
-              },
-              {
-                title: "OpenDaylight",
-                href: "http://www.opendaylight.org",
-                img: require("@/assets/img/users/opendaylight.png"),
-                text:
-                  'OpenDaylight is a software-defined network (SDN) platform that uses Robot Framework for unit- and integration tests between different services. If you are interested how, <a href="https://wiki.opendaylight.org/view/CrossProject:Integration_Group:Create_System_Test_Environment#Install_Robot_Framework" target="_blank"> check the wiki</a>.'
               },
               {
                 title: "Adwisit",
@@ -1160,13 +1125,12 @@ export default {
                   "Adwisit uses Robot Framework to automate end-to-end testing of business processes for customers with a complex structure of third-party products, handling both web and desktop applications."
               },
               {
-                title: "ryerson",
-                href: "http://www.ryerson.org",
-                img: require("@/assets/img/users/ryerson.png"),
+                title: "Alfastrahovanie",
+                href: "https://www.alfastrah.ru/",
+                img: require("@/assets/img/users/alfastrahovanie.png"),
                 text:
-                  "Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff."
+                  "Alfastrahovanie is using Robot Framework as a main regression testing tool for SAP FS CM system. Alfastrahovanie is in the beginning of ATDD path and Robot Framework is the main vehicle there as well."
               },
-
               {
                 title: "axon",
                 href: "http://www.axon.tv",
@@ -1182,6 +1146,20 @@ export default {
                   "CENX is using Robot Framework, within a Docker environment, for feature and integration testing of a product that empowers network- and service operation centers."
               },
               {
+                title: "Charter Communications",
+                href: "https://www.spectrum.com/",
+                img: require("@/assets/img/users/spectrum.png"),
+                text:
+                  "Charter uses Robot Framework for automating feature and protocol testing on network devices like routers and firewalls for device certification, QA and network monitoring."
+              },
+              {
+                title: "cisco",
+                href: "https://www.cisco.com/",
+                img: require("@/assets/img/users/cisco.jpg"),
+                text:
+                  "Cisco’s Customer Experience (CX) supports the testing & validation of Cisco and 3rd party solutions deployed by our customers. This includes Solution Validation Services (SVS) delivered both on Cisco-premise and customer-premise as part of a NetDevOps (CI/CD) process where continuous validation accelerates technology adoption, de-risks IT deployments, changes and upgrades, and ensures complex migrations are transparent."
+              },
+              {
                 title: "Conde Nast",
                 href: "https://technology.condenast.com/",
                 img: require("@/assets/img/users/condenast.png"),
@@ -1189,32 +1167,18 @@ export default {
                   'Cond&eacute; Nast <a href="https://technology.condenast.com/story/automated-testing-qa-brand-sites-robot-framework" target="_blank">transformed their quality assurance for their brand sites</a>, such as Brides, Wired and Architectural Digest, from an entirely manual process to automated one with Robot Framework.'
               },
               {
-                title: "Opuscapita",
-                href: "https://www.opuscapita.com/",
-                img: require("@/assets/img/users/opuscapita.png"),
+                title: "FICOSA",
+                href: "http://www.ficosa.com",
+                img: require("@/assets/img/users/ficosa.png"),
                 text:
-                  "OpusCapita is using Robot Framework in software development for regression testing automation of web applications, API and internal software components."
+                  'FICOSA has been using Robot Framework for the last years in the automotive industry. It\'s being used for the automated testing of <a href="https://www.ficosa.com/products/advanced-communication-systems/communication-modules-tcu/" target="_blank">embedded software for in-vehicle telematic units</a> with very good results. We have implemented several Robot Framework libraries to control complex hardware environments in an scalable way.'
               },
               {
-                title: "steeri",
-                href: "http://www.steeri.fi/en",
-                img: require("@/assets/img/users/steeri.png"),
+                title: "Finnair",
+                href: "http://www.finnair.com",
+                img: require("@/assets/img/users/finnair.png"),
                 text:
-                  "Steeri wanted to automate its test runs and chose the keyword-driven and user-friendly Robot Framework as the tool for the job."
-              },
-              {
-                title: "NRL",
-                href: "https://www.nrl.navy.mil",
-                img: require("@/assets/img/users/nrl.png"),
-                text:
-                  'The Naval Research Laboratory extends Robot Framework to provide a seamless integration with the <a href="https://www.nrl.navy.mil/itd/imda/products/sage" target="_blank">SAGE</a> multi-agent system. This integration enables Robot Framework to drive distributed simulation and monitoring for test automation of SOA systems.'
-              },
-              {
-                title: "zilogic",
-                href: "http://www.zilogic.com",
-                img: require("@/assets/img/users/zilogic.png"),
-                text:
-                  "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
+                  "Finnair is using Robot Framework to support Finnair digital platform development."
               },
               {
                 title: "Kistler",
@@ -1224,25 +1188,11 @@ export default {
                   'Kistler is using the Robot Framework for automated system tests of backend and frontend applications for various, very accurate and highly precise <a href="https://www.kistler.com/en/products/systems/" target="_blank">measurement systems</a>.'
               },
               {
-                title: "Rocla",
-                href: "http://rocla.com/",
-                img: require("@/assets/img/users/rocla.png"),
+                title: "KONE",
+                href: "http://www.kone.com",
+                img: require("@/assets/img/users/kone.png"),
                 text:
-                  "Rocla is using Robot Framework widely in development and testing of the software for Trucks and Automated Guided Vehicles (AGV’s)."
-              },
-              {
-                title: "OpenDrives",
-                href: "https://opendrives.com/",
-                img: require("@/assets/img/users/open_drives.png"),
-                text:
-                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As OpenDrives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
-              },
-              {
-                title: "Alfastrahovanie",
-                href: "https://www.alfastrah.ru/",
-                img: require("@/assets/img/users/alfastrahovanie.png"),
-                text:
-                  "Alfastrahovanie is using Robot Framework as a main regression testing tool for SAP FS CM system. Alfastrahovanie is in the beginning of ATDD path and Robot Framework is the main vehicle there as well."
+                  "KONE is widely using Robot Framework in software development for testing embedded systems in elevators and escalators."
               },
               {
                 title: "Lucid Software",
@@ -1252,6 +1202,41 @@ export default {
                   "Lucid Software is using Robot Framework for complete system automation testing of its NDT software products. Necessary unique libraries are created to test the applications in both Windows and WPF formats."
               },
               {
+                title: "metso",
+                href: "http://www.metso.com",
+                img: require("@/assets/img/users/metso.png"),
+                text:
+                  'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
+              },
+              {
+                title: "NRL",
+                href: "https://www.nrl.navy.mil",
+                img: require("@/assets/img/users/nrl.png"),
+                text:
+                  'The Naval Research Laboratory extends Robot Framework to provide a seamless integration with the <a href="https://www.nrl.navy.mil/itd/imda/products/sage" target="_blank">SAGE</a> multi-agent system. This integration enables Robot Framework to drive distributed simulation and monitoring for test automation of SOA systems.'
+              },
+              {
+                title: "OpenDaylight",
+                href: "http://www.opendaylight.org",
+                img: require("@/assets/img/users/opendaylight.png"),
+                text:
+                  'OpenDaylight is a software-defined network (SDN) platform that uses Robot Framework for unit- and integration tests between different services. If you are interested how, <a href="https://wiki.opendaylight.org/view/CrossProject:Integration_Group:Create_System_Test_Environment#Install_Robot_Framework" target="_blank"> check the wiki</a>.'
+              },
+              {
+                title: "OpenDrives",
+                href: "https://opendrives.com/",
+                img: require("@/assets/img/users/open_drives.png"),
+                text:
+                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As OpenDrives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
+              },
+              {
+                title: "Opuscapita",
+                href: "https://www.opuscapita.com/",
+                img: require("@/assets/img/users/opuscapita.png"),
+                text:
+                  "OpusCapita is using Robot Framework in software development for regression testing automation of web applications, API and internal software components."
+              },
+              {
                 title: "Oriental Pearl New Media Co, Ltd",
                 href: "http://www.opg.cn/",
                 img: require("@/assets/img/users/oriental.png"),
@@ -1259,19 +1244,41 @@ export default {
                   "Oriental Pearl New Media Co, Ltd is using Robot Framework for API and UI testing."
               },
               {
-                title: "Charter Communications",
-                href: "https://www.spectrum.com/",
-                img: require("@/assets/img/users/spectrum.png"),
+                title: "Rocla",
+                href: "http://rocla.com/",
+                img: require("@/assets/img/users/rocla.png"),
                 text:
-                  "Charter uses Robot Framework for automating feature and protocol testing on network devices like routers and firewalls for device certification, QA and network monitoring."
+                  "Rocla is using Robot Framework widely in development and testing of the software for Trucks and Automated Guided Vehicles (AGV’s)."
               },
+              {
+                title: "ryerson",
+                href: "http://www.ryerson.org",
+                img: require("@/assets/img/users/ryerson.png"),
+                text:
+                  "Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff."
+              },
+
               {
                 title: "salicru",
                 href: "http://www.salicru.com",
                 img: require("@/assets/img/users/salicru.png"),
                 text:
                   'Salicru has been using Robot Framework in testing embedded software and hardware development of power electronic equipment since 2011. We use Robot Framework along with our proprietary embedded software architecture <a href="https://www.salicru.com/en/white-papers-eng.html" target="_blank">Odyssey</a> to assure the quality of our products and it has become one of the most important tools for us.'
-              }
+              },
+              {
+                title: "steeri",
+                href: "http://www.steeri.fi/en",
+                img: require("@/assets/img/users/steeri.png"),
+                text:
+                  "Steeri wanted to automate its test runs and chose the keyword-driven and user-friendly Robot Framework as the tool for the job."
+              },
+              {
+                title: "zilogic",
+                href: "http://www.zilogic.com",
+                img: require("@/assets/img/users/zilogic.png"),
+                text:
+                  "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
+              },
             ]
           }
         }
