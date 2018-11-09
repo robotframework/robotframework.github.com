@@ -355,6 +355,11 @@ export default {
                       "Library for testing the SAPGUI client using the internal SAP Scripting Engine"
                   },
                   {
+                    title: "Selenium2Screenshots",
+                    href: "https://pypi.org/project/robotframework-selenium2screenshots",
+                    text: "Library for capturing annotated screenshots with Selenium2Library."
+                  },
+                  {
                     title: "SeleniumLibrary",
                     href: "http://github.com/robotframework/SeleniumLibrary/",
                     text:
