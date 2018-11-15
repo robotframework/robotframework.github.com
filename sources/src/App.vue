@@ -86,7 +86,7 @@ export default {
             text: {
               header: "Libraries",
               text:
-                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list. </p>'
+                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list. You may also <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">report</a> if a library on the list seems to be unmaintained.</p>'
             },
             tabs: [
               {
@@ -334,7 +334,7 @@ export default {
                     title: "Rammbock",
                     href: "https://github.com/robotframework/Rammbock#readme",
                     text:
-                      "Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets."
+                      "Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets. This library supports Python 2.x only."
                   },
                   {
                     title: "RemoteSwingLibrary",
