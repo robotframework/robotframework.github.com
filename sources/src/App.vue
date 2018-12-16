@@ -564,6 +564,16 @@ export default {
                     href: "http://plugins.jetbrains.com/plugin/7415"
                   },
                   {
+                    title: "Notepad++",
+                    text: "Syntax highlighting for Notepad++.",
+                    href: "https://github.com/vkosuri/lang-robot"
+                  },
+                  {
+                    title: "RED",
+                    text: "Eclipse based editor with a debugger by Nokia.",
+                    href: "https://github.com/nokia/RED"
+                  },
+                  {
                     title: "TextMate bundle",
                     text: "Bundle for TextMate adding syntax highlighting.",
                     href: "https://bitbucket.org/jussimalinen/robot.tmbundle/"
@@ -584,16 +594,6 @@ export default {
                     title: "Vim plugin",
                     text: "Vim plugin for development with Robot Framework.",
                     href: "https://github.com/mfukar/robotframework-vim"
-                  },
-                  {
-                    title: "Notepad++",
-                    text: "Syntax highlighting for Notepad++.",
-                    href: "https://github.com/vkosuri/lang-robot"
-                  },
-                  {
-                    title: "RED",
-                    text: "Eclipse based editor with a debugger by Nokia.",
-                    href: "https://github.com/nokia/RED"
                   }
                 ]
               },
