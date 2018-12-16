@@ -1132,6 +1132,13 @@ export default {
                   "Alfastrahovanie is using Robot Framework as a main regression testing tool for SAP FS CM system. Alfastrahovanie is in the beginning of ATDD path and Robot Framework is the main vehicle there as well."
               },
               {
+                title: "Alpha",
+                href: "http://www.alpha.company/",
+                img: require("@/assets/img/users/alpha.png"),
+                text:
+                  "At Alpha we are using Robot Framework to automatise the quality of our software to guarantee the best of us. It helps us to test the performance of the applications developed by our team."
+              },
+              {
                 title: "axon",
                 href: "http://www.axon.tv",
                 img: require("@/assets/img/users/axon.png"),
