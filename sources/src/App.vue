@@ -901,6 +901,13 @@ export default {
                       "https://github.com/robotframework/robotframework/issues",
                     text:
                       "Notice that external libraries and tools developed as separate projects have their own issue trackers."
+                  },
+                  {
+                    title: "Meetup Groups",
+                    href:
+                      "https://www.meetup.com/pro/robot-framework-foundation",
+                    text:
+                      "Robot Framework meetup groups around the globe."
                   }
                 ]
               },
