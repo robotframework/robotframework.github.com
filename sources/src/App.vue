@@ -594,6 +594,11 @@ export default {
                     title: "Vim plugin",
                     text: "Vim plugin for development with Robot Framework.",
                     href: "https://github.com/mfukar/robotframework-vim"
+                  },
+                  {
+                    title: "Intellisense for Visual Studio Code",
+                    text: "A Visual Studio Code extension that supports Robot Framework development.",
+                    href: "https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense"
                   }
                 ]
               },
