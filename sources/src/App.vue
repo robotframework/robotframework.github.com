@@ -766,9 +766,9 @@ export default {
                 items: [
                   {
                     title: "Web Demo",
-                    href: "https://bitbucket.org/robotframework/webdemo",
+                    href: "https://github.com/robotframework/WebDemo",
                     text:
-                      "Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using Selenium2Library."
+                      "Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using SeleniumLibrary."
                   },
                   {
                     title: "ATDD with Robot Framework",
