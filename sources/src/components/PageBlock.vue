@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import FeatureBox from "@/Components/FeatureBox.vue";
-import TabBox from "@/Components/TabBox.vue";
-import TextBlock from "@/Components/TextBlock.vue";
-import UserBox from "@/Components/UserBox.vue";
+import FeatureBox from "@/components/FeatureBox.vue";
+import TabBox from "@/components/TabBox.vue";
+import TextBlock from "@/components/TextBlock.vue";
+import UserBox from "@/components/UserBox.vue";
 
 import Examples from "@/components/pages/Examples";
 

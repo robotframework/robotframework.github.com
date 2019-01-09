@@ -218,7 +218,7 @@
 </template>
 
 <script>
-import TextBlock from "@/Components/TextBlock.vue";
+import TextBlock from "@/components/TextBlock.vue";
 
 export default {
   components: {

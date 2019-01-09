@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-import PageBlock from "@/Components/PageBlock.vue";
+import PageBlock from "@/components/PageBlock.vue";
 
 export default {
   components: {
