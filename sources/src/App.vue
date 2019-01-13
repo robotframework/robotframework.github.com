@@ -334,7 +334,7 @@ export default {
                     title: "Rammbock",
                     href: "https://github.com/robotframework/Rammbock#readme",
                     text:
-                      "Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets. This library supports Python 2.x only."
+                      "Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets."
                   },
                   {
                     title: "RemoteSwingLibrary",
