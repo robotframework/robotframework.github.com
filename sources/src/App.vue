@@ -1148,7 +1148,7 @@ export default {
                 href: "http://www.alpha.company/",
                 img: require("@/assets/img/users/alpha.png"),
                 text:
-                  "At Alpha we are using Robot Framework to automatise the quality of our software to guarantee the best of us. It helps us to test the performance of the applications developed by our team."
+                  "At Alpha, we are developing the future of mobile apps for Health, with the latest advances in neuroscience, AI and mobile computing. Robot Framework is a key part of our Health Moonshot development process to help us automatize testing and guarantee the best quality."
               },
               {
                 title: "axon",
