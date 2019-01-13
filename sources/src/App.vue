@@ -86,7 +86,7 @@ export default {
             text: {
               header: "Libraries",
               text:
-                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list. You may also <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">report</a> if a library on the list seems to be unmaintained.</p>'
+                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list or if a library on the list seems to be unmaintained.</p>'
             },
             tabs: [
               {
