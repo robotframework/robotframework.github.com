@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-import PageBlock from "@/Components/PageBlock.vue";
+import PageBlock from "@/components/PageBlock.vue";
 
 export default {
   components: {
@@ -86,7 +86,7 @@ export default {
             text: {
               header: "Libraries",
               text:
-                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list. </p>'
+                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list or if a library on the list seems to be unmaintained.</p>'
             },
             tabs: [
               {
@@ -564,6 +564,16 @@ export default {
                     href: "http://plugins.jetbrains.com/plugin/7415"
                   },
                   {
+                    title: "Notepad++",
+                    text: "Syntax highlighting for Notepad++.",
+                    href: "https://github.com/vkosuri/lang-robot"
+                  },
+                  {
+                    title: "RED",
+                    text: "Eclipse based editor with a debugger by Nokia.",
+                    href: "https://github.com/nokia/RED"
+                  },
+                  {
                     title: "TextMate bundle",
                     text: "Bundle for TextMate adding syntax highlighting.",
                     href: "https://bitbucket.org/jussimalinen/robot.tmbundle/"
@@ -586,14 +596,9 @@ export default {
                     href: "https://github.com/mfukar/robotframework-vim"
                   },
                   {
-                    title: "Notepad++",
-                    text: "Syntax highlighting for Notepad++.",
-                    href: "https://github.com/vkosuri/lang-robot"
-                  },
-                  {
-                    title: "RED",
-                    text: "Eclipse based editor with a debugger by Nokia.",
-                    href: "https://github.com/nokia/RED"
+                    title: "Intellisense for Visual Studio Code",
+                    text: "A Visual Studio Code extension that supports Robot Framework development.",
+                    href: "https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense"
                   }
                 ]
               },
@@ -761,9 +766,9 @@ export default {
                 items: [
                   {
                     title: "Web Demo",
-                    href: "https://bitbucket.org/robotframework/webdemo",
+                    href: "https://github.com/robotframework/WebDemo",
                     text:
-                      "Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using Selenium2Library."
+                      "Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using SeleniumLibrary."
                   },
                   {
                     title: "ATDD with Robot Framework",
@@ -896,6 +901,13 @@ export default {
                       "https://github.com/robotframework/robotframework/issues",
                     text:
                       "Notice that external libraries and tools developed as separate projects have their own issue trackers."
+                  },
+                  {
+                    title: "Meetup Groups",
+                    href:
+                      "https://www.meetup.com/pro/robot-framework-foundation",
+                    text:
+                      "Robot Framework meetup groups around the globe."
                   }
                 ]
               },

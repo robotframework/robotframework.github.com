@@ -2,7 +2,7 @@ Robot Framework ecosystem front page
 ====================================
 
 This repository hosts Robot Framework's public website source code. The site
-itself is available at http://robotframework.org.
+itself is available at https://robotframework.org.
 
 Readme for editing this page `<sources/README.md>`__
 
