@@ -247,15 +247,15 @@ export default {
         },
         {
           text:
-            '<p> All keywords in Robot Framework come from some library. What if existing libraries do not have what you need? Easy! Just make a library of your own! </p><p> This example is from our <a href="https://bitbucket.org/robotframework/robotdemo" target="_blank">Robot Demo</a>. These keywords the tests use are implemented in plain Python. You can also do libraries in Java. </p>'
+            '<p> All keywords in Robot Framework come from some library. What if existing libraries do not have what you need? Easy! Just make a library of your own! </p><p> This example is from our <a href="https://github.com/robotframework/RobotDemo" target="_blank">Robot Demo</a>. These keywords the tests use are implemented in plain Python. You can also do libraries in Java. </p>'
         },
         {
           text:
-            '<p> <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing" target="_blank">Data-driven test development</a></span> is easy due to you being able to define templates for your tests. </p> <p> In this example, each test case adheres to the template set by <span class="teletype">Calculate</span> keyword. </p> <p> This example comes from <a href="https://bitbucket.org/robotframework/robotdemo" target="_blank">our another demo</a> displaying testing a simple calculator. Check it out! </p>'
+            '<p> <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing" target="_blank">Data-driven test development</a></span> is easy due to you being able to define templates for your tests. </p> <p> In this example, each test case adheres to the template set by <span class="teletype">Calculate</span> keyword. </p> <p> This example comes from <a href="https://github.com/robotframework/RobotDemo" target="_blank">our another demo</a> displaying testing a simple calculator. Check it out! </p>'
         },
         {
           text:
-            '<p> Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That\'s baked in! </p><p> </p><p> Here is another example from our <a href="https://bitbucket.org/robotframework/robotdemo" target="_blank">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework. </p>'
+            '<p> Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That\'s baked in! </p><p> </p><p> Here is another example from our <a href="https://github.com/robotframework/RobotDemo" target="_blank">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework. </p>'
         }
       ]
     };
