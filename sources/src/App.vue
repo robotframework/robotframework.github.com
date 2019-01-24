@@ -779,7 +779,7 @@ export default {
                   },
                   {
                     title: "Robot Demo",
-                    href: "https://bitbucket.org/robotframework/robotdemo",
+                    href: "https://github.com/robotframework/RobotDemo",
                     text:
                       "Demonstrates how to create tests and test libraries. The system under test is a simple calculator that is tested using a custom library."
                   },
