@@ -429,7 +429,7 @@ export default {
                     href:
                       "https://github.com/Omenia/robotframework-whitelibrary",
                     text:
-                      'WhiteLibrary provides the means to test Windows GUI technologies with Robot Framework. WhiteLibrary wraps White test automation framework. Technologies: Win32, WinForms, WPF (Windows Presentation Foundation) and SWT (Java) platforms.'
+                      'Library for automating Windows GUI. Based on White framework, supported technologies include Win32, WinForms, and WPF.'
                   },
                   {
                     title: "watir-robot",
