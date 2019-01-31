@@ -425,6 +425,13 @@ export default {
                       'Library for interacting over <a href="https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol" target="_blank">Trivial File Transfer Portocol</a>.'
                   },
                   {
+                    title: "WhiteLibrary",
+                    href:
+                      "https://github.com/Omenia/robotframework-whitelibrary",
+                    text:
+                      'WhiteLibrary provides the means to test Windows GUI technologies with Robot Framework. WhiteLibrary wraps White test automation framework. Technologies: Win32, WinForms, WPF (Windows Presentation Foundation) and SWT (Java) platforms.'
+                  },
+                  {
                     title: "watir-robot",
                     href: "https://github.com/semperos/watir-robot/#readme",
                     text: "Web testing library that uses Watir tool."
