@@ -415,7 +415,7 @@ export default {
                     href:
                       "https://github.com/Altran-PT-GDC/Robot-Framework-Test-FX-Library",
                     text:
-                      'Library to enable to test Java FX applications using the <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX framework</a>.'
+                      'Library to enable to test Java FX applications using the <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX framework</a>. Has also remote interface support.'
                   },
                   {
                     title: "TFTPLibrary",
