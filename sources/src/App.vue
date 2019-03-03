@@ -778,13 +778,6 @@ export default {
                       "Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using SeleniumLibrary."
                   },
                   {
-                    title: "ATDD with Robot Framework",
-                    href:
-                      "https://code.google.com/p/atdd-with-robot-framework/",
-                    text:
-                      "How to use Robot Framework for Acceptance Test Driven Development (ATDD) a.k.a. Specification by Example."
-                  },
-                  {
                     title: "Robot Demo",
                     href: "https://github.com/robotframework/RobotDemo",
                     text:
@@ -798,11 +791,24 @@ export default {
                       "Introduces the most important features of Robot Framework and acts as an executable demo."
                   },
                   {
+                    title: "ATDD with Robot Framework",
+                    href:
+                      "https://code.google.com/p/atdd-with-robot-framework/",
+                    text:
+                      "How to use Robot Framework for Acceptance Test Driven Development (ATDD) a.k.a. Specification by Example."
+                  },
+                  {
                     title: "Using C with Robot Framework",
                     href: "https://bitbucket.org/robotframework/cdemo",
                     text:
                       "This simple example demonstrates how to use C language from Robot Framework test libraries."
-                  }
+                  },
+                  {
+                    title: "Remote interface demo",
+                    href: "https://github.com/jg8481/robotframework-scala-remote-library",
+                    text:
+                      "Example demonstrates how to use Robot Framework's <a href='https://github.com/robotframework/RemoteInterface' target='_blank'>Remote interface</a> to call test libraries written in any programming language."
+                  },
                 ]
               },
               {
