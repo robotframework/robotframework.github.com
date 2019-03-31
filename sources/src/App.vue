@@ -1311,6 +1311,13 @@ export default {
                 text:
                   "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
               },
+			  {
+                title: "QA Hive",
+                href: "https://www.qahive.com",
+                img: require("@/assets/img/users/qahive.png"),
+                text:
+                  "QA Hive is using Robot Framework for automation tests and automation tasks for reduce overall manual process and improve system reliability."
+              }
             ]
           }
         }
