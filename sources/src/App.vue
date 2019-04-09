@@ -698,6 +698,11 @@ export default {
                     href: "https://github.com/robotframework/statuschecker/",
                     text:
                       "A tool for validation that executed Robot Framework test cases have expected statuses and log messages. Mainly targeted for test library developers."
+                  },
+                  {
+                    title: "Distbot",
+                    href: "https://github.com/rajeevnaikte/distbot",
+                    text: "A bot for self distribution of Robot Framework tests into multiple machines/docker and execute in parallel (without need of master node)."
                   }
                 ]
               }
