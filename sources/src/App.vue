@@ -1213,6 +1213,13 @@ export default {
                   "Finnair is using Robot Framework to support Finnair digital platform development."
               },
               {
+                title: "Juniper Networks",
+                href: "https://www.juniper.net/",
+                img: require("@/assets/img/users/juniper.png"),
+                text:
+                  "Juniper Networks has built an extensive automation framework on top of Robot Framework for end-to-end qualification of Juniper products to maintain our commitment to quality for our customers and users. It is used extensively in multiple groups including engineering and support amongst others. We have also worked with third-party test tool vendors to provide Robot Framework friendly APIs to integrate with our framework."
+              },
+              {
                 title: "Kistler",
                 href: "https://www.kistler.com",
                 img: require("@/assets/img/users/kistler.svg"),
