@@ -1324,6 +1324,13 @@ export default {
                 img: require("@/assets/img/users/qahive.png"),
                 text:
                   "QA Hive is using Robot Framework for automation tests and automation tasks for reduce overall manual process and improve system reliability."
+              },
+              {
+                title: "TMA Solutions",
+                href: "https://www.tmasolutions.com",
+                img: require("@/assets/img/users/TMAlogo.png"),
+                text:
+                  "TMA Solutions is using Robot Framework to automate not only single product but also complex interoperability testing, involving API, desktop, mobile, web, network devices and special hardware. With this framework, we can easily expand testing scopes, improve automation run speed while still keeping high reliability."
               }
             ]
           }
