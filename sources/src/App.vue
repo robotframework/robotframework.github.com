@@ -227,6 +227,13 @@ export default {
                       "Python based library for database testing. Works with any Python interpreter, including Jython."
                   },
                   {
+                    title: "DataDriver Library",
+                    href:
+                      "https://github.com/Snooz82/robotframework-datadriver",
+                    text:
+                      "Library for Data-Driven Testing with external data tables (csv, xls, xlsx, etc.). Pairwise Combinatorial Testing support."
+                  },
+                  {
                     title: "Debug Library",
                     href:
                       "https://github.com/xyb/robotframework-debuglibrary",
