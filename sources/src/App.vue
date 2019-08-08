@@ -1312,6 +1312,13 @@ export default {
                   'Salicru has been using Robot Framework in testing embedded software and hardware development of power electronic equipment since 2011. We use Robot Framework along with our proprietary embedded software architecture <a href="https://www.salicru.com/en/white-papers-eng.html" target="_blank">Odyssey</a> to assure the quality of our products and it has become one of the most important tools for us.'
               },
               {
+                title: "Segron",
+                href: "http://www.segron.com/",
+                img: require("@/assets/img/users/segron.png"),
+                text:
+                  "Segron is a Bratislava-based company offering beyond End2End testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true End2End solution for testing multiple interfaces and technologies with a single tool."
+              },
+              {
                 title: "steeri",
                 href: "http://www.steeri.fi/en",
                 img: require("@/assets/img/users/steeri.png"),
