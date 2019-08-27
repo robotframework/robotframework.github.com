@@ -9,6 +9,7 @@
       v-bind:key="item.title"
       :target="item.url ? '_blank' : '_self'"
       :href="item.url ? item.url : '#'+item.title.toLowerCase()">
+      <div v-if="item.title === 'Foundation'" style="margin-top: 1rem"></div>
         {{item.title}}
         <span
           v-if="item.url"
@@ -25,8 +26,21 @@
     ROBOT FRAMEWORK <b-img :src="require('@/assets/img/ROBOTFW_Mark_White_LOW_cropped.png')" class="" style="height:30px;"  alt="Robot Frameworkg logo"/>
   </b-navbar-brand>
   <b-collapse is-nav id="nav_collapse">
-    <b-navbar-nav class="align-middle">
-      <b-nav-item v-for="item in pages" v-if="item.hide_from_nav != true" v-bind:key="item.title" :href="'#'+item.title.toLowerCase()">{{item.title}}</b-nav-item>
+    <b-navbar-nav class="align-middle" style="margin-top: 1rem">
+      <b-nav-item
+        v-for="item in pages.filter(page => !page.hide_from_nav)"
+        v-bind:key="item.title"
+        :target="item.url ? '_blank' : '_self'"
+        style="font-size: 1rem"
+        :href="item.url ? item.url : '#'+item.title.toLowerCase()">
+          <div v-if="item.title === 'Foundation'" style="margin-top: 1rem"></div>
+          {{item.title}}
+          <span
+            v-if="item.url"
+            style="margin-left: -5px">
+            <img src="../assets/img/external_link.svg">
+          </span>
+        </b-nav-item>
     </b-navbar-nav>
   </b-collapse>
 
