@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-between no-gutters">
+  <div v-if="data" class="row justify-content-between no-gutters">
     <div class="col-md-5 col-lg-4 order-1 textblock-left p-3">
       <h1 v-html="data.header"/>
     </div>
