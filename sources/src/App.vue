@@ -7,7 +7,7 @@
     <div class="col-md-10" id="scroller"
     ref="content" style="position:relative;height:100vh;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling: touch;">
         <app-header/>
-        <page-block v-for="(page, index) in pages"
+        <page-block v-for="(page, index) in pages.filter(page => page.data)"
           v-bind:page="page"
           v-bind:index="index"
           v-bind:key="index"
@@ -1071,58 +1071,6 @@ export default {
           }
         },
         {
-          title: "RPA",
-          text_block: true,
-          tab_box: false,
-          feature_box: false,
-          data: {
-            text: {
-              header: "RPA",
-              text:
-                'Robot Framework is an open source robotic process automation (RPA) solution that is used to automate business processes. It is open and extensible which means that it can be integrated with virtually any other tool to create powerful and flexible RPA solutions. Read more at <a href="http://robotframework.org/rpa" target="_blank">robotframework.org/rpa</a>'
-            }
-          }
-        },
-        {
-          title: "Foundation",
-          text_block: true,
-          tab_box: false,
-          feature_box: false,
-          data: {
-            text: {
-              header: "Foundation",
-              text:
-                'As a company, the best way to join our movement and keep Robot Framework the best test automation solution on the market is to join the Robot Framework Foundation. <a href="http://robotframework.org/foundation/" target="_blank">To foundation</a>'
-            }
-          }
-        },
-        {
-          title: "Shop",
-          text_block: true,
-          tab_box: false,
-          feature_box: false,
-          data: {
-            text: {
-              header: "Shop",
-              text:
-                'The easiest way to support Robot Framework is to buy nice swag from our web shop. In addition, it\'s a great way to show your colors! <a href="https://shop.robotframework.org" target="_blank">To shop</a>'
-            }
-          }
-        },
-        {
-          title: "RoboCon",
-          text_block: true,
-          tab_box: false,
-          feature_box: false,
-          data: {
-            text: {
-              header: "Robocon",
-              text:
-                '<a href="http://robocon.io" target="_blank">RoboCon</a> is the annual Robot Framework conference organized first time in January 2018 at Helsinki, Finland. The first conference was a huge success with great presentations and over 250 participants. The planning of RoboCon 2019 has already started and <a href="http://robocon.io" target="_blank">Robocon.io</a> will be updated as soon as the plans start to materialize.'
-            }
-          }
-        },
-        {
           title: "Users",
           text_block: true,
           tab_box: false,
@@ -1341,6 +1289,34 @@ export default {
               }
             ]
           }
+        },
+        {
+          title: "Foundation",
+          text_block: true,
+          tab_box: false,
+          url: 'https://robotframework.org/foundation/',
+          feature_box: false
+        },
+        {
+          title: "RoboCon",
+          text_block: true,
+          tab_box: false,
+          url: 'https://robocon.io',
+          feature_box: false
+        },
+        {
+          title: "Shop",
+          text_block: true,
+          tab_box: false,
+          url: 'https://shop.robotframework.org',
+          feature_box: false
+        },
+        {
+          title: "RPA",
+          text_block: true,
+          tab_box: false,
+          url: 'https://robotframework.org/rpa/',
+          feature_box: false
         }
       ]
     };

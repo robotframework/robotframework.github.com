@@ -4,7 +4,18 @@
   <b-navbar-brand style="text-transform:uppercase;">
         <b-img :src="require('@/assets/img/ROBOTFW_Mark_White_LOW_cropped.png')" class="img-fluid" alt="Robot Frameworkg logo"/>
   </b-navbar-brand>
-    <b-nav-item v-for="item in pages" v-if="item.hide_from_nav != true" v-bind:key="item.title" :href="'#'+item.title.toLowerCase()">{{item.title}}</b-nav-item>
+    <b-nav-item
+      v-for="item in pages.filter(page => !page.hide_from_nav)"
+      v-bind:key="item.title"
+      :target="item.url ? '_blank' : '_self'"
+      :href="item.url ? item.url : '#'+item.title.toLowerCase()">
+        {{item.title}}
+        <span
+          v-if="item.url"
+          style="margin-left: -5px">
+          <img src="../assets/img/external_link.svg">
+        </span>
+      </b-nav-item>
 </b-nav>
 
 
