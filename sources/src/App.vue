@@ -1295,13 +1295,6 @@ export default {
                   "Segron is a Bratislava-based company offering beyond End2End testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true End2End solution for testing multiple interfaces and technologies with a single tool."
               },
               {
-                title: "steeri",
-                href: "http://www.steeri.fi/en",
-                img: require("@/assets/img/users/steeri.png"),
-                text:
-                  "Steeri wanted to automate its test runs and chose the keyword-driven and user-friendly Robot Framework as the tool for the job."
-              },
-              {
                 title: "zilogic",
                 href: "http://www.zilogic.com",
                 img: require("@/assets/img/users/zilogic.png"),
