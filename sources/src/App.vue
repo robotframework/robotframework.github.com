@@ -625,6 +625,11 @@ export default {
                     title: "Intellisense for Visual Studio Code",
                     text: "A Visual Studio Code extension that supports Robot Framework development.",
                     href: "https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense"
+                  },
+                  {
+                    title: "Debugger for Visual Studio Code",
+                    text: "A Visual Studio Code extension that lets you debug robot files with call stack, breakpoints, etc.",
+                    href: "https://marketplace.visualstudio.com/items?itemName=JacobPhilip.danfoss-robotframework-debug"
                   }
                 ]
               },
