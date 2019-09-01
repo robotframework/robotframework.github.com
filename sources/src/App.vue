@@ -315,6 +315,12 @@ export default {
                       'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
                   },
                   {
+                    title: "KiCadLibrary",
+                    href:
+                      "https://github.com/madworx/robotframework-kicadlibrary#readme",
+                    text: "Library for interacting with KiCad EDA designs."
+                  },
+                  {
                     title: "MongoDB library",
                     href:
                       "https://github.com/iPlantCollaborativeOpenSource/Robotframework-MongoDB-Library#readme",
