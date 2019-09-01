@@ -1266,6 +1266,13 @@ export default {
                   "Oriental Pearl New Media Co, Ltd is using Robot Framework for API and UI testing."
               },
               {
+                title: "QA Hive",
+                href: "https://www.qahive.com",
+                img: require("@/assets/img/users/qahive.png"),
+                text:
+                  "QA Hive is using Robot Framework for automation tests and automation tasks for reduce overall manual process and improve system reliability."
+              },
+              {
                 title: "Rocla",
                 href: "http://rocla.com/",
                 img: require("@/assets/img/users/rocla.png"),
@@ -1292,7 +1299,14 @@ export default {
                 href: "http://www.segron.com/",
                 img: require("@/assets/img/users/segron.png"),
                 text:
-                  "Segron is a Bratislava-based company offering beyond End2End testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true End2End solution for testing multiple interfaces and technologies with a single tool."
+                  "Segron is a Bratislava-based company offering beyond end-to-end testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true end-to-end solution for testing multiple interfaces and technologies with a single tool."
+              },
+              {
+                title: "TMA Solutions",
+                href: "https://www.tmasolutions.com",
+                img: require("@/assets/img/users/TMAlogo.png"),
+                text:
+                  "TMA Solutions is using Robot Framework to automate not only single product but also complex interoperability testing, involving API, desktop, mobile, web, network devices and special hardware. With this framework, we can easily expand testing scopes, improve automation run speed while still keeping high reliability."
               },
               {
                 title: "zilogic",
@@ -1301,20 +1315,6 @@ export default {
                 text:
                   "Zilogic Systems is using Robot Framework for integration testing of embedded products. We convert requirements into test cases,write necessary libraries to test the Device Under Test."
               },
-			  {
-                title: "QA Hive",
-                href: "https://www.qahive.com",
-                img: require("@/assets/img/users/qahive.png"),
-                text:
-                  "QA Hive is using Robot Framework for automation tests and automation tasks for reduce overall manual process and improve system reliability."
-              },
-              {
-                title: "TMA Solutions",
-                href: "https://www.tmasolutions.com",
-                img: require("@/assets/img/users/TMAlogo.png"),
-                text:
-                  "TMA Solutions is using Robot Framework to automate not only single product but also complex interoperability testing, involving API, desktop, mobile, web, network devices and special hardware. With this framework, we can easily expand testing scopes, improve automation run speed while still keeping high reliability."
-              }
             ]
           }
         },
