@@ -1008,7 +1008,7 @@ export default {
                     title: "Comiq",
                     href: "http://comiq.fi/",
                     text:
-                      "Comiq is a Finnish software quality service provider founded in                2003 employing around 60 QA consultants."
+                      "Comiq is a Finnish software quality service provider founded in 2003 employing around 60 QA consultants."
                   },
                   {
                     title: "Digia",
@@ -1299,7 +1299,7 @@ export default {
                 href: "http://www.segron.com/",
                 img: require("@/assets/img/users/segron.png"),
                 text:
-                  "Segron is a Bratislava-based company offering beyond end-to-end testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true end-to-end solution for testing multiple interfaces and technologies with a single tool."
+                  "Segron is a Bratislava-based company offering beyond end-to-end testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true end-to-e nd solution for testing multiple interfaces and technologies with a single tool."
               },
               {
                 title: "TMA Solutions",
