@@ -733,6 +733,11 @@ export default {
                     title: "Distbot",
                     href: "https://github.com/rajeevnaikte/distbot",
                     text: "A bot for self distribution of Robot Framework tests into multiple machines/docker and execute in parallel (without need of master node)."
+                  },
+                  {
+                    title: "Tesults Listener",
+                    href: "https://www.tesults.com/docs?doc=robot",
+                    text: "A listener that provides a codeless integration experience for test results reporting from Robot Framework into Tesults."
                   }
                 ]
               }
