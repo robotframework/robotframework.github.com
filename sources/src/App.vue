@@ -665,15 +665,21 @@ export default {
                 title: "OTHER",
                 items: [
                   {
+                    title: "DbBot",
+                    href: "https://github.com/robotframework/DbBot",
+                    text:
+                      "Tool for serializing Robot Framework test results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
+                  },
+                  {
+                    title: "Distbot",
+                    href: "https://github.com/rajeevnaikte/distbot",
+                    text: "A bot for self distribution of Robot Framework tests into multiple machines/docker and execute in parallel (without need of master node)."
+                  },
+                  {
                     title: "Fixml",
                     href: "https://bitbucket.org/robotframework/fixml",
                     text:
                       "Tool for fixing Robot Framework output files that are broken."
-                  },
-                  {
-                    title: "Pabot",
-                    href: "https://github.com/mkorpela/pabot",
-                    text: "A parallel executor for Robot Framework test cases."
                   },
                   {
                     title: "Mabot",
@@ -682,16 +688,33 @@ export default {
                       "Tool for reporting manual tests in format compatible with Robot Framework outputs."
                   },
                   {
+                    title: "Pabot",
+                    href: "https://github.com/mkorpela/pabot",
+                    text: "A parallel executor for Robot Framework test cases."
+                  },
+                  {
                     title: "RFDoc",
                     href: "http://github.com/robotframework/rfdoc",
                     text:
                       "Web based system for storing and searching Robot Framework test library and resource file documentations."
                   },
                   {
+                    title: "Robot Corder",
+                    href: "https://github.com/sohwendy/Robotcorder",
+                    text:
+                      "Robot Corder generates Robot Framework test script by recording user interactions and scanning the html page in your Chrome browser. It aims to be equivalent of Selenium IDE for RobotFramework browser test automation."
+                  },
+                  {
                     title: "Robot Framework Hub",
                     href: "https://github.com/boakley/robotframework-hub/wiki",
                     text:
                       "Lightweight web server that provides access to the Robot Framework test assets via browser."
+                  },
+                  {
+                    title: "Robot Framework Lexer",
+                    href: "https://bitbucket.org/robotframework/pygmentslexer",
+                    text:
+                      "Robot Framework syntax highlighting with Pygments. Link is to the lexer project itself, but the lexer is part of Pygments from version 1.6 onwards."
                   },
                   {
                     title: "Robot Tools",
@@ -705,34 +728,12 @@ export default {
                     text:
                       "Multi-agent based extension to Robot Framework. Agent based systems make it possible to test distributed systems such as Service Oriented Architecture systems. SAGE Provides a library of Robot Framework keywords for creating and managing SAGE agent networks as well as collecting and reporting results from remote agents."
                   },
-                  {
-                    title: "Robot Corder",
-                    href: "https://github.com/sohwendy/Robotcorder",
-                    text:
-                      "Robot Corder generates Robot Framework test script by recording user interactions and scanning the html page in your Chrome browser. It aims to be equivalent of Selenium IDE for RobotFramework browser test automation."
-                  },
-                  {
-                    title: "Robot Framework Lexer",
-                    href: "https://bitbucket.org/robotframework/pygmentslexer",
-                    text:
-                      "Robot Framework syntax highlighting with Pygments. Link is to the lexer project itself, but the lexer is part of Pygments from version 1.6 onwards."
-                  },
-                  {
-                    title: "DbBot",
-                    href: "https://github.com/robotframework/DbBot",
-                    text:
-                      "Tool for serializing Robot Framework test results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
-                  },
+
                   {
                     title: "StatusChecker",
                     href: "https://github.com/robotframework/statuschecker/",
                     text:
                       "A tool for validation that executed Robot Framework test cases have expected statuses and log messages. Mainly targeted for test library developers."
-                  },
-                  {
-                    title: "Distbot",
-                    href: "https://github.com/rajeevnaikte/distbot",
-                    text: "A bot for self distribution of Robot Framework tests into multiple machines/docker and execute in parallel (without need of master node)."
                   },
                   {
                     title: "Tesults Listener",
