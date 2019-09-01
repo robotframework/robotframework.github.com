@@ -214,6 +214,12 @@ export default {
                     text: "Library for driving a CNC milling machine."
                   },
                   {
+                    title: "ConfluentKafkaLibrary",
+                    href:
+                      "https://github.com/robooo/robotframework-ConfluentKafkaLibrary",
+                    text: "Library for python confluent kafka."
+                  },
+                  {
                     title: "Database Library (Java)",
                     href: "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
