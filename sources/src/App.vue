@@ -220,6 +220,12 @@ export default {
                     text: "Library for python confluent kafka."
                   },
                   {
+                    title: "CURFLibrary",
+                    href:
+                      "https://github.com/Openwide-Ingenierie/robotframework-can-uds-library",
+                    text: "Library for testing CAN bus with support for ISO-TP and UDS."
+                  },
+                  {
                     title: "Database Library (Java)",
                     href: "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
