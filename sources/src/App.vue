@@ -1315,6 +1315,13 @@ export default {
                   "TMA Solutions is using Robot Framework to automate not only single product but also complex interoperability testing, involving API, desktop, mobile, web, network devices and special hardware. With this framework, we can easily expand testing scopes, improve automation run speed while still keeping high reliability."
               },
               {
+                title: "Wärtsilä Digital Technologies",
+                href: "https://www.wartsila.com/",
+                img: require("@/assets/img/users/wartsila.png"),
+                text:
+                  "Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software. The Robot Framework helps us automate testing of mobile applications, web applications and cross-platform desktop applications."
+              },
+              {
                 title: "zilogic",
                 href: "http://www.zilogic.com",
                 img: require("@/assets/img/users/zilogic.png"),
