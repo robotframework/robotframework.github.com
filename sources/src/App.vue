@@ -460,6 +460,11 @@ export default {
                     title: "watir-robot",
                     href: "https://github.com/semperos/watir-robot/#readme",
                     text: "Web testing library that uses Watir tool."
+                  },
+                  {
+                    title: "Zoomba Library",
+                    href: "https://github.com/Accruent/robotframework-zoomba",
+                    text: "Library extending features in many popular tools for GUI, Rest API, Soap API, and Windows (WinAppDriver) automation. An ideal all-in-one toolkit for new or existing Robot Framework projects."
                   }
                 ]
               },
