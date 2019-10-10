@@ -739,6 +739,11 @@ export default {
                     title: "Tesults Listener",
                     href: "https://www.tesults.com/docs?doc=robot",
                     text: "A listener that provides a codeless integration experience for test results reporting from Robot Framework into Tesults."
+                  },
+                  {
+                    title: "Xray Test Management",
+                    href: "https://confluence.xpand-it.com/x/QyekAQ",
+                    text: "Xray is the leading Quality Assurance and Test Management app for Jira. More than 4.5 million testers, developers and QA managers trust Xray to manage 100+ million test cases each month. Xray is a mission-critical tool at over 5,000 companies in 70+ countries, including 137 of the Global 500."
                   }
                 ]
               }
