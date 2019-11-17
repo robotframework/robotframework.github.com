@@ -11,7 +11,8 @@ import VueRouter from 'vue-router'
 
 import Vue from 'vue'
 import App from './App'
-import VueAnalytics from 'vue-analytics'
+import Root from './Root'
+import PrivacyPolicy from './PrivacyPolicy'
 
 import AppHeader from '@/components/AppHeader'
 import AppFooter from '@/components/AppFooter'
@@ -21,11 +22,13 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
-/* if (/robotframework.org/.test(window.location.href)) {
-  Vue.use(VueAnalytics, {
-    id: ['UA-106835747-2']
-  })
-} */
+const routes = [
+  { name: 'main', path: '/', component: App },
+  { name: 'privacy', path: '/privacypolicy', component: PrivacyPolicy }
+]
+const router = new VueRouter({
+  routes
+})
 
 require('@/assets/css/main.css')
 require('@/assets/css/pygments.css')
@@ -38,8 +41,9 @@ Vue.component('app-footer', AppFooter)
 
 new Vue({
   el: '#app',
-  template: '<App/>',
+  router,
+  template: '<Root/>',
   components: {
-    App
+    Root
   }
 })
