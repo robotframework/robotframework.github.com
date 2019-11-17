@@ -14,7 +14,7 @@
 
     In regard to Robot Framework documentation available via Github, Github acts as the datacontroller for any user information. For more information, please see the <a href="https://help.github.com/en/github/site-policy/github-privacy-statement">Github Privacy   Statement</a>. The payment transactions for purchases of Robot Framework gear are facilitated via the Reddy platform. For more information please see the <a href="https://shop.robotframework.org/privacy-policy">Reddy Privacy Statement</a>.<br><br>
 
-    This Privacy Policy may be updated if required in order to reflect the changes in data processing practices or otherwise. The current version can be found on our <a href="https://robotframework.org/privacypolicy">website</a>. We will not make substantial changes to this Privacy Policy or reduce your rights under this Privacy Policy without providing a notice thereof.<br><br><br>
+    This Privacy Policy may be updated if required in order to reflect the changes in data processing practices or otherwise. The current version can be found on our <a href="https://robotframework.org/#/privacypolicy">website</a>. We will not make substantial changes to this Privacy Policy or reduce your rights under this Privacy Policy without providing a notice thereof.<br><br><br>
 
     <h4>CONTACT DETAILS</h4>
     Robot Framework Ry<br>
