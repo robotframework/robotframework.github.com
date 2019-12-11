@@ -5,6 +5,7 @@
     <text-block v-if="page.text_block == true" :data="page.data.text"/>
     <tab-box v-if="page.tab_box == true" :data="page.data.tabs"/>
     <user-box v-if="page.user_box == true" :data="page.data.users"/>
+    <sponsor-box v-if="page.sponsor_box == true" :data="page.data.users"/>
 
 </section>
 </template>
@@ -14,6 +15,7 @@ import FeatureBox from "@/components/FeatureBox.vue";
 import TabBox from "@/components/TabBox.vue";
 import TextBlock from "@/components/TextBlock.vue";
 import UserBox from "@/components/UserBox.vue";
+import SponsorBox from "@/components/SponsorBox.vue";
 
 import Examples from "@/components/pages/Examples";
 
@@ -23,6 +25,7 @@ export default {
     TextBlock,
     TabBox,
     UserBox,
+    SponsorBox,
     Examples
   },
   props: ["page"]

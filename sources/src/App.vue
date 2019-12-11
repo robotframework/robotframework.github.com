@@ -41,6 +41,182 @@ export default {
           }
         },
         {
+          title: "Sponsors",
+          text_block: true,
+          tab_box: false,
+          feature_box: false,
+          sponsor_box: true,
+          data: {
+            text: {
+              twitter: false,
+              header: "Sponsors",
+              text: '<p>Robot Framework development is sponsored by Robot Framework Foundation (tää olis linkki) consisting of the following member organizations</p>'
+            },
+            users: [
+              {
+                title: "Chili",
+                href: "https://www.chili.com/",
+                img: require("@/assets/img/sponsors/chili.jpg"),
+              },
+              {
+                title: "cisco",
+                href: "https://www.cisco.com/",
+                img: require("@/assets/img/sponsors/cisco.jpg"),
+              },
+              {
+                title: "comiq",
+                href: "http://comiq.fi/",
+                img: require("@/assets/img/sponsors/comiq.jpg"),
+              },
+              {
+                title: "deutsche post adress",
+                href: "https://www.deutschepost.de/de/p/postadress.html",
+                img: require("@/assets/img/sponsors/deutsche post.png"),
+              },
+              {
+                title: "digia",
+                href: "http://www.digia.com/",
+                img: require("@/assets/img/sponsors/digia.jpg"),
+              },
+              {
+                title: "eficode",
+                href: "http://www.eficode.fi/",
+                img: require("@/assets/img/sponsors/eficode.jpg"),
+              },
+              {
+                title: "eliga",
+                href: "http://eliga.fi/",
+                img: require("@/assets/img/sponsors/eliga.jpg"),
+              },
+              {
+                title: "etteplan",
+                href: "http://www.espotel.com/",
+                img: require("@/assets/img/sponsors/etteplan.png"),
+              },
+              {
+                title: "finnair",
+                href: "https://www.finnair.com/",
+                img: require("@/assets/img/sponsors/finnair.jpg"),
+              },
+              {
+                title: "hiq",
+                href: "http://www.hiqfinland.fi/",
+                img: require("@/assets/img/sponsors/hiq.jpg"),
+              },
+              {
+                title: "imbus",
+                href: "https://www.imbus.de/softwaretest/",
+                img: require("@/assets/img/sponsors/imbus.png"),
+              },
+              {
+                title: "knowit",
+                href: "http://www.knowit.fi/",
+                img: require("@/assets/img/sponsors/knowit.jpg"),
+              },
+              {
+                title: "luoto",
+                href: "https://www.luotocompany.fi/",
+                img: require("@/assets/img/sponsors/luoto.jpg"),
+              },
+              {
+                title: "meliora",
+                href: "https://www.melioratestlab.com/",
+                img: require("@/assets/img/sponsors/meliora.jpg"),
+              },
+              {
+                title: "navigate",
+                href: "https://www.navigateconsulting.se/",
+                img: require("@/assets/img/sponsors/navigate.jpg"),
+              },
+              {
+                title: "nets",
+                href: "https://www.nets.eu/",
+                img: require("@/assets/img/sponsors/nets.jpg"),
+              },
+              {
+                title: "nokia",
+                href: "https://www.nokia.com/",
+                img: require("@/assets/img/sponsors/nokia.png"),
+              },
+              {
+                title: "northcode",
+                href: "https://www.northcode.fi/",
+                img: require("@/assets/img/sponsors/northcode.png"),
+              },
+              {
+                title: "opuscapita",
+                href: "https://www.opuscapita.com/",
+                img: require("@/assets/img/sponsors/opuscapita.jpg"),
+              },
+              {
+                title: "qfactory",
+                href: "http://www.q-factory.fi/",
+                img: require("@/assets/img/sponsors/qfactory.jpg"),
+              },
+              {
+                title: "qentinel",
+                href: "http://qentinel.fi/",
+                img: require("@/assets/img/sponsors/qentinel.png"),
+              },
+              {
+                title: "reaktor",
+                href: "http://reaktor.fi/",
+                img: require("@/assets/img/sponsors/reaktor.jpg"),
+              },
+              {
+                title: "robocorp",
+                href: "https://robocorptech.com/",
+                img: require("@/assets/img/sponsors/robocorp.png"),
+              },
+              {
+                title: "segron",
+                href: "https://www.segron.com",
+                img: require("@/assets/img/sponsors/segron.png"),
+              },
+              {
+                title: "signant health",
+                href: "https://signanthealth.com",
+                img: require("@/assets/img/sponsors/signant.png"),
+              },
+              {
+                title: "siili",
+                href: "http://www.siili.com/",
+                img: require("@/assets/img/sponsors/siili.jpg"),
+              },
+              {
+                title: "solidabis",
+                href: "http://www.solidabis.com/",
+                img: require("@/assets/img/sponsors/solidabis.jpg"),
+              },
+              {
+                title: "symbio",
+                href: "http://www.symbio.com/",
+                img: require("@/assets/img/sponsors/symbio.jpg"),
+              },
+              {
+                title: "testimate",
+                href: "http://www.testimate.fi/",
+                img: require("@/assets/img/sponsors/testimate.jpg"),
+              },
+              {
+                title: "tieto",
+                href: "http://www.tieto.com/",
+                img: require("@/assets/img/sponsors/tieto.jpg"),
+              },
+              {
+                title: "vala",
+                href: "http://www.valagroup.com/",
+                img: require("@/assets/img/sponsors/vala.jpg"),
+              },
+              {
+                title: "veikkaus",
+                href: "https://www.veikkaus.fi/",
+                img: require("@/assets/img/sponsors/veikkaus.png"),
+              }
+            ]
+          }
+        },
+        {
           title: "Architecture",
           text_block: false,
           tab_box: false,
