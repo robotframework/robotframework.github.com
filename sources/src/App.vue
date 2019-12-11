@@ -1137,6 +1137,13 @@ export default {
                   "ABB is using Robot Framework in software development for testing distribution automation related configuration tools, web interfaces and embedded devices."
               },
               {
+                title: "Accruent",
+                href: "https://www.accruent.com/",
+                img: require("@/assets/img/users/accruent.png"),
+                text:
+                  "Accruent has been using Robot Framework since 2015 to drive API, GUI, mobile, and desktop automation testing throughout the company. Accruent has since made it's <a href="https://github.com/Accruent/robotframework-zoomba" target="_blank">Zoomba</a> library open source to help other teams make the move to Robot Framework."
+              },
+              {
                 title: "Adwisit",
                 href: "http://www.adwisit.se",
                 img: require("@/assets/img/users/adwisit.png"),
