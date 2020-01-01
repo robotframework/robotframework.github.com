@@ -220,6 +220,12 @@ export default {
                     text: "Library for python confluent kafka."
                   },
                   {
+                    title: "CoreRPAHive Library",
+                    href:
+                      "https://github.com/qahive/robotframework-CoreRPAHive",
+                    text: "Enhance robot framework to support RPA and excel as input data"
+                  },
+                  {
                     title: "CURFLibrary",
                     href:
                       "https://github.com/Openwide-Ingenierie/robotframework-can-uds-library",
