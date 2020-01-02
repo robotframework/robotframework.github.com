@@ -220,12 +220,6 @@ export default {
                     text: "Library for python confluent kafka."
                   },
                   {
-                    title: "CoreRPAHive Library",
-                    href:
-                      "https://github.com/qahive/robotframework-CoreRPAHive",
-                    text: "Enhance robot framework to support RPA and excel as input data"
-                  },
-                  {
                     title: "CURFLibrary",
                     href:
                       "https://github.com/Openwide-Ingenierie/robotframework-can-uds-library",
@@ -277,6 +271,12 @@ export default {
                       "https://github.com/lcarbonn/robotframework-eclipselibrary/",
                     text:
                       "Library for testing Eclipse RCP applications using SWT widgets."
+                  },
+                  {
+                    title: "ExcelDataDriver Library",
+                    href:
+                      "https://github.com/qahive/robotframework-ExcelDataDriver",
+                    text: "Excel Data-Driven Testing library for Robot Framework."
                   },
                   {
                     title: "robotframework-faker",
