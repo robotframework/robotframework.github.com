@@ -272,6 +272,12 @@ export default {
                     text:
                       "Library for testing Eclipse RCP applications using SWT widgets."
                   },
+				  {
+					title: "ExcelDataDriver Library",
+					href:
+					  "https://github.com/qahive/robotframework-ExcelDataDriver",
+					text: "Excel Data-Driven Testing library for Robot Framework."
+				  },
                   {
                     title: "robotframework-faker",
                     href: "https://pypi.python.org/pypi/robotframework-faker/",
