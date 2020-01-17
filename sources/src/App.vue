@@ -391,10 +391,10 @@ export default {
                       "Web testing library that uses popular Selenium tool internally."
                   },
                   {
-                    title: "Selenium2Library for Java",
+                    title: "SeleniumLibrary for Java",
                     href:
-                      "https://github.com/MarkusBernhardt/robotframework-selenium2library-java#readme",
-                    text: "Java port of the Selenium2Library."
+                      "https://github.com/MarketSquare/robotframework-seleniumlibrary-java#readme",
+                    text: "Java port of the SeleniumLibrary."
                   },
                   {
                     title: "SikuliLibrary",
