@@ -73,6 +73,7 @@ export default {
           text_block: true,
           tab_box: false,
           member_box: true,
+          hide_from_nav: true,
           feature_box: false,
           data: {
             text: {
