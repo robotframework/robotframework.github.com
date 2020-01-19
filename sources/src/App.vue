@@ -554,23 +554,10 @@ export default {
                       "Web testing library that uses popular Selenium tool internally."
                   },
                   {
-                    title: "Selenium2Library",
-                    href: "https://github.com/robotframework/Selenium2Library",
-                    text:
-                      "Web testing library that uses Selenium 2. Library is deprecated; users should upgrade to SeleniumLibrary described above."
-                  },
-                  {
-                    title: "Selenium2Library for Java",
+                    title: "SeleniumLibrary for Java",
                     href:
-                      "https://github.com/MarkusBernhardt/robotframework-selenium2library-java#readme",
-                    text: "Java port of the Selenium2Library."
-                  },
-                  {
-                    title: "ExtendedSelenium2Library",
-                    href:
-                      "https://github.com/rickypc/robotframework-extendedselenium2library",
-                    text:
-                      "Web testing library that uses Selenium2Library internally, providing AngularJS support on top of it."
+                      "https://github.com/MarketSquare/robotframework-seleniumlibrary-java#readme",
+                    text: "Java port of the SeleniumLibrary."
                   },
                   {
                     title: "SikuliLibrary",
