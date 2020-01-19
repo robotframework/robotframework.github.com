@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="data" class="row justify-content-between no-gutters">
+    <div v-if="data && !members.length" class="row justify-content-between no-gutters">
       <div class="col-md-5 col-lg-4 order-1 textblock-left p-3">
         <h1 v-html="data.header"/>
       </div>
@@ -14,10 +14,10 @@
       </div>
     </div>
     <div v-if="members.length" class="row">
-        <div class="col-sm-12 p-5 row">
-          <div class="col-sm-12" v-html="data.membersText" />
-          <div v-for="(member, index) in members" :key="index" class="col-lg-2 col-md-3 col-4 mb-0 pr-lg-1 pl-lg-3 pl-md-5 pl-sm-3">
-            <div class="text-center p-1 p-md-3 mb-0" style="height:100px;background-color:#fff; display: flex; flex-direction: column; justify-content: center;">
+        <div class="col-sm-12 pl-5 pr-5 row">
+          <div v-html="data.membersText" />
+          <div v-for="(member, index) in members" :key="index" class="col-lg-1 col-3 p-0">
+            <div class="text-center p-1 mb-0" style="height:100px;background-color:#fff; display: flex; flex-direction: column; justify-content: center;">
               <div>
                 <a :href="member.href"><img class="img-fluid pb-2 user-image" :src="member.img"/></a>
               </div>

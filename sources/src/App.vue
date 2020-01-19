@@ -11,7 +11,7 @@
           v-bind:page="page"
           v-bind:index="index"
           v-bind:key="index"
-          class="pl-md-5 px-lg-2 p-sm-3 py-5 p-xs-1"/>
+          class="pl-md-5 px-lg-2 p-sm-3 py-2 p-xs-1"/>
         <app-footer class="mt-0 py-5"/>
       </div>
     </div>
@@ -30,13 +30,52 @@ export default {
           title: "Introduction",
           text_block: true,
           tab_box: false,
-          member_box: true,
+          member_box: false,
           feature_box: false,
           data: {
             text: {
               twitter: true,
               header: "Introduction",
-              text: '<p> <b>Robot Framework</b> is a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). It has easy-to-use tabular test data syntax and it utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new higher-level keywords from existing ones using the same syntax that is used for creating test cases. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. The framework has a rich ecosystem around it consisting of various generic <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and runs also on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>',
+              text: '<p> <b>Robot Framework</b> is a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). It has easy-to-use tabular test data syntax and it utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new higher-level keywords from existing ones using the same syntax that is used for creating test cases. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. The framework has a rich ecosystem around it consisting of various generic <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and runs also on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
+            }
+          }
+        },
+        {
+          title: "Architecture",
+          text_block: false,
+          tab_box: false,
+          feature_box: true,
+          twitter: true,
+          hide_from_nav: true,
+          data: {
+            text: [
+              {
+                header: "CLEAR",
+                text:
+                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">test libraries</a>. </p> <p> Test data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing test cases creates a test suite and placing these files into directories creates a nested structure of test suites. </p>'
+              },
+              {
+                header: "EASY",
+                text:
+                  "<p> When test execution is started, the framework first parses the test data. It then utilizes keywords provided by the test libraries to interact with the system under test. Libraries can communicate with the system either directly or using other test tools as drivers. </p> <p> Test execution is started from the command line. As a result you get report and log in HTML format as well as an XML output. These provide extensive look into what your system does. </p>"
+              },
+              {
+                header: "MODULAR",
+                img: require("@/assets/img/architecture.png"),
+                img_big: require("@/assets/img/architecture_big.png"),
+                text: ""
+              }
+            ]
+          }
+        },
+        {
+          title: "Sponsors",
+          text_block: true,
+          tab_box: false,
+          member_box: true,
+          feature_box: false,
+          data: {
+            text: {
               membersText: 'Robot Framework\'s development is nowadays sponsored by <a href="http://robotframework.org/foundation" target="_blank">Robot Framework Foundation</a> consisting of the following member organizations:',
             },
             members: [
@@ -201,34 +240,6 @@ export default {
                   img: require("@/assets/img/sponsors/veikkaus.png"),
                 }
               ]
-          }
-        },
-        {
-          title: "Architecture",
-          text_block: false,
-          tab_box: false,
-          feature_box: true,
-          twitter: true,
-          hide_from_nav: true,
-          data: {
-            text: [
-              {
-                header: "CLEAR",
-                text:
-                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">test libraries</a>. </p> <p> Test data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing test cases creates a test suite and placing these files into directories creates a nested structure of test suites. </p>'
-              },
-              {
-                header: "EASY",
-                text:
-                  "<p> When test execution is started, the framework first parses the test data. It then utilizes keywords provided by the test libraries to interact with the system under test. Libraries can communicate with the system either directly or using other test tools as drivers. </p> <p> Test execution is started from the command line. As a result you get report and log in HTML format as well as an XML output. These provide extensive look into what your system does. </p>"
-              },
-              {
-                header: "MODULAR",
-                img: require("@/assets/img/architecture.png"),
-                img_big: require("@/assets/img/architecture_big.png"),
-                text: ""
-              }
-            ]
           }
         },
         {
