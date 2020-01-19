@@ -19,7 +19,7 @@
           <div v-for="(member, index) in members" :key="index" class="col-lg-1 col-3 p-0">
             <div class="text-center p-1 mb-0" style="height:100px;background-color:#fff; display: flex; flex-direction: column; justify-content: center;">
               <div>
-                <a :href="member.href"><img class="img-fluid pb-2 user-image" :src="member.img"/></a>
+                <a :href="member.href" target="blank"><img class="img-fluid pb-2 user-image" :src="member.img"/></a>
               </div>
             </div>
           </div>
