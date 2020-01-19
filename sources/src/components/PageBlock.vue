@@ -2,7 +2,7 @@
   <section :id="page.title.toLowerCase()">
     <examples v-if="Object.keys(page.data).length === 0 && page.data.constructor === Object"/>
     <feature-box v-if="page.feature_box == true" :data="page.data.text"/>
-    <text-block v-if="page.text_block == true" :data="page.data.text"/>
+    <text-block v-if="page.text_block == true" :data="page.data.text" :members="page.member_box ? page.data.members : []"/>
     <tab-box v-if="page.tab_box == true" :data="page.data.tabs"/>
     <user-box v-if="page.user_box == true" :data="page.data.users"/>
 

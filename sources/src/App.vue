@@ -11,7 +11,7 @@
           v-bind:page="page"
           v-bind:index="index"
           v-bind:key="index"
-          class="pl-md-5 px-lg-2 p-sm-3 py-5 p-xs-1"/>
+          class="pl-md-5 px-lg-2 p-sm-3 py-2 p-xs-1"/>
         <app-footer class="mt-0 py-5"/>
       </div>
     </div>
@@ -30,13 +30,13 @@ export default {
           title: "Introduction",
           text_block: true,
           tab_box: false,
+          member_box: false,
           feature_box: false,
           data: {
             text: {
               twitter: true,
               header: "Introduction",
-              text:
-                '<p> <b>Robot Framework</b> is a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). It has easy-to-use tabular test data syntax and it utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new higher-level keywords from existing ones using the same syntax that is used for creating test cases. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. The framework has a rich ecosystem around it consisting of various generic <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and runs also on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and it is nowadays sponsored by <a href="http://robotframework.org/foundation" target="_blank">Robot Framework Foundation</a>. </p>'
+              text: '<p> <b>Robot Framework</b> is a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). It has easy-to-use tabular test data syntax and it utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new higher-level keywords from existing ones using the same syntax that is used for creating test cases. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. The framework has a rich ecosystem around it consisting of various generic <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and runs also on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
             }
           }
         },
@@ -66,6 +66,181 @@ export default {
                 text: ""
               }
             ]
+          }
+        },
+        {
+          title: "Sponsors",
+          text_block: true,
+          tab_box: false,
+          member_box: true,
+          hide_from_nav: true,
+          feature_box: false,
+          data: {
+            text: {
+              membersText: 'Robot Framework\'s development is nowadays sponsored by <a href="http://robotframework.org/foundation" target="_blank">Robot Framework Foundation</a> consisting of the following member organizations:',
+            },
+            members: [
+                {
+                  title: "Chili",
+                  href: "https://www.chili.com/",
+                  img: require("@/assets/img/sponsors/chili.jpg"),
+                },
+                {
+                  title: "cisco",
+                  href: "https://www.cisco.com/",
+                  img: require("@/assets/img/sponsors/cisco.jpg"),
+                },
+                {
+                  title: "comiq",
+                  href: "http://comiq.fi/",
+                  img: require("@/assets/img/sponsors/comiq.jpg"),
+                },
+                {
+                  title: "deutsche post adress",
+                  href: "https://www.deutschepost.de/de/p/postadress.html",
+                  img: require("@/assets/img/sponsors/deutsche post.png"),
+                },
+                {
+                  title: "digia",
+                  href: "http://www.digia.com/",
+                  img: require("@/assets/img/sponsors/digia.jpg"),
+                },
+                {
+                  title: "eficode",
+                  href: "http://www.eficode.fi/",
+                  img: require("@/assets/img/sponsors/eficode.jpg"),
+                },
+                {
+                  title: "eliga",
+                  href: "http://eliga.fi/",
+                  img: require("@/assets/img/sponsors/eliga.jpg"),
+                },
+                {
+                  title: "etteplan",
+                  href: "http://www.espotel.com/",
+                  img: require("@/assets/img/sponsors/etteplan.png"),
+                },
+                {
+                  title: "finnair",
+                  href: "https://www.finnair.com/",
+                  img: require("@/assets/img/sponsors/finnair.jpg"),
+                },
+                {
+                  title: "hiq",
+                  href: "http://www.hiqfinland.fi/",
+                  img: require("@/assets/img/sponsors/hiq.jpg"),
+                },
+                {
+                  title: "imbus",
+                  href: "https://www.imbus.de/softwaretest/",
+                  img: require("@/assets/img/sponsors/imbus.png"),
+                },
+                {
+                  title: "knowit",
+                  href: "http://www.knowit.fi/",
+                  img: require("@/assets/img/sponsors/knowit.jpg"),
+                },
+                {
+                  title: "luoto",
+                  href: "https://www.luotocompany.fi/",
+                  img: require("@/assets/img/sponsors/luoto.jpg"),
+                },
+                {
+                  title: "meliora",
+                  href: "https://www.melioratestlab.com/",
+                  img: require("@/assets/img/sponsors/meliora.jpg"),
+                },
+                {
+                  title: "navigate",
+                  href: "https://www.navigateconsulting.se/",
+                  img: require("@/assets/img/sponsors/navigate.jpg"),
+                },
+                {
+                  title: "nets",
+                  href: "https://www.nets.eu/",
+                  img: require("@/assets/img/sponsors/nets.jpg"),
+                },
+                {
+                  title: "nokia",
+                  href: "https://www.nokia.com/",
+                  img: require("@/assets/img/sponsors/nokia.png"),
+                },
+                {
+                  title: "northcode",
+                  href: "https://www.northcode.fi/",
+                  img: require("@/assets/img/sponsors/northcode.png"),
+                },
+                {
+                  title: "opuscapita",
+                  href: "https://www.opuscapita.com/",
+                  img: require("@/assets/img/sponsors/opuscapita.jpg"),
+                },
+                {
+                  title: "qfactory",
+                  href: "http://www.q-factory.fi/",
+                  img: require("@/assets/img/sponsors/qfactory.jpg"),
+                },
+                {
+                  title: "qentinel",
+                  href: "http://qentinel.fi/",
+                  img: require("@/assets/img/sponsors/qentinel.png"),
+                },
+                {
+                  title: "reaktor",
+                  href: "http://reaktor.fi/",
+                  img: require("@/assets/img/sponsors/reaktor.jpg"),
+                },
+                {
+                  title: "robocorp",
+                  href: "https://robocorptech.com/",
+                  img: require("@/assets/img/sponsors/robocorp.png"),
+                },
+                {
+                  title: "segron",
+                  href: "https://www.segron.com",
+                  img: require("@/assets/img/sponsors/segron.png"),
+                },
+                {
+                  title: "signant health",
+                  href: "https://signanthealth.com",
+                  img: require("@/assets/img/sponsors/signant.png"),
+                },
+                {
+                  title: "siili",
+                  href: "http://www.siili.com/",
+                  img: require("@/assets/img/sponsors/siili.jpg"),
+                },
+                {
+                  title: "solidabis",
+                  href: "http://www.solidabis.com/",
+                  img: require("@/assets/img/sponsors/solidabis.jpg"),
+                },
+                {
+                  title: "symbio",
+                  href: "http://www.symbio.com/",
+                  img: require("@/assets/img/sponsors/symbio.jpg"),
+                },
+                {
+                  title: "testimate",
+                  href: "http://www.testimate.fi/",
+                  img: require("@/assets/img/sponsors/testimate.jpg"),
+                },
+                {
+                  title: "tieto",
+                  href: "http://www.tieto.com/",
+                  img: require("@/assets/img/sponsors/tieto.jpg"),
+                },
+                {
+                  title: "vala",
+                  href: "http://www.valagroup.com/",
+                  img: require("@/assets/img/sponsors/vala.jpg"),
+                },
+                {
+                  title: "veikkaus",
+                  href: "https://www.veikkaus.fi/",
+                  img: require("@/assets/img/sponsors/veikkaus.png"),
+                }
+              ]
           }
         },
         {
