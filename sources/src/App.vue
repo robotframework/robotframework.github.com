@@ -464,7 +464,7 @@ export default {
                   {
                     title: "Zoomba Library",
                     href: "https://github.com/Accruent/robotframework-zoomba",
-                    text: "Library extending features in many popular tools for GUI, Rest API, Soap API, and Windows (WinAppDriver) automation. An ideal all-in-one toolkit for new or existing Robot Framework projects."
+                    text: "Library extending features in many popular tools for GUI, Rest API, Soap API, Mobile, and Windows (WinAppDriver) automation. An ideal all-in-one toolkit for new or existing Robot Framework projects."
                   }
                 ]
               },
