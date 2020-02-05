@@ -1133,7 +1133,7 @@ export default {
                   {
                     title: "LinkedIn",
                     href:
-                      "http://www.linkedin.com/groups/Robot-Framework-3710899",
+                      "https://www.linkedin.com/groups/3710899/",
                     text: "Robot Framework group on LinkedIn."
                   },
                   {
