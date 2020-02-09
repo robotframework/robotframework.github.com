@@ -151,11 +151,6 @@ export default {
                   img: require("@/assets/img/sponsors/meliora.jpg"),
                 },
                 {
-                  title: "navigate",
-                  href: "https://www.navigateconsulting.se/",
-                  img: require("@/assets/img/sponsors/navigate.jpg"),
-                },
-                {
                   title: "nets",
                   href: "https://www.nets.eu/",
                   img: require("@/assets/img/sponsors/nets.jpg"),
@@ -209,11 +204,6 @@ export default {
                   title: "siili",
                   href: "http://www.siili.com/",
                   img: require("@/assets/img/sponsors/siili.jpg"),
-                },
-                {
-                  title: "solidabis",
-                  href: "http://www.solidabis.com/",
-                  img: require("@/assets/img/sponsors/solidabis.jpg"),
                 },
                 {
                   title: "symbio",
