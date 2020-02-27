@@ -5,10 +5,10 @@
     <div class="row">
     
       <div class="col-md-12 order-md-2 order-lg-1">
-          <b-tabs cards pills class="nav-fill card " v-model="tabIndex">
+          <b-tabs cards pills class="nav-fill card " v-model="tabIndex" @input="changeTabText(tabIndex)">
 
 
-          <b-tab title="EXAMPLE 1" @click="changeTabText(tabIndex)">
+          <b-tab title="EXAMPLE 1">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Documentation</span><span class="p">     </span><span class="s">A test suite with a single test for valid login.</span><span class="p"></span>
 <span class="p">...</span>
@@ -26,7 +26,7 @@
 <span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Close Browser</span><span class="p"></span>
                     </pre>
           </b-tab>
-          <b-tab title="EXAMPLE 2" @click="changeTabText(tabIndex)">
+          <b-tab title="EXAMPLE 2">
             <div class="row">
               <div class="col-xl-6 col-md-12">
                 <b-img v-b-modal.modal2 class="img-fluid" :src="require('@/assets/img/report.png')" id="report"/>
@@ -44,7 +44,7 @@
           </b-tab>
 
 
-            <b-tab title="EXAMPLE 3" @click="changeTabText(tabIndex)">
+            <b-tab title="EXAMPLE 3">
             <div class="row">
               <div class="col-lg-12">
            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
@@ -120,7 +120,7 @@
                   </pre></div></div>
           </b-tab>
 
-          <b-tab title="EXAMPLE 4" @click="changeTabText(tabIndex)">
+          <b-tab title="EXAMPLE 4">
             <pre class="highlight"><span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">CalculationError</span>
 
 <span class="k">class</span> <span class="nc">CalculatorLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -149,7 +149,7 @@
                     </pre>
           </b-tab>
 
-          <b-tab title="EXAMPLE 5" @click="changeTabText(tabIndex)">
+          <b-tab title="EXAMPLE 5">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
@@ -186,7 +186,7 @@
           </b-tab>
 
 
-          <b-tab title="EXAMPLE 6" @click="changeTabText(tabIndex)">
+          <b-tab title="EXAMPLE 6">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
 
