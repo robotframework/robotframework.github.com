@@ -1517,13 +1517,6 @@ export default {
           tab_box: false,
           url: 'https://shop.robotframework.org',
           feature_box: false
-        },
-        {
-          title: "RPA",
-          text_block: true,
-          tab_box: false,
-          url: 'https://robotframework.org/rpa/',
-          feature_box: false
         }
       ]
     };
