@@ -211,6 +211,21 @@
 <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">result</span><span class="p">}</span>
                     </pre>
           </b-tab>
+
+          <b-tab title="Task (RPA)">
+            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">Notify HR of missing hours at the end of the month.</span><span class="p"></span>
+
+<span class="gh">*** Tasks ***</span><span class="p"></span>
+<span class="gu">Notify HR of missing hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Log in to time-tracking system</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Collect tracked hours for current month</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Compare expected hours to tracked hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Notify HR if hours are missing</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Log out of time-tracking system</span><span class="p"></span>
+                    </pre>
+          </b-tab>
+
         </b-tabs>
         </div>
   </div>
