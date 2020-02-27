@@ -271,6 +271,10 @@ export default {
         {
           text:
             '<p> Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That\'s baked in! </p><p> </p><p> Here is another example from our <a href="https://github.com/robotframework/RobotDemo" target="_blank">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework. </p>'
+        },
+        {
+          text:
+            '<p> Robotic process automation (RPA) tasks utilize the same Robot syntax as test cases, with some minor differences. Instead of <i>Test Cases</i>, you can use <i>Tasks</i>. The report and log will also use "task" instead of "test". </p> <p> Task keywords can be written in plain English. This makes communicating the intent of the tasks effortless. </p>'
         }
       ]
     };
