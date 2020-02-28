@@ -14,16 +14,18 @@
       </div>
     </div>
     <div v-if="members.length" class="row">
-        <div class="col-sm-12 pl-5 pr-5 row">
-          <div v-html="data.membersText" />
-          <div v-for="(member, index) in members" :key="index" class="col-lg-1 col-3 p-0">
-            <div class="text-center p-1 mb-0" style="height:100px;background-color:#fff; display: flex; flex-direction: column; justify-content: center;">
-              <div>
-                <a :href="member.href" target="blank"><img class="img-fluid pb-2 user-image" :src="member.img"/></a>
-              </div>
+      <div class="col-sm-12 pl-5 pr-5 row">
+        <div v-html="data.membersText" />
+      </div>
+      <div class="col-sm-12 pl-5 pr-5 row">
+        <div v-for="(member, index) in members" :key="index" class="col-lg-1 col-3 p-0">
+          <div class="text-center p-1 mb-0" style="height:100px;background-color:#fff; display: flex; flex-direction: column; justify-content: center;">
+            <div>
+              <a :href="member.href" target="blank"><img class="img-fluid pb-2 user-image" :src="member.img"/></a>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
