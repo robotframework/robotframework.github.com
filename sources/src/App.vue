@@ -36,7 +36,7 @@ export default {
             text: {
               twitter: true,
               header: "Introduction",
-              text: '<p> <b>Robot Framework</b> is a generic open source automation framework. It can be used for test automation or building software robots to automate business processes (robotic process automation, RPA). <p> Robot Framework is actively supported by a community of thousands of developers, with many industry-leading companies using it in their software development. </p> Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions. Being open source also means that Robot Framework is free to use without licensing costs. </p> <p> Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java. The framework has a rich ecosystem around it, consisting of <a href="#libraries">libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and also runs on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
+              text: '<p> <b>Robot Framework</b> is a generic open source automation framework. It can be used for test automation and robotic process automation (RPA). <p> Robot Framework is actively supported, with many industry-leading companies using it in their software development. </p> Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions. Being open source also means that Robot Framework is free to use without licensing costs. </p> <p> Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java. The framework has a rich ecosystem around it, consisting of <a href="#libraries">libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and also runs on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
             }
           }
         },
@@ -52,12 +52,12 @@ export default {
               {
                 header: "CLEAR",
                 text:
-                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">libraries</a>. </p> <p> Data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing tasks or test cases creates a suite, and placing these files into directories creates a nested structure of suites. </p>'
+                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">libraries</a>. </p> <p> Data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing tests or tasks creates a suite, and placing these files into directories creates a nested structure of suites. </p>'
               },
               {
                 header: "EASY",
                 text:
-                  "<p> When execution is started, the framework first parses the data. It then utilizes keywords provided by the libraries to interact with the target system. Libraries can communicate with the system either directly or using other tools as drivers. </p> <p> Task or test execution is started from the command line. As a result, you get a report and log in HTML format as well as an XML output. These provide an extensive look into what your system does. </p>"
+                  "<p> When execution is started, the framework first parses the data. It then utilizes keywords provided by the libraries to interact with the target system. Libraries can communicate with the system either directly or using other tools as drivers. </p> <p> Test or task execution is started from the command line. As a result, you get a report and log in HTML format as well as an XML output. These provide an extensive look into what your system does. </p>"
               },
               {
                 header: "MODULAR",
@@ -665,7 +665,7 @@ export default {
             text: {
               header: "Tools",
               text:
-                '<p> Supporting tools ease everything surrounding automation and tests: editing, running, building and so on. Most of these tools are developed as separate projects, but some are built into the framework itself. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful tools are missing from the list. </p>'
+                '<p> Supporting tools ease automation: editing, running, building and so on. Most of these tools are developed as separate projects, but some are built into the framework itself. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful tools are missing from the list. </p>'
             },
             tabs: [
               {
@@ -842,7 +842,7 @@ export default {
                   {
                     title: "Pabot",
                     href: "https://github.com/mkorpela/pabot",
-                    text: "A parallel executor for Robot Framework tasks and test cases."
+                    text: "A parallel executor for Robot Framework tests and tasks."
                   },
                   {
                     title: "RFDoc",
@@ -1516,6 +1516,13 @@ export default {
           text_block: true,
           tab_box: false,
           url: 'https://shop.robotframework.org',
+          feature_box: false
+        },
+        {
+          title: "RPA",
+          text_block: true,
+          tab_box: false,
+          url: 'https://robotframework.org/rpa/',
           feature_box: false
         }
       ]
