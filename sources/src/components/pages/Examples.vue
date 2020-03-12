@@ -5,10 +5,10 @@
     <div class="row">
     
       <div class="col-md-12 order-md-2 order-lg-1">
-          <b-tabs cards pills class="nav-fill card " v-model="tabIndex">
+          <b-tabs cards pills class="nav-fill card " v-model="tabIndex" @input="changeTabText(tabIndex)">
 
 
-          <b-tab title="EXAMPLE 1" @click="changeTabText(tabIndex)">
+          <b-tab title="Test case">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Documentation</span><span class="p">     </span><span class="s">A test suite with a single test for valid login.</span><span class="p"></span>
 <span class="p">...</span>
@@ -26,7 +26,7 @@
 <span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Close Browser</span><span class="p"></span>
                     </pre>
           </b-tab>
-          <b-tab title="EXAMPLE 2" @click="changeTabText(tabIndex)">
+          <b-tab title="Report and log">
             <div class="row">
               <div class="col-xl-6 col-md-12">
                 <b-img v-b-modal.modal2 class="img-fluid" :src="require('@/assets/img/report.png')" id="report"/>
@@ -44,7 +44,7 @@
           </b-tab>
 
 
-            <b-tab title="EXAMPLE 3" @click="changeTabText(tabIndex)">
+            <b-tab title="Keywords">
             <div class="row">
               <div class="col-lg-12">
            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
@@ -120,7 +120,7 @@
                   </pre></div></div>
           </b-tab>
 
-          <b-tab title="EXAMPLE 4" @click="changeTabText(tabIndex)">
+          <b-tab title="Library">
             <pre class="highlight"><span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">CalculationError</span>
 
 <span class="k">class</span> <span class="nc">CalculatorLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -149,7 +149,7 @@
                     </pre>
           </b-tab>
 
-          <b-tab title="EXAMPLE 5" @click="changeTabText(tabIndex)">
+          <b-tab title="Template">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
@@ -186,7 +186,7 @@
           </b-tab>
 
 
-          <b-tab title="EXAMPLE 6" @click="changeTabText(tabIndex)">
+          <b-tab title="Gherkin">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
 
@@ -211,6 +211,21 @@
 <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">result</span><span class="p">}</span>
                     </pre>
           </b-tab>
+
+          <b-tab title="Task (RPA)">
+            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">Notify HR of missing hours at the end of the month.</span><span class="p"></span>
+
+<span class="gh">*** Tasks ***</span><span class="p"></span>
+<span class="gu">Notify HR of missing hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Log in to time-tracking system</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Collect tracked hours for current month</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Compare expected hours to tracked hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Notify HR if hours are missing</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Log out of time-tracking system</span><span class="p"></span>
+                    </pre>
+          </b-tab>
+
         </b-tabs>
         </div>
   </div>
@@ -256,6 +271,10 @@ export default {
         {
           text:
             '<p> Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That\'s baked in! </p><p> </p><p> Here is another example from our <a href="https://github.com/robotframework/RobotDemo" target="_blank">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework. </p>'
+        },
+        {
+          text:
+            '<p> Robotic process automation (RPA) tasks utilize the same Robot syntax as test cases, with some minor differences. Instead of <i>Test Cases</i>, you can use <i>Tasks</i>. The report and log will also use "task" instead of "test". </p> <p> Task keywords can be written in plain English. This makes communicating the intent of the tasks effortless. </p>'
         }
       ]
     };
