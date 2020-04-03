@@ -539,6 +539,11 @@ export default {
                     text: "Robot Framework test library for HTTP JSON APIs."
                   },
                   {
+                    title: "RPA framework",
+                    href: "https://www.rpaframework.org/",
+                    text: "Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used both with Robot Framework and Python."
+                  },
+                  {
                     title: "SapGuiLibrary",
                     href: "https://github.com/frankvanderkuur/robotframework-sapguilibrary/",
                     text:
