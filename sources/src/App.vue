@@ -460,7 +460,7 @@ export default {
                   {
                     title: "HTTP library (Requests)",
                     href:
-                      "https://github.com/bulkan/robotframework-requests/#readme",
+                      "https://github.com/MarketSquare/robotframework-requests#readme",
                     text:
                       "Library for HTTP level testing using Request internally."
                   },
