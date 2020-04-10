@@ -251,7 +251,7 @@ export default {
             text: {
               header: "Libraries",
               text:
-                '<p> Libraries provide the actual automation and testing capabilities to Robot Framework by providing keywords. Several standard libraries are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful libraries are missing from the list or if a library on the list seems to be unmaintained.</p>'
+                '<p> Libraries provide the actual automation and testing capabilities to Robot Framework by providing keywords. Several standard libraries are bundled with the framework, and there are separately developed external libraries galore that can be installed based on your needs. Creating your own libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful libraries are missing from the list or if a library on the list seems to be unmaintained.</p>'
             },
             tabs: [
               {
@@ -1079,7 +1079,7 @@ export default {
             text: {
               header: "Support",
               text:
-                '<p> There are various forums where to ask questions and discuss Robot Framework and the ecosystem around it in general. Several companies around the world provide paid support, consultation, and training courses related to the framework. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there is a support forum or a company offering related services you would like to be added here. </p>'
+                '<p> There are various forums where you can ask questions and discuss Robot Framework and the ecosystem around it in general. Several companies around the world provide paid support, consultation, and training courses related to the framework. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there is a support forum or a company offering related services that you would like to be added here. </p>'
             },
             tabs: [
               {
