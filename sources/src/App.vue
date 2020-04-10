@@ -1098,7 +1098,7 @@ export default {
                   },
                   {
                     title: "Slack",
-                    href: "https://robotframework-slack-invite.herokuapp.com/",
+                    href: "https://rf-invite.herokuapp.com/",
                     text: "Robot Framework Slack community."
                   },
                   {
