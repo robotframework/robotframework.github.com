@@ -743,7 +743,7 @@ export default {
                   {
                     title: "Xray Test Management",
                     href: "https://confluence.xpand-it.com/x/QyekAQ",
-                    text: "Xray is the leading Quality Assurance and Test Management app for Jira. More than 4.5 million testers, developers and QA managers trust Xray to manage 100+ million test cases each month. Xray is a mission-critical tool at over 5,000 companies in 70+ countries, including 137 of the Global 500."
+                    text: "Xray is a Test Management app for Jira that provides the ability to track coverage based on traditional manual test cases, exploratory testing and automation-related results. For automation, users can track detailed results from test scripts implemented with Robot Framework and link them to the respective requirements."
                   }
                 ]
               }
