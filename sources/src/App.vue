@@ -382,7 +382,7 @@ export default {
                   {
                     title: "ScreenCapLibrary",
                     href: "https://github.com/mihaiparvu/ScreenCapLibrary",
-                    text: "Library for taking screenshots and video recording."
+                    text: "Library for taking screenshots and video recording. Similar functionality as Screenshot standard library, with some additional features."
                   },
                   {
                     title: "Selenium2Screenshots",
