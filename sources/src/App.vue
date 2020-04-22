@@ -1359,6 +1359,13 @@ export default {
                   "Finnair is using Robot Framework to support Finnair digital platform development."
               },
               {
+                title: "Finnish Tax Administration",
+                href: "https://www.vero.fi/en/individuals/",
+                img: require("@/assets/img/users/vero.png"),
+                text:
+                  "Finnish Tax Administration is using Robot Framework in multiple projects. Robot Framework is one of the core tools in their development to make Quality Assurance and Automation."
+              },
+              {
                 title: "HeyMath",
                 href: "https://plp.heymath.com/",
                 img: require("@/assets/img/users/heymath.png"),
