@@ -1451,7 +1451,7 @@ export default {
               },
               {
                 title: "ryerson",
-                href: "http://www.ryerson.org",
+                href: "https://www.ryerson.ca/",
                 img: require("@/assets/img/users/ryerson.png"),
                 text:
                   "Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff."
