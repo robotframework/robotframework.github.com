@@ -1071,6 +1071,18 @@ export default {
           }
         },
         {
+          title: "Community",
+          text_block: true,
+          feature_box: false,
+          data: {
+            text: {
+              header: "Community",
+              text:
+                '<div class="card card-body col-md-6 p-4"><a href="http://forum.robotframework.org">Forum</a><br><a href="http://groups.google.com/group/robotframework-users">Mailing list</a><br><a href="https://rf-invite.herokuapp.com/">Slack</a></div>'
+            }
+          }
+        },
+        {
           title: "Support",
           text_block: true,
           tab_box: true,
@@ -1521,6 +1533,13 @@ export default {
           text_block: true,
           tab_box: false,
           url: 'https://robocon.io',
+          feature_box: false
+        },
+        {
+          title: "Forum",
+          text_block: true,
+          tab_box: false,
+          url: 'http://forum.robotframework.org',
           feature_box: false
         },
         {
