@@ -1073,13 +1073,37 @@ export default {
         {
           title: "Community",
           text_block: true,
+          community_block: true,
           feature_box: false,
           data: {
             text: {
-              header: "Community",
-              text:
-                '<div class="card card-body col-md-6 p-4"><a href="http://forum.robotframework.org">Forum</a><br><a href="http://groups.google.com/group/robotframework-users">Mailing list</a><br><a href="https://rf-invite.herokuapp.com/">Slack</a></div>'
-            }
+              header: "Community"
+            },
+            items: [
+              {
+                title: 'community',
+                items: [
+                  {
+                    img: require("@/assets/img/ROBOTFW_Mark_Black_LOW.png"),
+                    title: 'Forum',
+                    href: 'http://forum.robotframework.org',
+                    text: 'Discourse forum dedicated to all things Robot Framework!'
+                  },
+                  {
+                    img: require("@/assets/img/slack.png"),
+                    title: 'Slack',
+                    href: 'http://robotframework.slack.com',
+                    text: 'Click <a href="https://rf-invite.herokuapp.com/" target="_blank">here</a> to get an invite to our Slack channel.'
+                  },
+                  {
+                    img: require("@/assets/img/gmail.png"),
+                    title: 'Mailing list',
+                    href: 'http://groups.google.com/group/robotframework-users',
+                    text: 'Google groups community mailing list.'
+                  },
+                ]
+              }
+            ]
           }
         },
         {
