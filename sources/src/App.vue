@@ -103,12 +103,12 @@ export default {
                 {
                   title: "digia",
                   href: "http://www.digia.com/",
-                  img: require("@/assets/img/sponsors/digia.jpg"),
+                  img: require("@/assets/img/sponsors/digia.png"),
                 },
                 {
                   title: "eficode",
                   href: "http://www.eficode.fi/",
-                  img: require("@/assets/img/sponsors/eficode.jpg"),
+                  img: require("@/assets/img/sponsors/eficode.png"),
                 },
                 {
                   title: "eliga",
@@ -183,7 +183,7 @@ export default {
                 {
                   title: "reaktor",
                   href: "http://reaktor.fi/",
-                  img: require("@/assets/img/sponsors/reaktor.jpg"),
+                  img: require("@/assets/img/sponsors/reaktor.png"),
                 },
                 {
                   title: "robocorp",
@@ -1071,6 +1071,42 @@ export default {
           }
         },
         {
+          title: "Community",
+          text_block: true,
+          community_block: true,
+          feature_box: false,
+          data: {
+            text: {
+              header: "Community"
+            },
+            items: [
+              {
+                title: 'community',
+                items: [
+                  {
+                    img: require("@/assets/img/ROBOTFW_Mark_Black_LOW.png"),
+                    title: 'Forum',
+                    href: 'http://forum.robotframework.org',
+                    text: 'New Robot Framework community forum. '
+                  },
+                  {
+                    img: require("@/assets/img/slack.png"),
+                    title: 'Slack',
+                    href: 'http://robotframework.slack.com',
+                    text: 'Community team chat. Get an <a href="https://rf-invite.herokuapp.com/" target="_blank">invite to the workspace.</a>'
+                  },
+                  {
+                    img: require("@/assets/img/gmail.png"),
+                    title: 'Mailing list',
+                    href: 'http://groups.google.com/group/robotframework-users',
+                    text: 'Google groups community mailing list.'
+                  },
+                ]
+              }
+            ]
+          }
+        },
+        {
           title: "Support",
           text_block: true,
           tab_box: true,
@@ -1091,40 +1127,12 @@ export default {
                     text: "Announcements in Twitter."
                   },
                   {
-                    title: "#robotframework",
-                    href:
-                      "http://webchat.freenode.net/?channels=robotframework&amp;prompt=1",
-                    text: "#robotframework IRC channel on freenode."
-                  },
-                  {
-                    title: "Slack",
-                    href: "https://rf-invite.herokuapp.com/",
-                    text: "Robot Framework Slack community."
-                  },
-                  {
-                    title: "robotframework-users",
-                    href: "http://groups.google.com/group/robotframework-users",
-                    text: "Community mailing list."
-                  },
-                  {
-                    title: "Robot Framework issue tracker",
-                    href:
-                      "https://github.com/robotframework/robotframework/issues",
-                    text:
-                      "Notice that external libraries and tools developed as separate projects have their own issue trackers."
-                  },
-                  {
                     title: "Meetup Groups",
                     href:
                       "https://www.meetup.com/pro/robot-framework-foundation",
                     text:
                       "Robot Framework meetup groups around the globe."
-                  }
-                ]
-              },
-              {
-                title: "Other",
-                items: [
+                  },
                   {
                     title: "LinkedIn",
                     href:
@@ -1132,21 +1140,11 @@ export default {
                     text: "Robot Framework group on LinkedIn."
                   },
                   {
-                    title: "AT.info",
+                    title: "robotframework-announce",
                     href:
-                      "http://automated-testing.info/category/robot-framework",
-                    text: "Robot Framework help forum по-русски."
-                  },
-                  {
-                    title: "robotframework-devel",
-                    href: "http://groups.google.com/group/robotframework-devel",
+                      "http://groups.google.com/group/robotframework-announce",
                     text:
-                      "Mailing list for contributors and developers of the Robot Framework ecosystem."
-                  },
-                  {
-                    title: "Helsinki Meetup group",
-                    href: "https://www.meetup.com/Robot-Framework-Helsinki/",
-                    text: "Robot Framework Meetup group in Helsinki, Finland."
+                      "Mailing list for just release announcements, nothing more."
                   },
                   {
                     title: "Stack Overflow",
@@ -1156,11 +1154,23 @@ export default {
                       "Questions in Stack Overflow tagged with Robot Framework."
                   },
                   {
-                    title: "robotframework-announce",
+                    title: "AT.info",
                     href:
-                      "http://groups.google.com/group/robotframework-announce",
+                      "http://automated-testing.info/category/robot-framework",
+                    text: "Robot Framework help forum по-русски."
+                  },
+                  {
+                    title: "Robot Framework issue tracker",
+                    href:
+                      "https://github.com/robotframework/robotframework/issues",
                     text:
-                      "Mailing list for just release announcements, nothing more."
+                      "Notice that external libraries and tools developed as separate projects have their own issue trackers."
+                  },
+                  {
+                    title: "robotframework-devel",
+                    href: "http://groups.google.com/group/robotframework-devel",
+                    text:
+                      "Mailing list for contributors and developers of the Robot Framework ecosystem."
                   }
                 ]
               },
@@ -1521,6 +1531,13 @@ export default {
           text_block: true,
           tab_box: false,
           url: 'https://robocon.io',
+          feature_box: false
+        },
+        {
+          title: "Forum",
+          text_block: true,
+          tab_box: false,
+          url: 'http://forum.robotframework.org',
           feature_box: false
         },
         {
