@@ -103,12 +103,12 @@ export default {
                 {
                   title: "digia",
                   href: "http://www.digia.com/",
-                  img: require("@/assets/img/sponsors/digia.jpg"),
+                  img: require("@/assets/img/sponsors/digia.png"),
                 },
                 {
                   title: "eficode",
                   href: "http://www.eficode.fi/",
-                  img: require("@/assets/img/sponsors/eficode.jpg"),
+                  img: require("@/assets/img/sponsors/eficode.png"),
                 },
                 {
                   title: "eliga",
@@ -183,7 +183,7 @@ export default {
                 {
                   title: "reaktor",
                   href: "http://reaktor.fi/",
-                  img: require("@/assets/img/sponsors/reaktor.jpg"),
+                  img: require("@/assets/img/sponsors/reaktor.png"),
                 },
                 {
                   title: "robocorp",
