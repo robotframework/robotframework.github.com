@@ -81,6 +81,26 @@ export default {
             },
             members: [
                 {
+                  title: "Aito",
+                  href: "https://aito.ai/rpa/",
+                  img: require("@/assets/img/sponsors/aito.png"),
+                },
+                {
+                  title: "Aktia",
+                  href: "https://www.aktia.fi/",
+                  img: require("@/assets/img/sponsors/aktia.png"),
+                },
+                {
+                  title: "Apptestify",
+                  href: "https://apptestify.com/",
+                  img: require("@/assets/img/sponsors/apptestify.png"),
+                },
+                {
+                  title: "Cap Gemini",
+                  href: "https://www.capgemini.com/",
+                  img: require("@/assets/img/sponsors/capgemini.png"),
+                },
+                {
                   title: "Chili",
                   href: "https://www.chili.com/",
                   img: require("@/assets/img/sponsors/chili.jpg"),
@@ -116,6 +136,16 @@ export default {
                   img: require("@/assets/img/sponsors/eliga.jpg"),
                 },
                 {
+                  title: "Ennuviz",
+                  href: "https://www.ennuviz.com/",
+                  img: require("@/assets/img/sponsors/ennuviz.png"),
+                },
+                {
+                  title: "eTestingAcademy",
+                  href: "http://etestingacademy.com/",
+                  img: require("@/assets/img/sponsors/etestingacademy.png"),
+                },
+                {
                   title: "etteplan",
                   href: "http://www.espotel.com/",
                   img: require("@/assets/img/sponsors/etteplan.png"),
@@ -131,6 +161,11 @@ export default {
                   img: require("@/assets/img/sponsors/hiq.jpg"),
                 },
                 {
+                  title: "humanitec",
+                  href: "https://humanitec.com/",
+                  img: require("@/assets/img/sponsors/humanitec.png"),
+                },
+                {
                   title: "imbus",
                   href: "https://www.imbus.de/softwaretest/",
                   img: require("@/assets/img/sponsors/imbus.png"),
@@ -139,6 +174,11 @@ export default {
                   title: "knowit",
                   href: "http://www.knowit.fi/",
                   img: require("@/assets/img/sponsors/knowit.jpg"),
+                },
+                {
+                  title: "kuka",
+                  href: "http://www.kuka.com/",
+                  img: require("@/assets/img/sponsors/kuka.png"),
                 },
                 {
                   title: "luoto",
@@ -166,9 +206,19 @@ export default {
                   img: require("@/assets/img/sponsors/northcode.png"),
                 },
                 {
+                  title: "op",
+                  href: "https://www.op.fi/op-ryhma",
+                  img: require("@/assets/img/sponsors/op.png"),
+                },
+                {
                   title: "opuscapita",
                   href: "https://www.opuscapita.com/",
                   img: require("@/assets/img/sponsors/opuscapita.jpg"),
+                },
+                {
+                  title: "ouro",
+                  href: "https://www.ouro.fi/",
+                  img: require("@/assets/img/sponsors/ouro.png"),
                 },
                 {
                   title: "qfactory",
@@ -204,6 +254,11 @@ export default {
                   title: "siili",
                   href: "http://www.siili.com/",
                   img: require("@/assets/img/sponsors/siili.jpg"),
+                },
+                {
+                  title: "sleepiq",
+                  href: "https://bamlabs.com/",
+                  img: require("@/assets/img/sponsors/sleepiq.png"),
                 },
                 {
                   title: "symbio",
@@ -963,6 +1018,12 @@ export default {
                     href: "http://robot-framework.readthedocs.org/en/latest/",
                     text:
                       "Public API for writing your own tools against Robot Framework."
+                  },
+                  {
+                    title: "Robohub",
+                    href: "https://hub.robocorp.com/robotic-process-automation/basics-of-rpa/",
+                    text:
+                      "RPA tutorials and guidelines"
                   }
                 ]
               },
@@ -1077,7 +1138,8 @@ export default {
           feature_box: false,
           data: {
             text: {
-              header: "Community"
+              header: "Community",
+              text: "Robot Framework has a vibrant community around it with various online forums, annual RoboCon conference, and meetup groups around the world."
             },
             items: [
               {
@@ -1101,26 +1163,11 @@ export default {
                     href: 'http://groups.google.com/group/robotframework-users',
                     text: 'Google groups community mailing list.'
                   },
-                ]
-              }
-            ]
-          }
-        },
-        {
-          title: "Support",
-          text_block: true,
-          tab_box: true,
-          feature_box: false,
-          data: {
-            text: {
-              header: "Support",
-              text:
-                '<p> There are various forums where you can ask questions and discuss Robot Framework and the ecosystem around it in general. Several companies around the world provide paid support, consultation, and training courses related to the framework. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there is a support forum or a company offering related services that you would like to be added here. </p>'
-            },
-            tabs: [
-              {
-                title: "General",
-                items: [
+                  {
+                    title: "Robocon",
+                    href: "https://robocon.io/",
+                    text: "Annual Robot Framework conference"
+                  },
                   {
                     title: "@robotframework",
                     href: "http://twitter.com/robotframework",
@@ -1160,111 +1207,10 @@ export default {
                     text: "Robot Framework help forum по-русски."
                   },
                   {
-                    title: "Robot Framework issue tracker",
-                    href:
-                      "https://github.com/robotframework/robotframework/issues",
-                    text:
-                      "Notice that external libraries and tools developed as separate projects have their own issue trackers."
-                  },
-                  {
                     title: "robotframework-devel",
                     href: "http://groups.google.com/group/robotframework-devel",
                     text:
                       "Mailing list for contributors and developers of the Robot Framework ecosystem."
-                  }
-                ]
-              },
-              {
-                title: "Vendors",
-                items: [
-                  {
-                    title: "Comiq",
-                    href: "http://comiq.fi/",
-                    text:
-                      "Comiq is a Finnish software quality service provider founded in 2003 employing around 60 QA consultants."
-                  },
-                  {
-                    title: "Digia",
-                    href: "http://www.digia.com",
-                    text:
-                      "Digia is a IT service company that helps its customers developing and innovating solutions that support business operations together with customers."
-                  },
-                  {
-                    title: "Eficode",
-                    href: "http://www.eficode.com/",
-                    text:
-                      "Eficode is the leading devops company in Finland relying on automation, virtualisation and smart tool choices."
-                  },
-                  {
-                    title: "Eliga",
-                    href: "http://eliga.fi/",
-                    text:
-                      "Eliga is a one-man company by Pekka Klärck, the lead developer of Robot Framework. It provides top-notch training, consultation and support services related to Robot Framework and Python programming."
-                  },
-                  {
-                    title: "Etteplan",
-                    href: "http://www.espotel.com/",
-                    text:
-                      "Etteplan is a specialist in industrial equipment engineering, embedded systems and IoT and technical documentation solutions and services with deep knowledge in QA from network edge to cloud in Nordics."
-                  },
-                  {
-                    title: "HiQ",
-                    href: "http://www.hiqfinland.fi/",
-                    text:
-                      "HiQ is a Nordic ICT service and consultancy company focusing on streamlining our customers' businesses and simplifying people's lives."
-                  },
-                  {
-                    title: "imbus",
-                    href: "https://www.imbus.de/",
-                    text:
-                      "imbus is a German leading solution partner for professional software testing and intelligent test automation. The portfolio includes consulting for test automation, test tools, and training."
-                  },
-                  {
-                    title: "Knowit",
-                    href: "https://www.knowit.fi/",
-                    text:
-                      "Knowit is a consulting company that helps its clients succeed by operating close and in an innovative, business-oriented way."
-                  },
-                  {
-                    title: "Mykhailo Poliarush",
-                    href: "http://poliarush.com/trainings/robotframework",
-                    text: "Commercial Robot Framework training по-русски."
-                  },
-                  {
-                    title: "Q-Factory",
-                    href: "http://www.q-factory.fi/",
-                    text:
-                      "Q-Factory is specialized in test automation and quality assurance services."
-                  },
-                  {
-                    title: "Qentinel",
-                    href: "https://qentinel.com/",
-                    text:
-                      "Qentinel is a Finnish company that specialises in information system quality assurance."
-                  },
-                  {
-                    title: "Reaktor",
-                    href: "https://www.reaktor.com/",
-                    text:
-                      "Reaktor is a creative technology house that constructs exceptional digital services for clients."
-                  },
-                  {
-                    title: "Siili",
-                    href: "http://siili.com/",
-                    text:
-                      "Siili is a modern, full-service technology company, helping you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise."
-                  },
-                  {
-                    title: "Symbio",
-                    href: "https://www.symbio.com/",
-                    text:
-                      "Symbio is international co-creation innovation partner. We help our customers create high quality products and future services in digital world."
-                  },
-                  {
-                    title: "VALA Group",
-                    href: "http://www.valagroup.com/",
-                    text:
-                      "VALA Group provides outstanding software development and quality assurance services by utilizing automation, co-operation and intelligent tool selection for companies ranging from start-ups to major publicly listed companies."
                   }
                 ]
               }
