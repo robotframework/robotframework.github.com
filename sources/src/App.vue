@@ -36,7 +36,7 @@ export default {
             text: {
               twitter: true,
               header: "Introduction",
-              text: '<p> <b>Robot Framework</b> is a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). It has easy-to-use tabular test data syntax and it utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new higher-level keywords from existing ones using the same syntax that is used for creating test cases. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. The framework has a rich ecosystem around it consisting of various generic <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and runs also on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
+              text: '<p> <b>Robot Framework</b> is a generic open source automation framework. It can be used for test automation and robotic process automation (RPA). <p> Robot Framework is actively supported, with many industry-leading companies using it in their software development. </p> Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions. Being open source also means that Robot Framework is free to use without licensing costs. </p> <p> Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java. The framework has a rich ecosystem around it, consisting of <a href="#libraries">libraries</a> and <a href="#tools">tools</a> that are developed as separate projects. </p> <p> Robot Framework project is hosted on <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a> where you can find further documentation, source code, and issue tracker. Downloads are hosted at <a href="https://pypi.python.org/pypi/robotframework" target="_blank">PyPI</a>. <p> Robot Framework is operating system and application independent. The core framework is implemented using <a href="http://python.org" target="_blank">Python</a> and also runs on <a href="http://jython.org" target="_blank">Jython</a> (JVM) and <a href="http://ironpython.net" target="_blank">IronPython</a> (.NET). </p> <p> Robot Framework itself is open source software released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>, and most of the libraries and tools in the ecosystem are also open source. The framework was initially developed at <a href="http://networks.nokia.com" target="_blank">Nokia Networks</a> and was open sourced in 2008.</p>'
             }
           }
         },
@@ -52,12 +52,12 @@ export default {
               {
                 header: "CLEAR",
                 text:
-                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">test libraries</a>. </p> <p> Test data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing test cases creates a test suite and placing these files into directories creates a nested structure of test suites. </p>'
+                  '<p> Robot Framework has a modular architecture that can be extended with bundled and self-made <a href="#libraries">libraries</a>. </p> <p> Data is defined in files using the syntax shown in the <a href="#examples">examples</a> below. A file containing tests or tasks creates a suite, and placing these files into directories creates a nested structure of suites. </p>'
               },
               {
                 header: "EASY",
                 text:
-                  "<p> When test execution is started, the framework first parses the test data. It then utilizes keywords provided by the test libraries to interact with the system under test. Libraries can communicate with the system either directly or using other test tools as drivers. </p> <p> Test execution is started from the command line. As a result you get report and log in HTML format as well as an XML output. These provide extensive look into what your system does. </p>"
+                  "<p> When execution is started, the framework first parses the data. It then utilizes keywords provided by the libraries to interact with the target system. Libraries can communicate with the system either directly or using other tools as drivers. </p> <p> Test or task execution is started from the command line. As a result, you get a report and log in HTML format as well as an XML output. These provide an extensive look into what your system does. </p>"
               },
               {
                 header: "MODULAR",
@@ -81,6 +81,26 @@ export default {
             },
             members: [
                 {
+                  title: "Aito",
+                  href: "https://aito.ai/rpa/",
+                  img: require("@/assets/img/sponsors/aito.png"),
+                },
+                {
+                  title: "Aktia",
+                  href: "https://www.aktia.fi/",
+                  img: require("@/assets/img/sponsors/aktia.png"),
+                },
+                {
+                  title: "Apptestify",
+                  href: "https://apptestify.com/",
+                  img: require("@/assets/img/sponsors/apptestify.png"),
+                },
+                {
+                  title: "Cap Gemini",
+                  href: "https://www.capgemini.com/",
+                  img: require("@/assets/img/sponsors/capgemini.png"),
+                },
+                {
                   title: "Chili",
                   href: "https://www.chili.com/",
                   img: require("@/assets/img/sponsors/chili.jpg"),
@@ -103,17 +123,27 @@ export default {
                 {
                   title: "digia",
                   href: "http://www.digia.com/",
-                  img: require("@/assets/img/sponsors/digia.jpg"),
+                  img: require("@/assets/img/sponsors/digia.png"),
                 },
                 {
                   title: "eficode",
                   href: "http://www.eficode.fi/",
-                  img: require("@/assets/img/sponsors/eficode.jpg"),
+                  img: require("@/assets/img/sponsors/eficode.png"),
                 },
                 {
                   title: "eliga",
                   href: "http://eliga.fi/",
                   img: require("@/assets/img/sponsors/eliga.jpg"),
+                },
+                {
+                  title: "Ennuviz",
+                  href: "https://www.ennuviz.com/",
+                  img: require("@/assets/img/sponsors/ennuviz.png"),
+                },
+                {
+                  title: "eTestingAcademy",
+                  href: "http://etestingacademy.com/",
+                  img: require("@/assets/img/sponsors/etestingacademy.png"),
                 },
                 {
                   title: "etteplan",
@@ -131,6 +161,11 @@ export default {
                   img: require("@/assets/img/sponsors/hiq.jpg"),
                 },
                 {
+                  title: "humanitec",
+                  href: "https://humanitec.com/",
+                  img: require("@/assets/img/sponsors/humanitec.png"),
+                },
+                {
                   title: "imbus",
                   href: "https://www.imbus.de/softwaretest/",
                   img: require("@/assets/img/sponsors/imbus.png"),
@@ -139,6 +174,11 @@ export default {
                   title: "knowit",
                   href: "http://www.knowit.fi/",
                   img: require("@/assets/img/sponsors/knowit.jpg"),
+                },
+                {
+                  title: "kuka",
+                  href: "http://www.kuka.com/",
+                  img: require("@/assets/img/sponsors/kuka.png"),
                 },
                 {
                   title: "luoto",
@@ -166,9 +206,19 @@ export default {
                   img: require("@/assets/img/sponsors/northcode.png"),
                 },
                 {
+                  title: "op",
+                  href: "https://www.op.fi/op-ryhma",
+                  img: require("@/assets/img/sponsors/op.png"),
+                },
+                {
                   title: "opuscapita",
                   href: "https://www.opuscapita.com/",
                   img: require("@/assets/img/sponsors/opuscapita.jpg"),
+                },
+                {
+                  title: "ouro",
+                  href: "https://www.ouro.fi/",
+                  img: require("@/assets/img/sponsors/ouro.png"),
                 },
                 {
                   title: "qfactory",
@@ -183,7 +233,7 @@ export default {
                 {
                   title: "reaktor",
                   href: "http://reaktor.fi/",
-                  img: require("@/assets/img/sponsors/reaktor.jpg"),
+                  img: require("@/assets/img/sponsors/reaktor.png"),
                 },
                 {
                   title: "robocorp",
@@ -204,6 +254,11 @@ export default {
                   title: "siili",
                   href: "http://www.siili.com/",
                   img: require("@/assets/img/sponsors/siili.jpg"),
+                },
+                {
+                  title: "sleepiq",
+                  href: "https://bamlabs.com/",
+                  img: require("@/assets/img/sponsors/sleepiq.png"),
                 },
                 {
                   title: "symbio",
@@ -251,7 +306,7 @@ export default {
             text: {
               header: "Libraries",
               text:
-                '<p> Test libraries provide the actual testing capabilities to Robot Framework by providing keywords. There are several standard libraries that are bundled in with the framework, and galore of separately developed external libraries that can be installed based on your needs. Creating your own test libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful libraries missing from the list or if a library on the list seems to be unmaintained.</p>'
+                '<p> Libraries provide the actual automation and testing capabilities to Robot Framework by providing keywords. Several standard libraries are bundled with the framework, and there are separately developed external libraries galore that can be installed based on your needs. Creating your own libraries <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">is a breeze</a>. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful libraries are missing from the list or if a library on the list seems to be unmaintained.</p>'
             },
             tabs: [
               {
@@ -269,7 +324,7 @@ export default {
                     href:
                       "http://robotframework.org/robotframework/#standard-libraries",
                     text:
-                      "Provides means for pausing the test execution and getting input from users."
+                      "Provides means for pausing the execution and getting input from users."
                   },
                   {
                     title: "Collections",
@@ -289,7 +344,7 @@ export default {
                     title: "Remote",
                     href: "https://github.com/robotframework/RemoteInterface",
                     text:
-                      "Special library acting as a proxy between Robot Framework and test libraries elsewhere. Actual test libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
+                      "Special library acting as a proxy between Robot Framework and libraries elsewhere. Actual libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
                   },
                   {
                     title: "Screenshot",
@@ -460,7 +515,7 @@ export default {
                   {
                     title: "HTTP library (Requests)",
                     href:
-                      "https://github.com/bulkan/robotframework-requests/#readme",
+                      "https://github.com/MarketSquare/robotframework-requests#readme",
                     text:
                       "Library for HTTP level testing using Request internally."
                   },
@@ -537,6 +592,11 @@ export default {
                     title: "RESTinstance",
                     href: "https://github.com/asyrjasalo/RESTinstance/",
                     text: "Robot Framework test library for HTTP JSON APIs."
+                  },
+                  {
+                    title: "RPA framework",
+                    href: "https://www.rpaframework.org/",
+                    text: "Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used both with Robot Framework and Python."
                   },
                   {
                     title: "SapGuiLibrary",
@@ -670,7 +730,7 @@ export default {
             text: {
               header: "Tools",
               text:
-                '<p> Supporting tools ease everything surrounding tests: editing, running, building and so on. Most of these tools are developed as separate projects, but some are built into the framework itself. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful tools missing from the list. </p>'
+                '<p> Supporting tools ease automation: editing, running, building and so on. Most of these tools are developed as separate projects, but some are built into the framework itself. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful tools are missing from the list. </p>'
             },
             tabs: [
               {
@@ -688,7 +748,7 @@ export default {
                     href:
                       "http://robotframework.org/robotframework/#built-in-tools",
                     text:
-                      "Tool for generating keyword documentation for test libraries and resource files."
+                      "Tool for generating keyword documentation for libraries and resource files."
                   },
                   {
                     title: "Testdoc",
@@ -702,7 +762,7 @@ export default {
                     href:
                       "http://robotframework.org/robotframework/#built-in-tools",
                     text:
-                      "Tool for cleaning up and changing format of Robot Framework test data files."
+                      "Tool for cleaning up and changing format of Robot Framework data files."
                   }
                 ]
               },
@@ -804,7 +864,7 @@ export default {
                     href:
                       "https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin",
                     text:
-                      "Plugin to collect and publish Robot Framework test results in Jenkins."
+                      "Plugin to collect and publish Robot Framework execution results in Jenkins."
                   },
                   {
                     title: "Maven plugin",
@@ -825,7 +885,7 @@ export default {
                     title: "DbBot",
                     href: "https://github.com/robotframework/DbBot",
                     text:
-                      "Tool for serializing Robot Framework test results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
+                      "Tool for serializing Robot Framework execution results, i.e. output.xml files, into a SQLite database. It serves a good starting point to create your own reporting and analyzing tools."
                   },
                   {
                     title: "Distbot",
@@ -847,13 +907,13 @@ export default {
                   {
                     title: "Pabot",
                     href: "https://github.com/mkorpela/pabot",
-                    text: "A parallel executor for Robot Framework test cases."
+                    text: "A parallel executor for Robot Framework tests and tasks."
                   },
                   {
                     title: "RFDoc",
                     href: "http://github.com/robotframework/rfdoc",
                     text:
-                      "Web based system for storing and searching Robot Framework test library and resource file documentations."
+                      "Web based system for storing and searching Robot Framework library and resource file documentations."
                   },
                   {
                     title: "Robot Corder",
@@ -911,7 +971,7 @@ export default {
             text: {
               header: "Documentation",
               text:
-                '<p> Want to get started? Looking for a way to do things? Here are the most important documentation resources needed to work with Robot Framework. Notice that individual <a href="#libraries">test libraries</a> and <a href="#tools">tools</a> in the ecosystem have their own documentation that is typically accessed via their project pages. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there are useful links missing from the list. </p>'
+                '<p> Want to get started? Looking for a way to do things? Here are the most important documentation resources needed to work with Robot Framework. Notice that individual <a href="#libraries">libraries</a> and <a href="#tools">tools</a> in the ecosystem have their own documentation that is typically accessed via their project pages. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful links are missing from the list. </p>'
             },
             tabs: [
               {
@@ -963,6 +1023,12 @@ export default {
                     href: "http://robot-framework.readthedocs.org/en/latest/",
                     text:
                       "Public API for writing your own tools against Robot Framework."
+                  },
+                  {
+                    title: "Robohub",
+                    href: "https://hub.robocorp.com/robotic-process-automation/basics-of-rpa/",
+                    text:
+                      "RPA tutorials and guidelines"
                   }
                 ]
               },
@@ -1071,47 +1137,46 @@ export default {
           }
         },
         {
-          title: "Support",
+          title: "Community",
           text_block: true,
-          tab_box: true,
+          community_block: true,
           feature_box: false,
           data: {
             text: {
-              header: "Support",
-              text:
-                '<p> There are various forums where to ask questions and discuss about Robot Framework and the ecosystem around it in general. There are also several companies around the world that provide paid support, consultation, and training courses related to the framework. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if there is a support forum or a company offering related services you would like to be added here. </p>'
+              header: "Community",
+              text: "Robot Framework has a vibrant community around it with various online forums, annual RoboCon conference, and meetup groups around the world."
             },
-            tabs: [
+            items: [
               {
-                title: "General",
+                title: 'community',
                 items: [
+                  {
+                    img: require("@/assets/img/ROBOTFW_Mark_Black_LOW.png"),
+                    title: 'Forum',
+                    href: 'http://forum.robotframework.org',
+                    text: 'New Robot Framework community forum. '
+                  },
+                  {
+                    img: require("@/assets/img/slack.png"),
+                    title: 'Slack',
+                    href: 'http://robotframework.slack.com',
+                    text: 'Community team chat. Get an <a href="https://rf-invite.herokuapp.com/" target="_blank">invite to the workspace.</a>'
+                  },
+                  {
+                    img: require("@/assets/img/gmail.png"),
+                    title: 'Mailing list',
+                    href: 'http://groups.google.com/group/robotframework-users',
+                    text: 'Google groups community mailing list.'
+                  },
+                  {
+                    title: "Robocon",
+                    href: "https://robocon.io/",
+                    text: "Annual Robot Framework conference"
+                  },
                   {
                     title: "@robotframework",
                     href: "http://twitter.com/robotframework",
                     text: "Announcements in Twitter."
-                  },
-                  {
-                    title: "#robotframework",
-                    href:
-                      "http://webchat.freenode.net/?channels=robotframework&amp;prompt=1",
-                    text: "#robotframework IRC channel on freenode."
-                  },
-                  {
-                    title: "Slack",
-                    href: "https://robotframework-slack-invite.herokuapp.com/",
-                    text: "Robot Framework Slack community."
-                  },
-                  {
-                    title: "robotframework-users",
-                    href: "http://groups.google.com/group/robotframework-users",
-                    text: "Community mailing list."
-                  },
-                  {
-                    title: "Robot Framework issue tracker",
-                    href:
-                      "https://github.com/robotframework/robotframework/issues",
-                    text:
-                      "Notice that external libraries and tools developed as separate projects have their own issue trackers."
                   },
                   {
                     title: "Meetup Groups",
@@ -1119,17 +1184,26 @@ export default {
                       "https://www.meetup.com/pro/robot-framework-foundation",
                     text:
                       "Robot Framework meetup groups around the globe."
-                  }
-                ]
-              },
-              {
-                title: "Other",
-                items: [
+                  },
                   {
                     title: "LinkedIn",
                     href:
-                      "http://www.linkedin.com/groups/Robot-Framework-3710899",
+                      "https://www.linkedin.com/groups/3710899/",
                     text: "Robot Framework group on LinkedIn."
+                  },
+                  {
+                    title: "robotframework-announce",
+                    href:
+                      "http://groups.google.com/group/robotframework-announce",
+                    text:
+                      "Mailing list for just release announcements, nothing more."
+                  },
+                  {
+                    title: "Stack Overflow",
+                    href:
+                      "http://stackoverflow.com/questions/tagged/robotframework",
+                    text:
+                      "Questions in Stack Overflow tagged with Robot Framework."
                   },
                   {
                     title: "AT.info",
@@ -1142,119 +1216,6 @@ export default {
                     href: "http://groups.google.com/group/robotframework-devel",
                     text:
                       "Mailing list for contributors and developers of the Robot Framework ecosystem."
-                  },
-                  {
-                    title: "Helsinki Meetup group",
-                    href: "https://www.meetup.com/Robot-Framework-Helsinki/",
-                    text: "Robot Framework Meetup group in Helsinki, Finland."
-                  },
-                  {
-                    title: "Stack Overflow",
-                    href:
-                      "http://stackoverflow.com/questions/tagged/robotframework",
-                    text:
-                      "Questions in Stack Overflow tagged with Robot Framework."
-                  },
-                  {
-                    title: "robotframework-announce",
-                    href:
-                      "http://groups.google.com/group/robotframework-announce",
-                    text:
-                      "Mailing list for just release announcements, nothing more."
-                  }
-                ]
-              },
-              {
-                title: "Vendors",
-                items: [
-                  {
-                    title: "Comiq",
-                    href: "http://comiq.fi/",
-                    text:
-                      "Comiq is a Finnish software quality service provider founded in 2003 employing around 60 QA consultants."
-                  },
-                  {
-                    title: "Digia",
-                    href: "http://www.digia.com",
-                    text:
-                      "Digia is a IT service company that helps its customers developing and innovating solutions that support business operations together with customers."
-                  },
-                  {
-                    title: "Eficode",
-                    href: "http://www.eficode.com/",
-                    text:
-                      "Eficode is the leading devops company in Finland relying on automation, virtualisation and smart tool choices."
-                  },
-                  {
-                    title: "Eliga",
-                    href: "http://eliga.fi/",
-                    text:
-                      "Eliga is a one-man company by Pekka Klärck, the lead developer of Robot Framework. It provides top-notch training, consultation and support services related to Robot Framework and Python programming."
-                  },
-                  {
-                    title: "Etteplan",
-                    href: "http://www.espotel.com/",
-                    text:
-                      "Etteplan is a specialist in industrial equipment engineering, embedded systems and IoT and technical documentation solutions and services with deep knowledge in QA from network edge to cloud in Nordics."
-                  },
-                  {
-                    title: "HiQ",
-                    href: "http://www.hiqfinland.fi/",
-                    text:
-                      "HiQ is a Nordic ICT service and consultancy company focusing on streamlining our customers' businesses and simplifying people's lives."
-                  },
-                  {
-                    title: "imbus",
-                    href: "https://www.imbus.de/",
-                    text:
-                      "imbus is a German leading solution partner for professional software testing and intelligent test automation. The portfolio includes consulting for test automation, test tools, and training."
-                  },
-                  {
-                    title: "Knowit",
-                    href: "https://www.knowit.fi/",
-                    text:
-                      "Knowit is a consulting company that helps its clients succeed by operating close and in an innovative, business-oriented way."
-                  },
-                  {
-                    title: "Mykhailo Poliarush",
-                    href: "http://poliarush.com/trainings/robotframework",
-                    text: "Commercial Robot Framework training по-русски."
-                  },
-                  {
-                    title: "Q-Factory",
-                    href: "http://www.q-factory.fi/",
-                    text:
-                      "Q-Factory is specialized in test automation and quality assurance services."
-                  },
-                  {
-                    title: "Qentinel",
-                    href: "https://qentinel.com/",
-                    text:
-                      "Qentinel is a Finnish company that specialises in information system quality assurance."
-                  },
-                  {
-                    title: "Reaktor",
-                    href: "https://www.reaktor.com/",
-                    text:
-                      "Reaktor is a creative technology house that constructs exceptional digital services for clients."
-                  },
-                  {
-                    title: "Siili",
-                    href: "http://siili.com/",
-                    text:
-                      "Siili is a modern, full-service technology company, helping you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise."
-                  },
-                  {
-                    title: "Symbio",
-                    href: "https://www.symbio.com/",
-                    text:
-                      "Symbio is international co-creation innovation partner. We help our customers create high quality products and future services in digital world."
-                  },
-                  {
-                    title: "VALA Group",
-                    href: "http://www.valagroup.com/",
-                    text:
-                      "VALA Group provides outstanding software development and quality assurance services by utilizing automation, co-operation and intelligent tool selection for companies ranging from start-ups to major publicly listed companies."
                   }
                 ]
               }
@@ -1366,6 +1327,13 @@ export default {
                   "Finnair is using Robot Framework to support Finnair digital platform development."
               },
               {
+                title: "Finnish Tax Administration",
+                href: "https://www.vero.fi/en/individuals/",
+                img: require("@/assets/img/users/vero.png"),
+                text:
+                  "Finnish Tax Administration is using Robot Framework in multiple projects. Robot Framework is one of the core tools in their development to make Quality Assurance and Automation."
+              },
+              {
                 title: "HeyMath",
                 href: "https://plp.heymath.com/",
                 img: require("@/assets/img/users/heymath.png"),
@@ -1458,7 +1426,7 @@ export default {
               },
               {
                 title: "ryerson",
-                href: "http://www.ryerson.org",
+                href: "https://www.ryerson.ca/",
                 img: require("@/assets/img/users/ryerson.png"),
                 text:
                   "Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff."
@@ -1521,6 +1489,13 @@ export default {
           text_block: true,
           tab_box: false,
           url: 'https://robocon.io',
+          feature_box: false
+        },
+        {
+          title: "Forum",
+          text_block: true,
+          tab_box: false,
+          url: 'http://forum.robotframework.org',
           feature_box: false
         },
         {

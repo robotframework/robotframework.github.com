@@ -5,10 +5,10 @@
     <div class="row">
     
       <div class="col-md-12 order-md-2 order-lg-1">
-          <b-tabs cards pills class="nav-fill card " v-model="tabIndex">
+          <b-tabs cards pills class="nav-fill card " v-model="tabIndex" @input="changeTabText(tabIndex)">
 
 
-          <b-tab title="EXAMPLE 1" @click="changeTabText(tabIndex)">
+          <b-tab title="Test case">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Documentation</span><span class="p">     </span><span class="s">A test suite with a single test for valid login.</span><span class="p"></span>
 <span class="p">...</span>
@@ -26,7 +26,7 @@
 <span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Close Browser</span><span class="p"></span>
                     </pre>
           </b-tab>
-          <b-tab title="EXAMPLE 2" @click="changeTabText(tabIndex)">
+          <b-tab title="Report and log">
             <div class="row">
               <div class="col-xl-6 col-md-12">
                 <b-img v-b-modal.modal2 class="img-fluid" :src="require('@/assets/img/report.png')" id="report"/>
@@ -44,7 +44,7 @@
           </b-tab>
 
 
-            <b-tab title="EXAMPLE 3" @click="changeTabText(tabIndex)">
+            <b-tab title="Keywords">
             <div class="row">
               <div class="col-lg-12">
            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
@@ -120,7 +120,7 @@
                   </pre></div></div>
           </b-tab>
 
-          <b-tab title="EXAMPLE 4" @click="changeTabText(tabIndex)">
+          <b-tab title="Library">
             <pre class="highlight"><span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">CalculationError</span>
 
 <span class="k">class</span> <span class="nc">CalculatorLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -149,7 +149,7 @@
                     </pre>
           </b-tab>
 
-          <b-tab title="EXAMPLE 5" @click="changeTabText(tabIndex)">
+          <b-tab title="Template">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Test Template</span><span class="p">     </span><span class="nf">Calculate</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
@@ -186,7 +186,7 @@
           </b-tab>
 
 
-          <b-tab title="EXAMPLE 6" @click="changeTabText(tabIndex)">
+          <b-tab title="Gherkin">
             <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
 <span class="kn">Library</span><span class="p">           </span><span class="nn">CalculatorLibrary</span><span class="p"></span>
 
@@ -211,6 +211,21 @@
 <span class="p">    </span><span class="nf">Result should be</span><span class="p">    ${</span><span class="nv">result</span><span class="p">}</span>
                     </pre>
           </b-tab>
+
+          <b-tab title="Task (RPA)">
+            <pre class="highlight"><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">Notify HR of missing hours at the end of the month.</span><span class="p"></span>
+
+<span class="gh">*** Tasks ***</span><span class="p"></span>
+<span class="gu">Notify HR of missing hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Log in to time-tracking system</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Collect tracked hours for current month</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Compare expected hours to tracked hours</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Notify HR if hours are missing</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Teardown</span><span class="p">]    </span><span class="nf">Log out of time-tracking system</span><span class="p"></span>
+                    </pre>
+          </b-tab>
+
         </b-tabs>
         </div>
   </div>
@@ -235,15 +250,15 @@ export default {
       items: [
         {
           text:
-            '<p> Let\'s start with a real-life example from our <a href="https://github.com/robotframework/WebDemo" target="_blank">web demo project</a>. Here we have a test suite with one test case which tests that login is valid. As you can see, test data syntax is based on <span class="italic">keywords</span>. </p> <p> Keywords are composable, meaning you can define new keywords that use pre-existing keywords. This way, you can abstract details of testing to something that makes immediate sense; for example, we don\'t need to know what exactly the step <span class="teletype">Submit Credentials</span> actually does, unless we want to. Test cases are therefore clear and readable, with just the right level of abstraction to convey the <span class="italic">intent</span> of the test, rather than the nuts and bolts. </p> <p> See next example for what you\'re going to get once this example is run! </p>'
+            '<p> Let\'s start with a real-life example from our <a href="https://github.com/robotframework/WebDemo" target="_blank">web demo project</a>. Here we have a test suite with one test case which tests that login is valid. As you can see, test data syntax is based on <span class="italic">keywords</span>. </p> <p> Keywords are composable, meaning you can define new keywords that use pre-existing keywords. This way, you can abstract details of testing to something that makes immediate sense; for example, we don\'t need to know what exactly the step <span class="teletype">Submit Credentials</span> actually does, unless we want to. Test cases are therefore clear and readable, with just the right level of abstraction to convey the <span class="italic">intent</span> of the test, rather than the nuts and bolts. </p> <p> See Report and Log for what you\'re going to get once this example is run! </p>'
         },
         {
           text:
-            '<p> Executing the test suite file from previous example, we get the meat and bone of Robot Framework: A comprehensive debriefing on what happened in the test execution in two parts: the <span class="bold"> Report</span> and the <span class="bold">Log</span>. </p> <p>This Report and Log are based on executing the test suite described in the previous example and is from our <a href="https://github.com/robotframework/WebDemo" target="_blank">web demo project</a>.</p><p id="example-report-last-paragraph"> Report details clearly viewable statistics including Pass/Fail ratios and elapsed times. This gives you great overview on the test execution. </p> <p> Log details statistics from each step of the test execution, from keyword to keyword. It enables you to drill down on the specifics of the test in case of failure or otherwise. </p>'
+            '<p> Executing the test suite file from previous example, we get the meat and bone of Robot Framework: A comprehensive debriefing on what happened in the test execution in two parts: the <span class="bold"> Report</span> and the <span class="bold">Log</span>. </p> <p>This Report and Log are based on executing the test suite described in the previous example and is from our <a href="https://github.com/robotframework/WebDemo" target="_blank">web demo project</a>.</p><p id="example-report-last-paragraph"> Report details clearly viewable statistics including Pass/Fail ratios and elapsed times. This gives you a great overview of the test execution. </p> <p> Log details statistics from each step of the test execution, from keyword to keyword. It enables you to drill down on the specifics of the test in case of failure or otherwise. </p>'
         },
         {
           text:
-            '<div class="caption margin vertical-content"> <p> Keywords can be defined outside of the test suite and be imported as an external resources. This means you can collect generally useful keywords to one place and share them throughout your project, keeping also the testing <a href="http://en.wikipedia.org/wiki/Don\'t_repeat_yourself" class="bold" target="_blank">DRY</a>! </p> <p> Below, we have test case testing invalid login in <a href="https://github.com/robotframework/WebDemo">our very own web demo</a>. As you can see, we can abstract away a lot of necessary, but ultimately non-expressive nuts and bolts of the testing to the <span class="italic">resource file</span>.</p>'
+            '<div class="caption margin vertical-content"> <p> Keywords can be defined outside of the test suite and be imported as an external resources. This means you can collect generally useful keywords to one place and share them throughout your project, also keeping the testing <a href="http://en.wikipedia.org/wiki/Don\'t_repeat_yourself" class="bold" target="_blank">DRY</a>! </p> <p> Below, we have a test case testing invalid login in <a href="https://github.com/robotframework/WebDemo">our very own web demo</a>. As you can see, we can abstract away a lot of necessary, but ultimately non-expressive nuts and bolts of the testing to the <span class="italic">resource file</span>.</p>'
         },
         {
           text:
@@ -251,11 +266,15 @@ export default {
         },
         {
           text:
-            '<p> <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing" target="_blank">Data-driven test development</a></span> is easy due to you being able to define templates for your tests. </p> <p> In this example, each test case adheres to the template set by <span class="teletype">Calculate</span> keyword. </p> <p> This example comes from <a href="https://github.com/robotframework/RobotDemo" target="_blank">our another demo</a> displaying testing a simple calculator. Check it out! </p>'
+            '<p> <span class="bold"><a href="http://en.wikipedia.org/wiki/Data-driven_testing" target="_blank">Data-driven test development</a></span> is easy due to you being able to define templates for your tests. </p> <p> In this example, each test case adheres to the template set by <span class="teletype">Calculate</span> keyword. </p> <p> This example comes from <a href="https://github.com/robotframework/RobotDemo" target="_blank">another demo of ours</a> displaying testing of a simple calculator. Check it out! </p>'
         },
         {
           text:
             '<p> Want to do <a target="_blank" href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin-style</a> behaviour-driven test development made famous by <a href="http://cukes.info/" target="_blank">Cucumber</a>? No problem! That\'s baked in! </p><p> </p><p> Here is another example from our <a href="https://github.com/robotframework/RobotDemo" target="_blank">Robot Demo</a> that shows how you can level the expressiveness of Given-When-Then in Robot Framework. </p>'
+        },
+        {
+          text:
+            '<p> Robotic process automation (RPA) tasks utilize the same Robot syntax as test cases, with some minor differences. Instead of <i>Test Cases</i>, you can use <i>Tasks</i>. The report and log will also use "task" instead of "test". </p> <p> Task keywords can be written in plain English. This makes communicating the intent of the tasks effortless. </p>'
         }
       ]
     };
