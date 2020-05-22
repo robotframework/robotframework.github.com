@@ -91,11 +91,6 @@ export default {
                   img: require("@/assets/img/sponsors/aktia.png"),
                 },
                 {
-                  title: "Apptestify",
-                  href: "https://apptestify.com/",
-                  img: require("@/assets/img/sponsors/apptestify.png"),
-                },
-                {
                   title: "Cap Gemini",
                   href: "https://www.capgemini.com/",
                   img: require("@/assets/img/sponsors/capgemini.png"),
