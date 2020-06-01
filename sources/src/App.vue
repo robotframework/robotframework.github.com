@@ -131,11 +131,6 @@ export default {
                   img: require("@/assets/img/sponsors/eliga.jpg"),
                 },
                 {
-                  title: "Ennuviz",
-                  href: "https://www.ennuviz.com/",
-                  img: require("@/assets/img/sponsors/ennuviz.png"),
-                },
-                {
                   title: "eTestingAcademy",
                   href: "http://etestingacademy.com/",
                   img: require("@/assets/img/sponsors/etestingacademy.png"),
@@ -249,6 +244,11 @@ export default {
                   title: "siili",
                   href: "http://www.siili.com/",
                   img: require("@/assets/img/sponsors/siili.jpg"),
+                },
+                {
+                  title: "sisua",
+                  href: "https://www.sisuadigital.com",
+                  img: require("@/assets/img/sponsors/sisua.png"),
                 },
                 {
                   title: "sleepiq",
