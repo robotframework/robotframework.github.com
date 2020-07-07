@@ -951,6 +951,11 @@ export default {
                     title: "Tesults Listener",
                     href: "https://www.tesults.com/docs?doc=robot",
                     text: "A listener that provides a codeless integration experience for test results reporting from Robot Framework into Tesults."
+                  },
+                  {
+                    title: "Xray Test Management",
+                    href: "https://confluence.xpand-it.com/x/QyekAQ",
+                    text: "Xray is a Test Management app for Jira that provides the ability to track coverage based on traditional manual test cases, exploratory testing and automation-related results. For automation, users can track detailed results from test scripts implemented with Robot Framework and link them to the respective requirements."
                   }
                 ]
               }
