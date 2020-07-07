@@ -600,6 +600,11 @@ export default {
                       "Library for testing the SAPGUI client using the internal SAP Scripting Engine"
                   },
                   {
+                    title: "ScreenCapLibrary",
+                    href: "https://github.com/mihaiparvu/ScreenCapLibrary",
+                    text: "Library for taking screenshots and video recording. Similar functionality as Screenshot standard library, with some additional features."
+                  },
+                  {
                     title: "Selenium2Screenshots",
                     href: "https://pypi.org/project/robotframework-selenium2screenshots",
                     text: "Library for capturing annotated screenshots with Selenium2Library."
