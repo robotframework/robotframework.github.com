@@ -418,7 +418,7 @@ export default {
                   {
                     title: "AutoItLibrary",
                     href:
-                      "http://code.google.com/p/robotframework-autoitlibrary/",
+                      "https://github.com/nokia/robotframework-autoitlibrary",
                     text:
                       "Windows GUI testing library that uses AutoIt freeware tool as a driver."
                   },
