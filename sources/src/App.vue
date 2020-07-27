@@ -987,7 +987,7 @@ export default {
                   },
                   {
                     title: "Xray Test Management",
-                    href: "https://confluence.xpand-it.com/x/QyekAQ",
+                    href: "https://www.getxray.app/",
                     text: "Xray is a Test Management app for Jira that provides the ability to track coverage based on traditional manual test cases, exploratory testing and automation-related results. For automation, users can track detailed results from test scripts implemented with Robot Framework and link them to the respective requirements."
                   }
                 ]
