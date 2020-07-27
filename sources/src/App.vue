@@ -629,6 +629,13 @@ export default {
                       'Sikuli Robot Framework Library provide keywords to test UI through <a href="http://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.'
                   },
                   {
+                    title: "SoapLibrary",
+                    href:
+                      "https://github.com/Altran-PT-GDC/Robot-Framework-SOAP-Library",
+                    text:
+                      'This library is designed for those who want to work with webservice automation as if they were using SoapUI, make a request through an XML file, and receive the response in another XML file.'
+                  },
+                  {
                     title: "SSHLibrary",
                     href: "https://github.com/robotframework/SSHLibrary",
                     text:
