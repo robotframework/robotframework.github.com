@@ -969,6 +969,11 @@ export default {
                       "A tool for validation that executed Robot Framework test cases have expected statuses and log messages. Mainly targeted for test library developers."
                   },
                   {
+                    title: "Test Assistant",
+                    href: "https://github.com/jg8481/leon/tree/develop/packages/robotframework-test-assistant",
+                    text: "Control test processes and RPA tasks with your voice or with a text message sent directly to the assistant through leon-ai's UI.."
+                  },
+                  {
                     title: "Tesults Listener",
                     href: "https://www.tesults.com/docs?doc=robot",
                     text: "A listener that provides a codeless integration experience for test results reporting from Robot Framework into Tesults."
