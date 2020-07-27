@@ -1417,13 +1417,6 @@ export default {
                   'OpenDaylight is a software-defined network (SDN) platform that uses Robot Framework for unit- and integration tests between different services. If you are interested how, <a href="https://wiki.opendaylight.org/view/CrossProject:Integration_Group:Create_System_Test_Environment#Install_Robot_Framework" target="_blank"> check the wiki</a>.'
               },
               {
-                title: "OpenDrives",
-                href: "https://opendrives.com/",
-                img: require("@/assets/img/users/open_drives.png"),
-                text:
-                  "OpenDrives is using Robot Framework to accelerate the development of our proprietary software platform and state of the art hardware NAS appliances. As OpenDrives strives to lead the industry in speed and ease of use we needed a tool that could match that. Robot Framework was an easy choice."
-              },
-              {
                 title: "Opuscapita",
                 href: "https://www.opuscapita.com/",
                 img: require("@/assets/img/users/opuscapita.png"),
