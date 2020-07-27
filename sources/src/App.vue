@@ -823,6 +823,11 @@ export default {
                     href: "https://github.com/nokia/RED"
                   },
                   {
+                    title: "Robot Framework Language Server for Visual Studio Code",
+                    text: "Language Server Protocol implementation for Robot Framework.",
+                    href: "https://marketplace.visualstudio.com/items?itemName=robocorptech.robotframework-lsp"
+                  },
+                  {
                     title: "TextMate bundle",
                     text: "Bundle for TextMate adding syntax highlighting.",
                     href: "https://bitbucket.org/jussimalinen/robot.tmbundle/"
