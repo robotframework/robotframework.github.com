@@ -1112,22 +1112,13 @@ export default {
                 title: "Videos",
                 items: [
                   {
-                    title: "Create Your First Script - Part 1",
-                    src: "https://www.youtube.com/embed/T0SK5A1rwdk",
-                    href: "http://www.robotframeworktutorial.com",
-                    text: ""
+                    src: "https://www.youtube.com/embed/T0SK5A1rwdk"
                   },
                   {
-                    title: "Create Your First Script - Part 2",
-                    src: "https://www.youtube.com/embed/LhUre0hu8I8",
-                    href: "http://www.robotframeworktutorial.com",
-                    text: ""
+                    src: "https://www.youtube.com/embed/LhUre0hu8I8"
                   },
                   {
-                    title: "Running RF Scripts from Jenkins CI",
-                    src: "https://www.youtube.com/embed/819sBbvT6gM",
-                    href: "http://www.robotframeworktutorial.com",
-                    text: ""
+                    src: "https://www.youtube.com/embed/819sBbvT6gM"
                   },
                   {
                     title: "",
@@ -1145,6 +1136,11 @@ export default {
                     title: "",
                     src: "//player.vimeo.com/video/96527858",
                     href: "",
+                    text: ""
+                  },
+                  {
+                    title: "Much more at robocon.io!",
+                    href: "https://robocon.io/#previous-talks",
                     text: ""
                   }
                 ]
