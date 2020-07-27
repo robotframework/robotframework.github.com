@@ -948,7 +948,7 @@ export default {
                     title: "RobotMK",
                     href: "https://github.com/simonmeggle/robotmk/",
                     text:
-                      "RobotMK integrates results of Robot tests into the monitoring system Checkmk. Makes it possible to send alerts if any keyword/test/suite runtime exceeds the allowed runtime or fails. Performance graphs and SLA reports. Web based configuration of Robot parameters. Automatic client deployment rule system ("bakery")."
+                      "RobotMK integrates results of Robot tests into the monitoring system Checkmk. Makes it possible to send alerts if any keyword/test/suite runtime exceeds the allowed runtime or fails. Performance graphs and SLA reports. Web based configuration of Robot parameters. Automatic client deployment rule system (\"bakery\")."
                   },
                   {
                     title: "SAGE Framework",
@@ -1140,6 +1140,12 @@ export default {
                     href: "http://www.etestingacademy.com/",
                     text:
                       "Offers online courses to groom you from manual engineer to professional test automation developer with Selenium, Appium and Robot Framework."
+                  },
+                  {
+                    title: "Introduction to Robot Framework (FREE)",
+                    href: "https://testautomationu.applitools.com/robot-framework-tutorial/",
+                    text:
+                      "Want to learn Robot Framework? Learn the fundamentals in 1 hour with Test Automation University’s FREE course!"
                   },
                   {
                     title: "Robotframeworktutorial.com",
