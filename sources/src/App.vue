@@ -1366,6 +1366,13 @@ export default {
                   "Finnish Tax Administration is using Robot Framework in multiple projects. Robot Framework is one of the core tools in their development to make Quality Assurance and Automation."
               },
               {
+                title: "Flipdish",
+                href: "https://www.flipdish.com/",
+                img: require("@/assets/img/users/flipdish.png"),
+                text:
+                  "Flipdish are using Robot Framework for web, mobile and api, to enable us to test and release multiple white label products used for online ordering platforms across the globe."
+              },
+              {
                 title: "HeyMath",
                 href: "https://plp.heymath.com/",
                 img: require("@/assets/img/users/heymath.png"),
