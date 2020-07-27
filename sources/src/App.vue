@@ -1268,13 +1268,6 @@ export default {
             },
             users: [
               {
-                title: "Nokia",
-                href: "http://www.nokia.com",
-                img: require("@/assets/img/users/nokia.png"),
-                text:
-                  "Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces."
-              },
-              {
                 title: "ABB",
                 href: "http://www.abb.com",
                 img: require("@/assets/img/users/abb.png"),
@@ -1308,6 +1301,13 @@ export default {
                 img: require("@/assets/img/users/alpha.png"),
                 text:
                   "At Alpha, we are developing the future of mobile apps for Health, with the latest advances in neuroscience, AI and mobile computing. Robot Framework is a key part of our Health Moonshot development process to help us automatize testing and guarantee the best quality."
+              },
+              {
+                title: "Altran",
+                href: "https://www.altran.com/",
+                img: require("@/assets/img/users/altran.png"),
+                text:
+                  "Altran is a world leader in engineering solutions and R&D, and is using extensively RobotFramework mainly in it's Global Engineering Centers. Altran is also an active contributor for the RobotFramework community and is the main developer of several RobotFramework libraries."
               },
               {
                 title: "axon",
@@ -1406,6 +1406,13 @@ export default {
                 img: require("@/assets/img/users/metso.png"),
                 text:
                   'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
+              },
+              {
+                title: "Nokia",
+                href: "http://www.nokia.com",
+                img: require("@/assets/img/users/nokia.png"),
+                text:
+                  "Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces."
               },
               {
                 title: "NRL",
