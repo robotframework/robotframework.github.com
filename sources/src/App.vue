@@ -669,6 +669,11 @@ export default {
                       'Library for automating Windows GUI. Based on White framework, supported technologies include Win32, WinForms, and WPF.'
                   },
                   {
+                    title: "WADLibrary",
+                    href: "https://github.com/Adwisit/WADLibrary",
+                    text: "Application testing library for Robot Framework that utilizes Win App Driver."
+                  },
+                  {
                     title: "watir-robot",
                     href: "https://github.com/semperos/watir-robot/#readme",
                     text: "Web testing library that uses Watir tool."
