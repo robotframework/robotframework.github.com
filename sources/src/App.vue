@@ -405,9 +405,9 @@ export default {
                   {
                     title: "AppiumLibrary",
                     href:
-                      "https://github.com/jollychang/robotframework-appiumlibrary",
+                      "https://github.com/serhatbolsu/robotframework-appiumlibrary",
                     text:
-                      "Library for Android- and iOS-testing. It uses Appium internally."
+                      "Library for Android and iOS testing. It uses Appium internally."
                   },
                   {
                     title: "Archive library",
