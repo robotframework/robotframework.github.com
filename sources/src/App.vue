@@ -922,6 +922,12 @@ export default {
                       "Tool for reporting manual tests in format compatible with Robot Framework outputs."
                   },
                   {
+                    title: "Oxygen",
+                    href: "https://github.com/eficode/robotframework-oxygen",
+                    text:
+                      "Tool for consolidating other test tools' reporting to Robot Framework outputs."
+                  },
+                  {
                     title: "Pabot",
                     href: "https://github.com/mkorpela/pabot",
                     text: "A parallel executor for Robot Framework tests and tasks."
