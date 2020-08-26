@@ -571,6 +571,12 @@ export default {
                     text: "https://github.com/ncclient/ncclient"
                   },
                   {
+                    title: "PuppeteerLibrary",
+                    href: "https://qahive.github.io/robotframework-puppeteer.github.io/",
+                    text: 
+                      "Library for web testing using Puppeteer tool internally."
+                  },
+                  {
                     title: "Rammbock",
                     href: "https://github.com/robotframework/Rammbock#readme",
                     text:
