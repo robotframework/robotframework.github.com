@@ -1550,7 +1550,7 @@ export default {
           title: "Shop",
           text_block: true,
           tab_box: false,
-          url: 'https://shop.robotframework.org',
+          url: 'https://reddyshop.co/robotframework/',
           feature_box: false
         },
         {
