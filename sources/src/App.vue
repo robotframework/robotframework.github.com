@@ -423,6 +423,13 @@ export default {
                       "Windows GUI testing library that uses AutoIt freeware tool as a driver."
                   },
                   {
+                    title: "Browser Library",
+                    href:
+                      "https://github.com/MarketSquare/robotframework-browser",
+                    text:
+                      "Robot Framework Browser library powered by Playwright. Aiming for 🚀 speed, ✅ reliability and 🔬 visibility."
+                  },
+                  {
                     title: "CncLibrary",
                     href:
                       "https://github.com/eficode/robotframework-cnclibrary",
