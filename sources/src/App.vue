@@ -426,7 +426,8 @@ export default {
                     title: "ConfluentKafkaLibrary",
                     href:
                       "https://github.com/robooo/robotframework-ConfluentKafkaLibrary",
-                    text: "Library for python confluent kafka."
+                    text:
+                      "Library for python confluent kafka."
                   },
                   {
                     title: "CURFLibrary",
@@ -436,7 +437,8 @@ export default {
                   },
                   {
                     title: "Database Library (Java)",
-                    href: "https://github.com/Hi-Fi/robotframework-dblibrary",
+                    href: 
+                      "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
                       'Java-based library for database testing. Usable with Jython. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.'
                   },
@@ -517,7 +519,8 @@ export default {
                   },
                   {
                     title: "JavaFXLibrary",
-                    href: "https://github.com/eficode/JavaFXLibrary#readme",
+                    href: 
+                      "https://github.com/eficode/JavaFXLibrary#readme",
                     text:
                       'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
                   },
@@ -525,13 +528,15 @@ export default {
                     title: "KiCadLibrary",
                     href:
                       "https://github.com/madworx/robotframework-kicadlibrary#readme",
-                    text: "Library for interacting with KiCad EDA designs."
+                    text:
+                      "Library for interacting with KiCad EDA designs."
                   },
                   {
                     title: "Mainframe3270 Library",
                     href:
                       "https://github.com/Altran-PT-GDC/Robot-Framework-Mainframe-3270-Library/blob/master/README.md",
-                    text: "Library that allows to create automated test scripts to test IBM Mainframe 3270."
+                    text:
+                      "Library that allows to create automated test scripts to test IBM Mainframe 3270."
                   },
                   {
                     title: "MQTT library",
@@ -541,7 +546,8 @@ export default {
                   },
                   {
                     title: "PuppeteerLibrary",
-                    href: "https://qahive.github.io/robotframework-puppeteer.github.io/",
+                    href:
+                      "https://qahive.github.io/robotframework-puppeteer.github.io/",
                     text: 
                       "Library for web testing using Puppeteer tool internally."
                   },
