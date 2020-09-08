@@ -422,6 +422,7 @@ export default {
                     text:
                       "Windows GUI testing library that uses AutoIt freeware tool as a driver."
                   },
+                  {
                     title: "AutoRecorder",
                     href:
                       "https://github.com/sebastianciupinski/robotframework-autorecorder#readme",
@@ -486,6 +487,7 @@ export default {
                     text:
                       'Library for <a href="https://www.djangoproject.com/" target="_blank">Django</a>, a Python web framework.'
                   },
+                  {
                     title: "DoesIsLibrary",
                     href:
                       "https://github.com/sebastianciupinski/robotframework-doesislibrary#readme",
@@ -559,6 +561,7 @@ export default {
                       "https://github.com/madworx/robotframework-kicadlibrary#readme",
                     text: "Library for interacting with KiCad EDA designs."
                   },
+                  {
                   title: "ListenerLibrary",
                     href:
                       "https://github.com/sebastianciupinski/robotframework-listenerlibrary#readme",
