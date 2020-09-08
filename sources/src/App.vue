@@ -1509,6 +1509,13 @@ export default {
           feature_box: false
         },
         {
+          title: "GitHub",
+          text_block: true,
+          tab_box: false,
+          url: 'https://github.com/robotframework/robotframework',
+          feature_box: false
+        },
+        {
           title: "Forum",
           text_block: true,
           tab_box: false,
