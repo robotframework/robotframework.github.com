@@ -416,6 +416,13 @@ export default {
                       'Robot Framework Browser library is a modern web testing library powered by <a href="https://playwright.dev" target="_blank">🎭 Playwright</a>.<br/>Aiming for 🚀 speed, ✅ reliability and 🔬 visibility.'
                   },
                   {
+                    title: "CncLibrary",
+                    href:
+                      "https://github.com/eficode/robotframework-cnclibrary",
+                    text:
+                      "Library for driving a CNC milling machine."
+                  },
+                  {
                     title: "ConfluentKafkaLibrary",
                     href:
                       "https://github.com/robooo/robotframework-ConfluentKafkaLibrary",
