@@ -23,3 +23,11 @@ make it even easier for us to add the link. For pull requests, only submit sourc
 
 __ https://github.com/robotframework/robotframework.github.com/issues
 __ https://github.com/robotframework/robotframework.github.com/pulls
+
+License
+-------
+
+Robot Framework is open source software provided under the `Apache License
+2.0`__.
+
+__ http://apache.org/licenses/LICENSE-2.0

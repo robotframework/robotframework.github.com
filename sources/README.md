@@ -21,7 +21,7 @@ npm run dev
 # and when you are ready to publish your changes, build for production with minification
 npm run build
 
-This will generate build files to top-level of project. Remember to commit these too.
+This will generate build files to top-level of project. If you want to contribute and open a pull request, only commit source file changes. The build will be done by maintainer.
 ```
 
 For a detailed explanation on how things work, check out the [vue-webpack template](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
