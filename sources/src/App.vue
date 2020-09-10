@@ -91,6 +91,11 @@ export default {
                   img: require("@/assets/img/sponsors/aktia.png"),
                 },
                 {
+                  title: "Botlabs",
+                  href: "https://botlabs.fi/en/home/",
+                  img: require("@/assets/img/sponsors/Botlabs.jpg"),
+                },
+                {
                   title: "Cap Gemini",
                   href: "https://www.capgemini.com/",
                   img: require("@/assets/img/sponsors/capgemini.png"),
@@ -131,11 +136,6 @@ export default {
                   img: require("@/assets/img/sponsors/eliga.jpg"),
                 },
                 {
-                  title: "eTestingAcademy",
-                  href: "http://etestingacademy.com/",
-                  img: require("@/assets/img/sponsors/etestingacademy.png"),
-                },
-                {
                   title: "etteplan",
                   href: "http://www.espotel.com/",
                   img: require("@/assets/img/sponsors/etteplan.png"),
@@ -144,6 +144,11 @@ export default {
                   title: "finnair",
                   href: "https://www.finnair.com/",
                   img: require("@/assets/img/sponsors/finnair.jpg"),
+                },
+                {
+                  title: "henix",
+                  href: "https://www.henix.com",
+                  img: require("@/assets/img/sponsors/henix.png"),
                 },
                 {
                   title: "hiq",
@@ -437,7 +442,7 @@ export default {
                   },
                   {
                     title: "Database Library (Java)",
-                    href: 
+                    href:
                       "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
                       'Java-based library for database testing. Usable with Jython. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.'
@@ -519,7 +524,7 @@ export default {
                   },
                   {
                     title: "JavaFXLibrary",
-                    href: 
+                    href:
                       "https://github.com/eficode/JavaFXLibrary#readme",
                     text:
                       'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
@@ -548,7 +553,7 @@ export default {
                     title: "PuppeteerLibrary",
                     href:
                       "https://qahive.github.io/robotframework-puppeteer.github.io/",
-                    text: 
+                    text:
                       "Library for web testing using Puppeteer tool internally."
                   },
                   {
