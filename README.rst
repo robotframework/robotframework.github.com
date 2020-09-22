@@ -19,7 +19,15 @@ following information:
 - When adding a new user, also include company/organization logo.
 
 Alternatively you can `submit a pull request`__ with the above information and
-make it even easier for us to add the link.
+make it even easier for us to add the link. For pull requests, only submit source file changes. Built files will be updated and commited by maintainer.
 
 __ https://github.com/robotframework/robotframework.github.com/issues
 __ https://github.com/robotframework/robotframework.github.com/pulls
+
+License
+-------
+
+Robot Framework website is open source software provided under the `Apache License
+2.0`__.
+
+__ http://apache.org/licenses/LICENSE-2.0

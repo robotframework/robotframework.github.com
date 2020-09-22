@@ -91,6 +91,11 @@ export default {
                   img: require("@/assets/img/sponsors/aktia.png"),
                 },
                 {
+                  title: "Botlabs",
+                  href: "https://botlabs.fi/en/home/",
+                  img: require("@/assets/img/sponsors/Botlabs.jpg"),
+                },
+                {
                   title: "Cap Gemini",
                   href: "https://www.capgemini.com/",
                   img: require("@/assets/img/sponsors/capgemini.png"),
@@ -131,11 +136,6 @@ export default {
                   img: require("@/assets/img/sponsors/eliga.jpg"),
                 },
                 {
-                  title: "eTestingAcademy",
-                  href: "http://etestingacademy.com/",
-                  img: require("@/assets/img/sponsors/etestingacademy.png"),
-                },
-                {
                   title: "etteplan",
                   href: "http://www.espotel.com/",
                   img: require("@/assets/img/sponsors/etteplan.png"),
@@ -144,6 +144,11 @@ export default {
                   title: "finnair",
                   href: "https://www.finnair.com/",
                   img: require("@/assets/img/sponsors/finnair.jpg"),
+                },
+                {
+                  title: "henix",
+                  href: "https://www.henix.com",
+                  img: require("@/assets/img/sponsors/henix.png"),
                 },
                 {
                   title: "hiq",
@@ -389,20 +394,6 @@ export default {
                 title: "External",
                 items: [
                   {
-                    title: "Android library",
-                    href:
-                      "https://github.com/lovelysystems/robotframework-androidlibrary#readme",
-                    text:
-                      "Library for all your Android automation needs. It uses Calabash Android internally."
-                  },
-                  {
-                    title: "AnywhereLibrary",
-                    href:
-                      "https://github.com/luisxiaomai/robotframework-anywherelibrary",
-                    text:
-                      "Library for testing Single-Page Apps (SPA). Uses Selenium Webdriver and Appium internally."
-                  },
-                  {
                     title: "AppiumLibrary",
                     href:
                       "https://github.com/serhatbolsu/robotframework-appiumlibrary",
@@ -410,7 +401,7 @@ export default {
                       "Library for Android and iOS testing. It uses Appium internally."
                   },
                   {
-                    title: "Archive library",
+                    title: "ArchiveLibrary",
                     href:
                       "https://github.com/bulkan/robotframework-archivelibrary",
                     text: "Library for handling zip- and tar-archives."
@@ -430,16 +421,25 @@ export default {
                       "Library which allows to automatically record video for test/suites execution."
                   },
                   {
+                    title: "Browser Library",
+                    href:
+                      "https://github.com/MarketSquare/robotframework-browser",
+                    text:
+                      'Robot Framework Browser library is a modern web testing library powered by <a href="https://playwright.dev" target="_blank">🎭 Playwright</a>.<br/>Aiming for 🚀 speed, ✅ reliability and 🔬 visibility.'
+                  },
+                  {
                     title: "CncLibrary",
                     href:
                       "https://github.com/eficode/robotframework-cnclibrary",
-                    text: "Library for driving a CNC milling machine."
+                    text:
+                      "Library for driving a CNC milling machine."
                   },
                   {
                     title: "ConfluentKafkaLibrary",
                     href:
                       "https://github.com/robooo/robotframework-ConfluentKafkaLibrary",
-                    text: "Library for python confluent kafka."
+                    text:
+                      "Library for python confluent kafka."
                   },
                   {
                     title: "CURFLibrary",
@@ -449,7 +449,8 @@ export default {
                   },
                   {
                     title: "Database Library (Java)",
-                    href: "https://github.com/Hi-Fi/robotframework-dblibrary",
+                    href:
+                      "https://github.com/Hi-Fi/robotframework-dblibrary",
                     text:
                       'Java-based library for database testing. Usable with Jython. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.'
                   },
@@ -465,7 +466,7 @@ export default {
                     href:
                       "https://github.com/Snooz82/robotframework-datadriver",
                     text:
-                      "Library for Data-Driven Testing with external data tables (csv, xls, xlsx, etc.). Pairwise Combinatorial Testing support."
+                      "Library for Data-Driven Testing with external 📤 data tables (csv, xls, xlsx, etc.). 🧬 Pairwise Combinatorial Testing support."
                   },
                   {
                     title: "Debug Library",
@@ -494,7 +495,7 @@ export default {
                     text:
                       'Library with autogenerated keywords like Is Something, Does Someting created form assertion keywords like Should Be, Should Not Be, etc'
                   },
-                  {
+                  {                  
                     title: "Eclipse Library",
                     href:
                       "https://github.com/lcarbonn/robotframework-eclipselibrary/",
@@ -515,18 +516,11 @@ export default {
                       "Library for testing and using FTP server with Robot Framework."
                   },
                   {
-                    title: "HTTP library (livetest)",
-                    href:
-                      "https://github.com/peritus/robotframework-httplibrary/#readme",
-                    text:
-                      "Library for HTTP level testing using livetest tool internally."
-                  },
-                  {
-                    title: "HTTP library (Requests)",
+                    title: "HTTP RequestsLibrary (Python)",
                     href:
                       "https://github.com/MarketSquare/robotframework-requests#readme",
                     text:
-                      "Library for HTTP level testing using Request internally."
+                      "Library for HTTP level testing using Python Requests internally."
                   },
                   {
                     title: "HttpRequestLibrary (Java)",
@@ -534,13 +528,6 @@ export default {
                       "https://github.com/Hi-Fi/robotframework-httprequestlibrary#readme",
                     text:
                       'Library for HTTP level testing using Apache HTTP client. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-httprequestlibrary%22" target="_blank">Maven central</a>.'
-                  },
-                  {
-                    title: "iOS library",
-                    href:
-                      "https://github.com/lovelysystems/robotframework-ioslibrary#readme",
-                    text:
-                      "Library for all your iOS automation needs. It uses Calabash iOS Server internally."
                   },
                   {
                     title: "ImageHorizonLibrary",
@@ -551,7 +538,8 @@ export default {
                   },
                   {
                     title: "JavaFXLibrary",
-                    href: "https://github.com/eficode/JavaFXLibrary#readme",
+                    href:
+                      "https://github.com/eficode/JavaFXLibrary#readme",
                     text:
                       'Library for testing JavaFX applications, based on <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX</a>. Has also remote interface support.'
                   },
@@ -559,7 +547,8 @@ export default {
                     title: "KiCadLibrary",
                     href:
                       "https://github.com/madworx/robotframework-kicadlibrary#readme",
-                    text: "Library for interacting with KiCad EDA designs."
+                    text:
+                      "Library for interacting with KiCad EDA designs."
                   },
                   {
                   title: "ListenerLibrary",
@@ -568,16 +557,11 @@ export default {
                     text: "Library allows to register keywords to run before/after other keywords and suites."
                   },
                   {
-                    title: "MongoDB library",
-                    href:
-                      "https://github.com/iPlantCollaborativeOpenSource/Robotframework-MongoDB-Library#readme",
-                    text: "Library for interacting with MongoDB using pymongo."
-                  },
-                  {
                     title: "Mainframe3270 Library",
                     href:
                       "https://github.com/Altran-PT-GDC/Robot-Framework-Mainframe-3270-Library/blob/master/README.md",
-                    text: "Library that allows to create automated test scripts to test IBM Mainframe 3270."
+                    text:
+                      "Library that allows to create automated test scripts to test IBM Mainframe 3270."
                   },
                   {
                     title: "MQTT library",
@@ -586,14 +570,10 @@ export default {
                     text: "Library for testing MQTT brokers and applications."
                   },
                   {
-                    title: "NcclientLibrary",
-                    href: "https://github.com/vkosuri/robotframework-ncclient",
-                    text: "https://github.com/ncclient/ncclient"
-                  },
-                  {
                     title: "PuppeteerLibrary",
-                    href: "https://qahive.github.io/robotframework-puppeteer.github.io/",
-                    text: 
+                    href:
+                      "https://qahive.github.io/robotframework-puppeteer.github.io/",
+                    text:
                       "Library for web testing using Puppeteer tool internally."
                   },
                   {
@@ -631,9 +611,9 @@ export default {
                     text: "Library for taking screenshots and video recording. Similar functionality as Screenshot standard library, with some additional features."
                   },
                   {
-                    title: "Selenium2Screenshots",
-                    href: "https://pypi.org/project/robotframework-selenium2screenshots",
-                    text: "Library for capturing annotated screenshots with Selenium2Library."
+                    title: "SeleniumScreenshots",
+                    href: "https://datakurre.github.io/robotframework-seleniumscreenshots/",
+                    text: "Library for annotating and cropping screenshots taken with SeleniumLibrary. "
                   },
                   {
                     title: "SeleniumLibrary",
@@ -668,13 +648,6 @@ export default {
                       "Enables executing commands on remote machines over an SSH connection. Also supports transfering files using SFTP."
                   },
                   {
-                    title: "SudsLibrary",
-                    href:
-                      "https://github.com/ombre42/robotframework-sudslibrary#readme",
-                    text:
-                      "A library for functional testing of SOAP-based web services based on Suds, a dynamic SOAP 1.1 client."
-                  },
-                  {
                     title: "SwingLibrary",
                     href: "https://github.com/robotframework/SwingLibrary/wiki",
                     text:
@@ -685,7 +658,7 @@ export default {
                     href:
                       "https://github.com/Altran-PT-GDC/Robot-Framework-Test-FX-Library",
                     text:
-                      'Library to enable to test Java FX applications using the <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX framework</a>. Has also remote interface support.'
+                      'Library to enable to test Java FX applications using the <a href="https://github.com/TestFX/TestFX" target="_blank">TestFX framework</a>. Has also remote interface support. <a href="https://github.com/weiqigao/Robot-Framework-Test-FX-Library" target="_blank">Maintained Fork...</a>'
                   },
                   {
                     title: "TFTPLibrary",
@@ -705,11 +678,6 @@ export default {
                     title: "WADLibrary",
                     href: "https://github.com/Adwisit/WADLibrary",
                     text: "Application testing library for Robot Framework that utilizes Win App Driver."
-                  },
-                  {
-                    title: "watir-robot",
-                    href: "https://github.com/semperos/watir-robot/#readme",
-                    text: "Web testing library that uses Watir tool."
                   },
                   {
                     title: "Zoomba Library",
@@ -1563,6 +1531,13 @@ export default {
           text_block: true,
           tab_box: false,
           url: 'https://robocon.io',
+          feature_box: false
+        },
+        {
+          title: "GitHub",
+          text_block: true,
+          tab_box: false,
+          url: 'https://github.com/robotframework/robotframework',
           feature_box: false
         },
         {

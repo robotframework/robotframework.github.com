@@ -22,8 +22,8 @@
 
  <b-navbar  toggleable="md" fixed="top" type="dark" id="navigation-collapsed" class="d-md-none">
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-  <b-navbar-brand class="p-0 m-0 d-block d-md-none" href="#">
-    ROBOT FRAMEWORK <b-img :src="require('@/assets/img/ROBOTFW_Mark_White_LOW_cropped.png')" class="" style="height:30px;"  alt="Robot Frameworkg logo"/>
+  <b-navbar-brand class="p-0 m-0 d-block d-md-none nav-title" href="#">
+    ROBOT FRAMEWORK <b-img :src="require('@/assets/img/ROBOTFW_Mark_White_LOW_cropped.png')" style="height:30px;"  alt="Robot Framework logo"/>
   </b-navbar-brand>
   <b-collapse is-nav id="nav_collapse">
     <b-navbar-nav class="align-middle" style="margin-top: 1rem">
@@ -61,3 +61,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+@media screen and (max-width: 365px) {
+  .nav-title {
+    font-size: 1rem;
+  }
+}
+</style>
