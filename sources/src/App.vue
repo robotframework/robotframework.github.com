@@ -1150,6 +1150,12 @@ export default {
                     href: "http://www.robotframeworktutorial.com",
                     text:
                       "Offers several paid video training courses that have got 3000+ students in over 90 countries up and running very quickly."
+                  },
+                  {
+                    title: "Robot Framework katas",
+                    href: "https://github.com/eficode-academy/rf-katas",
+                    text:
+                      "Series of exercises and examples how to get started with test automation. No prior knowledge of test automation required."
                   }
                 ]
               }
