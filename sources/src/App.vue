@@ -211,6 +211,11 @@ export default {
                   img: require("@/assets/img/sponsors/opuscapita.jpg"),
                 },
                 {
+                  title: "oura",
+                  href: "https://ouraring.com/",
+                  img: require("@/assets/img/sponsors/oura.png"),
+                },
+                {
                   title: "ouro",
                   href: "https://www.ouro.fi/",
                   img: require("@/assets/img/sponsors/ouro.png"),
