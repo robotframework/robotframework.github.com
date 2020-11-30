@@ -1,11 +1,38 @@
 <template>
     <div>
-      <section class="header wwww">
-        <a href="https://robot-work.shop/">
-          <h2 class="main-header wwww">World <span style="color: black;">Wide</span> Workshop <span style="color: black;">Wednesday </span></h2>
-          <h3 class="wwww">02/<span style="color: black;">DEC</span>/2020</h3>
-        </a>
-      </section>
+      <div class="banner">
+        <div class="banner-container">
+          <a href="https://robocon.io/">
+            <div class="row">
+              <div class="col-12 col-lg-6 banner-left">
+                <span style="color: white;">RBCN<br>2021</span><br>
+              REMOTE<br>EVENT
+              </div>
+              <div class="col-6 banner-right">
+                <div style="text-align: start; flex-direction: column; justify-content: space-between; display: flex; height: 100%;">
+                  <div style="color: white;">
+                    A GLOBAL ONLINE<br>
+                    SOFTWARE AUTOMATION<br>
+                    EVENT<br>
+                  </div>
+                  <div style="color: rgb(1, 255, 217);">
+                    16-18/Mar-2021<br>
+                    UTC+2<br>
+                  </div>
+                  <div style="color: white;">
+                    THE 4th ANNUAL<br>
+                    ROBOT FRAMEWORK<br>
+                    CONFERENCE<br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-description">
+
+            </div>
+          </a>
+        </div>
+      </div>
       <section class="header">
         <div class="main-header-container">
           <h1 class="main-header">ROBOT FRAME WORK/</h1>

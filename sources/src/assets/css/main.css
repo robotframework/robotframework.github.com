@@ -19,6 +19,19 @@
   }
 }
 
+.wwww {
+  background-color: #1e88e5;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.wwww.header {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
 .robocon-banner h1 {
   font-size: 5rem;
   margin: 0;
@@ -379,15 +392,50 @@ table {
   }
 }
 
-.wwww {
-  background-color: #1e88e5;
-  color: white;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+@font-face {
+  font-family: 'RBTFNT';
+  src: url('../../assets/fonts/RBTFNT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.wwww.header {
-  margin-bottom: 1rem;
+.banner {
+  background-color: #262330;
+  font-size: 1.5rem;
   padding: 2rem;
+  line-height: 1;
+}
+
+.banner-container {
+  max-width: 768px;
+  margin: auto;
+}
+
+.banner-container a {
+  font-weight: 400;
+  text-decoration-color: rgb(1, 255, 217);
+}
+
+.banner-left {
+  font-family: RBTFNT;
+  text-align: right;
+  color: rgb(1, 255, 217);
+  font-size: 3rem;
+}
+
+.banner-right {
+  font-family: OCRA;
+  text-align: start;
+  color: white;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .banner-right {
+    display: none;
+  }
+
+  .banner-left {
+    text-align: center;
+  }
 }
