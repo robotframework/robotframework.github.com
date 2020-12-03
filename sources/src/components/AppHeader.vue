@@ -10,19 +10,19 @@
               </div>
               <div class="col-6 banner-right">
                 <div style="text-align: start; flex-direction: column; justify-content: space-between; display: flex; height: 100%;">
-                  <div style="color: white;">
-                    A GLOBAL ONLINE<br>
-                    SOFTWARE AUTOMATION<br>
-                    EVENT<br>
-                  </div>
                   <div style="color: rgb(1, 255, 217);">
-                    16-18/Mar-2021<br>
-                    UTC+2<br>
-                  </div>
-                  <div style="color: white;">
                     THE 4th ANNUAL<br>
                     ROBOT FRAMEWORK<br>
                     CONFERENCE<br>
+                  </div>
+                  <div style="color: white;">
+                    16-18/Mar-2021<br>
+                    UTC+2<br>
+                  </div>
+                  <div class="pb-2" style="color: white;">
+                    A GLOBAL ONLINE<br>
+                    SOFTWARE AUTOMATION<br>
+                    EVENT<br>
                   </div>
                 </div>
               </div>
