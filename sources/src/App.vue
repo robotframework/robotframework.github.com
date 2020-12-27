@@ -938,6 +938,12 @@ export default {
                       "Web based system for storing and searching Robot Framework library and resource file documentations."
                   },
                   {
+                    title: "rfswarm",
+                    href: "https://github.com/damies13/rfswarm",
+                    text:
+                      "Testing tool that allows you to use Robot Framework test cases for performance or load testing."
+                  },
+                  {
                     title: "Robot Corder",
                     href: "https://github.com/sohwendy/Robotcorder",
                     text:
@@ -989,6 +995,11 @@ export default {
                     title: "Test Assistant",
                     href: "https://github.com/jg8481/leon/tree/develop/packages/robotframework-test-assistant",
                     text: "Control test processes and RPA tasks with your voice or with a text message sent directly to the assistant through leon-ai's UI.."
+                  },
+                  {
+                    title: "TestDataTable",
+                    href: "https://github.com/damies13/TestDataTable",
+                    text: "Enables you to assign test data variable values from a single set of data to multiple scripts while allowing you to ensure each script has a unique data value."
                   },
                   {
                     title: "Tesults Listener",
@@ -1503,6 +1514,13 @@ export default {
                 img: require("@/assets/img/users/segron.png"),
                 text:
                   "Segron is a Bratislava-based company offering beyond end-to-end testing solution for Telecommunications. Our tool is based on Robot Framework and is the first true end-to-e nd solution for testing multiple interfaces and technologies with a single tool."
+              },
+              {
+                title: "Testmo",
+                href: "https://www.testmo.com/",
+                img: require("@/assets/img/users/testmo.png"),
+                text:
+                  "Testmo is a test management tool for modern software teams. The Testmo team uses Robot Framework for acceptance testing and to support its customers' QA."
               },
               {
                 title: "TMA Solutions",
