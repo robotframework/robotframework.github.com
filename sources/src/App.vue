@@ -1278,6 +1278,12 @@ export default {
                     href: "http://groups.google.com/group/robotframework-devel",
                     text:
                       "Mailing list for contributors and developers of the Robot Framework ecosystem."
+                  },
+                  {
+                    title: "Facebook",
+                    href: "https://www.facebook.com/robotframeworkofficial",
+                    text:
+                      "Robot Framework Facebook page."
                   }
                 ]
               }
