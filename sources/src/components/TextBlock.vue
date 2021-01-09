@@ -6,9 +6,21 @@
       </div>
       <div v-if="data.header != 'Examples'" class="col order-2 textblock-right ml-1 p-3">
         <div v-html="data.text"/>
+        <div v-if="data.textExpanded && data.textExpanded !== ''">
+          <button
+            @click="textExpanded = !textExpanded"
+            class="base-button">
+            {{ textExpanded ? 'View less' : 'View more' }}
+          </button>
+        </div>
+        <transition name="fade">
+          <div
+            v-if="textExpanded"
+            v-html="data.textExpanded"
+            style="font-size: 1rem;" />
+        </transition>
       </div>
       <div v-else v-html="data.text" class="col order-2 block-text textblock-right ml-1 p-3"/>
-
       <div v-if="data.twitter == true" class="col-md-12 col-lg-3 order-3 textblock-right ml-1 p-3" style="max-height: 700px; overflow: scroll">
         <twitter-timeline class="p-xs-5 p-lg-0" id="robotframework" widget-class="twitterprofile" sourceType="profile" :options="options"/>
       </div>
@@ -52,7 +64,8 @@ export default {
         theme: "light",
         tweetLimit: "3",
         chrome: ["nofooter", "noscrollbar"]
-      }
+      },
+      textExpanded: false
     };
   }
 };

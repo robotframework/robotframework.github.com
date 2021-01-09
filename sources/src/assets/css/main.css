@@ -80,6 +80,12 @@ footer h2 {
   color: #fff;
 }
 
+.base-button {
+  border: solid 1px rgb(0, 192, 181);
+  background-color: #fff;
+  color: rgb(0, 192, 181);
+}
+
 a {
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
@@ -125,13 +131,15 @@ section {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: rgb(0, 192, 181);
 }
 
 h1,
 h2,
 h3,
+h4,
 div.card-header {
   font-family: "OCRA";
   text-transform: uppercase;
@@ -149,6 +157,11 @@ h2 {
 h3 {
   font-size: 2rem;
   margin-top: 3rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 h1.main-header {
@@ -438,4 +451,11 @@ table {
   .banner-left {
     text-align: center;
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
