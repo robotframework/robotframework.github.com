@@ -141,6 +141,11 @@ export default {
                   img: require("@/assets/img/sponsors/etteplan.png"),
                 },
                 {
+                  title: "F2G Solutions",
+                  href: "https://www.f2gsolutions.com",
+                  img: require("@/assets/img/sponsors/f2g.png"),
+                },
+                {
                   title: "finnair",
                   href: "https://www.finnair.com/",
                   img: require("@/assets/img/sponsors/finnair.jpg"),
