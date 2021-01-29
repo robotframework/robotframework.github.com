@@ -151,6 +151,11 @@ export default {
                   img: require("@/assets/img/sponsors/finnair.jpg"),
                 },
                 {
+                  title: "gofore",
+                  href: "https://gofore.com/",
+                  img: require("@/assets/img/sponsors/gofore.png"),
+                },
+                {
                   title: "henix",
                   href: "https://www.henix.com",
                   img: require("@/assets/img/sponsors/henix.png"),
@@ -231,11 +236,6 @@ export default {
                   img: require("@/assets/img/sponsors/qfactory.jpg"),
                 },
                 {
-                  title: "qentinel",
-                  href: "http://qentinel.fi/",
-                  img: require("@/assets/img/sponsors/qentinel.png"),
-                },
-                {
                   title: "reaktor",
                   href: "http://reaktor.fi/",
                   img: require("@/assets/img/sponsors/reaktor.png"),
@@ -281,9 +281,9 @@ export default {
                   img: require("@/assets/img/sponsors/testimate.jpg"),
                 },
                 {
-                  title: "tieto",
-                  href: "http://www.tieto.com/",
-                  img: require("@/assets/img/sponsors/tieto.jpg"),
+                  title: "tietoevry",
+                  href: "https://www.tietoevry.com/",
+                  img: require("@/assets/img/sponsors/tietoevry.png"),
                 },
                 {
                   title: "vala",
