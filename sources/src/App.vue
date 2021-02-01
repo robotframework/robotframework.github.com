@@ -1175,12 +1175,6 @@ export default {
                 title: "Online courses",
                 items: [
                   {
-                    title: "eTestingAcademy",
-                    href: "http://www.etestingacademy.com/",
-                    text:
-                      "Offers online courses to groom you from manual engineer to professional test automation developer with Selenium, Appium and Robot Framework."
-                  },
-                  {
                     title: "Introduction to Robot Framework (FREE)",
                     href: "https://testautomationu.applitools.com/robot-framework-tutorial/",
                     text:
