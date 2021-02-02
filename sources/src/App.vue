@@ -231,6 +231,11 @@ export default {
                   img: require("@/assets/img/sponsors/ouro.png"),
                 },
                 {
+                  title: "qentinel",
+                  href: "http://qentinel.fi/",
+                  img: require("@/assets/img/sponsors/qentinel.png"),
+                },
+                {
                   title: "qfactory",
                   href: "http://www.q-factory.fi/",
                   img: require("@/assets/img/sponsors/qfactory.jpg"),
