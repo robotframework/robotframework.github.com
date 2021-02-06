@@ -443,6 +443,14 @@ table {
   font-size: 1.2rem;
 }
 
+.banner-description {
+  font-family: OCRA;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
 @media screen and (max-width: 991px) {
   .banner-right {
     display: none;

@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="banner-description">
-
+              Conference program published!
             </div>
           </a>
         </div>
