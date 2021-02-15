@@ -1027,13 +1027,13 @@ export default {
           }
         },
         {
-          title: "Documentation",
+          title: "Resources",
           text_block: true,
           tab_box: true,
           feature_box: false,
           data: {
             text: {
-              header: "Documentation",
+              header: "Resources",
               text:
                 '<p> Want to get started? Looking for a way to do things? Here are the most important documentation resources needed to work with Robot Framework. Notice that individual <a href="#libraries">libraries</a> and <a href="#tools">tools</a> in the ecosystem have their own documentation that is typically accessed via their project pages. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful links are missing from the list. </p>'
             },
@@ -1177,8 +1177,13 @@ export default {
                 ]
               },
               {
-                title: "Online courses",
+                title: "Trainings/Certification",
                 items: [
+                  {
+                    title: "Certification",
+                    text:
+                      "Robot Framework offers certification tests in select locations. Due to coronavirus the tests are momentarily unavailable."
+                  },
                   {
                     title: "eTestingAcademy",
                     href: "http://www.etestingacademy.com/",
@@ -1190,6 +1195,12 @@ export default {
                     href: "https://testautomationu.applitools.com/robot-framework-tutorial/",
                     text:
                       "Want to learn Robot Framework? Learn the fundamentals in 1 hour with Test Automation University’s FREE course!"
+                  },
+                  {
+                    title: "Robot Workshops",
+                    href: "https://robot-work.shop/",
+                    text:
+                      "Annual Robot Framework workshops event"
                   },
                   {
                     title: "Robotframeworktutorial.com",
