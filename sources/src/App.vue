@@ -325,87 +325,6 @@ export default {
             },
             tabs: [
               {
-                title: "Standard",
-                items: [
-                  {
-                    title: "Builtin",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Provides a set of often needed generic keywords. Always automatically available without imports."
-                  },
-                  {
-                    title: "Dialogs",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Provides means for pausing the execution and getting input from users."
-                  },
-                  {
-                    title: "Collections",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Provides a set of keywords for handling Python lists and dictionaries."
-                  },
-                  {
-                    title: "OperatingSystem",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Enables various operating system related tasks to be performed in the system where Robot Framework is running."
-                  },
-                  {
-                    title: "Remote",
-                    href: "https://github.com/robotframework/RemoteInterface",
-                    text:
-                      "Special library acting as a proxy between Robot Framework and libraries elsewhere. Actual libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
-                  },
-                  {
-                    title: "Screenshot",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Provides keywords to capture screenshots of the desktop."
-                  },
-                  {
-                    title: "String",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for generating, modifying and verifying strings."
-                  },
-                  {
-                    title: "Telnet",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Makes it possible to connect to Telnet servers and execute commands on the opened connections."
-                  },
-                  {
-                    title: "XML",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for generating, modifying and verifying XML files."
-                  },
-                  {
-                    title: "Process",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for running processes in the system. New in Robot Framework 2.8."
-                  },
-                  {
-                    title: "DateTime",
-                    href:
-                      "http://robotframework.org/robotframework/#standard-libraries",
-                    text:
-                      "Library for date and time conversions. New in Robot Framework 2.8.5."
-                  }
-                ]
-              },
-              {
                 title: "External",
                 items: [
                   {
@@ -700,6 +619,86 @@ export default {
                     text: "Library extending features in many popular tools for GUI, Rest API, Soap API, Mobile, and Windows (WinAppDriver) automation. An ideal all-in-one toolkit for new or existing Robot Framework projects."
                   }
                 ]
+              },{
+                title: "Standard",
+                items: [
+                  {
+                    title: "Builtin",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/BuiltIn.html",
+                    text:
+                      "Provides a set of often needed generic keywords. Always automatically available without imports."
+                  },
+                  {
+                    title: "Collections",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/Collections.html",
+                    text:
+                      "Provides a set of keywords for handling Python lists and dictionaries."
+                  },
+                  {
+                    title: "DateTime",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/DateTime.html",
+                    text:
+                      "Library for date and time conversions. New in Robot Framework 2.8.5."
+                  },
+                  {
+                    title: "Dialogs",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/Dialogs.html",
+                    text:
+                      "Provides means for pausing the execution and getting input from users."
+                  },
+                  {
+                    title: "OperatingSystem",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/OperatingSystem.html",
+                    text:
+                      "Enables various operating system related tasks to be performed in the system where Robot Framework is running."
+                  },
+                  {
+                    title: "Process",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/Process.html",
+                    text:
+                      "Library for running processes in the system. New in Robot Framework 2.8."
+                  },
+                  {
+                    title: "Remote",
+                    href: "https://github.com/robotframework/RemoteInterface",
+                    text:
+                      "Special library acting as a proxy between Robot Framework and libraries elsewhere. Actual libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol."
+                  },
+                  {
+                    title: "Screenshot",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/Screenshot.html",
+                    text:
+                      "Provides keywords to capture screenshots of the desktop."
+                  },
+                  {
+                    title: "String",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/String.html",
+                    text:
+                      "Library for generating, modifying and verifying strings."
+                  },
+                  {
+                    title: "Telnet",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/Telnet.html",
+                    text:
+                      "Makes it possible to connect to Telnet servers and execute commands on the opened connections."
+                  },
+                  {
+                    title: "XML",
+                    href:
+                      "http://robotframework.org/robotframework/latest/libraries/XML.html",
+                    text:
+                      "Library for generating, modifying and verifying XML files."
+                  },
+                ]
               },
               {
                 title: "Other",
@@ -712,11 +711,10 @@ export default {
                       "Creating test libraries section in Robot Framework User Guide."
                   },
                   {
-                    title: "plone.app.robotframework",
-                    href:
-                      "https://pypi.python.org/pypi/plone.app.robotframework",
+                    title: "Python Library Core",
+                    href: "https://github.com/robotframework/PythonLibCore",
                     text:
-                      "Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons."
+                      "Tools to ease creating larger test libraries for Robot Framework using Python."
                   },
                   {
                     title: "JavalibCore",
@@ -736,7 +734,14 @@ export default {
                       "https://github.com/robotframework/RemoteApplications",
                     text:
                       "Special test library for launching Java applications on a separate JVM and taking other libraries into use on them."
-                  }
+                  },
+                  {
+                    title: "plone.app.robotframework",
+                    href:
+                      "https://pypi.python.org/pypi/plone.app.robotframework",
+                    text:
+                      "Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons."
+                  },
                 ]
               }
             ]
@@ -1027,13 +1032,13 @@ export default {
           }
         },
         {
-          title: "Resources",
+          title: "Learning",
           text_block: true,
           tab_box: true,
           feature_box: false,
           data: {
             text: {
-              header: "Resources",
+              header: "Learning",
               text:
                 '<p> Want to get started? Looking for a way to do things? Here are the most important documentation resources needed to work with Robot Framework. Notice that individual <a href="#libraries">libraries</a> and <a href="#tools">tools</a> in the ecosystem have their own documentation that is typically accessed via their project pages. </p> <p> <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">Let us know</a> if useful links are missing from the list. </p>'
             },
@@ -1112,13 +1117,6 @@ export default {
                       "Demonstrates how to create tests and test libraries. The system under test is a simple calculator that is tested using a custom library."
                   },
                   {
-                    title: "Quick Start Guide",
-                    href:
-                      "https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst",
-                    text:
-                      "Introduces the most important features of Robot Framework and acts as an executable demo."
-                  },
-                  {
                     title: "ATDD with Robot Framework",
                     href:
                       "https://code.google.com/p/atdd-with-robot-framework/",
@@ -1137,9 +1135,15 @@ export default {
                     text:
                       "Example demonstrates how to use Robot Framework's <a href='https://github.com/robotframework/RemoteInterface' target='_blank'>Remote interface</a> to call test libraries written in any programming language."
                   },
+                  {
+                    title: "Robot Framework katas",
+                    href: "https://github.com/eficode-academy/rf-katas",
+                    text:
+                      "Series of exercises and examples how to get started with test automation. No prior knowledge of test automation required."
+                  }
                 ]
               },
-              {
+              /*{
                 title: "Videos",
                 items: [
                   {
@@ -1175,20 +1179,15 @@ export default {
                     text: ""
                   }
                 ]
-              },
+              },*/
               {
                 title: "Trainings/Certification",
                 items: [
                   {
                     title: "Certification",
+                    href: "https://tickets.robotframework.org/cert/",
                     text:
-                      "Robot Framework offers certification tests in select locations. Due to coronavirus the tests are momentarily unavailable."
-                  },
-                  {
-                    title: "eTestingAcademy",
-                    href: "http://www.etestingacademy.com/",
-                    text:
-                      "Offers online courses to groom you from manual engineer to professional test automation developer with Selenium, Appium and Robot Framework."
+                      "Robot Framework offers certification exams in select locations. <br><b>Due to coronavirus the tests are momentarily unavailable.</b>"
                   },
                   {
                     title: "Introduction to Robot Framework (FREE)",
@@ -1197,23 +1196,23 @@ export default {
                       "Want to learn Robot Framework? Learn the fundamentals in 1 hour with Test Automation University’s FREE course!"
                   },
                   {
-                    title: "Robot Workshops",
+                    title: "Robot Framework Workshops",
                     href: "https://robot-work.shop/",
                     text:
-                      "Annual Robot Framework workshops event"
+                      "Robot Framework workshops events"
                   },
                   {
+                    title: "RoboCon Workshops",
+                    href: "https://tickets.robotframework.org/",
+                    text:
+                      "Robot Framework Conference Workshops"
+                  },
+                  /*{
                     title: "Robotframeworktutorial.com",
                     href: "http://www.robotframeworktutorial.com",
                     text:
                       "Offers several paid video training courses that have got 3000+ students in over 90 countries up and running very quickly."
-                  },
-                  {
-                    title: "Robot Framework katas",
-                    href: "https://github.com/eficode-academy/rf-katas",
-                    text:
-                      "Series of exercises and examples how to get started with test automation. No prior knowledge of test automation required."
-                  }
+                  }*/
                 ]
               }
             ]
