@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="banner-description">
-              Conference program published!
+              Conference & workshop tickets available!
             </div>
           </a>
         </div>
