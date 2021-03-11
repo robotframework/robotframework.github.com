@@ -451,16 +451,6 @@ table {
   padding-top: 1rem;
 }
 
-@media screen and (max-width: 991px) {
-  .banner-right {
-    display: none;
-  }
-
-  .banner-left {
-    text-align: center;
-  }
-}
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity .2s;
 }
