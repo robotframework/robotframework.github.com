@@ -116,6 +116,11 @@ export default {
                   img: require("@/assets/img/sponsors/comiq.jpg"),
                 },
                 {
+                  title: "dbchenker",
+                  href: "https://www.dbschenker.com/global/about/profile",
+                  img: require("@/assets/img/sponsors/dbchenker.png"),
+                },
+                {
                   title: "deutsche post adress",
                   href: "https://www.deutschepost.de/de/p/postadress.html",
                   img: require("@/assets/img/sponsors/deutsche post.png"),
