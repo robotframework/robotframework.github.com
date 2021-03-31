@@ -252,7 +252,7 @@ export default {
                 },
                 {
                   title: "robocorp",
-                  href: "https://robocorptech.com/",
+                  href: "https://robocorp.com/",
                   img: require("@/assets/img/sponsors/robocorp.png"),
                 },
                 {
@@ -854,9 +854,14 @@ export default {
                     href: "https://github.com/nokia/RED"
                   },
                   {
-                    title: "Robot Framework Language Server for Visual Studio Code",
-                    text: "Language Server Protocol implementation for Robot Framework.",
+                    title: "Language Server for VS Code",
+                    text: "VS Code LSP extension - syntax highlight, linting, code completion, debugging, and more",
                     href: "https://marketplace.visualstudio.com/items?itemName=robocorptech.robotframework-lsp"
+                  },
+                  {
+                    title: "Language Server for PyCharm",
+                    text: "PyCharm LSP plugin - syntax highlight, code completion, and other LSP features for PyCharm.",
+                    href: "https://plugins.jetbrains.com/plugin/16086-robot-framework-language-server"
                   },
                   {
                     title: "TextMate bundle",
@@ -950,6 +955,11 @@ export default {
                     title: "Pabot",
                     href: "https://github.com/mkorpela/pabot",
                     text: "A parallel executor for Robot Framework tests and tasks."
+                  },
+                  {
+                    title: "RCC",
+                    href: "https://github.com/robocorp/rcc",
+                    text: "Share your Robot projects with ease. RCC allows you to create, manage, and distribute Python-based self-contained automation packages."
                   },
                   {
                     title: "RFDoc",
@@ -1099,10 +1109,10 @@ export default {
                       "Public API for writing your own tools against Robot Framework."
                   },
                   {
-                    title: "Robohub",
-                    href: "https://hub.robocorp.com/robotic-process-automation/basics-of-rpa/",
+                    title: "RPA tutorials",
+                    href: "https://robocorp.com/docs/courses",
                     text:
-                      "RPA tutorials and guidelines"
+                      "Robocorp RPA tutorials, courses, and guidelines"
                   }
                 ]
               },
@@ -1133,6 +1143,12 @@ export default {
                     href: "https://bitbucket.org/robotframework/cdemo",
                     text:
                       "This simple example demonstrates how to use C language from Robot Framework test libraries."
+                  },
+                  {
+                    title: "Robot Framework RPA example projects",
+                    href: "https://robocorp.com/portal/",
+                    text:
+                      "A library of sample RPA projects and code snippets built on Robot Framework"
                   },
                   {
                     title: "Remote interface demo",
@@ -1211,6 +1227,12 @@ export default {
                     href: "https://tickets.robotframework.org/",
                     text:
                       "Robot Framework Conference Workshops"
+                  },
+                  {
+                    title: "Robocorp Beginner's course with Level 1 Certification",
+                    href: "https://robocorp.com/docs/courses/beginners-course",
+                    text:
+                      "Beginner's course on RPA with Robot Framework. Free Level 1 Certification included."
                   },
                   /*{
                     title: "Robotframeworktutorial.com",
