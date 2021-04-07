@@ -211,6 +211,11 @@ export default {
                   img: require("@/assets/img/sponsors/nokia.png"),
                 },
                 {
+                  title: "nordea",
+                  href: "https://www.nordea.com/en/",
+                  img: require("@/assets/img/sponsors/nordea.png"),
+                },
+                {
                   title: "northcode",
                   href: "https://www.northcode.fi/",
                   img: require("@/assets/img/sponsors/northcode.png"),
