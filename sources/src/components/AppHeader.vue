@@ -2,7 +2,7 @@
     <div>
       <div class="banner">
         <div class="banner-container">
-          <a href="https://robocon.io/">
+          <a href="https://robocon.io/#hello">
             <div class="row">
               <div class="col-12 col-lg-6 banner-left">
                 <span style="color: white;">RBCN<br>2021</span><br>
@@ -16,19 +16,15 @@
                     CONFERENCE<br>
                   </div>
                   <div style="color: white;">
-                    16-18/Mar-2021<br>
-                    UTC+2<br>
+                    THANKS FOR ATTENDING!<br>
                   </div>
                   <div class="pb-2" style="color: white;">
-                    A GLOBAL ONLINE<br>
-                    SOFTWARE AUTOMATION<br>
-                    EVENT<br>
                   </div>
                 </div>
               </div>
             </div>
             <div class="banner-description">
-              Last chance to buy tickets!
+              See release schedule for Conference Talks and Q&As!
             </div>
           </a>
         </div>
