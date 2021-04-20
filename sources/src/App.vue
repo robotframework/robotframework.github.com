@@ -276,11 +276,6 @@ export default {
                   img: require("@/assets/img/sponsors/siili.jpg"),
                 },
                 {
-                  title: "sisua",
-                  href: "https://www.sisuadigital.com",
-                  img: require("@/assets/img/sponsors/sisua.png"),
-                },
-                {
                   title: "sleepiq",
                   href: "https://bamlabs.com/",
                   img: require("@/assets/img/sponsors/sleepiq.png"),
