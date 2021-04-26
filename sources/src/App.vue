@@ -490,7 +490,7 @@ export default {
                       "Library for interacting with KiCad EDA designs."
                   },
                   {
-                  title: "ListenerLibrary",
+                    title: "ListenerLibrary",
                     href:
                       "https://github.com/sebastianciupinski/robotframework-listenerlibrary#readme",
                     text: "Library allows to register keywords to run before/after other keywords and suites."
@@ -514,6 +514,13 @@ export default {
                       "https://qahive.github.io/robotframework-puppeteer.github.io/",
                     text:
                       "Library for web testing using Puppeteer tool internally."
+                  },
+                  {
+                    title: "Qweb",
+                    href:
+                      "https://github.com/qentinelqi/qweb",
+                    text:
+                      "Qweb is a modern web testing library focusing on  making web testing and automation Easy 🎉 and maintainable 🧹 with its high level keyword design."
                   },
                   {
                     title: "Rammbock",
