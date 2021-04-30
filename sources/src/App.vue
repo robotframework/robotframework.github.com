@@ -396,7 +396,7 @@ export default {
                   {
                     title: "Database Library (Python)",
                     href:
-                      "http://franz-see.github.com/Robotframework-Database-Library/",
+                      "https://franz-see.github.io/Robotframework-Database-Library/",
                     text:
                       "Python based library for database testing. Works with any Python interpreter, including Jython."
                   },
