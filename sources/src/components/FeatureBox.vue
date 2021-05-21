@@ -26,14 +26,14 @@
 
 <script>
 export default {
-  props: ["data"],
+  props: ['data'],
   methods: {
-    openTab(href) {
-      var image = new Image();
-      image.src = href;
-      const w = window.open("");
-      w.document.write(image.outerHTML);
+    openTab (href) {
+      var image = new Image()
+      image.src = href
+      const w = window.open('')
+      w.document.write(image.outerHTML)
     }
   }
-};
+}
 </script>

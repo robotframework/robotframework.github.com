@@ -50,16 +50,17 @@
 
 <script>
 export default {
-  props: ["pages"],
+  props: ['pages'],
   methods: {
-    onActivate(target) {
-      ga('send', 'event', 'componentView', target);
+    onActivate (target) {
+      // eslint-disable-next-line no-undef
+      ga('send', 'event', 'componentView', target)
     }
   },
-  created() {
-    this.$root.$on("bv::scrollspy::activate", this.onActivate);
+  created () {
+    this.$root.$on('bv::scrollspy::activate', this.onActivate)
   }
-};
+}
 </script>
 
 <style scoped>

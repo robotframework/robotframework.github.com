@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  props: ["data"],
+  props: ['data'],
   computed: {
     withImg () {
       return this.data[0].items.filter(({img}) => img)
@@ -39,7 +39,7 @@ export default {
       return this.data[0].items.filter(({img}) => !img)
     }
   }
-};
+}
 </script>
 
 <style scoped>
