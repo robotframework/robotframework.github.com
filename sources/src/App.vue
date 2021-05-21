@@ -93,7 +93,7 @@ export default {
                 {
                   title: "Botlabs",
                   href: "https://botlabs.fi/en/home/",
-                  img: require("@/assets/img/sponsors/Botlabs.jpg"),
+                  img: require("@/assets/img/sponsors/botlabs.jpg"),
                 },
                 {
                   title: "Cap Gemini",
