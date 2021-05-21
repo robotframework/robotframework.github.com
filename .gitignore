@@ -1,0 +1,13 @@
+.DS_Store
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+sources/node_modules/
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
