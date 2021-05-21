@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Build page
+        run: |
+          cd sources
+          npm install
+          npm run build
       - uses: afc163/surge-preview@v1
         id: preview_step
         with:
@@ -14,8 +19,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: ./sources/build
           build: |
-            cd sources
-            npm install
-            npm run build
+            echo "Has build already"
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
