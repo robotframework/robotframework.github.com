@@ -84,10 +84,10 @@
     "npm": ">= 3.0.0"
   },
   "husky": {
-  "hooks": {
-    "pre-commit": "pretty-quick --staged"
-  }
-},
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
