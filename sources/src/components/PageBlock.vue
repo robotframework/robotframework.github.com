@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import FeatureBox from "@/components/FeatureBox.vue";
-import TabBox from "@/components/TabBox.vue";
-import TextBlock from "@/components/TextBlock.vue";
-import UserBox from "@/components/UserBox.vue";
-import CommunityBlock from "@/components/CommunityBlock.vue";
+import FeatureBox from '@/components/FeatureBox.vue'
+import TabBox from '@/components/TabBox.vue'
+import TextBlock from '@/components/TextBlock.vue'
+import UserBox from '@/components/UserBox.vue'
+import CommunityBlock from '@/components/CommunityBlock.vue'
 
-import Examples from "@/components/pages/Examples";
+import Examples from '@/components/pages/Examples'
 
 export default {
   components: {
@@ -28,6 +28,6 @@ export default {
     CommunityBlock,
     Examples
   },
-  props: ["page"]
-};
+  props: ['page']
+}
 </script>
