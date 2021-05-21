@@ -14,8 +14,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: sources/build
           build: |
-            cd sources
-            npm install
-            npm run build
+            cd sources && npm install
+            cd sources && npm run build
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
