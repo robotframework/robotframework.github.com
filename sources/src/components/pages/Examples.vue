@@ -233,18 +233,18 @@
 </template>
 
 <script>
-import TextBlock from "@/components/TextBlock.vue";
+import TextBlock from '@/components/TextBlock.vue'
 
 export default {
   components: {
     TextBlock
   },
-  data() {
+  data () {
     return {
-      tabText: "",
+      tabText: '',
       data: {
-        header: "Examples",
-        text: ""
+        header: 'Examples',
+        text: ''
       },
       tabIndex: 0,
       items: [
@@ -277,15 +277,15 @@ export default {
             '<p> Robotic process automation (RPA) tasks utilize the same Robot syntax as test cases, with some minor differences. Instead of <i>Test Cases</i>, you can use <i>Tasks</i>. The report and log will also use "task" instead of "test". </p> <p> Task keywords can be written in plain English. This makes communicating the intent of the tasks effortless. </p>'
         }
       ]
-    };
+    }
   },
-  created: function() {
-    this.changeTabText(this.tabIndex);
+  created: function () {
+    this.changeTabText(this.tabIndex)
   },
   methods: {
-    changeTabText(tabIndex) {
-      this.data.text = this.items[tabIndex].text;
+    changeTabText (tabIndex) {
+      this.data.text = this.items[tabIndex].text
     }
   }
-};
+}
 </script>

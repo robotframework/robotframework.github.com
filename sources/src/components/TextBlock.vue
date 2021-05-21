@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { Timeline } from "vue-tweet-embed"
+import { Timeline } from 'vue-tweet-embed'
 export default {
   props: {
     data: {
@@ -56,17 +56,17 @@ export default {
     }
   },
   components: {
-    "twitter-timeline": Timeline
+    'twitter-timeline': Timeline
   },
-  data() {
+  data () {
     return {
       options: {
-        theme: "light",
-        tweetLimit: "3",
-        chrome: ["nofooter", "noscrollbar"]
+        theme: 'light',
+        tweetLimit: '3',
+        chrome: ['nofooter', 'noscrollbar']
       },
       textExpanded: false
-    };
+    }
   }
-};
+}
 </script>
