@@ -24,7 +24,7 @@ Robot Framework website is open source software provided under the [Apache Licen
 
 ## Robotframework sources
 
-> Robot Framework ecosystem front page sources
+Robot Framework ecosystem front page sources
 
 ## Build Setup
 
