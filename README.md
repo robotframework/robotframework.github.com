@@ -5,7 +5,7 @@ itself is available at https://robotframework.org.
 
 ## Adding or updating resources
 
-To get new links added or old information updated, please `submit an issue`__
+To get new links added or old information updated, please [submit an issue](https://github.com/robotframework/robotframework.github.com/issues)
 to this project. If you want a new link to be added, include at least the
 following information:
 
@@ -14,19 +14,13 @@ following information:
 - Link to the resource.
 - When adding a new user, also include company/organization logo.
 
-Alternatively you can `submit a pull request`__ with the above information and
+Alternatively you can [submit a pull request](https://github.com/robotframework/robotframework.github.com/pulls) with the above information and
 make it even easier for us to add the link. For pull requests, only submit source file changes. Built files will be updated and commited by maintainer.
-
-__ https://github.com/robotframework/robotframework.github.com/issues
-__ https://github.com/robotframework/robotframework.github.com/pulls
 
 ## License
 
-Robot Framework website is open source software provided under the `Apache License
-2.0`__.
-
-__ http://apache.org/licenses/LICENSE-2.0
-
+Robot Framework website is open source software provided under the [Apache License
+2.0](https://apache.org/licenses/LICENSE-2.0).
 
 ## Robotframework sources
 
