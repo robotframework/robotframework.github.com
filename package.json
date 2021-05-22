@@ -10,7 +10,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -54,6 +55,7 @@
     "file-loader": "1.1.11",
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^6.0.0",
     "inject-loader": "^3.0.0",
     "node-notifier": "5.4.3",
     "optimize-css-assets-webpack-plugin": "3.2.1",
@@ -61,6 +63,7 @@
     "portfinder": "1.0.24",
     "postcss-import": "^11.1.0",
     "postcss-loader": "2.1.6",
+    "pretty-quick": "^3.1.0",
     "rimraf": "2.7.1",
     "semver": "5.7.1",
     "set-value": "3.0.1",
@@ -80,6 +83,11 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": [
     "> 1%",
