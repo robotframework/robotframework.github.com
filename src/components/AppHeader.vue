@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="banner">
+      <!-- <div class="banner">
         <div class="banner-container">
           <a href="https://robocon.io/#hello">
             <div class="row">
@@ -28,7 +28,7 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
       <div class="breaking-news">
         Robot Framework 4.0 has been released! <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-4.0.rst">Release notes</a>
       </div>
