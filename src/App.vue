@@ -1270,7 +1270,7 @@ export default {
                     img: require('@/assets/img/ROBOTFW_Mark_Black_LOW.png'),
                     title: 'Forum',
                     href: 'http://forum.robotframework.org',
-                    text: 'New Robot Framework community forum. '
+                    text: 'Robot Framework community forum. '
                   },
                   {
                     img: require('@/assets/img/slack.png'),
@@ -1283,6 +1283,11 @@ export default {
                     title: 'Mailing list',
                     href: 'http://groups.google.com/group/robotframework-users',
                     text: 'Google groups community mailing list.'
+                  },
+                  {
+                    title: 'On-Line Open Space',
+                    href: 'https://calendar.google.com/event?action=TEMPLATE&tmeid=am83cGl0dDN2dG1rNTJ0YWZnaHU0aGJwaWVfMjAyMTA4MjdUMTMwMDAwWiBjX2N2bzZrcTNzOTcybzc2MzN1Mm5mNnUxdjdvQGc&tmsrc=c_cvo6kq3s972o7633u2nf6u1v7o%40group.calendar.google.com&scp=ALL',
+                    text: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own topic. As long as it is related to Robot Framework it can be freely discussed. Also in Slack #open-space.'
                   },
                   {
                     title: 'Robocon',
