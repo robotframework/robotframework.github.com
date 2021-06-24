@@ -1,4 +1,5 @@
 <template>
+  <news-banner v-if="$te('newsBanner')" />
   <banner />
   <navbar class="mb-medium" />
   <div class="container">
@@ -20,11 +21,12 @@
 </template>
 
 <script>
-import { Banner, Navbar, PageSection, CompanyCarousel } from 'Components'
+import { NewsBanner, Banner, Navbar, PageSection, CompanyCarousel } from 'Components'
 
 export default {
   name: 'App',
   components: {
+    NewsBanner,
     Banner,
     Navbar,
     PageSection,

@@ -6,7 +6,7 @@
       v-for="link in $tm('navbar.items')"
       :key="link"
       :href="`#${link}`"
-      class="pl-small pr-small color-white font-title type-uppercase type-small border-right-white">
+      class="pl-small pr-small color-white font-title type-uppercase type-no-underline type-small border-right-white">
       {{ link }}
     </a>
     <div class="relative">
@@ -16,33 +16,37 @@
         @click="dropdownOpen = !dropdownOpen">
         {{ $t('navbar.dropdownName') }}
       </button>
-      <div
-        v-if="dropdownOpen"
-        class="dropdown-container bg-black color-white p-small type-right">
+      <transition name="fade">
         <div
-          v-for="item in $tm('navbar.dropdown')"
-          :key="item.name">
+          v-if="dropdownOpen"
+          class="dropdown-container bg-black color-white p-small type-right">
+          <div
+            v-for="item in $tm('navbar.dropdown')"
+            :key="item.name">
+            <a
+              :href="item.url">
+              {{ item.name }}
+            </a>
+            <p class="type-small">
+              {{ item.description }}
+            </p>
+          </div>
           <a
+            v-for="item in dropdown"
+            :key="item.name"
             :href="item.url">
             {{ item.name }}
           </a>
-          <p class="type-small">
-            {{ item.description }}
-          </p>
         </div>
-        <a
-          v-for="item in dropdown"
-          :key="item.name"
-          :href="item.url">
-          {{ item.name }}
-        </a>
+      </transition>
+    </div>
+    <transition name="opacity">
+      <div
+        v-if="navSticky"
+        class="tiny-logo-container">
+        <img :src="`${publicPath}img/RF-white.svg`" />
       </div>
-    </div>
-    <div
-      v-if="navSticky"
-      class="tiny-logo-container">
-      <img :src="`${publicPath}img/RF-white.svg`" />
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -70,12 +74,12 @@ export default {
   }
   .tiny-logo-container {
     position: absolute;
-    top: 0.4rem;
-    left: 0.4rem;
+    top: 0;
+    left: 0;
   }
   .tiny-logo-container > img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3rem;
+    height: 3rem;
   }
   .dropdown-container {
     position: absolute;

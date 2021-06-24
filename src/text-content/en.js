@@ -1,4 +1,5 @@
 export default () => ({
+  newsBanner: 'RF 4.0 is out! <a href="www.google.com">Click here</a> for release notes',
   navbar: {
     items: [
       'Introduction',
@@ -9,16 +10,6 @@ export default () => ({
     dropdownName: 'Links',
     dropdown: [
       {
-        name: 'Foundation',
-        url: 'https://robotframework.org/foundation/',
-        description: 'Support the development'
-      },
-      {
-        name: 'Robocon',
-        url: 'https://robocon.io/',
-        description: 'Annual conference'
-      },
-      {
         name: 'Github',
         url: 'https://github.com/robotframework/robotframework',
         description: 'Source code + issues'
@@ -27,6 +18,16 @@ export default () => ({
         name: 'Forum',
         url: 'http://forum.robotframework.org/',
         description: 'Discuss Robot Framework'
+      },
+      {
+        name: 'Foundation',
+        url: 'https://robotframework.org/foundation/',
+        description: 'Support the development'
+      },
+      {
+        name: 'Robocon',
+        url: 'https://robocon.io/',
+        description: 'Annual conference'
       },
       {
         name: 'Shop',
