@@ -20,5 +20,14 @@ module.exports = {
         args[0].meta = 'Generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA).'
         return args
       })
+    config
+      .plugin('define')
+      .tap(args => {
+        args[0] = {
+          ...args[0],
+          __INTLIFY_PROD_DEVTOOLS__: false
+        }
+        return args
+      })
   }
 }
