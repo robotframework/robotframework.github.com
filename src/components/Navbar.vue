@@ -21,21 +21,21 @@
           v-if="dropdownOpen"
           class="dropdown-container bg-black color-white p-small type-right">
           <div
-            v-for="item in $tm('navbar.dropdown')"
-            :key="item.name">
+            v-for="{ name, url, description } in $tm('navbar.dropdown')"
+            :key="name">
             <a
-              :href="item.url">
-              {{ item.name }}
+              :href="url">
+              {{ name }}
             </a>
             <p class="type-small">
-              {{ item.description }}
+              {{ description }}
             </p>
           </div>
           <a
-            v-for="item in dropdown"
-            :key="item.name"
-            :href="item.url">
-            {{ item.name }}
+            v-for="{ name, url } in dropdown"
+            :key="name"
+            :href="url">
+            {{ name }}
           </a>
         </div>
       </transition>
