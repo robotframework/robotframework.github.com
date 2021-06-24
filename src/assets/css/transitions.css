@@ -1,0 +1,62 @@
+.fade-enter-active, .fade-leave-active {
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-10px) !important;
+}
+
+.fade-down-enter-active, .fade-down-leave-active {
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.fade-down-enter-from, .fade-down-leave-to {
+    opacity: 0;
+    transform: translateY(10px) !important;
+}
+
+.fade-slow-enter-active, .fade-slow-leave-active {
+    transition: all 1.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+    transition-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+.fade-slow-enter-from, .fade-slow-leave-to {
+    opacity: 0;
+    transform: translateY(-10px) !important;
+}
+
+.opacity-enter-active, .opacity-leave-active {
+    transition: opacity 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.opacity-enter-from, .opacity-leave-to {
+    opacity: 0;
+}
+.opacity-slide-enter-active, .opacity-slide-leave-active {
+    transition: opacity 0.25s, margin-bottom 0.1s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.opacity-slide-enter-from, .opacity-slide-leave-to {
+    opacity: 0;
+    margin-bottom: -4.35rem;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: opacity 0.25s, transform 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+
+.list-enter-from, .list-leave-to {
+    opacity: 0;
+    transform: translateX(10px) !important;
+}
+
+.list-move {
+    transition: transform 0.2s cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+
+.list-leave-active {
+    position: absolute;
+}

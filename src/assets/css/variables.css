@@ -1,0 +1,63 @@
+:root {
+    --color-theme: #00c0b5; /* for theme color */
+    --color-theme-dark: #09504d; /* for theme color dark */
+    --color-background: #ededf4;
+
+    --color-white: #fafafa;
+    --color-grey: #e2e2e2;
+    --color-grey-light: #ededf4;
+    --color-black: #000000; /* body text */
+    --color-link: #00c0b5;
+    --color-link-visited: #578a88;
+
+    --bp-md: 768px; /* tablet breakpoint */
+    --bp-lg: 1500px; /* desktop breakpoint */
+
+    --layout-container-max-width: 1500px;
+    --container-padding: 0;
+
+    /* fonts */
+    --font-title: 'OCRA';
+    --font-body: 'Courier Code';
+
+    --margin-h1: 1rem;
+
+    /* font sizes */
+    --size-base-lg: 18px;
+    --size-base-md: 2.5vw;
+    --size-base-sm: 4.5vw;
+
+    --type-xsmall: 0.75rem;
+    --type-small: 0.875rem; /* label */
+    --type-body: 1rem; /* p and h3 */
+    --type-large: 1.15rem; /* h2 */
+    --type-xlarge: 1.6rem; /* h2 */
+    --type-2xlarge: 4rem; /* h1 */
+
+    /* font weights */
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-semi-bold: 600; /* h3 */
+    --weight-bold: 700; /* h2 */
+    --weight-black: 900; /* h1 */
+
+    --line-height-small: 1.25;
+    --line-height-body: 1.5;
+    --line-height-h1: 1;
+    --line-height-h2: 1.5;
+    --line-height-h3: 1.5;
+
+    --letter-spacing-body: 0;
+
+    --size-3xsmall: 0.25rem;
+    --size-2xsmall: 0.5rem;
+    --size-xsmall: 0.75rem;
+    --size-small: 1rem;
+    --size-medium: 1.5rem;
+    --size-large: 2.25rem;
+    --size-xlarge: 4rem;
+    --size-2xlarge: 6rem;
+    --size-3xlarge: 8rem;
+
+    --border-radius-rounded: 0.3rem;
+}

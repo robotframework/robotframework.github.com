@@ -1,0 +1,54 @@
+@import 'reset.css';
+@import 'variables.css';
+@import 'grid.css';
+@import 'margins.css';
+@import 'elements.css';
+@import 'paddings.css';
+@import 'colors.css';
+@import 'text.css';
+@import 'modifiers.css';
+@import 'transitions.css';
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    line-height: var(--line-height-body);
+    background-color: var(--color-background);
+}
+
+body:not(.accessible) * {
+    outline: none;
+}
+
+#app {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--color-black);
+}
+
+#main {
+    min-height: 100vh;
+}
+
+button {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    text-align: left;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+}
+
+select {
+    height: 1.25rem;
+}
+
+* {
+    box-sizing: border-box;
+}
