@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-black">
+  <div class="bg-white">
     <div
-      class="container color-white type-center"
+      class="container color-black type-center"
       v-html="$t('newsBanner')" />
   </div>
 </template>

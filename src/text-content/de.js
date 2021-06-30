@@ -1,11 +1,11 @@
 export default () => ({
-  newsBanner: '🎉 RF 4.0 is out! <a href="www.google.com">Click here</a> for release notes',
+  newsBanner: 'RF 4.0 is out! <a href="www.google.com">Click here</a> for release notes',
   navbar: {
     items: [
-      'Introduction',
-      'Getting started',
-      'Community',
-      'Resources'
+      'Einführung',
+      'Einstieg',
+      'Gemeinschaft',
+      'Ressourcen'
     ],
     dropdownName: 'Links',
     dropdown: [
@@ -52,10 +52,7 @@ export default () => ({
       Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions.
       Being open source also means that Robot Framework is free to use without licensing costs.
       Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java.
-      The framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.
-
-      Robot Framework is a generic open source automation framework.
-      It can be used for test automation and robotic process automation (RPA).<br><br>`,
+      The framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
     companies: [
       {
         name: 'ABB',
@@ -64,7 +61,7 @@ export default () => ({
       },
       {
         name: 'Cisco',
-        description: 'Cisco’s Customer Experience (CX) supports the testing & validation of Cisco and 3rd party solutions deployed by our customers. This includes Solution Validation Services (SVS) delivered both on Cisco-premise and customer-premise.',
+        description: 'Cisco’s Customer Experience (CX) supports the testing & validation of Cisco and 3rd party solutions deployed by our customers. This includes Solution Validation Services (SVS) delivered both on Cisco-premise and customer-premise as part of a NetDevOps (CI/CD) process where continuous validation accelerates technology adoption, de-risks IT deployments, changes and upgrades, and ensures complex migrations are transparent.',
         imgName: 'Cisco.svg'
       },
       {
@@ -82,13 +79,22 @@ export default () => ({
   gettingStarted: {
     title: 'Getting Started',
     body:
-      `Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions.
+      `Robot Framework is a generic open source automation framework.
+      It can be used for test automation and robotic process automation (RPA).<br><br>
+
+      Robot Framework is actively supported, with many industry-leading companies using it in their software development.<br><br>
+
+      Robot Framework is open and extensible and can be integrated with virtually any other tool to create powerful and flexible automation solutions.
       Being open source also means that Robot Framework is free to use without licensing costs.
-      Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java.`
-  },
-  community: {
-    title: 'Community',
-    body:
-      'Robot Framework has a vibrant community around it with various online forums, annual RoboCon conference, and meetup groups around the world.'
+      Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries implemented with Python or Java.
+      The framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.<br><br>
+
+      Robot Framework project is hosted on GitHub where you can find further documentation, source code, and issue tracker. Downloads are hosted at PyPI.<br<br>
+
+      Robot Framework is operating system and application independent.
+      The core framework is implemented using Python and also runs on Jython (JVM) and IronPython (.NET).<br><br>
+
+      Robot Framework itself is open source software released under Apache License 2.0, and most of the libraries and tools in the ecosystem are also open source.
+      The framework was initially developed at Nokia Networks and was open sourced in 2008.`
   }
 })

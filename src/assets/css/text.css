@@ -83,6 +83,7 @@ a {
 
 button {
     text-decoration: none !important;
+    font-size: 1rem;
 }
 
 article > p:last-of-type {
@@ -123,6 +124,10 @@ li {
 
 .line-height-1 {
     line-height: 1;
+}
+
+.line-height-body {
+    line-height: var(--line-height-body);
 }
 
 .type-center {

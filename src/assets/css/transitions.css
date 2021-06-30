@@ -6,6 +6,22 @@
     opacity: 0;
     transform: translateY(-10px) !important;
 }
+.fade-left-enter-active, .fade-left-leave-active {
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.fade-left-enter-from, .fade-right-leave-to {
+    opacity: 0;
+    transform: translateX(10px) !important;
+}
+.fade-right-enter-active, .fade-right-leave-active {
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.14, 0.7, 0.56, 0.92);
+}
+.fade-right-enter-from, .fade-left-leave-to {
+    opacity: 0;
+    transform: translateX(-10px) !important;
+}
 
 .opacity-enter-active, .opacity-leave-active {
     transition: opacity 0.25s;

@@ -5,12 +5,13 @@ import router from './router'
 import store from './store'
 import 'Css/index.css'
 import { createI18n } from 'vue-i18n/index'
-import { en } from './text-content/index'
+import { en, de } from './text-content/index'
 
 const i18n = createI18n({
   locale: 'en',
   messages: {
-    en: en()
+    en: en(),
+    de: de()
   },
   warnHtmlInMessage: 'off'
 })

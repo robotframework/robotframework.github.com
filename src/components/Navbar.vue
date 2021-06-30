@@ -1,24 +1,26 @@
 <template>
   <div
     ref="nav"
-    class="navbar row center bg-black color-white p-2xsmall pt-xsmall pb-xsmall">
+    class="navbar row center bg-black color-white p-2xsmall pt-small pb-small">
+    <!-- section navigation -->
     <a
       v-for="link in $tm('navbar.items')"
       :key="link"
       :href="`#${link}`"
-      class="pl-small pr-small color-white font-title type-uppercase type-no-underline type-small border-right-white">
+      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white">
       {{ link }}
     </a>
+    <!-- external links -->
     <div class="relative">
       <button
-        class="pl-small pr-small font-title type-uppercase type-small"
-        :class="dropdownOpen ? 'color-theme' : 'color-white'"
-        @click="dropdownOpen = !dropdownOpen">
+        class="pl-small pr-small font-title type-uppercase line-height-body"
+        :class="linkDropdownOpen ? 'color-theme' : 'color-white'"
+        @click="linkDropdownOpen = !linkDropdownOpen">
         {{ $t('navbar.dropdownName') }}
       </button>
       <transition name="fade">
         <div
-          v-if="dropdownOpen"
+          v-if="linkDropdownOpen"
           class="dropdown-container bg-black color-white p-small type-right">
           <div
             v-for="{ name, url, description } in $tm('navbar.dropdown')"
@@ -31,15 +33,43 @@
               {{ description }}
             </p>
           </div>
-          <a
-            v-for="{ name, url } in dropdown"
-            :key="name"
-            :href="url">
-            {{ name }}
-          </a>
         </div>
       </transition>
     </div>
+    <!-- lang -->
+    <button
+      class="border-left-white font-title type-uppercase pl-small relative line-height-body"
+      @click="langDropdownOpen = !langDropdownOpen">
+      <div
+        class="flex middle">
+        <globe-icon
+          :color="langDropdownOpen ? 'theme' : 'white'"
+          style="transform: translateY(-1px);" />
+        <div
+          class="pl-3xsmall type-body"
+          :class="langDropdownOpen ? 'color-theme' : 'color-white'"
+          style="transform: translateY(-2px);">
+          {{ $i18n.locale }}
+        </div>
+      </div>
+      <transition name="fade">
+        <div
+          v-if="langDropdownOpen"
+          class="dropdown-container bg-black color-white p-small type-right">
+          <div
+            v-for="(lang, i) in $i18n.availableLocales"
+            :key="lang">
+            <button
+              class="type-uppercase"
+              :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== $i18n.availableLocales.length - 1}]"
+              @click="$i18n.locale = lang">
+              {{ lang }}
+            </button>
+          </div>
+        </div>
+      </transition>
+    </button>
+    <!-- rf logo -->
     <transition name="opacity">
       <div
         v-if="navSticky"
@@ -51,10 +81,16 @@
 </template>
 
 <script>
+import GlobeIcon from './icons/GlobeIcon.vue'
+
 export default {
   name: 'Navbar',
+  components: {
+    GlobeIcon
+  },
   data: () => ({
-    dropdownOpen: false,
+    linkDropdownOpen: false,
+    langDropdownOpen: false,
     navSticky: false,
     publicPath: process.env.BASE_URL
   }),
@@ -63,6 +99,14 @@ export default {
       this.navSticky = !e[0].isIntersecting
     }, { threshold: 1 })
     observer.observe(this.$refs.nav)
+  },
+  watch: {
+    linkDropdownOpen() {
+      if (this.linkDropdownOpen) this.langDropdownOpen = false
+    },
+    langDropdownOpen() {
+      if (this.langDropdownOpen) this.linkDropdownOpen = false
+    }
   }
 }
 </script>
@@ -78,12 +122,12 @@ export default {
     left: 0;
   }
   .tiny-logo-container > img {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
   .dropdown-container {
     position: absolute;
-    top: calc(100% + 1rem);
+    top: calc(100% + 2rem);
     right: 0;
     width: max-content;
   }
