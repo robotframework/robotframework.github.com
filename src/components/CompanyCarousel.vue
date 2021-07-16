@@ -3,7 +3,7 @@
     <button
       class="col-sm-1 flex center middle"
       @click="setActiveCompany(-1)">
-      <chevron-icon size="48" />
+      <chevron-icon :size="48" />
     </button>
     <transition :name="direction === 1 ? 'fade-left' : 'fade-right'" mode="out-in">
       <div
@@ -22,7 +22,7 @@
     <button
       class="col-sm-1 type-right flex center middle"
       @click="setActiveCompany(1)">
-      <chevron-icon direction="right" size="48" />
+      <chevron-icon direction="right" :size="48" />
     </button>
   </div>
 </template>

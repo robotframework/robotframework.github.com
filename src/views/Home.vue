@@ -3,7 +3,7 @@
   <navbar />
   <news-banner v-if="$te('newsBanner')" class="mb-small mt-small" />
   <div v-else class="mb-large" />
-  <div class="container">
+  <div class="container mb-2xlarge">
     <!-- introduction -->
     <page-section-twitter
       :title="$t('introduction.title')"
@@ -26,11 +26,25 @@
       :title="$t('community.title')"
       :body="$t('community.body')">
     </page-section>
+    <!-- resources -->
+    <page-section
+      :title="$t('resources.title')"
+      :body="$t('resources.body')">
+      <resource-box />
+    </page-section>
   </div>
 </template>
 
 <script>
-import { NewsBanner, Banner, Navbar, PageSection, PageSectionTwitter, CompanyCarousel } from 'Components'
+import {
+  NewsBanner,
+  Banner,
+  Navbar,
+  PageSection,
+  PageSectionTwitter,
+  CompanyCarousel,
+  ResourceBox
+} from 'Components'
 
 export default {
   name: 'App',
@@ -40,7 +54,8 @@ export default {
     Navbar,
     PageSection,
     PageSectionTwitter,
-    CompanyCarousel
+    CompanyCarousel,
+    ResourceBox
   },
   mounted() {
     const embedScript = document.createElement('script')
