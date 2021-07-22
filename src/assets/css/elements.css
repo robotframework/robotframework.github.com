@@ -1,0 +1,69 @@
+.elevation-small {
+    -webkit-box-shadow: 1px 4px 4px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: var(--box-shadow-small);
+    box-shadow: var(--box-shadow-small);
+}
+.elevation-medium {
+    -webkit-box-shadow: var(--box-shadow-medium);
+    -moz-box-shadow: var(--box-shadow-medium);
+    box-shadow: var(--box-shadow-medium);
+}
+.elevation-large {
+    -webkit-box-shadow: var(--box-shadow-large);
+    -moz-box-shadow: var(--box-shadow-large);
+    box-shadow: var(--box-shadow-large);
+}
+
+.rounded {
+    border-radius: var(--border-radius-rounded);
+}
+
+.border-black {
+    border: solid 0.15rem var(--color-black);
+}
+.border-theme {
+    border: solid 0.2rem var(--color-theme);
+}
+
+.border-right-theme {
+    border-right: solid 0.2rem var(--color-theme);
+}
+.border-right-white {
+    border-right: solid 0.2rem var(--color-white);
+}
+.border-bottom-theme {
+    border-bottom: solid 0.2rem var(--color-theme);
+}
+.border-bottom-white {
+    border-bottom: solid 0.2rem var(--color-white);
+}
+.border-left-theme {
+    border-left: solid 0.2rem var(--color-theme);
+}
+.border-left-white {
+    border-left: solid 0.2rem var(--color-white);
+}
+.border-top-theme {
+    border-top: solid 0.2rem var(--color-theme);
+}
+.border-top-white {
+    border-top: solid 0.2rem var(--color-white);
+}
+
+.theme-button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: 0.1s color, 0.1s background-color;
+    font-family: var(--font-title);
+    padding: var(--size-2xsmall) var(--size-small);
+}
+
+.theme-button.active {
+    background-color: var(--color-theme);
+    color: var(--color-white);
+}
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}

@@ -1,0 +1,179 @@
+.p-none {
+    padding: 0;
+}
+
+.p-3xsmall {
+    padding: var(--size-3xsmall);
+}
+
+.p-2xsmall {
+    padding: var(--size-2xsmall);
+}
+
+.p-xsmall {
+    padding: var(--size-xsmall);
+}
+
+.p-small {
+    padding: var(--size-small);
+}
+
+.p-medium {
+    padding: var(--size-medium);
+}
+
+.p-large {
+    padding: var(--size-large);
+}
+
+.p-xlarge {
+    padding: var(--size-xlarge);
+}
+
+.p-2xlarge {
+    padding: var(--size-2xlarge);
+}
+
+.pt-none {
+    padding-top: 0;
+}
+
+.pt-3xsmall {
+    padding-top: var(--size-3xsmall);
+}
+
+.pt-2xsmall {
+    padding-top: var(--size-2xsmall);
+}
+
+.pt-xsmall {
+    padding-top: var(--size-xsmall);
+}
+
+.pt-small {
+    padding-top: var(--size-small);
+}
+
+.pt-medium {
+    padding-top: var(--size-medium);
+}
+
+.pt-large {
+    padding-top: var(--size-large);
+}
+
+.pt-xlarge {
+    padding-top: var(--size-xlarge);
+}
+
+.pt-2xlarge {
+    padding-top: var(--size-2xlarge);
+}
+
+.pr-none {
+    padding-right: 0;
+}
+
+.pr-3xsmall {
+    padding-right: var(--size-3xsmall);
+}
+
+.pr-2xsmall {
+    padding-right: var(--size-2xsmall);
+}
+
+.pr-xsmall {
+    padding-right: var(--size-xsmall);
+}
+
+.pr-small {
+    padding-right: var(--size-small);
+}
+
+.pr-medium {
+    padding-right: var(--size-medium);
+}
+
+.pr-large {
+    padding-right: var(--size-large);
+}
+
+.pr-xlarge {
+    padding-right: var(--size-xlarge);
+}
+
+.pr-2xlarge {
+    padding-right: var(--size-2xlarge);
+}
+
+.pb-none {
+    padding-bottom: 0;
+}
+
+.pb-3xsmall {
+    padding-bottom: var(--size-3xsmall);
+}
+
+.pb-2xsmall {
+    padding-bottom: var(--size-2xsmall);
+}
+
+.pb-xsmall {
+    padding-bottom: var(--size-xsmall);
+}
+
+.pb-small {
+    padding-bottom: var(--size-small);
+}
+
+.pb-medium {
+    padding-bottom: var(--size-medium);
+}
+
+.pb-large {
+    padding-bottom: var(--size-large);
+}
+
+.pb-xlarge {
+    padding-bottom: var(--size-xlarge);
+}
+
+.pb-2xlarge {
+    padding-bottom: var(--size-2xlarge);
+}
+
+.pl-none {
+    padding-left: 0;
+}
+
+.pl-3xsmall {
+    padding-left: var(--size-3xsmall);
+}
+
+.pl-2xsmall {
+    padding-left: var(--size-2xsmall);
+}
+
+.pl-xsmall {
+    padding-left: var(--size-xsmall);
+}
+
+.pl-small {
+    padding-left: var(--size-small);
+}
+
+.pl-medium {
+    padding-left: var(--size-medium);
+}
+
+.pl-large {
+    padding-left: var(--size-large);
+}
+
+.pl-xlarge {
+    padding-left: var(--size-xlarge);
+}
+
+.pl-2xlarge {
+    padding-left: var(--size-2xlarge);
+}
