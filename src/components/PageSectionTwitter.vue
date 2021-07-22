@@ -14,7 +14,7 @@
         <slot />
       </div>
       <div
-        class="twitter col-sm-12 col-lg-3 p-none pt-medium"
+        class="twitter col-sm-12 col-lg-3 p-none pt-medium rounded"
         :style="`height: ${twitterHeight}px`">
         <a
           class="twitter-timeline"
@@ -56,6 +56,5 @@ export default {
 <style scoped>
   .twitter {
     overflow: scroll;
-    border-radius: 10px;
   }
 </style>

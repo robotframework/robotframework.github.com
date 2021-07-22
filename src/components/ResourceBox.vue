@@ -1,11 +1,11 @@
 <template>
   <div class="bg-grey-dark color-white">
-    <div class="row mb-medium p-medium">
+    <div class="row p-medium">
       <button
         v-for="{ name } in $tm('resources.content')"
         :key="name"
-        class="type-uppercase mr-small type-large"
-        :class="activeTab === name ? 'color-theme type-underline' : 'color-white'"
+        class="type-uppercase mr-medium theme-button"
+        :class="activeTab === name ? 'active' : ''"
         @click="activeTab = name">
         {{ name }}
       </button>
@@ -13,15 +13,18 @@
     <transition name="opacity" mode="out-in">
       <div :key="activeTab">
         <div class="row mb-medium">
-          <div class="col-sm-3 pl-medium">
+          <div class="col-sm-9 pl-medium">
+            {{ selectedTab.description }}
+          </div>
+          <div class="col-sm-3 pr-medium flex bottom end">
             <div class="relative">
               <div class="flex middle filter-input-container">
                 <input
                   v-model="filterInput"
-                  id="keywords-filter-input"
-                  :placeholder="'Filter by keyword'"
+                  id="tags-filter-input"
+                  :placeholder="'Filter by tag'"
                   class="p-2xsmall bg-grey-dark font-body"
-                  :style="`color: ${getKeywordColor(filterInput)}`"
+                  :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'}`"
                   @focus="filterInputFocused = true"
                   @blur="filterInputFocused = false">
                   <button
@@ -33,74 +36,79 @@
               </div>
               <transition name="opacity">
                 <div
-                  v-if="filterInputFocused && activeContentKeywords
-                      .filter((keyword) => keyword.includes(filterInput.toLowerCase()) && keyword !== filterInput.toLowerCase()).length"
+                  v-if="filterInputFocused && tabTags
+                      .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase()).length"
                   class="input-suggestions bg-grey-dark p-2xsmall">
                   <div
-                    v-for="keyword in activeContentKeywords
-                      .filter((keyword) => keyword.includes(filterInput.toLowerCase()) && keyword !== filterInput.toLowerCase())"
-                    :key="keyword">
+                    v-for="tag in tabTags
+                      .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase())"
+                    :key="tag">
                     <button
-                      :style="`color: ${getKeywordColor(keyword)}`"
+                      :style="`color: ${getTagColor(tag)}`"
                       class="type-uppercase"
-                      @click="filterInput = keyword.toUpperCase()">
-                      {{ keyword }}
+                      @click="filterInput = tag.toUpperCase()">
+                      {{ tag }}
                     </button>
                   </div>
                 </div>
               </transition>
             </div>
           </div>
-          <div class="col-sm-9 pr-medium">
-            {{ activeContent.description }}
+        </div>
+        <div class="table-container-gradient">
+          <div class="table-container pb-large">
+            <table>
+              <tr>
+                <th
+                  v-for="header in tableHeaders"
+                  :key="header">
+                  <button
+                    class="flex color-white"
+                    @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
+                    <div>
+                      {{ header }}
+                    </div>
+                    <chevron-icon
+                      key="1"
+                      color="white"
+                      class="mr-small"
+                      :size="22"
+                      :direction="direction === 'descending' ? 'down' : 'up'"
+                      :style="sortBy === header ? '' : 'visibility: hidden;'" />
+                  </button>
+                </th>
+              </tr>
+              <tr
+                v-for="item in visibleItems"
+                :key="item.name"
+                class="item-row">
+                <td>
+                  <a
+                    :href="item.href"
+                    target="_blank">
+                    {{ item.name }}
+                  </a>
+                </td>
+                <td class="pr-small">
+                  <div v-html="item.description" />
+                </td>
+                <td v-if="activeTab !== 'Learning'">
+                  {{ item.stars || 'N/A' }}
+                </td>
+                <td class="pr-small">
+                  <span
+                    v-for="(tag, i) in item.tags"
+                    :key="tag"
+                    :style="`color: ${getTagColor(tag)}`"
+                    class="type-nowrap type-uppercase type-small">
+                    {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
+                  </span>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
-        <div class="p-medium pt-none table-container">
-          <table>
-            <tr>
-              <th
-                v-for="header in tableHeaders"
-                :key="header">
-                <button
-                  class="flex color-white"
-                  @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
-                  <div>
-                    {{ header }}
-                  </div>
-                  <chevron-icon
-                    key="1"
-                    color="white"
-                    :size="22"
-                    :direction="direction === 'descending' ? 'down' : 'up'"
-                    :style="sortBy === header ? '' : 'visibility: hidden;'" />
-                </button>
-              </th>
-            </tr>
-            <tr class="dotted-divider mb-small" />
-            <tr
-              v-for="item in activeContent.items"
-              :key="item.name">
-              <td class="pr-small pt-3xsmall pb-3xsmall">
-                {{ item.name }}
-              </td>
-              <td class="pr-small">
-                {{ item.description }}
-              </td>
-              <td>
-                {{ item.stars || 'N/A' }}
-              </td>
-              <td class="pr-small">
-                <span
-                  v-for="(keyword, i) in item.keywords"
-                  :key="keyword"
-                  :style="`color: ${getKeywordColor(keyword)}`"
-                  class="type-nowrap type-uppercase type-small">
-                  {{ `${keyword}${i !== item.keywords.length - 1 ? ', ' : ''}` }}
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
+        <div class="pb-medium bg-grey-dark" />
       </div>
     </transition>
   </div>
@@ -116,7 +124,7 @@ export default {
   },
   data: () => ({
     activeTab: '',
-    sortBy: '',
+    sortBy: 'default',
     direction: 'descending',
     filterInputFocused: false,
     filterInput: ''
@@ -126,39 +134,57 @@ export default {
       return [
         'Name',
         'Description',
-        'Stars',
-        'Keywords'
+        ...(this.activeTab !== 'Learning' ? ['Stars'] : []),
+        'Tags'
       ]
     },
-    activeContent() {
-      const content = this.$tm('resources.content')
+    selectedTab() {
+      return this.$tm('resources.content')
         .find(({ name }) => name === this.activeTab)
-      const itemsSortedAndFiltered = content.items
-        .filter((item) => !item.keywords || item.keywords.some((keyword) => keyword.includes(this.filterInput.toLowerCase())))
-        .sort(this.listSortFn)
-      return {
-        ...content,
-        items: itemsSortedAndFiltered
-      }
     },
-    activeContentKeywords() {
-      return [...new Set(this.activeContent.items
-        .flatMap((item) => item.keywords)
+    visibleItems() {
+      const filtered = this.selectedTab.items
+        .filter((item) => !this.tagFilterExactMatch || (item.tags && item.tags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())))
+      if (this.sortBy === 'default') {
+        return [
+          ...filtered
+            .filter(({ tags }) => tags && tags.includes('built-in'))
+            .sort((a, b) => a.name > b.name ? 1 : -1),
+          ...filtered
+            .filter(({ tags }) => !tags || !tags.includes('built-in'))
+            .sort((a, b) => a.name > b.name ? 1 : -1)]
+      }
+      return filtered
+        .sort(this.listSortFn)
+    },
+    tagFilterExactMatch() {
+      if (this.filterInput === '') return false
+      return this.tabTags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())
+    },
+    tabTags() {
+      return [...new Set(this.selectedTab.items
+        .flatMap((item) => item.tags)
+        .filter((tag) => tag)
         .sort((a, b) => a > b ? 1 : -1))]
     }
   },
   created() {
     this.activeTab = this.$tm('resources.content')[0].name
-    this.sortBy = this.tableHeaders[0]
+  },
+  watch: {
+    activeTab() {
+      this.filterInput = ''
+    }
   },
   methods: {
-    getKeywordColor(keywordName) {
-      const charCodesSum = [...keywordName.toLowerCase()]
+    getTagColor(tagName) {
+      if (tagName === 'built-in') return '#00c0b5'
+      const charCodesSum = [...tagName.toLowerCase()]
         .flatMap((char) => char.charCodeAt(0) * 100)
         .reduce((int, acc) => acc + int, 0)
       const hue = charCodesSum % 360
       const saturation = charCodesSum % 49 + 51
-      return `hsl(${hue}, ${saturation}%, 60%)`
+      return `hsl(${hue}, ${saturation}%, 70%)`
     },
     listSortFn(a, b) {
       const compareA = a[this.sortBy.toLowerCase()]
@@ -181,22 +207,47 @@ export default {
 </script>
 
 <style scoped>
-.dotted-divider {
-  border-top: var(--color-white) dashed 0.15rem;
-  border-bottom: transparent solid 1.5rem;
-}
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
+.table-container-gradient {
+  position: relative;
+}
+.table-container-gradient::before, .table-container-gradient::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1rem;
+}
+.table-container-gradient::before {
+  top: 0;
+  background: linear-gradient(var(--color-grey-dark), rgba(255, 255, 255, 0.001));
+}
+.table-container-gradient::after {
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.001), var(--color-grey-dark));
+}
 .table-container {
-  max-height: 50vh;
+  height: 50vh;
   overflow-y: scroll;
+}
+th {
+  border-bottom: var(--color-white) dashed 0.15rem;
+}
+tr:first-child {
+  border-top: solid transparent 1rem;
 }
 th, td {
   text-align: left;
-  padding-left: 0;
+  padding: 0.5rem;
+}
+th:first-child, td:first-child {
+  padding-left: 1.5rem;
+}
+th:last-child, td:last-child {
+  padding-right: 1.5rem;
 }
 tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.1);
@@ -209,6 +260,7 @@ tr:nth-child(even) {
 }
 .input-suggestions {
   position: absolute;
+  z-index: 2;
   max-height: 20rem;
   overflow-y: scroll;
   border-top: none;
