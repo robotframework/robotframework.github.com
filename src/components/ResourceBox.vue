@@ -2,11 +2,11 @@
   <div class="bg-grey-dark color-white">
     <div class="row p-medium">
       <button
-        v-for="{ name } in $tm('resources.content')"
+        v-for="{ name, contentKey } in $tm('resources.tabs')"
         :key="name"
         class="type-uppercase mr-medium theme-button"
-        :class="activeTab === name ? 'active' : ''"
-        @click="activeTab = name">
+        :class="activeTab === contentKey ? 'active' : ''"
+        @click="activeTab = contentKey">
         {{ name }}
       </button>
     </div>
@@ -139,11 +139,10 @@ export default {
       ]
     },
     selectedTab() {
-      return this.$tm('resources.content')
-        .find(({ name }) => name === this.activeTab)
+      return this.$tm(`resourcesList.${this.activeTab}`)
     },
     visibleItems() {
-      const filtered = this.selectedTab.items
+      const filtered = this.selectedTab
         .filter((item) => !this.tagFilterExactMatch || (item.tags && item.tags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())))
       if (this.sortBy === 'default') {
         return [
@@ -169,7 +168,7 @@ export default {
     }
   },
   created() {
-    this.activeTab = this.$tm('resources.content')[0].name
+    this.activeTab = this.$tm('resources.tabs')[0].contentKey
   },
   watch: {
     activeTab() {

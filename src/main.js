@@ -5,13 +5,19 @@ import router from './router'
 import store from './store'
 import 'Css/index.css'
 import { createI18n } from 'vue-i18n/index'
-import { en, de } from './text-content/index'
+import { en, de, libraries, tools, learning } from './content/index'
+
+const resourcesList = {
+  libraries: libraries(),
+  tools: tools(),
+  learning: learning()
+}
 
 const i18n = createI18n({
   locale: 'en',
   messages: {
-    en: en(),
-    de: de()
+    en: { ...en(), resourcesList },
+    de: { ...de(), resourcesList }
   },
   warnHtmlInMessage: 'off'
 })
