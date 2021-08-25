@@ -2,11 +2,11 @@
   <div class="bg-grey-dark color-white">
     <div class="row p-medium">
       <button
-        v-for="{ name, contentKey } in $tm('resources.tabs')"
+        v-for="{ name, key } in $tm('resources.tabs')"
         :key="name"
         class="type-uppercase mr-medium theme-button"
-        :class="activeTab === contentKey ? 'active' : ''"
-        @click="activeTab = contentKey">
+        :class="activeTab === key ? 'active' : ''"
+        @click="activeTab = key">
         {{ name }}
       </button>
     </div>
@@ -14,7 +14,7 @@
       <div :key="activeTab">
         <div class="row mb-medium">
           <div class="col-sm-9 pl-medium">
-            {{ selectedTab.description }}
+            {{ $tm('resources.tabs').find(({ key }) => key === activeTab).description }}
           </div>
           <div class="col-sm-3 pr-medium flex bottom end">
             <div class="relative">
@@ -138,11 +138,11 @@ export default {
         'Tags'
       ]
     },
-    selectedTab() {
+    selectedList() {
       return this.$tm(`resourcesList.${this.activeTab}`)
     },
     visibleItems() {
-      const filtered = this.selectedTab
+      const filtered = this.selectedList
         .filter((item) => !this.tagFilterExactMatch || (item.tags && item.tags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())))
       if (this.sortBy === 'default') {
         return [
@@ -161,14 +161,14 @@ export default {
       return this.tabTags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())
     },
     tabTags() {
-      return [...new Set(this.selectedTab.items
+      return [...new Set(this.selectedList
         .flatMap((item) => item.tags)
         .filter((tag) => tag)
         .sort((a, b) => a > b ? 1 : -1))]
     }
   },
   created() {
-    this.activeTab = this.$tm('resources.tabs')[0].contentKey
+    this.activeTab = this.$tm('resources.tabs')[0].key
   },
   watch: {
     activeTab() {
@@ -222,11 +222,11 @@ table {
 }
 .table-container-gradient::before {
   top: 0;
-  background: linear-gradient(var(--color-grey-dark), rgba(255, 255, 255, 0.001));
+  background: linear-gradient(var(--color-grey-dark), rgba(41, 47, 51, 0));
 }
 .table-container-gradient::after {
   bottom: 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.001), var(--color-grey-dark));
+  background: linear-gradient(rgba(41, 47, 51, 0), var(--color-grey-dark));
 }
 .table-container {
   height: 50vh;

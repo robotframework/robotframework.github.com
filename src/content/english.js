@@ -1,4 +1,5 @@
 export default () => ({
+  langName: 'English',
   newsBanner: '🎉 RF 4.0 is out! <a href="www.google.com">Click here</a> for release notes',
   navbar: {
     items: [
@@ -101,7 +102,7 @@ export default () => ({
     tabs: [
       {
         name: 'Libraries',
-        contentKey: 'libraries',
+        key: 'libraries',
         description: `Libraries provide the actual automation and testing capabilities to
         Robot Framework by providing keywords. Several standard libraries are bundled with
         the framework, and there are separately developed external libraries galore that
@@ -109,13 +110,13 @@ export default () => ({
       },
       {
         name: 'Tools',
-        contentKey: 'tools',
+        key: 'tools',
         description: `Supporting tools ease automation: editing, running, building and so on.
         Most of these tools are developed as separate projects, but some are built into the framework itself.`
       },
       {
         name: 'Learning',
-        contentKey: 'learning',
+        key: 'learning',
         description: `Want to get started? Looking for a way to do things? Here are the most
         important documentation resources needed to work with Robot Framework. Notice that
         individual libraries and tools in the ecosystem have their own documentation that

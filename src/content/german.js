@@ -1,4 +1,5 @@
 export default () => ({
+  langName: 'Deutsch',
   newsBanner: 'RF 4.0 is out! <a href="www.google.com">Click here</a> for release notes',
   navbar: {
     items: [

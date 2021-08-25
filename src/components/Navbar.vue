@@ -3,13 +3,14 @@
     ref="nav"
     class="navbar row center bg-black color-white p-2xsmall pt-small pb-small">
     <!-- section navigation -->
-    <a
-      v-for="link in $tm('navbar.items')"
-      :key="link"
-      :href="`#${link}`"
-      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white">
-      {{ link }}
-    </a>
+    <button
+      v-for="item in $tm('navbar.items')"
+      :key="item"
+      :name="`go-to-${item}`"
+      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white"
+      @click="scrollTo(item)">
+      {{ item }}
+    </button>
     <!-- external links -->
     <div class="relative">
       <button
@@ -49,21 +50,21 @@
           class="pl-3xsmall type-body"
           :class="langDropdownOpen ? 'color-theme' : 'color-white'"
           style="transform: translateY(-2px);">
-          {{ $i18n.locale }}
+          {{ langNames.find(({ lang }) => lang === $i18n.locale).name }}
         </div>
       </div>
       <transition name="fade">
         <div
           v-if="langDropdownOpen"
-          class="dropdown-container bg-black color-white p-small type-right">
+          class="dropdown-container bg-black color-white p-small">
           <div
-            v-for="(lang, i) in $i18n.availableLocales"
+            v-for="({ lang, name }, i) in langNames"
             :key="lang">
             <button
               class="type-uppercase"
-              :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== $i18n.availableLocales.length - 1}]"
+              :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
               @click="$i18n.locale = lang">
-              {{ lang }}
+              {{ name }}
             </button>
           </div>
         </div>
@@ -94,11 +95,24 @@ export default {
     navSticky: false,
     publicPath: process.env.BASE_URL
   }),
+  computed: {
+    langNames() {
+      return Object.keys(this.$i18n.messages)
+        .map((lang) => ({ lang, name: this.$i18n.messages[lang].langName }))
+    }
+  },
   mounted() {
     const observer = new IntersectionObserver((e) => {
       this.navSticky = !e[0].isIntersecting
     }, { threshold: 1 })
     observer.observe(this.$refs.nav)
+  },
+  methods: {
+    scrollTo(item) {
+      document.getElementById(item.toLowerCase().replaceAll(' ', '-')).scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
   },
   watch: {
     linkDropdownOpen() {
@@ -112,10 +126,6 @@ export default {
 </script>
 
 <style scoped>
-  .navbar {
-    position: sticky;
-    top: -1px;
-  }
   .tiny-logo-container {
     position: absolute;
     top: 0;

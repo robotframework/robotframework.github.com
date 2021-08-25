@@ -1,5 +1,7 @@
 <template>
-  <div class="border-top-theme mt-medium">
+  <div
+    class="border-top-theme mt-medium"
+    :id="title.toLowerCase().replaceAll(' ', '-')">
     <div class="row p-small">
       <div class="col-sm-12 col-lg-3 pt-small">
         <h2>
