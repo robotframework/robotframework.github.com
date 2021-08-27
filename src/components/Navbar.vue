@@ -63,7 +63,7 @@
             <button
               class="type-uppercase"
               :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
-              @click="$i18n.locale = lang">
+              @click="setLang(lang)">
               {{ name }}
             </button>
           </div>
@@ -112,6 +112,10 @@ export default {
       document.getElementById(item.toLowerCase().replaceAll(' ', '-')).scrollIntoView({
         behavior: 'smooth'
       })
+    },
+    setLang(lang) {
+      this.$i18n.locale = lang
+      window.localStorage.setItem('lang', lang)
     }
   },
   watch: {

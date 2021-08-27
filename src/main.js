@@ -13,6 +13,7 @@ import {
   russian,
   chinese,
   french,
+  ach,
   libraries,
   tools,
   learning
@@ -24,16 +25,19 @@ const resourcesList = {
   learning: learning()
 }
 
+const lang = window.localStorage.getItem('lang')
+
 const i18n = createI18n({
-  locale: 'en',
+  locale: lang || 'en-US',
   messages: {
-    en: { ...english(), resourcesList },
-    de: { ...german(), resourcesList },
-    pt: { ...portugese(), resourcesList },
-    sp: { ...spanish(), resourcesList },
-    ru: { ...russian(), resourcesList },
-    cn: { ...chinese(), resourcesList },
-    fr: { ...french(), resourcesList }
+    'en-US': { ...english(), resourcesList },
+    'de-DE': { ...german(), resourcesList },
+    'pt-PT': { ...portugese(), resourcesList },
+    'es-ES': { ...spanish(), resourcesList },
+    'ru-RU': { ...russian(), resourcesList },
+    'zh-CN': { ...chinese(), resourcesList },
+    'fr-FR': { ...french(), resourcesList },
+    'ach-UG': { ...ach(), resourcesList }
   },
   warnHtmlInMessage: 'off'
 })

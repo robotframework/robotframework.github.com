@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="activeCompany">
     <div class="row carousel-container bg-grey-light rounded">
       <button
         class="col-sm-1 flex center middle"

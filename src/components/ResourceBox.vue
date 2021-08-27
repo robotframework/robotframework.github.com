@@ -14,7 +14,7 @@
       <div :key="activeTab">
         <div class="row mb-medium">
           <div class="col-sm-9 pl-medium">
-            {{ $tm('resources.tabs').find(({ key }) => key === activeTab).description }}
+            {{ selectedDescription }}
           </div>
           <div class="col-sm-3 pr-medium flex bottom end">
             <div class="relative">
@@ -123,7 +123,8 @@ export default {
     ChevronIcon
   },
   data: () => ({
-    activeTab: '',
+    tabs: ['libraries', 'tools', 'learning'],
+    activeTab: 'libraries',
     sortBy: 'default',
     direction: 'descending',
     filterInputFocused: false,
@@ -140,6 +141,11 @@ export default {
     },
     selectedList() {
       return this.$tm(`resourcesList.${this.activeTab}`)
+    },
+    selectedDescription() {
+      const tab = this.$tm('resources.tabs').find(({ key }) => key === this.activeTab)
+      if (tab) return tab.description
+      return ''
     },
     visibleItems() {
       const filtered = this.selectedList
@@ -166,9 +172,6 @@ export default {
         .filter((tag) => tag)
         .sort((a, b) => a > b ? 1 : -1))]
     }
-  },
-  created() {
-    this.activeTab = this.$tm('resources.tabs')[0].key
   },
   watch: {
     activeTab() {
