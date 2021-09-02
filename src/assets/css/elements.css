@@ -21,8 +21,14 @@
 .border-black {
     border: solid 0.15rem var(--color-black);
 }
+.border-white {
+    border: solid 0.15rem var(--color-white);
+}
 .border-theme {
     border: solid 0.2rem var(--color-theme);
+}
+.border-thin {
+    border-width: 0.05rem;
 }
 
 .border-right-theme {
@@ -61,6 +67,12 @@
 .theme-button.active {
     background-color: var(--color-theme);
     color: var(--color-white);
+}
+
+@media screen and (max-width: 768px) {
+    .theme-button {
+        padding: var(--size-3xsmall) var(--size-xsmall);
+    }
 }
 
 .disabled {

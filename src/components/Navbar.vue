@@ -70,14 +70,6 @@
         </div>
       </transition>
     </button>
-    <!-- rf logo -->
-    <transition name="opacity">
-      <div
-        v-if="navSticky"
-        class="tiny-logo-container">
-        <img :src="`${publicPath}img/RF-white.svg`" />
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -91,21 +83,13 @@ export default {
   },
   data: () => ({
     linkDropdownOpen: false,
-    langDropdownOpen: false,
-    navSticky: false,
-    publicPath: process.env.BASE_URL
+    langDropdownOpen: false
   }),
   computed: {
     langNames() {
       return Object.keys(this.$i18n.messages)
         .map((lang) => ({ lang, name: this.$i18n.messages[lang].langName }))
     }
-  },
-  mounted() {
-    const observer = new IntersectionObserver((e) => {
-      this.navSticky = !e[0].isIntersecting
-    }, { threshold: 1 })
-    observer.observe(this.$refs.nav)
   },
   methods: {
     scrollTo(item) {

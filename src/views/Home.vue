@@ -1,6 +1,7 @@
 <template>
+  <nav-mobile />
   <banner />
-  <navbar />
+  <navbar class="nav-desktop" />
   <news-banner v-if="$te('newsBanner')" class="mb-small mt-small" />
   <div v-else class="mb-large" />
   <div class="container mb-2xlarge">
@@ -16,10 +17,6 @@
     <page-section
       :title="$t('gettingStarted.title')"
       :body="$t('gettingStarted.body')">
-      <div id="katacoda-scenario-1"
-        data-katacoda-id="<robotframework>/<robotframeworktest>"
-        data-katacoda-color="004d7f"
-        style="height: 600px; padding-top: 20px;"></div>
     </page-section>
     <!-- community -->
     <page-section
@@ -30,7 +27,8 @@
     <page-section
       :title="$t('resources.title')"
       :body="$t('resources.body')">
-      <resource-box />
+      <resource-box
+        class="col-sm-12 col-md-9 col-md-offset-3" />
     </page-section>
   </div>
 </template>
@@ -40,6 +38,7 @@ import {
   NewsBanner,
   Banner,
   Navbar,
+  NavMobile,
   PageSection,
   PageSectionTwitter,
   CompanyCarousel,
@@ -52,6 +51,7 @@ export default {
     NewsBanner,
     Banner,
     Navbar,
+    NavMobile,
     PageSection,
     PageSectionTwitter,
     CompanyCarousel,
@@ -64,3 +64,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div v-if="activeCompany">
-    <div class="row carousel-container bg-grey-light rounded">
+    <div class="row carousel-container pt-small pb-small bg-grey-light rounded">
       <button
         class="col-sm-1 flex center middle"
         @click="setActiveCompany(-1)">
@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
   .carousel-container {
-    height: 10rem;
+    min-height: 10rem;
   }
   .img-container {
     height: 4rem;

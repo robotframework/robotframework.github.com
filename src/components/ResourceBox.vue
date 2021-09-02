@@ -1,116 +1,155 @@
 <template>
-  <div class="bg-grey-dark color-white">
-    <div class="row p-medium">
-      <button
-        v-for="{ name, key } in $tm('resources.tabs')"
-        :key="name"
-        class="type-uppercase mr-medium theme-button"
-        :class="activeTab === key ? 'active' : ''"
-        @click="activeTab = key">
-        {{ name }}
-      </button>
-    </div>
-    <transition name="opacity" mode="out-in">
-      <div :key="activeTab">
-        <div class="row mb-medium">
-          <div class="col-sm-9 pl-medium">
-            {{ selectedDescription }}
-          </div>
-          <div class="col-sm-3 pr-medium flex bottom end">
-            <div class="relative">
-              <div class="flex middle filter-input-container">
-                <input
-                  v-model="filterInput"
-                  id="tags-filter-input"
-                  :placeholder="'Filter by tag'"
-                  class="p-2xsmall bg-grey-dark font-body"
-                  :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'}`"
-                  @focus="filterInputFocused = true"
-                  @blur="filterInputFocused = false">
-                  <button
-                    class="p-3xsmall pr-2xsmall color-white"
-                    :style="filterInput === '' ? 'visibility: hidden' : ''"
-                    @click="filterInput = ''">
-                    X
-                  </button>
-              </div>
-              <transition name="opacity">
-                <div
-                  v-if="filterInputFocused && tabTags
-                      .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase()).length"
-                  class="input-suggestions bg-grey-dark p-2xsmall">
-                  <div
-                    v-for="tag in tabTags
-                      .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase())"
-                    :key="tag">
+  <div>
+    <div class="bg-grey-dark color-white p-small">
+      <div class="row">
+        <button
+          v-for="({ name, key }, i) in $tm('resources.tabs')"
+          :key="name"
+          class="type-uppercase theme-button type-small"
+          :class="[
+            activeTab === key ? 'active' : '',
+            i === 2 ? 'mr-none' : 'mr-medium'
+          ]"
+          @click="activeTab = key">
+          {{ name }}
+        </button>
+      </div>
+      <transition name="opacity" mode="out-in">
+        <div :key="activeTab">
+          <div class="row mb-medium">
+            <div class="col-sm-12 col-md-9 pt-medium">
+              {{ selectedDescription }}
+            </div>
+            <div
+              class="col-sm-6 col-md-3 flex bottom"
+              :class="$store.state.isMobile ? '' : 'end'">
+              <div class="relative mt-small">
+                <div class="flex middle filter-input-container">
+                  <input
+                    v-model="filterInput"
+                    id="tags-filter-input"
+                    :placeholder="'Filter by tag'"
+                    class="p-2xsmall bg-grey-dark font-body"
+                    :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'}`"
+                    @focus="filterInputFocused = true"
+                    @blur="filterInputFocused = false">
                     <button
-                      :style="`color: ${getTagColor(tag)}`"
-                      class="type-uppercase"
-                      @click="filterInput = tag.toUpperCase()">
-                      {{ tag }}
+                      class="p-3xsmall pr-2xsmall color-white"
+                      :style="filterInput === '' ? 'visibility: hidden' : ''"
+                      @click="filterInput = ''">
+                      X
                     </button>
-                  </div>
                 </div>
-              </transition>
+                <transition name="opacity">
+                  <div
+                    v-if="filterInputFocused && tabTags
+                        .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase()).length"
+                    class="input-suggestions bg-grey-dark p-2xsmall">
+                    <div
+                      v-for="tag in tabTags
+                        .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase())"
+                      :key="tag">
+                      <button
+                        :style="`color: ${getTagColor(tag)}`"
+                        class="type-uppercase"
+                        @click="filterInput = tag.toUpperCase()">
+                        {{ tag }}
+                      </button>
+                    </div>
+                  </div>
+                </transition>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="table-container-gradient">
-          <div class="table-container pb-large">
-            <table>
-              <tr>
-                <th
-                  v-for="header in tableHeaders"
-                  :key="header">
-                  <button
-                    class="flex color-white"
-                    @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
+          <div class="table-container-gradient">
+            <div class="table-container pb-large">
+              <table v-if="!$store.state.isMobile">
+                <tr>
+                  <th
+                    v-for="header in tableHeaders"
+                    :key="header">
+                    <button
+                      class="flex color-white"
+                      @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
+                      <div>
+                        {{ header }}
+                      </div>
+                      <chevron-icon
+                        key="1"
+                        color="white"
+                        class="mr-small"
+                        :size="22"
+                        :direction="direction === 'descending' ? 'down' : 'up'"
+                        :style="sortBy === header ? '' : 'visibility: hidden;'" />
+                    </button>
+                  </th>
+                </tr>
+                <tr
+                  v-for="item in visibleItems"
+                  :key="item.name"
+                  class="item-row">
+                  <td>
+                    <a
+                      :href="item.href"
+                      target="_blank">
+                      {{ item.name }}
+                    </a>
+                  </td>
+                  <td class="pr-small">
+                    <div v-html="item.description" />
+                  </td>
+                  <td v-if="activeTab !== 'Learning'">
+                    {{ item.stars || 'N/A' }}
+                  </td>
+                  <td class="pr-small">
+                    <span
+                      v-for="(tag, i) in item.tags"
+                      :key="tag"
+                      :style="`color: ${getTagColor(tag)}`"
+                      class="type-nowrap type-uppercase type-small">
+                      {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <div
+                v-else
+                class="mt-small">
+                <div
+                  v-for="(item, i) in visibleItems"
+                  :key="item.name"
+                  class="pb-xsmall pt-xsmall"
+                  :style="i % 2 ? 'background-color: rgba(255, 255, 255, 0.1)' : ''">
+                  <div class="flex between">
                     <div>
-                      {{ header }}
+                      <a
+                        :href="item.href"
+                        target="_blank">
+                        {{ item.name }}
+                      </a>
                     </div>
-                    <chevron-icon
-                      key="1"
-                      color="white"
-                      class="mr-small"
-                      :size="22"
-                      :direction="direction === 'descending' ? 'down' : 'up'"
-                      :style="sortBy === header ? '' : 'visibility: hidden;'" />
-                  </button>
-                </th>
-              </tr>
-              <tr
-                v-for="item in visibleItems"
-                :key="item.name"
-                class="item-row">
-                <td>
-                  <a
-                    :href="item.href"
-                    target="_blank">
-                    {{ item.name }}
-                  </a>
-                </td>
-                <td class="pr-small">
-                  <div v-html="item.description" />
-                </td>
-                <td v-if="activeTab !== 'Learning'">
-                  {{ item.stars || 'N/A' }}
-                </td>
-                <td class="pr-small">
-                  <span
-                    v-for="(tag, i) in item.tags"
-                    :key="tag"
-                    :style="`color: ${getTagColor(tag)}`"
-                    class="type-nowrap type-uppercase type-small">
-                    {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
-                  </span>
-                </td>
-              </tr>
-            </table>
+                    <div
+                      v-if="item.stars"
+                      class="flex middle type-small pl-2xsmall pr-2xsmall">
+                      <div>
+                        ⭐
+                      </div>
+                      <div>
+                        {{ item.stars }}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    v-html="item.description"
+                    class="type-small" />
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="pb-medium bg-grey-dark" />
         </div>
-        <div class="pb-medium bg-grey-dark" />
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 

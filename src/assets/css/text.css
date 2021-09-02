@@ -227,29 +227,3 @@ strong,
 .type-italic {
     font-style: italic;
 }
-
-@media screen and (max-width: 1024px) {
-    html {
-        font-size: var(--size-base-md);
-    }
-    h1 {
-        font-size: var(--type-2xlarge);
-    }
-    h2 {
-        font-size: var(--type-xlarge);
-    }
-}
-@media screen and (max-width: 560px) {
-    html {
-        font-size: var(--size-base-sm);
-    }
-    h1 {
-        font-size: var(--type-xlarge);
-    }
-    h2 {
-        font-size: var(--type-large);
-    }
-    h3 {
-        font-size: var(--type-body);
-    }
-}

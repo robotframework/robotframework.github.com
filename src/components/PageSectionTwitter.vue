@@ -3,19 +3,23 @@
     class="border-top-theme"
     :id="title.toLowerCase().replaceAll(' ', '-')">
     <div class="row p-small">
-      <div class="col-sm-12 col-lg-3 pt-small">
+      <div
+        class="col-sm-12 col-lg-3"
+        :class="$store.state.isMobile ? '' : 'pt-small'">
         <h2>
           {{ title }}
         </h2>
       </div>
       <div
-        class="col-sm-12 col-lg-6 pr-large pt-medium"
+        class="col-sm-12 col-lg-6"
+        :class="!$store.state.isMobile ? 'pr-large pt-medium' : ''"
         ref="body"
         id="asd">
         <p v-html="body" />
         <slot />
       </div>
       <div
+        v-if="!$store.state.isMobile"
         class="twitter col-sm-12 col-lg-3 p-none pt-medium rounded"
         :style="`height: ${twitterHeight}px`">
         <a
