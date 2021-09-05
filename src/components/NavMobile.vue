@@ -1,8 +1,8 @@
 <template>
-  <transition name="fade-left-in-out">
+  <transition name="fade">
     <div
       v-if="isOpen"
-      class="menu bg-black pt-2xlarge pl-small pr-small">
+      class="menu bg-black pt-xlarge pb-large pl-small pr-small">
       <transition :name="linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
         <div v-if="!linksOpen" key="1" class="pl-2xsmall">
           <div
@@ -11,7 +11,7 @@
             <button
               :name="`go-to-${item}`"
               class="mb-small mt-xsmall color-white font-title type-uppercase"
-              @click="scrollTo(item)">
+              @click="scrollTo(item, 400); isOpen = false">
               {{ item }}
             </button>
           </div>
@@ -60,12 +60,21 @@
       <span></span>
       <span></span>
     </button>
-    <div class="logo-container flex middle pr-xsmall">
-      <div>
+    <div class="flex middle pr-xsmall">
+      <div class="font-title mr-2xsmall">
+        ROBOT FRAMEWORK
+      </div>
+      <div class="logo-container">
         <img :src="`${publicPath}img/RF-white.svg`" />
       </div>
     </div>
   </div>
+  <transition name="opacity">
+    <div
+      v-if="isOpen"
+      class="menu-background"
+      @click="isOpen = false" />
+  </transition>
 </template>
 
 <script>
@@ -80,7 +89,36 @@ export default {
     isOpen: false,
     linksOpen: false,
     publicPath: process.env.BASE_URL
-  })
+  }),
+  methods: {
+    scrollTo(el, duration) {
+      // ios doesn't support smooth scrollIntoView()
+      const easeInOutQuad = (t, b, c, d) => {
+        let t2 = t / (d / 2)
+        if (t2 < 1) return (c / 2) * t2 * t2 + b
+        t2 -= 1
+        return (-c / 2) * (t2 * (t2 - 2) - 1) + b
+      }
+      const to = document.getElementById(el.toLowerCase().replaceAll(' ', '-')).offsetTop - 80
+      const element = document.scrollingElement || document.documentElement
+      const start = element.scrollTop
+
+      const change = to - start
+      const startDate = +new Date()
+
+      const animateScroll = () => {
+        const currentDate = +new Date()
+        const currentTime = currentDate - startDate
+        element.scrollTop = parseInt(easeInOutQuad(currentTime, start, change, duration), 10)
+        if (currentTime < duration) {
+          requestAnimationFrame(animateScroll)
+        } else {
+          element.scrollTop = to
+        }
+      }
+      animateScroll()
+    }
+  }
 }
 </script>
 
@@ -90,9 +128,17 @@ export default {
   position: fixed;
   z-index: 8;
   top: 0;
-  width: 16rem;
-  height: 100%;
+  width: 100%;
   left: 0;
+}
+
+.menu-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #292f33A0;
 }
 
 .navbar {
@@ -103,10 +149,10 @@ export default {
   z-index: 9;
 }
 
-.logo-container > div {
+.logo-container {
   display: contents;
 }
-.logo-container > div > img {
+.logo-container > img {
   width: 48px;
   height: 48px;
 }

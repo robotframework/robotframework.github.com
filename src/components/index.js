@@ -1,5 +1,6 @@
 import NewsBanner from './NewsBanner.vue'
 import Banner from './Banner.vue'
+import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
 import NavMobile from './NavMobile.vue'
 import PageSection from './PageSection.vue'
@@ -14,6 +15,7 @@ import ChevronIcon from './icons/ChevronIcon.vue'
 export {
   NewsBanner,
   Banner,
+  PageFooter,
   Navbar,
   NavMobile,
   PageSection,

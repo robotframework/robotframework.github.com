@@ -31,12 +31,14 @@
         class="col-sm-12 col-md-9 col-md-offset-3" />
     </page-section>
   </div>
+  <page-footer />
 </template>
 
 <script>
 import {
   NewsBanner,
   Banner,
+  PageFooter,
   Navbar,
   NavMobile,
   PageSection,
@@ -50,6 +52,7 @@ export default {
   components: {
     NewsBanner,
     Banner,
+    PageFooter,
     Navbar,
     NavMobile,
     PageSection,

@@ -55,6 +55,7 @@ export default {
     setTimeout(() => {
       this.twitterHeight = this.$refs.body.offsetHeight - 16
     }, 200)
+    window.addEventListener('resize', () => { this.twitterHeight = this.$refs.body.offsetHeight - 16 })
   }
 }
 </script>

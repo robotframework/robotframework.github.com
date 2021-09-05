@@ -15,6 +15,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-multiple-template-root': 'off',
     'no-unused-vars': 'warn',
-    'space-before-function-paren': ['warn', 'never']
+    'space-before-function-paren': ['warn', 'never'],
+    indent: [2, 2]
   }
 }
