@@ -51,12 +51,13 @@ export default () => ({
       Robot Framework is actively supported, with many industry-leading companies using
       it in their software development.<br><br>
 
-      Robot Framework is open and extensible and can be integrated with virtually any
-      other tool to create powerful and flexible automation solutions. Being open source
-      also means that Robot Framework is free to use without licensing costs. Robot Framework
-      has easy syntax, utilizing human-readable keywords. Its capabilities can be extended
-      by libraries implemented with Python or Java. The framework has a rich ecosystem
-      around it, consisting of libraries and tools that are developed as separate projects.`,
+      Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
+      other tool to create powerful and flexible automation solutions.
+      Robot Framework is free to use without licensing costs.<br><br>
+
+      Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended
+      by libraries implemented with Python, Java or many other programming languages.
+      Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
     companies: [
       {
         name: 'ABB',
@@ -83,11 +84,19 @@ export default () => ({
   gettingStarted: {
     title: 'Getting Started',
     body:
-      `Robot Framework is open and extensible and can be integrated with virtually any other
-      tool to create powerful and flexible automation solutions. Being open source also means
-      that Robot Framework is free to use without licensing costs. Robot Framework has easy
-      syntax, utilizing human-readable keywords. Its capabilities can be extended by libraries
-      implemented with Python or Java.`
+      'Install & Write your first test',
+    tabs: [
+      {
+        name: 'Install',
+        key: 'install-robot-framework',
+        description: 'Install Robot Framework, python and bunch of other stuff.'
+      },
+      {
+        name: 'Write your first test',
+        key: 'write-your-first-test',
+        description: 'Some example test here'
+      }
+    ]
   },
   community: {
     title: 'Community',
