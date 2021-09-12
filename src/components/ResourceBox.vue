@@ -1,26 +1,59 @@
 <template>
   <div>
     <div class="bg-grey-dark color-white p-small">
-      <div class="row">
+      <!-- desktop tab buttons -->
+      <div
+        v-if="!$store.state.isMobile"
+        class="row">
         <button
           v-for="({ name, key }, i) in $tm('resources.tabs')"
           :key="name"
-          class="type-uppercase theme-button type-small"
+          class="type-uppercase theme-button type-small mb-small"
           :class="[
             activeTab === key ? 'active' : '',
-            i === 2 ? 'mr-none' : 'mr-medium'
+            i === 3 ? 'mr-none' : 'mr-medium'
           ]"
-          @click="activeTab = key">
+          @click="activeTab = key; showAll = false">
           {{ name }}
+        </button>
+      </div>
+      <!-- mobile tab buttons -->
+      <div
+        v-else
+        class="row">
+        <div class="col-sm-12">
+          {{ $tm('resources.mobileTitles')[0] }}
+        </div>
+        <button
+          v-for="({ nameMobile, key }) in $tm('resources.tabs').slice(0, 2)"
+          :key="nameMobile"
+          class="type-uppercase theme-button type-small mr-medium"
+          :class="activeTab === key ? 'active' : ''"
+          @click="activeTab = key; showAll = false">
+          {{ nameMobile }}
+        </button>
+        <div class="col-sm-12 mt-small">
+          {{ $tm('resources.mobileTitles')[1] }}
+        </div>
+        <button
+          v-for="({ nameMobile, key }) in $tm('resources.tabs').slice(2, 4)"
+          :key="nameMobile"
+          class="type-uppercase theme-button type-small mr-medium"
+          :class="activeTab === key ? 'active' : ''"
+          @click="activeTab = key; showAll = false">
+          {{ nameMobile }}
         </button>
       </div>
       <transition name="opacity" mode="out-in">
         <div :key="activeTab">
           <div class="row mb-medium">
-            <div class="col-sm-12 col-md-9 pt-medium">
+            <div
+              class="col-sm-12 pt-medium"
+              :class="showFiltering ? 'col-md-9' : 'col-md-12'">
               {{ selectedDescription }}
             </div>
             <div
+              v-if="showFiltering"
               class="col-sm-6 col-md-3 flex bottom"
               :class="$store.state.isMobile ? '' : 'end'">
               <div class="relative mt-small">
@@ -61,92 +94,93 @@
               </div>
             </div>
           </div>
-          <div class="table-container-gradient">
-            <div class="table-container pb-large">
-              <table v-if="!$store.state.isMobile">
-                <tr>
-                  <th
-                    v-for="header in tableHeaders"
-                    :key="header">
-                    <button
-                      class="flex color-white"
-                      @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
-                      <div>
-                        {{ header }}
-                      </div>
-                      <chevron-icon
-                        key="1"
-                        color="white"
-                        class="mr-small"
-                        :size="22"
-                        :direction="direction === 'descending' ? 'down' : 'up'"
-                        :style="sortBy === header ? '' : 'visibility: hidden;'" />
-                    </button>
-                  </th>
-                </tr>
-                <tr
-                  v-for="item in visibleItems"
-                  :key="item.name"
-                  class="item-row">
-                  <td>
-                    <a
-                      :href="item.href"
-                      target="_blank">
-                      {{ item.name }}
-                    </a>
-                  </td>
-                  <td class="pr-small">
-                    <div v-html="item.description" />
-                  </td>
-                  <td v-if="activeTab !== 'Learning'">
-                    {{ item.stars || 'N/A' }}
-                  </td>
-                  <td class="pr-small">
-                    <span
-                      v-for="(tag, i) in item.tags"
-                      :key="tag"
-                      :style="`color: ${getTagColor(tag)}`"
-                      class="type-nowrap type-uppercase type-small">
-                      {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
-                    </span>
-                  </td>
-                </tr>
-              </table>
-              <div
-                v-else
-                class="mt-small">
-                <div
-                  v-for="(item, i) in visibleItems"
-                  :key="item.name"
-                  class="pb-xsmall pt-xsmall"
-                  :style="i % 2 ? 'background-color: rgba(255, 255, 255, 0.1)' : ''">
-                  <div class="flex between">
-                    <div>
-                      <a
-                        :href="item.href"
-                        target="_blank">
-                        {{ item.name }}
-                      </a>
-                    </div>
-                    <div
-                      v-if="item.stars"
-                      class="flex middle type-small pl-2xsmall pr-2xsmall">
-                      <div>
-                        ⭐
-                      </div>
-                      <div>
-                        {{ item.stars }}
-                      </div>
-                    </div>
+          <table v-if="!$store.state.isMobile">
+            <tr>
+              <th
+                v-for="header in tableHeaders"
+                :key="header">
+                <button
+                  class="flex color-white"
+                  @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
+                  <div>
+                    {{ header }}
                   </div>
-                  <div
-                    v-html="item.description"
-                    class="type-small" />
+                  <chevron-icon
+                    key="1"
+                    color="white"
+                    class="mr-small"
+                    :size="22"
+                    :direction="direction === 'descending' ? 'down' : 'up'"
+                    :style="sortBy === header ? '' : 'visibility: hidden;'" />
+                </button>
+              </th>
+            </tr>
+            <tr
+              v-for="item in visibleItems"
+              :key="item.name"
+              class="item-row">
+              <td>
+                <a
+                  :href="item.href"
+                  target="_blank">
+                  {{ item.name }}
+                </a>
+              </td>
+              <td class="pr-small">
+                <div v-html="item.description" />
+              </td>
+              <td v-if="showFiltering">
+                {{ item.stars || 'N/A' }}
+              </td>
+              <td v-if="showFiltering" class="pr-small">
+                <span
+                  v-for="(tag, i) in item.tags"
+                  :key="tag"
+                  :style="`color: ${getTagColor(tag)}`"
+                  class="type-nowrap type-uppercase type-small">
+                  {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
+                </span>
+              </td>
+            </tr>
+          </table>
+          <div
+            v-else
+            class="mt-small">
+            <div
+              v-for="(item, i) in visibleItems"
+              :key="item.name"
+              class="pb-xsmall pt-xsmall"
+              :style="i % 2 ? 'background-color: rgba(255, 255, 255, 0.1)' : ''">
+              <div class="flex between">
+                <div>
+                  <a
+                    :href="item.href"
+                    target="_blank">
+                    {{ item.name }}
+                  </a>
+                </div>
+                <div
+                  v-if="item.stars"
+                  class="flex middle type-small pl-2xsmall pr-2xsmall">
+                  <div>
+                    ⭐
+                  </div>
+                  <div>
+                    {{ item.stars }}
+                  </div>
                 </div>
               </div>
+              <div
+                v-html="item.description"
+                class="type-small" />
             </div>
           </div>
-          <div class="pb-medium bg-grey-dark" />
+          <button
+            v-if="!showAll && itemsFilteredByTag.length > 7"
+            class="color-white border-white border-thin p-xsmall pb-2xsmall pt-2xsmall mt-small"
+            @click="showAll = true">
+            Show more
+          </button>
         </div>
       </transition>
     </div>
@@ -162,44 +196,45 @@ export default {
     ChevronIcon
   },
   data: () => ({
-    tabs: ['libraries', 'tools', 'learning'],
-    activeTab: 'libraries',
-    sortBy: 'default',
+    tabs: ['builtinLibraries', 'builtinTools', 'libraries', 'tools'],
+    activeTab: 'builtinLibraries',
+    sortBy: 'Name',
     direction: 'descending',
     filterInputFocused: false,
-    filterInput: ''
+    filterInput: '',
+    showAll: false
   }),
   computed: {
     tableHeaders() {
       return [
         'Name',
         'Description',
-        ...(this.activeTab !== 'Learning' ? ['Stars'] : []),
-        'Tags'
+        ...(this.showFiltering ? ['Stars'] : []),
+        ...(this.showFiltering ? ['Tags'] : [])
       ]
-    },
-    selectedList() {
-      return this.$tm(`resourcesList.${this.activeTab}`)
     },
     selectedDescription() {
       const tab = this.$tm('resources.tabs').find(({ key }) => key === this.activeTab)
       if (tab) return tab.description
       return ''
     },
-    visibleItems() {
-      const filtered = this.selectedList
+    selectedList() {
+      return this.$tm(`resourcesList.${this.activeTab}`)
+    },
+    itemsFilteredByTag() {
+      return this.selectedList
         .filter((item) => !this.tagFilterExactMatch || (item.tags && item.tags.some((tag) => tag.toLowerCase() === this.filterInput.toLowerCase())))
-      if (this.sortBy === 'default') {
-        return [
-          ...filtered
-            .filter(({ tags }) => tags && tags.includes('built-in'))
-            .sort((a, b) => a.name > b.name ? 1 : -1),
-          ...filtered
-            .filter(({ tags }) => !tags || !tags.includes('built-in'))
-            .sort((a, b) => a.name > b.name ? 1 : -1)]
+    },
+    visibleItems() {
+      if (this.showAll) {
+        return this.itemsFilteredByTag
+          .concat()
+          .sort(this.listSortFn)
       }
-      return filtered
+      return this.itemsFilteredByTag
+        .concat()
         .sort(this.listSortFn)
+        .slice(0, 7)
     },
     tagFilterExactMatch() {
       if (this.filterInput === '') return false
@@ -210,11 +245,16 @@ export default {
         .flatMap((item) => item.tags)
         .filter((tag) => tag)
         .sort((a, b) => a > b ? 1 : -1))]
+    },
+    showFiltering() {
+      return this.activeTab !== 'builtinLibraries' && this.activeTab !== 'builtinTools'
     }
   },
   watch: {
     activeTab() {
       this.filterInput = ''
+      if (this.activeTab !== 'builtinLibraries') this.sortBy = 'Stars'
+      else this.sortBy = 'Name'
     }
   },
   methods: {
@@ -252,27 +292,6 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
-}
-.table-container-gradient {
-  position: relative;
-}
-.table-container-gradient::before, .table-container-gradient::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 1rem;
-}
-.table-container-gradient::before {
-  top: 0;
-  background: linear-gradient(var(--color-grey-dark), rgba(41, 47, 51, 0));
-}
-.table-container-gradient::after {
-  bottom: 0;
-  background: linear-gradient(rgba(41, 47, 51, 0), var(--color-grey-dark));
-}
-.table-container {
-  height: 50vh;
-  overflow-y: scroll;
 }
 th {
   border-bottom: var(--color-white) dashed 0.15rem;

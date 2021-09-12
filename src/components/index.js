@@ -8,6 +8,7 @@ import PageSectionTwitter from './PageSectionTwitter.vue'
 import CompanyBlock from './CompanyBlock.vue'
 import CompanyCarousel from './CompanyCarousel.vue'
 import ResourceBox from './ResourceBox.vue'
+import TabBox from './TabBox.vue'
 
 import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
@@ -23,6 +24,7 @@ export {
   CompanyBlock,
   CompanyCarousel,
   ResourceBox,
+  TabBox,
 
   GlobeIcon,
   ChevronIcon

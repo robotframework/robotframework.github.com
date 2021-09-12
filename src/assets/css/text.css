@@ -86,8 +86,10 @@ button {
     font-size: 1rem;
 }
 
-article > p:last-of-type {
-    margin-bottom: 0;
+code {
+    border: 0.1rem inset;
+    padding: var(--size-3xsmall);
+    background-color: rgba(150, 150, 150, 0.1);
 }
 
 .dense {

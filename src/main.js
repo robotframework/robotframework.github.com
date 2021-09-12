@@ -14,12 +14,16 @@ import {
   chinese,
   french,
   ach,
+  builtinLibraries,
+  builtinTools,
   libraries,
   tools,
   learning
 } from './content'
 
 const resourcesList = {
+  builtinLibraries: builtinLibraries(),
+  builtinTools: builtinTools(),
   libraries: libraries(),
   tools: tools(),
   learning: learning()

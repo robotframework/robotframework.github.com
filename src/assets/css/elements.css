@@ -71,7 +71,7 @@
 
 @media screen and (max-width: 768px) {
     .theme-button {
-        padding: var(--size-3xsmall) var(--size-xsmall);
+        padding: var(--size-3xsmall) var(--size-2xsmall);
     }
 }
 
