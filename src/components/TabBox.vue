@@ -4,7 +4,7 @@
       <button
         v-for="(tab, i) in tabs"
         :key="tab.name"
-        class="type-uppercase theme-button type-small mb-small"
+        class="type-uppercase theme-button type-small"
         :class="[
           activeTabName === tab.name ? 'active' : '',
           i === 2 ? 'mr-none' : 'mr-medium'
@@ -13,7 +13,7 @@
         {{ tab.name }}
       </button>
     </div>
-    <div class="row mt-medium">
+    <div class="row mt-small">
       <transition name="opacity" mode="out-in">
         <div
           v-if="activeTab"

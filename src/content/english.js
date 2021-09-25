@@ -89,9 +89,12 @@ export default () => ({
       {
         name: 'Install',
         description: `
-          <p>Install Robot Framework, python and bunch of other stuff.</p>
-          <p>Supports paragraphs.</p>
-          <code>pip install</code>
+          <p>Robot Framework is implemented with Python, so you need to have <a href="https://www.python.org/downloads/" target="_blank">Python installed.</a><br>On Windows machines, make sure to add <a href="https://docs.python.org/3/using/windows.html#the-full-installer" target="_blank">Python to PATH</a> during installation.</p>
+          <p>Installing Robot Framework with pip is simple:
+          <code>pip install robotframework</code></p>
+          <p>To check that the installation was succesful, run
+          <code>robot --version</code></p>
+          <p>Now you are ready to write your first test!</p>
           `
       },
       {
@@ -107,8 +110,10 @@ export default () => ({
   community: {
     title: 'Community',
     body:
-      `Robot Framework has a vibrant community around it with various online forums, annual
-      RoboCon conference, and meetup groups around the world.`,
+      `<p>Robot Framework has a vibrant community around it. Something something something...</p>
+      <p>There is also an annual RoboCon conference that is hosted in Helsinki, Finland.
+      RoboCon 2022 will be a hybrid event that can be attended online and in real life.<br>
+      For more information and to watch previous years' talks, visit <a href="https://robocon.io" target="_blank">robocon.io</a></p>`,
     links: {
       forum: {
         title: 'Forum',
@@ -118,9 +123,9 @@ export default () => ({
         title: 'Slack',
         description: 'Community team chat. Click to get invited!'
       },
-      mailingList: {
-        title: 'Mailing list',
-        description: 'Google groups community mailing list.'
+      openSpace: {
+        title: 'Open space',
+        description: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own (Robot Framework related). Also in Slack #open-space.'
       }
     }
   },

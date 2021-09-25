@@ -12,7 +12,7 @@
       </div>
       <div
         class="col-sm-12 col-lg-6"
-        :class="!$store.state.isMobile ? 'pr-large pt-medium' : ''"
+        :class="!$store.state.isMobile ? 'pr-large pt-xsmall' : ''"
         ref="body"
         id="asd">
         <p v-html="body" />

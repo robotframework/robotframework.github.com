@@ -12,13 +12,12 @@
       </div>
       <div
         class="col-sm-12 col-lg-9"
-        :class="$store.state.isMobile ? '' : 'pt-medium'">
-        <p v-html="body" />
-      </div>
+        :class="$store.state.isMobile ? '' : 'pt-xsmall'"
+        v-html="body" />
     </div>
     <div
       class="row"
-      :class="$store.state.isMobile ? '' : 'p-small'">
+      :class="$store.state.isMobile ? '' : 'pl-small pr-small'">
       <slot />
     </div>
   </div>

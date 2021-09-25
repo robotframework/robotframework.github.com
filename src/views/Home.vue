@@ -26,25 +26,7 @@
       :title="$t('community.title')"
       :body="$t('community.body')">
       <div class="col-sm-12 col-md-9 col-md-offset-3 row">
-        <div
-          v-for="link in communityLinks"
-          :key="link.imgName"
-          class="flex col-sm-12 col-md-4 mb-medium"
-          :class="$store.state.isMobile ? 'pl-small pr-small' : ''">
-          <a :href="link.href">
-            <img :src="`${publicPath}img/${link.imgName}.svg`" style="width: 5rem; height: 5rem;" />
-          </a>
-          <div class="ml-small">
-            <a :href="link.href">
-              <h3>
-                {{ link.title }}
-              </h3>
-            </a>
-            <div class="mt-2xsmall">
-              {{ link.description }}
-            </div>
-          </div>
-        </div>
+        <community-items />
       </div>
     </page-section>
     <!-- resources -->
@@ -67,6 +49,7 @@ import {
   PageSection,
   PageSectionTwitter,
   CompanyCarousel,
+  CommunityItems,
   ResourceBox,
   TabBox
 } from 'Components'
@@ -82,35 +65,9 @@ export default {
     PageSection,
     PageSectionTwitter,
     CompanyCarousel,
+    CommunityItems,
     ResourceBox,
     TabBox
-  },
-  data: () => ({
-    publicPath: process.env.BASE_URL
-  }),
-  computed: {
-    communityLinks() {
-      return [
-        {
-          imgName: 'RF',
-          href: 'http://forum.robotframework.org/',
-          title: this.$t('community.links.forum.title'),
-          description: this.$t('community.links.forum.description')
-        },
-        {
-          imgName: 'Slack',
-          href: 'https://rf-invite.herokuapp.com/',
-          title: this.$t('community.links.slack.title'),
-          description: this.$t('community.links.slack.description')
-        },
-        {
-          imgName: 'Gmail',
-          href: 'http://groups.google.com/group/robotframework-users',
-          title: this.$t('community.links.mailingList.title'),
-          description: this.$t('community.links.mailingList.description')
-        }
-      ]
-    }
   },
   mounted() {
     const embedScript = document.createElement('script')

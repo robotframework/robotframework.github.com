@@ -7,6 +7,7 @@ import PageSection from './PageSection.vue'
 import PageSectionTwitter from './PageSectionTwitter.vue'
 import CompanyBlock from './CompanyBlock.vue'
 import CompanyCarousel from './CompanyCarousel.vue'
+import CommunityItems from './CommunityItems.vue'
 import ResourceBox from './ResourceBox.vue'
 import TabBox from './TabBox.vue'
 
@@ -23,6 +24,7 @@ export {
   PageSectionTwitter,
   CompanyBlock,
   CompanyCarousel,
+  CommunityItems,
   ResourceBox,
   TabBox,
 

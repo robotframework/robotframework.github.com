@@ -86,10 +86,16 @@ button {
     font-size: 1rem;
 }
 
-code {
+code, pre {
     border: 0.1rem inset;
     padding: var(--size-3xsmall);
     background-color: rgba(150, 150, 150, 0.1);
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;
+    width: fit-content;
 }
 
 .dense {
@@ -102,7 +108,7 @@ label {
 
 p {
     font-size: var(--type-body);
-    margin-bottom: var(--size-small);
+    margin: var(--size-xsmall) 0;
 }
 
 ul {
