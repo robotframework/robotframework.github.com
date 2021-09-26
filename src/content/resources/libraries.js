@@ -2,7 +2,7 @@ export default () => ([
   {
     name: 'AppiumLibrary',
     href: 'https://github.com/serhatbolsu/robotframework-appiumlibrary',
-    description: 'Android and iOS testing. It uses Appium internally.',
+    description: 'Android and iOS testing. Uses Appium internally.',
     stars: 266,
     tags: ['mobile']
   },
@@ -273,51 +273,27 @@ export default () => ([
     tags: ['ui', 'http']
   },
   {
-    name: 'Builtin',
-    href: 'http://robotframework.org/robotframework/latest/libraries/BuiltIn.html',
-    description: 'Provides a set of often needed generic keywords. Always automatically available without imports.',
-    tags: ['built-in']
-  },
-  {
-    name: 'Collections',
-    href: 'http://robotframework.org/robotframework/latest/libraries/Collections.html',
-    description: 'Provides a set of keywords for handling Python lists and dictionaries.',
-    tags: ['built-in']
-  },
-  {
-    name: 'DateTime',
-    href: 'http://robotframework.org/robotframework/latest/libraries/DateTime.html',
-    description: 'Library for date and time conversions.',
-    tags: ['built-in']
-  },
-  {
-    name: 'Creating test libraries',
-    href: 'http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries',
-    text: 'Creating test libraries section in Robot Framework User Guide.',
-    tags: ['guide']
-  },
-  {
     name: 'Python Library Core',
     href: 'https://github.com/robotframework/PythonLibCore',
-    text: 'Tools to ease creating larger test libraries for Robot Framework using Python.',
+    description: 'Tools to ease creating larger test libraries for Robot Framework using Python.',
     tags: ['tools']
   },
   {
     name: 'JavalibCore',
     href: 'https://github.com/robotframework/JavalibCore/wiki',
-    text: 'Base for implementing larger Java based test libraries for Robot Framework.',
+    description: 'Base for implementing larger Java based test libraries for Robot Framework.',
     tags: ['java']
   },
   {
     name: 'RemoteApplications',
     href: 'https://github.com/robotframework/RemoteApplications',
-    text: 'Special test library for launching Java applications on a separate JVM and taking other libraries into use on them.',
+    description: 'Special test library for launching Java applications on a separate JVM and taking other libraries into use on them.',
     tags: ['java']
   },
   {
     name: 'Plone.app.robotframework',
     href: 'https://pypi.python.org/pypi/plone.app.robotframework',
-    text: 'Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons.',
+    description: 'Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons.',
     tags: ['tools']
   }
 ])

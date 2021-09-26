@@ -112,8 +112,9 @@ export default () => ({
     body:
       `<p>Robot Framework has a vibrant community around it. Something something something...</p>
       <p>There is also an annual RoboCon conference that is hosted in Helsinki, Finland.
-      RoboCon 2022 will be a hybrid event that can be attended online and in real life.<br>
-      For more information and to watch previous years' talks, visit <a href="https://robocon.io" target="_blank">robocon.io</a></p>`,
+      RoboCon 2022 will be a hybrid event that can be attended online and in real life.
+      For more information and to watch previous years' talks, visit 
+      <a href="https://robocon.io" target="_blank">robocon.io</a></p>`,
     links: {
       forum: {
         title: 'Forum',
@@ -132,32 +133,30 @@ export default () => ({
   resources: {
     title: 'Resources',
     body:
-      'If you want to add your library here, make a PR.',
+      `<p>Robot Framework is open source and there is a huge community of contributors around it.
+      The software is built with expandability in mind and there are numerous ways to extend
+      it's use cases for various needs.</p>
+      <p>If you have created or found a library that you think should be listed here, please 
+      <a href="https://github.com/robotframework/robotframework.github.com">let us know</a> 
+      by submitting a pull request or an issue. You are also welcome to report unmaintained 
+      ones that shouldn't be listed anymore.`,
     tabs: [
       {
-        name: 'Standard Libraries',
-        nameMobile: 'Libraries',
-        key: 'builtinLibraries',
-        description: `Libraries provide the actual automation and testing capabilities to
-        Robot Framework by providing keywords. Standard libraries are bundled with the framework.`
+        name: 'Built-in',
+        key: 'builtin',
+        description: `Libraries and tools that are bundled with the framework. Libraries provide 
+        the actual automation and testing capabilities to Robot Framework by providing keywords.`
       },
       {
-        name: 'Built-in Tools',
-        nameMobile: 'Tools',
-        key: 'builtinTools',
-        description: `Libraries provide the actual automation and testing capabilities to
-        Robot Framework by providing keywords. Standard libraries are bundled with the framework.`
-      },
-      {
-        name: 'External Libraries',
-        nameMobile: 'Libraries',
+        name: 'Libraries',
         key: 'libraries',
         description: `Separately developed external libraries that
-        can be installed based on your needs. Creating your own libraries is a breeze.`
+        can be installed based on your needs. Creating your own libraries is a breeze. For instructions, see 
+        <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries">
+        creating test libraries</a> in Robot Framework User Guide.`
       },
       {
-        name: 'External Tools',
-        nameMobile: 'Tools',
+        name: 'Tools',
         key: 'tools',
         description: `Supporting tools ease automation: editing, running, building and so on.
         Most of these tools are developed as separate projects, but some are built into the framework itself.`

@@ -12,9 +12,9 @@
     --color-link-visited: #578a88;
 
     --bp-md: 768px; /* tablet breakpoint */
-    --bp-lg: 1500px; /* desktop breakpoint */
+    --bp-lg: 1400px; /* desktop breakpoint */
 
-    --layout-container-max-width: 1500px;
+    --layout-container-max-width: 1400px;
     --container-padding: 0;
 
     /* fonts */

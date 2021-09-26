@@ -37,7 +37,7 @@
         </div>
       </transition>
     </div>
-    <!-- lang -->
+    <!-- lang - disabled for now
     <button
       class="border-left-white font-title type-uppercase pl-small relative line-height-body"
       @click="langDropdownOpen = !langDropdownOpen">
@@ -69,17 +69,17 @@
           </div>
         </div>
       </transition>
-    </button>
+    </button> -->
   </div>
 </template>
 
 <script>
-import GlobeIcon from './icons/GlobeIcon.vue'
+// import GlobeIcon from './icons/GlobeIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
-    GlobeIcon
+    // GlobeIcon
   },
   data: () => ({
     linkDropdownOpen: false,

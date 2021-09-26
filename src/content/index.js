@@ -7,8 +7,7 @@ import spanish from './spanish.js'
 import chinese from './chinese.js'
 import ach from './ach.js'
 
-import builtinLibraries from './resources/builtinLibraries.js'
-import builtinTools from './resources/builtinTools.js'
+import builtin from './resources/builtin.js'
 import libraries from './resources/libraries.js'
 import tools from './resources/tools.js'
 import learning from './resources/learning.js'
@@ -23,8 +22,7 @@ export {
   chinese,
   ach,
 
-  builtinLibraries,
-  builtinTools,
+  builtin,
   libraries,
   tools,
   learning

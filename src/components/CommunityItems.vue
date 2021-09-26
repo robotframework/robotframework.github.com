@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-light rounded row p-small">
+  <div class="bg-grey-light rounded row p-medium">
     <div class="row col-md-4">
       <div
         v-for="link in [items[0], items[1]]"
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="col-md-4 pl-medium">
-      <h3 class="color-grey-dark">
+      <h3 class="color-grey-dark mb-2xsmall">
         Other
       </h3>
       <div

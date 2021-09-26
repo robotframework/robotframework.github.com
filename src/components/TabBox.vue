@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-dark p-small">
+  <div class="bg-grey-dark p-small rounded">
     <div class="row">
       <button
         v-for="(tab, i) in tabs"

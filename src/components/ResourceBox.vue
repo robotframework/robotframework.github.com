@@ -1,14 +1,11 @@
 <template>
   <div>
-    <div class="bg-grey-dark color-white p-small">
-      <!-- desktop tab buttons -->
-      <div
-        v-if="!$store.state.isMobile"
-        class="row">
+    <div class="bg-grey-dark color-white p-small rounded">
+      <div class="row">
         <button
           v-for="({ name, key }, i) in $tm('resources.tabs')"
           :key="name"
-          class="type-uppercase theme-button type-small mb-small"
+          class="type-uppercase theme-button type-small"
           :class="[
             activeTab === key ? 'active' : '',
             i === 3 ? 'mr-none' : 'mr-medium'
@@ -17,43 +14,13 @@
           {{ name }}
         </button>
       </div>
-      <!-- mobile tab buttons -->
-      <div
-        v-else
-        class="row">
-        <div class="col-sm-12">
-          {{ $tm('resources.mobileTitles')[0] }}
-        </div>
-        <button
-          v-for="({ nameMobile, key }) in $tm('resources.tabs').slice(0, 2)"
-          :key="nameMobile"
-          class="type-uppercase theme-button type-small mr-medium"
-          :class="activeTab === key ? 'active' : ''"
-          @click="activeTab = key; showAll = false">
-          {{ nameMobile }}
-        </button>
-        <div class="col-sm-12 mt-small">
-          {{ $tm('resources.mobileTitles')[1] }}
-        </div>
-        <button
-          v-for="({ nameMobile, key }) in $tm('resources.tabs').slice(2, 4)"
-          :key="nameMobile"
-          class="type-uppercase theme-button type-small mr-medium"
-          :class="activeTab === key ? 'active' : ''"
-          @click="activeTab = key; showAll = false">
-          {{ nameMobile }}
-        </button>
-      </div>
       <transition name="opacity" mode="out-in">
         <div :key="activeTab">
           <div class="row mb-medium">
             <div
-              class="col-sm-12 pt-medium"
-              :class="showFiltering ? 'col-md-9' : 'col-md-12'">
-              {{ selectedDescription }}
-            </div>
+              class="col-sm-12 col-md-9 pt-medium"
+              v-html="selectedDescription" />
             <div
-              v-if="showFiltering"
               class="col-sm-6 col-md-3 flex bottom"
               :class="$store.state.isMobile ? '' : 'end'">
               <div class="relative mt-small">
@@ -129,10 +96,10 @@
               <td class="pr-small">
                 <div v-html="item.description" />
               </td>
-              <td v-if="showFiltering">
+              <td v-if="activeTab !== 'builtin'">
                 {{ item.stars || 'N/A' }}
               </td>
-              <td v-if="showFiltering" class="pr-small">
+              <td class="pr-small">
                 <span
                   v-for="(tag, i) in item.tags"
                   :key="tag"
@@ -196,8 +163,8 @@ export default {
     ChevronIcon
   },
   data: () => ({
-    tabs: ['builtinLibraries', 'builtinTools', 'libraries', 'tools'],
-    activeTab: 'builtinLibraries',
+    tabs: ['builtin', 'libraries', 'tools'],
+    activeTab: 'builtin',
     sortBy: 'Name',
     direction: 'descending',
     filterInputFocused: false,
@@ -209,8 +176,8 @@ export default {
       return [
         'Name',
         'Description',
-        ...(this.showFiltering ? ['Stars'] : []),
-        ...(this.showFiltering ? ['Tags'] : [])
+        ...(this.activeTab !== 'builtin' ? ['Stars'] : []),
+        'Tags'
       ]
     },
     selectedDescription() {
@@ -247,13 +214,13 @@ export default {
         .sort((a, b) => a > b ? 1 : -1))]
     },
     showFiltering() {
-      return this.activeTab !== 'builtinLibraries' && this.activeTab !== 'builtinTools'
+      return this.activeTab !== 'builtin'
     }
   },
   watch: {
     activeTab() {
       this.filterInput = ''
-      if (this.activeTab !== 'builtinLibraries') this.sortBy = 'Stars'
+      if (this.activeTab !== 'builtin') this.sortBy = 'Stars'
       else this.sortBy = 'Name'
     }
   },
@@ -304,7 +271,7 @@ th, td {
   padding: 0.5rem;
 }
 th:first-child, td:first-child {
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
 }
 th:last-child, td:last-child {
   padding-right: 1.5rem;
