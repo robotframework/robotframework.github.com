@@ -5,6 +5,8 @@ import router from './router'
 import store from './store'
 import 'Css/index.css'
 import { createI18n } from 'vue-i18n/index'
+import hljs from 'highlight.js/lib/core'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
 import {
   english,
   german,
@@ -19,6 +21,9 @@ import {
   tools,
   learning
 } from './content'
+var hljsDefineRobot = require('./js/robot-highlight.js')
+
+hljsDefineRobot(hljs)
 
 const resourcesList = {
   builtin: builtin(),
@@ -48,4 +53,5 @@ createApp(App)
   .use(store)
   .use(router)
   .use(i18n)
+  .use(hljsVuePlugin)
   .mount('#app')

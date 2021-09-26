@@ -84,7 +84,7 @@ export default () => ({
   gettingStarted: {
     title: 'Getting Started',
     body:
-      'Install & Write your first test',
+      '<p>Install & Write your first test</p>',
     tabs: [
       {
         name: 'Install',
@@ -99,7 +99,24 @@ export default () => ({
       },
       {
         name: 'Your first test',
-        description: 'Some example test here'
+        description: `<p>Let's take a look at syntax:</p>
+        <robot>*** Settings ***
+          Documentation     A test suite with a single test for valid login.
+          ...
+          ...               This test has a workflow that is created using keywords in
+          ...               the imported resource file.
+          Resource          resource.txt
+
+          *** Test Cases ***
+          Valid Login
+              Open Browser To Login Page
+              Input Username    demo
+              Input Password    mode
+              Submit Credentials
+              Welcome Page Should Be Open
+              [Teardown]    Close Browser
+        </robot>
+        <p>thats it!</p>`
       },
       {
         name: 'Further Learning',
