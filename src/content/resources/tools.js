@@ -8,7 +8,7 @@ export default () => ([
   {
     name: 'Atom plugin',
     description: 'Robot Framework plugin for Atom.',
-    href: 'https://atom.io/packages/language-robot-framework',
+    href: 'https://github.com/wingyplus/language-robot-framework',
     tags: ['editor']
   },
   {
@@ -50,7 +50,7 @@ export default () => ([
   {
     name: 'Notepad++',
     description: 'Syntax highlighting for Notepad++.',
-    href: 'https://github.com/vkosuri/lang-robot',
+    href: 'https://github.com/vkosuri/npp-robot',
     tags: ['editor']
   },
   {
@@ -69,12 +69,6 @@ export default () => ([
     name: 'Language Server for PyCharm',
     description: 'PyCharm LSP plugin - syntax highlight, code completion, and other LSP features for PyCharm.',
     href: 'https://plugins.jetbrains.com/plugin/16086-robot-framework-language-server',
-    tags: ['editor']
-  },
-  {
-    name: 'TextMate bundle',
-    description: 'Bundle for TextMate adding syntax highlighting.',
-    href: 'https://bitbucket.org/jussimalinen/robot.tmbundle/',
     tags: ['editor']
   },
   {
@@ -110,19 +104,19 @@ export default () => ([
   {
     name: 'Jenkins plugin',
     description: 'Plugin to collect and publish Robot Framework execution results in Jenkins.',
-    href: 'https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin',
+    href: 'https://github.com/jenkinsci/robot-plugin',
     tags: ['build']
   },
   {
     name: 'Maven plugin',
     description: 'Maven plugin for using Robot Framework.',
-    href: 'http://robotframework.github.com/MavenPlugin/',
+    href: 'https://github.com/robotframework/MavenPlugin',
     tags: ['build']
   },
   {
     name: 'Ant task',
     description: 'Ant task for running Robot Framework tests.',
-    href: 'http://code.google.com/p/robotframework-ant/',
+    href: 'https://github.com/lcarbonn/robotframework-ant',
     tags: ['build']
   },
   {

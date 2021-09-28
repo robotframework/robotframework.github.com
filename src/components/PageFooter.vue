@@ -84,40 +84,39 @@
           </div>
         </div>
         <div class="col-sm-6 col-md-3 flex flex-col between">
-          <div>
-            <div class="relative">
-              <button
-                class="flex middle border-thin p-2xsmall pl-xsmall pr-xsmall"
-                :class="langDropdownOpen ? 'border-theme' : 'border-white'"
-                @click="langDropdownOpen = !langDropdownOpen">
-                <globe-icon
-                  :color="langDropdownOpen ? 'theme' : 'white'"
-                  style="transform: translateY(-1px);" />
+          <div />
+          <!-- <div class="relative">
+            <button
+              class="flex middle border-thin p-2xsmall pl-xsmall pr-xsmall"
+              :class="langDropdownOpen ? 'border-theme' : 'border-white'"
+              @click="langDropdownOpen = !langDropdownOpen">
+              <globe-icon
+                :color="langDropdownOpen ? 'theme' : 'white'"
+                style="transform: translateY(-1px);" />
+              <div
+                class="relative ml-2xsmall"
+                :class="langDropdownOpen ? 'color-theme' : 'color-white'">
+                Language
+              </div>
+            </button>
+            <transition name="fade-down">
+              <div
+                v-if="langDropdownOpen"
+                class="absolute bg-black p-small border-white border-thin"
+                style="bottom: 3rem;">
                 <div
-                  class="relative ml-2xsmall"
-                  :class="langDropdownOpen ? 'color-theme' : 'color-white'">
-                  Language
+                  v-for="({ lang, name }, i) in langNames"
+                  :key="lang">
+                  <button
+                    class="type-uppercase"
+                    :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
+                    @click="setLang(lang)">
+                    {{ name }}
+                  </button>
                 </div>
-              </button>
-              <transition name="fade-down">
-                <div
-                  v-if="langDropdownOpen"
-                  class="absolute bg-black p-small border-white border-thin"
-                  style="bottom: 3rem;">
-                  <div
-                    v-for="({ lang, name }, i) in langNames"
-                    :key="lang">
-                    <button
-                      class="type-uppercase"
-                      :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
-                      @click="setLang(lang)">
-                      {{ name }}
-                    </button>
-                  </div>
-                </div>
-              </transition>
-            </div>
-          </div>
+              </div>
+            </transition>
+          </div> -->
           <div>
             <div>
               <a href="https://www.facebook.com/robotframeworkofficial">
@@ -137,12 +136,12 @@
 </template>
 
 <script>
-import GlobeIcon from './icons/GlobeIcon.vue'
+// import GlobeIcon from './icons/GlobeIcon.vue'
 
 export default {
   name: 'PageFooter',
   components: {
-    GlobeIcon
+    // GlobeIcon
   },
   data: () => ({
     langDropdownOpen: false

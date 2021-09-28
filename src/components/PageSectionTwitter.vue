@@ -21,7 +21,8 @@
       <div
         v-if="!$store.state.isMobile"
         class="twitter col-sm-12 col-lg-3 p-none pt-medium rounded"
-        :style="`height: ${twitterHeight}px`">
+        :style="`height: ${twitterHeight}px;`">
+        <accessibility-link label="Skip twitter timeline" go-to="getting-started" />
         <a
           class="twitter-timeline"
           data-dnt="true"
@@ -36,8 +37,13 @@
 </template>
 
 <script>
+import AccessibilityLink from './AccessibilityLink.vue'
+
 export default {
   name: 'PageSection',
+  components: {
+    AccessibilityLink
+  },
   props: {
     title: {
       type: String,

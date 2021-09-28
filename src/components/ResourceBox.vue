@@ -88,8 +88,7 @@
               class="item-row">
               <td>
                 <a
-                  :href="item.href"
-                  target="_blank">
+                  :href="item.href">
                   {{ item.name }}
                 </a>
               </td>
@@ -97,7 +96,7 @@
                 <div v-html="item.description" />
               </td>
               <td v-if="activeTab !== 'builtin'">
-                {{ item.stars || 'N/A' }}
+                {{ item.stars !== null ? item.stars : 'N/A' }}
               </td>
               <td class="pr-small">
                 <span
@@ -121,8 +120,7 @@
               <div class="flex between">
                 <div>
                   <a
-                    :href="item.href"
-                    target="_blank">
+                    :href="item.href">
                     {{ item.name }}
                   </a>
                 </div>
@@ -156,6 +154,7 @@
 
 <script>
 import ChevronIcon from './icons/ChevronIcon.vue'
+import { stars } from '../content'
 
 export default {
   name: 'ResourceBox',
@@ -169,7 +168,8 @@ export default {
     direction: 'descending',
     filterInputFocused: false,
     filterInput: '',
-    showAll: false
+    showAll: false,
+    stars: []
   }),
   computed: {
     tableHeaders() {
@@ -187,6 +187,10 @@ export default {
     },
     selectedList() {
       return this.$tm(`resourcesList.${this.activeTab}`)
+        .map((item) => ({
+          ...item,
+          stars: this.getStarCount(item.href)
+        }))
     },
     itemsFilteredByTag() {
       return this.selectedList
@@ -249,7 +253,15 @@ export default {
     switchSortDirection() {
       if (this.direction === 'descending') this.direction = 'ascending'
       else this.direction = 'descending'
+    },
+    getStarCount(href) {
+      const key = this.stars.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()))
+      if (key) return key.stars
+      return null
     }
+  },
+  mounted() {
+    this.stars = stars()
   }
 }
 </script>

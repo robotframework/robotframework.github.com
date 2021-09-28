@@ -3,6 +3,7 @@
     <div class="row carousel-container pt-small pb-small bg-grey-light rounded">
       <button
         class="col-sm-2 col-md-1 flex center middle"
+        aria-label="previous testimonial"
         @click="setActiveCompany(-1)">
         <chevron-icon :size="48" />
       </button>
@@ -23,6 +24,7 @@
       </transition>
       <button
         class="col-sm-2 col-md-1 type-right flex center middle"
+        aria-label="next testimonial"
         @click="setActiveCompany(1)">
         <chevron-icon direction="right" :size="48" />
       </button>
@@ -31,6 +33,7 @@
       <button
         v-for="(company, i) in $tm('introduction.companies')"
         :key="company.name"
+        :aria-label="`${company.name} testimonial`"
         :style="`background-image: url(${publicPath}img/companies/${company.imgName})`"
         class="img-container-small mr-small mr-small"
         :class="activeCompanyIndex === i ? 'logo-active' : ''"

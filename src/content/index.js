@@ -11,6 +11,7 @@ import builtin from './resources/builtin.js'
 import libraries from './resources/libraries.js'
 import tools from './resources/tools.js'
 import learning from './resources/learning.js'
+import stars from './resources/stars.js'
 
 export {
   english,
@@ -25,5 +26,6 @@ export {
   builtin,
   libraries,
   tools,
-  learning
+  learning,
+  stars
 }

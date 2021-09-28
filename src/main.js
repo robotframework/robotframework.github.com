@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
+// import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'Css/index.css'
@@ -32,10 +32,10 @@ const resourcesList = {
   learning: learning()
 }
 
-const lang = window.localStorage.getItem('lang')
+// const lang = window.localStorage.getItem('lang')
 
 const i18n = createI18n({
-  locale: lang || 'en-US',
+  locale: 'en-US',
   messages: {
     'en-US': { ...english(), resourcesList },
     'de-DE': { ...german(), resourcesList },

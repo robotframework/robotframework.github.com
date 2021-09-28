@@ -3,42 +3,36 @@ export default () => ([
     name: 'AppiumLibrary',
     href: 'https://github.com/serhatbolsu/robotframework-appiumlibrary',
     description: 'Android and iOS testing. Uses Appium internally.',
-    stars: 266,
     tags: ['mobile']
   },
   {
     name: 'ArchiveLibrary',
-    href: 'https://github.com/bulkan/robotframework-archivelibrary',
+    href: 'https://github.com/MarketSquare/robotframework-archivelibrary',
     description: 'Handling zip- and tar-archives.',
-    stars: 22,
     tags: ['zip']
   },
   {
     name: 'AutoItLibrary',
     href: 'https://github.com/nokia/robotframework-autoitlibrary',
     description: 'Windows GUI testing library that uses AutoIt freeware tool as a driver.',
-    stars: 23,
     tags: ['windows', 'ui']
   },
   {
     name: 'AutoRecorder',
     href: 'https://github.com/sebastianciupinski/robotframework-autorecorder#readme',
     description: 'Allows automatically recording video for test/suites execution.',
-    stars: 3,
     tags: ['ui']
   },
   {
     name: 'Browser Library',
     href: 'https://github.com/MarketSquare/robotframework-browser',
-    description: 'A modern web testing library powered by <a href="https://playwright.dev" target="_blank">🎭 Playwright</a>.<br/>Aiming for 🚀 speed, ✅ reliability and 🔬 visibility.',
-    stars: 156,
-    tags: ['web', 'playwright']
+    description: 'A modern web testing library powered by <a href="https://playwright.dev" target="_blank">🎭 Playwright</a>. Aiming for 🚀 speed, ✅ reliability and 🔬 visibility.',
+    tags: ['web']
   },
   {
     name: 'CncLibrary',
     href: 'https://github.com/eficode/robotframework-cnclibrary',
     description: 'Driving a CNC milling machine.',
-    stars: 9,
     tags: ['rpa']
   },
   {
@@ -49,18 +43,17 @@ export default () => ([
   {
     name: 'CURFLibrary',
     href: 'https://github.com/Openwide-Ingenierie/robotframework-can-uds-library',
-    description: 'Testing CAN bus with support for ISO-TP and UDS.',
-    stars: 21
+    description: 'Testing CAN bus with support for ISO-TP and UDS.'
   },
   {
     name: 'Database Library (Java)',
-    href: 'https://github.com/Hi-Fi/robotframework-dblibrary',
+    href: 'https://github.com/MarketSquare/robotframework-dblibrary',
     description: 'Java-based library for database testing. Usable with Jython. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.',
     tags: ['java']
   },
   {
     name: 'Database Library (Python)',
-    href: 'https://franz-see.github.io/Robotframework-Database-Library/',
+    href: 'https://github.com/franz-see/Robotframework-Database-Library',
     description: 'Python based library for database testing. Works with any Python interpreter, including Jython.',
     tags: ['db']
   },
@@ -77,12 +70,12 @@ export default () => ([
   },
   {
     name: 'Diff Library',
-    href: 'https://github.com/bulkan/robotframework-difflibrary',
+    href: 'https://github.com/MarketSquare/robotframework-difflibrary',
     description: 'Diff two files together.'
   },
   {
     name: 'Django Library',
-    href: 'https://pypi.python.org/pypi/robotframework-djangolibrary',
+    href: 'https://github.com/kitconcept/robotframework-djangolibrary',
     description: 'Library for <a href="https://www.djangoproject.com/" target="_blank">Django</a>, a Python web framework.',
     tags: ['django']
   },
@@ -98,7 +91,7 @@ export default () => ([
   },
   {
     name: 'Robotframework-faker',
-    href: 'https://pypi.python.org/pypi/robotframework-faker/',
+    href: 'https://github.com/guykisel/robotframework-faker',
     description: 'Library for <a href="https://github.com/joke2k/faker" target="_blank">Faker</a>, a fake test data generator.'
   },
   {
@@ -115,7 +108,7 @@ export default () => ([
   },
   {
     name: 'HttpRequestLibrary (Java)',
-    href: 'https://github.com/Hi-Fi/robotframework-httprequestlibrary#readme',
+    href: 'https://github.com/MarketSquare/robotframework-httprequestlibrary',
     description: 'HTTP level testing using Apache HTTP client. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-httprequestlibrary%22" target="_blank">Maven central</a>.',
     tags: ['http', 'java']
   },
@@ -155,7 +148,7 @@ export default () => ([
   },
   {
     name: 'PuppeteerLibrary',
-    href: 'https://qahive.github.io/robotframework-puppeteer.github.io/',
+    href: 'https://github.com/qahive/robotframework-puppeteer',
     description: 'Web testing using Puppeteer tool internally.',
     tags: ['web', 'ui']
   },
@@ -203,7 +196,7 @@ export default () => ([
   },
   {
     name: 'SeleniumScreenshots',
-    href: 'https://datakurre.github.io/robotframework-seleniumscreenshots/',
+    href: 'https://github.com/MarketSquare/robotframework-seleniumscreenshots',
     description: 'Annotating and cropping screenshots taken with SeleniumLibrary.',
     tags: ['ui', 'selenium']
   },
@@ -211,7 +204,7 @@ export default () => ([
     name: 'SeleniumLibrary',
     href: 'http://github.com/robotframework/SeleniumLibrary/',
     description: 'Web testing library that uses popular Selenium tool internally.',
-    tags: ['ui', 'web', 'selenium']
+    tags: ['web', 'selenium']
   },
   {
     name: 'SeleniumLibrary for Java',
@@ -292,7 +285,7 @@ export default () => ([
   },
   {
     name: 'Plone.app.robotframework',
-    href: 'https://pypi.python.org/pypi/plone.app.robotframework',
+    href: 'https://github.com/plone/plone.app.robotframework/',
     description: 'Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons.',
     tags: ['tools']
   }

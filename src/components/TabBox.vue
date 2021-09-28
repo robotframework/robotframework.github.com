@@ -1,25 +1,28 @@
 <template>
   <div class="bg-grey-dark p-small rounded">
+    <!-- tab buttons -->
     <div class="row">
       <button
         v-for="(tab, i) in tabs"
         :key="tab.name"
         class="type-uppercase theme-button type-small"
         :class="[
-          activeTabName === tab.name ? 'active' : '',
+          activeTabIndex === i ? 'active' : '',
           i === 2 ? 'mr-none' : 'mr-medium'
         ]"
-        @click="activeTabName = tab.name">
+        @click="activeTabIndex = i">
         {{ tab.name }}
       </button>
     </div>
     <div v-if="activeTab" class="row mt-small color-white">
       <transition name="opacity" mode="out-in">
+        <!-- regular text content -->
         <div
-          v-if="!includesRobotCode"
+          v-if="!includesRobotCode && !$slots[`tab-${activeTabIndex + 1}`]"
           :key="activeTab.name"
           v-html="activeTab.description" />
-        <div v-else>
+        <!-- highlights rf syntax that has tags <robot></robot> -->
+        <div v-else-if="includesRobotCode">
           <template
             v-for="tag in splitDescription"
             :key="tag">
@@ -30,6 +33,10 @@
               v-else
               v-html="tag" />
           </template>
+        </div>
+        <!-- custom slot content -->
+        <div v-else>
+          <slot :name="`tab-${activeTabIndex + 1}`" />
         </div>
       </transition>
     </div>
@@ -51,14 +58,14 @@ export default {
     }
   },
   data: () => ({
-    activeTabName: null
+    activeTabIndex: 0
   }),
   computed: {
     activeTab() {
-      return this.tabs.find(({ name }) => name === this.activeTabName)
+      return this.tabs[this.activeTabIndex]
     },
     includesRobotCode() {
-      return this.activeTab.description.includes('<robot>')
+      return this.activeTab.description && this.activeTab.description.includes('<robot>')
     },
     splitDescription() {
       // used to render robot code with custom element
@@ -67,9 +74,6 @@ export default {
       el.innerHTML = this.activeTab.description
       return Array.from(el.content.children).map((child) => child.outerHTML)
     }
-  },
-  mounted() {
-    this.activeTabName = this.tabs[0].name
   }
 }
 </script>

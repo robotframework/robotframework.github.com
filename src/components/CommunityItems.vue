@@ -6,11 +6,13 @@
         :key="link.imgName"
         class="flex col-sm-12"
         :class="$store.state.isMobile ? 'pl-small pr-small' : ''">
-        <a :href="link.href">
-          <img :src="`${publicPath}img/${link.imgName}.svg`" style="width: 3rem; height: 3rem; transform: translateY(0.25rem);" />
+        <a :href="link.href" aria-hidden="true" tabindex="-1">
+          <img
+            :src="`${publicPath}img/${link.imgName}.svg`"
+            style="width: 3rem; height: 3rem; transform: translateY(0.25rem);" />
         </a>
         <div class="ml-xsmall">
-          <a :href="link.href">
+          <a :href="link.href" :name="`${link.title}`">
             <h3>
               {{ link.title }}
             </h3>
@@ -25,11 +27,11 @@
       <div
         class="flex col-sm-12"
         :class="$store.state.isMobile ? 'pl-small pr-small' : ''">
-        <a :href="items[2].href">
+        <a :href="items[2].href" aria-hidden="true" tabindex="-1">
           <img :src="`${publicPath}img/${items[2].imgName}.svg`" style="width: 3rem; height: 3rem; transform: translateY(0.25rem);" />
         </a>
         <div class="ml-xsmall">
-          <a :href="items[2].href">
+          <a :href="items[2].href" :name="`${items[2].title}`">
             <h3>
               {{ items[2].title }}
             </h3>
@@ -48,7 +50,7 @@
         v-for="link in items.slice(3)"
         :key="link.href"
         class="mb-2xsmall">
-        <a :href="link.href">
+        <a :href="link.href" :name="`${link.title}`">
           {{ link.title }}
         </a>
       </div>

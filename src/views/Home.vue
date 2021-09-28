@@ -2,8 +2,12 @@
   <nav-mobile />
   <banner />
   <navbar class="nav-desktop" />
-  <news-banner v-if="$te('newsBanner')" class="mb-small mt-small" />
-  <div v-else class="mb-large" />
+  <news-banner
+    v-if="$te('newsBanner')"
+    class="mb-small mt-small" />
+  <div
+    v-else
+    class="mb-large" />
   <div class="container mb-2xlarge">
     <!-- introduction -->
     <page-section-twitter
@@ -19,7 +23,17 @@
       :body="$t('gettingStarted.body')">
       <tab-box
         class="col-sm-12 col-md-9 col-md-offset-3"
-        :tabs="$tm('gettingStarted.tabs')" />
+        :tabs="$tm('gettingStarted.tabs')">
+        <!-- list of learning resouces on 3rd tab -->
+        <template v-slot:tab-3>
+            <div v-for="item in $tm('resourcesList.learning')" :key="item.name" class="mt-small mb-small">
+              <a :href="item.href">
+                {{ item.name }}
+              </a>
+              <div class="type-small" v-html="item.description" />
+            </div>
+        </template>
+      </tab-box>
     </page-section>
     <!-- community -->
     <page-section
