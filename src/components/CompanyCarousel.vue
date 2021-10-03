@@ -1,6 +1,6 @@
 <template>
   <div v-if="activeCompany">
-    <div class="row carousel-container pt-small pb-small bg-grey-light rounded">
+    <div class="row carousel-container pt-small pb-small bg-white card">
       <button
         class="col-sm-2 col-md-1 flex center middle"
         aria-label="previous testimonial"
@@ -12,7 +12,9 @@
           :key="activeCompanyIndex"
           class="col-sm-8 col-md-10 row middle"
           :style="!$store.state.isMobile ? 'height: 10rem;' : ''">
-          <div class="col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-0 mb-small">
+          <div
+            class="col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-0"
+            :class="$store.state.isMobile ? 'mb-medium' : ''">
             <div
               class="img-container"
               :style="`background-image: url(${publicPath}img/companies/${activeCompany.imgName})`" />
@@ -29,14 +31,14 @@
         <chevron-icon direction="right" :size="48" />
       </button>
     </div>
-    <div class="row">
+    <div class="row mt-2xsmall">
       <button
-        v-for="(company, i) in $tm('introduction.companies')"
+        v-for="(company, i) in companiesShuffled"
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
         :style="`background-image: url(${publicPath}img/companies/${company.imgName})`"
-        class="img-container-small mr-small mr-small"
-        :class="activeCompanyIndex === i ? 'logo-active' : ''"
+        class="img-container-small mr-small mr-small bg-white card mb-small"
+        :class="activeCompanyIndex === i ? 'logo-active border-black border-thin' : ''"
         @click="activeCompanyIndex = i" />
     </div>
   </div>
@@ -53,7 +55,8 @@ export default {
   data: () => ({
     activeCompanyIndex: 0,
     publicPath: process.env.BASE_URL,
-    direction: 0
+    direction: 0,
+    companiesShuffled: []
   }),
   computed: {
     activeCompany() {
@@ -74,6 +77,14 @@ export default {
         else this.activeCompanyIndex += 1
       }
     }
+  },
+  created() {
+    const companies = this.$tm('introduction.companies')
+    for (let i = companies.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [companies[i], companies[j]] = [companies[j], companies[i]]
+    }
+    this.companiesShuffled = companies
   }
 }
 </script>

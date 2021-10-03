@@ -1,21 +1,12 @@
-.elevation-small {
-    -webkit-box-shadow: 1px 4px 4px -1px rgba(0,0,0,0.3);
-    -moz-box-shadow: var(--box-shadow-small);
-    box-shadow: var(--box-shadow-small);
-}
-.elevation-medium {
-    -webkit-box-shadow: var(--box-shadow-medium);
-    -moz-box-shadow: var(--box-shadow-medium);
-    box-shadow: var(--box-shadow-medium);
-}
-.elevation-large {
-    -webkit-box-shadow: var(--box-shadow-large);
-    -moz-box-shadow: var(--box-shadow-large);
-    box-shadow: var(--box-shadow-large);
-}
-
-.rounded {
+.card {
     border-radius: var(--border-radius-rounded);
+    box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
+    6px 6px 15px -1px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 2px 4px 4px -1px rgba(0,0,0,0.16),
+    6px 6px 20px -1px rgba(107, 84, 84, 0.1);
 }
 
 .border-black {
@@ -56,21 +47,29 @@
     border-top: solid 0.2rem var(--color-white);
 }
 
-.theme-button {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    transition: 0.1s color, 0.1s background-color;
+button.theme, button.stroke {
+    border-radius: var(--border-radius-rounded);
+    transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
 }
-
-.theme-button.active {
+button.theme {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: 2px 4px 2px 0px rgba(0,0,0,0.15);
+}
+button.stroke {
+    color: var(--color-white);
+    border: solid 0.05rem var(--color-white);
+}
+button.theme.active {
     background-color: var(--color-theme);
     color: var(--color-white);
+    box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width: 768px) {
-    .theme-button {
+    button.theme, button.stroke {
         padding: var(--size-3xsmall) var(--size-2xsmall);
     }
 }

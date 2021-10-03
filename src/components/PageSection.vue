@@ -1,19 +1,18 @@
 <template>
   <div
-    class="border-top-theme mt-medium"
+    class="border-top-theme mt-xlarge"
     :id="title.toLowerCase().replaceAll(' ', '-')"
     tabindex="-1">
     <div class="row p-small">
       <div
         class="col-sm-12 col-lg-3"
-        :class="$store.state.isMobile ? '' : 'pt-small'">
+        :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
         <h2>
           {{ title }}
         </h2>
       </div>
       <div
         class="col-sm-12 col-lg-9"
-        :class="$store.state.isMobile ? '' : 'pt-xsmall'"
         v-html="body" />
     </div>
     <div

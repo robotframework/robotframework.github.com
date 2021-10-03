@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-grey-dark p-small rounded">
+  <div class="bg-grey-dark p-small card">
     <!-- tab buttons -->
     <div class="row">
       <button
         v-for="(tab, i) in tabs"
         :key="tab.name"
-        class="type-uppercase theme-button type-small"
+        class="type-uppercase theme type-small"
         :class="[
           activeTabIndex === i ? 'active' : '',
           i === 2 ? 'mr-none' : 'mr-medium'

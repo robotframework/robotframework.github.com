@@ -2,17 +2,17 @@
   <div
     class="border-top-theme"
     :id="title.toLowerCase().replaceAll(' ', '-')">
-    <div class="row p-small">
+    <div class="row p-small pb-none">
       <div
         class="col-sm-12 col-lg-3"
-        :class="$store.state.isMobile ? '' : 'pt-small'">
+        :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
         <h2>
           {{ title }}
         </h2>
       </div>
       <div
         class="col-sm-12 col-lg-6"
-        :class="!$store.state.isMobile ? 'pr-large pt-xsmall' : ''"
+        :class="!$store.state.isMobile ? 'pr-large' : ''"
         ref="body"
         id="asd">
         <p v-html="body" />
@@ -20,7 +20,7 @@
       </div>
       <div
         v-if="!$store.state.isMobile"
-        class="twitter col-sm-12 col-lg-3 p-none pt-medium rounded"
+        class="twitter col-sm-12 col-lg-3 p-none mt-small card"
         :style="`height: ${twitterHeight}px;`">
         <accessibility-link label="Skip twitter timeline" go-to="getting-started" />
         <a
@@ -59,7 +59,7 @@ export default {
   }),
   mounted() {
     setTimeout(() => {
-      this.twitterHeight = this.$refs.body.offsetHeight - 16
+      this.twitterHeight = this.$refs.body.offsetHeight - 32
     }, 200)
     window.addEventListener('resize', () => { this.twitterHeight = this.$refs.body.offsetHeight - 16 })
   }

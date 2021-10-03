@@ -26,7 +26,7 @@ export default () => ([
   {
     name: 'Browser Library',
     href: 'https://github.com/MarketSquare/robotframework-browser',
-    description: 'A modern web testing library powered by <a href="https://playwright.dev" target="_blank">🎭 Playwright</a>. Aiming for 🚀 speed, ✅ reliability and 🔬 visibility.',
+    description: 'A modern web testing library powered by <a href="https://playwright.dev" target="_blank"> Playwright</a>. Aiming for speed, reliability and visibility.',
     tags: ['web']
   },
   {
@@ -284,7 +284,7 @@ export default () => ([
     tags: ['java']
   },
   {
-    name: 'Plone.app.robotframework',
+    name: 'Plone.app .robotframework',
     href: 'https://github.com/plone/plone.app.robotframework/',
     description: 'Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons.',
     tags: ['tools']

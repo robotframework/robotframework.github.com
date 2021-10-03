@@ -2,6 +2,7 @@
   <div
     ref="nav"
     class="navbar row center bg-black color-white p-2xsmall pt-small pb-small">
+    <div class="mr-medium" />
     <!-- section navigation -->
     <button
       v-for="item in $tm('navbar.items')"
@@ -12,7 +13,7 @@
       {{ item }}
     </button>
     <!-- external links -->
-    <div class="relative">
+    <div class="relative" ref="dropdown">
       <button
         class="pl-small pr-small font-title type-uppercase line-height-body"
         :class="linkDropdownOpen ? 'color-theme' : 'color-white'"
@@ -22,7 +23,7 @@
       <transition name="fade">
         <div
           v-if="linkDropdownOpen"
-          class="dropdown-container bg-black color-white p-small type-right">
+          class="dropdown-container bg-black color-white p-small type-right card">
           <div
             v-for="{ name, url, description } in $tm('navbar.dropdown')"
             :key="name">
@@ -30,7 +31,7 @@
               :href="url">
               {{ name }}
             </a>
-            <p class="type-small">
+            <p class="type-small mt-none">
               {{ description }}
             </p>
           </div>
@@ -70,6 +71,13 @@
         </div>
       </transition>
     </button> -->
+    <transition name="opacity">
+      <div
+        v-if="navSticky"
+        class="tiny-logo-container">
+        <img :src="`${publicPath}img/RF-white.svg`" />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -82,6 +90,8 @@ export default {
     // GlobeIcon
   },
   data: () => ({
+    navSticky: false,
+    publicPath: process.env.BASE_URL,
     linkDropdownOpen: false,
     langDropdownOpen: false
   }),
@@ -93,14 +103,28 @@ export default {
   },
   methods: {
     scrollTo(item) {
-      document.getElementById(item.toLowerCase().replaceAll(' ', '-')).scrollIntoView({
+      const el = document.getElementById(item.toLowerCase().replaceAll(' ', '-'))
+      if (!el) return
+      window.scrollTo({
+        top: el.offsetTop - 74,
         behavior: 'smooth'
       })
     },
     setLang(lang) {
       this.$i18n.locale = lang
       window.localStorage.setItem('lang', lang)
+    },
+    onClick(ev) {
+      // close link dropdown if clicked outside
+      if (this.linkDropdownOpen && !this.$refs.dropdown.contains(ev.target)) this.linkDropdownOpen = false
     }
+  },
+  mounted() {
+    const observer = new IntersectionObserver((e) => {
+      this.navSticky = !e[0].isIntersecting
+    }, { threshold: 1 })
+    observer.observe(this.$refs.nav)
+    document.addEventListener('click', this.onClick)
   },
   watch: {
     linkDropdownOpen() {
@@ -114,12 +138,24 @@ export default {
 </script>
 
 <style scoped>
+  button {
+    transition: color 0.2s;
+  }
+  button:hover {
+    color: var(--color-theme) !important;
+  }
+  .navbar {
+    position: sticky;
+    top: -1px;
+    z-index: 2;
+  }
   .tiny-logo-container {
     position: absolute;
     top: 0;
     left: 0;
   }
   .tiny-logo-container > img {
+    margin-top: 0.1rem;
     width: 3.5rem;
     height: 3.5rem;
   }

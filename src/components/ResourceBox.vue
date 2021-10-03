@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="bg-grey-dark color-white p-small rounded">
+    <div class="bg-grey-dark color-white p-small card">
       <div class="row">
         <button
           v-for="({ name, key }, i) in $tm('resources.tabs')"
           :key="name"
-          class="type-uppercase theme-button type-small"
+          class="type-uppercase theme type-small"
           :class="[
             activeTab === key ? 'active' : '',
             i === 3 ? 'mr-none' : 'mr-medium'
@@ -23,16 +23,17 @@
             <div
               class="col-sm-6 col-md-3 flex bottom"
               :class="$store.state.isMobile ? '' : 'end'">
-              <div class="relative mt-small">
-                <div class="flex middle filter-input-container">
+              <div class="relative" style="width: 100%;">
+                <div class="flex middle card border-white border-thin mt-medium" style="width: 100%;">
                   <input
                     v-model="filterInput"
+                    ref="tagInput"
                     id="tags-filter-input"
                     :placeholder="'Filter by tag'"
                     class="p-2xsmall bg-grey-dark font-body"
-                    :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'}`"
-                    @focus="filterInputFocused = true"
-                    @blur="filterInputFocused = false">
+                    :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'};`"
+                    style="width: 100%;"
+                    @focus="tagsDropdownShown = true" />
                     <button
                       class="p-3xsmall pr-2xsmall color-white"
                       :style="filterInput === '' ? 'visibility: hidden' : ''"
@@ -42,9 +43,9 @@
                 </div>
                 <transition name="opacity">
                   <div
-                    v-if="filterInputFocused && tabTags
+                    v-if="tagsDropdownShown && tabTags
                         .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase()).length"
-                    class="input-suggestions bg-grey-dark p-2xsmall">
+                    class="input-suggestions mt-2xsmall p-2xsmall bg-grey-dark border-white border-thin card">
                     <div
                       v-for="tag in tabTags
                         .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase())"
@@ -142,7 +143,7 @@
           </div>
           <button
             v-if="!showAll && itemsFilteredByTag.length > 7"
-            class="color-white border-white border-thin p-xsmall pb-2xsmall pt-2xsmall mt-small"
+            class="stroke type-uppercase mt-small type-small"
             @click="showAll = true">
             Show more
           </button>
@@ -162,11 +163,11 @@ export default {
     ChevronIcon
   },
   data: () => ({
-    tabs: ['builtin', 'libraries', 'tools'],
-    activeTab: 'builtin',
-    sortBy: 'Name',
+    tabs: ['libraries', 'builtin', 'tools'],
+    activeTab: 'libraries',
+    sortBy: 'Stars',
     direction: 'descending',
-    filterInputFocused: false,
+    tagsDropdownShown: false,
     filterInput: '',
     showAll: false,
     stars: []
@@ -262,6 +263,9 @@ export default {
   },
   mounted() {
     this.stars = stars()
+    document.addEventListener('click', ({ target }) => {
+      if (!this.$refs.tagInput.contains(target)) this.tagsDropdownShown = false
+    })
   }
 }
 </script>
@@ -289,10 +293,7 @@ th:last-child, td:last-child {
   padding-right: 1.5rem;
 }
 tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.filter-input-container, .input-suggestions {
-  border: solid 1px var(--color-white);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .filter-input-container {
   width: fit-content;
@@ -302,6 +303,5 @@ tr:nth-child(even) {
   z-index: 2;
   max-height: 20rem;
   overflow-y: scroll;
-  border-top: none;
 }
 </style>

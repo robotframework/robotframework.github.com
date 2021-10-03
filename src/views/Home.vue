@@ -8,7 +8,7 @@
   <div
     v-else
     class="mb-large" />
-  <div class="container mb-2xlarge">
+  <div class="container mb-xlarge">
     <!-- introduction -->
     <page-section-twitter
       :title="$t('introduction.title')"

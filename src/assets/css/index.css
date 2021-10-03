@@ -47,3 +47,7 @@ select {
 * {
     box-sizing: border-box;
 }
+
+body:not(.accessible) * {
+    outline: none;
+}

@@ -93,6 +93,10 @@ pre.line {
     background-color: rgba(150, 150, 150, 0.1);
 }
 
+input {
+    font-size: 1rem;
+}
+
 .dense {
     letter-spacing: 0;
 }

@@ -1,7 +1,7 @@
 :root {
     --color-theme: #00c0b5; /* for theme color */
     --color-theme-dark: #09504d; /* for theme color dark */
-    --color-background: #ededf4;
+    --color-background: #f0f0f0;
 
     --color-white: #f5f5f5;
     --color-grey-light: #e7e7e7;
@@ -60,5 +60,5 @@
     --size-2xlarge: 6rem;
     --size-3xlarge: 8rem;
 
-    --border-radius-rounded: 0.3rem;
+    --border-radius-rounded: 0.2rem;
 }

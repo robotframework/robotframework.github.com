@@ -38,7 +38,7 @@ export default () => ({
       {
         name: 'RPA',
         url: 'https://robotframework.org/rpa/',
-        description: 'RPA stuff'
+        description: 'Robotic process automation'
       }
     ]
   },
@@ -78,6 +78,31 @@ export default () => ({
         name: 'KONE',
         description: 'KONE is widely using Robot Framework in software development for testing embedded systems in elevators and escalators.',
         imgName: 'Kone.svg'
+      },
+      {
+        name: 'Finnair',
+        description: 'Finnair is using Robot Framework to support Finnair digital platform development.',
+        imgName: 'Finnair.svg'
+      },
+      {
+        name: 'Juniper Networks',
+        description: 'Juniper Networks has built an extensive automation framework on top of Robot Framework for end-to-end qualification of Juniper products. It is used extensively in multiple groups including engineering and support.',
+        imgName: 'Juniper_Networks.svg'
+      },
+      {
+        name: 'Naval Research Laboratory',
+        description: 'The Naval Research Laboratory extends Robot Framework to provide a seamless integration with the <a href="https://www.nrl.navy.mil/itd/imda/products/sage" target="_blank">SAGE</a> multi-agent system. This integration enables Robot Framework to drive distributed simulation and monitoring for test automation of SOA systems.',
+        imgName: 'Naval_Research_Laboratory.svg'
+      },
+      {
+        name: 'Nokia',
+        description: 'Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces.',
+        imgName: 'Nokia.svg'
+      },
+      {
+        name: 'Wärtsilä',
+        description: 'Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software.',
+        imgName: 'Wartsila.svg'
       }
     ]
   },
@@ -89,21 +114,25 @@ export default () => ({
       {
         name: 'Install',
         description: `
-          <p>Robot Framework is implemented with Python, so you need to have <a href="https://www.python.org/downloads/">Python installed.</a><br>On Windows machines, make sure to add <a href="https://docs.python.org/3/using/windows.html#the-full-installer">Python to PATH</a> during installation.</p>
+          <p>Robot Framework is implemented with Python, so you need to have
+          <a href="https://www.python.org/downloads/" target="_blank">Python installed.</a>
+          <br>On Windows machines, make sure to add
+          <a href="https://docs.python.org/3/using/windows.html#the-full-installer" target="_blank">Python to PATH</a>
+          during installation.</p>
           <p>Installing Robot Framework with pip is simple:
           <pre class="line">pip install robotframework</pre></p>
           <p>To check that the installation was succesful, run
           <pre class="line">robot --version</pre></p>
           <p>For a full guide, please see
-          <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst">Installation instructions</a>.
+          <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.
           It also covers topics such as running Robot Framework on Jython (JVM) and IronPython (.NET).</p>
           <p>Now you are ready to write your first tests!</p>
           `
       },
       {
-        name: 'Robot Syntax',
+        name: 'Syntax',
         description: `<p>This is a simple example to illustrate how Robot Framework works.
-        The example is based on the <a href="https://github.com/robotframework/WebDemo">WebDemo</a> which
+        The example is based on the <a href="https://github.com/robotframework/WebDemo" target="_blank">WebDemo</a> which
         we encourage to check for more details and to try it out yourself.</p>
 <robot>*** Settings ***
 Documentation     A test suite for valid login.
@@ -122,7 +151,7 @@ Valid Login
         <p>The test case uses imported keywords such as <span class="hljs">Open Login Page</span> that
         abstract the inner workings and enable the test to be easily readable with natural language.</p>
         <p>Below you'll see the <span class="hljs">resource.robot</span> file. It is extended with
-        <a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html">SeleniumLibrary</a>
+        <a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html" target="_blank">SeleniumLibrary</a>
         that provides lots of useful keywords for web testing such as <span class="hljs">Open Browser</span>.
         Keywords are composable, meaning you can define new keywords that use pre-existing keywords.</p>
         <robot>*** Settings ***
@@ -158,10 +187,10 @@ Welcome Page Should Be Open
         </robot>
         <p>After running the test a log file will be generated that contains
         the test results and information about the run.</p>
-        <a href="./log.html">Example log file</a>.`
+        <a href="./log.html" target="_blank">Example log file</a>.`
       },
       {
-        name: 'Further Learning'
+        name: 'Tutorials'
       }
     ]
   },
@@ -173,7 +202,7 @@ Welcome Page Should Be Open
       <p>There is also an annual RoboCon conference that is hosted in Helsinki, Finland.
       RoboCon 2022 will be a hybrid event that can be attended online and in real life.
       For more information and to watch previous years' talks, visit
-      <a href="https://robocon.io">robocon.io</a></p>`,
+      <a href="https://robocon.io" target="_blank">robocon.io</a></p>`,
     links: {
       forum: {
         title: 'Forum',
@@ -181,11 +210,11 @@ Welcome Page Should Be Open
       },
       slack: {
         title: 'Slack',
-        description: 'Community team chat. Click to get invited!'
+        description: 'Community team chat.<br><a href="https://rf-invite.herokuapp.com/" target="_blank">Click for invite!</a>'
       },
       openSpace: {
         title: 'Open space',
-        description: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own (Robot Framework related). Also in Slack #open-space.'
+        description: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own. Also in Slack #open-space. <a href="./robot-framework-open-space.ics">ICS file</a>'
       }
     }
   },
@@ -196,23 +225,23 @@ Welcome Page Should Be Open
       The software is built with expandability in mind and there are numerous ways to extend
       it's use cases for various needs.</p>
       <p>If you have created or found a library that you think should be listed here, please
-      <a href="https://github.com/robotframework/robotframework.github.com">let us know</a>
+      <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">let us know</a>
       by submitting a pull request or an issue. You are also welcome to report unmaintained
       ones that shouldn't be listed anymore.`,
     tabs: [
-      {
-        name: 'Built-in',
-        key: 'builtin',
-        description: `Libraries and tools that are bundled with the framework. Libraries provide
-        the actual automation and testing capabilities to Robot Framework by providing keywords.`
-      },
       {
         name: 'Libraries',
         key: 'libraries',
         description: `Separately developed external libraries that
         can be installed based on your needs. Creating your own libraries is a breeze. For instructions, see
-        <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries">
+        <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">
         creating test libraries</a> in Robot Framework User Guide.`
+      },
+      {
+        name: 'Built-in',
+        key: 'builtin',
+        description: `Libraries and tools that are bundled with the framework. Libraries provide
+        the actual automation and testing capabilities to Robot Framework by providing keywords.`
       },
       {
         name: 'Tools',

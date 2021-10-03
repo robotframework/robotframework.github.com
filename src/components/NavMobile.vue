@@ -40,7 +40,7 @@
               :href="url">
               {{ name }}
             </a>
-            <p class="type-small color-white">
+            <p class="type-small color-white mt-none">
               {{ description }}
             </p>
           </div>

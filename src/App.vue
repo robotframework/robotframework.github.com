@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div ref="root">
     <router-view />
   </div>
 </template>
@@ -10,6 +10,10 @@ export default {
     document.documentElement.lang = this.$i18n.locale
     this.$store.commit('SET_IS_MOBILE', window.innerWidth < 769)
     window.addEventListener('resize', () => this.$store.commit('SET_IS_MOBILE', window.innerWidth < 769))
+    window.addEventListener('click', () => document.body.classList.remove('accessible'))
+    window.addEventListener('keydown', ({ key }) => {
+      if (key === 'Tab') document.body.classList.add('accessible')
+    })
   },
   watch: {
     '$i18n.locale'() {

@@ -1,6 +1,6 @@
 <template>
   <div class="row bg-black color-white p-small pt-large pb-large">
-    <div class="container">
+    <div class="container" style="line-height: 1.75;">
       <div class="row">
         <div class="col-sm-6 col-md-3">
           <h3>
@@ -22,7 +22,9 @@
             Contact
           </a>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div
+          class="col-sm-6 col-md-3"
+          :class="$store.state.isMobile ? 'type-right' : ''">
           <h3>
             Community
           </h3>
@@ -117,16 +119,16 @@
               </div>
             </transition>
           </div> -->
-          <div>
+          <div :class="$store.state.isMobile ? 'type-right' : ''">
             <div>
-              <a href="https://www.facebook.com/robotframeworkofficial">
+              <router-link :to="{ name: 'PrivacyPolicy' }">
                 Privacy Policy
-              </a>
+              </router-link>
             </div>
             <div>
-              <a href="https://www.facebook.com/robotframeworkofficial">
+              <router-link :to="{ name: 'CoC' }">
                 Code of Conduct
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
