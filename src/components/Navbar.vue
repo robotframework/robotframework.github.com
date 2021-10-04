@@ -116,7 +116,7 @@ export default {
     },
     onClick(ev) {
       // close link dropdown if clicked outside
-      if (this.linkDropdownOpen && !this.$refs.dropdown.contains(ev.target)) this.linkDropdownOpen = false
+      if (this.linkDropdownOpen && this.$refs.dropdown && !this.$refs.dropdown.contains(ev.target)) this.linkDropdownOpen = false
     }
   },
   mounted() {
@@ -125,6 +125,9 @@ export default {
     }, { threshold: 1 })
     observer.observe(this.$refs.nav)
     document.addEventListener('click', this.onClick)
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.onClick)
   },
   watch: {
     linkDropdownOpen() {

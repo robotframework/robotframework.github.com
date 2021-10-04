@@ -259,13 +259,17 @@ export default {
       const key = this.stars.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()))
       if (key) return key.stars
       return null
+    },
+    onClick({ target }) {
+      if (this.$refs.tagInput && !this.$refs.tagInput.contains(target)) this.tagsDropdownShown = false
     }
   },
   mounted() {
     this.stars = stars()
-    document.addEventListener('click', ({ target }) => {
-      if (!this.$refs.tagInput.contains(target)) this.tagsDropdownShown = false
-    })
+    document.addEventListener('click', this.onClick)
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.onClick)
   }
 }
 </script>

@@ -29,5 +29,16 @@ module.exports = {
         }
         return args
       })
+    config
+      .plugin('preload')
+      .tap(args => {
+        args[0].include = 'allAssets'
+        args[0].as = (entry) => {
+          if (/\.css$/.test(entry)) return 'style'
+          if (/\.woff$/.test(entry)) return 'font'
+          return 'script'
+        }
+        return args
+      })
   }
 }
