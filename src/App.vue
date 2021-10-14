@@ -614,6 +614,13 @@ export default {
                       'Library for interacting over <a href="https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol" target="_blank">Trivial File Transfer Portocol</a>.'
                   },
                   {
+                    title: 'WatchUI',
+                    href:
+                      'https://github.com/Tesena-smart-testing/WatchUI',
+                    text:
+                      'Visual testing library for visual difference testing as well as image content testing (including PDF documents). Runs on Selenium to generate screenshots, uses PyMuPDF to process PDFs and Tesseract OCR to recognize text.'
+                  },
+                  {
                     title: 'WhiteLibrary',
                     href:
                       'https://github.com/Omenia/robotframework-whitelibrary',
