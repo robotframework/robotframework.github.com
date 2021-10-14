@@ -1,0 +1,85 @@
+.card {
+    border-radius: var(--border-radius-rounded);
+    box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
+    6px 6px 15px -1px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 2px 4px 4px -1px rgba(0,0,0,0.16),
+    6px 6px 20px -1px rgba(107, 84, 84, 0.1);
+}
+.card.sharp {
+    border-radius: 0;
+}
+
+.border-black {
+    border: solid 0.15rem var(--color-black);
+}
+.border-white {
+    border: solid 0.15rem var(--color-white);
+}
+.border-theme {
+    border: solid 0.2rem var(--color-theme);
+}
+.border-thin {
+    border-width: 0.05rem;
+}
+
+.border-right-theme {
+    border-right: solid 0.2rem var(--color-theme);
+}
+.border-right-white {
+    border-right: solid 0.2rem var(--color-white);
+}
+.border-bottom-theme {
+    border-bottom: solid 0.2rem var(--color-theme);
+}
+.border-bottom-white {
+    border-bottom: solid 0.2rem var(--color-white);
+}
+.border-left-theme {
+    border-left: solid 0.2rem var(--color-theme);
+}
+.border-left-white {
+    border-left: solid 0.2rem var(--color-white);
+}
+.border-top-theme {
+    border-top: solid 0.2rem var(--color-theme);
+}
+.border-top-white {
+    border-top: solid 0.2rem var(--color-white);
+}
+
+button.theme, button.stroke {
+    border-radius: var(--border-radius-rounded);
+    transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
+    font-family: var(--font-title);
+    padding: var(--size-2xsmall) var(--size-small);
+    text-transform: uppercase;
+}
+button.theme {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
+    6px 6px 15px -1px rgba(0,0,0,0.04);
+}
+button.stroke {
+    color: var(--color-white);
+    border: solid 0.05rem var(--color-white);
+}
+button.theme.active {
+    background-color: var(--color-theme);
+    color: var(--color-white);
+    box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 768px) {
+    button.theme, button.stroke {
+        padding: var(--size-2xsmall) var(--size-xsmall);
+    }
+}
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}

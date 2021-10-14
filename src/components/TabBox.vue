@@ -1,24 +1,90 @@
 <template>
-  <div class="row">
-        <b-tabs pills class="card nav-fill col-lg-12 m-3">
-          <b-tab v-for="(tab,index) in data" :key="index" :title="tab.title" class="p-1">
-            <div id="{tab.title}-standard" class="card-body row">
-              <div v-for="(item,index) in tab.items" :key="index" class="link  col-md-4">
-                <b-embed v-if="typeof item.src != 'undefined'" type="iframe"
-                        :src="item.src"
-                        allowfullscreen
-                ></b-embed>
-                <a :href="item.href" target="_blank">{{item.title}}</a>
-                <p v-html="item.text"/>
-              </div>
-            </div>
-          </b-tab>
-        </b-tabs>
+  <div
+    class="bg-grey-dark card"
+    :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
+    <!-- tab buttons -->
+    <div class="row">
+      <button
+        v-for="(tab, i) in tabs"
+        :key="tab.name"
+        class="type-uppercase theme type-small mb-xsmall"
+        :class="[
+          activeTabIndex === i ? 'active' : '',
+          i === 2 ? 'mr-none' : 'mr-small'
+        ]"
+        @click="activeTabIndex = i">
+        {{ tab.name }}
+      </button>
+    </div>
+    <div v-if="activeTab" class="row mt-small color-white">
+      <transition name="opacity" mode="out-in">
+        <!-- regular text content -->
+        <div
+          v-if="!includesRobotCode && !$slots[`tab-${activeTabIndex + 1}`]"
+          :key="activeTab.name"
+          v-html="activeTab.description" />
+        <!-- highlights rf syntax that has tags <robot></robot> -->
+        <div v-else-if="includesRobotCode">
+          <template
+            v-for="tag in splitDescription"
+            :key="tag">
+            <robot-code
+              v-if="tag.slice(0, 7) === '<robot>'"
+              :code="tag.replace('<robot>', '').replace('</robot>', '')" />
+            <div
+              v-else
+              v-html="tag" />
+          </template>
+        </div>
+        <!-- custom slot content -->
+        <div v-else>
+          <slot :name="`tab-${activeTabIndex + 1}`" />
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
+import RobotCode from './RobotCode.vue'
+
 export default {
-  props: ['data']
+  name: 'TabBox',
+  components: {
+    RobotCode
+  },
+  props: {
+    tabs: {
+      type: Array,
+      required: true
+    }
+  },
+  data: () => ({
+    activeTabIndex: 0,
+    eventSent: false
+  }),
+  computed: {
+    activeTab() {
+      return this.tabs[this.activeTabIndex]
+    },
+    includesRobotCode() {
+      return this.activeTab.description && this.activeTab.description.includes('<robot>')
+    },
+    splitDescription() {
+      // used to render robot code with custom element
+      if (!this.includesRobotCode) return null
+      const el = document.createElement('template')
+      el.innerHTML = this.activeTab.description
+      return Array.from(el.content.children).map((child) => child.outerHTML)
+    }
+  },
+  watch: {
+    activeTab() {
+      if (!this.eventSent) {
+        window.plausible('Interact', { props: { element: 'Learning' } })
+        this.eventSent = true
+      }
+    }
+  }
 }
 </script>

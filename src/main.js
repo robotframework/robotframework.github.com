@@ -1,36 +1,59 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-/* eslint-disable no-new */
+import { createApp } from 'vue'
+import App from './App.vue'
+// import './registerServiceWorker'
+import router from './router'
+import store from './store'
+import 'Css/index.css'
+import { createI18n } from 'vue-i18n/index'
+import hljs from 'highlight.js/lib/core'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
+import {
+  english,
+  german,
+  portugese,
+  spanish,
+  russian,
+  chinese,
+  french,
+  ach,
+  builtin,
+  libraries,
+  tools,
+  learning,
+  users
+} from './content'
+var hljsDefineRobot = require('./js/robot-highlight.js')
 
-// for IE11 support (https://bootstrap-vue.js.org/docs/#browsers-support)
-import 'babel-polyfill'
+hljsDefineRobot(hljs)
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+const resourcesList = {
+  builtin: builtin(),
+  libraries: libraries(),
+  tools: tools(),
+  learning: learning(),
+  users: users()
+}
 
-import Vue from 'vue'
-import App from './App'
+// const lang = window.localStorage.getItem('lang')
 
-import AppHeader from '@/components/AppHeader'
-import AppFooter from '@/components/AppFooter'
-import NavigationVertical from '@/components/NavigationVertical'
-import BootstrapVue from 'bootstrap-vue'
-
-Vue.use(BootstrapVue)
-
-require('@/assets/css/main.css')
-require('@/assets/css/pygments.css')
-
-Vue.config.productionTip = false
-
-Vue.component('app-header', AppHeader)
-Vue.component('navigation-vertical', NavigationVertical)
-Vue.component('app-footer', AppFooter)
-
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: {
-    App
-  }
+const i18n = createI18n({
+  locale: 'en-US',
+  messages: {
+    'en-US': { ...english(), resourcesList },
+    'de-DE': { ...german(), resourcesList },
+    'pt-PT': { ...portugese(), resourcesList },
+    'es-ES': { ...spanish(), resourcesList },
+    'ru-RU': { ...russian(), resourcesList },
+    'zh-CN': { ...chinese(), resourcesList },
+    'fr-FR': { ...french(), resourcesList },
+    'ach-UG': { ...ach(), resourcesList }
+  },
+  warnHtmlInMessage: 'off'
 })
+
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(i18n)
+  .use(hljsVuePlugin)
+  .mount('#app')

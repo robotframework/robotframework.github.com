@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'OCRA';
+    src: url('~Fonts/OCRA.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Courier Code';
+    src: url('~Fonts/CourierCode-Roman.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Courier Code';
+    src: url('~Fonts/CourierCode-Italic.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Courier Code';
+    src: url('~Fonts/CourierCode-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 600;
+}
+
+html {
+    font-size: var(--size-base-lg);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    line-height: var(--line-height-headers);
+}
+
+body, textarea, button {
+    font-family: var(--font-body);
+}
+
+h1 {
+    font-size: var(--type-2xlarge);
+    color: var(--color-primary);
+    font-weight: var(--weight-black);
+    margin: var(--margin-bottom-h1) 0;
+    line-height: var(--line-height-h1);
+}
+
+h2 {
+    font-size: var(--type-xlarge);
+    color: var(--color-theme);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--size-medium);
+    line-height: var(--line-height-h2);
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: var(--type-large);
+    color: var(--color-primary);
+    font-weight: var(--weight-semi-bold);
+    margin-bottom: var(--size-3xsmall);
+    line-height: var(--line-height-h3);
+}
+
+h4 {
+    font-size: var(--type-body);
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-family: var(--font-body);
+}
+
+a {
+    color: var(--color-link);
+    font-weight: var(--weight-body);
+    transition: filter 0.2s;
+}
+
+button {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+pre {
+    border: 0.1rem inset var(--color-theme);
+    padding: var(--size-3xsmall);
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+pre.line {
+    background-color: rgba(150, 150, 150, 0.1);
+}
+
+input {
+    font-size: 1rem;
+}
+
+.dense {
+    letter-spacing: 0;
+}
+
+label {
+    font-size: var(--type-small);
+}
+
+p {
+    font-size: var(--type-body);
+    margin: var(--size-xsmall) 0;
+}
+
+ul {
+    padding-left: 1rem;
+    list-style-position: outside;
+    margin-block-end: 0;
+}
+
+.ul-none {
+    list-style-type: none !important;
+    padding: unset;
+}
+
+li {
+    margin-bottom: var(--size-3xsmall);
+}
+
+.li-none {
+    margin: unset;
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+.line-height-body {
+    line-height: var(--line-height-body);
+}
+
+.type-center {
+    text-align: center !important;
+}
+
+.type-left {
+    text-align: left !important;
+}
+
+.type-right {
+    text-align: right !important;
+}
+
+.type-lowercase {
+    text-transform: lowercase;
+}
+
+.type-uppercase {
+    text-transform: uppercase;
+}
+
+.font-title {
+    font-family: var(--font-title);
+}
+.font-body {
+    font-family: var(--font-body);
+}
+
+.type-nowrap {
+    white-space: nowrap;
+}
+
+.type-capitalize {
+    text-transform: capitalize;
+}
+
+.type-underline {
+    text-decoration: underline;
+}
+
+.type-no-underline {
+    text-decoration: none;
+}
+
+.type-black {
+    font-weight: var(--weight-black);
+}
+
+b,
+strong,
+.weight-bold {
+    font-weight: var(--weight-bold);
+}
+
+.weight-semi-bold {
+    font-weight: var(--weight-semi-bold);
+}
+
+.weight-normal {
+    font-weight: var(--weight-normal);
+}
+
+.weight-light {
+    font-weight: var(--weight-light);
+}
+
+.type-2xlarge {
+    font-size: var(--type-2xlarge);
+}
+
+.type-xlarge {
+    font-size: var(--type-xlarge);
+}
+
+.type-large {
+    font-size: var(--type-large);
+}
+
+.type-body {
+    font-size: var(--type-body);
+}
+
+.type-small {
+    font-size: var(--type-small);
+}
+
+.type-xsmall {
+    font-size: var(--type-xsmall);
+    line-height: var(--line-height-small);
+}
+
+.type-2xsmall {
+    font-size: var(--type-2xsmall);
+}
+
+.type-italic {
+    font-style: italic;
+}
