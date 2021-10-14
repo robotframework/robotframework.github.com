@@ -25,6 +25,8 @@ const getRepoName = (url) => {
   return `${parts[0]}/${parts[1]}`
 }
 
+const functionize = (list) => `/* eslint-disable */ export default () => (${list})`
+
 export const getStars = () => {
   const repos = [...libraries(), ...tools()]
     .filter((item) => item.href.includes('github.com'))
@@ -38,9 +40,9 @@ export const getStars = () => {
           stars: repo.stargazers_count
         }))
       const a = document.createElement('a')
-      const file = new Blob([JSON.stringify(list)], { type: 'text/plain' })
+      const file = new Blob([functionize(JSON.stringify(list))], { type: 'text/plain' })
       a.href = URL.createObjectURL(file)
-      a.download = 'stars.json'
+      a.download = 'stars.js'
       a.click()
     })
 }

@@ -107,7 +107,8 @@
                   v-for="(tag, i) in item.tags"
                   :key="tag"
                   :style="`color: ${getTagColor(tag)}`"
-                  class="type-nowrap type-uppercase type-small">
+                  class="type-nowrap type-uppercase type-small cursor-pointer"
+                  @click="filterInput = tag.toUpperCase()">
                   {{ `${tag}${i !== item.tags.length - 1 ? ', ' : ''}` }}
                 </span>
               </td>
@@ -322,7 +323,7 @@ tr:nth-child(even) {
 .input-suggestions {
   position: absolute;
   z-index: 2;
-  max-height: 20rem;
+  max-height: 13.5rem;
   overflow-y: scroll;
 }
 </style>

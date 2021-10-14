@@ -23,15 +23,20 @@
       <transition name="fade">
         <div
           v-if="linkDropdownOpen"
-          class="dropdown-container bg-black color-white p-small type-right card">
+          class="dropdown-container bg-black color-white p-small card">
           <div
             v-for="{ name, url, description } in $tm('navbar.dropdown')"
             :key="name">
-            <a
-              :href="url">
-              {{ name }}
-            </a>
-            <p class="type-small mt-none">
+            <div class="flex end">
+              <a
+                :href="url"
+                target="_blank"
+                rel="noopener noreferrer">
+                {{ name }}
+              </a>
+              <new-tab-icon color="theme" class="ml-2xsmall" />
+            </div>
+            <p class="type-small mt-none type-right">
               {{ description }}
             </p>
           </div>
@@ -82,12 +87,12 @@
 </template>
 
 <script>
-// import GlobeIcon from './icons/GlobeIcon.vue'
+import NewTabIcon from './icons/NewTabIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
-    // GlobeIcon
+    NewTabIcon
   },
   data: () => ({
     navSticky: false,

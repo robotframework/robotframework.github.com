@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 export default {
   created() {
     document.documentElement.lang = this.$i18n.locale

@@ -34,12 +34,16 @@
           </button>
           <div
             v-for="{ name, url, description } in $tm('navbar.dropdown')"
-            :key="name"
-            class="">
-            <a
-              :href="url">
-              {{ name }}
-            </a>
+            :key="name">
+            <div class="flex middle">
+              <a
+                :href="url"
+                target="_blank"
+                rel="noopener noreferrer">
+                {{ name }}
+              </a>
+              <new-tab-icon color="theme" class="ml-2xsmall" />
+            </div>
             <p class="type-small color-white mt-none">
               {{ description }}
             </p>
@@ -79,11 +83,13 @@
 
 <script>
 import ChevronIcon from './icons/ChevronIcon.vue'
+import NewTabIcon from './icons/NewTabIcon.vue'
 
 export default {
   name: 'NavMobile',
   components: {
-    ChevronIcon
+    ChevronIcon,
+    NewTabIcon
   },
   data: () => ({
     isOpen: false,
