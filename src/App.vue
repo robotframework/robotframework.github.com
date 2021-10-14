@@ -1,7 +1,9 @@
 <template>
-  <div ref="root">
-    <router-view />
-  </div>
+  <router-view v-slot="{ Component }">
+    <transition name="opacity" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script>

@@ -19,7 +19,8 @@ import {
   builtin,
   libraries,
   tools,
-  learning
+  learning,
+  users
 } from './content'
 var hljsDefineRobot = require('./js/robot-highlight.js')
 
@@ -29,7 +30,8 @@ const resourcesList = {
   builtin: builtin(),
   libraries: libraries(),
   tools: tools(),
-  learning: learning()
+  learning: learning(),
+  users: users()
 }
 
 // const lang = window.localStorage.getItem('lang')

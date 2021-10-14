@@ -13,8 +13,8 @@
       <div
         class="col-sm-12 col-lg-6"
         :class="!$store.state.isMobile ? 'pr-large' : ''"
-        ref="body"
-        id="asd">
+        style="height: fit-content;"
+        ref="body">
         <p v-html="body" />
         <slot />
       </div>
@@ -61,7 +61,9 @@ export default {
     setTimeout(() => {
       this.twitterHeight = this.$refs.body.offsetHeight - 32
     }, 200)
-    window.addEventListener('resize', () => { this.twitterHeight = this.$refs.body.offsetHeight - 16 })
+    window.addEventListener('resize', () => {
+      this.twitterHeight = this.$refs.body.offsetHeight - 32
+    })
   }
 }
 </script>

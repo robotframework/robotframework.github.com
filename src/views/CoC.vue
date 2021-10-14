@@ -1,7 +1,10 @@
 <template>
   <div class="container mb-xlarge">
     <div class="row mb-large mt-large">
-      <router-link :to="{ name: 'Home' }">
+      <button v-if="cameFromHome" @click="$router.go(-1)" class="color-theme type-underline">
+        Back
+      </button>
+      <router-link v-else :to="{ name: 'Home' }">
         Back
       </router-link>
     </div>
@@ -119,9 +122,28 @@
       </li>
     </ul>
     <div class="row mb-large mt-large">
-      <router-link :to="{ name: 'Home' }">
+      <button v-if="cameFromHome" @click="$router.go(-1)" class="color-theme type-underline">
+        Back
+      </button>
+      <router-link v-else :to="{ name: 'Home' }">
         Back
       </router-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Coc',
+  data: () => ({
+    cameFromHome: false
+  }),
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      // for using browser's back functionality when 'back' link is clicked
+      // to retain scroll position
+      vm.cameFromHome = from.name === 'Home'
+    })
+  }
+}
+</script>

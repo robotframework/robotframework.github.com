@@ -6,11 +6,11 @@
     <!-- section navigation -->
     <button
       v-for="item in $tm('navbar.items')"
-      :key="item"
-      :name="`go-to-${item}`"
+      :key="item.name"
+      :name="`go-to-${item.name}`"
       class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white"
-      @click="scrollTo(item)">
-      {{ item }}
+      @click="itemClick(item.id)">
+      {{ item.name }}
     </button>
     <!-- external links -->
     <div class="relative" ref="dropdown">
@@ -102,13 +102,15 @@ export default {
     }
   },
   methods: {
-    scrollTo(item) {
-      const el = document.getElementById(item.toLowerCase().replaceAll(' ', '-'))
+    itemClick(itemId) {
+      const el = document.getElementById(itemId)
       if (!el) return
+      // window.history.replaceState(null, null, `?section=${itemId}`)
       window.scrollTo({
         top: el.offsetTop - 74,
         behavior: 'smooth'
       })
+      window.plausible('Nav click', { props: { section: itemId } })
     },
     setLang(lang) {
       this.$i18n.locale = lang

@@ -1,7 +1,6 @@
 <template>
   <div
     class="border-top-theme mt-xlarge"
-    :id="title.toLowerCase().replaceAll(' ', '-')"
     tabindex="-1">
     <div class="row p-small">
       <div

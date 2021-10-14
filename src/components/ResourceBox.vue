@@ -170,7 +170,8 @@ export default {
     tagsDropdownShown: false,
     filterInput: '',
     showAll: false,
-    stars: []
+    stars: [],
+    eventSent: false
   }),
   computed: {
     tableHeaders() {
@@ -227,6 +228,16 @@ export default {
       this.filterInput = ''
       if (this.activeTab !== 'builtin') this.sortBy = 'Stars'
       else this.sortBy = 'Name'
+      if (!this.eventSent) {
+        window.plausible('Interact', { props: { element: 'Resources' } })
+        this.eventSent = true
+      }
+    },
+    showAll() {
+      if (!this.eventSent) {
+        window.plausible('Interact', { props: { element: 'Resources' } })
+        this.eventSent = true
+      }
     }
   },
   methods: {

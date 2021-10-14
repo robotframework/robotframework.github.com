@@ -17,7 +17,7 @@
             :class="$store.state.isMobile ? 'mb-medium' : ''">
             <div
               class="img-container"
-              :style="`background-image: url(${publicPath}img/companies/${activeCompany.imgName})`" />
+              :style="`background-image: url(${publicPath}img/carousel-company-icons/${activeCompany.imgName})`" />
           </div>
           <div
             class="col-sm-12 col-md-9 type-italic type-small description"
@@ -31,15 +31,18 @@
         <chevron-icon direction="right" :size="48" />
       </button>
     </div>
-    <div class="row mt-2xsmall">
+    <div class="row">
       <button
         v-for="(company, i) in companiesShuffled"
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
-        :style="`background-image: url(${publicPath}img/companies/${company.imgName})`"
-        class="img-container-small mr-small mr-small bg-white card mb-small"
+        :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
+        class="img-container-small mr-small mr-small bg-white card mt-2xsmall"
         :class="activeCompanyIndex === i ? 'logo-active border-black border-thin' : ''"
         @click="activeCompanyIndex = i" />
+      <router-link :to="{ name: 'Users' }" class="card pl-small pr-small color-grey-dark mt-2xsmall" style="line-height: 1.85;">
+        More users
+      </router-link>
     </div>
   </div>
 </template>
@@ -56,7 +59,8 @@ export default {
     activeCompanyIndex: 0,
     publicPath: process.env.BASE_URL,
     direction: 0,
-    companiesShuffled: []
+    companiesShuffled: [],
+    eventSent: false
   }),
   computed: {
     activeCompany() {
@@ -75,6 +79,14 @@ export default {
       } else {
         if (this.activeCompanyIndex === this.$tm('introduction.companies').length - 1) this.activeCompanyIndex = 0
         else this.activeCompanyIndex += 1
+      }
+    }
+  },
+  watch: {
+    activeCompanyIndex() {
+      if (!this.eventSent) {
+        window.plausible('Interact', { props: { element: 'Testimonials' } })
+        this.eventSent = true
       }
     }
   },

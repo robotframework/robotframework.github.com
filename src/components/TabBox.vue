@@ -58,7 +58,8 @@ export default {
     }
   },
   data: () => ({
-    activeTabIndex: 0
+    activeTabIndex: 0,
+    eventSent: false
   }),
   computed: {
     activeTab() {
@@ -73,6 +74,14 @@ export default {
       const el = document.createElement('template')
       el.innerHTML = this.activeTab.description
       return Array.from(el.content.children).map((child) => child.outerHTML)
+    }
+  },
+  watch: {
+    activeTab() {
+      if (!this.eventSent) {
+        window.plausible('Interact', { props: { element: 'Learning' } })
+        this.eventSent = true
+      }
     }
   }
 }

@@ -12,6 +12,7 @@ import libraries from './resources/libraries.js'
 import tools from './resources/tools.js'
 import learning from './resources/learning.js'
 import stars from './resources/stars.js'
+import users from './resources/users.js'
 
 export {
   english,
@@ -27,5 +28,6 @@ export {
   libraries,
   tools,
   learning,
-  stars
+  stars,
+  users
 }

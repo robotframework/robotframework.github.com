@@ -257,7 +257,8 @@ export default () => ([
   {
     name: 'WADLibrary',
     href: 'https://github.com/Adwisit/WADLibrary',
-    description: 'Application testing library that utilizes Win App Driver.'
+    description: 'Application testing library that utilizes Win App Driver.',
+    tags: ['windows']
   },
   {
     name: 'Zoomba Library',
@@ -287,6 +288,12 @@ export default () => ([
     name: 'Plone.app .robotframework',
     href: 'https://github.com/plone/plone.app.robotframework/',
     description: 'Provides resources and tools for writing functional Selenium tests for Plone CMS and its add-ons.',
-    tags: ['tools']
+    tags: ['selenium']
+  },
+  {
+    name: 'WatchUI',
+    href: 'https://github.com/Tesena-smart-testing/WatchUI',
+    description: 'Visual testing library for visual difference testing as well as image content testing (including PDF documents). Runs on Selenium to generate screenshots, uses PyMuPDF to process PDFs and Tesseract OCR to recognize text.',
+    tags: ['ui']
   }
 ])

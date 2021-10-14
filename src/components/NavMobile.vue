@@ -7,12 +7,12 @@
         <div v-if="!linksOpen" key="1" class="pl-2xsmall">
           <div
             v-for="item in $tm('navbar.items')"
-            :key="item">
+            :key="item.name">
             <button
-              :name="`go-to-${item}`"
+              :name="`go-to-${item.name}`"
               class="mb-small mt-xsmall color-white font-title type-uppercase"
-              @click="scrollTo(item, 400); isOpen = false">
-              {{ item }}
+              @click="scrollTo(item.id, 400); isOpen = false">
+              {{ item.name }}
             </button>
           </div>
           <button
@@ -99,7 +99,7 @@ export default {
         t2 -= 1
         return (-c / 2) * (t2 * (t2 - 2) - 1) + b
       }
-      const to = document.getElementById(el.toLowerCase().replaceAll(' ', '-')).offsetTop - 80
+      const to = document.getElementById(el).offsetTop - 80
       const element = document.scrollingElement || document.documentElement
       const start = element.scrollTop
 

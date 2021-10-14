@@ -3,10 +3,22 @@ export default () => ({
   newsBanner: '🎉 New website has been released!',
   navbar: {
     items: [
-      'Introduction',
-      'Getting started',
-      'Community',
-      'Resources'
+      {
+        name: 'Introduction',
+        id: 'introduction'
+      },
+      {
+        name: 'Getting started',
+        id: 'getting-started'
+      },
+      {
+        name: 'Community',
+        id: 'community'
+      },
+      {
+        name: 'Resources',
+        id: 'resources'
+      }
     ],
     dropdownName: 'Links',
     dropdown: [
@@ -254,5 +266,12 @@ Welcome Page Should Be Open
       'Standard',
       'External'
     ]
+  },
+  usersPage: {
+    title: 'Users of Robot Framework',
+    body: `If you'd like your company added here, please submit a
+      <a href="https://github.com/robotframework/robotframework.github.com/pulls">pull request</a> or an
+      <a href="https://github.com/robotframework/robotframework.github.com/issues">issue</a>.`
+    // list of users is found in ./resources/users.js
   }
 })
