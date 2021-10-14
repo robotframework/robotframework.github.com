@@ -1577,6 +1577,13 @@ export default {
                   'Metso has had good results using Robot Framework in various domains. This includes testing embedded software in valve positioners and <a href="https://www.eficode.com/work/metso" target="_blank">web testing of their Manufacturing Resource Planning system</a>.'
               },
               {
+                title: 'Mews',
+                href: 'https://www.mews.com',
+                img: require('@/assets/img/users/mews.png'),
+                text:
+                  'Mews builds modern hospitality software. Mews uses Robot Framework as part of CI/CD process to ensure system reliability and reduce manual testing efforts across multiple products in both browser and desktop apps.'
+              },
+              {
                 title: 'Nokia',
                 href: 'http://www.nokia.com',
                 img: require('@/assets/img/users/nokia.png'),
