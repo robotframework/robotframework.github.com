@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container narrow pl-small pr-small">
     <div class="row mb-large mt-large">
       <router-link :to="{ name: 'Home' }">
         Back

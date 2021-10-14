@@ -1,14 +1,16 @@
 <template>
-  <div class="bg-grey-dark p-small card">
+  <div
+    class="bg-grey-dark card"
+    :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
     <!-- tab buttons -->
     <div class="row">
       <button
         v-for="(tab, i) in tabs"
         :key="tab.name"
-        class="type-uppercase theme type-small"
+        class="type-uppercase theme type-small mb-xsmall"
         :class="[
           activeTabIndex === i ? 'active' : '',
-          i === 2 ? 'mr-none' : 'mr-medium'
+          i === 2 ? 'mr-none' : 'mr-small'
         ]"
         @click="activeTabIndex = i">
         {{ tab.name }}

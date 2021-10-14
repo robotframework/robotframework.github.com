@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div class="bg-grey-dark color-white p-small card">
+    <div
+      class="bg-grey-dark color-white card"
+      :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
       <div class="row">
         <button
           v-for="({ name, key }, i) in $tm('resources.tabs')"
           :key="name"
-          class="type-uppercase theme type-small"
+          class="type-uppercase theme type-small mb-small"
           :class="[
             activeTab === key ? 'active' : '',
-            i === 3 ? 'mr-none' : 'mr-medium'
+            i === 3 ? 'mr-none' : 'mr-small'
           ]"
           @click="activeTab = key; showAll = false">
           {{ name }}
@@ -19,9 +21,10 @@
           <div class="row mb-medium">
             <div
               class="col-sm-12 col-md-9 pt-medium"
+              :class="$store.state.isMobile ? '' : 'pr-large'"
               v-html="selectedDescription" />
             <div
-              class="col-sm-6 col-md-3 flex bottom"
+              class="col-sm-12 col-md-3 flex bottom"
               :class="$store.state.isMobile ? '' : 'end'">
               <div class="relative" style="width: 100%;">
                 <div class="flex middle card border-white border-thin mt-medium" style="width: 100%;">
@@ -116,7 +119,8 @@
             <div
               v-for="(item, i) in visibleItems"
               :key="item.name"
-              class="pb-xsmall pt-xsmall"
+              class="p-xsmall"
+              style="margin-left: -1rem; margin-right: -1rem;"
               :style="i % 2 ? 'background-color: rgba(255, 255, 255, 0.1)' : ''">
               <div class="flex between">
                 <div>
@@ -138,15 +142,17 @@
               </div>
               <div
                 v-html="item.description"
-                class="type-small" />
+                class="type-small mt-2xsmall" />
             </div>
           </div>
-          <button
-            v-if="!showAll && itemsFilteredByTag.length > 7"
-            class="stroke type-uppercase mt-small type-small"
-            @click="showAll = true">
-            Show more
-          </button>
+          <div class="flex" :class="$store.state.isMobile ? 'center' : ''">
+            <button
+              v-if="!showAll && itemsFilteredByTag.length > 7"
+              class="stroke type-uppercase mt-small type-small mb-xsmall"
+              @click="showAll = true">
+              Show more
+            </button>
+          </div>
         </div>
       </transition>
     </div>

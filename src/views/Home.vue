@@ -45,8 +45,8 @@
         :body="$t('community.body')">
         <div class="col-sm-12 col-md-9 col-md-offset-3 row">
           <community-items />
-          <button class="theme mt-small">
-            <router-link :to="{ name: 'CoC' }">
+          <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
+            <router-link :to="{ name: 'CoC' }" class="type-no-underline">
               Code of Conduct
             </router-link>
           </button>

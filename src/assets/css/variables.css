@@ -15,6 +15,7 @@
     --bp-lg: 1400px; /* desktop breakpoint */
 
     --layout-container-max-width: 1400px;
+    --layout-container-narrow-max-width: 800px;
     --container-padding: 0;
 
     /* fonts */

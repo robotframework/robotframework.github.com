@@ -27,7 +27,7 @@
           class="twitter-timeline"
           data-dnt="true"
           data-theme="dark"
-          href="https://twitter.com/robotframework?ref_src=twsrc%5Etfw">
+          href="https://twitter.com/robotframework?ref_src=twsrc%5Etfw">¨
           Tweets by robotframework
         </a>
         <component :is="'script'" async src="https://platform.twitter.com/widgets.js" charset="utf-8" />

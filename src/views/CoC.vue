@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-xlarge">
+  <div class="container narrow mb-xlarge pl-small pr-small">
     <div class="row mb-large mt-large">
       <button v-if="cameFromHome" @click="$router.go(-1)" class="color-theme type-underline">
         Back
@@ -29,7 +29,7 @@
       harassed, or have any other concerns, please Contact
       <a href="mailto: awareness@robotframework.org">awareness@robotframework.org</a>.
     </p>
-    <h4>Harassment includes</h4>
+    <h3 class="mt-large">Harassment includes</h3>
     <ul>
       <li>
         Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, age, race, or religion.
@@ -97,7 +97,7 @@
         Criticizing racist, sexist, cissexist, or otherwise oppressive behaviour or assumptions
       </li>
     </ul>
-    <h4 class="mt-small">Reporting</h4>
+    <h3 class="mt-large">Reporting</h3>
     <ul>
       <li>
         If you are being harassed by a member of ROBOT FRAMEWORK, notice that someone else is being harassed, or have any other concerns, please contact <a style="display: inline;" href="mailto: awareness@robotframework.org">awareness@robotframework.org</a>. If the person who is harassing you is on the team, they will recuse themselves from handling your incident. We will respond as promptly as we can.
@@ -112,7 +112,7 @@
         We will respect confidentiality requests for the purpose of protecting victims of abuse. At our discretion, we may publicly name a person about whom we’ve received harassment complaints, or privately warn third parties about them, if we believe that doing so will increase the safety of ROBOT FRAMEWORK members or the general public. We will not name harassment victims without their affirmative consent.
       </li>
     </ul>
-    <h4 class="mt-small">Consequences</h4>
+    <h3 class="mt-large">Consequences</h3>
     <ul>
       <li>
         Participants asked to stop any harassing behaviour are expected to comply immediately.

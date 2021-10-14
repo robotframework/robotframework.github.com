@@ -37,13 +37,15 @@
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
         :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
-        class="img-container-small mr-small mr-small bg-white card mt-2xsmall"
+        class="img-container-small mr-small mr-small bg-white card mt-small"
         :class="activeCompanyIndex === i ? 'logo-active border-black border-thin' : ''"
         @click="activeCompanyIndex = i" />
-      <router-link :to="{ name: 'Users' }" class="card pl-small pr-small color-grey-dark mt-2xsmall" style="line-height: 1.85;">
+    </div>
+    <button class="theme mt-small">
+      <router-link :to="{ name: 'Users' }" class="type-no-underline">
         More users
       </router-link>
-    </div>
+    </button>
   </div>
 </template>
 
@@ -109,10 +111,10 @@ export default {
     background-position: center;
   }
   .img-container-small {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 85%;
     background-position: center;
     filter: saturate(0);
     opacity: 0.7;

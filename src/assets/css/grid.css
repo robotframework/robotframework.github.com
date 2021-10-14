@@ -7,6 +7,10 @@
     max-width: var(--layout-container-max-width);
 }
 
+.container.narrow {
+  max-width: var(--layout-container-narrow-max-width);
+}
+
 .flex {
   display: flex;
 }

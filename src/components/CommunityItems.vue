@@ -1,8 +1,8 @@
 <template>
   <div
     class="bg-white row card"
-    :class="$store.state.isMobile ? 'pt-medium pb-medium' : 'p-medium'">
-    <div class="row col-md-4">
+    :class="$store.state.isMobile ? 'pt-medium pb-medium' : 'p-large'">
+    <div class="row col-md-5 pr-medium">
       <div
         v-for="link in [items[0], items[1]]"
         :key="link.imgName"
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5 pr-medium">
       <div
         class="flex col-sm-12"
         :class="$store.state.isMobile ? 'pl-small pr-small' : ''">
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div
-      class="col-md-4 pl-medium"
+      class="col-md-2 pl-medium"
       :style="$store.state.isMobile ? 'padding-left: 4.7rem; margin-top: 1rem;' : ''">
       <h3 class="color-grey-dark mb-2xsmall">
         Other

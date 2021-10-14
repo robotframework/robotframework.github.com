@@ -8,6 +8,9 @@
     box-shadow: 2px 4px 4px -1px rgba(0,0,0,0.16),
     6px 6px 20px -1px rgba(107, 84, 84, 0.1);
 }
+.card.sharp {
+    border-radius: 0;
+}
 
 .border-black {
     border: solid 0.15rem var(--color-black);
@@ -52,6 +55,7 @@ button.theme, button.stroke {
     transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
+    text-transform: uppercase;
 }
 button.theme {
     color: var(--color-black);
@@ -71,7 +75,7 @@ button.theme.active {
 
 @media screen and (max-width: 768px) {
     button.theme, button.stroke {
-        padding: var(--size-3xsmall) var(--size-2xsmall);
+        padding: var(--size-2xsmall) var(--size-xsmall);
     }
 }
 
