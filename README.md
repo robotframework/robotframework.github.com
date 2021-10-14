@@ -15,7 +15,7 @@ following information:
 - When adding a new user, also include company/organization logo.
 
 Alternatively you can [submit a pull request](https://github.com/robotframework/robotframework.github.com/pulls) with the above information and
-make it even easier for us to add the link. For pull requests, only submit source file changes. Built files will be updated and commited by maintainer.
+make it even easier for us to add the link. For pull requests, only submit source file changes. Build will be done automatically.
 
 ## License
 
@@ -39,12 +39,7 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# and when you are ready to publish your changes, build for production with minification
-npm run build
-
 When you want to contribute and open a pull request, only commit source file changes. The build will be done by system.
 ```
 
-For a detailed explanation on how things work, check out the [vue-webpack template](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-We also use [bootstrap-vue](https://bootstrap-vue.js.org/docs) for implementing bootstrap-v4.
+The page is built with [Vue CLI](https://cli.vuejs.org/).
