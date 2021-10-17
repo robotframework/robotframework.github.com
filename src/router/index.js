@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
@@ -28,15 +28,11 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        if (savedPosition) resolve(savedPosition)
-        else resolve({ top: 0 })
-      }, 150)
-    })
+    if (savedPosition) return savedPosition
+    return { top: 0 }
   }
 })
 

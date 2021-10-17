@@ -28,7 +28,7 @@
               <div
                 class="card p-small mb-large"
                 style="background-color: #fff;"
-                :style="`transition-delay: ${(j / 10 + i / columns.length / 10) * columns.length}s;`">
+                :style="`transition-delay: ${(j / 10 + i / columns.length / 10) * columns.length + 0.1}s;`">
                 <div
                   class="img-container"
                   :style="`background-image: url(${publicPath}img/users/${user.imgName})`" />
