@@ -26,11 +26,10 @@
             :key="user.name">
             <transition appear name="opacity-slow">
               <div
-                class="card p-small mb-large"
-                style="background-color: #fff;"
+                class="card p-small mb-large bg-white user-card"
                 :style="`transition-delay: ${(j / 10 + i / columns.length / 10) * columns.length + 0.1}s;`">
                 <div
-                  class="img-container"
+                  class="img-container mb-small"
                   :style="`background-image: url(${publicPath}img/users/${user.imgName})`" />
                 <h3>
                   <a :href="user.href" target="_blank">
@@ -108,10 +107,25 @@ export default {
 <style scoped>
   .img-container {
     width: 60%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     height: 5rem;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+  }
+  .user-card {
+    background-color: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    .user-card {
+      background-color: var(--color-grey-dark);
+    }
+    .img-container {
+      background-color: #fff;
+      background-origin: content-box;
+      padding: 0.5rem;
+      border-radius: var(--border-radius-rounded);
+    }
   }
 </style>

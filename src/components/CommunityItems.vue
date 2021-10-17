@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white row card"
+    class="bg-white bg-grey-dark-darkmode row card"
     :class="$store.state.isMobile ? 'pt-medium pb-medium' : 'p-large'">
     <div class="row col-md-5 pr-medium">
       <div
@@ -43,7 +43,7 @@
     <div
       class="col-md-2 pl-medium"
       :style="$store.state.isMobile ? 'padding-left: 4.7rem; margin-top: 1rem;' : ''">
-      <h3 class="color-grey-dark mb-2xsmall">
+      <h3 class="color-grey-dark color-white-darkmode mb-2xsmall">
         Other
       </h3>
       <div

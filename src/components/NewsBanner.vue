@@ -1,5 +1,5 @@
 <template>
   <div
-    class="container color-black type-center"
+    class="container type-center pl-small pr-small"
     v-html="$t('newsBanner')" />
 </template>

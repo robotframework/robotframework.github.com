@@ -51,3 +51,13 @@ select {
 body:not(.accessible) * {
     outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: var(--color-background-darkmode);
+    }
+    
+    #app {
+        color: var(--color-grey-light);
+    }
+}

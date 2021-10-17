@@ -16,7 +16,7 @@
       <slot />
     </div>
     <div
-      v-if="!$store.state.isMobile"
+      v-if="$store.state.isDesktop"
       class="twitter col-sm-12 col-lg-3 p-none mt-small card"
       :style="`height: ${twitterHeight}px;`">
       <accessibility-link label="Skip twitter timeline" go-to="getting-started" />

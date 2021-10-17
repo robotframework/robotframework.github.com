@@ -45,6 +45,12 @@ h1 {
     line-height: var(--line-height-h1);
 }
 
+@media (prefers-color-scheme: dark) {
+    h1 {
+        color: var(--color-black);
+    }
+}
+
 h2 {
     font-size: var(--type-xlarge);
     color: var(--color-theme);

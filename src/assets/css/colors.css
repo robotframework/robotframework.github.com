@@ -75,3 +75,15 @@
 .hover-bright:hover {
     filter: brightness(1.1);
 }
+
+@media (prefers-color-scheme: dark) {
+    .bg-white-darkmode {
+        background-color: var(--color-white);
+    }
+    .bg-grey-dark-darkmode {
+        background-color: var(--color-grey-dark);
+    }
+    .color-white-darkmode {
+        color: var(--color-white);
+    }
+}

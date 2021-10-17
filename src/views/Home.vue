@@ -24,7 +24,7 @@
       :title="$t('gettingStarted.title')"
       :body="$t('gettingStarted.body')">
       <tab-box
-        class="col-sm-12 col-md-9 col-md-offset-3"
+        class="col-sm-12 col-lg-9 col-lg-offset-3"
         :tabs="$tm('gettingStarted.tabs')">
         <!-- list of learning resouces on 3rd tab -->
         <template v-slot:tab-3>
@@ -42,7 +42,7 @@
       title-id="community"
       :title="$t('community.title')"
       :body="$t('community.body')">
-      <div class="col-sm-12 col-md-9 col-md-offset-3 row">
+      <div class="col-sm-12 col-lg-9 col-lg-offset-3 row">
         <community-items />
         <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
           <router-link :to="{ name: 'CoC' }" class="type-no-underline">
@@ -56,7 +56,7 @@
       title-id="resources"
       :title="$t('resources.title')"
       :body="$t('resources.body')">
-      <resource-box class="col-sm-12 col-md-9 col-md-offset-3" />
+      <resource-box class="col-sm-12 col-lg-9 col-lg-offset-3" />
     </page-section>
   </div>
   <page-footer />

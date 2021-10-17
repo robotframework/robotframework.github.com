@@ -97,6 +97,12 @@ export default () => ({
         imgName: 'Finnair.svg'
       },
       {
+        title: 'Finnish Tax Administration',
+        description: `Finnish Tax Administration is using Robot Framework in multiple projects.
+        Robot Framework is one of the core tools in their development to make Quality Assurance and Automation.`,
+        imgName: 'Vero.svg'
+      },
+      {
         name: 'Juniper Networks',
         description: 'Juniper Networks has built an extensive automation framework on top of Robot Framework for end-to-end qualification of Juniper products. It is used extensively in multiple groups including engineering and support.',
         imgName: 'Juniper_Networks.svg'

@@ -2,6 +2,7 @@
     --color-theme: #00c0b5; /* for theme color */
     --color-theme-dark: #09504d; /* for theme color dark */
     --color-background: #f0f0f0;
+    --color-background-darkmode: #222222;
 
     --color-white: #f5f5f5;
     --color-grey-light: #e7e7e7;
@@ -11,7 +12,7 @@
     --color-link: #00c0b5;
     --color-link-visited: #578a88;
 
-    --bp-md: 768px; /* tablet breakpoint */
+    --bp-md: 700px; /* tablet breakpoint */
     --bp-lg: 1400px; /* desktop breakpoint */
 
     --layout-container-max-width: 1400px;

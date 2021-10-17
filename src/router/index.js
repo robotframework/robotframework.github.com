@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
 import Users from '../views/Users.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/users',
     name: 'Users',
     component: Users
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

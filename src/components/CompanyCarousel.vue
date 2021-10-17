@@ -1,11 +1,11 @@
 <template>
   <div v-if="activeCompany">
-    <div class="row carousel-container pt-small pb-small bg-white card">
+    <div class="row carousel-container pt-small pb-small bg-white bg-grey-dark-darkmode card">
       <button
         class="col-sm-2 col-md-1 flex center middle"
         aria-label="previous testimonial"
         @click="setActiveCompany(-1)">
-        <chevron-icon :size="48" />
+        <chevron-icon :size="48" :color="isDarkMode ? 'white' : 'black'" />
       </button>
       <transition :name="direction === 1 ? 'fade-left' : 'fade-right'" mode="out-in">
         <div
@@ -28,10 +28,35 @@
         class="col-sm-2 col-md-1 type-right flex center middle"
         aria-label="next testimonial"
         @click="setActiveCompany(1)">
-        <chevron-icon direction="right" :size="48" />
+        <chevron-icon
+          direction="right"
+          :color="isDarkMode ? 'white' : 'black'"
+          :size="48" />
       </button>
     </div>
-    <div class="row">
+    <div v-if="$store.state.isMobile">
+      <div class="row between">
+        <button
+          v-for="(company, i) in companiesShuffled.slice(0, 5)"
+          :key="company.name"
+          :aria-label="`${company.name} testimonial`"
+          :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
+          class="img-container-small bg-white card mt-small"
+          :class="activeCompanyIndex === i ? 'logo-active border-black border-thin' : ''"
+          @click="activeCompanyIndex = i" />
+      </div>
+      <div class="row between">
+        <button
+          v-for="(company, i) in companiesShuffled.slice(5, 10)"
+          :key="company.name"
+          :aria-label="`${company.name} testimonial`"
+          :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
+          class="img-container-small bg-white card mt-small"
+          :class="activeCompanyIndex === i + 5 ? 'logo-active border-black border-thin' : ''"
+          @click="activeCompanyIndex = i + 5" />
+      </div>
+    </div>
+    <div v-else class="row">
       <button
         v-for="(company, i) in companiesShuffled"
         :key="company.name"
@@ -62,7 +87,8 @@ export default {
     publicPath: process.env.BASE_URL,
     direction: 0,
     companiesShuffled: [],
-    eventSent: false
+    eventSent: false,
+    isDarkMode: false
   }),
   computed: {
     activeCompany() {
@@ -99,6 +125,7 @@ export default {
       [companies[i], companies[j]] = [companies[j], companies[i]]
     }
     this.companiesShuffled = companies
+    this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 }
 </script>
@@ -126,7 +153,7 @@ export default {
   .description {
     padding-left: var(--size-medium);
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 699px) {
     .carousel-container {
       margin-left: -1rem;
       margin-right: -1rem;
@@ -135,6 +162,18 @@ export default {
       padding-left: 0;
       height: 10rem;
       overflow-y: scroll;
+    }
+    .img-container-small {
+      width: calc((100vw - 2rem) / 7);
+      height: calc((100vw - 2rem) / 7);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .img-container {
+      background-color: var(--color-white);
+      background-origin: content-box;
+      padding: 0.5rem;
+      border-radius: var(--border-radius-rounded);
     }
   }
 </style>
