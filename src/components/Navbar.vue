@@ -110,9 +110,11 @@ export default {
     itemClick(itemId) {
       const el = document.getElementById(itemId)
       if (!el) return
-      // window.history.replaceState(null, null, `?section=${itemId}`)
+      // setting window.location.hash causes instant page scroll to that position and we dont want that
+      // lets strip urlParams and hash from url and append new hash
+      history.replaceState(null, null, `${location.href.split('?')[0].split('#')[0]}#${itemId}`)
       window.scrollTo({
-        top: el.offsetTop - 74,
+        top: el.offsetTop,
         behavior: 'smooth'
       })
       window.plausible('Nav click', { props: { section: itemId } })

@@ -11,7 +11,7 @@
   <div class="container mb-xlarge">
     <!-- introduction -->
     <page-section-twitter
-      id="introduction"
+      title-id="introduction"
       :title="$t('introduction.title')"
       :body="$t('introduction.body')">
       <div class="mt-small mb-small">
@@ -20,7 +20,7 @@
     </page-section-twitter>
     <!-- getting started -->
     <page-section
-      id="getting-started"
+      title-id="getting-started"
       :title="$t('gettingStarted.title')"
       :body="$t('gettingStarted.body')">
       <tab-box
@@ -39,7 +39,7 @@
     </page-section>
     <!-- community -->
     <page-section
-      id="community"
+      title-id="community"
       :title="$t('community.title')"
       :body="$t('community.body')">
       <div class="col-sm-12 col-md-9 col-md-offset-3 row">
@@ -53,7 +53,7 @@
     </page-section>
     <!-- resources -->
     <page-section
-      id="resources"
+      title-id="resources"
       :title="$t('resources.title')"
       :body="$t('resources.body')">
       <resource-box class="col-sm-12 col-md-9 col-md-offset-3" />
@@ -91,13 +91,6 @@ export default {
     CommunityItems,
     ResourceBox,
     TabBox
-  },
-  mounted() {
-    const section = new URLSearchParams(window.location.search).get('section')
-    const el = document.getElementById(section)
-    if (!section || !el) return
-    setTimeout(() => { window.scroll(0, el.offsetTop - 70) }, 10)
-    window.history.replaceState(null, null, '/#/')
   }
 }
 </script>

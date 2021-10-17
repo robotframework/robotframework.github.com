@@ -1,12 +1,12 @@
 <template>
   <div
-    class="border-top-theme mt-xlarge"
+    class="border-top-theme mt-xlarge section-container"
     tabindex="-1">
     <div class="row p-small">
       <div
         class="col-sm-12 col-lg-3"
         :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
-        <h2>
+        <h2 :id="titleId">
           {{ title }}
         </h2>
       </div>
@@ -33,7 +33,22 @@ export default {
     body: {
       type: String,
       default: ''
+    },
+    titleId: {
+      type: String,
+      required: true
     }
   }
 }
 </script>
+
+<style scoped>
+  h2::before {
+  display: block;
+  content: " ";
+  margin-top: -100px;
+  height: 100px;
+  visibility: hidden;
+  pointer-events: none;
+}
+</style>

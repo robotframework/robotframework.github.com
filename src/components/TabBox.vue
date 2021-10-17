@@ -78,12 +78,22 @@ export default {
       return Array.from(el.content.children).map((child) => child.outerHTML)
     }
   },
+  created() {
+    // if url contains searchParam, open specific tab
+    if (window.location.hash !== '#getting-started') return
+    const param = new URLSearchParams(window.location.search)
+    const tab = param.get('tab')
+    if (!tab) return
+    this.activeTabIndex = Number(tab)
+  },
   watch: {
     activeTab() {
       if (!this.eventSent) {
         window.plausible('Interact', { props: { element: 'Learning' } })
         this.eventSent = true
       }
+      const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=${this.activeTabIndex}#getting-started`
+      history.replaceState(null, null, newUrl)
     }
   }
 }

@@ -239,6 +239,8 @@ export default {
         window.plausible('Interact', { props: { element: 'Resources' } })
         this.eventSent = true
       }
+      const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=${this.activeTab}#resources`
+      history.replaceState(null, null, newUrl)
     },
     showAll() {
       if (!this.eventSent) {
@@ -281,6 +283,14 @@ export default {
     onClick({ target }) {
       if (this.$refs.tagInput && !this.$refs.tagInput.contains(target)) this.tagsDropdownShown = false
     }
+  },
+  created() {
+    // if url contains searchParam, open specific tab
+    if (window.location.hash !== '#resources') return
+    const param = new URLSearchParams(window.location.search)
+    const tab = param.get('tab')
+    if (!tab) return
+    this.activeTab = tab
   },
   mounted() {
     this.stars = stars()
