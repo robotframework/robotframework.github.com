@@ -62,8 +62,11 @@
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
         :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
-        class="img-container-small mr-small mr-small bg-white card mt-small"
-        :class="activeCompanyIndex === i ? 'logo-active border-black border-thin' : ''"
+        class="img-container-small bg-white card mt-small"
+        :class="[
+          activeCompanyIndex === i ? 'logo-active border-black border-thin' : '',
+          i === companiesShuffled.length - 1 ? 'mr-none' : 'mr-small'
+        ]"
         @click="activeCompanyIndex = i" />
     </div>
     <button class="theme mt-small">
@@ -138,8 +141,8 @@ export default {
     background-position: center;
   }
   .img-container-small {
-    width: 3rem;
-    height: 3rem;
+    width: 3.15rem;
+    height: 3.15rem;
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: center;
