@@ -127,7 +127,10 @@ export default () => ({
   gettingStarted: {
     title: 'Getting Started',
     body:
-      '<p>Here\'s a quick introduction to get you started with Robot Framework. </p>',
+      `<p>Using Robot Framework is completely free, no strings attached.
+      Due to its expandable open source nature Robot Framework is extremely
+      versatile for various test and RPA cases. Using it does not require expert skills in coding.</p>
+      <p>Here's a quick introduction to get you started with Robot Framework. </p>`,
     tabs: [
       {
         name: 'Install',
