@@ -29,7 +29,7 @@ export default () => ({
       },
       {
         name: 'Forum',
-        url: 'http://forum.robotframework.org/',
+        url: 'https://forum.robotframework.org/',
         description: 'Discuss Robot Framework'
       },
       {
@@ -252,7 +252,7 @@ Welcome Page Should Be Open
         key: 'libraries',
         description: `Separately developed external libraries that
         can be installed based on your needs. Creating your own libraries is a breeze. For instructions, see
-        <a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">
+        <a href="https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-libraries" target="_blank">
         creating test libraries</a> in Robot Framework User Guide.`
       },
       {

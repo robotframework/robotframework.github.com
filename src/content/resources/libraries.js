@@ -48,7 +48,7 @@ export default () => ([
   {
     name: 'Database Library (Java)',
     href: 'https://github.com/MarketSquare/robotframework-dblibrary',
-    description: 'Java-based library for database testing. Usable with Jython. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.',
+    description: 'Java-based library for database testing. Usable with Jython. Available also at <a href="https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-dblibrary%22" target="_blank">Maven central</a>.',
     tags: ['java']
   },
   {
@@ -109,7 +109,7 @@ export default () => ([
   {
     name: 'HttpRequestLibrary (Java)',
     href: 'https://github.com/MarketSquare/robotframework-httprequestlibrary',
-    description: 'HTTP level testing using Apache HTTP client. Available also at <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-httprequestlibrary%22" target="_blank">Maven central</a>.',
+    description: 'HTTP level testing using Apache HTTP client. Available also at <a href="https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-httprequestlibrary%22" target="_blank">Maven central</a>.',
     tags: ['http', 'java']
   },
   {
@@ -202,7 +202,7 @@ export default () => ([
   },
   {
     name: 'SeleniumLibrary',
-    href: 'http://github.com/robotframework/SeleniumLibrary/',
+    href: 'https://github.com/robotframework/SeleniumLibrary/',
     description: 'Web testing library that uses popular Selenium tool internally.',
     tags: ['web', 'selenium']
   },
@@ -215,7 +215,7 @@ export default () => ([
   {
     name: 'SikuliLibrary',
     href: 'https://github.com/rainmanwy/robotframework-SikuliLibrary#readme',
-    description: 'Provides keywords to test UI through <a href="http://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.',
+    description: 'Provides keywords to test UI through <a href="https://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.',
     tags: ['ui']
   },
   {
