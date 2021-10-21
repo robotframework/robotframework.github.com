@@ -75,7 +75,7 @@
             </a>
           </div>
           <div>
-            <a href="https://robotframework.org/robotframework/#user-guide">
+            <a href="https://github.com/robotframework/WebDemo">
               Web demo
             </a>
           </div>
