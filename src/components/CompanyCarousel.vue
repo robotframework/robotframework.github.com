@@ -1,6 +1,6 @@
 <template>
   <div v-if="activeCompany">
-    <div class="row carousel-container pt-small pb-small bg-white bg-grey-dark-darkmode card">
+    <div class="row carousel-container pt-small pb-small bg-grey bg-grey-dark-darkmode card">
       <button
         class="col-sm-2 col-md-1 flex center middle"
         aria-label="previous testimonial"
@@ -62,7 +62,7 @@
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
         :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
-        class="img-container-small bg-white card mt-small"
+        class="img-container-small bg-white theme mt-small"
         :class="[
           activeCompanyIndex === i ? 'logo-active border-black border-thin' : '',
           i === companiesShuffled.length - 1 ? 'mr-none' : 'mr-small'

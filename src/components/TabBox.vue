@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-grey-dark card"
+    class="bg-grey bg-grey-dark-darkmode card"
     :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
     <!-- tab buttons -->
     <div class="row">
@@ -16,7 +16,7 @@
         {{ tab.name }}
       </button>
     </div>
-    <div v-if="activeTab" class="row mt-small color-white">
+    <div v-if="activeTab" class="row mt-small">
       <transition name="opacity" mode="out-in">
         <!-- regular text content -->
         <div

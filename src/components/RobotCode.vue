@@ -50,7 +50,4 @@ export default {
 .hljs-built_in {
   color: #419bdb;
 }
-pre > code.hljs {
-
-}
 </style>

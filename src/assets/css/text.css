@@ -92,7 +92,7 @@ pre {
     border: 0.1rem inset var(--color-theme);
     padding: var(--size-3xsmall);
     width: fit-content;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-grey-dark);
 }
 
 pre.line {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="bg-grey-dark color-white card"
+      class="bg-grey bg-grey-dark-darkmode color-black card"
       :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
       <div class="row">
         <button
@@ -27,18 +27,18 @@
               class="col-sm-12 col-md-3 flex bottom"
               :class="$store.state.isMobile ? '' : 'end'">
               <div class="relative" style="width: 100%;">
-                <div class="flex middle card border-white border-thin mt-medium" style="width: 100%;">
+                <div class="bg-white flex middle card border-black border-thin mt-medium" style="width: 100%;">
                   <input
                     v-model="filterInput"
                     ref="tagInput"
                     id="tags-filter-input"
                     :placeholder="'Filter by tag'"
-                    class="p-2xsmall bg-grey-dark font-body"
+                    class="p-2xsmall font-body"
                     :style="`color: ${tagFilterExactMatch ? getTagColor(filterInput) : '#f5f5f5'};`"
                     style="width: 100%;"
                     @focus="tagsDropdownShown = true" />
                     <button
-                      class="p-3xsmall pr-2xsmall color-white"
+                      class="p-3xsmall pr-2xsmall color-black"
                       :style="filterInput === '' ? 'visibility: hidden' : ''"
                       @click="filterInput = ''">
                       X
@@ -48,7 +48,7 @@
                   <div
                     v-if="tagsDropdownShown && tabTags
                         .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase()).length"
-                    class="input-suggestions mt-2xsmall p-2xsmall bg-grey-dark border-white border-thin card">
+                    class="input-suggestions mt-2xsmall p-2xsmall bg-grey-dark border-black border-thin card">
                     <div
                       v-for="tag in tabTags
                         .filter((tag) => tag.includes(filterInput.toLowerCase()) && tag !== filterInput.toLowerCase())"
@@ -71,14 +71,14 @@
                 v-for="header in tableHeaders"
                 :key="header">
                 <button
-                  class="flex color-white"
+                  class="flex color-black"
                   @click="sortBy === header ? switchSortDirection() : (sortBy = header, direction = 'descending')">
                   <div>
                     {{ header }}
                   </div>
                   <chevron-icon
                     key="1"
-                    color="white"
+                    color="black"
                     class="mr-small"
                     :size="22"
                     :direction="direction === 'descending' ? 'down' : 'up'"
@@ -309,7 +309,7 @@ table {
   width: 100%;
 }
 th {
-  border-bottom: var(--color-white) dashed 0.15rem;
+  border-bottom: var(--color-black) dashed 0.15rem;
 }
 tr:first-child {
   border-top: solid transparent 1rem;

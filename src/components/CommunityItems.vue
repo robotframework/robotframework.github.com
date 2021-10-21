@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white bg-grey-dark-darkmode row card"
+    class="bg-grey bg-grey-dark-darkmode row card"
     :class="$store.state.isMobile ? 'pt-medium pb-medium' : 'p-large'">
     <div class="row col-md-5 pr-medium">
       <div
