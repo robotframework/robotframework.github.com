@@ -7,7 +7,7 @@ export default () => ([
   {
     name: 'User Guide',
     description: 'Reference manual explaining all Robot Framework features in detail.',
-    href: 'http://robotframework.org/robotframework/#user-guide'
+    href: 'https://robotframework.org/robotframework/#user-guide'
   },
   {
     name: 'Quick Start Guide',
@@ -22,17 +22,17 @@ export default () => ([
   {
     name: 'Dos And Don\'ts',
     description: 'Slide set loosely based on \'How to write good test cases\' guidelines.',
-    href: 'http://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts'
+    href: 'https://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts'
   },
   {
     name: 'Public API',
     description: 'Public API for writing your own tools against Robot Framework.',
-    href: 'http://robot-framework.readthedocs.org/en/latest/'
+    href: 'https://robot-framework.readthedocs.org/en/latest/'
   },
   {
     name: 'Introduction Slides',
     description: 'Generic Robot Framework introduction slides.',
-    href: 'http://www.slideshare.net/pekkaklarck/robot-framework-introduction'
+    href: 'https://www.slideshare.net/pekkaklarck/robot-framework-introduction'
   },
   {
     name: 'RPA tutorials',

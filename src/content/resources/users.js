@@ -1,7 +1,7 @@
 export default () => ([
   {
     title: 'ABB',
-    href: 'http://www.abb.com',
+    href: 'https://www.abb.com',
     imgName: 'abb.png',
     text: `ABB is using Robot Framework in software development for testing distribution
       automation related configuration tools, web interfaces and embedded devices.`
@@ -17,7 +17,7 @@ export default () => ([
   },
   {
     title: 'Adwisit',
-    href: 'http://www.adwisit.se',
+    href: 'https://www.adwisit.se',
     imgName: 'adwisit.png',
     text: `Adwisit uses Robot Framework to automate end-to-end testing of business processes
       for customers with a complex structure of third-party products, handling both web and desktop applications.`
@@ -32,7 +32,7 @@ export default () => ([
   },
   {
     title: 'Alpha',
-    href: 'http://www.alpha.company/',
+    href: 'https://www.alpha.company/',
     imgName: 'alpha.png',
     text: `At Alpha, we are developing the future of mobile apps for Health, with the latest
       advances in neuroscience, AI and mobile computing. Robot Framework is a key part of our
@@ -48,7 +48,7 @@ export default () => ([
   },
   {
     title: 'Axon',
-    href: 'http://www.axon.tv',
+    href: 'https://www.axon.tv',
     imgName: 'axon.png',
     text: `Axon is using Robot Framework in testing embedded software and hardware development
     of broadcast equipment. We automate testing as much as possible in order to speed up development
@@ -56,7 +56,7 @@ export default () => ([
   },
   {
     title: 'CENX',
-    href: 'http://www.cenx.com',
+    href: 'https://www.cenx.com',
     imgName: 'cenx.png',
     text: `CENX is using Robot Framework, within a Docker environment, for feature and integration
     testing of a product that empowers network- and service operation centers.`
@@ -88,7 +88,7 @@ export default () => ([
   },
   {
     title: 'FICOSA',
-    href: 'http://www.ficosa.com',
+    href: 'https://www.ficosa.com',
     imgName: 'ficosa.png',
     text: `FICOSA has been using Robot Framework for the last years in the automotive industry.
       It's being used for the automated testing of
@@ -98,7 +98,7 @@ export default () => ([
   },
   {
     title: 'Finnair',
-    href: 'http://www.finnair.com',
+    href: 'https://www.finnair.com',
     imgName: 'finnair.png',
     text: 'Finnair is using Robot Framework to support Finnair digital platform development.'
   },
@@ -144,14 +144,14 @@ export default () => ([
   },
   {
     title: 'KONE',
-    href: 'http://www.kone.com',
+    href: 'https://www.kone.com',
     imgName: 'kone.png',
     text: `KONE is widely using Robot Framework in software development for testing embedded
       systems in elevators and escalators.`
   },
   {
     title: 'Lucid Software',
-    href: 'http://www.kovidndt.com/',
+    href: 'https://www.kovidndt.com/',
     imgName: 'lucid.png',
     text: `Lucid Software is using Robot Framework for complete system automation testing of
       its NDT software products. Necessary unique libraries are created to test the applications
@@ -159,7 +159,7 @@ export default () => ([
   },
   {
     title: 'Metso',
-    href: 'http://www.metso.com',
+    href: 'https://www.metso.com',
     imgName: 'metso.png',
     text: `Metso has had good results using Robot Framework in various domains. This includes
       testing embedded software in valve positioners and
@@ -176,7 +176,7 @@ export default () => ([
   },
   {
     title: 'Nokia',
-    href: 'http://www.nokia.com',
+    href: 'https://www.nokia.com',
     imgName: 'nokia.png',
     text: `Robot Framework was initially developed at Nokia Networks and it is used extensively
       around the whole company. It is used for testing different devices, software systems and
@@ -193,7 +193,7 @@ export default () => ([
   },
   {
     title: 'OpenDaylight',
-    href: 'http://www.opendaylight.org',
+    href: 'https://www.opendaylight.org',
     imgName: 'opendaylight.png',
     text: `OpenDaylight is a software-defined network (SDN) platform that uses Robot Framework
       for unit- and integration tests between different services. If you are interested how,
@@ -209,7 +209,7 @@ export default () => ([
   },
   {
     title: 'Oriental Pearl New Media Co, Ltd',
-    href: 'http://www.opg.cn/',
+    href: 'https://www.opg.cn/',
     imgName: 'oriental.png',
     text: 'Oriental Pearl New Media Co, Ltd is using Robot Framework for API and UI testing.'
   },
@@ -222,7 +222,7 @@ export default () => ([
   },
   {
     title: 'Rocla',
-    href: 'http://rocla.com/',
+    href: 'https://rocla.com/',
     imgName: 'rocla.png',
     text: `Rocla is using Robot Framework widely in development and testing of the
       software for Trucks and Automated Guided Vehicles (AGV’s).`
@@ -237,7 +237,7 @@ export default () => ([
 
   {
     title: 'Salicru',
-    href: 'http://www.salicru.com',
+    href: 'https://www.salicru.com',
     imgName: 'salicru.png',
     text: `Salicru has been using Robot Framework in testing embedded software and hardware
       development of power electronic equipment since 2011. We use Robot Framework along with
@@ -247,7 +247,7 @@ export default () => ([
   },
   {
     title: 'Segron',
-    href: 'http://www.segron.com/',
+    href: 'https://www.segron.com/',
     imgName: 'segron.png',
     text: `Segron is a Bratislava-based company offering beyond end-to-end testing solution
       for Telecommunications. Our tool is based on Robot Framework and is the first true end-to-end
@@ -280,7 +280,7 @@ export default () => ([
   },
   {
     title: 'Zilogic',
-    href: 'http://www.zilogic.com',
+    href: 'https://www.zilogic.com',
     imgName: 'zilogic.png',
     text: `Zilogic Systems is using Robot Framework for integration testing of embedded products.
       We convert requirements into test cases,write necessary libraries to test the Device Under Test.`

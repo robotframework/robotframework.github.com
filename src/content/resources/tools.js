@@ -38,13 +38,13 @@ export default () => ([
   {
     name: 'Robot Plugin for IntelliJ IDEA',
     description: 'For IntelliJ IDEA-based editors by JIVE Software.',
-    href: 'http://plugins.jetbrains.com/plugin/7430',
+    href: 'https://plugins.jetbrains.com/plugin/7430',
     tags: ['editor']
   },
   {
     name: 'Robot Support for IntelliJ IDEA',
     description: 'For IntelliJ IDEA-based editors by Valerio Angelini.',
-    href: 'http://plugins.jetbrains.com/plugin/7415',
+    href: 'https://plugins.jetbrains.com/plugin/7415',
     tags: ['editor']
   },
   {
@@ -140,7 +140,7 @@ export default () => ([
   {
     name: 'Mabot',
     description: 'Tool for reporting manual tests in format compatible with Robot Framework outputs.',
-    href: 'http://github.com/robotframework/mabot/',
+    href: 'https://github.com/robotframework/mabot/',
     tags: ['']
   },
   {
@@ -164,7 +164,7 @@ export default () => ([
   {
     name: 'RFDoc',
     description: 'Web based system for storing and searching Robot Framework library and resource file documentations.',
-    href: 'http://github.com/robotframework/rfdoc',
+    href: 'https://github.com/robotframework/rfdoc',
     tags: ['']
   },
   {
