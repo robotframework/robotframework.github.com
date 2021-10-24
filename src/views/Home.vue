@@ -58,6 +58,13 @@
       :body="$t('resources.body')">
       <resource-box class="col-sm-12 col-lg-9 col-lg-offset-3" />
     </page-section>
+    <!-- development -->
+    <page-section
+      title-id="development"
+      :title="$t('development.title')"
+      :body="$t('development.body')">
+      <sponsors class="col-sm-12 col-lg-9 col-lg-offset-3" />
+    </page-section>
   </div>
   <page-footer />
 </template>
@@ -74,7 +81,8 @@ import {
   CompanyCarousel,
   CommunityItems,
   ResourceBox,
-  TabBox
+  TabBox,
+  Sponsors
 } from 'Components'
 
 export default {
@@ -90,7 +98,8 @@ export default {
     CompanyCarousel,
     CommunityItems,
     ResourceBox,
-    TabBox
+    TabBox,
+    Sponsors
   }
 }
 </script>

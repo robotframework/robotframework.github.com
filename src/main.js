@@ -20,7 +20,8 @@ import {
   libraries,
   tools,
   learning,
-  users
+  users,
+  sponsors
 } from './content'
 var hljsDefineRobot = require('./js/robot-highlight.js')
 
@@ -31,7 +32,8 @@ const resourcesList = {
   libraries: libraries(),
   tools: tools(),
   learning: learning(),
-  users: users()
+  users: users(),
+  sponsors: sponsors()
 }
 
 // const lang = window.localStorage.getItem('lang')

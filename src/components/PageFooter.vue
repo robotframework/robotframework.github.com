@@ -1,9 +1,9 @@
 <template>
   <div class="row bg-black color-white p-small pt-large pb-large">
-    <div class="container" style="line-height: 1.75;">
+    <div class="container" style="line-height: 2;">
       <div class="row">
         <div class="col-sm-6 col-md-3">
-          <h3>
+          <h3 class="mb-small">
             <a href="https://robotframework.org/foundation/">Foundation</a>
           </h3>
           <div>
@@ -25,7 +25,7 @@
         <div
           class="col-sm-6 col-md-3"
           :class="$store.state.isMobile ? 'type-right' : ''">
-          <h3>
+          <h3 class="mb-small">
             Community
           </h3>
           <div>
@@ -56,7 +56,7 @@
         </div>
         <div v-if="$store.state.isMobile" class="col-sm-12 mb-large" />
         <div class="col-sm-6 col-md-3">
-          <h3>
+          <h3 class="mb-small">
             Instructions
           </h3>
           <div>

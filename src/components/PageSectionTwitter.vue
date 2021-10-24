@@ -80,4 +80,13 @@ export default {
     visibility: hidden;
     pointer-events: none;
   }
+  h2 {
+    clip-path: polygon(0 calc(100% - 2rem), 100% calc(100% - 2rem), 100% 100%, 0% 100%)
+  }
+  @media screen and (max-width: 700px) {
+    h2::before {
+      margin-top: -30px;
+      height: 30px;
+    }
+  }
 </style>

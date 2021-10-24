@@ -2,7 +2,6 @@
   <div
     ref="nav"
     class="navbar row center bg-black color-white p-2xsmall pt-small pb-small">
-    <div class="mr-medium" />
     <!-- section navigation -->
     <button
       v-for="item in $tm('navbar.items')"

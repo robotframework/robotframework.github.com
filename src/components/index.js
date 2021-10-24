@@ -10,6 +10,7 @@ import CompanyCarousel from './CompanyCarousel.vue'
 import CommunityItems from './CommunityItems.vue'
 import ResourceBox from './ResourceBox.vue'
 import TabBox from './TabBox.vue'
+import Sponsors from './Sponsors.vue'
 import RobotCode from './RobotCode.vue'
 
 import GlobeIcon from './icons/GlobeIcon.vue'
@@ -30,6 +31,7 @@ export {
   ResourceBox,
   TabBox,
   RobotCode,
+  Sponsors,
 
   GlobeIcon,
   ChevronIcon,
