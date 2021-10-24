@@ -12,7 +12,7 @@ export default () => ([
   {
     title: 'Botlabs',
     href: 'https://botlabs.fi/en/home/',
-    img: 'Botlabs.png'
+    img: 'botlabs.png'
   },
   {
     title: 'Capgemini',
