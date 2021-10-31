@@ -1,6 +1,6 @@
 export default () => ({
   langName: 'English',
-  newsBanner: '🎉 New website has been released! If you have feedback, feel free to post it in <a href="https://github.com/robotframework/robotframework.github.com">GitHub</a>.',
+  newsBanner: '',
   navbar: {
     items: [
       {
