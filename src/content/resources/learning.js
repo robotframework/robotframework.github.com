@@ -67,7 +67,7 @@ export default () => ([
   {
     name: 'Demo: Robot Framework RPA example projects',
     description: 'A library of sample RPA projects and code snippets built on Robot Framework',
-    href: 'Robot Framework RPA example projects'
+    href: 'https://robocorp.com/portal/'
   },
   {
     name: 'Demo: Remote interface',
