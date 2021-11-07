@@ -71,7 +71,7 @@
     </div>
     <button class="theme mt-small">
       <router-link :to="{ name: 'Users' }" class="type-no-underline">
-        More users
+        {{ $t('introduction.moreUsers') }}
       </router-link>
     </button>
   </div>

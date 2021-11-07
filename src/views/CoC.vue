@@ -2,10 +2,10 @@
   <div class="container narrow mb-xlarge pl-small pr-small">
     <div class="row mb-large mt-large">
       <button v-if="cameFromHome" @click="$router.go(-1)" class="color-theme type-underline">
-        Back
+        {{ $t('common.back') }}
       </button>
       <router-link v-else :to="{ name: 'Home' }">
-        Back
+        {{ $t('common.back') }}
       </router-link>
     </div>
     <h2>

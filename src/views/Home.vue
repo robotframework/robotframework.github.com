@@ -46,7 +46,7 @@
         <community-items />
         <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
           <router-link :to="{ name: 'CoC' }" class="type-no-underline">
-            Code of Conduct
+            {{ $t('community.coc') }}
           </router-link>
         </button>
       </div>
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .nav-desktop {
     display: none;
   }
