@@ -211,7 +211,7 @@ export default {
   left: 50%;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 951px) {
   .navbar, .menu {
     display: none;
   }

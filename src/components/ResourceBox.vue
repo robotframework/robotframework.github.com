@@ -151,7 +151,7 @@
               v-if="!showAll && itemsFilteredByTag.length > 7"
               class="stroke type-uppercase mt-small type-small mb-xsmall"
               @click="showAll = true">
-              Show more
+              {{ $t('resources.showMore') }}
             </button>
           </div>
         </div>

@@ -44,7 +44,7 @@
       class="col-md-2 pl-medium"
       :style="$store.state.isMobile ? 'padding-left: 4.7rem; margin-top: 1rem;' : ''">
       <h3 class="color-grey-dark color-white-darkmode mb-2xsmall">
-        Other
+        {{ $t('common.other') }}
       </h3>
       <div
         v-for="link in items.slice(3)"
@@ -93,7 +93,7 @@ export default {
           title: 'Facebook'
         }, {
           href: 'http://groups.google.com/group/robotframework-users',
-          title: 'Mailing list'
+          title: this.$t('community.links.mailingList')
         }
       ]
     }

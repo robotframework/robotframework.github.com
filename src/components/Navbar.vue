@@ -7,15 +7,16 @@
       v-for="item in $tm('navbar.items')"
       :key="item.name"
       :name="`go-to-${item.name}`"
-      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white"
+      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white type-small"
       @click="itemClick(item.id)">
       {{ item.name }}
     </button>
     <!-- external links -->
     <div class="relative" ref="dropdown">
       <button
-        class="pl-small pr-small font-title type-uppercase line-height-body"
+        class="pl-small pr-small font-title type-uppercase type-small"
         :class="linkDropdownOpen ? 'color-theme' : 'color-white'"
+        style="transform: translateY(2px);"
         @click="linkDropdownOpen = !linkDropdownOpen">
         {{ $t('navbar.dropdownName') }}
       </button>
@@ -42,17 +43,17 @@
         </div>
       </transition>
     </div>
-    <!-- lang - disabled for now
     <button
       class="border-left-white font-title type-uppercase pl-small relative line-height-body"
       @click="langDropdownOpen = !langDropdownOpen">
       <div
-        class="flex middle">
+        class="flex middle"
+        style="transform: translateY(2px);">
         <globe-icon
           :color="langDropdownOpen ? 'theme' : 'white'"
           style="transform: translateY(-1px);" />
         <div
-          class="pl-3xsmall type-body"
+          class="pl-3xsmall type-small"
           :class="langDropdownOpen ? 'color-theme' : 'color-white'"
           style="transform: translateY(-2px);">
           {{ langNames.find(({ lang }) => lang === $i18n.locale).name }}
@@ -74,7 +75,7 @@
           </div>
         </div>
       </transition>
-    </button> -->
+    </button>
     <transition name="opacity">
       <div
         v-if="navSticky"
@@ -87,11 +88,13 @@
 
 <script>
 import NewTabIcon from './icons/NewTabIcon.vue'
+import GlobeIcon from './icons/GlobeIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
-    NewTabIcon
+    NewTabIcon,
+    GlobeIcon
   },
   data: () => ({
     navSticky: false,

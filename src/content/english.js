@@ -126,7 +126,8 @@ export default () => ({
         description: 'Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software.',
         imgName: 'Wartsila.svg'
       }
-    ]
+    ],
+    moreUsers: 'More Users'
   },
   gettingStarted: {
     title: 'Getting Started',
@@ -240,8 +241,10 @@ Welcome Page Should Be Open
       openSpace: {
         title: 'Open space',
         description: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own. Also in Slack #open-space. <a href="./robot-framework-open-space.ics">ICS file</a>'
-      }
-    }
+      },
+      mailingList: 'Mailing List'
+    },
+    coc: 'Code of Conduct'
   },
   resources: {
     title: 'Resources',
@@ -275,10 +278,7 @@ Welcome Page Should Be Open
         Most of these tools are developed as separate projects, but some are built into the framework itself.`
       }
     ],
-    mobileTitles: [
-      'Standard',
-      'External'
-    ]
+    showMore: 'Show More'
   },
   development: {
     title: 'Development',
@@ -298,5 +298,36 @@ Welcome Page Should Be Open
       <a href="https://github.com/robotframework/robotframework.github.com/pulls">pull request</a> or an
       <a href="https://github.com/robotframework/robotframework.github.com/issues">issue</a>.`
     // list of users is found in ./resources/users.js
+  },
+  footer: {
+    contact: 'Contact',
+    community: 'Community',
+    instructions: {
+      title: 'Instructions',
+      items: [
+        {
+          title: 'Installation',
+          href: 'https://github.com/robotframework/robotframework/blob/master/INSTALL.rst'
+        }, {
+          title: 'Quick start',
+          href: 'https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst'
+        }, {
+          title: 'User quide',
+          href: 'https://robotframework.org/robotframework/#user-guide'
+        }, {
+          title: 'Web Demo',
+          href: 'https://github.com/robotframework/WebDemo'
+        }, {
+          title: 'Robocon talks',
+          href: 'https://robocon.io/'
+        }
+      ]
+    },
+    privacyPolicy: 'Privacy Policy',
+    coc: 'Code of Conduct'
+  },
+  common: {
+    back: 'Back',
+    other: 'Other'
   }
 })
