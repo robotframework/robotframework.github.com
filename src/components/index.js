@@ -2,6 +2,7 @@ import NewsBanner from './NewsBanner.vue'
 import Banner from './Banner.vue'
 import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
+import NavbarSubPage from './NavbarSubPage.vue'
 import NavMobile from './NavMobile.vue'
 import PageSection from './PageSection.vue'
 import PageSectionTwitter from './PageSectionTwitter.vue'
@@ -22,6 +23,7 @@ export {
   Banner,
   PageFooter,
   Navbar,
+  NavbarSubPage,
   NavMobile,
   PageSection,
   PageSectionTwitter,
