@@ -304,11 +304,11 @@ Welcome Page Should Be Open
       title: 'Who we are',
       body: `<p>Robot Framework Foundation is a non-profit consortium that fosters the growth of <a href="https://robotframework.org">Robot Framework</a>.
       It was founded by companies with a common interest to ensure the development of Robot Framework now and in
-      the future.</p>`
+      the future. We are always looking for new members to join.</p>`
     },
-    howToJoin: {
-      title: 'How to join',
-      body: `<p>When your company becomes a member you:</p>
+    benefitsAndCost: {
+      title: 'Benefits and cost',
+      body: `<p>When your company becomes a member you will:</p>
 
       <ol>
         <li>Ensure Robot Framework is maintained and developed</li>
@@ -317,8 +317,14 @@ Welcome Page Should Be Open
         <li>Get all this for an affordable price per user</li>
       </ol>
 
-      <h3>To join:</h3>
+      <h3>Annual Fees</h3>
+      <p>Annual fee is determined by how many Robot Framework users are in your organization.</p>
 
+`
+    },
+    howToJoin: {
+      title: 'How to join',
+      body: `<p>If you'd like to become a member of Robot Framework Foundation, please
       <ol>
         <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7">the application</a></li>
         <li>Robot Framework Foundation board will make a voting according to our rules</li>
@@ -331,9 +337,6 @@ Welcome Page Should Be Open
 
       <h3>For existing members</h3>
       <p>If your contact person changes and for other such matters, please contact admin@robotframework.org</p>
-
-      <h3>Annual Fees</h3>
-      <p>Annual fee is determined by how many Robot Framework users are in your organization.</p>
       `
     },
     whatWeDo: {
@@ -343,7 +346,7 @@ Welcome Page Should Be Open
       Robot Framework ecosystem can also be considered. We also take care of the overall Robot Framework infrastructure
       including public web sites, email lists and CI servers. We also promote Robot Framework by organizing meetups
       for the Robot Framework community.</p>
-      <p>Activities are financed by <a href="#members">members</a> and we are always looking for new members to join.</p>`
+      <p>Activities are financed by <a href="#members">members</a>.</p>`
     }
   }
 })

@@ -5,8 +5,13 @@
       <page-section
         title-id="who-we-are"
         :title="$t('foundation.whoWeAre.title')"
-        :body="$t('foundation.whoWeAre.body')">
-      </page-section>
+        :body="$t('foundation.whoWeAre.body')"
+      />
+      <page-section
+        title-id="benefits-and-cost"
+        :title="$t('foundation.benefitsAndCost.title')"
+        :body="$t('foundation.benefitsAndCost.body')"
+        />
       <page-section
         title-id="how-to-join"
         :title="$t('foundation.howToJoin.title')"
