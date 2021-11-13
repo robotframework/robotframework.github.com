@@ -302,41 +302,26 @@ Welcome Page Should Be Open
   foundation: {
     whoWeAre: {
       title: 'Who we are',
-      body: `<p>Robot Framework is a generic open source automation framework for acceptance testing,
-      acceptance test driven development (ATDD), and robotic process automation (RPA). It has
-      simple plain text syntax and it can be extended easily with libraries implemented using Python or Java.</p>
-      <p>Robot Framework Foundation is a non-profit consortium that fosters the growth of Robot Framework.
-      It was founded by companies with a common interest to ensure the development of framework now and in
-      the future. <a href="https://forum.robotframework.org/t/robot-framework-foundation-unfolded/276">
-      Click here if you want to know more.</a></p>`
-    },
-    whatWeDo: {
-      title: 'What we do',
-      body: `<p>We sponsor the development of Robot Framework with the focus on fixing bugs,
-      reviewing pull requests by the community and making releases. New feature development
-      and sponsoring other projects in the wider Robot Framework ecosystem can also be considered
-      if we are able to collect enough sponsorship money. We also take care of the overall
-      Robot Framework infrastructure including public web sites, email lists and CI servers.
-      Finally, we promote Robot Framework by organizing meetups for users and otherwise.</p>
-      <p>The money for all these activities is collected from <a href="#members">members</a> as yearly payments.</p>`
+      body: `<p>Robot Framework Foundation is a non-profit consortium that fosters the growth of <a href="https://robotframework.org">Robot Framework</a>.
+      It was founded by companies with a common interest to ensure the development of Robot Framework now and in
+      the future.</p>`
     },
     howToJoin: {
       title: 'How to join',
-      body: `<p>Robot Framework Foundation ensures the development of Robot Framework and related tools.
-      When your company becomes a member you:</p>
+      body: `<p>When your company becomes a member you:</p>
 
       <ol>
         <li>Ensure Robot Framework is maintained and developed</li>
         <li>Get visibility about your membership for your company if you wish</li>
         <li>Gain ability to participate in decision making</li>
-        <li>Get all this for affordable price per user</li>
+        <li>Get all this for an affordable price per user</li>
       </ol>
 
       <h3>To join:</h3>
 
       <ol>
-        <li>Fill in the following application: https://forms.gle/devoS2X3jEyqBE1x7</li>
-        <li>We’ll make a voting according to our rules</li>
+        <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7">the application</a></li>
+        <li>Robot Framework Foundation board will make a voting according to our rules</li>
         <li>You are added to the webpage and mailing list, when you are accepted</li>
         <li>Welcome to make the world of Open Source and Automation better!</li>
       </ol>
@@ -350,6 +335,15 @@ Welcome Page Should Be Open
       <h3>Annual Fees</h3>
       <p>Annual fee is determined by how many Robot Framework users are in your organization.</p>
       `
+    },
+    whatWeDo: {
+      title: 'What we do',
+      body: `<p>We sponsor the development of Robot Framework with the focus on fixing bugs, reviewing pull requests
+      from the community and making releases. New feature development and sponsoring other projects in the wider
+      Robot Framework ecosystem can also be considered. We also take care of the overall Robot Framework infrastructure
+      including public web sites, email lists and CI servers. We also promote Robot Framework by organizing meetups
+      for the Robot Framework community.</p>
+      <p>Activities are financed by <a href="#members">members</a> and we are always looking for new members to join.</p>`
     }
   }
 })

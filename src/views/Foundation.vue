@@ -8,14 +8,14 @@
         :body="$t('foundation.whoWeAre.body')">
       </page-section>
       <page-section
-        title-id="what-we-do"
-        :title="$t('foundation.whatWeDo.title')"
-        :body="$t('foundation.whatWeDo.body')">
-      </page-section>
-      <page-section
         title-id="how-to-join"
         :title="$t('foundation.howToJoin.title')"
         :body="$t('foundation.howToJoin.body')">
+      </page-section>
+      <page-section
+        title-id="what-we-do"
+        :title="$t('foundation.whatWeDo.title')"
+        :body="$t('foundation.whatWeDo.body')">
       </page-section>
     </div>
   </div>
