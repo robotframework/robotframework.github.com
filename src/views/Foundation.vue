@@ -1,12 +1,11 @@
 <template>
   <div>
-    <navbar-sub-page title="Robot Framework Foundation" />
-    <div class="container">
-      <page-section
-        title-id="who-we-are"
-        :title="$t('foundation.whoWeAre.title')"
-        :body="$t('foundation.whoWeAre.body')"
-      />
+    <navbar-sub-page title="Foundation" />
+    <div class="container mb-3xlarge">
+      <div
+        class="col-sm-12 col-lg-9 col-lg-offset-3"
+        v-html="$t('foundation.lead')">
+      </div>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"
@@ -21,19 +20,23 @@
         title-id="what-we-do"
         :title="$t('foundation.whatWeDo.title')"
         :body="$t('foundation.whatWeDo.body')">
+        <sponsors-detailed class="col-sm-12 col-lg-9 col-lg-offset-3" />
       </page-section>
     </div>
+    <page-footer />
   </div>
 </template>
 
 <script>
-import { NavbarSubPage, PageSection } from 'Components'
+import { NavbarSubPage, PageSection, SponsorsDetailed, PageFooter } from 'Components'
 
 export default {
   name: 'Foundation',
   components: {
     NavbarSubPage,
-    PageSection
+    PageSection,
+    SponsorsDetailed,
+    PageFooter
   }
 }
 </script>

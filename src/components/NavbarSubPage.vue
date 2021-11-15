@@ -1,11 +1,10 @@
 <template>
-  <div class="row bar p-xsmall">
-    back
-    <div class="container row">
-      <div class="type-xlarge color-theme font-title line-height-1">
+  <div class="bar">
+    <div class="container row pt-xsmall pb-xsmall">
+      <router-link :to="{ name: 'Home' }" class="type-xlarge color-theme font-title line-height-1">
         ../
-      </div>
-      <h1 class="type-xlarge color-white line-height-1">
+      </router-link>
+      <h1 class="type-xlarge color-white line-height-1 type-uppercase">
         {{ title }}
       </h1>
     </div>
@@ -30,5 +29,6 @@ export default {
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 9;
   }
 </style>

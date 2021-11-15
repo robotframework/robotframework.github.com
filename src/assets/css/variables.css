@@ -45,7 +45,8 @@
     --weight-black: 900; /* h1 */
 
     --line-height-small: 1.25;
-    --line-height-body: 1.5;
+    --line-height-body: 1.75;
+    --line-height-lead: 2;
     --line-height-h1: 1;
     --line-height-h2: 1.5;
     --line-height-h3: 1.5;

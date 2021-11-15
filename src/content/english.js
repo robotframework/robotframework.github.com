@@ -300,43 +300,75 @@ Welcome Page Should Be Open
     // list of users is found in ./resources/users.js
   },
   foundation: {
-    whoWeAre: {
-      title: 'Who we are',
-      body: `<p>Robot Framework Foundation is a non-profit consortium that fosters the growth of <a href="https://robotframework.org">Robot Framework</a>.
-      It was founded by companies with a common interest to ensure the development of Robot Framework now and in
-      the future. We are always looking for new members to join.</p>`
-    },
+    lead: `<p class="lead">Robot Framework Foundation is a non-profit consortium that fosters the growth of Robot Framework.
+    It was founded by companies with a common interest to ensure the development of Robot Framework now and in
+    the future. We are always looking for new members to join.</p>`,
     benefitsAndCost: {
       title: 'Benefits and cost',
       body: `<p>When your company becomes a member you will:</p>
-
       <ol>
         <li>Ensure Robot Framework is maintained and developed</li>
         <li>Get visibility about your membership for your company if you wish</li>
         <li>Gain ability to participate in decision making</li>
         <li>Get all this for an affordable price per user</li>
       </ol>
-
       <h3>Annual Fees</h3>
-      <p>Annual fee is determined by how many Robot Framework users are in your organization.</p>
+      <p>Annual fee is determined by how many Robot Framework users are in your organization:</p>
+      <table class="col-sm-12 col-md-6">
+        <tr>
+          <th>Users</th>
+          <th>Fee</th>
+        </tr>
+        <tr>
+          <td>1-10</td>
+          <td>1500€</td>
+        </tr>
+        <tr>
+          <td>11-50</td>
+          <td>3000€</td>
+        </tr>
+        <tr>
+          <td>51-250</td>
+          <td>6000€</td>
+        </tr>
+        <tr>
+          <td>251-</td>
+          <td>12000€</td>
+        </tr>
+      </table>
 
 `
     },
-    howToJoin: {
+    /* howToJoin: {
       title: 'How to join',
-      body: `<p>If you'd like to become a member of Robot Framework Foundation, please
+      body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
       <ol>
-        <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7">the application</a></li>
+        <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7" target="_blank">the application</a></li>
         <li>Robot Framework Foundation board will make a voting according to our rules</li>
         <li>You are added to the webpage and mailing list, when you are accepted</li>
         <li>Welcome to make the world of Open Source and Automation better!</li>
       </ol>
-
       <p>If you have any questions related to the membership, please send an email to
-      robotframework-foundation@googlegroups.com and we will get back to you.</p>
-
+      <a href="mailto:robotframework-foundation{’@’}@googlegroups.com">robotframework-foundation{’@’}googlegroups.com</a>
+      and we will get back to you.</p>
       <h3>For existing members</h3>
-      <p>If your contact person changes and for other such matters, please contact admin@robotframework.org</p>
+      <p>If your contact person changes and for other such matters, please contact <a href="mailto:admin@robotframework.org">admin@robotframework.org</a></p>
+      `
+    }, */
+    howToJoin: {
+      title: 'How to join',
+      body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
+      <ol>
+        <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7" target="_blank">the application</a></li>
+        <li>Robot Framework Foundation board will make a voting according to our rules</li>
+        <li>You are added to the webpage and mailing list, when you are accepted</li>
+        <li>Welcome to make the world of Open Source and Automation better!</li>
+      </ol>
+      <p>If you have any questions related to the membership, please send an email to
+      <a href="mailto:robotframework-foundation{at}{'@'}{at}googlegroups.com">robotframework-foundation{at}{'@'}{at}googlegroups.com</a>
+      and we will get back to you.</p>
+      <h3>For existing members</h3>
+      <p>If your contact person changes and for other such matters, please contact <a href="mailto:admin{at}{'@'}{at}robotframework.org">admin{at}{'@'}{at}robotframework.org</a></p>
       `
     },
     whatWeDo: {
@@ -345,8 +377,8 @@ Welcome Page Should Be Open
       from the community and making releases. New feature development and sponsoring other projects in the wider
       Robot Framework ecosystem can also be considered. We also take care of the overall Robot Framework infrastructure
       including public web sites, email lists and CI servers. We also promote Robot Framework by organizing meetups
-      for the Robot Framework community.</p>
-      <p>Activities are financed by <a href="#members">members</a>.</p>`
+      for the Robot Framework community. Activities are financed by Foundation members.</p>
+      <h3>Robot Framework Foundation Members</h3>`
     }
   }
 })
