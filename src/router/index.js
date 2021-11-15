@@ -13,7 +13,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/foundation',
+    path: '/robot-framework-foundation',
     name: 'Foundation',
     component: Foundation
   },

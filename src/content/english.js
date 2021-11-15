@@ -38,7 +38,7 @@ export default () => ({
       },
       {
         name: 'Foundation',
-        url: 'https://robotframework.org/foundation/',
+        url: 'https://robotframework.org/robot-framework-foundation/',
         description: 'Support the development'
       },
       {
@@ -283,14 +283,14 @@ Welcome Page Should Be Open
   development: {
     title: 'Development',
     body: `<p>Development of Robot Framework is funded by the non-profit
-    <a href="https://robotframework.org/foundation/">Robot Framework Foundation</a>. It consists
+    <a href="https://robotframework.org/robot-framework-foundation/">Robot Framework Foundation</a>. It consists
     of companies and organizations that want to ensure the continuity of Robot Framework now and
     in the future.</p>
     <p>Thanks to these sponsors, Robot Framework remains completely
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
     sponsorBoxTitle: 'Members of Robot Framework Foundation',
-    howToJoin: '<a href="https://robotframework.org/foundation/">How to join</a>'
+    howToJoin: '<a href="https://robotframework.org/robot-framework-foundation/">How to join</a>'
   },
   usersPage: {
     title: 'Users of Robot Framework',
