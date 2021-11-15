@@ -307,6 +307,8 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
+  border: none;
+  padding: 0;
 }
 th {
   border-bottom: var(--color-white) dashed 0.15rem;
@@ -323,9 +325,6 @@ th:first-child, td:first-child {
 }
 th:last-child, td:last-child {
   padding-right: 1.5rem;
-}
-tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 .filter-input-container {
   width: fit-content;

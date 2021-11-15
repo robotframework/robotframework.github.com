@@ -2,7 +2,7 @@
   <div
     class="border-top-theme mt-xlarge section-container"
     tabindex="-1">
-    <div class="row p-small">
+    <div class="row p-small pb-none">
       <div
         class="col-sm-12 col-lg-3"
         :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
@@ -12,6 +12,7 @@
       </div>
       <div
         class="col-sm-12 col-lg-9"
+        :class="$store.state.isMobile ? '' : 'pt-2xsmall'"
         v-html="body" />
     </div>
     <div

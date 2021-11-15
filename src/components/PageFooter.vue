@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-sm-6 col-md-3">
           <h3 class="mb-small">
-            <a href="https://robotframework.org/foundation/">Foundation</a>
+            <router-link :to="{ name: 'Foundation' }">
+              Foundation
+            </router-link>
           </h3>
           <div>
             Robot Framework ry
