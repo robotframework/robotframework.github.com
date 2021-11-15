@@ -64,14 +64,14 @@ export default () => ({
       `Robot Framework is a generic open source automation framework.
       It can be used for test automation and robotic process automation (RPA).<br><br>
 
-      Robot Framework is actively supported, with many industry-leading companies using
-      it in their software development.<br><br>
+      Robot Framework is supported by <a href="https://robotframework.org/robot-framework-foundation/">Robot Framework Foundation</a>.
+      Many industry-leading companies use the tool in their software development.<br><br>
 
       Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
       other tool to create powerful and flexible automation solutions.
       Robot Framework is free to use without licensing costs.<br><br>
 
-      Robot Framework has easy syntax, utilizing human-readable keywords. Its capabilities can be extended
+      Robot Framework has an easy syntax, utilizing human-readable keywords. Its capabilities can be extended
       by libraries implemented with Python, Java or many other programming languages.
       Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
     companies: [
@@ -246,7 +246,8 @@ Welcome Page Should Be Open
   resources: {
     title: 'Resources',
     body:
-      `<p>Robot Framework is open source and there is a huge community of contributors around it.
+      `<p>Robot Framework is open source and supported by <a href="https://robotframework.org/robot-framework-foundation/">Robot Framework Foundation</a>.
+      There is a huge community of contributors around the tool.
       The software is built with expandability in mind and there are numerous ways to extend
       it's use cases for various needs.</p>
       <p>If you have created or found a library that you think should be listed here, please
@@ -339,22 +340,6 @@ Welcome Page Should Be Open
 
 `
     },
-    /* howToJoin: {
-      title: 'How to join',
-      body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
-      <ol>
-        <li>Fill in <a href="https://forms.gle/devoS2X3jEyqBE1x7" target="_blank">the application</a></li>
-        <li>Robot Framework Foundation board will make a voting according to our rules</li>
-        <li>You are added to the webpage and mailing list, when you are accepted</li>
-        <li>Welcome to make the world of Open Source and Automation better!</li>
-      </ol>
-      <p>If you have any questions related to the membership, please send an email to
-      <a href="mailto:robotframework-foundation{’@’}@googlegroups.com">robotframework-foundation{’@’}googlegroups.com</a>
-      and we will get back to you.</p>
-      <h3>For existing members</h3>
-      <p>If your contact person changes and for other such matters, please contact <a href="mailto:admin@robotframework.org">admin@robotframework.org</a></p>
-      `
-    }, */
     howToJoin: {
       title: 'How to join',
       body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
