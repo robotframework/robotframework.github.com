@@ -76,4 +76,9 @@ export default {
   background-size: contain;
   background-position: center;
 }
+@media (prefers-color-scheme: dark) {
+  .img-container {
+    height: 6rem;
+  }
+}
 </style>

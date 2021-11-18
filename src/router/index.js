@@ -13,9 +13,13 @@ const routes = [
     component: Home
   },
   {
-    path: '/robot-framework-foundation',
+    path: '/foundation',
     name: 'Foundation',
     component: Foundation
+  },
+  {
+    path: '/robot-framework-foundation',
+    redirect: { name: 'Foundation' }
   },
   {
     path: '/privacy-policy',

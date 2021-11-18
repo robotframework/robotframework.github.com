@@ -38,7 +38,7 @@ export default () => ({
       },
       {
         name: 'Foundation',
-        url: '/robot-framework-foundation/',
+        url: '/foundation/',
         description: 'Support the development'
       },
       {
@@ -64,7 +64,7 @@ export default () => ({
       `Robot Framework is a generic open source automation framework.
       It can be used for test automation and robotic process automation (RPA).<br><br>
 
-      Robot Framework is supported by <a href="/robot-framework-foundation/">Robot Framework Foundation</a>.
+      Robot Framework is supported by <a href="/foundation/">Robot Framework Foundation</a>.
       Many industry-leading companies use the tool in their software development.<br><br>
 
       Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
@@ -246,7 +246,7 @@ Welcome Page Should Be Open
   resources: {
     title: 'Resources',
     body:
-      `<p>Robot Framework is open source and supported by <a href="/robot-framework-foundation/">Robot Framework Foundation</a>.
+      `<p>Robot Framework is open source and supported by <a href="/foundation/">Robot Framework Foundation</a>.
       There is a huge community of contributors around the tool.
       The software is built with expandability in mind and there are numerous ways to extend
       it's use cases for various needs.</p>
@@ -284,14 +284,14 @@ Welcome Page Should Be Open
   development: {
     title: 'Development',
     body: `<p>Development of Robot Framework is funded by the non-profit
-    <a href="/robot-framework-foundation/">Robot Framework Foundation</a>. It consists
+    <a href="/foundation/">Robot Framework Foundation</a>. It consists
     of companies and organizations that want to ensure the continuity of Robot Framework now and
     in the future.</p>
     <p>Thanks to these sponsors, Robot Framework remains completely
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
     sponsorBoxTitle: 'Members of Robot Framework Foundation',
-    howToJoin: '<a href="/robot-framework-foundation/">How to join</a>'
+    howToJoin: '<a href="/foundation/">How to join</a>'
   },
   usersPage: {
     title: 'Users of Robot Framework',
