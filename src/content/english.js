@@ -157,7 +157,7 @@ export default () => ({
       {
         name: 'Syntax',
         description: `<p>This is a simple example to illustrate how Robot Framework works.
-        The example is based on the <a href="https://github.com/robotframework/WebDemo" target="_blank">WebDemo</a> which
+        The example is based on the <a href="https://robotframework.org/demoapp" target="_blank">Demo App</a> which
         we encourage to check for more details and to try it out yourself.</p>
 <robot>*** Settings ***
 Documentation     A test suite for valid login.
@@ -168,7 +168,7 @@ Resource          resource.robot
 *** Test Cases ***
 Valid Login
     Open Login Page
-    Input Credentials    demo    mode
+    Input Credentials    robot    overloard
     Submit Credentials
     Welcome Page Should Be Open
     [Teardown]    Close Browser
@@ -176,39 +176,37 @@ Valid Login
         <p>The test case uses imported keywords such as <span class="hljs">Open Login Page</span> that
         abstract the inner workings and enable the test to be easily readable with natural language.</p>
         <p>Below you'll see the <span class="hljs">resource.robot</span> file. It is extended with
-        <a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html" target="_blank">SeleniumLibrary</a>
-        that provides lots of useful keywords for web testing such as <span class="hljs">Open Browser</span>.
+        <a href="https://robotframework-browser.org" target="_blank">Browser library</a>
+        that provides lots of useful keywords for web testing such as <span class="hljs">New Page</span>.
         Keywords are composable, meaning you can define new keywords that use pre-existing keywords.</p>
         <robot>*** Settings ***
 Documentation     Reusable keywords and variables.
-Library           SeleniumLibrary
+Library           Browser
 
 *** Variables ***
-\${SERVER}         localhost:7272
-\${BROWSER}        Firefox
-\${LOGIN URL}      http://\${SERVER}/
-\${WELCOME URL}    http://\${SERVER}/welcome.html
+${DEMO_URL}      http://robotframework.org/demoapp
 
 *** Keywords ***
 Open Login Page
-    Open Browser    \${LOGIN URL}    \${BROWSER}
+    New Page    ${DEMO_URL}
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Location Should Be    \${LOGIN URL}
-    Title Should Be    Login Page
+    get url   ==    ${DEMO_URL}
+    get title   ==    Robot Framework
 
 Input Credentials
-    [Arguments]    \${username}    \${password}
-    Input Text    username_field    \${username}
-    Input Text    password_field    \${password}
+    [Arguments]    ${username}    ${password}
+    Type Text    text=Username    ${username}
+    Type Text    text=Password    ${password}
 
 Submit Credentials
-    Click Button    login_button
+    Click    input[type=submit]
 
 Welcome Page Should Be Open
-    Location Should Be    \${WELCOME URL}
-    Title Should Be    Welcome Page
+    get url   ==   ${DEMO URL}
+    get text   span   ==   I salute you, Robot overloard!
+    get title  ==    Robots rule
         </robot>
         <p>After running the test a log file will be generated that contains
         the test results and information about the run.</p>
