@@ -184,27 +184,27 @@ Documentation     Reusable keywords and variables.
 Library           Browser
 
 *** Variables ***
-${DEMO_URL}      http://robotframework.org/demoapp
+\${DEMO_URL}      https://robotframework.org/demoapp
 
 *** Keywords ***
 Open Login Page
-    New Page    ${DEMO_URL}
+    New Page    \${DEMO_URL}
     Login Page Should Be Open
 
 Login Page Should Be Open
-    get url   ==    ${DEMO_URL}
+    get url   ==    \${DEMO_URL}
     get title   ==    Robot Framework
 
 Input Credentials
-    [Arguments]    ${username}    ${password}
-    Type Text    text=Username    ${username}
-    Type Text    text=Password    ${password}
+    [Arguments]    \${username}    \${password}
+    Type Text    text=Username    \${username}
+    Type Text    text=Password    \${password}
 
 Submit Credentials
     Click    input[type=submit]
 
 Welcome Page Should Be Open
-    get url   ==   ${DEMO URL}
+    get url   ==   \${DEMO URL}
     get text   span   ==   I salute you, Robot overloard!
     get title  ==    Robots rule
         </robot>
