@@ -3,10 +3,8 @@
     <form class="login-form" v-if="!invalid && !valid">
       <img v-if="isDarkMode" :src="`${publicPath}img/RF-white.svg`" class="small-robot"/>
       <img v-else :src="`${publicPath}img/RF.svg`" class="small-robot" />
-      <label for="username">Username</label>
-      <input type="text" v-model="username" />
-      <label for="password">Password</label>
-      <input type="password" v-model="password" />
+      <label>Username<input type="text" v-model="username" /></label>
+      <label>Password<input type="password" v-model="password" /></label>
       <input type="submit" value="Login" v-on:click="checkUsernameAndPassword"/>
     </form>
     <span v-if="invalid">No humans allowed!</span>
@@ -58,6 +56,12 @@ export default {
     display: flex;
     flex-direction: column;
     max-width: 200px;
+  }
+
+  .login-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
   }
 
   .login-form input {
