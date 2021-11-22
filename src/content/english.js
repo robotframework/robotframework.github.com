@@ -155,7 +155,7 @@ export default () => ({
           `
       },
       {
-        name: 'Syntax',
+        name: 'Example',
         description: `<p>This is a simple example to illustrate how Robot Framework works.
         The example is based on the <a href="https://robotframework.org/demoapp" target="_blank">Demo App</a> which
         we encourage to check for more details and to try it out yourself.</p>
@@ -171,7 +171,6 @@ Valid Login
     Input Credentials    robot    overloard
     Submit Credentials
     Welcome Page Should Be Open
-    [Teardown]    Close Browser
 </robot>
         <p>The test case uses imported keywords such as <span class="hljs">Open Login Page</span> that
         abstract the inner workings and enable the test to be easily readable with natural language.</p>
@@ -185,15 +184,17 @@ Library           Browser
 
 *** Variables ***
 \${DEMO_URL}      https://robotframework.org/demoapp
+\${BROWSER_TYPE}  webkit
 
 *** Keywords ***
 Open Login Page
+    New Browser  \${BROWSER_TYPE}
     New Page    \${DEMO_URL}
     Login Page Should Be Open
 
 Login Page Should Be Open
-    get url   ==    \${DEMO_URL}
-    get title   ==    Robot Framework
+    Get Url   ==    \${DEMO_URL}
+    Get Title   ==    Robot Framework
 
 Input Credentials
     [Arguments]    \${username}    \${password}
@@ -204,10 +205,9 @@ Submit Credentials
     Click    input[type=submit]
 
 Welcome Page Should Be Open
-    get url   ==   \${DEMO URL}
-    get text   span   ==   I salute you, Robot overloard!
-    get title  ==    Robots rule
-        </robot>
+    Get Url   ==   \${DEMO URL}
+    Get Text   body   ==   I salute you, Robot overloard!
+    Get Title  ==    Robots rule</robot>
         <p>After running the test a log file will be generated that contains
         the test results and information about the run.</p>
         <a href="./log.html" target="_blank">Example log file</a>.`
