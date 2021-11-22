@@ -157,7 +157,7 @@ export default () => ({
       {
         name: 'Example',
         description: `<p>This is a simple example to illustrate how Robot Framework works.
-        The example is based on the <a href="https://robotframework.org/demoapp" target="_blank">Demo App</a> which
+        The example is based on the <a href="/demoapp" target="_blank">Demo App</a> which
         we encourage to check for more details and to try it out yourself.</p>
 <robot>*** Settings ***
 Documentation     A test suite for valid login.
@@ -208,9 +208,11 @@ Welcome Page Should Be Open
     Get Url   ==   \${DEMO URL}
     Get Text   body   ==   I salute you, Robot overloard!
     Get Title  ==    Robots rule</robot>
-        <p>After running the test a log file will be generated that contains
+        <p>After running the test a log file will be generated. The log file contains
         the test results and information about the run.</p>
-        <a href="./log.html" target="_blank">Example log file</a>.`
+        <a href="./example/log.html" target="_blank">Example log file</a>.
+        <a href="./example/example.robot" target="_blank">example.robot</a>.
+        <a href="./example/resource.robot" target="_blank">resource.robot</a>.`
       },
       {
         name: 'Tutorials'
