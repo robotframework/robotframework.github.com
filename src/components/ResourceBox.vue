@@ -80,7 +80,7 @@
                     key="1"
                     color="white"
                     class="mr-small"
-                    :size="22"
+                    size="1.25rem"
                     :direction="direction === 'descending' ? 'down' : 'up'"
                     :style="sortBy === header ? '' : 'visibility: hidden;'" />
                 </button>

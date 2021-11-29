@@ -1,46 +1,100 @@
 <template>
   <div
     ref="nav"
-    class="navbar row center bg-black color-white p-2xsmall pt-small pb-small">
-    <!-- section navigation -->
-    <button
-      v-for="item in $tm('navbar.items')"
-      :key="item.name"
-      :name="`go-to-${item.name}`"
-      class="pl-small pr-small color-white font-title type-uppercase type-no-underline border-right-white"
-      @click="itemClick(item.id)">
-      {{ item.name }}
-    </button>
-    <!-- external links -->
-    <div class="relative" ref="dropdown">
-      <button
-        class="pl-small pr-small font-title type-uppercase line-height-body"
-        :class="linkDropdownOpen ? 'color-theme' : 'color-white'"
-        @click="linkDropdownOpen = !linkDropdownOpen">
-        {{ $t('navbar.dropdownName') }}
-      </button>
-      <transition name="fade">
-        <div
-          v-if="linkDropdownOpen"
-          class="dropdown-container bg-black color-white p-small card">
-          <div
-            v-for="{ name, url, description } in $tm('navbar.dropdown')"
-            :key="name">
-            <div class="flex end">
-              <a
-                :href="url"
-                target="_blank"
-                rel="noopener noreferrer">
-                {{ name }}
-              </a>
-              <new-tab-icon color="theme" class="ml-2xsmall" />
+    class="navbar bg-black color-white">
+    <div class="container row between">
+      <div class="flex">
+        <robot-icon
+          v-if="iconInContainer"
+          size="2rem"
+          class="ml-small rf-icon-rotation cursor-pointer"
+          style="margin-top: 11px;"
+          @click="logoClick" />
+        <!-- section navigation -->
+        <button
+          v-for="(item, i) in $tm('navbar.items')"
+          :key="item.name"
+          :name="`go-to-${item.name}`"
+          class="px-small my-small color-white font-title type-no-underline type-uppercase"
+          :class="i === $tm('navbar.items').length - 1 ? '' : 'border-right-white'"
+          @click="itemClick(item.id)">
+          {{ item.name }}
+        </button>
+      </div>
+      <div class="flex">
+        <!-- docs -->
+        <div class="relative" ref="dropdownDocs">
+          <button
+            class="flex middle px-small mt-xsmall font-title type-uppercase line-height-body dropdown-button border-right-white"
+            :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
+            @click="docsDropdownOpen = !docsDropdownOpen">
+            <div>
+              {{ $t('navbar.dropdownDocs.name') }}
             </div>
-            <p class="type-small mt-none type-right">
-              {{ description }}
-            </p>
-          </div>
+            <div class="flex ml-3xsmall">
+              <chevron-icon
+                :color="docsDropdownOpen ? 'theme' : 'white'"
+                :direction="docsDropdownOpen ? 'up' : 'down'"
+                size="1.5rem" />
+            </div>
+          </button>
+          <transition name="fade">
+            <div
+              v-if="docsDropdownOpen"
+              class="dropdown-container bg-black color-white p-small card" style="left: 0.25rem;">
+              <div
+                v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
+                :key="name">
+                <a :href="url">
+                  {{ name }}
+                </a>
+                <p class="type-small mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
+                  {{ description }}
+                </p>
+              </div>
+            </div>
+          </transition>
         </div>
-      </transition>
+        <!-- external links -->
+        <div class="relative" ref="dropdownLinks">
+          <button
+            class="flex middle px-small mt-xsmall font-title type-uppercase line-height-body dropdown-button"
+            :class="linksDropdownOpen ? 'color-theme' : 'color-white'"
+            @click="linksDropdownOpen = !linksDropdownOpen">
+            <div>
+              {{ $t('navbar.dropdownLinks.name') }}
+            </div>
+            <div class="flex ml-3xsmall">
+              <chevron-icon
+                :color="linksDropdownOpen ? 'theme' : 'white'"
+                :direction="linksDropdownOpen ? 'up' : 'down'"
+                size="1.5rem" />
+            </div>
+          </button>
+          <transition name="fade">
+            <div
+              v-if="linksDropdownOpen"
+              class="dropdown-container bg-black color-white p-small card" style="right: 0.25rem;">
+              <div
+                v-for="({ name, url, description }, i) in $tm('navbar.dropdownLinks.items')"
+                :key="name">
+                <div class="flex end">
+                  <a
+                    :href="url"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {{ name }}
+                  </a>
+                  <new-tab-icon color="theme" class="ml-2xsmall" />
+                </div>
+                <p class="type-small mt-none type-right" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : ''">
+                  {{ description }}
+                </p>
+              </div>
+            </div>
+          </transition>
+        </div>
+      </div>
     </div>
     <!-- lang - disabled for now
     <button
@@ -76,10 +130,12 @@
       </transition>
     </button> -->
     <transition name="opacity">
-      <div
-        v-if="navSticky"
-        class="tiny-logo-container">
-        <img :src="`${publicPath}img/RF-white.svg`" />
+      <div v-if="navSticky && !iconInContainer">
+        <robot-icon
+          size="2rem"
+          class="absolute rf-icon-rotation cursor-pointer"
+          style="top: 11px; left: 0.75rem;"
+          @click="logoClick" />
       </div>
     </transition>
   </div>
@@ -87,17 +143,22 @@
 
 <script>
 import NewTabIcon from './icons/NewTabIcon.vue'
+import RobotIcon from './icons/RobotIcon.vue'
+import ChevronIcon from './icons/ChevronIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
-    NewTabIcon
+    NewTabIcon,
+    RobotIcon,
+    ChevronIcon
   },
   data: () => ({
     navSticky: false,
-    publicPath: process.env.BASE_URL,
-    linkDropdownOpen: false,
-    langDropdownOpen: false
+    linksDropdownOpen: false,
+    docsDropdownOpen: false,
+    langDropdownOpen: false,
+    iconInContainer: false
   }),
   computed: {
     langNames() {
@@ -123,8 +184,18 @@ export default {
       window.localStorage.setItem('lang', lang)
     },
     onClick(ev) {
-      // close link dropdown if clicked outside
-      if (this.linkDropdownOpen && this.$refs.dropdown && !this.$refs.dropdown.contains(ev.target)) this.linkDropdownOpen = false
+      // close dropdowns if clicked outside
+      if (this.$refs.dropdownLinks && !this.$refs.dropdownLinks.contains(ev.target)) this.linksDropdownOpen = false
+      if (this.$refs.dropdownDocs && !this.$refs.dropdownDocs.contains(ev.target)) this.docsDropdownOpen = false
+    },
+    onResize() {
+      this.iconInContainer = window.innerWidth < 1500
+    },
+    logoClick() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     }
   },
   mounted() {
@@ -133,16 +204,19 @@ export default {
     }, { threshold: 1 })
     observer.observe(this.$refs.nav)
     document.addEventListener('click', this.onClick)
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
   },
   beforeUnmount() {
     document.removeEventListener('click', this.onClick)
+    window.removeEventListener('resize', this.onResize)
   },
   watch: {
-    linkDropdownOpen() {
-      if (this.linkDropdownOpen) this.langDropdownOpen = false
+    linksDropdownOpen() {
+      if (this.linksDropdownOpen) this.langDropdownOpen = false
     },
     langDropdownOpen() {
-      if (this.langDropdownOpen) this.linkDropdownOpen = false
+      if (this.langDropdownOpen) this.linksDropdownOpen = false
     }
   }
 }
@@ -170,14 +244,22 @@ export default {
     width: 3.5rem;
     height: 3.5rem;
   }
+  .dropdown-button:hover svg {
+    fill: var(--color-theme);
+  }
   .dropdown-container {
     position: absolute;
-    top: calc(100% + 2rem);
-    right: 0;
+    top: calc(100% + 1rem);
     width: max-content;
   }
   .dropdown-container a {
     display: block;
     line-height: 1;
+  }
+  .rf-icon-rotation {
+    transition: transform 0.2s;
+  }
+  .rf-icon-rotation:hover {
+    transform: rotate(90deg);
   }
 </style>

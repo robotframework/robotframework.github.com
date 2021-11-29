@@ -1,62 +1,80 @@
 export default () => ({
   langName: 'English',
-  newsBanner: '<a href="https://robocon.io/">RoboCon 2022</a> tickets are now available!',
+  newsBanner: '📣 <a href="https://robocon.io/">RoboCon 2022</a> tickets are now available! 📣',
   navbar: {
     items: [
       {
-        name: 'Introduction',
-        id: 'introduction'
-      },
-      {
         name: 'Getting started',
         id: 'getting-started'
-      },
-      {
-        name: 'Community',
-        id: 'community'
       },
       {
         name: 'Resources',
         id: 'resources'
       },
       {
+        name: 'Community',
+        id: 'community'
+      },
+      {
         name: 'Development',
         id: 'development'
       }
     ],
-    dropdownName: 'Links',
-    dropdown: [
-      {
-        name: 'Github',
-        url: 'https://github.com/robotframework/robotframework',
-        description: 'Source code + issues'
-      },
-      {
-        name: 'Forum',
-        url: 'https://forum.robotframework.org/',
-        description: 'Discuss Robot Framework'
-      },
-      {
-        name: 'Foundation',
-        url: '/foundation/',
-        description: 'Support the development'
-      },
-      {
-        name: 'Robocon',
-        url: 'https://robocon.io/',
-        description: 'Annual conference'
-      },
-      {
-        name: 'Shop',
-        url: 'https://reddyshop.co/robotframework/',
-        description: 'Support the development'
-      },
-      {
-        name: 'RPA',
-        url: 'https://robotframework.org/rpa/',
-        description: 'Robotic process automation'
-      }
-    ]
+    dropdownDocs: {
+      name: 'Docs',
+      items: [
+        {
+          name: 'User Guide',
+          url: 'https://robotframework.org/robotframework/#user-guide',
+          description: 'All features explained'
+        },
+        {
+          name: 'Standard Libraries',
+          url: 'https://robotframework.org/robotframework/#standard-libraries',
+          description: 'Keyword documentation'
+        },
+        {
+          name: 'Public API',
+          url: 'https://robot-framework.readthedocs.io/en/stable/',
+          description: 'Build RF extensions'
+        }
+      ]
+    },
+    dropdownLinks: {
+      name: 'External sites',
+      items: [
+        {
+          name: 'Github',
+          url: 'https://github.com/robotframework/robotframework',
+          description: 'Source code + issues'
+        },
+        {
+          name: 'Forum',
+          url: 'https://forum.robotframework.org/',
+          description: 'Discuss Robot Framework'
+        },
+        {
+          name: 'Foundation',
+          url: '/foundation/',
+          description: 'Support the development'
+        },
+        {
+          name: 'Robocon',
+          url: 'https://robocon.io/',
+          description: 'Annual conference'
+        },
+        {
+          name: 'Shop',
+          url: 'https://reddyshop.co/robotframework/',
+          description: 'Support the development'
+        },
+        {
+          name: 'RPA',
+          url: 'https://robotframework.org/rpa/',
+          description: 'Robotic process automation'
+        }
+      ]
+    }
   },
   introduction: {
     title: 'Introduction',
@@ -74,6 +92,7 @@ export default () => ({
       Robot Framework has an easy syntax, utilizing human-readable keywords. Its capabilities can be extended
       by libraries implemented with Python, Java or many other programming languages.
       Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
+    usedByTitle: 'Robot Framework is used by...',
     companies: [
       {
         name: 'ABB',

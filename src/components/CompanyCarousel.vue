@@ -1,11 +1,14 @@
 <template>
   <div v-if="activeCompany">
+    <h4>
+      {{ $t('introduction.usedByTitle') }}
+    </h4>
     <div class="row carousel-container pt-small pb-small bg-white bg-grey-dark-darkmode card">
       <button
         class="col-sm-2 col-md-1 flex center middle"
         aria-label="previous testimonial"
         @click="setActiveCompany(-1)">
-        <chevron-icon :size="48" :color="isDarkMode ? 'white' : 'black'" />
+        <chevron-icon size="3rem" :color="isDarkMode ? 'white' : 'black'" />
       </button>
       <transition :name="direction === 1 ? 'fade-left' : 'fade-right'" mode="out-in">
         <div
@@ -31,7 +34,7 @@
         <chevron-icon
           direction="right"
           :color="isDarkMode ? 'white' : 'black'"
-          :size="48" />
+          size="3rem" />
       </button>
     </div>
     <div v-if="$store.state.isMobile">

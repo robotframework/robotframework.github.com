@@ -18,6 +18,7 @@ import RobotCode from './RobotCode.vue'
 import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
+import RobotIcon from './icons/RobotIcon.vue'
 
 export {
   NewsBanner,
@@ -39,5 +40,6 @@ export {
 
   GlobeIcon,
   ChevronIcon,
-  NewTabIcon
+  NewTabIcon,
+  RobotIcon
 }

@@ -3,8 +3,8 @@
     <div
       v-if="isOpen"
       class="menu bg-black pt-xlarge pb-large pl-small pr-small">
-      <transition :name="linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
-        <div v-if="!linksOpen" key="1" class="pl-2xsmall">
+      <transition :name="docsOpen || linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
+        <div v-if="!docsOpen && !linksOpen" key="1" class="mt-medium">
           <div
             v-for="item in $tm('navbar.items')"
             :key="item.name">
@@ -15,25 +15,30 @@
               {{ item.name }}
             </button>
           </div>
-          <button
-            class="mt-xsmall color-white font-title type-uppercase"
-            @click="linksOpen = true">
-            {{ $t('navbar.dropdownName') }}
-          </button>
-        </div>
-        <div v-else key="2" class="pl-2xsmall">
-          <button
-            class="color-white font-title type-uppercase"
-            @click="linksOpen = false">
-            <div class="flex middle mb-small" style="margin-left: -0.5rem;">
-              <chevron-icon direction="left" color="white" :size="32" />
+          <div>
+            <button
+              class="flex middle mt-medium mb-small color-white font-title type-uppercase"
+              style="margin-left: -0.5rem;"
+              @click="docsOpen = true">
+              <chevron-icon direction="right" color="white" size="2rem" />
               <div>
-                {{ $t('navbar.dropdownName') }}
+                {{ $t('navbar.dropdownDocs.name') }}
               </div>
+            </button>
+          </div>
+          <button
+            class="flex middle mt-xsmall color-white font-title type-uppercase"
+            style="margin-left: -0.5rem;"
+            @click="linksOpen = true">
+            <chevron-icon direction="right" color="white" size="2rem" />
+            <div>
+              {{ $t('navbar.dropdownLinks.name') }}
             </div>
           </button>
+        </div>
+        <div v-else-if="linksOpen" key="2" class="mt-medium">
           <div
-            v-for="{ name, url, description } in $tm('navbar.dropdown')"
+            v-for="({ name, url, description }, i) in $tm('navbar.dropdownLinks.items')"
             :key="name">
             <div class="flex middle">
               <a
@@ -44,7 +49,21 @@
               </a>
               <new-tab-icon color="theme" class="ml-2xsmall" />
             </div>
-            <p class="type-small color-white mt-none">
+            <p class="type-small color-white mt-none" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : 'mb-small'">
+              {{ description }}
+            </p>
+          </div>
+        </div>
+        <div v-else key="3" class="mt-medium">
+          <div
+            v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
+            :key="name">
+            <div class="flex middle">
+              <a :href="url">
+                {{ name }}
+              </a>
+            </div>
+            <p class="type-small color-white mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : 'mb-small'">
               {{ description }}
             </p>
           </div>
@@ -55,23 +74,37 @@
   <div
     class="navbar row between bg-black color-white"
     :class="isOpen ? 'open' : ''">
+    <transition :name="docsOpen || linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
+      <button
+        v-if="linksOpen || docsOpen"
+        class="color-white font-title type-uppercase ml-2xsmall"
+        @click="linksOpen = false; docsOpen = false">
+        <div class="flex middle">
+          <chevron-icon direction="left" color="white" size="2rem" />
+          <div>
+            {{ linksOpen ? $t('navbar.dropdownLinks.name') : $t('navbar.dropdownDocs.name') }}
+          </div>
+        </div>
+      </button>
+      <div
+        v-else
+        class="flex middle">
+        <robot-icon size="2rem" class="ml-small" @click="scrollTo(null, 400)" />
+        <div
+          class="font-title ml-xsmall">
+          ROBOT FRAMEWORK
+        </div>
+      </div>
+    </transition>
     <button
       class="hamburger"
       :class="isOpen ? 'open' : ''"
-      @click="isOpen = !isOpen; linksOpen = false">
+      @click="isOpen = !isOpen; docsOpen = false; linksOpen = false;">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <div class="flex middle pr-xsmall">
-      <div class="font-title mr-2xsmall">
-        ROBOT FRAMEWORK
-      </div>
-      <div class="logo-container">
-        <img :src="`${publicPath}img/RF-white.svg`" />
-      </div>
-    </div>
   </div>
   <transition name="opacity">
     <div
@@ -84,17 +117,19 @@
 <script>
 import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
+import RobotIcon from './icons/RobotIcon.vue'
 
 export default {
   name: 'NavMobile',
   components: {
     ChevronIcon,
-    NewTabIcon
+    NewTabIcon,
+    RobotIcon
   },
   data: () => ({
     isOpen: false,
-    linksOpen: false,
-    publicPath: process.env.BASE_URL
+    docsOpen: false,
+    linksOpen: false
   }),
   methods: {
     scrollTo(el, duration) {
@@ -105,7 +140,7 @@ export default {
         t2 -= 1
         return (-c / 2) * (t2 * (t2 - 2) - 1) + b
       }
-      const to = document.getElementById(el).offsetTop - 80
+      const to = el ? document.getElementById(el).offsetTop - 80 : 0
       const element = document.scrollingElement || document.documentElement
       const start = element.scrollTop
 
@@ -145,6 +180,7 @@ export default {
   bottom: 0;
   left: 0;
   background-color: #292f33A0;
+  z-index: 7;
 }
 
 .navbar {
@@ -155,17 +191,8 @@ export default {
   z-index: 9;
 }
 
-.logo-container {
-  display: contents;
-}
-.logo-container > img {
-  width: 48px;
-  height: 48px;
-}
-
 .hamburger {
   margin: 16px;
-  margin-left: 20px;
   width: 32px;
   height: 24px;
   position: relative;
@@ -211,7 +238,7 @@ export default {
   left: 50%;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1025px) {
   .navbar, .menu {
     display: none;
   }

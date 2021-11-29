@@ -37,6 +37,13 @@
         </template>
       </tab-box>
     </page-section>
+    <!-- resources -->
+    <page-section
+      title-id="resources"
+      :title="$t('resources.title')"
+      :body="$t('resources.body')">
+      <resource-box class="col-sm-12 col-lg-9 col-lg-offset-3" />
+    </page-section>
     <!-- community -->
     <page-section
       title-id="community"
@@ -50,13 +57,6 @@
           </router-link>
         </button>
       </div>
-    </page-section>
-    <!-- resources -->
-    <page-section
-      title-id="resources"
-      :title="$t('resources.title')"
-      :body="$t('resources.body')">
-      <resource-box class="col-sm-12 col-lg-9 col-lg-offset-3" />
     </page-section>
     <!-- development -->
     <page-section
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .nav-desktop {
     display: none;
   }
