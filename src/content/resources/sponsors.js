@@ -257,10 +257,10 @@ export default () => ([
     description: 'We are a modern, full-service technology company. We help you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise.'
   },
   {
-    title: 'sleepIQ',
-    href: 'https://bamlabs.com/',
-    img: 'sleepiq.png',
-    description: 'SleepIQ Labs is a subsidiary of Sleep Number Corporation, the creators of the Sleep Number bed. SleepIQ Labs, the pioneers of biometric sensor sleep solutions and sleep-monitoring technologies, was acquired by Sleep Number in 2015. SleepIQ has been foundational in elevating Sleep Number’s sleep innovation leadership and is quickly transforming the Sleep Number 360® smart bed into the hub of health and wellness.'
+    title: 'sleep number labs',
+    href: 'https://www.sleepnumberlabs.com/index.html',
+    img: 'sleepnumberlabs.png',
+    description: 'Sleep Number Labs is a subsidiary of Sleep Number Corporation, the creators of the Sleep Number bed. Sleep Number Labs, the pioneers of biometric sensor sleep solutions and sleep-monitoring technologies, was acquired by Sleep Number in 2015. Sleep Number Labs has been foundational in elevating Sleep Number’s sleep innovation leadership and is quickly transforming the Sleep Number 360® smart bed into the hub of health and wellness.'
   },
   {
     title: 'symbio',
