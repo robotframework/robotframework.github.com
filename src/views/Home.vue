@@ -3,11 +3,11 @@
   <banner />
   <navbar class="nav-desktop" />
   <news-banner
-    v-if="$te('newsBanner')"
+    v-if="$te('newsBanner') && $t('newsBanner') !== ''"
     class="mb-small mt-small" />
   <div
     v-else
-    class="mb-large" />
+    class="mb-medium" />
   <div class="container mb-xlarge">
     <!-- introduction -->
     <page-section-twitter

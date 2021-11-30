@@ -45,7 +45,7 @@
               <div
                 v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
                 :key="name">
-                <a :href="url">
+                <a :href="url" @click="linkClick(name)">
                   {{ name }}
                 </a>
                 <p class="type-small mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
@@ -82,7 +82,8 @@
                   <a
                     :href="url"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    @click="linkClick(name)">
                     {{ name }}
                   </a>
                   <new-tab-icon color="theme" class="ml-2xsmall" />
@@ -178,6 +179,9 @@ export default {
         behavior: 'smooth'
       })
       window.plausible('Nav click', { props: { section: itemId } })
+    },
+    linkClick(name) {
+      window.plausible('Nav click', { props: { section: name } })
     },
     setLang(lang) {
       this.$i18n.locale = lang
