@@ -261,6 +261,14 @@ export default () => ([
       Robot Framework for acceptance testing and to support its customers' QA.`
   },
   {
+    title: 'Tesena',
+    href: 'https://www.tesena.com/',
+    imgName: 'tesena.png',
+    text: `Testing is not just something we do. It is everything we do.
+      We help companies reveal bugs in their software and save costs thanks to our know-how. 
+      We are leaders in the testing community, providing training courses, events and inspiration in the field of software testing.`
+  },
+  {
     title: 'TMA Solutions',
     href: 'https://www.tmasolutions.com',
     imgName: 'TMAlogo.png',
