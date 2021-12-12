@@ -3,7 +3,7 @@
 
 import { libraries, tools } from '../content'
 
-const ghToken = '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'
+const ghToken = ''
 
 const query = (repoName) => {
   return new Promise((resolve, reject) => {

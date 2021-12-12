@@ -4,7 +4,7 @@
 // this will get RF milestones and their issues to be shown in development-section
 // Don't commit your api-key!
 
-const ghToken = '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'
+const ghToken = ''
 
 const functionize = (list) => `/* eslint-disable */ export default () => (${list})`
 
