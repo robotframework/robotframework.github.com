@@ -27,7 +27,7 @@
               :class="milestone.descriptionExpanded ? 'expanded' : ''" />
             <button
               v-if="!milestone.descriptionExpanded"
-              class="type-small weight-bold type-underline"
+              class="type-small weight-bold type-underline color-black"
               @click="milestone.descriptionExpanded = true">
               Expand
             </button>
@@ -69,7 +69,7 @@
                 </div>
                 <button
                   v-if="!milestone.issuesExpanded && milestone.issues.items.filter(({ state }) => milestone.issuesTab === state).length > 3"
-                  class="type-small weight-bold type-underline ml-2xsmall"
+                  class="type-small weight-bold type-underline ml-2xsmall color-black"
                   @click="milestone.issuesExpanded = true">
                   Show all
                 </button>
