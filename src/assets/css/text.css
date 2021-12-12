@@ -99,6 +99,10 @@ pre.line {
     background-color: rgba(150, 150, 150, 0.1);
 }
 
+code {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
 input {
     font-size: 1rem;
 }
@@ -112,7 +116,6 @@ label {
 }
 
 p {
-    font-size: var(--type-body);
     margin-bottom: var(--size-medium);
 }
 

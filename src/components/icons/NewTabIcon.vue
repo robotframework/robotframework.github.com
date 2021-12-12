@@ -1,9 +1,9 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="16px"
     viewBox="0 0 24 24"
-    width="16px"
+    :width="size"
+    :height="size"
     :class="{
       ['fill-white']: color === 'white',
       ['fill-theme']: color === 'theme'
@@ -23,6 +23,10 @@ export default {
     color: {
       type: String,
       default: 'white'
+    },
+    size: {
+      type: String,
+      default: '1rem'
     }
   }
 }

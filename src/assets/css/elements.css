@@ -25,9 +25,6 @@
 .border-theme {
     border: solid 0.2rem var(--color-theme);
 }
-.border-thin {
-    border-width: 0.05rem;
-}
 
 .border-right-theme {
     border-right: solid 0.2rem var(--color-theme);
@@ -52,6 +49,10 @@
 }
 .border-top-white {
     border-top: solid 0.2rem var(--color-white);
+}
+
+.border-thin {
+    border-width: 0.05rem;
 }
 
 button.theme, button.stroke {

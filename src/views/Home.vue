@@ -64,6 +64,7 @@
       :title="$t('development.title')"
       :body="$t('development.body')">
       <sponsors class="col-sm-12 col-lg-9 col-lg-offset-3" />
+      <milestones class="col-sm-12 col-lg-9 col-lg-offset-3 mt-medium" />
     </page-section>
   </div>
   <page-footer />
@@ -82,7 +83,8 @@ import {
   CommunityItems,
   ResourceBox,
   TabBox,
-  Sponsors
+  Sponsors,
+  Milestones
 } from 'Components'
 
 export default {
@@ -99,7 +101,8 @@ export default {
     CommunityItems,
     ResourceBox,
     TabBox,
-    Sponsors
+    Sponsors,
+    Milestones
   }
 }
 </script>
