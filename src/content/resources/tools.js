@@ -245,5 +245,11 @@ export default () => ([
     description: 'Test management app for Jira that provides the ability to track coverage based on traditional manual test cases, exploratory testing and automation-related results. For automation, users can track detailed results from test scripts implemented with Robot Framework and link them to the respective requirements.',
     href: 'https://www.getxray.app/',
     tags: ['']
+  },
+  {
+    name: 'Embedded Board Farm',
+    description: 'Enables you to run test automation on real hardware using standardized APIs. Provides an interface to access resources on your board and control lab equipment.',
+    href: 'https://github.com/TimesysGit/board-farm-rest-api/tree/main/integrations/Robotframework',
+    tags: ['BoardFarm']
   }
 ])
