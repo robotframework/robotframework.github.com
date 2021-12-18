@@ -1,5 +1,5 @@
 <template>
-  <div class="row bg-grey-dark-darkmode pt-medium pb-medium">
+  <div class="row bg-grey-dark-darkmode pt-medium pb-medium p-small">
     <div class="col-sm-12 mb-xsmall type-center color-theme">
       <h3>
         {{ $t('development.sponsorBoxTitle') }}

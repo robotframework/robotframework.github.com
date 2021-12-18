@@ -1,13 +1,23 @@
 <template>
-  <div class="bg-grey-dark-darkmode pt-medium pb-medium">
-    <h3 class="type-center color-theme">
-      Development milestones
-    </h3>
-    <div class="row">
+  <div
+    class="bg-grey-dark-darkmode pt-medium pb-medium"
+    :class="$store.state.isMobile ? 'p-xsmall' : 'p-small'">
+    <a href="https://github.com/robotframework/robotframework/milestones" target="_blank">
+      <h3 class="type-center color-theme">
+        Development milestones
+      </h3>
+    </a>
+    <div
+      v-for="status in ['open', 'closed']"
+      :key="status"
+      class="row">
+      <h4 class="col-sm-12 ml-2xsmall">
+        {{ status }}
+      </h4>
       <div
-        v-for="(milestone, i) in milestonesSorted"
+        v-for="(milestone) in milestonesSorted[status]"
         :key="milestone.id"
-        class="col-sm-12 col-md-6 col-lg-4 pl-small pr-small mb-small">
+        class="col-sm-12 col-md-6 col-lg-4 pl-2xsmall pr-2xsmall mb-small">
         <div class="card bg-white color-black p-small">
           <div class="row between middle">
             <a :href="milestone.html_url" target="_blank">
@@ -15,13 +25,23 @@
                 {{ milestone.title }}
               </h4>
             </a>
-            <div v-if="milestone.due_on" class="type-small">
-              due: {{ format(new Date(milestone.due_on), 'MMM dd yyyy') }}
+            <div class="type-small">
+              <template v-if="status === 'closed'">
+                released: {{ format(new Date(milestone.closed_at), 'MMM dd yyyy') }}
+              </template>
+              <template v-else-if="milestone.due_on">
+                target: {{ format(new Date(milestone.due_on), 'MMM dd yyyy') }}
+              </template>
+              <template v-else>
+                target open
+              </template>
             </div>
           </div>
-          <div v-if="milestone.description !== ''" class="type-small type-italic border-bottom-theme border-thin pb-small">
+          <div
+            v-if="milestone.description !== ''"
+            class="type-small type-italic border-bottom-theme border-thin pb-small description-container">
             <div
-              :id="`milestone-${i}-description`"
+              :id="`milestone-${milestone.id}-description`"
               v-html="parseDescription(milestone.description)"
               class="milestone-description mt-small"
               :class="milestone.descriptionExpanded ? 'expanded' : ''" />
@@ -40,7 +60,10 @@
               <div class="col-sm-6 pr-3xsmall">
                 <button
                   class="theme type-xsmall w-100 type-center"
-                  :class="milestone.issuesTab === 'open' ? 'active' : ''"
+                  :class="{
+                    ['active']: milestone.issuesTab === 'open',
+                    ['disabled']: milestone.open_issues === 0
+                  }"
                   style="padding: 0.5rem 0.5rem;"
                   @click="milestone.issuesTab = 'open'">
                   Open ({{ milestone.open_issues }})
@@ -49,7 +72,10 @@
               <div class="col-sm-6 pl-3xsmall">
                 <button
                   class="theme type-xsmall w-100 type-center"
-                  :class="milestone.issuesTab === 'closed' ? 'active' : ''"
+                  :class="{
+                    ['active']: milestone.issuesTab === 'closed',
+                    ['disabled']: milestone.closed_issues === 0
+                  }"
                   style="padding: 0.5rem 0.5rem;"
                   @click="milestone.issuesTab = 'closed'">
                   Closed ({{ milestone.closed_issues }})
@@ -79,6 +105,9 @@
         </div>
       </div>
     </div>
+    <div class="type-right type-small mt-medium">
+      * Release dates due to change
+    </div>
   </div>
 </template>
 
@@ -98,13 +127,10 @@ export default {
   }),
   computed: {
     milestonesSorted() {
-      return [
-        ...this.milestones
-          .filter(({ due_on: dueOn }) => dueOn)
-          .sort((a, b) => (new Date(a.due_on) > new Date(b.due_on) ? 1 : -1)),
-        ...this.milestones
-          .filter(({ due_on: dueOn }) => !dueOn)
-      ]
+      return {
+        open: this.milestones.filter(({ closed_at: closed }) => !closed),
+        closed: this.milestones.filter(({ closed_at: closed }) => closed).sort((_) => -1)
+      }
     }
   },
   created() {
@@ -128,33 +154,31 @@ export default {
         m.issues.items.sort((a, b) => (a.reactions.total_count > b.reactions.total_count ? -1 : 1))
       })
     this.$nextTick(() => {
-      this.milestones.forEach((m, i) => {
-        const description = document.getElementById(`milestone-${i}-description`)
+      this.milestones.forEach((m) => {
+        const description = document.getElementById(`milestone-${m.id}-description`)
         if (!description) return
         if (description.childElementCount > 1) return
-        if (description.firstChild && description.firstChild.scrollHeight > description.firstChild.offsetHeight) return
+        if (description.firstChild && description.firstChild.scrollHeight > description.firstChild.offsetHeight + 25) return
         m.descriptionExpanded = true
       })
     })
-    console.log(this.milestones)
   },
   methods: {
     format,
     parseDescription: (t) => marked.parse(t),
-    parseIssueDescription: (t) => marked.parseInline(t),
-    expand(id) {
-      console.log(document.getElementById(id).firstChild.scrollHeight)
-      console.log(document.getElementById(id).firstChild.offsetHeight)
-    }
+    parseIssueDescription: (t) => marked.parseInline(t)
   }
 }
 </script>
 
 <style>
+.description-container {
+  min-height: 9rem;
+}
 .milestone-description:not(.expanded) p:first-child {
   position: relative;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 0;
@@ -172,11 +196,20 @@ export default {
 .milestone-description:not(.expanded) p:not(:first-child) {
   display: none;
 }
+.milestone-description > p:last-child {
+  margin-bottom: 0;
+}
 
 .issue-card {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .description-container {
+    min-height: unset;
+  }
 }
 </style>

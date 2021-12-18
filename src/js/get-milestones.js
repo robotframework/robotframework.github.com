@@ -23,7 +23,14 @@ async function getIssues(milestone) {
 }
 
 export async function getMilestones() {
-  const milestones = await fetch('https://api.github.com/repos/robotframework/robotframework/milestones', {
+  const milestonesOpen = await fetch('https://api.github.com/repos/robotframework/robotframework/milestones', {
+    headers: {
+      Accept: 'application/vnd.github.v3+json',
+      Authorization: `token ${ghToken}`
+    }
+  })
+    .then((res) => res.json())
+  const milestonesClosed = await fetch('https://api.github.com/repos/robotframework/robotframework/milestones?state=closed&direction=desc&per_page=3', {
     headers: {
       Accept: 'application/vnd.github.v3+json',
       Authorization: `token ${ghToken}`
@@ -31,7 +38,7 @@ export async function getMilestones() {
   })
     .then((res) => res.json())
 
-  Promise.all(milestones.map((milestone) => getIssues(milestone)))
+  Promise.all([...milestonesOpen, ...milestonesClosed].map((milestone) => getIssues(milestone)))
     .then((milestonesWithIssues) => {
       const a = document.createElement('a')
       const file = new Blob([functionize(JSON.stringify(milestonesWithIssues))], { type: 'text/plain' })

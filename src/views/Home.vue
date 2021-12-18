@@ -86,6 +86,7 @@ import {
   Sponsors,
   Milestones
 } from 'Components'
+import { getMilestones } from '../js/get-milestones'
 
 export default {
   name: 'App',
