@@ -9,19 +9,20 @@ on:
   - cron: "0 0 * * *"
 
 jobs:
-  build:
-
+  get-stars-and-milestones:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "action commit test"
-          git push
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: get milestones and stars
+        run: node src/js/scheduled.js
+        env: GH_API_KEY: ${{ secrets.GH_API_KEY }}
+      - name: deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          target-folder: livedata
+          folder: public/livedata # The folder the action should deploy.

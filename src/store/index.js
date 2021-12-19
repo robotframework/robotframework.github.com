@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
-import milestones from '../../public/milestones.js'
-import stars from '../../public/stars.js'
+import milestones from '../../public/livedata/milestones.js'
+import stars from '../../public/livedata/stars.js'
 
 export default createStore({
   state: {

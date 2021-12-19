@@ -1,13 +1,12 @@
 // used to update repo stars and milestones via a GH action
 // usage: node scheduled.js
 
-import libraries from '../content/resources/libraries.js'
-import tools from '../content/resources/tools.js'
+import libraries from '../content/resources/libraries.mjs'
+import tools from '../content/resources/tools.mjs'
 import * as fs from 'fs'
 import * as https from 'https'
 
-const ghToken = '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'
-// const ghToken = process.env.GH_TOKEN
+const ghToken = process.env.GH_API_KEY
 
 const functionize = (str) => `/* eslint-disable */ export default () => (${str})`
 const request = (url) => {
@@ -52,7 +51,7 @@ const getMilestones = async() => {
 
     const withIssues = await Promise.all([...milestonesOpen, ...milestonesClosed].map(async(milestone) => await getIssues(milestone)))
 
-    fs.writeFileSync('../../public/milestones.js', functionize(JSON.stringify(withIssues)))
+    fs.writeFileSync('../../public/livedata/milestones.js', functionize(JSON.stringify(withIssues)))
     console.log('milestones-file created succesfully!')
   } catch (err) {
     throw new Error(err)
@@ -78,13 +77,14 @@ const getStars = async() => {
       stars: repo.stargazers_count
     }))
 
-    fs.writeFileSync('../../public/stars.js', functionize(JSON.stringify(stripped)))
+    fs.writeFileSync('../../public/livedata/stars.js', functionize(JSON.stringify(stripped)))
     console.log('stars-file created succesfully!')
   } catch (err) {
     throw new Error(err)
   }
 }
 
+if (!fs.existsSync('../../public/livedata')) fs.mkdirSync('../../public/livedata', (err) => { throw new Error(err) })
 getMilestones()
   .then(() => {
     getStars()
