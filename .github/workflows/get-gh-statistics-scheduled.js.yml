@@ -20,7 +20,7 @@ jobs:
       - name: get milestones and stars
         env:
           GH_API_KEY: ${{ secrets.GH_API_KEY }}
-        run: node src/js/scheduled.js
+        run: node src/js/scheduled.mjs
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
