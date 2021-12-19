@@ -11,10 +11,8 @@ import builtin from './resources/builtin.js'
 import libraries from './resources/libraries.js'
 import tools from './resources/tools.js'
 import learning from './resources/learning.js'
-import stars from './resources/stars.js'
 import users from './resources/users.js'
 import sponsors from './resources/sponsors.js'
-import milestones from './resources/milestones.js'
 
 export {
   english,
@@ -30,8 +28,6 @@ export {
   libraries,
   tools,
   learning,
-  stars,
   users,
-  sponsors,
-  milestones
+  sponsors
 }

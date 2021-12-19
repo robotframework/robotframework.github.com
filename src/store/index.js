@@ -1,11 +1,13 @@
 import { createStore } from 'vuex'
-import { milestones } from '../content'
+import milestones from '../../public/milestones.js'
+import stars from '../../public/stars.js'
 
 export default createStore({
   state: {
     isMobile: null,
     isDesktop: null,
-    milestones: milestones()
+    milestones: milestones(),
+    stars: stars()
   },
   mutations: {
     SET_IS_MOBILE(state, truthiness) {

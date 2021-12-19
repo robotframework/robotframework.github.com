@@ -162,7 +162,6 @@
 
 <script>
 import ChevronIcon from './icons/ChevronIcon.vue'
-import { stars } from '../content'
 
 export default {
   name: 'ResourceBox',
@@ -177,7 +176,6 @@ export default {
     tagsDropdownShown: false,
     filterInput: '',
     showAll: false,
-    stars: [],
     eventSent: false
   }),
   computed: {
@@ -276,8 +274,8 @@ export default {
       else this.direction = 'descending'
     },
     getStarCount(href) {
-      const key = this.stars.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()))
-      if (key) return key.stars
+      const key = this.$store.state.stars.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()))
+      if (key) return key.stars || null
       return null
     },
     onClick({ target }) {
@@ -293,7 +291,6 @@ export default {
     this.activeTab = tab
   },
   mounted() {
-    this.stars = stars()
     document.addEventListener('click', this.onClick)
   },
   beforeUnmount() {
@@ -332,7 +329,7 @@ th:last-child, td:last-child {
 .input-suggestions {
   position: absolute;
   z-index: 2;
-  max-height: 13.5rem;
+  max-height: 13.7rem;
   overflow-y: scroll;
 }
 </style>
