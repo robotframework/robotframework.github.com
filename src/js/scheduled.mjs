@@ -84,7 +84,7 @@ const getStars = async() => {
   }
 }
 
-if (!fs.existsSync('../../public/livedata')) fs.mkdirSync('../../public/livedata', (err) => { throw new Error(err) })
+if (!fs.existsSync('../../public/livedata')) fs.mkdirSync('../../public/livedata', { recursive: true }, (err) => { throw new Error(err) })
 getMilestones()
   .then(() => {
     getStars()
