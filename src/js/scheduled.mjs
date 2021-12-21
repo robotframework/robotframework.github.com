@@ -90,14 +90,14 @@ getMilestones()
     getStars()
       .then(() => {
         console.log('writing things succeeded, exiting')
-        process.exit(1)
+        process.exit(0)
       })
       .catch((err) => {
         console.error(err)
-        process.exit(0)
+        process.exit(1)
       })
   })
   .catch((err) => {
     console.error(err)
-    process.exit(0)
+    process.exit(1)
   })
