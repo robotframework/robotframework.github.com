@@ -1,6 +1,6 @@
 # Get milestones with issues + library stars from Github API and commit them as files
 
-name: Node.js CI
+name: Scheduled dynamic content cache update
 
 on:
   push:
