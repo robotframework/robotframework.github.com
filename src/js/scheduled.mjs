@@ -10,7 +10,7 @@ const ghToken = process.env.GH_API_KEY
 const getDir = () => {
   // output must be different if run on page build (push to master) or scheduled daily run
   if (process.argv[2] === 'scheduled') return './livedata-temp'
-  if (process.argv[2] === 'build') return './dist/livedata'
+  if (process.argv[2] === 'build') return './public/livedata'
   return '../../public/livedata' // run without arguments locally to update local dev version
 }
 const destinationFolder = getDir()
