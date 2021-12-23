@@ -91,6 +91,10 @@ getMilestones()
     getStars()
       .then(() => {
         console.log('writing things succeeded, exiting')
+        console.log('current dir: ', fs.readdirSync('.'))
+        console.log('1 dir up: ', fs.readdirSync('../'))
+        console.log('2 dir up: ', fs.readdirSync('../../'))
+        console.log('public: ', fs.readdirSync('../../public'))
         process.exit(0)
       })
       .catch((err) => {
