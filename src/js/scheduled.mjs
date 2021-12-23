@@ -7,7 +7,13 @@ import * as fs from 'fs'
 import * as https from 'https'
 
 const ghToken = process.env.GH_API_KEY
-const destinationFolder = './livedata-temp' // change "./livedata-temp" -> "../../public/livedata" to update stuff in local dev env
+const getDir = () => {
+  // output must be different if run on page build (push to master) or scheduled daily run
+  if (process.argv[2] === 'scheduled') return './livedata-temp'
+  if (process.argv[2] === 'build') return '.dist/livedata'
+  return '../../public/livedata' // run without arguments locally to update local dev version
+}
+const destinationFolder = getDir()
 
 const functionize = (str) => `/* eslint-disable */ export default () => (${str})`
 const request = (url) => {

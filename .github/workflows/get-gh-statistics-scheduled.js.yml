@@ -3,8 +3,6 @@
 name: Cached content update
 
 on:
-  push:
-    branches: [ master ]
   schedule:
   - cron: "0 0 * * *"
 
@@ -20,7 +18,7 @@ jobs:
       - name: get milestones and stars
         env:
           GH_API_KEY: ${{ secrets.GH_API_KEY }}
-        run: node src/js/scheduled.mjs
+        run: node src/js/scheduled.mjs scheduled
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
