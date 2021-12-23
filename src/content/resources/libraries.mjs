@@ -69,6 +69,11 @@ export default () => ([
     description: 'A debug library for RobotFramework, which can be used as an interactive shell(REPL) also.'
   },
   {
+    name: 'Dependency Library',
+    href: 'https://github.com/mentalisttraceur/robotframework-dependencylibrary',
+    description: 'Declare dependencies between tests. Ideally tests are independent, but when tests depend on earlier tests, DependencyLibrary makes it easy to explicitly declare these dependencies and have tests that depend on each other do the right thing.'
+  },
+  {
     name: 'Diff Library',
     href: 'https://github.com/MarketSquare/robotframework-difflibrary',
     description: 'Diff two files together.'
