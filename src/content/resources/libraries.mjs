@@ -96,11 +96,6 @@ export default () => ([
     description: 'Testing Eclipse RCP applications using SWT widgets.'
   },
   {
-    name: 'Robotframework-faker',
-    href: 'https://github.com/guykisel/robotframework-faker',
-    description: 'Library for <a href="https://github.com/joke2k/faker" target="_blank">Faker</a>, a fake test data generator.'
-  },
-  {
     name: 'FTP library',
     href: 'https://github.com/kowalpy/Robot-Framework-FTP-Library',
     description: 'Testing and using FTP server with Robot Framework.',
@@ -181,6 +176,16 @@ export default () => ([
     href: 'https://github.com/asyrjasalo/RESTinstance/',
     description: 'Test library for HTTP JSON APIs.',
     tags: ['http']
+  },
+  {
+    name: 'Robotframework-faker',
+    href: 'https://github.com/guykisel/robotframework-faker',
+    description: 'Library for <a href="https://github.com/joke2k/faker" target="_blank">Faker</a>, a fake test data generator.'
+  },
+  {
+    name: 'Robotframework-FlaUI',
+    href: 'https://github.com/GDATASoftwareAG/robotframework-flaui',
+    description: 'Robotframework-FlaUI is a keyword based user interface automation testing library for Windows applications like Win32, WinForms, WPF or Store Apps. It\'s based on the FlaUI user interface automation library.'
   },
   {
     name: 'RPA framework',
