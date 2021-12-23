@@ -190,7 +190,8 @@ export default () => ([
   {
     name: 'Robotframework-FlaUI',
     href: 'https://github.com/GDATASoftwareAG/robotframework-flaui',
-    description: 'Robotframework-FlaUI is a keyword based user interface automation testing library for Windows applications like Win32, WinForms, WPF or Store Apps. It\'s based on the FlaUI user interface automation library.'
+    description: 'Robotframework-FlaUI is a keyword based user interface automation testing library for Windows applications like Win32, WinForms, WPF or Store Apps. It\'s based on the FlaUI user interface automation library.',
+    tags: ['windows', 'ui']
   },
   {
     name: 'RPA framework',
