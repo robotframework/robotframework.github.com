@@ -7,7 +7,7 @@ import * as fs from 'fs'
 import * as https from 'https'
 
 const ghToken = process.env.GH_API_KEY
-const destinationFolder = '../../public/livedata-temp' // change "livedata-temp" -> "livedata" to update stuff in local dev env
+const destinationFolder = './livedata-temp' // change "./livedata-temp" -> "../../public/livedata" to update stuff in local dev env
 
 const functionize = (str) => `/* eslint-disable */ export default () => (${str})`
 const request = (url) => {
@@ -90,11 +90,6 @@ getMilestones()
   .then(() => {
     getStars()
       .then(() => {
-        console.log('writing things succeeded, exiting')
-        console.log('current dir: ', fs.readdirSync('.'))
-        console.log('1 dir up: ', fs.readdirSync('../'))
-        console.log('2 dir up: ', fs.readdirSync('../../'))
-        console.log('public: ', fs.readdirSync('../../public'))
         process.exit(0)
       })
       .catch((err) => {
