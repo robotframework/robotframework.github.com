@@ -7,6 +7,7 @@ import * as fs from 'fs'
 import * as https from 'https'
 
 const ghToken = process.env.GH_API_KEY
+const destinationFolder = '../../public/livedata-temp' // change "livedata-temp" -> "livedata" to update stuff in local dev env
 
 const functionize = (str) => `/* eslint-disable */ export default () => (${str})`
 const request = (url) => {
@@ -51,7 +52,7 @@ const getMilestones = async() => {
 
     const withIssues = await Promise.all([...milestonesOpen, ...milestonesClosed].map(async(milestone) => await getIssues(milestone)))
 
-    fs.writeFileSync('../../public/livedata/milestones.js', functionize(JSON.stringify(withIssues)))
+    fs.writeFileSync(`${destinationFolder}/milestones.js`, functionize(JSON.stringify(withIssues)))
     console.log('milestones-file created succesfully!')
   } catch (err) {
     throw new Error(err)
@@ -77,14 +78,14 @@ const getStars = async() => {
       stars: repo.stargazers_count
     }))
 
-    fs.writeFileSync('../../public/livedata/stars.js', functionize(JSON.stringify(stripped)))
+    fs.writeFileSync(`${destinationFolder}/stars.js`, functionize(JSON.stringify(stripped)))
     console.log('stars-file created succesfully!')
   } catch (err) {
     throw new Error(err)
   }
 }
 
-if (!fs.existsSync('../../public/livedata')) fs.mkdirSync('../../public/livedata', { recursive: true }, (err) => { throw new Error(err) })
+if (!fs.existsSync(destinationFolder)) fs.mkdirSync(destinationFolder, { recursive: true }, (err) => { throw new Error(err) })
 getMilestones()
   .then(() => {
     getStars()
