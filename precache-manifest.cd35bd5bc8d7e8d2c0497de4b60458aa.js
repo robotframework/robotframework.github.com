@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "a4710e94dfa832101001",
+    "revision": "cc29fef5d7dd7706ef5a",
     "url": "/css/app.b167f4fb.css"
   },
   {
@@ -452,23 +452,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "15354d98eca1d9560aa7b2bda7b5c7eb",
+    "revision": "fecbfe9e6fa3dff23f63b443837b4f2f",
     "url": "/index.html"
   },
   {
-    "revision": "a4710e94dfa832101001",
-    "url": "/js/app.c6b88b32.js"
+    "revision": "cc29fef5d7dd7706ef5a",
+    "url": "/js/app.7a1d9630.js"
   },
   {
     "revision": "1f13ac688e862f0ae8bf",
     "url": "/js/chunk-vendors.b215721f.js"
   },
   {
-    "revision": "b289d56f018e9f3ef5763029f11af1b4",
+    "revision": "300a2feef83a84c0f49363ea79c9c263",
     "url": "/livedata/milestones.js"
   },
   {
-    "revision": "d13e5067506468ea5a1314a1e0901f35",
+    "revision": "79000e3bc6b58a3814786c1abbda0706",
     "url": "/livedata/stars.js"
   },
   {
