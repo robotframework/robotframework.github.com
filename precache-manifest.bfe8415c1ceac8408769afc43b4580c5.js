@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "e226d32487d02c0034a7",
+    "revision": "76d4174810aadaae1dc8",
     "url": "/css/app.b167f4fb.css"
   },
   {
@@ -452,12 +452,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "2ce4d459c3f5a74cefd47a83a1eee714",
+    "revision": "7a819839c1f4f46409ff3b8bff7e0807",
     "url": "/index.html"
   },
   {
-    "revision": "e226d32487d02c0034a7",
-    "url": "/js/app.71ee8007.js"
+    "revision": "76d4174810aadaae1dc8",
+    "url": "/js/app.ae34ce9c.js"
   },
   {
     "revision": "1f13ac688e862f0ae8bf",
@@ -468,7 +468,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/livedata/milestones.js"
   },
   {
-    "revision": "97d05865575dda31b1baf8fae2096c87",
+    "revision": "79000e3bc6b58a3814786c1abbda0706",
     "url": "/livedata/stars.js"
   },
   {
