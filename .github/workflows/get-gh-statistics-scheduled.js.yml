@@ -20,7 +20,7 @@ jobs:
           GH_API_KEY: ${{ secrets.GH_API_KEY }}
         run: node src/js/scheduled.mjs scheduled
       - name: deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.1.8
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages # The branch the action should deploy to.
           target-folder: livedata
