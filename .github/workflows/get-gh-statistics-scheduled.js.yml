@@ -1,6 +1,6 @@
 # Get milestones with issues + library stars from Github API and commit them as files
 
-name: Scheduled dynamic content cache update
+name: Cached content update
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           GH_API_KEY: ${{ secrets.GH_API_KEY }}
         run: node src/js/scheduled.mjs
       - name: deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: gh-pages # The branch the action should deploy to.
           target-folder: livedata
