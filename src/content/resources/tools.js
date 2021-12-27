@@ -250,6 +250,6 @@ export default () => ([
     name: 'Embedded Board Farm',
     description: 'Enables you to run test automation on real hardware using standardized APIs. Provides an interface to access resources on your board and control lab equipment.',
     href: 'https://github.com/TimesysGit/board-farm-rest-api/tree/main/integrations/Robotframework',
-    tags: ['BoardFarm']
+    tags: ['']
   }
 ])
