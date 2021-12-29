@@ -3,8 +3,11 @@
 name: Cached content update
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-  - cron: "0 0 * * *"
+  - cron: "0 * * * *"
 
 jobs:
   get-stars-and-milestones:
@@ -25,3 +28,4 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           target-folder: livedata
           folder: livedata-temp # The folder the action should deploy.
+          commit-message: scheduled milestones and stars update
