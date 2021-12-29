@@ -283,6 +283,13 @@ export default {
     }
   },
   created() {
+    // fetching local file instead of importing to avoid it being included in build
+    // that way stars-file can be updated without rebuild
+    if (!this.$store.state.stars.length) {
+      fetch('./livedata/stars.js')
+        .then((res) => res.text())
+        .then((str) => this.$store.commit('SET_VALUE', { key: 'stars', value: eval(str) })) // eslint-disable-line
+    }
     // if url contains searchParam, open specific tab
     if (window.location.hash !== '#resources') return
     const param = new URLSearchParams(window.location.search)

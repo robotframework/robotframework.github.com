@@ -133,7 +133,14 @@ export default {
       }
     }
   },
-  created() {
+  async created() {
+    // fetching local file instead of importing to avoid it being included in build
+    // that way milestones-file can be updated without rebuild
+    if (!this.$store.state.milestones.length) {
+      await fetch('./livedata/milestones.js')
+        .then((res) => res.text())
+        .then((str) => this.$store.commit('SET_VALUE', { key: 'milestones', value: eval(str) })) // eslint-disable-line
+    }
     // sort by due date
     this.milestones = [
       ...this.$store.state.milestones

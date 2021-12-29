@@ -15,7 +15,6 @@ const getDir = () => {
 }
 const destinationFolder = getDir()
 
-const functionize = (str) => `/* eslint-disable */ export default () => (${str})`
 const request = (url) => {
   return new Promise((resolve, reject) => {
     const options = {
@@ -58,7 +57,7 @@ const getMilestones = async() => {
 
     const withIssues = await Promise.all([...milestonesOpen, ...milestonesClosed].map(async(milestone) => await getIssues(milestone)))
 
-    fs.writeFileSync(`${destinationFolder}/milestones.js`, functionize(JSON.stringify(withIssues)))
+    fs.writeFileSync(`${destinationFolder}/milestones.js`, JSON.stringify(withIssues))
     console.log('milestones-file created succesfully!')
   } catch (err) {
     throw new Error(err)
@@ -84,7 +83,7 @@ const getStars = async() => {
       stars: repo.stargazers_count
     }))
 
-    fs.writeFileSync(`${destinationFolder}/stars.js`, functionize(JSON.stringify(stripped)))
+    fs.writeFileSync(`${destinationFolder}/stars.js`, JSON.stringify(stripped))
     console.log('stars-file created succesfully!')
   } catch (err) {
     throw new Error(err)

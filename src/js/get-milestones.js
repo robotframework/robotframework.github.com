@@ -6,8 +6,6 @@
 
 const ghToken = ''
 
-const functionize = (list) => `/* eslint-disable */ export default () => (${list})`
-
 async function getIssues(milestone) {
   const issues = await fetch(`https://api.github.com/search/issues?q=repo:robotframework/robotframework+milestone:${milestone.title}`, {
     headers: {
@@ -41,7 +39,7 @@ export async function getMilestones() {
   Promise.all([...milestonesOpen, ...milestonesClosed].map((milestone) => getIssues(milestone)))
     .then((milestonesWithIssues) => {
       const a = document.createElement('a')
-      const file = new Blob([functionize(JSON.stringify(milestonesWithIssues))], { type: 'text/plain' })
+      const file = new Blob([JSON.stringify(milestonesWithIssues)], { type: 'text/plain' })
       a.href = URL.createObjectURL(file)
       a.download = 'milestones.js'
       a.click()

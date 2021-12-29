@@ -1,13 +1,11 @@
 import { createStore } from 'vuex'
-import milestones from '../../public/livedata/milestones.js'
-import stars from '../../public/livedata/stars.js'
 
 export default createStore({
   state: {
     isMobile: null,
     isDesktop: null,
-    milestones: milestones(),
-    stars: stars()
+    milestones: [],
+    stars: []
   },
   mutations: {
     SET_IS_MOBILE(state, truthiness) {
@@ -15,6 +13,9 @@ export default createStore({
     },
     SET_IS_DESKTOP(state, truthiness) {
       state.isDesktop = truthiness
+    },
+    SET_VALUE(state, { key, value }) {
+      state[key] = value
     }
   },
   actions: {
