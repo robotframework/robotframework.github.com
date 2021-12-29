@@ -468,7 +468,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/livedata/milestones.js"
   },
   {
-    "revision": "0fe94c83202579613e7beeca4551bc36",
+    "revision": "dc444853cca067d28efbf1cbe6175c1f",
     "url": "/livedata/stars.js"
   },
   {
