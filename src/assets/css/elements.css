@@ -60,11 +60,11 @@ button.theme, button.stroke {
     transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
-    text-transform: uppercase;
 }
 button.theme {
     color: var(--color-black);
     background-color: var(--color-white);
+    text-transform: uppercase;
     box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
     6px 6px 15px -1px rgba(0,0,0,0.04);
 }
@@ -76,6 +76,15 @@ button.theme.active {
     background-color: var(--color-theme);
     color: var(--color-white);
     box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
+}
+button.stroke.active {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
+}
+button.small {
+    font-size: var(--type-xsmall);
+    padding: var(--size-3xsmall) var(--size-2xsmall);
 }
 
 @media screen and (max-width: 768px) {

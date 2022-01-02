@@ -36,6 +36,7 @@
             </div>
         </template>
       </tab-box>
+      <monaco-editor />
     </page-section>
     <!-- resources -->
     <page-section
@@ -84,7 +85,8 @@ import {
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones
+  Milestones,
+  MonacoEditor
 } from 'Components'
 
 export default {
@@ -102,7 +104,8 @@ export default {
     ResourceBox,
     TabBox,
     Sponsors,
-    Milestones
+    Milestones,
+    MonacoEditor
   }
 }
 </script>

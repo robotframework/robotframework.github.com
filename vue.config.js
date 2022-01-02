@@ -1,4 +1,5 @@
 const path = require('path')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,
@@ -8,10 +9,25 @@ module.exports = {
         Components: path.resolve(__dirname, './src/components/'),
         Img: path.resolve(__dirname, './src/assets/img/'),
         Css: path.resolve(__dirname, './src/assets/css/'),
-        Fonts: path.resolve(__dirname, './src/assets/fonts/')
+        Fonts: path.resolve(__dirname, './src/assets/fonts/'),
+        Content: path.resolve(__dirname, './src/content/')
       }
+    },
+    plugins: [new MonacoWebpackPlugin({
+      languages: ['python']
+    })],
+    module: {
+      rules: [
+        {
+          test: /\.(py|robot|resource)$/i,
+          use: 'raw-loader',
+        },
+      ],
     }
   },
+  transpileDependencies: [
+    'monaco-editor'
+  ],
   chainWebpack: config => {
     config
       .plugin('html')
