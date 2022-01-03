@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "2b7a5d4fca053d33de67",
+    "revision": "b85bc7d46dd0a8c27f3b",
     "url": "/css/app.6f0a56b0.css"
   },
   {
@@ -110,10 +110,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "be1579d0ace1098deca10d22477f5df3",
     "url": "/img/sponsors/capgemini.png"
-  },
-  {
-    "revision": "a62fba372f440e09009bee007ee3c565",
-    "url": "/img/sponsors/chili.png"
   },
   {
     "revision": "3be0556b34a86bca4a2d37c4736884c8",
@@ -452,12 +448,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "9a47fa8af33e40ca79bae9341d45df52",
+    "revision": "db6f4b172323803017419d9a1e523ea6",
     "url": "/index.html"
   },
   {
-    "revision": "2b7a5d4fca053d33de67",
-    "url": "/js/app.f2b76db5.js"
+    "revision": "b85bc7d46dd0a8c27f3b",
+    "url": "/js/app.23d2994c.js"
   },
   {
     "revision": "489a2eb16bb779a8abc4",
