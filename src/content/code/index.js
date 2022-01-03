@@ -1,13 +1,8 @@
 const files = {
   helloWorld: {
     'test.robot': import('./helloWorld/test.robot'),
-    'keywords.resource': import('./helloWorld/keywords.resource')
-  }
-}
-const languages = {
-  robotframework: {
-    tm: import('./languages/robotframework-tm.json'),
-    config: import('./languages/robotframework-config.json')
+    'keywords.resource': import('./helloWorld/keywords.resource'),
+    'CustomLibrary.py': import('./helloWorld/CustomLibrary.py')
   }
 }
 
@@ -24,16 +19,8 @@ const getProject = (projectName) => {
       )
   )
 }
-const getLanguage = async (langName) => {
-  return languages[langName].tm
-}
-const getLanguageConfig = async (langName) => {
-  return languages[langName].config
-}
 
 export {
   listProjects,
-  getProject,
-  getLanguage,
-  getLanguageConfig
+  getProject
 }

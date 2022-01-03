@@ -15,9 +15,10 @@
 </template>
 
 <script>
+import 'Content/code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
-import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
-import { getProject, getLanguage, getLanguageConfig } from 'Content/code'
+// import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
+import { getProject, robotConfig, rfDarkConfig, rfCompletionProvider } from 'Content/code'
 
 export default {
   data: () => ({
@@ -42,33 +43,29 @@ export default {
     activeFileName() {
       const file = this.files.find(({ fileName }) => fileName === this.activeFileName)
       this.editor.getModel().setValue(file.content)
-      // editor.setModelLanguage
     }
   },
   mounted() {
     this.editor = Object.freeze(monaco.editor.create(document.getElementById('monaco-container'), {
-      language: 'python',
-      theme: 'vs-dark'
+      language: 'robotframework',
+      theme: 'rf-dark',
+      wordWrap: 'on',
+      automaticLayout: true,
+      minimap: {
+        enabled: false
+      },
+      scrollbar: {
+        vertical: 'hidden'
+      }
     }))
-    monaco.languages.register({ id: 'robotframework' })
-    getLanguage('robotframework').then((lang) => {
-      const registry = new Registry({
-        loadGrammar: () => parseRawGrammar(JSON.stringify(lang), 'example.json')
-      })
-      registry.loadGrammar('source.robotframework').then((grammar) => {
-        monaco.languages.setTokensProvider('robotframework', {
-          getInitialState: () => INITIAL,
-          tokenize: (line, state) => {
-            const tokenizeLineResult2 = grammar.tokenizeLine2(line, state)
-            const { tokens, ruleStack: endState } = tokenizeLineResult2
-            return { tokens, endState }
-          }
-        })
-      })
-    })
-    getLanguageConfig('robotframework').then((config) => {
-      monaco.languages.setLanguageConfiguration('robotframework', JSON.stringify(config))
-    })
+    this.editor.getModel().updateOptions({ tabSize: 4 })
+    this.editor.addCommand(
+      monaco.KeyCode.Tab, () => {
+        this.editor.trigger('keyboard', 'type', { text: '    ' })
+      },
+      'editorTextFocus && !editorHasSelection && !inSnippetMode && !suggestWidgetVisible'
+    )
+
     getProject('helloWorld').then((files) => {
       this.files = files
       const { fileName, content } = files[0] // lets init editor with first file

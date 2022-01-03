@@ -20,9 +20,9 @@ module.exports = {
       rules: [
         {
           test: /\.(py|robot|resource)$/i,
-          use: 'raw-loader',
-        },
-      ],
+          use: 'raw-loader'
+        }
+      ]
     }
   },
   transpileDependencies: [

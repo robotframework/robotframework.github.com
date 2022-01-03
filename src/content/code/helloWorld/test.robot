@@ -1,26 +1,28 @@
 *** Settings ***
-Library           CustomLibrary.py
+Documentation     A test suite for valid login.
+...
+...               Keywords are imported from the resource file
 Resource          keywords.resource
-Force Tags        INCL
-
 
 *** Test Cases ***
-Log Python Keywords
-    ${ret}=    My Keyword    WORLD
-    Log To Console    ${ret}   sdfsdf sdfsdf   sdfsdf
+Test 1
+    Login Admin
+    Print All Users
 
-Test
-    Open Demo Page
-    Set Username    demo
-    Set Password    mode
-    Click Login
-    Sleep    1 sec
-Test
-    o
+Test 2
+    Login Admin
+    Create New User
+    ...    name=Peter Parker
+    ...    login=spider
+    ...    password=123spiderman321
+    ...    right=user
+    Print All Users
 
-Failed Test
-    Open Demo Page
-    Set Username    demo
-    Set Password    Wrong
-    Click Login
-    Fail    faked Fail...
+Test 3
+    Login User    spider    123spiderman321
+    ${details}   Get Userdetails
+    Log To Console    \n${details}
+
+Test Fails
+    Login User    spider    123spiderman321
+    Print All Users

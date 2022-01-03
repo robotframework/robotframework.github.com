@@ -1,19 +1,17 @@
 *** Settings ***
-Library           InPageLibrary
+Documentation     Reusable keywords and variables.
+Library           CustomLibrary.py
+
+*** Variables ***
+&{ADMIN}      login=admin    pwd=@RBTFRMWRK@
+
 
 *** Keywords ***
-Open Demo Page
-    Open Browser    Demo
-    sleep   1sec
+Login Admin
+    Login User    ${ADMIN}[login]    ${ADMIN}[pwd]
 
-Set Username
-   [Arguments]    ${user}
-   Type Text    id=username_field   ${user}
-
-Set Password
-   [Arguments]    ${pwd}
-   Type Text    id=password_field   ${pwd}
-
-
-Click Login
-    Click    id=login_button
+Print All Users
+    ${users}=    Get All Users
+    FOR    ${user}    IN    @{users}
+        Log Many    @{user.items()}
+    END
