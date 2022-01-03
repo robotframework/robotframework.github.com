@@ -24,18 +24,6 @@ export default () => ([
     description: 'Capgemini Netherlands is at the forefront of innovation to address the entire breadth of clients’ opportunities in the evolving world of cloud, digital and platforms. Building on its strong 50-year heritage and deep industry-specific expertise, Capgemini enables organizations to realize their business ambitions through an array of services from strategy to operations.'
   },
   {
-    title: 'Chili',
-    href: 'https://www.chili.com/',
-    img: 'chili.png',
-    description: `CHILI is a European Entertainment Company. CHILI has developed the first and only Entertainment Centred Marketplace, which is a unique experience offering cinema and tv series fans:
-    - information and reviews about cinema previews
-    - a geo-localised movie theatrical’s show times
-    - all the new releases in digital form, months before pay tv
-    - a catalogue of thousands of digital films, tv series, DVDs and Blu-Ray
-    - the possibility to buy together original merchandising of your favourite Character and - choose gadgets from the films.
-    - and lots more`
-  },
-  {
     title: 'cisco',
     href: 'https://www.cisco.com/',
     img: 'cisco.png',
