@@ -6,7 +6,7 @@
         :key="fileName"
         class="stroke small mr-small"
         :class="activeFileName === fileName ? 'active' : 'primary'"
-        @click="activeFileName = fileName">
+        @click="setActiveFile(fileName)">
         {{ fileName }}
       </button>
     </div>
@@ -21,7 +21,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { getProject } from 'Content/code'
 let editor = {}
 const models = {}
-const states = {}
+const modelStates = {}
 
 export default {
   data: () => ({
@@ -30,8 +30,7 @@ export default {
       { id: 'robotframework', extensions: ['robot', 'resource'] }
     ],
     fileNames: null,
-    activeFileName: null,
-    currentFileName: null
+    activeFileName: null
   }),
   methods: {
     setProject(files) {
@@ -43,19 +42,19 @@ export default {
         models[fileName] = model
       })
       this.fileNames = files.map(({ fileName }) => fileName)
-      this.activeFileName = files[0].fileName
-      this.currentFileName = this.activeFileName
-    }
-  },
-  watch: {
-    activeFileName() {
-      states[this.currentFileName] = editor.saveViewState()
+      this.setActiveFile(files[0].fileName)
+    },
+    setActiveFile(fileName) {
+      // save previous file state
+      modelStates[this.activeFileName] = editor.saveViewState()
 
-      editor.setModel(models[this.activeFileName])
-      if (this.currentFileName in states) {
-        editor.restoreViewState(states[this.activeFileName])
+      editor.setModel(models[fileName])
+      // restore new file's state if saved
+      if (fileName in modelStates) {
+        editor.restoreViewState(modelStates[fileName])
       }
-      this.currentFileName = this.activeFileName
+
+      this.activeFileName = fileName
     }
   },
   mounted() {
