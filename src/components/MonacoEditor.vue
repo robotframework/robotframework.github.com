@@ -1,5 +1,5 @@
 <template>
-  <div class="editor-container card border-white">
+  <div class="editor-container bg-grey-dark card p-large col-sm-12 col-lg-9 col-lg-offset-3 border-white">
     <div class="px-small py-2xsmall">
       <button
         v-for="{ fileName } in files"
@@ -18,7 +18,7 @@
 import 'Content/code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 // import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
-import { getProject, robotConfig, rfDarkConfig, rfCompletionProvider } from 'Content/code'
+import { getProject } from 'Content/code'
 
 export default {
   data: () => ({
@@ -43,6 +43,9 @@ export default {
     activeFileName() {
       const file = this.files.find(({ fileName }) => fileName === this.activeFileName)
       this.editor.getModel().setValue(file.content)
+      const extension = this.activeFileName.substr(this.activeFileName.search(/(\.\w+$)/, 1))
+      const language = this.languages.find(lang => { return lang.extensions.includes(extension) })
+      monaco.editor.setModelLanguage(this.editor.getModel(), language.id)
     }
   },
   mounted() {
@@ -52,10 +55,10 @@ export default {
       wordWrap: 'on',
       automaticLayout: true,
       minimap: {
-        enabled: false
+        enabled: true
       },
       scrollbar: {
-        vertical: 'hidden'
+        vertical: 'auto'
       }
     }))
     this.editor.getModel().updateOptions({ tabSize: 4 })
