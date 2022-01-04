@@ -2,11 +2,11 @@
   <div class="editor-container bg-grey-dark card p-large col-sm-12 col-lg-9 col-lg-offset-3 border-white">
     <div class="px-small py-2xsmall">
       <button
-        v-for="{ fileName } in files"
+        v-for="(fileName, i) in fileNames"
         :key="fileName"
         class="stroke small mr-small"
-        :class="activeFileName === fileName ? 'active' : 'primary'"
-        @click="activeFileName = fileName">
+        :class="activeFileIndex === i ? 'active' : 'primary'"
+        @click="activeFileIndex = i">
         {{ fileName }}
       </button>
     </div>
@@ -16,9 +16,11 @@
 
 <script>
 import 'Content/code/editorConfig.js'
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
+import * as monaco from 'monaco-editor'
 // import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
 import { getProject } from 'Content/code'
+let editor = {}
+const models = []
 
 export default {
   data: () => ({
@@ -26,36 +28,30 @@ export default {
       { id: 'python', extensions: ['.py'] },
       { id: 'robotframework', extensions: ['.robot', '.resource'] }
     ],
-    files: [],
-    activeFileName: '',
-    editor: null,
-    lastFileName: ''
+    fileNames: [],
+    activeFileIndex: 0
   }),
   methods: {
-    initEditor({ el, language, value }) {
-      this.editor = Object.freeze(monaco.editor.create(el, {
-        value,
-        language,
-        theme: 'vs-dark'
-      }))
+    setProject(files) {
+      files.forEach(({ fileName, content }) => {
+        const extension = fileName.split('.').at(-1)
+        const langId = this.languages.find(({ extensions }) => extensions.includes(extension))
+        const model = monaco.editor.createModel(content, langId)
+        model.updateOptions({ tabSize: 4 }) // to all files?
+        models.push(model)
+      })
+      this.fileNames = files.map(({ fileName }) => fileName)
+      this.activeFileName = files[0].fileName
+      editor.setModel(models[0])
     }
   },
   watch: {
-    activeFileName() {
-      const file = this.files.find(({ fileName }) => fileName === this.activeFileName)
-      if (this.lastFileName) {
-        const lastFileIndex = this.files.findIndex(({ fileName }) => fileName === this.lastFileName)
-        this.files[lastFileIndex].content = this.editor.getModel().getValue()
-      }
-      this.editor.getModel().setValue(file.content)
-      const extension = this.activeFileName.substr(this.activeFileName.search(/(\.\w+$)/, 1))
-      const language = this.languages.find(lang => { return lang.extensions.includes(extension) })
-      monaco.editor.setModelLanguage(this.editor.getModel(), language.id)
-      this.lastFileName = this.activeFileName
+    activeFileIndex() {
+      editor.setModel(models[this.activeFileIndex])
     }
   },
   mounted() {
-    this.editor = Object.freeze(monaco.editor.create(document.getElementById('monaco-container'), {
+    editor = monaco.editor.create(document.getElementById('monaco-container'), {
       language: 'robotframework',
       theme: 'rf-dark',
       wordWrap: 'on',
@@ -65,20 +61,18 @@ export default {
       },
       scrollbar: {
         vertical: 'auto'
-      }
-    }))
-    this.editor.getModel().updateOptions({ tabSize: 4 })
-    this.editor.addCommand(
+      },
+      model: null
+    })
+    editor.addCommand(
       monaco.KeyCode.Tab, () => {
-        this.editor.trigger('keyboard', 'type', { text: '    ' })
+        editor.trigger('keyboard', 'type', { text: '    ' })
       },
       'editorTextFocus && !editorHasSelection && !inSnippetMode && !suggestWidgetVisible'
     )
 
     getProject('helloWorld').then((files) => {
-      this.files = files
-      const { fileName, content } = files[0] // lets init editor with first file
-      this.activeFileName = fileName
+      this.setProject(files)
     })
   }
 }
