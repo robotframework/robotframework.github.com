@@ -2,11 +2,11 @@
   <div class="editor-container bg-grey-dark card p-large col-sm-12 col-lg-9 col-lg-offset-3 border-white">
     <div class="px-small py-2xsmall">
       <button
-        v-for="(fileName, i) in fileNames"
+        v-for="fileName in fileNames"
         :key="fileName"
         class="stroke small mr-small"
-        :class="activeFileIndex === i ? 'active' : 'primary'"
-        @click="activeFileIndex = i">
+        :class="activeFileName === fileName ? 'active' : 'primary'"
+        @click="activeFileName = fileName">
         {{ fileName }}
       </button>
     </div>
@@ -20,7 +20,8 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 // import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
 import { getProject } from 'Content/code'
 let editor = {}
-const models = []
+const models = {}
+const states = {}
 
 export default {
   data: () => ({
@@ -29,7 +30,8 @@ export default {
       { id: 'robotframework', extensions: ['robot', 'resource'] }
     ],
     fileNames: null,
-    activeFileIndex: null
+    activeFileName: null,
+    currentFileName: null
   }),
   methods: {
     setProject(files) {
@@ -37,16 +39,23 @@ export default {
         const extension = fileName.split('.').at(-1)
         const langId = this.languages.find(({ extensions }) => extensions.includes(extension)).id
         const model = monaco.editor.createModel(content, langId)
-        model.updateOptions({ tabSize: 4 }) // to all files?
-        models.push(model)
+        model.updateOptions({ tabSize: 4 })
+        models[fileName] = model
       })
       this.fileNames = files.map(({ fileName }) => fileName)
-      this.activeFileIndex = 0
+      this.activeFileName = files[0].fileName
+      this.currentFileName = this.activeFileName
     }
   },
   watch: {
-    activeFileIndex() {
-      editor.setModel(models[this.activeFileIndex])
+    activeFileName() {
+      states[this.currentFileName] = editor.saveViewState()
+
+      editor.setModel(models[this.activeFileName])
+      if (this.currentFileName in states) {
+        editor.restoreViewState(states[this.activeFileName])
+      }
+      this.currentFileName = this.activeFileName
     }
   },
   mounted() {
