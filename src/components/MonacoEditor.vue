@@ -16,7 +16,7 @@
 
 <script>
 import 'Content/code/editorConfig.js'
-import * as monaco from 'monaco-editor'
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 // import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
 import { getProject } from 'Content/code'
 let editor = {}
@@ -25,24 +25,23 @@ const models = []
 export default {
   data: () => ({
     languages: [
-      { id: 'python', extensions: ['.py'] },
-      { id: 'robotframework', extensions: ['.robot', '.resource'] }
+      { id: 'python', extensions: ['py'] },
+      { id: 'robotframework', extensions: ['robot', 'resource'] }
     ],
-    fileNames: [],
-    activeFileIndex: 0
+    fileNames: null,
+    activeFileIndex: null
   }),
   methods: {
     setProject(files) {
       files.forEach(({ fileName, content }) => {
         const extension = fileName.split('.').at(-1)
-        const langId = this.languages.find(({ extensions }) => extensions.includes(extension))
+        const langId = this.languages.find(({ extensions }) => extensions.includes(extension)).id
         const model = monaco.editor.createModel(content, langId)
         model.updateOptions({ tabSize: 4 }) // to all files?
         models.push(model)
       })
       this.fileNames = files.map(({ fileName }) => fileName)
-      this.activeFileName = files[0].fileName
-      editor.setModel(models[0])
+      this.activeFileIndex = 0
     }
   },
   watch: {
