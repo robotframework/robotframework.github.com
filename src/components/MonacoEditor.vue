@@ -28,7 +28,8 @@ export default {
     ],
     files: [],
     activeFileName: '',
-    editor: null
+    editor: null,
+    lastFileName: ''
   }),
   methods: {
     initEditor({ el, language, value }) {
@@ -42,10 +43,15 @@ export default {
   watch: {
     activeFileName() {
       const file = this.files.find(({ fileName }) => fileName === this.activeFileName)
+      if (this.lastFileName) {
+        const lastFileIndex = this.files.findIndex(({ fileName }) => fileName === this.lastFileName)
+        this.files[lastFileIndex].content = this.editor.getModel().getValue()
+      }
       this.editor.getModel().setValue(file.content)
       const extension = this.activeFileName.substr(this.activeFileName.search(/(\.\w+$)/, 1))
       const language = this.languages.find(lang => { return lang.extensions.includes(extension) })
       monaco.editor.setModelLanguage(this.editor.getModel(), language.id)
+      this.lastFileName = this.activeFileName
     }
   },
   mounted() {
