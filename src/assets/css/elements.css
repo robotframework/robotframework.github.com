@@ -57,7 +57,7 @@
 
 button.theme, button.stroke {
     border-radius: var(--border-radius-rounded);
-    transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
+    transition: 0.2s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
 }
@@ -71,6 +71,9 @@ button.theme {
 button.stroke {
     color: var(--color-white);
     border: solid 0.05rem var(--color-white);
+}
+button.stroke:hover {
+    color: var(--color-theme);
 }
 button.theme.active {
     background-color: var(--color-theme);

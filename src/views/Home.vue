@@ -36,7 +36,7 @@
             </div>
         </template>
       </tab-box>
-      <monaco-editor />
+      <monaco-editor class="mt-medium col-sm-12 col-lg-9 col-lg-offset-3" />
     </page-section>
     <!-- resources -->
     <page-section

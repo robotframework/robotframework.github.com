@@ -18,16 +18,16 @@ const promiseString = loadLibrary('https://robotframework.org/robotframework/lat
 const promiseXML = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/XML.json')
 
 monaco.editor.defineTheme('rf-dark', {
-  base: 'hc-black',
+  base: 'vs-dark',
   inherit: true,
   rules: [
-    { background: '292f33' },
+    { background: '222222' },
     { token: 'delimiter', foreground: '3b94d9', fontStyle: 'italic' },
     { token: 'variable', foreground: '77c7f7', fontStyle: 'italic' },
-    { token: 'type.robotframework', foreground: 'd0d0d0', fontStyle: 'italic' }
+    { token: 'type.robotframework', foreground: '4EC9B0', fontStyle: 'italic' }
   ],
   colors: {
-    'editor.background': '#292f33'
+    'editor.background': '#222222'
   }
 })
 
