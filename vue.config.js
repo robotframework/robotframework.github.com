@@ -10,16 +10,17 @@ module.exports = {
         Img: path.resolve(__dirname, './src/assets/img/'),
         Css: path.resolve(__dirname, './src/assets/css/'),
         Fonts: path.resolve(__dirname, './src/assets/fonts/'),
-        Content: path.resolve(__dirname, './src/content/')
+        Content: path.resolve(__dirname, './src/content/'),
+        Code: path.resolve(__dirname, './src/content/code')
       }
     },
     plugins: [new MonacoWebpackPlugin({
-      languages: ['python']
+      languages: ['python', 'html', 'javascript', 'typescript']
     })],
     module: {
       rules: [
         {
-          test: /\.(py|robot|resource)$/i,
+          include: [path.resolve(__dirname, 'src/content/code/projects')],
           use: 'raw-loader'
         }
       ]
