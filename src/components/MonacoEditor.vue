@@ -185,13 +185,6 @@ export default {
     // })
     console.log(editor)
     this.setProject('Hello World')
-
-    // loadConfigFromURL('robotframework.org/live/Example').then(
-    //   (data) => {
-    //     console.log(data)
-    //     this.setProject(data.files)
-    //   }
-    // )
   }
 }
 </script>
