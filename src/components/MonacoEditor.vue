@@ -51,11 +51,13 @@
     </div>
     <transition name="opacity" mode="out-in">
       <div class="py-2xsmall" :key="activeProject?.name">
+        <!-- .filter((file) => file.show) ###  changed it to v-show for better debugging-->
         <button
-          v-for="{ fileName } in activeProject?.files.filter((file) => file.show)"
+          v-for="{ fileName, show } in activeProject?.files"
           :key="fileName"
           class="stroke small mr-small bg-grey-darkest"
           :class="activeFileName === fileName ? 'active' : 'primary'"
+          v-show="show"
           @click="setActiveFile(fileName)">
           {{ fileName }}
         </button>
@@ -158,7 +160,7 @@ export default {
     editor = monaco.editor.create(document.getElementById('monaco-container'), {
       language: 'robotframework',
       theme: 'rf-dark',
-      wordWrap: 'on',
+      wordWrap: 'off',
       automaticLayout: true,
       minimap: {
         enabled: true,

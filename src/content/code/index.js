@@ -1,12 +1,12 @@
-const baseURL = 'https://robotframework.org/live/' // 'http://localhost:7272/live/' //
+const baseURL = 'https://robotframework.org/live/Examples/'
 const examples = [
   {
     name: 'Basic Example',
-    url: baseURL + 'Example'
+    url: baseURL + 'Example1'
   },
   {
     name: 'Example with Classes',
-    url: baseURL + 'Example1'
+    url: baseURL + 'Example2'
   },
   {
     name: 'HTML and JS Example',
@@ -16,7 +16,6 @@ const examples = [
 const listProjects = () => examples.map((ex) => ex.name)
 
 const loadProjectsByName = async(projectName) => {
-  console.log(projectName)
   const example = examples.find((example) => example.name === projectName) || examples[0]
   return loadProjectsFromURL(example.url + '/')
 }

@@ -82,7 +82,7 @@ try:
         result = robot.run(
             "test.robot",
             consolecolors="ansi",
-            listener=["RobotStackTracer", Listener()],
+            listener=[Listener()],  # "RobotStackTracer",
             loglevel="TRACE:INFO",
             # include="INCL",
             exclude="EXCL",
