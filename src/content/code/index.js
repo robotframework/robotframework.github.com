@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:7272/live/' // 'https://robotframework.org/live/'
+const baseURL = 'https://robotframework.org/live/' // 'http://localhost:7272/live/' //
 const examples = [
   {
     name: 'Basic Example',
