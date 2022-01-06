@@ -52,7 +52,7 @@
     <transition name="opacity" mode="out-in">
       <div class="py-2xsmall" :key="activeProject?.name">
         <button
-          v-for="{ fileName } in activeProject?.files"
+          v-for="{ fileName } in activeProject?.files.filter((file) => file.show)"
           :key="fileName"
           class="stroke small mr-small bg-grey-darkest"
           :class="activeFileName === fileName ? 'active' : 'primary'"
@@ -62,15 +62,25 @@
       </div>
     </transition>
     <div id="monaco-container" />
-  </div>
+    <button  @click="runRobotTest()" class="stroke small mr-small bg-grey-darkest">
+      Run Robot
+    </button>
+    <button  @click="runRobotTest(true)" class="stroke small mr-small bg-grey-darkest">
+      Run Robot (reinit)
+    </button>
+  <div class="console" hidden>
+    <pre class="console"><code class style="overflow: auto;" id="output" disabled=""/></pre>
+    </div>
+      <iframe id="loghtml" style="width: 100%; height: 800px; display: none;"></iframe>
+    </div>
 </template>
 
 <script>
+import { runRobot } from 'Content/code/pyodide.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
 import 'Code/editorConfig.js'
-// import { parseRawGrammar, INITIAL, Registry } from 'vscode-textmate'
-import { getProject, listProjects } from 'Code'
+import { listProjects, loadProjectsByName } from 'Code'
 import ChevronIcon from './icons/ChevronIcon.vue'
 let editor = {}
 const models = {}
@@ -98,8 +108,8 @@ export default {
       return marked.parse(str)
     },
     async setProject(projectName, activeFileName) {
-      const project = await getProject(projectName)
-      project.files.forEach(({ fileName, content }) => {
+      const project = await loadProjectsByName(projectName)
+      project.files.forEach(({ fileName, content, show }) => {
         const extension = fileName.split('.').at(-1)
         const langId = this.languages.find(({ extensions }) => extensions.includes(extension))?.id
         const model = monaco.editor.createModel(content, langId)
@@ -133,6 +143,15 @@ export default {
       })
 
       this.activeFileName = fileName
+    },
+    runRobotTest(init = false) {
+      const files = Object.entries(models).map((model) => {
+        return {
+          fileName: model[0],
+          content: model[1].getValue()
+        }
+      })
+      runRobot(files, init)
     }
   },
   mounted() {
@@ -142,12 +161,14 @@ export default {
       wordWrap: 'on',
       automaticLayout: true,
       minimap: {
-        enabled: true
+        enabled: true,
+        showSlider: 'always'
       },
       scrollbar: {
-        vertical: 'auto'
-        /* alwaysConsumeMouseWheel: false --- would be nice to trap scroll only if you click the editor */
+        vertical: 'hidden'
+        // alwaysConsumeMouseWheel: false
       },
+      scrollBeyondLastLine: false,
       model: null
     })
     editor.addCommand(
@@ -163,7 +184,14 @@ export default {
     //   this.editorFocused = false
     // })
     console.log(editor)
-    this.setProject('helloWorld')
+    this.setProject('Hello World')
+
+    // loadConfigFromURL('robotframework.org/live/Example').then(
+    //   (data) => {
+    //     console.log(data)
+    //     this.setProject(data.files)
+    //   }
+    // )
   }
 }
 </script>
@@ -183,6 +211,7 @@ export default {
     fill: var(--color-theme);
   }
   .dropdown-content {
+    z-index: 99;
     width: 100%;
     transform: translateY(-0.25rem);
     border: solid 0.05rem var(--color-white);
@@ -201,5 +230,17 @@ export default {
   }
   .project-description > :deep(p) {
     margin-bottom: var(--size-2xsmall);
+  }
+  div.console {
+    display: none;
+    width: auto;
+    height: 500px;
+    border: solid 1px;
+    border-radius: 4px;
+    overflow: auto;
+    padding: 2em;
+    background-color: var(--light-background-color);
+    color: var(--text-color);
+    font-size: 0.9em;
   }
 </style>

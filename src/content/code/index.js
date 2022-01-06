@@ -20,7 +20,24 @@ const projects = {
   }
 }
 
-const listProjects = () => Object.keys(projects).map((key) => projects[key].name)
+const examples = [
+  {
+    name: 'Basic Example',
+    url: 'robotframework.org/live/Example'
+  },
+  {
+    name: 'Example with Classes',
+    url: 'robotframework.org/live/Example1'
+  },
+  {
+    name: 'HTML and JS Example',
+    url: 'robotframework.org/live/ExampleJS'
+  }
+]
+
+// const listProjects = () => Object.keys(projects).map((key) => projects[key].name)
+const listProjects = () => examples.map((ex) => ex.name)
+
 const getProject = async(projectName) => {
   let projectObj = projects[projectName]
   if (!projectObj) {
@@ -45,7 +62,39 @@ const getProject = async(projectName) => {
     }))
 }
 
+const loadProjectsByName = async(projectName) => {
+  console.log(projectName)
+  const example = examples.find((example) => example.name === projectName) || examples[0]
+  console.log(example.url)
+  return loadProjectsFromURL(example.url)
+}
+
+const loadProjectsFromURL = async(projectURL) => {
+  const configURL = 'https://' + projectURL + '/'
+  const configFileUrl = configURL + 'config.json'
+  console.log(`Loading config from ${configFileUrl}`)
+  const configFile = await fetch(configFileUrl)
+    .then(response => response.json())
+  var data = { name: configFile.name }
+  if (Object.prototype.hasOwnProperty.call(configFile, 'description')) {
+    data.description = await fetch(configURL + configFile.description)
+      .then(response => response.text())
+  }
+  data.files = []
+  for (const file of configFile.files) {
+    const content = await fetch(configURL + file.fileName)
+      .then(response => response.text())
+    data.files.push({
+      fileName: file.fileName,
+      content: content,
+      show: (file.show === undefined) ? true : file.show
+    })
+  }
+  return data
+}
+
 export {
   listProjects,
-  getProject
+  getProject,
+  loadProjectsByName
 }

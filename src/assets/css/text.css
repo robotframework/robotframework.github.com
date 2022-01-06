@@ -88,19 +88,16 @@ button {
     font-size: 1rem;
 }
 
-pre {
+pre:not(.console) {
     border: 0.1rem inset var(--color-theme);
     padding: var(--size-3xsmall);
     width: fit-content;
     background-color: rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 
 pre.line {
     background-color: rgba(150, 150, 150, 0.1);
-}
-
-code {
-    background-color: rgba(0, 0, 0, 0.08);
 }
 
 input {
