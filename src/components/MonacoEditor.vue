@@ -1,20 +1,13 @@
 <template>
-  <div class="editor-container bg-grey-dark card p-large">
-    <div class="flex between">
-      <transition name="opacity" mode="out-in">
-        <article :key="activeProject?.name">
-          <div
-            v-if="activeProject?.description"
-            class="project-description"
-            v-html="parseMarkdown(activeProject.description)" />
-        </article>
-      </transition>
+  <div class="editor-container">
+    <!-- project dropdown -->
+    <div class="flex mb-small mt-small">
       <div
         v-if="activeProject"
-        class="dropdown relative type-right flex-shrink-none">
-        <button class="stroke flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+        class="dropdown relative">
+        <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
           <transition name="opacity" mode="out-in">
-            <div class="mr-2xsmall" :key="activeProject?.name">
+            <div class="mr-3xsmall ml-2xsmall" :key="activeProject?.name">
               {{ activeProject?.name }}
               <span v-if="projectHasBeenModified" class="color-error" style="margin-left: -0.5rem">*</span>
             </div>
@@ -28,7 +21,7 @@
           <button
             v-if="projectHasBeenModified"
             class="color-error type-small absolute"
-            style="top: calc(100% + 0.5rem); right: 0; width: 100%; text-align: center;"
+            style="top: 0.5rem; left: calc(100% + 0.5rem);"
             @click="resetProject(); projectHasBeenModified = false">
             reset files
           </button>
@@ -36,11 +29,11 @@
         <transition name="fade">
           <div
             v-if="projectDropdownOpen"
-            class="dropdown-content absolute bg-grey-darkest p-small pb-none">
+            class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
             <button
               v-for="projectName in projectNames"
               :key="projectName"
-              class="block mb-xsmall color-white"
+              class="block mb-xsmall color-white type-small"
               :class="activeProject.name === projectName ? 'disabled' : ''"
               @click="setProject(projectName); projectDropdownOpen = false">
               {{ projectName }}
@@ -49,32 +42,65 @@
         </transition>
       </div>
     </div>
+    <!-- project description -->
     <transition name="opacity" mode="out-in">
-      <div class="py-2xsmall" :key="activeProject?.name">
-        <!-- .filter((file) => file.show) ###  changed it to v-show for better debugging-->
-        <button
-          v-for="{ fileName, show } in activeProject?.files"
-          :key="fileName"
-          class="stroke small mr-small bg-grey-darkest"
-          :class="activeFileName === fileName ? 'active' : 'primary'"
-          v-show="show"
-          @click="setActiveFile(fileName)">
-          {{ fileName }}
+      <article :key="activeProject?.name">
+        <div
+          v-if="activeProject?.description"
+          class="project-description"
+          v-html="parseMarkdown(activeProject.description)" />
+      </article>
+    </transition>
+    <div class="flex between bottom mb-xsmall mt-medium">
+      <!-- file tabs -->
+      <transition name="opacity" mode="out-in">
+        <div :key="activeProject?.name">
+          <button
+            v-for="{ fileName } in activeProject?.files.filter((file) => file.show)"
+            :key="fileName"
+            class="stroke small mr-small bg-grey-darkest"
+            :class="activeFileName === fileName ? 'active' : 'primary'"
+            @click="setActiveFile(fileName)">
+            {{ fileName }}
+          </button>
+        </div>
+      </transition>
+      <!-- run buttons -->
+      <div class="flex">
+        <button @click="runRobotTest()" class="theme type-center">
+          <play-icon color="black" size="1.25rem" />
+          <div class="type-xsmall">Run</div>
         </button>
+        <!-- <button  @click="runRobotTest(test)" class="stroke bg-grey-darkest">
+          <span class="color-theme">Run (reinit)</span>
+        </button> -->
+      </div>
+    </div>
+    <div id="monaco-container" />
+    <transition name="opacity">
+      <div v-if="showOutput">
+        <h4 class="mt-medium">Console output</h4>
+        <pre class="console bg-grey-darkest p-medium" ref="console">
+          <code id="output" v-html="output" ref="output" />
+        </pre>
       </div>
     </transition>
-    <div id="monaco-container" />
-    <button  @click="runRobotTest()" class="stroke small mr-small bg-grey-darkest">
-      Run Robot
-    </button>
-    <button  @click="runRobotTest(true)" class="stroke small mr-small bg-grey-darkest">
-      Run Robot (reinit)
-    </button>
-  <div class="console" hidden>
-    <pre class="console"><code class style="overflow: auto;" id="output" disabled=""/></pre>
-    </div>
-      <iframe id="loghtml" style="width: 100%; height: 800px; display: none;"></iframe>
-    </div>
+    <transition name="opacity">
+      <button v-if="logSrc" class="stroke mt-small flex" @click="showLog = true">
+        <document-icon color="white" size="1.25rem" />
+        <div class="ml-2xsmall">
+          log.html
+        </div>
+      </button>
+    </transition>
+    <transition name="opacity">
+      <div v-if="showLog" class="log-modal" @click="showLog = false">
+        <div>
+          <iframe :src="logSrc" />
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -84,13 +110,17 @@ import { marked } from 'marked'
 import 'Code/editorConfig.js'
 import { listProjects, loadProjectsByName } from 'Code'
 import ChevronIcon from './icons/ChevronIcon.vue'
+import PlayIcon from './icons/PlayIcon.vue'
+import DocumentIcon from './icons/DocumentIcon.vue'
 let editor = {}
 const models = {}
 const modelStates = {}
 
 export default {
   components: {
-    ChevronIcon
+    ChevronIcon,
+    PlayIcon,
+    DocumentIcon
   },
   data: () => ({
     languages: [
@@ -103,11 +133,15 @@ export default {
     activeFileName: null,
     projectDropdownOpen: false,
     projectNames: listProjects(),
-    projectHasBeenModified: false
+    projectHasBeenModified: false,
+    showOutput: false,
+    output: '',
+    logSrc: null,
+    showLog: false
   }),
   methods: {
     parseMarkdown(str) {
-      return marked.parse(str)
+      return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
     async setProject(projectName, activeFileName) {
       const project = await loadProjectsByName(projectName)
@@ -147,13 +181,30 @@ export default {
       this.activeFileName = fileName
     },
     runRobotTest(init = false) {
-      const files = Object.entries(models).map((model) => {
-        return {
-          fileName: model[0],
-          content: model[1].getValue()
-        }
+      this.showOutput = true
+      this.$nextTick(() => {
+        // if output wont be completely visible on screen, scroll
+        const { bottom } = this.$refs.console.getBoundingClientRect()
+        const offset = bottom - window.innerHeight + 130
+        console.log(offset)
+        window.scrollTo({
+          top: window.scrollY + offset,
+          behavior: 'smooth'
+        })
+        const files = Object.entries(models).map((model) => {
+          return {
+            fileName: model[0],
+            content: model[1].getValue()
+          }
+        })
+        runRobot(files, init)
       })
-      runRobot(files, init)
+    }
+  },
+  watch: {
+    showLog() {
+      if (this.showLog) document.body.style.overflow = 'hidden'
+      else document.body.style.overflow = 'visible'
     }
   },
   mounted() {
@@ -185,8 +236,23 @@ export default {
     // editor.onDidBlurEditorWidget(() => {
     //   this.editorFocused = false
     // })
-    console.log(editor)
     this.setProject('Hello World')
+    window.addEventListener('writeOutput', ({ text }) => {
+      this.output += text
+    })
+    window.addEventListener('clearOutput', () => {
+      this.output = ''
+    })
+    window.addEventListener('writeLog', ({ src }) => {
+      this.logSrc = src
+    })
+
+    // loadConfigFromURL('robotframework.org/live/Example').then(
+    //   (data) => {
+    //     console.log(data)
+    //     this.setProject(data.files)
+    //   }
+    // )
   }
 }
 </script>
@@ -196,11 +262,13 @@ export default {
     width: 100%;
   }
   #monaco-container {
-    height: 50vh;
-    width: calc(100% - 0.25rem);
+    height: 40vh;
   }
   .dropdown {
     height: fit-content;
+  }
+  .dropdown > button {
+    min-width: 13rem;
   }
   .dropdown button:hover > svg {
     fill: var(--color-theme);
@@ -213,11 +281,6 @@ export default {
     border-top: none;
     border-radius: 0 0 var(--border-radius-rounded) var(--border-radius-rounded);
   }
-  .project-description > :deep(h1) {
-    font-size: var(--type-xlarge);
-    margin-bottom: var(--size-small);
-    color: var(--color-theme);
-  }
   .project-description > :deep(h2) {
     font-size: var(--type-large);
     margin-bottom: var(--size-2xsmall);
@@ -226,16 +289,28 @@ export default {
   .project-description > :deep(p) {
     margin-bottom: var(--size-2xsmall);
   }
-  div.console {
-    display: none;
-    width: auto;
-    height: 500px;
-    border: solid 1px;
-    border-radius: 4px;
-    overflow: auto;
-    padding: 2em;
-    background-color: var(--light-background-color);
-    color: var(--text-color);
-    font-size: 0.9em;
+  .console {
+    height: 40vh;
+    overflow: scroll;
+  }
+  .log-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #292f3399;
+    z-index: 99;
+  }
+  .log-modal > div {
+    width: 860px;
+    max-width: calc(100% - 2rem);
+    margin: 5rem auto;
+    overflow: scroll;
+    height: calc(100% - 7rem);
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
   }
 </style>

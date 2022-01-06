@@ -26,6 +26,9 @@
       <tab-box
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         :tabs="$tm('gettingStarted.tabs')">
+        <template v-slot:tab-1>
+          <monaco-editor />
+        </template>
         <!-- list of learning resouces on 3rd tab -->
         <template v-slot:tab-3>
             <div v-for="item in $tm('resourcesList.learning')" :key="item.name" class="mt-small mb-small">
@@ -36,7 +39,6 @@
             </div>
         </template>
       </tab-box>
-      <monaco-editor class="mt-medium col-sm-12 col-lg-9 col-lg-offset-3" />
     </page-section>
     <!-- resources -->
     <page-section

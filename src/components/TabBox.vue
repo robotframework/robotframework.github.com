@@ -37,7 +37,7 @@
           </template>
         </div>
         <!-- custom slot content -->
-        <div v-else>
+        <div v-else class="w-100">
           <slot :name="`tab-${activeTabIndex + 1}`" />
         </div>
       </transition>

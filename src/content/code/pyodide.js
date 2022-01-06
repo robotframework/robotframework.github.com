@@ -6,6 +6,10 @@ const pyodideWebWorkerPath = '/pyworker/py_worker.js'
 const ansiUp = new AnsiUp()
 var pythonProgram = ''
 var pyodideWorker = null
+const writeOutputEvent = new Event('writeOutput')
+const clearOutputEvent = new Event('clearOutput')
+const writeLogEvent = new Event('writeLog')
+const clearLogEvent = new Event('clearLog')
 
 function loadFileToPythonProgram() {
   fetch(runRobotPyPath)
@@ -19,23 +23,23 @@ function updateLogHtml(html) {
   const iframeContent = escape(html
     .replace(/<a href="#"><\/a>/is, '')
     .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
-  document.getElementById('loghtml').src = 'data:text/html;charset=utf-8,' + iframeContent
-  document.getElementById('loghtml').style.display = 'block'
+  writeLogEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
+  window.dispatchEvent(writeLogEvent)
 }
 
 function clearLogHtml() {
-  document.getElementById('loghtml').src = 'data:text/html;charset=utf-8,' + escape('<html><body></body></html>')
+  window.dispatchEvent(clearLogEvent)
 }
 
 function writeToOutput(consoleOutput) {
   if (!consoleOutput) return
   const html = ansiUp.ansi_to_html(consoleOutput)
-  document.getElementById('output').innerHTML += html
+  writeOutputEvent.text = html
+  window.dispatchEvent(writeOutputEvent)
 }
 
 function clearOutput() {
-  document.getElementById('output').innerHTML = ''
-  document.querySelector('div.console').style.display = 'block'
+  window.dispatchEvent(clearOutputEvent)
 }
 
 function run(script, context, onSuccess, onError, initialize) {
