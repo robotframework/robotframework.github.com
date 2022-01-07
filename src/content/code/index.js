@@ -10,7 +10,11 @@ const examples = [
   },
   {
     name: 'Behaviour-Driven Development (BDD)',
-    url: baseURL + 'Example-BDD'
+    url: baseURL + 'ExampleBDD'
+  },
+  {
+    name: 'XML Testing Example',
+    url: baseURL + 'ExampleXML'
   },
   {
     name: 'HTML and JS Example',
