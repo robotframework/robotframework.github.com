@@ -84,28 +84,31 @@
         </pre>
       </div>
     </transition>
-    <transition name="opacity">
-      <button v-if="logSrc" class="stroke mt-small flex" @click="showLog = true">
-        <document-icon color="white" size="1.25rem" />
-        <div class="ml-2xsmall">
-          log.html
-        </div>
-      </button>
-    </transition>
+    <div class="flex">
+      <transition name="opacity">
+        <button v-if="logSrc" class="stroke mt-small flex mr-small" @click="showLog = true">
+          <document-icon color="white" size="1.25rem" />
+          <div class="ml-2xsmall">
+            log.html
+          </div>
+        </button>
+      </transition>
+      <transition name="opacity">
+        <button v-if="reportSrc" class="stroke mt-small flex" @click="showReport = true">
+          <document-icon color="white" size="1.25rem" />
+          <div class="ml-2xsmall">
+            report.html
+          </div>
+        </button>
+      </transition>
+    </div>
+    <!-- modals -->
     <transition name="opacity">
       <div v-if="showLog" class="log-modal" @click="showLog = false">
         <div>
           <iframe :src="logSrc" />
         </div>
       </div>
-    </transition>
-        <transition name="opacity">
-      <button v-if="reportSrc" class="stroke mt-small flex" @click="showReport = true">
-        <document-icon color="white" size="1.25rem" />
-        <div class="ml-2xsmall">
-          report.html
-        </div>
-      </button>
     </transition>
     <transition name="opacity">
       <div v-if="showReport" class="log-modal" @click="showReport = false">
@@ -127,8 +130,8 @@ import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 let editor = {}
-const models = {}
-const modelStates = {}
+let models = {}
+let modelStates = {}
 const languages = [
   { id: 'python', extensions: ['py'] },
   { id: 'robotframework', extensions: ['robot', 'resource'] },
