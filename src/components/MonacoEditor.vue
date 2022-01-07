@@ -99,6 +99,21 @@
         </div>
       </div>
     </transition>
+        <transition name="opacity">
+      <button v-if="reportSrc" class="stroke mt-small flex" @click="showReport = true">
+        <document-icon color="white" size="1.25rem" />
+        <div class="ml-2xsmall">
+          report.html
+        </div>
+      </button>
+    </transition>
+    <transition name="opacity">
+      <div v-if="showReport" class="log-modal" @click="showReport = false">
+        <div>
+          <iframe :src="reportSrc" />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -112,8 +127,8 @@ import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 let editor = {}
-const models = {}
-const modelStates = {}
+var models = {}
+var modelStates = {}
 
 export default {
   components: {
@@ -140,7 +155,9 @@ export default {
     projectHasBeenModified: false,
     output: '',
     logSrc: null,
-    showLog: false
+    reportSrc: null,
+    showLog: false,
+    showReport: false
   }),
   methods: {
     parseMarkdown(str) {
@@ -148,6 +165,8 @@ export default {
     },
     async setProject(projectName, activeFileName) {
       const project = await loadProjectsByName(projectName)
+      models = {}
+      modelStates = {}
       project.files.forEach(({ fileName, content, show }) => {
         const extension = fileName.split('.').at(-1)
         const langId = this.languages.find(({ extensions }) => extensions.includes(extension))?.id
@@ -215,6 +234,10 @@ export default {
     showLog() {
       if (this.showLog) document.body.style.overflow = 'hidden'
       else document.body.style.overflow = 'visible'
+    },
+    showReport() {
+      if (this.showReport) document.body.style.overflow = 'hidden'
+      else document.body.style.overflow = 'visible'
     }
   },
   mounted() {
@@ -256,7 +279,9 @@ export default {
     window.addEventListener('writeLog', ({ src }) => {
       this.logSrc = src
     })
-
+    window.addEventListener('writeReport', ({ src }) => {
+      this.reportSrc = src
+    })
     // loadConfigFromURL('robotframework.org/live/Example').then(
     //   (data) => {
     //     console.log(data)
@@ -317,7 +342,7 @@ export default {
     width: 860px;
     max-width: calc(100% - 2rem);
     margin: 5rem auto;
-    overflow: scroll;
+    overflow: hidden;
     height: calc(100% - 7rem);
   }
   iframe {

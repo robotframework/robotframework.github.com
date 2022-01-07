@@ -1,4 +1,4 @@
-const baseURL = 'https://robotframework.org/live/Examples/'
+const baseURL = 'http://localhost:7272/Examples/' // 'https://robotframework.org/live/Examples/'
 const examples = [
   {
     name: 'Basic Example',
@@ -7,6 +7,10 @@ const examples = [
   {
     name: 'Example with Classes',
     url: baseURL + 'Example2'
+  },
+  {
+    name: 'Behaviour-Driven Development (BDD)',
+    url: baseURL + 'Example-BDD'
   },
   {
     name: 'HTML and JS Example',
@@ -40,6 +44,7 @@ const loadProjectsFromURL = async(projectURL) => {
       show: (file.show === undefined) ? true : file.show
     })
   }
+  console.log(data)
   return data
 }
 

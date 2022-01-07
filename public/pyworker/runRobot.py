@@ -37,6 +37,9 @@ class Listener:
     def end_suite(self, name, args):
         self._post_message()
 
+    def close(self):
+        self._post_message()
+
 
 try:
     import robot
@@ -52,6 +55,7 @@ try:
 
     def write_file(file):
         with open(file['fileName'], "w") as f:
+            js.console.log(f'Writing file {file["fileName"]}')
             f.writelines(file['content'])
 
     file_list = json.loads(file_catalog)
@@ -64,7 +68,7 @@ try:
             json.dumps(
                 {
                     "std_output": f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
-                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT test.robot\n"
+                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT .\n"
                 }
             )
         )
@@ -80,7 +84,7 @@ try:
                 m = reload(m)
 
         result = robot.run(
-            "test.robot",
+            ".",
             consolecolors="ansi",
             listener=[Listener()],  # "RobotStackTracer",
             loglevel="TRACE:INFO",
@@ -92,20 +96,26 @@ try:
         )
         js.console.log(f"result: {result}")
     except Exception as e:
-        js.console.log(f"exception: {e}")
+        js.console.log(f"Robot Run Exception: {e}")
+        js.console.log(traceback.format_exc())
         traceback.print_exc(file=sys.__stdout__)
     finally:
         std_output = sys.__stdout__.getvalue()
         sys.__stdout__ = org_stdout
         sys.stdout = sys.__stdout__
+        js.postMessage(json.dumps({"std_output": std_output}))
 
     with open("log.html", "r") as f:
-        html = str(f.read())
-        js.postMessage(
-            json.dumps({"html": html, "std_output": std_output, "finished": True})
-        )
+        log_html = str(f.read())
+
+    with open("report.html", "r") as f:
+        report_html = str(f.read())
+
+    js.postMessage(
+        json.dumps({"log_html": log_html, "report_html": report_html, "std_output": std_output, "finished": True})
+    )
 
 except Exception as e:
     print("Exception:")
-    traceback.print_exc()
-    print(e)
+    js.console.log(traceback.format_exc())
+

@@ -9,7 +9,7 @@ var pyodideWorker = null
 const writeOutputEvent = new Event('writeOutput')
 const clearOutputEvent = new Event('clearOutput')
 const writeLogEvent = new Event('writeLog')
-const clearLogEvent = new Event('clearLog')
+const writeReportEvent = new Event('writeReport')
 
 function loadFileToPythonProgram() {
   fetch(runRobotPyPath)
@@ -27,8 +27,12 @@ function updateLogHtml(html) {
   window.dispatchEvent(writeLogEvent)
 }
 
-function clearLogHtml() {
-  window.dispatchEvent(clearLogEvent)
+function updateReportHtml(html) {
+  const iframeContent = escape(html
+    .replace(/<a href="#"><\/a>/is, '')
+    .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
+  writeReportEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
+  window.dispatchEvent(writeReportEvent)
 }
 
 function writeToOutput(consoleOutput) {
@@ -69,13 +73,15 @@ function asyncRun(script, context, onMessage, initialize) {
 
 export async function runRobot(files, initialize = false) {
   clearOutput()
-  clearLogHtml()
   writeToOutput('Initializing...\n')
   await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files) }, (data) => {
     data = JSON.parse(data)
     writeToOutput(data.std_output)
-    if (Object.prototype.hasOwnProperty.call(data, 'html')) {
-      updateLogHtml(data.html)
+    if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {
+      updateLogHtml(data.log_html)
+    }
+    if (Object.prototype.hasOwnProperty.call(data, 'report_html')) {
+      updateReportHtml(data.report_html)
     }
   }, initialize)
   writeToOutput('\nDone!')
