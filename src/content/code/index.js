@@ -1,58 +1,36 @@
-const baseURL = 'https://robotframework.org/live/Examples/'
-const examples = [
-  {
-    name: 'Basic Example',
-    url: baseURL + 'Example1'
-  },
-  {
-    name: 'Example with Classes',
-    url: baseURL + 'Example2'
-  },
-  {
-    name: 'Behaviour-Driven Development (BDD)',
-    url: baseURL + 'ExampleBDD'
-  },
-  {
-    name: 'XML Testing Example',
-    url: baseURL + 'ExampleXML'
-  },
-  {
-    name: 'HTML and JS Example',
-    url: baseURL + 'ExampleJS'
-  }
-]
-const listProjects = () => examples.map((ex) => ex.name)
+const baseURL = 'https://robotframework.org/live/Examples'
 
-const loadProjectsByName = async(projectName) => {
-  const example = examples.find((example) => example.name === projectName) || examples[0]
-  return loadProjectsFromURL(example.url + '/')
-}
+const getProjectsList = () => new Promise((resolve) => {
+  fetch(`${baseURL}/index.json`)
+    .then((res) => res.json())
+    .then((json) => resolve(json))
+})
 
-const loadProjectsFromURL = async(projectURL) => {
-  const configFileUrl = projectURL + 'config.json'
-  console.log(`Loading config from ${configFileUrl}`)
-  const configFile = await fetch(configFileUrl)
+const getProject = async(projectDir) => {
+  const projectUrl = `${baseURL}/${projectDir}`
+  console.log(`Loading data from ${projectUrl}`)
+  const configFile = await fetch(projectUrl + '/config.json')
     .then(response => response.json())
-  var data = { name: configFile.name }
-  if (Object.prototype.hasOwnProperty.call(configFile, 'description')) {
-    data.description = await fetch(projectURL + configFile.description)
+  var project = { name: configFile.name, files: [], description: '' }
+  const descriptionFileName = configFile.description
+  if (descriptionFileName) {
+    project.description = await fetch(projectUrl + '/' + descriptionFileName)
       .then(response => response.text())
   }
-  data.files = []
   for (const file of configFile.files) {
-    const content = await fetch(projectURL + file.fileName)
+    const { fileName, hidden } = file
+    const content = await fetch(projectUrl + '/' + fileName)
       .then(response => response.text())
-    data.files.push({
-      fileName: file.fileName,
-      content: content,
-      show: (file.show === undefined) ? true : file.show
+    project.files.push({
+      fileName,
+      hidden,
+      content
     })
   }
-  console.log(data)
-  return data
+  return project
 }
 
 export {
-  listProjects,
-  loadProjectsByName
+  getProjectsList,
+  getProject
 }

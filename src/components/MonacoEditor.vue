@@ -3,12 +3,12 @@
     <!-- project dropdown -->
     <div class="flex mb-small mt-small">
       <div
-        v-if="activeProject"
+        v-if="projectsList"
         class="dropdown relative">
         <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
           <transition name="opacity" mode="out-in">
-            <div class="mr-3xsmall ml-2xsmall" :key="activeProject?.name">
-              {{ activeProject?.name }}
+            <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
+              {{ activeProjectName }}
               <span v-if="projectHasBeenModified" class="color-error" style="margin-left: -0.5rem">*</span>
             </div>
           </transition>
@@ -31,12 +31,12 @@
             v-if="projectDropdownOpen"
             class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
             <button
-              v-for="projectName in projectNames"
-              :key="projectName"
+              v-for="project in projectsList"
+              :key="project.name"
               class="block mb-xsmall color-white type-small"
-              :class="activeProject.name === projectName ? 'disabled' : ''"
-              @click="setProject(projectName); projectDropdownOpen = false">
-              {{ projectName }}
+              :class="activeProjectName === project.name ? 'disabled' : ''"
+              @click="setProject(project); projectDropdownOpen = false">
+              {{ project.name }}
             </button>
           </div>
         </transition>
@@ -44,7 +44,7 @@
     </div>
     <!-- project description -->
     <transition name="opacity" mode="out-in">
-      <article :key="activeProject?.name">
+      <article :key="activeProjectName">
         <div
           v-if="activeProject?.description"
           class="project-description"
@@ -54,9 +54,9 @@
     <div class="flex between bottom mb-xsmall mt-medium">
       <!-- file tabs -->
       <transition name="opacity" mode="out-in">
-        <div :key="activeProject?.name">
+        <div :key="activeProjectName">
           <button
-            v-for="{ fileName } in activeProject?.files.filter((file) => file.show)"
+            v-for="{ fileName } in activeProject?.files.filter(({ hidden }) => !hidden)"
             :key="fileName"
             class="stroke small mr-small bg-grey-darkest"
             :class="activeFileName === fileName ? 'active' : 'primary'"
@@ -80,7 +80,7 @@
     <transition name="opacity">
       <div v-if="output !== ''">
         <h4 class="mt-medium">Console output</h4>
-        <pre class="console bg-grey-darkest p-medium" ref="console"><code id="output" v-html="output" ref="output" />
+        <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" />
         </pre>
       </div>
     </transition>
@@ -118,41 +118,44 @@
 </template>
 
 <script>
-import { runRobot } from 'Content/code/pyodide.js'
+import { getProjectsList, getProject } from 'Code'
+import { runRobot } from 'Code/pyodide.js'
+import 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
-import 'Code/editorConfig.js'
-import { listProjects, loadProjectsByName } from 'Code'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 let editor = {}
-var models = {}
-var modelStates = {}
+const models = {}
+const modelStates = {}
+const languages = [
+  { id: 'python', extensions: ['py'] },
+  { id: 'robotframework', extensions: ['robot', 'resource'] },
+  { id: 'html', extensions: ['html'] },
+  { id: 'javascript', extensions: ['js'] },
+  { id: 'json', extensions: ['json'] },
+  { id: 'xml', extensions: ['xml'] },
+  { id: 'yaml', extensions: ['yml', 'yaml'] },
+  { id: 'markdown', extensions: ['md'] }
+]
 
 export default {
+  name: 'Editor',
   components: {
     ChevronIcon,
     PlayIcon,
     DocumentIcon
   },
   data: () => ({
-    languages: [
-      { id: 'python', extensions: ['py'] },
-      { id: 'robotframework', extensions: ['robot', 'resource'] },
-      { id: 'html', extensions: ['html'] },
-      { id: 'javascript', extensions: ['js'] },
-      { id: 'json', extensions: ['json'] },
-      { id: 'xml', extensions: ['xml'] },
-      { id: 'yaml', extensions: ['yml', 'yaml'] },
-      { id: 'markdown', extensions: ['md'] }
-    ],
+    projectsList: null,
+    activeProjectName: null, // the short dropdown name from examples index
     activeProject: null,
+    projectHasBeenModified: false,
     activeFileName: null,
     isChangingTab: false,
+    isRunning: false,
     projectDropdownOpen: false,
-    projectNames: listProjects(),
-    projectHasBeenModified: false,
     output: '',
     logSrc: null,
     reportSrc: null,
@@ -163,18 +166,18 @@ export default {
     parseMarkdown(str) {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
-    async setProject(projectName, activeFileName) {
-      const project = await loadProjectsByName(projectName)
+    async setProject({ name, dir }, activeFileName) {
+      const project = await getProject(dir)
       models = {}
       modelStates = {}
       project.files.forEach(({ fileName, content, show }) => {
         const extension = fileName.split('.').at(-1)
-        const langId = this.languages.find(({ extensions }) => extensions.includes(extension))?.id
-        console.log(`ext: ${extension}, id: ${langId}`)
+        const langId = languages.find(({ extensions }) => extensions.includes(extension))?.id
         const model = monaco.editor.createModel(content, langId)
         model.updateOptions({ tabSize: 4 })
         models[fileName] = model
       })
+      this.activeProjectName = name
       this.activeProject = project
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.projectHasBeenModified = false
@@ -227,6 +230,7 @@ export default {
           }
         })
         runRobot(files, init)
+        this.isRunning = true
       })
     }
   },
@@ -263,31 +267,22 @@ export default {
       },
       'editorTextFocus && !editorHasSelection && !inSnippetMode && !suggestWidgetVisible'
     )
-    // editor.onDidFocusEditorWidget(() => {
-    //   this.editorFocused = true
-    // })
-    // editor.onDidBlurEditorWidget(() => {
-    //   this.editorFocused = false
-    // })
-    this.setProject('Hello World')
-    window.addEventListener('writeOutput', ({ text }) => {
-      this.output += text
-    })
-    window.addEventListener('clearOutput', () => {
-      this.output = ''
-    })
+    window.addEventListener('writeOutput', ({ text }) => { this.output += text })
+    window.addEventListener('clearOutput', () => { this.output = '' })
     window.addEventListener('writeLog', ({ src }) => {
+      // todo: differentiate testFinished and writeLog
       this.logSrc = src
+      this.isRunning = false
+      this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('writeReport', ({ src }) => {
       this.reportSrc = src
     })
-    // loadConfigFromURL('robotframework.org/live/Example').then(
-    //   (data) => {
-    //     console.log(data)
-    //     this.setProject(data.files)
-    //   }
-    // )
+    getProjectsList()
+      .then((list) => {
+        this.projectsList = list
+        this.setProject(list[0])
+      })
   }
 }
 </script>
@@ -328,6 +323,14 @@ export default {
   .console {
     height: 40vh;
     overflow: auto;
+  }
+  .console.running {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .console.running > code {
+    flex-basis: 100%;
   }
   .log-modal {
     position: fixed;
