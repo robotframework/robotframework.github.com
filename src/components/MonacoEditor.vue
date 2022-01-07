@@ -76,9 +76,9 @@
         </button> -->
       </div>
     </div>
-    <div id="monaco-container" />
+    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab}" />
     <transition name="opacity">
-      <div v-if="showOutput">
+      <div v-if="output !== ''">
         <h4 class="mt-medium">Console output</h4>
         <pre class="console bg-grey-darkest p-medium" ref="console">
           <code id="output" v-html="output" ref="output" />
@@ -131,10 +131,10 @@ export default {
     ],
     activeProject: null,
     activeFileName: null,
+    isChangingTab: false,
     projectDropdownOpen: false,
     projectNames: listProjects(),
     projectHasBeenModified: false,
-    showOutput: false,
     output: '',
     logSrc: null,
     showLog: false
@@ -155,38 +155,44 @@ export default {
       this.activeProject = project
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.projectHasBeenModified = false
+      this.output = ''
     },
     resetProject() {
       const oldViewState = editor.saveViewState()
       this.setProject(this.activeProject.name, this.activeFileName)
         .then(() => {
           editor.restoreViewState(oldViewState)
+          this.output = ''
         })
     },
     setActiveFile(fileName) {
       // save previous file state
       modelStates[this.activeFileName] = editor.saveViewState()
-
-      editor.setModel(models[fileName])
-      // restore new file's state if saved
-      if (fileName in modelStates) {
-        editor.restoreViewState(modelStates[fileName])
-      }
-
-      // event listener for code modification
-      editor.getModel().onDidChangeContent((ev) => {
-        this.projectHasBeenModified = true
-      })
-
       this.activeFileName = fileName
+
+      // transition for changing tab
+      this.isChangingTab = true
+
+      setTimeout(() => {
+        editor.setModel(models[fileName])
+        // restore new file's state if saved
+        if (fileName in modelStates) {
+          editor.restoreViewState(modelStates[fileName])
+        }
+
+        // event listener for code modification
+        editor.getModel().onDidChangeContent((ev) => {
+          this.projectHasBeenModified = true
+        })
+      }, 150)
+      setTimeout(() => { this.isChangingTab = false }, 300)
     },
     runRobotTest(init = false) {
-      this.showOutput = true
+      this.output = ' '
       this.$nextTick(() => {
         // if output wont be completely visible on screen, scroll
         const { bottom } = this.$refs.console.getBoundingClientRect()
         const offset = bottom - window.innerHeight + 130
-        console.log(offset)
         window.scrollTo({
           top: window.scrollY + offset,
           behavior: 'smooth'
@@ -263,6 +269,7 @@ export default {
   }
   #monaco-container {
     height: 40vh;
+    position: relative;
   }
   .dropdown {
     height: fit-content;
@@ -312,5 +319,30 @@ export default {
   iframe {
     width: 100%;
     height: 100%;
+  }
+  .tab-change-animation::after {
+    animation: fade 0.3s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-darkmode);
+    pointer-events: none;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 </style>
