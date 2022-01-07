@@ -80,8 +80,7 @@
     <transition name="opacity">
       <div v-if="output !== ''">
         <h4 class="mt-medium">Console output</h4>
-        <pre class="console bg-grey-darkest p-medium" ref="console">
-          <code id="output" v-html="output" ref="output" />
+        <pre class="console bg-grey-darkest p-medium" ref="console"><code id="output" v-html="output" ref="output" />
         </pre>
       </div>
     </transition>
@@ -127,7 +126,11 @@ export default {
       { id: 'python', extensions: ['py'] },
       { id: 'robotframework', extensions: ['robot', 'resource'] },
       { id: 'html', extensions: ['html'] },
-      { id: 'javascript', extensions: ['js'] }
+      { id: 'javascript', extensions: ['js'] },
+      { id: 'json', extensions: ['json'] },
+      { id: 'xml', extensions: ['xml'] },
+      { id: 'yaml', extensions: ['yml', 'yaml'] },
+      { id: 'markdown', extensions: ['md'] }
     ],
     activeProject: null,
     activeFileName: null,
@@ -148,6 +151,7 @@ export default {
       project.files.forEach(({ fileName, content, show }) => {
         const extension = fileName.split('.').at(-1)
         const langId = this.languages.find(({ extensions }) => extensions.includes(extension))?.id
+        console.log(`ext: ${extension}, id: ${langId}`)
         const model = monaco.editor.createModel(content, langId)
         model.updateOptions({ tabSize: 4 })
         models[fileName] = model
@@ -298,7 +302,7 @@ export default {
   }
   .console {
     height: 40vh;
-    overflow: scroll;
+    overflow: auto;
   }
   .log-modal {
     position: fixed;

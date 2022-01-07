@@ -337,6 +337,6 @@ th:last-child, td:last-child {
   position: absolute;
   z-index: 2;
   max-height: 13.7rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>

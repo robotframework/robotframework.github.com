@@ -20,6 +20,7 @@
     color: var(--color-black);
 }
 .bg-black {
+    color-scheme: dark;
     background-color: var(--color-black);
 }
 
@@ -27,6 +28,7 @@
     color: var(--color-grey-dark);
 }
 .bg-grey-dark {
+    color-scheme: dark;
     background-color: var(--color-grey-dark);
 }
 
@@ -34,6 +36,7 @@
     color: var(--color-background-darkmode);
 }
 .bg-grey-darkest {
+    color-scheme: dark;
     background-color: var(--color-background-darkmode);
 }
 
@@ -70,10 +73,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+
     .bg-white-darkmode {
         background-color: var(--color-white);
     }
     .bg-grey-dark-darkmode {
+        color-scheme: dark;
         background-color: var(--color-grey-dark);
     }
     .color-white-darkmode {

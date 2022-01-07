@@ -167,7 +167,7 @@ export default {
     .description {
       padding-left: 0;
       height: 10rem;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
     .img-container-small {
       width: calc((100vw - 2rem) / 7);
