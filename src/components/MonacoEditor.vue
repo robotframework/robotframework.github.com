@@ -80,8 +80,7 @@
     <transition name="opacity">
       <div v-if="showOutput">
         <h4 class="mt-medium">Console output</h4>
-        <pre class="console bg-grey-darkest p-medium" ref="console">
-          <code id="output" v-html="output" ref="output" />
+        <pre class="console bg-grey-darkest p-medium" ref="console"><code id="output" v-html="output" ref="output" />
         </pre>
       </div>
     </transition>
@@ -296,7 +295,7 @@ export default {
   }
   .console {
     height: 40vh;
-    overflow: scroll;
+    overflow: auto;
   }
   .log-modal {
     position: fixed;
