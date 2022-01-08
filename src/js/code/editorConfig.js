@@ -232,7 +232,7 @@ function createSettingsProposals(settingsLines, range) {
     }
   }
   var existingSettings = []
-  for (const line of settingsLines) {
+  for (const { line } of settingsLines) {
     var matcher = line.match(/^(.*?)(?= {2,}| ?\t ?|$)/)
     if (matcher) {
       existingSettings.push(matcher[1])
@@ -335,7 +335,7 @@ function isAtKeywordPos(currentLine) {
 
 function getImportedLibraries(settingsTable) {
   var imports = []
-  for (const line of settingsTable) {
+  for (const { line } of settingsTable) {
     var libMatch = line.match(/^Library(?: {2,}| ?\t ?)+(\w+?)(?:\.py)?(?: {2,}| ?\t ?|$)+/i)
     if (libMatch) {
       imports.push(libMatch[1])
