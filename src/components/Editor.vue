@@ -1,15 +1,15 @@
 <template>
   <div class="editor-container">
-    <!-- project dropdown -->
-    <div class="flex mb-small mt-small">
+    <div class="flex my-small">
+      <!-- project dropdown -->
       <div
         v-if="projectsList"
-        class="dropdown relative">
+        class="dropdown relative mr-small">
         <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
           <transition name="opacity" mode="out-in">
             <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
               {{ activeProjectName }}
-              <span v-if="projectHasBeenModified" class="color-error" style="margin-left: -0.5rem">*</span>
+              <span v-if="projectHasBeenModified" class="color-alert">(modified)</span>
             </div>
           </transition>
           <chevron-icon
@@ -17,15 +17,6 @@
             color="white"
             :direction="projectDropdownOpen ? 'up' : 'down'" />
         </button>
-        <transition name="opacity">
-          <button
-            v-if="projectHasBeenModified"
-            class="color-error type-small absolute"
-            style="top: 0.5rem; left: calc(100% + 0.5rem);"
-            @click="resetProject(); projectHasBeenModified = false">
-            reset files
-          </button>
-        </transition>
         <transition name="fade">
           <div
             v-if="projectDropdownOpen"
@@ -41,24 +32,38 @@
           </div>
         </transition>
       </div>
+      <transition name="opacity">
+        <div class="flex" v-if="projectHasBeenModified">
+          <button
+            class="alert small mr-small"
+            @click="resetProject(); projectHasBeenModified = false">
+            Reset
+          </button>
+          <button
+            class="stroke small"
+            @click="resetProject(); projectHasBeenModified = false">
+            Share
+          </button>
+        </div>
+      </transition>
     </div>
     <!-- project description -->
     <transition name="opacity" mode="out-in">
-      <article :key="activeProjectName">
+      <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
         <div
           v-if="activeProject?.description"
           class="project-description"
           v-html="parseMarkdown(activeProject.description)" />
       </article>
     </transition>
-    <div class="flex between bottom mb-xsmall mt-medium">
+    <div class="flex between bottom mb-xsmall mt-medium" :class="{['disabled']: isLoadingProject}">
       <!-- file tabs -->
       <transition name="opacity" mode="out-in">
         <div :key="activeProjectName">
           <button
             v-for="{ fileName } in activeProject?.files.filter(({ hidden }) => !hidden)"
             :key="fileName"
-            class="stroke small mr-small bg-grey-darkest"
+            class="stroke small mr-xsmall bg-grey-darkest"
             :class="activeFileName === fileName ? 'active' : 'primary'"
             @click="setActiveFile(fileName)">
             {{ fileName }}
@@ -67,9 +72,9 @@
       </transition>
       <!-- run buttons -->
       <div class="flex">
-        <button @click="runRobotTest()" class="theme type-center">
-          <play-icon color="black" size="1.25rem" />
-          <div class="type-xsmall">Run</div>
+        <button @click="runRobotTest()" class="theme flex middle">
+          <div class="mr-3xsmall weigh-black">Run</div>
+          <play-icon color="black" size="1.35rem" />
         </button>
         <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
           <div class="type-xsmall">Copy</div>
@@ -79,16 +84,17 @@
         </button> -->
       </div>
     </div>
-    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab}" />
+    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject}" />
     <transition name="opacity">
       <div v-if="output !== ''">
         <h4 class="mt-medium">Console output</h4>
         <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" /></pre>
       </div>
     </transition>
-    <div class="flex">
+    <!-- modal buttons -->
+    <div class="flex mt-xsmall">
       <transition name="opacity">
-        <button v-if="logSrc" class="stroke mt-small flex mr-small" @click="showLog = true">
+        <button v-if="logSrc" class="stroke flex mr-small middle" @click="showLog = true">
           <document-icon color="white" size="1.25rem" />
           <div class="ml-2xsmall">
             log.html
@@ -96,7 +102,7 @@
         </button>
       </transition>
       <transition name="opacity">
-        <button v-if="reportSrc" class="stroke mt-small flex" @click="showReport = true">
+        <button v-if="reportSrc" class="stroke flex middle" @click="showReport = true">
           <document-icon color="white" size="1.25rem" />
           <div class="ml-2xsmall">
             report.html
@@ -106,16 +112,9 @@
     </div>
     <!-- modals -->
     <transition name="opacity">
-      <div v-if="showLog" class="log-modal" @click="showLog = false">
+      <div v-if="showLog || showReport" class="log-modal" @click="showLog = false; showReport = false">
         <div>
-          <iframe :src="logSrc" />
-        </div>
-      </div>
-    </transition>
-    <transition name="opacity">
-      <div v-if="showReport" class="log-modal" @click="showReport = false">
-        <div>
-          <iframe :src="reportSrc" />
+          <iframe :src="showLog ? logSrc : reportSrc" />
         </div>
       </div>
     </transition>
@@ -157,6 +156,7 @@ export default {
     projectsList: null,
     activeProjectName: null, // the short dropdown name from examples index
     activeProject: null,
+    isLoadingProject: false,
     projectHasBeenModified: false,
     activeFileName: null,
     isChangingTab: false,
@@ -201,6 +201,8 @@ export default {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
     async setProjectFromConfig({ name, dir }, activeFileName) {
+      if (this.projectHasBeenModified && !window.confirm('Your code modifications will be lost. Are you sure?')) return
+      this.isLoadingProject = true
       const project = await getProject(dir)
       this.setProject(project, name, activeFileName)
     },
@@ -221,10 +223,12 @@ export default {
       this.output = ''
       this.logSrc = null
       this.reportSrc = null
+      this.isLoadingProject = false
     },
     resetProject() {
       const oldViewState = editor.saveViewState()
-      this.setProjectFromConfig(this.activeProject.name, this.activeFileName)
+      const currentProject = this.projectsList.find(({ name }) => name === this.activeProjectName)
+      this.setProjectFromConfig(currentProject, this.activeFileName)
         .then(() => {
           editor.restoreViewState(oldViewState)
           this.output = ''

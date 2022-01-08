@@ -1,7 +1,7 @@
 :root {
     --color-theme: #00c0b5; /* for theme color */
     --color-theme-dark: #09504d; /* for theme color dark */
-    --color-error: #ff9f94;
+    --color-alert: #ff9f94;
     --color-background: #f0f0f0;
     --color-background-darkmode: #222222;
 

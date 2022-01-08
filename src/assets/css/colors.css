@@ -7,11 +7,11 @@
     background-color: var(--color-theme);
 }
 
-.color-error {
-    color: var(--color-error);
+.color-alert {
+    color: var(--color-alert);
 }
-.bg-error {
-    background-color: var(--color-error);
+.bg-alert {
+    background-color: var(--color-alert);
 }
 
 /* basic colors */
