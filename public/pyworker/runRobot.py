@@ -3,6 +3,7 @@ import js
 import micropip
 import json
 import os
+import shutil
 import traceback
 
 from importlib import import_module, reload
@@ -52,11 +53,14 @@ except ImportError:
     js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:
-    if not os.path.exists('robot_files'):
-        os.makedirs('robot_files')
+    dirname = 'robot_files'
+    if os.path.exists(dirname):
+        shutil.rmtree(dirname)
+    os.makedirs(dirname)
+
     def write_file(file):
-        with open(f"robot_files/{file['fileName']}", "w") as f:
-            js.console.log(f'Writing file {file["fileName"]} to folder robot_files.')
+        with open(f"{dirname}/{file['fileName']}", "w") as f:
+            js.console.log(f'Writing file {file["fileName"]} to folder {dirname}.')
             f.writelines(file['content'])
 
     file_list = json.loads(file_catalog)
