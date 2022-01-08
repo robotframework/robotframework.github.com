@@ -27,7 +27,6 @@ self.onmessage = async(event) => {
 import js
 for key in list(globals().keys()):
     if key not in init_globals and key not in ['init_globals', 'js', 'sys']:
-        js.console.log(f"DEL: {key}")
         del globals()[key]
 `)
   const { python, ...context } = event.data

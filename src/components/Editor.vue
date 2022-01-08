@@ -80,8 +80,7 @@
     <transition name="opacity">
       <div v-if="output !== ''">
         <h4 class="mt-medium">Console output</h4>
-        <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" />
-        </pre>
+        <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" /></pre>
       </div>
     </transition>
     <div class="flex">
@@ -123,7 +122,7 @@
 <script>
 import { getProjectsList, getProject } from 'Code'
 import { runRobot } from 'Code/pyodide.js'
-import 'Code/editorConfig.js'
+import { getTestCaseRanges } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
 import ChevronIcon from './icons/ChevronIcon.vue'
@@ -185,6 +184,8 @@ export default {
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.projectHasBeenModified = false
       this.output = ''
+      this.logSrc = null
+      this.reportSrc = null
     },
     resetProject() {
       const oldViewState = editor.saveViewState()
@@ -192,6 +193,8 @@ export default {
         .then(() => {
           editor.restoreViewState(oldViewState)
           this.output = ''
+          this.logSrc = null
+          this.reportSrc = null
         })
     },
     setActiveFile(fileName) {
@@ -216,7 +219,7 @@ export default {
       }, 150)
       setTimeout(() => { this.isChangingTab = false }, 300)
     },
-    runRobotTest(init = false) {
+    runRobotTest(init = false, tcName = '') {
       this.output = ' '
       this.$nextTick(() => {
         // if output wont be completely visible on screen, scroll
@@ -232,7 +235,7 @@ export default {
             content: model[1].getValue()
           }
         })
-        runRobot(files, init)
+        runRobot(files, init, tcName)
         this.isRunning = true
       })
     }
@@ -270,6 +273,55 @@ export default {
       },
       'editorTextFocus && !editorHasSelection && !inSnippetMode && !suggestWidgetVisible'
     )
+
+    var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
+
+    monaco.languages.registerCodeLensProvider('robotframework', {
+      provideCodeLenses: function(model, token) {
+        function getTestCaseLense(testCase) {
+          return {
+            range: {
+              startLineNumber: testCase.nr,
+              startColumn: 1,
+              endLineNumber: testCase.nr + 1,
+              endColumn: testCase.name.length
+            },
+            command: {
+              id: commandRunSuite,
+              title: 'Run Test',
+              tooltip: `Run: ${testCase.name}`,
+              arguments: [testCase.name]
+            }
+          }
+        }
+        const testCases = getTestCaseRanges(model)
+        var lenses = testCases.map((testCase) => {
+          return getTestCaseLense(testCase)
+        })
+        lenses.push({
+          range: {
+            startLineNumber: 1,
+            startColumn: 1,
+            endLineNumber: 2,
+            endColumn: 1
+          },
+          command: {
+            id: commandRunSuite,
+            title: 'Run Test Suite',
+            tooltip: 'Run Full Test Suite',
+            arguments: []
+          }
+        })
+        return {
+          lenses: lenses,
+          dispose: () => {}
+        }
+      },
+      resolveCodeLens: function(model, codeLens, token) {
+        return codeLens
+      }
+    })
+
     window.addEventListener('writeOutput', ({ text }) => { this.output += text })
     window.addEventListener('clearOutput', () => { this.output = '' })
     window.addEventListener('writeLog', ({ src }) => {

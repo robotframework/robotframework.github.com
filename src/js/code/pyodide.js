@@ -71,10 +71,10 @@ function asyncRun(script, context, onMessage, initialize) {
   })
 }
 
-export async function runRobot(files, initialize = false) {
+export async function runRobot(files, initialize = false, testCaseName = '') {
   clearOutput()
   writeToOutput('Initializing...\n')
-  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files) }, (data) => {
+  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName }, (data) => {
     data = JSON.parse(data)
     writeToOutput(data.std_output)
     if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {
@@ -84,5 +84,4 @@ export async function runRobot(files, initialize = false) {
       updateReportHtml(data.report_html)
     }
   }, initialize)
-  writeToOutput('\nDone!')
 }

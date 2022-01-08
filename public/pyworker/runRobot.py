@@ -64,11 +64,18 @@ try:
         write_file(file)
 
     try:
+        if test_case_name:
+            kwargs = {"test": test_case_name}
+            testcli = f' --test "{test_case_name}"'
+        else:
+            kwargs = {}
+            testcli = ''
+
         js.postMessage(
             json.dumps(
                 {
                     "std_output": f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
-                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT .\n"
+                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n"
                 }
             )
         )
@@ -93,6 +100,7 @@ try:
             skip="SKIP",
             removekeywords="tag:REMOVE",
             flattenkeywords="tag:FLAT",
+            **kwargs
         )
         js.console.log(f"result: {result}")
     except Exception as e:

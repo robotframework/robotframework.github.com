@@ -177,7 +177,8 @@ function createKeywordProposals(range, libraries) {
   }
 
   var proposals = []
-  for (const lib of libraries) {
+  for (const line of libraries) {
+    const lib = line.line
     if (lib in Libraries && lib !== 'BuiltIn') {
       for (const keyword of Libraries[lib].keywords) {
         proposals.push(getKeywordProp(keyword, lib))
@@ -292,10 +293,11 @@ function getCurrentTable(textLinesUntilPosition) {
   return currentTable
 }
 
-function getTables(textLines) {
+function getTables(model) {
+  const textLines = model.getValue().split('\n')
   var tables = {}
   var currentTable = ''
-  for (const line of textLines) {
+  for (const [i, line] of textLines.entries()) {
     var tableHeader = ''
     switch (line) {
     case line.match(SettingsMatcher)?.input:
@@ -317,8 +319,8 @@ function getTables(textLines) {
     if (tableHeader) {
       tables[tableHeader] = []
       currentTable = tableHeader
-    } else if (currentTable && String(line)) {
-      tables[currentTable].push(line)
+    } else if (currentTable) {
+      tables[currentTable].push({ nr: i + 1, line: line })
     }
   }
   return tables
@@ -350,6 +352,22 @@ function getImportedLibraries(settingsTable) {
   await promiseXML
 })()
 
+export function getTestCaseRanges(model) {
+  const tableContent = getTables(model)
+  return (TestCases in tableContent) ? getTestCases(tableContent[TestCases]) : []
+}
+
+function getTestCases(testCaseLines) {
+  var testCases = []
+  for (const line of testCaseLines) {
+    const isTestCase = line.line.match(/^ ?[^ \t\n\r](.+)$/)
+    if (isTestCase) {
+      testCases.push({ nr: line.nr, name: line.line.trim() })
+    }
+  }
+  return testCases
+}
+
 monaco.languages.registerCompletionItemProvider('robotframework', {
   provideCompletionItems: function(model, position) {
     const textUntilPosition = model.getValueInRange({
@@ -360,10 +378,9 @@ monaco.languages.registerCompletionItemProvider('robotframework', {
     })
     const textLinesUntilPosition = textUntilPosition.split('\n')
     const currentLine = textLinesUntilPosition.at(-1)
-    const textLines = model.getValue().split('\n')
 
     const currentTable = getCurrentTable(textLinesUntilPosition)
-    const tableContent = getTables(textLines)
+    const tableContent = getTables(model)
     const importedLibraries = (Settings in tableContent) ? getImportedLibraries(tableContent[Settings]) : []
     const existingTables = Object.keys(tableContent)
     console.log(existingTables)
