@@ -52,10 +52,11 @@ except ImportError:
     js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:
-
+    if not os.path.exists('robot_files'):
+        os.makedirs('robot_files')
     def write_file(file):
-        with open(file['fileName'], "w") as f:
-            js.console.log(f'Writing file {file["fileName"]}')
+        with open(f"robot_files/{file['fileName']}", "w") as f:
+            js.console.log(f'Writing file {file["fileName"]} to folder robot_files.')
             f.writelines(file['content'])
 
     file_list = json.loads(file_catalog)
@@ -75,7 +76,7 @@ try:
             json.dumps(
                 {
                     "std_output": f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
-                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n"
+                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} robot_files\n"
                 }
             )
         )
@@ -91,7 +92,7 @@ try:
                 m = reload(m)
 
         result = robot.run(
-            ".",
+            "robot_files",
             consolecolors="ansi",
             listener=[Listener()],  # "RobotStackTracer",
             loglevel="TRACE:INFO",
