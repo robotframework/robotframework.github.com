@@ -35,7 +35,7 @@
               :key="project.name"
               class="block mb-xsmall color-white type-small"
               :class="activeProjectName === project.name ? 'disabled' : ''"
-              @click="setProject(project); projectDropdownOpen = false">
+              @click="setProjectFromConfig(project); projectDropdownOpen = false">
               {{ project.name }}
             </button>
           </div>
@@ -70,6 +70,9 @@
         <button @click="runRobotTest()" class="theme type-center">
           <play-icon color="black" size="1.25rem" />
           <div class="type-xsmall">Run</div>
+        </button>
+        <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
+          <div class="type-xsmall">Copy</div>
         </button>
         <!-- <button  @click="runRobotTest(test)" class="stroke bg-grey-darkest">
           <span class="color-theme">Run (reinit)</span>
@@ -125,6 +128,7 @@ import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
+import * as LZString from 'Code/lz-string'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
@@ -165,11 +169,42 @@ export default {
     showReport: false
   }),
   methods: {
+    async copyProject() {
+      const files = Object.entries(models).map((model) => {
+        return {
+          fileName: model[0],
+          content: model[1].getValue()
+        }
+      })
+      const project = {
+        name: this.activeProject.name,
+        description: '',
+        files: files
+      }
+      var strProj = JSON.stringify(project)
+      var compProj = LZString.compressToEncodedURIComponent(strProj)
+      console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
+      await navigator.clipboard.writeText(document.location.origin + '/?codeProject=' + compProj + '#getting-started')
+    },
+    setProjectsFromURL() {
+      const strProj = LZString.decompressFromEncodedURIComponent((new URL(document.location))
+        .searchParams.get('codeProject'))
+      if (strProj !== '') {
+        var project = JSON.parse(strProj)
+        project.description = '## Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
+        this.setProject(project)
+      } else {
+        this.setProjectFromConfig(this.projectsList[0], null)
+      }
+    },
     parseMarkdown(str) {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
-    async setProject({ name, dir }, activeFileName) {
+    async setProjectFromConfig({ name, dir }, activeFileName) {
       const project = await getProject(dir)
+      this.setProject(project, name, activeFileName)
+    },
+    setProject(project, name, activeFileName) {
       models = {}
       modelStates = {}
       project.files.forEach(({ fileName, content, show }) => {
@@ -189,7 +224,7 @@ export default {
     },
     resetProject() {
       const oldViewState = editor.saveViewState()
-      this.setProject(this.activeProject.name, this.activeFileName)
+      this.setProjectFromConfig(this.activeProject.name, this.activeFileName)
         .then(() => {
           editor.restoreViewState(oldViewState)
           this.output = ''
@@ -336,7 +371,11 @@ export default {
     getProjectsList()
       .then((list) => {
         this.projectsList = list
-        this.setProject(list[0])
+        if ((new URL(document.location)).searchParams.get('codeProject')) {
+          this.setProjectsFromURL()
+        } else {
+          this.setProjectFromConfig(list[0])
+        }
       })
   }
 }

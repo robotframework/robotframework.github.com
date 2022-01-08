@@ -383,7 +383,6 @@ monaco.languages.registerCompletionItemProvider('robotframework', {
     const tableContent = getTables(model)
     const importedLibraries = (Settings in tableContent) ? getImportedLibraries(tableContent[Settings]) : []
     const existingTables = Object.keys(tableContent)
-    console.log(existingTables)
 
     const keyword = isAtKeywordPos(currentLine)
 
