@@ -9,7 +9,15 @@ import traceback
 from importlib import import_module, reload
 from io import StringIO
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(""))))
+os.chdir('/')
+dirname = 'robot_files'
+if os.path.exists(dirname):
+    js.console.log('Clean up working dir.')
+    shutil.rmtree(dirname)
+os.makedirs(dirname)
+os.chdir(dirname)
+sys.path.append(os.getcwd())
+js.console.log(f"Python working dir: {os.getcwd()}")
 
 
 class Listener:
@@ -53,13 +61,8 @@ except ImportError:
     js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:
-    dirname = 'robot_files'
-    if os.path.exists(dirname):
-        shutil.rmtree(dirname)
-    os.makedirs(dirname)
-
     def write_file(file):
-        with open(f"{dirname}/{file['fileName']}", "w") as f:
+        with open(file['fileName'], "w") as f:
             js.console.log(f'Writing file {file["fileName"]} to folder {dirname}.')
             f.writelines(file['content'])
 
@@ -67,6 +70,8 @@ try:
 
     for file in file_list:
         write_file(file)
+    js.console.log(F"Files in working dir: {os.listdir('.')}")
+
 
     try:
         if test_case_name:
@@ -80,7 +85,7 @@ try:
             json.dumps(
                 {
                     "std_output": f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
-                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} robot_files\n"
+                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n"
                 }
             )
         )
@@ -96,7 +101,7 @@ try:
                 m = reload(m)
 
         result = robot.run(
-            "robot_files",
+            ".",
             consolecolors="ansi",
             listener=[Listener()],  # "RobotStackTracer",
             loglevel="TRACE:INFO",
