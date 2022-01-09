@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import {
   NewsBanner,
   Banner,
@@ -106,7 +107,7 @@ export default {
     TabBox,
     Sponsors,
     Milestones,
-    MonacoEditor: () => import(/* webpackChunkName: editor */ 'Components/Editor.vue')
+    MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }
 </script>
