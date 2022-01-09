@@ -44,6 +44,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     'IN RANGE',
     'IN ENUMERATE',
     'IN ZIP',
+    'ELSE IF',
     'ELSE',
     'TRY',
     'EXCEPT',
@@ -123,7 +124,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       [/.*?(?= {2}|[$&%@]\{|\])/, 'variable.meta.dictKey4', '@pop']
     ],
     keyword: [
-      [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|TRY|EXCEPT|FINALLY|RETURN)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
+      [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
       [/^(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keyword1', '@popall'],
       [/^(?:(?:(?: {2,}| ?\t ?)(?:[$&@]\{(?:.*?)\}(?: ?=)))*(?: {2,}| ?\t ?))(.+?)(?= {2,}| ?\t ?|$)/, 'identifier.keyword2', '@popall']
     ],

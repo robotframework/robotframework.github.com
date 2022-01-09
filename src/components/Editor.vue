@@ -324,7 +324,16 @@ export default {
       },
       'editorTextFocus && !editorHasSelection && !inSnippetMode && !suggestWidgetVisible'
     )
-
+    editor.addAction({
+      id: 'run_robot',
+      label: 'Run Suite in Robot',
+      keybindings: [monaco.KeyMod.Shift | monaco.KeyCode.Enter],
+      precondition: null,
+      keybindingContext: null,
+      contextMenuGroupId: 'navigation',
+      contextMenuOrder: 0,
+      run: (ed) => { this.runRobotTest() }
+    })
     var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
 
     monaco.languages.registerCodeLensProvider('robotframework', {
