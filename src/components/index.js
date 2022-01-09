@@ -15,7 +15,6 @@ import Sponsors from './Sponsors.vue'
 import SponsorsDetailed from './SponsorsDetailed.vue'
 import RobotCode from './RobotCode.vue'
 import Milestones from './Milestones.vue'
-import MonacoEditor from './Editor.vue'
 
 import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
@@ -40,7 +39,6 @@ export {
   Sponsors,
   SponsorsDetailed,
   Milestones,
-  MonacoEditor,
 
   GlobeIcon,
   ChevronIcon,

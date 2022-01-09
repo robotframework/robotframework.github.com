@@ -87,8 +87,7 @@ import {
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones,
-  MonacoEditor
+  Milestones
 } from 'Components'
 
 export default {
@@ -107,7 +106,7 @@ export default {
     TabBox,
     Sponsors,
     Milestones,
-    MonacoEditor
+    MonacoEditor: () => import(/* webpackChunkName: editor */ 'Components/Editor.vue')
   }
 }
 </script>

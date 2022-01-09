@@ -16,15 +16,7 @@ module.exports = {
     },
     plugins: [new MonacoWebpackPlugin({
       languages: ['python', 'html', 'javascript', 'typescript', 'yaml', 'xml', 'json', 'markdown']
-    })],
-    module: {
-      rules: [
-        {
-          include: [path.resolve(__dirname, 'src/content/code/projects')],
-          use: 'raw-loader'
-        }
-      ]
-    }
+    })]
   },
   transpileDependencies: [
     'monaco-editor'
