@@ -72,8 +72,14 @@ button.stroke {
     color: var(--color-white);
     border: solid 0.05rem var(--color-white);
 }
+button > svg {
+    transition: fill 0.2s;
+}
 button.stroke:hover {
     color: var(--color-theme);
+}
+button:hover > svg {
+    fill: var(--color-theme);
 }
 button.alert {
     color: var(--color-white);
@@ -104,6 +110,6 @@ button.small {
 }
 
 .disabled {
-    opacity: 0.4;
+    opacity: 0.7;
     pointer-events: none;
 }

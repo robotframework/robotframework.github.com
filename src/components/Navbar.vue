@@ -31,12 +31,10 @@
             <div>
               {{ $t('navbar.dropdownDocs.name') }}
             </div>
-            <div class="flex ml-3xsmall">
-              <chevron-icon
-                :color="docsDropdownOpen ? 'theme' : 'white'"
-                :direction="docsDropdownOpen ? 'up' : 'down'"
-                size="1.5rem" />
-            </div>
+            <chevron-icon
+              :color="docsDropdownOpen ? 'theme' : 'white'"
+              :direction="docsDropdownOpen ? 'up' : 'down'"
+              size="1.5rem" />
           </button>
           <transition name="fade">
             <div
@@ -64,12 +62,10 @@
             <div>
               {{ $t('navbar.dropdownLinks.name') }}
             </div>
-            <div class="flex ml-3xsmall">
-              <chevron-icon
-                :color="linksDropdownOpen ? 'theme' : 'white'"
-                :direction="linksDropdownOpen ? 'up' : 'down'"
-                size="1.5rem" />
-            </div>
+            <chevron-icon
+              :color="linksDropdownOpen ? 'theme' : 'white'"
+              :direction="linksDropdownOpen ? 'up' : 'down'"
+              size="1.5rem" />
           </button>
           <transition name="fade">
             <div
@@ -247,9 +243,6 @@ export default {
     margin-top: 0.1rem;
     width: 3.5rem;
     height: 3.5rem;
-  }
-  .dropdown-button:hover svg {
-    fill: var(--color-theme);
   }
   .dropdown-container {
     position: absolute;

@@ -35,14 +35,21 @@
       <transition name="opacity">
         <div class="flex" v-if="projectHasBeenModified">
           <button
+            v-if="activeProjectName !== 'Custom code'"
             class="alert small mr-small"
             @click="resetProject(); projectHasBeenModified = false">
             Reset
           </button>
           <button
-            class="stroke small"
-            @click="resetProject(); projectHasBeenModified = false">
-            Share
+            class="stroke small flex middle"
+            :class="{['disabled']: copiedToClipboard}"
+            @click="copyProject()">
+            <copy-icon size="1rem" color="white" />
+            <transition name="opacity" mode="out-in">
+              <div :key="copiedToClipboard" class="ml-2xsmall">
+                {{ copiedToClipboard ? 'Link copied to clipboard!' : 'Share' }}
+              </div>
+            </transition>
           </button>
         </div>
       </transition>
@@ -56,14 +63,14 @@
           v-html="parseMarkdown(activeProject.description)" />
       </article>
     </transition>
-    <div class="flex between bottom mb-xsmall mt-medium" :class="{['disabled']: isLoadingProject}">
+    <div class="flex between bottom p-xsmall pl-medium mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
       <!-- file tabs -->
       <transition name="opacity" mode="out-in">
         <div :key="activeProjectName">
           <button
             v-for="{ fileName } in activeProject?.files.filter(({ hidden }) => !hidden)"
             :key="fileName"
-            class="stroke small mr-xsmall bg-grey-darkest"
+            class="stroke small mr-xsmall bg-grey-darkest mt-2xsmall"
             :class="activeFileName === fileName ? 'active' : 'primary'"
             @click="setActiveFile(fileName)">
             {{ fileName }}
@@ -76,9 +83,9 @@
           <div class="mr-3xsmall weigh-black">Run</div>
           <play-icon color="black" size="1.35rem" />
         </button>
-        <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
+        <!-- <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
           <div class="type-xsmall">Copy</div>
-        </button>
+        </button> -->
         <!-- <button  @click="runRobotTest(test)" class="stroke bg-grey-darkest">
           <span class="color-theme">Run (reinit)</span>
         </button> -->
@@ -131,6 +138,7 @@ import * as LZString from 'Code/lz-string'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
+import CopyIcon from './icons/CopyIcon.vue'
 let editor = {}
 let models = {}
 let modelStates = {}
@@ -150,7 +158,8 @@ export default {
   components: {
     ChevronIcon,
     PlayIcon,
-    DocumentIcon
+    DocumentIcon,
+    CopyIcon
   },
   data: () => ({
     projectsList: null,
@@ -166,9 +175,13 @@ export default {
     logSrc: null,
     reportSrc: null,
     showLog: false,
-    showReport: false
+    showReport: false,
+    copiedToClipboard: false
   }),
   methods: {
+    parseMarkdown(str) {
+      return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
+    },
     async copyProject() {
       const files = Object.entries(models).map((model) => {
         return {
@@ -185,23 +198,21 @@ export default {
       var compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
       await navigator.clipboard.writeText(document.location.origin + '/?codeProject=' + compProj + '#getting-started')
+      this.copiedToClipboard = true
     },
     setProjectsFromURL() {
       const strProj = LZString.decompressFromEncodedURIComponent((new URL(document.location))
         .searchParams.get('codeProject'))
-      if (strProj !== '') {
+      if (strProj) {
         var project = JSON.parse(strProj)
         project.description = '## Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
-        this.setProject(project)
+        this.setProject(project, 'Custom code')
       } else {
         this.setProjectFromConfig(this.projectsList[0], null)
       }
     },
-    parseMarkdown(str) {
-      return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
-    },
-    async setProjectFromConfig({ name, dir }, activeFileName) {
-      if (this.projectHasBeenModified && !window.confirm('Your code modifications will be lost. Are you sure?')) return
+    async setProjectFromConfig({ name, dir }, activeFileName, isReset) {
+      if (this.projectHasBeenModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
       this.isLoadingProject = true
       const project = await getProject(dir)
       this.setProject(project, name, activeFileName)
@@ -220,6 +231,7 @@ export default {
       this.activeProject = project
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.projectHasBeenModified = false
+      this.copiedToClipboard = false
       this.output = ''
       this.logSrc = null
       this.reportSrc = null
@@ -228,7 +240,7 @@ export default {
     resetProject() {
       const oldViewState = editor.saveViewState()
       const currentProject = this.projectsList.find(({ name }) => name === this.activeProjectName)
-      this.setProjectFromConfig(currentProject, this.activeFileName)
+      this.setProjectFromConfig(currentProject, this.activeFileName, true)
         .then(() => {
           editor.restoreViewState(oldViewState)
           this.output = ''
@@ -254,6 +266,7 @@ export default {
         // event listener for code modification
         editor.getModel().onDidChangeContent((ev) => {
           this.projectHasBeenModified = true
+          this.copiedToClipboard = false
         })
       }, 150)
       setTimeout(() => { this.isChangingTab = false }, 300)
@@ -398,9 +411,6 @@ export default {
   }
   .dropdown > button {
     min-width: 13rem;
-  }
-  .dropdown button:hover > svg {
-    fill: var(--color-theme);
   }
   .dropdown-content {
     z-index: 99;
