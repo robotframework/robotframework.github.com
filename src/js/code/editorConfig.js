@@ -16,6 +16,7 @@ const promiseCollections = loadLibrary('https://robotframework.org/robotframewor
 const promiseDateTime = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/DateTime.json')
 const promiseString = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/String.json')
 const promiseXML = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/XML.json')
+const promiseOperatingSystem = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/OperatingSystem.json')
 
 monaco.editor.defineTheme('rf-dark', {
   base: 'vs-dark',
@@ -178,8 +179,7 @@ function createKeywordProposals(range, libraries) {
   }
 
   var proposals = []
-  for (const line of libraries) {
-    const lib = line.line
+  for (const lib of libraries) {
     if (lib in Libraries && lib !== 'BuiltIn') {
       for (const keyword of Libraries[lib].keywords) {
         proposals.push(getKeywordProp(keyword, lib))
@@ -239,7 +239,6 @@ function createSettingsProposals(settingsLines, range) {
       existingSettings.push(matcher[1])
     }
   }
-  console.log(existingSettings)
 
   const propSettings = [
     'Metadata',
@@ -351,6 +350,7 @@ function getImportedLibraries(settingsTable) {
   await promiseDateTime
   await promiseString
   await promiseXML
+  await promiseOperatingSystem
 })()
 
 export function getTestCaseRanges(model) {
