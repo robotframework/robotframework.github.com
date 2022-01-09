@@ -6,8 +6,22 @@ const getProjectsList = () => new Promise((resolve) => {
     .then((json) => resolve(json))
 })
 
-const getProject = async(projectDir) => {
+const getProjectFromGitHub = async(ghURL) => {
+  const [url, user, repo, branch, path] = ghURL.match(/^(?:https:\/\/github\.com\/(.+?)\/(.+?)(?:\/tree\/(.+?)(?:\/(.+?))?)?)?\/?$/)
+  console.log(`Fetching example from GitHub project: ${url}`)
+  const downloadURL = `https://raw.githubusercontent.com/${user}/${repo}/${branch || 'main'}${(path) ? '/' + path : ''}`
+  console.log(downloadURL)
+  var project = await getProject(downloadURL)
+  project.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. The code is loaded from the following GitHub Repo.\n<a href="${url}" target="_blank">${url}</a>\n\nIf you run this code it will be executed in your browser.\n\n---\n${project.description}`
+  return project
+}
+
+const getProjectFromLiveDir = async(projectDir) => {
   const projectUrl = `${baseURL}/${projectDir}`
+  return getProject(projectUrl)
+}
+
+const getProject = async(projectUrl) => {
   console.log(`Loading data from ${projectUrl}`)
   const configFile = await fetch(projectUrl + '/config.json')
     .then(response => response.json())
@@ -32,5 +46,7 @@ const getProject = async(projectDir) => {
 
 export {
   getProjectsList,
+  getProjectFromLiveDir,
+  getProjectFromGitHub,
   getProject
 }

@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProject } from 'Code'
+import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir } from 'Code'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
@@ -200,21 +200,20 @@ export default {
       await navigator.clipboard.writeText(document.location.origin + '/?codeProject=' + compProj + '#getting-started')
       this.copiedToClipboard = true
     },
-    setProjectsFromURL() {
-      const strProj = LZString.decompressFromEncodedURIComponent((new URL(document.location))
-        .searchParams.get('codeProject'))
-      if (strProj) {
-        var project = JSON.parse(strProj)
-        project.description = '## Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
-        this.setProject(project, 'Custom code')
-      } else {
-        this.setProjectFromConfig(this.projectsList[0], null)
-      }
+    async setProjectFromGitHub(ghURL) {
+      var project = await getProjectFromGitHub(ghURL)
+      this.setProject(project, 'Custom code')
+    },
+    setProjectsFromURL(codeProject) {
+      const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
+      var project = JSON.parse(strProj)
+      project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
+      this.setProject(project, 'Custom code')
     },
     async setProjectFromConfig({ name, dir }, activeFileName, isReset) {
       if (this.projectHasBeenModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
       this.isLoadingProject = true
-      const project = await getProject(dir)
+      const project = await getProjectFromLiveDir(dir)
       this.setProject(project, name, activeFileName)
     },
     setProject(project, name, activeFileName) {
@@ -388,8 +387,11 @@ export default {
     getProjectsList()
       .then((list) => {
         this.projectsList = list
-        if ((new URL(document.location)).searchParams.get('codeProject')) {
-          this.setProjectsFromURL()
+        const urlParams = (new URL(document.location)).searchParams
+        if (urlParams.get('codeProject')) {
+          this.setProjectsFromURL(urlParams.get('codeProject'))
+        } else if (urlParams.get('code-gh-url')) {
+          this.setProjectFromGitHub(urlParams.get('code-gh-url'))
         } else {
           this.setProjectFromConfig(list[0])
         }
