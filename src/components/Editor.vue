@@ -414,7 +414,7 @@ export default {
     width: 100%;
   }
   #monaco-container {
-    height: 40vh;
+    height: 60vh;
     position: relative;
   }
   .dropdown {
