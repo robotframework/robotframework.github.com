@@ -178,6 +178,11 @@ export default {
     showReport: false,
     copiedToClipboard: false
   }),
+  computed: {
+    isFullEditor() {
+      return this.$route.name === 'Code'
+    }
+  },
   methods: {
     parseMarkdown(str) {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
