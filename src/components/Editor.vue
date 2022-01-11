@@ -124,8 +124,13 @@
     <!-- modals -->
     <transition name="opacity">
       <div v-if="showLog || showReport" class="log-modal" @click="showLog = false; showReport = false">
-        <div>
-          <iframe :src="showLog ? logSrc : reportSrc" />
+        <div class="row">
+          <div class="col-sm-12 flex end">
+            <button @click="showLog = false; showReport = false">
+              <close-icon size="2rem" color="white" />
+            </button>
+          </div>
+          <iframe id="report" :src="showLog ? logSrc : reportSrc" />
         </div>
       </div>
     </transition>
@@ -144,6 +149,7 @@ import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 import CopyIcon from './icons/CopyIcon.vue'
+import CloseIcon from './icons/CloseIcon.vue'
 let editor = {}
 let models = {}
 let modelStates = {}
@@ -165,7 +171,8 @@ export default {
     ChevronIcon,
     PlayIcon,
     DocumentIcon,
-    CopyIcon
+    CopyIcon,
+    CloseIcon
   },
   data: () => ({
     projectsList: null,
@@ -221,11 +228,16 @@ export default {
       project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
       this.setProject(project, 'Custom code')
     },
-    async setProjectFromConfig({ name, dir }, activeFileName, isReset) {
+    async setProjectFromConfig({ name, dir }, activeFileName, isReset, isInitial) {
       if (this.projectHasBeenModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
       this.isLoadingProject = true
       const project = await getProjectFromLiveDir(dir)
       this.setProject(project, name, activeFileName)
+
+      // generate url
+      if (!this.activeProjectName || isInitial) return
+      const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=0&example=${this.activeProjectName}#getting-started`
+      history.replaceState(null, null, newUrl)
     },
     setProject(project, name, activeFileName) {
       models = {}
@@ -404,6 +416,12 @@ export default {
     window.addEventListener('writeReport', ({ src }) => {
       this.reportSrc = src
     })
+    window.addEventListener('keydown', ({ key }) => {
+      if (key === 'Escape') {
+        this.showLog = false
+        this.showReport = false
+      }
+    })
     getProjectsList()
       .then((list) => {
         this.projectsList = list
@@ -412,8 +430,11 @@ export default {
           this.setProjectsFromURL(urlParams.get('codeProject'))
         } else if (urlParams.get('code-gh-url')) {
           this.setProjectFromGitHub(urlParams.get('code-gh-url'))
+        } else if (urlParams.get('example')) {
+          const project = list.find(({ name }) => name === urlParams.get('example'))
+          this.setProjectFromConfig(project)
         } else {
-          this.setProjectFromConfig(list[0])
+          this.setProjectFromConfig(list[0], null, null, true)
         }
       })
   }
