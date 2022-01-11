@@ -4,6 +4,7 @@ import Foundation from '../views/Foundation.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
 import Users from '../views/Users.vue'
+import Code from '../views/Code.vue'
 import Demoapp from '../views/Demoapp.vue'
 import NotFound from '../views/NotFound.vue'
 
@@ -36,6 +37,11 @@ const routes = [
     path: '/users',
     name: 'Users',
     component: Users
+  },
+  {
+    path: '/code',
+    name: 'Code',
+    component: Code
   },
   {
     path: '/demoapp',
