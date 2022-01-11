@@ -1,5 +1,7 @@
 <template>
-  <div class="editor-container">
+  <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
+  <div class="bg-grey-dark editor-container">
+    <div class="px-medium">
     <div class="flex my-small">
       <!-- project dropdown -->
       <div
@@ -63,13 +65,15 @@
           v-html="parseMarkdown(activeProject.description)" />
       </article>
     </transition>
+    </div>
     <div class="flex between bottom p-xsmall pl-medium mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
       <!-- file tabs -->
       <transition name="opacity" mode="out-in">
         <div :key="activeProjectName">
           <button
-            v-for="{ fileName } in activeProject?.files.filter(({ hidden }) => !hidden)"
+            v-for="{ fileName, hidden } in activeProject?.files"
             :key="fileName"
+            v-show="!hidden"
             class="stroke small mr-xsmall bg-grey-darkest mt-2xsmall"
             :class="activeFileName === fileName ? 'active' : 'primary'"
             @click="setActiveFile(fileName)">
@@ -91,15 +95,15 @@
         </button> -->
       </div>
     </div>
-    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject}" />
+    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject, ['full-screen-editor']: isFullEditor}"/>
     <transition name="opacity">
-      <div v-if="output !== ''">
+      <div v-if="output !== ''" >
         <h4 class="mt-medium">Console output</h4>
         <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" /></pre>
       </div>
     </transition>
     <!-- modal buttons -->
-    <div class="flex mt-xsmall">
+    <div v-if="output !== ''" class="flex mt-xsmall" :class="isFullEditor ? 'px-medium pb-medium mb-xlarge' : ''">
       <transition name="opacity">
         <button v-if="logSrc" class="stroke flex mr-small middle" @click="showLog = true">
           <document-icon color="white" size="1.25rem" />
@@ -129,6 +133,7 @@
 </template>
 
 <script>
+import { NavbarSubPage } from 'Components'
 import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir } from 'Code'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
@@ -156,6 +161,7 @@ const languages = [
 export default {
   name: 'Editor',
   components: {
+    NavbarSubPage,
     ChevronIcon,
     PlayIcon,
     DocumentIcon,
@@ -202,7 +208,7 @@ export default {
       var strProj = JSON.stringify(project)
       var compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
-      await navigator.clipboard.writeText(document.location.origin + '/?codeProject=' + compProj + '#getting-started')
+      await navigator.clipboard.writeText(document.location.origin + '/code/?codeProject=' + compProj + '#getting-started')
       this.copiedToClipboard = true
     },
     async setProjectFromGitHub(ghURL) {
@@ -317,8 +323,8 @@ export default {
         showSlider: 'always'
       },
       scrollbar: {
-        vertical: 'hidden'
-        // alwaysConsumeMouseWheel: false
+        vertical: 'hidden',
+        alwaysConsumeMouseWheel: false
       },
       scrollBeyondLastLine: false,
       model: null
@@ -422,6 +428,9 @@ export default {
     height: 60vh;
     position: relative;
   }
+  #monaco-container.full-screen-editor {
+    height: calc(100vh - 7rem);
+  }
   .dropdown {
     height: fit-content;
   }
@@ -466,7 +475,7 @@ export default {
     z-index: 99;
   }
   .log-modal > div {
-    width: 860px;
+    width: 1090px;
     max-width: calc(100% - 2rem);
     margin: 5rem auto;
     overflow: hidden;
