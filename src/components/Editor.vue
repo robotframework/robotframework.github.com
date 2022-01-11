@@ -236,7 +236,9 @@ export default {
 
       // generate url
       if (!this.activeProjectName || isInitial) return
-      const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=0&example=${this.activeProjectName}#getting-started`
+      let newUrl;
+      if (this.isFullEditor) newUrl = `${window.location.href.split('?')[0]}?example=${this.activeProjectName}`
+      else newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=0&example=${this.activeProjectName}#getting-started`
       history.replaceState(null, null, newUrl)
     },
     setProject(project, name, activeFileName) {
