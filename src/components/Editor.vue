@@ -201,16 +201,24 @@ export default {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
     async copyProject() {
+      const isOfficialProject = this.projectsList.some(({ name }) => name === this.activeProjectName)
       const files = Object.entries(models).map((model) => {
-        return {
-          fileName: model[0],
-          content: model[1].getValue()
+        const content = model[1].getValue()
+        const fileFromProject = this.activeProject.files.find(({ fileName }) => fileName === model[0])
+
+        if (fileFromProject.content !== content || !isOfficialProject) {
+          return {
+            fileName: model[0],
+            content: model[1].getValue()
+          }
         }
       })
+        .filter((a) => a)
       const project = {
-        name: this.activeProject.name,
+        name: this.activeProjectName,
         description: '',
-        files: files
+        files: files.filter(({ hidden }) => !hidden),
+        derivedProject: isOfficialProject
       }
       var strProj = JSON.stringify(project)
       var compProj = LZString.compressToEncodedURIComponent(strProj)
@@ -222,11 +230,23 @@ export default {
       var project = await getProjectFromGitHub(ghURL)
       this.setProject(project, 'Custom code')
     },
-    setProjectsFromURL(codeProject) {
+    async setProjectsFromURL(codeProject) {
       const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
       var project = JSON.parse(strProj)
-      project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
-      this.setProject(project, 'Custom code')
+      if (project.derivedProject) {
+        const proj = await getProjectFromLiveDir(this.projectsList.find(({ name }) => name === project.name).dir)
+        proj.files = proj.files
+          .map((file) => ({
+            fileName: file.fileName,
+            hidden: file.hidden,
+            content: project.files.find(({ fileName }) => fileName === file.fileName)?.content || file.content
+          }))
+        proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
+        this.setProject(proj, proj.name)
+      } else {
+        project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
+        this.setProject(project, 'Custom code')
+      }
     },
     async setProjectFromConfig({ name, dir }, activeFileName, isReset, isInitial) {
       if (this.projectHasBeenModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
