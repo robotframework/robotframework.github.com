@@ -1,70 +1,70 @@
 <template>
   <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
   <div class="bg-grey-dark editor-container">
-    <div class="px-medium">
-    <div class="flex my-small">
-      <!-- project dropdown -->
-      <div
-        v-if="projectsList"
-        class="dropdown relative mr-small">
-        <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
-          <transition name="opacity" mode="out-in">
-            <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
-              {{ activeProjectName }}
-              <span v-if="projectHasBeenModified" class="color-alert">(modified)</span>
+    <div :class="isFullEditor ? 'px-medium' : ''">
+      <div class="flex my-small">
+        <!-- project dropdown -->
+        <div
+          v-if="projectsList"
+          class="dropdown relative mr-small">
+          <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+            <transition name="opacity" mode="out-in">
+              <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
+                {{ activeProjectName }}
+                <span v-if="projectHasBeenModified" class="color-alert">(modified)</span>
+              </div>
+            </transition>
+            <chevron-icon
+              size="1.5rem"
+              color="white"
+              :direction="projectDropdownOpen ? 'up' : 'down'" />
+          </button>
+          <transition name="fade">
+            <div
+              v-if="projectDropdownOpen"
+              class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
+              <button
+                v-for="project in projectsList"
+                :key="project.name"
+                class="block mb-xsmall color-white type-small"
+                :class="activeProjectName === project.name ? 'disabled' : ''"
+                @click="setProjectFromConfig(project); projectDropdownOpen = false">
+                {{ project.name }}
+              </button>
             </div>
           </transition>
-          <chevron-icon
-            size="1.5rem"
-            color="white"
-            :direction="projectDropdownOpen ? 'up' : 'down'" />
-        </button>
-        <transition name="fade">
-          <div
-            v-if="projectDropdownOpen"
-            class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
+        </div>
+        <transition name="opacity">
+          <div class="flex" v-if="projectHasBeenModified">
             <button
-              v-for="project in projectsList"
-              :key="project.name"
-              class="block mb-xsmall color-white type-small"
-              :class="activeProjectName === project.name ? 'disabled' : ''"
-              @click="setProjectFromConfig(project); projectDropdownOpen = false">
-              {{ project.name }}
+              v-if="activeProjectName !== 'Custom code'"
+              class="alert small mr-small"
+              @click="resetProject(); projectHasBeenModified = false">
+              Reset
+            </button>
+            <button
+              class="stroke small flex middle"
+              :class="{['disabled']: copiedToClipboard}"
+              @click="copyProject()">
+              <copy-icon size="1rem" color="white" />
+              <transition name="opacity" mode="out-in">
+                <div :key="copiedToClipboard" class="ml-2xsmall">
+                  {{ copiedToClipboard ? 'Link copied to clipboard!' : 'Share' }}
+                </div>
+              </transition>
             </button>
           </div>
         </transition>
       </div>
-      <transition name="opacity">
-        <div class="flex" v-if="projectHasBeenModified">
-          <button
-            v-if="activeProjectName !== 'Custom code'"
-            class="alert small mr-small"
-            @click="resetProject(); projectHasBeenModified = false">
-            Reset
-          </button>
-          <button
-            class="stroke small flex middle"
-            :class="{['disabled']: copiedToClipboard}"
-            @click="copyProject()">
-            <copy-icon size="1rem" color="white" />
-            <transition name="opacity" mode="out-in">
-              <div :key="copiedToClipboard" class="ml-2xsmall">
-                {{ copiedToClipboard ? 'Link copied to clipboard!' : 'Share' }}
-              </div>
-            </transition>
-          </button>
-        </div>
+      <!-- project description -->
+      <transition name="opacity" mode="out-in">
+        <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
+          <div
+            v-if="activeProject?.description"
+            class="project-description"
+            v-html="parseMarkdown(activeProject.description)" />
+        </article>
       </transition>
-    </div>
-    <!-- project description -->
-    <transition name="opacity" mode="out-in">
-      <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
-        <div
-          v-if="activeProject?.description"
-          class="project-description"
-          v-html="parseMarkdown(activeProject.description)" />
-      </article>
-    </transition>
     </div>
     <div class="flex between bottom p-xsmall pl-medium mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
       <!-- file tabs -->
@@ -98,8 +98,16 @@
     <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject, ['full-screen-editor']: isFullEditor}"/>
     <transition name="opacity">
       <div v-if="output !== ''" >
-        <h4 class="mt-medium">Console output</h4>
-        <pre class="console bg-grey-darkest p-medium" :class="{ ['running']: isRunning }" ref="console" id="console"><code id="output" v-html="output" ref="output" /></pre>
+        <h4 class="mt-medium" :class="isFullEditor ? 'px-medium' : ''">Console output</h4>
+        <pre
+          class="console bg-grey-darkest p-medium"
+          :class="{ ['running']: isRunning }"
+          ref="console"
+          id="console"
+          ><code
+            id="output"
+            v-html="output"
+            ref="output" /></pre>
       </div>
     </transition>
     <!-- modal buttons -->
@@ -519,10 +527,9 @@ export default {
   }
   .log-modal > div {
     width: 1090px;
-    max-width: calc(100% - 2rem);
+    max-width: calc(100% - 5rem);
     margin: 5rem auto;
-    overflow: hidden;
-    height: calc(100% - 7rem);
+    height: calc(100% - 10rem);
   }
   iframe {
     width: 100%;
