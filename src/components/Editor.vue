@@ -2,11 +2,11 @@
   <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
   <div class="bg-grey-dark editor-container">
     <div :class="isFullEditor ? 'px-medium' : ''">
-      <div class="flex mt-small">
+      <div class="row">
         <!-- project dropdown -->
         <div
           v-if="projectsList"
-          class="dropdown relative mr-small">
+          class="dropdown relative mr-xsmall mt-xsmall">
           <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
@@ -34,31 +34,29 @@
             </div>
           </transition>
         </div>
-        <transition name="opacity">
-          <div class="flex" v-if="projectHasBeenModified">
+        <div class="flex mt-xsmall">
+          <transition name="opacity">
             <button
-              v-if="activeProjectName !== 'Custom code'"
+              v-if="activeProjectName !== 'Custom code' && projectHasBeenModified"
               class="alert small mr-xsmall"
               @click="resetProject(); projectHasBeenModified = false">
               Reset
             </button>
-          </div>
-        </transition>
-        <div class="flex">
-            <button
-              class="stroke ml-xsmall small flex middle"
-              @click="copyProject()">
-              <copy-icon size="1rem" color="white" />
-              <div class="ml-2xsmall">Share</div>
-            </button>
-            <button
-              v-if="!isFullEditor"
-              class="stroke ml-xsmall small flex middle"
-              @click="openMaximized()">
-              <new-tab-icon size="1rem" color="white" />
-              <div class="ml-2xsmall">Open Maximized</div>
-            </button>
-          </div>
+          </transition>
+          <button
+            class="stroke mr-xsmall small flex middle"
+            @click="copyProject()">
+            <copy-icon size="1rem" color="white" />
+            <div class="ml-2xsmall">Share</div>
+          </button>
+          <button
+            v-if="!isFullEditor"
+            class="stroke small flex middle"
+            @click="openMaximized()">
+            <new-tab-icon size="1rem" color="white" />
+            <div class="ml-2xsmall">Open Maximized</div>
+          </button>
+        </div>
       </div>
       <div
         :key="copyMessage"
@@ -171,6 +169,7 @@ import CopyIcon from './icons/CopyIcon.vue'
 import CloseIcon from './icons/CloseIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
 let editor = {}
+let codeLens = null
 let models = {}
 let modelStates = {}
 const languages = [
@@ -419,7 +418,7 @@ export default {
     })
     var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
 
-    monaco.languages.registerCodeLensProvider('robotframework', {
+    codeLens = monaco.languages.registerCodeLensProvider('robotframework', {
       provideCodeLenses: function(model, token) {
         function getTestCaseLense(testCase) {
           return {
@@ -497,6 +496,9 @@ export default {
           this.setProjectFromConfig(list[0], null, null, true)
         }
       })
+  },
+  beforeUnmount() {
+    if (codeLens) codeLens.dispose()
   }
 }
 </script>
