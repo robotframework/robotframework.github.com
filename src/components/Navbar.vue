@@ -1,21 +1,32 @@
 <template>
   <div
     ref="nav"
-    class="navbar bg-black color-white">
+    class="flex navbar bg-black color-white">
+    <transition name="opacity">
+      <div v-if="navSticky && !iconInContainer">
+        <robot-icon
+          size="2rem"
+          class="absolute rf-icon-rotation cursor-pointer"
+          style="margin-top: 11px; margin-bottom: 11px; left: 0.75rem;"
+          @click="logoClick" />
+      </div>
+    </transition>
     <div class="container row between">
       <div class="flex">
+        <transition name="opacity">
         <robot-icon
           v-if="iconInContainer"
           size="2rem"
           class="ml-small rf-icon-rotation cursor-pointer"
-          style="margin-top: 11px;"
+          style="margin-top: 11px; margin-bottom: 11px;"
           @click="logoClick" />
+        </transition>
         <!-- section navigation -->
         <button
           v-for="(item, i) in $tm('navbar.items')"
           :key="item.name"
           :name="`go-to-${item.name}`"
-          class="px-small my-small color-white font-title type-no-underline type-uppercase"
+          class="px-small my-small color-white font-title type-no-underline type-uppercase line-height-body"
           :class="i === $tm('navbar.items').length - 1 ? '' : 'border-right-white'"
           @click="itemClick(item.id)">
           {{ item.name }}
@@ -25,7 +36,7 @@
         <!-- docs -->
         <div class="relative" ref="dropdownDocs">
           <button
-            class="flex middle px-small mt-xsmall font-title type-uppercase line-height-body dropdown-button border-right-white"
+            class="flex middle px-small mt-xsmall my-small font-title type-uppercase line-height-body dropdown-button border-right-white"
             :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
             @click="docsDropdownOpen = !docsDropdownOpen">
             <div>
@@ -56,7 +67,7 @@
         <!-- external links -->
         <div class="relative" ref="dropdownLinks">
           <button
-            class="flex middle px-small mt-xsmall font-title type-uppercase line-height-body dropdown-button"
+            class="flex middle px-small mt-xsmall my-small font-title type-uppercase line-height-body dropdown-button"
             :class="linksDropdownOpen ? 'color-theme' : 'color-white'"
             @click="linksDropdownOpen = !linksDropdownOpen">
             <div>
@@ -126,15 +137,6 @@
         </div>
       </transition>
     </button> -->
-    <transition name="opacity">
-      <div v-if="navSticky && !iconInContainer">
-        <robot-icon
-          size="2rem"
-          class="absolute rf-icon-rotation cursor-pointer"
-          style="top: 11px; left: 0.75rem;"
-          @click="logoClick" />
-      </div>
-    </transition>
   </div>
 </template>
 
