@@ -56,7 +56,8 @@ export default () => ({
         {
           name: 'Foundation',
           url: '/foundation/',
-          description: 'Support the development'
+          description: 'Support the development',
+          isRouterLink: true
         },
         {
           name: 'Robocon',

@@ -38,7 +38,7 @@
           <div class="flex" v-if="projectHasBeenModified">
             <button
               v-if="activeProjectName !== 'Custom code'"
-              class="alert small mr-small"
+              class="alert small mr-xsmall"
               @click="resetProject(); projectHasBeenModified = false">
               Reset
             </button>
@@ -46,14 +46,27 @@
         </transition>
         <div class="flex">
             <button
-              class="stroke small flex middle"
+              class="stroke ml-xsmall small flex middle"
               @click="copyProject()">
               <copy-icon size="1rem" color="white" />
               <div class="ml-2xsmall">Share</div>
             </button>
+            <button
+              v-if="!isFullEditor"
+              class="stroke ml-xsmall small flex middle"
+              @click="openMaximized()">
+              <new-tab-icon size="1rem" color="white" />
+              <div class="ml-2xsmall">Open Maximized</div>
+            </button>
           </div>
       </div>
-      <div class="flex mb-small copy-message"></div>
+      <div
+        :key="copyMessage"
+        class="flex mb-small mt-2xsmall copy-message"
+        :class="copyMessage?.success ? 'color-green': 'color-red'"
+        style="font-size: var(--type-xsmall);">
+        {{copyMessage?.message}}
+      </div>
       <!-- project description -->
       <transition name="opacity" mode="out-in">
         <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
@@ -156,6 +169,7 @@ import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 import CopyIcon from './icons/CopyIcon.vue'
 import CloseIcon from './icons/CloseIcon.vue'
+import NewTabIcon from './icons/NewTabIcon.vue'
 let editor = {}
 let models = {}
 let modelStates = {}
@@ -178,7 +192,8 @@ export default {
     PlayIcon,
     DocumentIcon,
     CopyIcon,
-    CloseIcon
+    CloseIcon,
+    NewTabIcon
   },
   data: () => ({
     projectsList: null,
@@ -195,7 +210,7 @@ export default {
     reportSrc: null,
     showLog: false,
     showReport: false,
-    copiedToClipboard: false
+    copyMessage: null
   }),
   computed: {
     isFullEditor() {
@@ -206,7 +221,22 @@ export default {
     parseMarkdown(str) {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
+    async openMaximized() {
+      const compProj = await this.getProjectLink()
+      this.$router.push({ name: 'Code', query: { codeProject: compProj } })
+    },
     async copyProject() {
+      const compProj = await this.getProjectLink()
+      const url = document.location.origin + '/code/?codeProject=' + compProj
+      console.log(url.length)
+      if (url.length > 7400) {
+        this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
+      } else {
+        await navigator.clipboard.writeText(url)
+        this.copyMessage = { message: 'Link copied to clipboard!', success: true }
+      }
+    },
+    async getProjectLink() {
       const isOfficialProject = this.projectsList.some(({ name }) => name === this.activeProjectName)
       const files = Object.entries(models).map((model) => {
         const content = model[1].getValue()
@@ -230,14 +260,7 @@ export default {
       var strProj = JSON.stringify(project)
       var compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
-      const url = document.location.origin + '/code/?codeProject=' + compProj
-      console.log(url.length)
-      if (url.length > 7400) {
-        this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
-      } else {
-        await navigator.clipboard.writeText(url)
-        this.copyMessage = { message: 'Link copied to clipboard!', success: true }
-      }
+      return compProj
     },
     async setProjectFromGitHub(ghURL) {
       var project = await getProjectFromGitHub(ghURL)
@@ -290,7 +313,7 @@ export default {
       this.activeProject = project
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.projectHasBeenModified = false
-      this.copiedToClipboard = false
+      this.copyMessage = null
       this.output = ''
       this.logSrc = null
       this.reportSrc = null
@@ -325,7 +348,7 @@ export default {
         // event listener for code modification
         editor.getModel().onDidChangeContent((ev) => {
           this.projectHasBeenModified = true
-          this.copiedToClipboard = false
+          this.copyMessage = null
         })
       }, 150)
       setTimeout(() => { this.isChangingTab = false }, 300)

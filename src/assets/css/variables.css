@@ -13,8 +13,8 @@
     --color-link: #00c0b5;
     --color-link-visited: #578a88;
 
-    --color-red: red;
-    --color-green: green;
+    --color-red: #d32f2f;
+    --color-green: #388e3c;
     --bp-md: 700px; /* tablet breakpoint */
     --bp-lg: 1400px; /* desktop breakpoint */
 

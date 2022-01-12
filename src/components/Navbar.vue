@@ -54,7 +54,8 @@
               <div
                 v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
                 :key="name">
-                <a :href="url" @click="linkClick(name)">
+                <a :href="url"
+                  @click="linkClick(name)">
                   {{ name }}
                 </a>
                 <p class="type-small mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
@@ -83,16 +84,23 @@
               v-if="linksDropdownOpen"
               class="dropdown-container bg-black color-white p-small card" style="right: 0.25rem;">
               <div
-                v-for="({ name, url, description }, i) in $tm('navbar.dropdownLinks.items')"
+                v-for="({ name, url, description, isRouterLink }, i) in $tm('navbar.dropdownLinks.items')"
                 :key="name">
                 <div class="flex end">
                   <a
+                    v-if="!isRouterLink"
                     :href="url"
                     target="_blank"
                     rel="noopener noreferrer"
                     @click="linkClick(name)">
                     {{ name }}
                   </a>
+                  <router-link
+                    v-if="isRouterLink"
+                    :to="{ name: name }"
+                    @click="linkClick(name)">
+                    {{ name }}
+                  </router-link>
                   <new-tab-icon color="theme" class="ml-2xsmall" />
                 </div>
                 <p class="type-small mt-none type-right" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : ''">
