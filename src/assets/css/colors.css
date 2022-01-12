@@ -61,6 +61,14 @@
     background-color: var(--color-white);
 }
 
+.color-red {
+  color: var(--color-red);
+}
+
+.color-green {
+    color: var(--color-green);
+}
+
 .color-background {
     color: var(--color-background) !important;
 }

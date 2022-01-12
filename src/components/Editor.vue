@@ -2,7 +2,7 @@
   <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
   <div class="bg-grey-dark editor-container">
     <div :class="isFullEditor ? 'px-medium' : ''">
-      <div class="flex my-small">
+      <div class="flex mt-small">
         <!-- project dropdown -->
         <div
           v-if="projectsList"
@@ -42,20 +42,18 @@
               @click="resetProject(); projectHasBeenModified = false">
               Reset
             </button>
-            <button
-              class="stroke small flex middle"
-              :class="{['disabled']: copiedToClipboard}"
-              @click="copyProject()">
-              <copy-icon size="1rem" color="white" />
-              <transition name="opacity" mode="out-in">
-                <div :key="copiedToClipboard" class="ml-2xsmall">
-                  {{ copiedToClipboard ? 'Link copied to clipboard!' : 'Share' }}
-                </div>
-              </transition>
-            </button>
           </div>
         </transition>
+        <div class="flex">
+            <button
+              class="stroke small flex middle"
+              @click="copyProject()">
+              <copy-icon size="1rem" color="white" />
+              <div class="ml-2xsmall">Share</div>
+            </button>
+          </div>
       </div>
+      <div class="flex mb-small copy-message"></div>
       <!-- project description -->
       <transition name="opacity" mode="out-in">
         <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
@@ -66,7 +64,7 @@
         </article>
       </transition>
     </div>
-    <div class="flex between bottom p-xsmall pl-medium mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
+    <div class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
       <!-- file tabs -->
       <transition name="opacity" mode="out-in">
         <div :key="activeProjectName">
@@ -74,7 +72,7 @@
             v-for="{ fileName, hidden } in activeProject?.files"
             :key="fileName"
             v-show="!hidden"
-            class="stroke small mr-xsmall bg-grey-darkest mt-2xsmall"
+            class="stroke small m-2xsmall bg-grey-darkest"
             :class="activeFileName === fileName ? 'active' : 'primary'"
             @click="setActiveFile(fileName)">
             {{ fileName }}
@@ -228,11 +226,18 @@ export default {
         files: files.filter(({ hidden }) => !hidden),
         derivedProject: isOfficialProject
       }
+      console.log(project)
       var strProj = JSON.stringify(project)
       var compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
-      await navigator.clipboard.writeText(document.location.origin + '/code/?codeProject=' + compProj + '#getting-started')
-      this.copiedToClipboard = true
+      const url = document.location.origin + '/code/?codeProject=' + compProj
+      console.log(url.length)
+      if (url.length > 7400) {
+        this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
+      } else {
+        await navigator.clipboard.writeText(url)
+        this.copyMessage = { message: 'Link copied to clipboard!', success: true }
+      }
     },
     async setProjectFromGitHub(ghURL) {
       var project = await getProjectFromGitHub(ghURL)
@@ -249,7 +254,9 @@ export default {
             hidden: file.hidden,
             content: project.files.find(({ fileName }) => fileName === file.fileName)?.content || file.content
           }))
-        proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
+        if (project.files.length) {
+          proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
+        }
         this.setProject(proj, proj.name)
       } else {
         project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
@@ -495,6 +502,9 @@ export default {
     border: solid 0.05rem var(--color-white);
     border-top: none;
     border-radius: 0 0 var(--border-radius-rounded) var(--border-radius-rounded);
+  }
+  .copy-message {
+    font-family: 'OCRA';
   }
   .project-description > :deep(h2) {
     font-size: var(--type-large);
