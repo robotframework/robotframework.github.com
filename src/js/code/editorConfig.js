@@ -80,7 +80,8 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       ]
     ],
     setting: [
-      [/^(?: {2,}| ?\t ?)+\[.*?\]/, 'tag', '@popall']
+      [/^(?: {2,}| ?\t ?)+\[(?:Documentation|Tags|Template|Tags)]/, 'tag', '@popall'],
+      [/^(?: {2,}| ?\t ?)+\[(?:Setup|Teardown)]/, 'tag', '@keywordAssignment']
     ],
     tc_kw_definition: [
       [/^(?! {2,}| ?\t ?).*?(?= {2,}| ?\t ?|$)/, 'type', '@popall']
@@ -107,7 +108,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       [/\n| {2}/, 'delimiter.meta.varBody5', '@popall']
     ],
     keywordAssignment: [
-      [/ ?=?(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keyword1', '@popall']
+      [/ ?=?(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keywordassignment1', '@popall']
     ],
     varBody: [
       [/[$&%@](?=\{)/, 'delimiter.curly.meta.varBody1', '@varBody'],
@@ -127,7 +128,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     keyword: [
       [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
       [/^(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keyword1', '@popall'],
-      [/^(?:(?:(?: {2,}| ?\t ?)(?:[$&@]\{(?:.*?)\}(?: ?=)))*(?: {2,}| ?\t ?))(.+?)(?= {2,}| ?\t ?|$)/, 'identifier.keyword2', '@popall']
+      [/^(?:(?:(?: {2,}| ?\t ?)(?:[$&@]\{(?:.*?)\}(?: ?=)))*(?: {2,}| ?\t ?))(.+?)(?= {2,}| ?\t ?|$)/, 'identifier.keyword3', '@popall']
     ],
     // Recognize hex, negatives, decimals, imaginaries, longs, and scientific notation
     numbers: [
