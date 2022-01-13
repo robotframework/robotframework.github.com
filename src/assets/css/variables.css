@@ -1,6 +1,7 @@
 :root {
     --color-theme: #00c0b5; /* for theme color */
     --color-theme-dark: #09504d; /* for theme color dark */
+    --color-alert: #ff9f94;
     --color-background: #f0f0f0;
     --color-background-darkmode: #222222;
 
@@ -12,6 +13,8 @@
     --color-link: #00c0b5;
     --color-link-visited: #578a88;
 
+    --color-red: #d32f2f;
+    --color-green: #388e3c;
     --bp-md: 700px; /* tablet breakpoint */
     --bp-lg: 1400px; /* desktop breakpoint */
 

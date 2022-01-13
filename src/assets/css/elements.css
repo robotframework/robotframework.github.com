@@ -55,16 +55,16 @@
     border-width: 0.05rem;
 }
 
-button.theme, button.stroke {
+button.theme, button.stroke, button.alert {
     border-radius: var(--border-radius-rounded);
-    transition: 0.1s color, 0.1s background-color, box-shadow 0.1s;
+    transition: 0.2s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
-    text-transform: uppercase;
 }
 button.theme {
     color: var(--color-black);
     background-color: var(--color-white);
+    text-transform: uppercase;
     box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
     6px 6px 15px -1px rgba(0,0,0,0.04);
 }
@@ -72,9 +72,30 @@ button.stroke {
     color: var(--color-white);
     border: solid 0.05rem var(--color-white);
 }
+button > svg {
+    transition: fill 0.2s;
+}
+button.stroke:hover {
+    color: var(--color-theme);
+}
+button:hover > svg {
+    fill: var(--color-theme);
+}
+button.alert {
+    color: var(--color-white);
+    border: solid 0.05rem var(--color-alert);
+}
+button.alert:hover {
+    color: var(--color-alert);
+}
 button.theme.active {
     background-color: var(--color-theme);
     color: var(--color-white);
+    box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
+}
+button.stroke.active {
+    background-color: var(--color-white);
+    color: var(--color-black);
     box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
 }
 
@@ -84,7 +105,12 @@ button.theme.active {
     }
 }
 
+button.small {
+    font-size: var(--type-xsmall);
+    padding: var(--size-3xsmall) var(--size-2xsmall);
+}
+
 .disabled {
-    opacity: 0.4;
+    opacity: 0.7;
     pointer-events: none;
 }

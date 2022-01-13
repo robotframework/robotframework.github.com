@@ -7,25 +7,11 @@
     background-color: var(--color-theme);
 }
 
-.color-secondary {
-    color: var(--color-secondary);
-}
-.bg-secondary {
-    background-color: var(--color-secondary);
-}
-
 .color-alert {
     color: var(--color-alert);
 }
 .bg-alert {
     background-color: var(--color-alert);
-}
-
-.color-warn {
-    color: var(--color-warn);
-}
-.bg-warn {
-    background-color: var(--color-warn);
 }
 
 /* basic colors */
@@ -34,6 +20,7 @@
     color: var(--color-black);
 }
 .bg-black {
+    color-scheme: dark;
     background-color: var(--color-black);
 }
 
@@ -41,7 +28,16 @@
     color: var(--color-grey-dark);
 }
 .bg-grey-dark {
+    color-scheme: dark;
     background-color: var(--color-grey-dark);
+}
+
+.color-grey-darkest {
+    color: var(--color-background-darkmode);
+}
+.bg-grey-darkest {
+    color-scheme: dark;
+    background-color: var(--color-background-darkmode);
 }
 
 .color-grey {
@@ -65,6 +61,14 @@
     background-color: var(--color-white);
 }
 
+.color-red {
+  color: var(--color-red);
+}
+
+.color-green {
+    color: var(--color-green);
+}
+
 .color-background {
     color: var(--color-background) !important;
 }
@@ -77,10 +81,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+
     .bg-white-darkmode {
         background-color: var(--color-white);
     }
     .bg-grey-dark-darkmode {
+        color-scheme: dark;
         background-color: var(--color-grey-dark);
     }
     .color-white-darkmode {

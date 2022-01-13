@@ -38,15 +38,21 @@
         </div>
         <div v-else-if="linksOpen" key="2" class="mt-medium">
           <div
-            v-for="({ name, url, description }, i) in $tm('navbar.dropdownLinks.items')"
+            v-for="({ name, url, description, isRouterLink }, i) in $tm('navbar.dropdownLinks.items')"
             :key="name">
             <div class="flex middle">
               <a
+                v-if="!isRouterLink"
                 :href="url"
                 target="_blank"
                 rel="noopener noreferrer">
                 {{ name }}
               </a>
+              <router-link
+                v-if="isRouterLink"
+                :to="{ name: name }">
+                {{ name }}
+              </router-link>
               <new-tab-icon color="theme" class="ml-2xsmall" />
             </div>
             <p class="type-small color-white mt-none" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : 'mb-small'">

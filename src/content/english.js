@@ -56,7 +56,8 @@ export default () => ({
         {
           name: 'Foundation',
           url: '/foundation/',
-          description: 'Support the development'
+          description: 'Support the development',
+          isRouterLink: true
         },
         {
           name: 'Robocon',
@@ -150,31 +151,23 @@ export default () => ({
   gettingStarted: {
     title: 'Getting Started',
     body:
-      `<p>Using Robot Framework is completely free, no strings attached.
-      Due to its expandable open source nature Robot Framework is extremely
-      versatile for various test and RPA cases. Using it does not require expert skills in coding.</p>
-      <p>Here's a quick introduction to get you started with Robot Framework. </p>`,
+      `<cite>Code is worth a thousand words.</cite>
+      <p>Below you'll find a live Robot Framework editor with embedded <a href="https://pyodide.org/en/stable/" target="_blank">WASM Python</a> environment to run it online.
+      Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
+      please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
+      <p>To start using Robot Framework in a project of your own, please also check tabs "Install" and "Learn".</p>`,
+    // body:
+    //   `<p>Using Robot Framework is completely free, no strings attached.
+    //   Due to its expandable open source nature Robot Framework is extremely
+    //   versatile for various test and RPA cases. Using it does not require expert skills in coding.</p>
+    //   <p>Here's a quick introduction to get you started with Robot Framework. </p>`,
     tabs: [
       {
-        name: 'Install',
-        description: `
-          <p>Robot Framework is implemented with Python, so you need to have
-          <a href="https://www.python.org/downloads/" target="_blank">Python installed.</a>
-          <br>On Windows machines, make sure to add
-          <a href="https://docs.python.org/3/using/windows.html#the-full-installer" target="_blank">Python to PATH</a>
-          during installation.</p>
-          <p>Installing Robot Framework with pip is simple:
-          <pre class="line">pip install robotframework</pre></p>
-          <p>To check that the installation was succesful, run
-          <pre class="line">robot --version</pre></p>
-          <p>For a full guide, please see
-          <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.
-          It also covers topics such as running Robot Framework on Jython (JVM) and IronPython (.NET).</p>
-          <p>Now you are ready to write your first tests!</p>
-          `
+        name: 'Editor'
       },
-      {
-        name: 'Example',
+      // old example-tab in case text is still needed
+      /* {
+        name: 'Examples',
         description: `<p>This is a simple example to illustrate how Robot Framework works.
         The example is based on the <a href="/demoapp" target="_blank">Demo App</a> which
         we encourage to check for more details and to try it out yourself.</p>
@@ -232,9 +225,27 @@ Welcome Page Should Be Open
         <a href="./example/log.html" target="_blank">Example log file</a>.
         <a href="./example/example.robot" target="_blank">example.robot</a>.
         <a href="./example/resource.robot" target="_blank">resource.robot</a>.`
+      }, */
+      {
+        name: 'Install',
+        description: `
+          <p>Robot Framework is implemented with Python, so you need to have
+          <a href="https://www.python.org/downloads/" target="_blank">Python installed.</a>
+          <br>On Windows machines, make sure to add
+          <a href="https://docs.python.org/3/using/windows.html#the-full-installer" target="_blank">Python to PATH</a>
+          during installation.</p>
+          <p>Installing Robot Framework with pip is simple:
+          <pre class="line">pip install robotframework</pre></p>
+          <p>To check that the installation was succesful, run
+          <pre class="line">robot --version</pre></p>
+          <p>For a full guide, please see
+          <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.
+          It also covers topics such as running Robot Framework on Jython (JVM) and IronPython (.NET).</p>
+          <p>Now you are ready to write your first tests!</p>
+          `
       },
       {
-        name: 'Tutorials'
+        name: 'Learn'
       }
     ]
   },

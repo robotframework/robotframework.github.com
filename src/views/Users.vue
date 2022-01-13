@@ -1,53 +1,53 @@
 <template>
-  <div class="container mb-xlarge p-small">
-    <div class="row mb-large mt-large">
-      <button v-if="cameFromHome" @click="$router.go(-1)" class="color-theme type-underline">
-        Back
-      </button>
-      <router-link v-else :to="{ name: 'Home' }">
-        Back
-      </router-link>
-    </div>
-    <h2>
-      {{ $t('usersPage.title') }}
-    </h2>
-    <p v-html="$t('usersPage.body')" />
-    <div class="row">
-      <div
-        v-for="(column, i) in columns"
-        :key="i"
-        class="p-small"
-        :class="`
-          col-sm-${12 / columns.length}
-          ${i === 0 && columnAmount !== 1 ? 'pl-none pr-medium' : 'pl-small'}
-          ${i === columns.length - 1 && columnAmount !== 1 ? 'pr-none pl-medium' : 'pr-small'}`">
-          <div
-            v-for="(user, j) in column"
-            :key="user.name">
-            <transition appear name="opacity-slow">
-              <div
-                class="card p-small mb-large bg-white user-card"
-                :style="`transition-delay: ${(j / 10 + i / columns.length / 10) * columns.length + 0.1}s;`">
+  <div>
+    <navbar-sub-page title="Users" />
+    <div class="container mb-xlarge p-small">
+      <h2>
+        {{ $t('usersPage.title') }}
+      </h2>
+      <p v-html="$t('usersPage.body')" />
+      <div class="row">
+        <div
+          v-for="(column, i) in columns"
+          :key="i"
+          class="p-small"
+          :class="`
+            col-sm-${12 / columns.length}
+            ${i === 0 && columnAmount !== 1 ? 'pl-none pr-medium' : 'pl-small'}
+            ${i === columns.length - 1 && columnAmount !== 1 ? 'pr-none pl-medium' : 'pr-small'}`">
+            <div
+              v-for="(user, j) in column"
+              :key="user.name">
+              <transition appear name="opacity-slow">
                 <div
-                  class="img-container mb-small"
-                  :style="`background-image: url(${publicPath}img/users/${user.imgName})`" />
-                <h3>
-                  <a :href="user.href" target="_blank">
-                    {{ user.title }}
-                  </a>
-                </h3>
-                <p v-html="user.text" />
-              </div>
-            </transition>
-          </div>
+                  class="card p-small mb-large bg-white user-card"
+                  :style="`transition-delay: ${(j / 10 + i / columns.length / 10) * columns.length + 0.1}s;`">
+                  <div
+                    class="img-container mb-small"
+                    :style="`background-image: url(${publicPath}img/users/${user.imgName})`" />
+                  <h3>
+                    <a :href="user.href" target="_blank">
+                      {{ user.title }}
+                    </a>
+                  </h3>
+                  <p v-html="user.text" />
+                </div>
+              </transition>
+            </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { NavbarSubPage } from 'Components'
+
 export default {
   name: 'Users',
+  components: {
+    NavbarSubPage
+  },
   data: () => ({
     publicPath: process.env.BASE_URL,
     columnAmount: 4,

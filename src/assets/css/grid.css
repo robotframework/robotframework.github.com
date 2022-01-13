@@ -23,6 +23,10 @@
   flex-grow: 1;
 }
 
+.flex-shrink-none {
+  flex-shrink: 0;
+}
+
 .w-100 {
   width: 100%;
 }

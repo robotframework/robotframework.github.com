@@ -8,10 +8,10 @@ export default {
   created() {
     document.documentElement.lang = this.$i18n.locale
     this.$store.commit('SET_IS_MOBILE', window.innerWidth < 700)
-    this.$store.commit('SET_IS_DESKTOP', window.innerWidth > 1399)
+    this.$store.commit('SET_IS_DESKTOP', window.innerWidth > 699)
     window.addEventListener('resize', () => {
       this.$store.commit('SET_IS_MOBILE', window.innerWidth < 700)
-      this.$store.commit('SET_IS_DESKTOP', window.innerWidth > 1399)
+      this.$store.commit('SET_IS_DESKTOP', window.innerWidth > 699)
     })
     window.addEventListener('click', () => document.body.classList.remove('accessible'))
     window.addEventListener('keydown', ({ key }) => {

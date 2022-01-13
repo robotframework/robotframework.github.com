@@ -1,17 +1,24 @@
 <template>
-  <div class="bar">
-    <div class="container row pt-xsmall pb-xsmall">
-      <router-link :to="{ name: 'Home' }" class="type-xlarge color-theme font-title line-height-1">
+  <div class="bar flex middle p-xsmall">
+    <router-link :to="{ name: 'Home' }" class="flex mr-xsmall">
+      <robot-icon
+        size="1.75rem"
+        class="rf-icon-rotation cursor-pointer"/>
+    </router-link>
+    <div class="container row">
+      <router-link :to="{ name: 'Home' }" class="color-theme font-title">
         ../
       </router-link>
-      <h1 class="type-xlarge color-white line-height-1 type-uppercase">
+      <div class="font-title color-white type-uppercase line-height-body">
         {{ title }}
-      </h1>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import RobotIcon from './icons/RobotIcon.vue'
+
 export default {
   name: 'NavbarSubPage',
   props: {
@@ -19,6 +26,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  components: {
+    RobotIcon
   }
 }
 </script>
@@ -30,5 +40,11 @@ export default {
     position: sticky;
     top: 0;
     z-index: 9;
+  }
+  .rf-icon-rotation {
+    transition: transform 0.2s;
+  }
+  .rf-icon-rotation:hover {
+    transform: rotate(90deg);
   }
 </style>
