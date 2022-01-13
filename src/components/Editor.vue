@@ -74,10 +74,13 @@
         </article>
       </transition>
     </div>
-    <div class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
+    <div
+      class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin"
+      :class="{['disabled']: isLoadingProject}"
+      :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
-        <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall mt-xsmall">
+        <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall">
           <button class="stroke small flex middle between bg-grey-darkest" @click="filesDropdownOpen = !filesDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
@@ -132,13 +135,17 @@
         </button> -->
       </div>
     </div>
-    <div id="monaco-container" :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject, ['full-screen-editor']: isFullEditor}"/>
+    <div
+      id="monaco-container"
+      :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject, ['full-screen-editor']: isFullEditor}"
+      :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''"/>
     <transition name="opacity">
       <div v-if="output !== ''" >
         <h4 class="mt-medium" :class="isFullEditor ? 'px-medium' : ''">Console output</h4>
         <pre
-          class="console bg-grey-darkest p-medium"
+          class="console bg-grey-darkest p-small"
           :class="{ ['running']: isRunning }"
+          :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''"
           ref="console"
           id="console"
           ><code
@@ -415,10 +422,9 @@ export default {
       language: 'robotframework',
       theme: 'rf-dark',
       wordWrap: 'off',
-      fontSize: '14px',
       automaticLayout: true,
       minimap: {
-        enabled: true,
+        enabled: this.$store.state.isDesktop,
         showSlider: 'always'
       },
       scrollbar: {

@@ -98,15 +98,16 @@ button.stroke.active {
     color: var(--color-black);
     box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
 }
-button.small {
-    font-size: var(--type-xsmall);
-    padding: var(--size-3xsmall) var(--size-2xsmall);
-}
 
 @media screen and (max-width: 768px) {
     button.theme, button.stroke {
         padding: var(--size-2xsmall) var(--size-xsmall);
     }
+}
+
+button.small {
+    font-size: var(--type-xsmall);
+    padding: var(--size-3xsmall) var(--size-2xsmall);
 }
 
 .disabled {
