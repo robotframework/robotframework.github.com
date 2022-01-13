@@ -12,7 +12,8 @@ module.exports = {
         Css: path.resolve(__dirname, './src/assets/css/'),
         Fonts: path.resolve(__dirname, './src/assets/fonts/'),
         Content: path.resolve(__dirname, './src/content/'),
-        Code: path.resolve(__dirname, './src/js/code')
+        Code: path.resolve(__dirname, './src/js/code'),
+        Js: path.resolve(__dirname, './src/js/')
       }
     },
     plugins: [

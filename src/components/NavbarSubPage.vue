@@ -1,17 +1,17 @@
 <template>
-  <div class="bar flex">
-    <router-link :to="{ name: 'Home' }">
+  <div class="bar flex middle p-xsmall">
+    <router-link :to="{ name: 'Home' }" class="flex mr-xsmall">
       <robot-icon
-        size="2rem"
-        class="m-small rf-icon-rotation cursor-pointer"/>
+        size="1.75rem"
+        class="rf-icon-rotation cursor-pointer"/>
     </router-link>
-    <div class="container row pt-xsmall pb-xsmall">
-      <router-link :to="{ name: 'Home' }" class="type-xlarge color-theme font-title">
+    <div class="container row">
+      <router-link :to="{ name: 'Home' }" class="color-theme font-title">
         ../
       </router-link>
-      <h1 class="type-xlarge color-white type-uppercase line-height-body">
+      <div class="font-title color-white type-uppercase line-height-body">
         {{ title }}
-      </h1>
+      </div>
     </div>
   </div>
 </template>

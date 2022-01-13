@@ -1,7 +1,6 @@
 <template>
-  <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
   <div class="bg-grey-dark color-white editor-container">
-    <div :class="isFullEditor ? 'px-medium' : ''">
+    <div :class="isFullEditor ? 'container px-small' : ''">
       <div class="row">
         <!-- project dropdown -->
         <div
@@ -70,15 +69,44 @@
         <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
           <div
             v-if="activeProject?.description"
-            class="project-description"
+            class="project-description color-white"
             v-html="parseMarkdown(activeProject.description)" />
         </article>
       </transition>
     </div>
     <div class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin" :class="{['disabled']: isLoadingProject}">
-      <!-- file tabs -->
       <transition name="opacity" mode="out-in">
-        <div :key="activeProjectName">
+        <!-- file dropdown (mobile) -->
+        <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall mt-xsmall">
+          <button class="stroke small flex middle between bg-grey-darkest" @click="filesDropdownOpen = !filesDropdownOpen">
+            <transition name="opacity" mode="out-in">
+              <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
+                {{ activeFileName }}
+              </div>
+            </transition>
+            <chevron-icon
+              size="1.5rem"
+              color="white"
+              :direction="filesDropdownOpen ? 'up' : 'down'" />
+          </button>
+          <transition name="fade">
+            <div
+              v-if="filesDropdownOpen"
+              class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
+              <button
+                v-for="{ fileName, hidden } in activeProject?.files"
+                :key="fileName"
+                v-show="!hidden"
+                class="block mb-xsmall color-white type-small"
+                :class="activeFileName === fileName ? 'disabled' : ''"
+                @click="setActiveFile(fileName); filesDropdownOpen = false">
+                {{ fileName }}
+              </button>
+            </div>
+          </transition>
+        </div>
+        <!-- file tabs (desktop) -->
+        <div v-else :key="activeProjectName">
           <button
             v-for="{ fileName, hidden } in activeProject?.files"
             :key="fileName"
@@ -155,8 +183,8 @@
 </template>
 
 <script>
-import { NavbarSubPage } from 'Components'
 import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir } from 'Code'
+import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
@@ -186,7 +214,6 @@ const languages = [
 export default {
   name: 'Editor',
   components: {
-    NavbarSubPage,
     ChevronIcon,
     PlayIcon,
     DocumentIcon,
@@ -204,6 +231,7 @@ export default {
     isChangingTab: false,
     isRunning: false,
     projectDropdownOpen: false,
+    filesDropdownOpen: false,
     output: '',
     logSrc: null,
     reportSrc: null,
@@ -353,23 +381,22 @@ export default {
       setTimeout(() => { this.isChangingTab = false }, 300)
     },
     runRobotTest(init = false, tcName = '') {
+      window.plausible('Run code', { props: { projectName: `${this.activeProjectName}${this.projectHasBeenModified ? ' (modified)' : ''}` } })
       this.output = ' '
       this.$nextTick(() => {
-        // if output wont be completely visible on screen, scroll
+        // scroll output visible and run code after that
+        const scrollDuration = 400 // ms
         const { bottom } = this.$refs.console.getBoundingClientRect()
-        const offset = bottom - window.innerHeight + 130
-        window.scrollTo({
-          top: window.scrollY + offset,
-          behavior: 'smooth'
-        })
+        const target = bottom + document.scrollingElement.scrollTop - window.innerHeight + 130
+        scrollToPosition(target, scrollDuration)
         const files = Object.entries(models).map((model) => {
           return {
             fileName: model[0],
             content: model[1].getValue()
           }
         })
-        runRobot(files, init, tcName)
         this.isRunning = true
+        setTimeout(() => { runRobot(files, init, tcName) }, scrollDuration)
       })
     }
   },
@@ -388,6 +415,7 @@ export default {
       language: 'robotframework',
       theme: 'rf-dark',
       wordWrap: 'off',
+      fontSize: '14px',
       automaticLayout: true,
       minimap: {
         enabled: true,
