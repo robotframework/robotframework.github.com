@@ -399,7 +399,8 @@ export default {
       },
       mouseWheelZoom: true,
       scrollBeyondLastLine: false,
-      model: null
+      model: null,
+      fontSize: 14
     })
     editor.addCommand(
       monaco.KeyCode.Tab, () => {
