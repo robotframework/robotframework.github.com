@@ -1,6 +1,6 @@
 <template>
   <navbar-sub-page title="Code Playground" v-if="isFullEditor" />
-  <div class="bg-grey-dark editor-container">
+  <div class="bg-grey-dark color-white editor-container">
     <div :class="isFullEditor ? 'px-medium' : ''">
       <div class="row">
         <!-- project dropdown -->
@@ -397,6 +397,7 @@ export default {
         vertical: 'hidden',
         alwaysConsumeMouseWheel: false
       },
+      mouseWheelZoom: true,
       scrollBeyondLastLine: false,
       model: null
     })
