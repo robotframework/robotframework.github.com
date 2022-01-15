@@ -67,7 +67,7 @@
     "rimraf": "2.7.1",
     "semver": "5.7.1",
     "set-value": "3.0.1",
-    "shelljs": "^0.7.6",
+    "shelljs": "^0.8.5",
     "sinon": "4.5.0",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.19.1",
