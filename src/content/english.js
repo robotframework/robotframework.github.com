@@ -351,7 +351,10 @@ Welcome Page Should Be Open
           <th>Fee</th>
         </tr>
         <tr>
-          <td>1-10</td>
+          <td>1-2</td>
+          <td>500€</td>
+        <tr>
+          <td>3-10</td>
           <td>1500€</td>
         </tr>
         <tr>
