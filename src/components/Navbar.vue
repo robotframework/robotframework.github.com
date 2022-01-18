@@ -66,7 +66,7 @@
         <!-- external links -->
         <div class="relative" ref="dropdownLinks">
           <button
-            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button"
+            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button border-right-white"
             :class="linksDropdownOpen ? 'color-theme' : 'color-white'"
             @click="linksDropdownOpen = !linksDropdownOpen">
             <div>
@@ -80,11 +80,12 @@
           <transition name="fade">
             <div
               v-if="linksDropdownOpen"
-              class="dropdown-container bg-black color-white p-small card" style="right: 0.25rem;">
+              class="dropdown-container bg-black color-white p-small card"
+              style="left: -1rem;">
               <div
                 v-for="({ name, url, description, isRouterLink }, i) in $tm('navbar.dropdownLinks.items')"
                 :key="name">
-                <div class="flex end">
+                <div class="flex center">
                   <a
                     v-if="!isRouterLink"
                     :href="url"
@@ -94,55 +95,52 @@
                     {{ name }}
                   </a>
                   <router-link
-                    v-if="isRouterLink"
+                    v-else
                     :to="{ name: name }"
                     @click="linkClick(name)">
                     {{ name }}
                   </router-link>
                   <new-tab-icon color="theme" class="ml-2xsmall" />
                 </div>
-                <p class="type-small mt-none type-right" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : ''">
+                <p class="type-small mt-none type-center" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : ''">
                   {{ description }}
                 </p>
               </div>
             </div>
           </transition>
         </div>
+        <!-- lang select -->
+        <div class="relative" ref="dropdownLang">
+          <button
+            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button "
+            :class="langDropdownOpen ? 'color-theme' : 'color-white'"
+            @click="langDropdownOpen = !langDropdownOpen">
+            <div class="mr-2xsmall">
+              {{ langNames.find(({ lang }) => lang === $i18n.locale).name }}
+            </div>
+            <globe-icon
+              size="1.25rem" />
+          </button>
+          <transition name="fade">
+            <div
+              v-if="langDropdownOpen"
+              class="dropdown-container bg-black color-white p-small card" style="right: 0.25rem;">
+              <div
+                v-for="({ lang, name }, i) in langNames"
+                :key="lang"
+                class="type-right">
+                <button
+                  class="type-uppercase"
+                  :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
+                  @click="setLang(lang)">
+                  {{ name }}
+                </button>
+              </div>
+            </div>
+          </transition>
+        </div>
       </div>
     </div>
-    <!-- lang - disabled for now
-    <button
-      class="border-left-white font-title type-uppercase pl-small relative line-height-body"
-      @click="langDropdownOpen = !langDropdownOpen">
-      <div
-        class="flex middle">
-        <globe-icon
-          :color="langDropdownOpen ? 'theme' : 'white'"
-          style="transform: translateY(-1px);" />
-        <div
-          class="pl-3xsmall type-body"
-          :class="langDropdownOpen ? 'color-theme' : 'color-white'"
-          style="transform: translateY(-2px);">
-          {{ langNames.find(({ lang }) => lang === $i18n.locale).name }}
-        </div>
-      </div>
-      <transition name="fade">
-        <div
-          v-if="langDropdownOpen"
-          class="dropdown-container bg-black color-white p-small">
-          <div
-            v-for="({ lang, name }, i) in langNames"
-            :key="lang">
-            <button
-              class="type-uppercase"
-              :class="[lang === $i18n.locale ? 'color-theme' : 'color-white', {['mb-2xsmall'] : i !== langNames.length - 1}]"
-              @click="setLang(lang)">
-              {{ name }}
-            </button>
-          </div>
-        </div>
-      </transition>
-    </button> -->
   </div>
 </template>
 
@@ -150,13 +148,15 @@
 import NewTabIcon from './icons/NewTabIcon.vue'
 import RobotIcon from './icons/RobotIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
+import GlobeIcon from './icons/GlobeIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
     NewTabIcon,
     RobotIcon,
-    ChevronIcon
+    ChevronIcon,
+    GlobeIcon
   },
   data: () => ({
     navSticky: false,
@@ -190,6 +190,7 @@ export default {
     setLang(lang) {
       this.$i18n.locale = lang
       window.localStorage.setItem('lang', lang)
+      this.langDropdownOpen = false
     },
     onClick(ev) {
       // close dropdowns if clicked outside

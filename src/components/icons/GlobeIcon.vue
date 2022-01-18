@@ -4,10 +4,7 @@
     height="20px"
     viewBox="0 0 24 24"
     width="20px"
-    :class="{
-      ['fill-white']: color === 'white',
-      ['fill-theme']: color === 'theme'
-    }">
+    :fill="fillColor">
     <path
       d="M0 0h24v24H0V0z"
       fill="none" />
@@ -24,15 +21,22 @@ export default {
       type: String,
       default: 'white'
     }
+  },
+  computed: {
+    fillColor() {
+      if (this.color === 'white') return '#f5f5f5'
+      if (this.color === 'theme') return '#00c0b5'
+      return '#1d1d1d'
+    }
   }
 }
 </script>
 
 <style scoped>
-  .fill-white {
-    fill: var(--color-white);
+  svg {
+    transition: fill 0.2s, transform 0.3s;
   }
-  .fill-theme {
+  svg:hover {
     fill: var(--color-theme);
   }
 </style>
