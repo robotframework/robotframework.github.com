@@ -5,7 +5,8 @@
         <!-- project dropdown -->
         <div
           v-if="projectsList"
-          class="dropdown relative mr-xsmall mt-xsmall">
+          class="dropdown relative mr-xsmall mt-xsmall"
+          ref="projectDropdown">
           <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
@@ -80,7 +81,7 @@
       :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
-        <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall">
+        <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
           <button class="stroke small flex middle between bg-grey-darkest" @click="filesDropdownOpen = !filesDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
@@ -123,9 +124,9 @@
       </transition>
       <!-- run buttons -->
       <div class="flex">
-        <button @click="runRobotTest()" class="theme flex middle">
-          <div class="mr-3xsmall weigh-black">Run</div>
-          <play-icon color="black" size="1.35rem" />
+        <button @click="runRobotTest()" class="theme bling flex middle">
+          <div class="pr-3xsmall weigh-black">Run</div>
+          <play-icon color="black" size="1.3rem" />
         </button>
         <!-- <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
           <div class="type-xsmall">Copy</div>
@@ -254,6 +255,10 @@ export default {
   methods: {
     parseMarkdown(str) {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
+    },
+    clickFn(ev) {
+      if (!this.$refs.projectDropdown.contains(ev.target)) this.projectDropdownOpen = false
+      if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
     },
     async openMaximized() {
       const compProj = await this.getProjectLink()
@@ -517,6 +522,7 @@ export default {
         this.showReport = false
       }
     })
+    window.addEventListener('click', this.clickFn)
     getProjectsList()
       .then((list) => {
         this.projectsList = list
@@ -535,6 +541,7 @@ export default {
   },
   beforeUnmount() {
     if (codeLens) codeLens.dispose()
+    window.removeEventListener('click', this.clickFn)
   }
 }
 </script>

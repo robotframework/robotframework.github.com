@@ -93,6 +93,9 @@ button.theme.active {
     color: var(--color-white);
     box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
 }
+button.theme.active > svg {
+    fill: var(--color-white);
+}
 button.stroke.active {
     background-color: var(--color-white);
     color: var(--color-black);
@@ -113,4 +116,25 @@ button.small {
 .disabled {
     opacity: 0.7;
     pointer-events: none;
+}
+
+button.bling {
+    background: linear-gradient(
+      90deg,
+      var(--color-white) 25%,
+      #9ddad7 40%,
+      #9ddad7 60%,
+      var(--color-white) 75%
+    );
+    background-size: 300%;
+    background-position: 110% 50%;
+    border-radius: var(--border-radius-rounded);
+    animation: moveGradient 2.5s infinite;
+    animation-delay: 4s;
+    animation-timing-function: cubic-bezier(.9,0,.1,1);
+}
+@keyframes moveGradient {
+    100% {
+        background-position: -10% 50%;
+    }
 }
