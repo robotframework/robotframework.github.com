@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-dark color-white editor-container">
+  <div class="bg-grey-dark color-white editor-container" ref="editorContainer">
     <div :class="isFullEditor ? 'container px-small' : ''">
       <div class="row">
         <!-- project dropdown -->
@@ -11,7 +11,7 @@
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
                 {{ activeProjectName }}
-                <span v-if="projectHasBeenModified" class="color-alert">(modified)</span>
+                <span v-if="editorStatus.projectModified" class="color-alert">(modified)</span>
               </div>
             </transition>
             <chevron-icon
@@ -37,9 +37,9 @@
         <div class="flex mt-xsmall">
           <transition name="opacity">
             <button
-              v-if="activeProjectName !== 'Custom code' && projectHasBeenModified"
+              v-if="activeProjectName !== 'Custom code' && editorStatus.projectModified"
               class="alert small mr-xsmall"
-              @click="resetProject(); projectHasBeenModified = false">
+              @click="resetProject(); editorStatus.projectModified = false">
               Reset
             </button>
           </transition>
@@ -67,7 +67,7 @@
       </div>
       <!-- project description -->
       <transition name="opacity" mode="out-in">
-        <article :key="activeProjectName" :class="{['disabled']: isLoadingProject}">
+        <article :key="activeProjectName" :class="{['disabled']: editorStatus.loading}">
           <div
             v-if="activeProject?.description"
             class="project-description color-white"
@@ -77,7 +77,7 @@
     </div>
     <div
       class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin"
-      :class="{['disabled']: isLoadingProject}"
+      :class="{['disabled']: editorStatus.loading}"
       :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
@@ -123,9 +123,12 @@
         </div>
       </transition>
       <!-- run buttons -->
-      <div class="flex">
-        <button @click="runRobotTest()" class="theme bling flex middle">
-          <div class="pr-3xsmall weigh-black">Run</div>
+      <div v-if="!editorStatus.loading" class="flex">
+        <button
+          class="theme flex middle"
+          :class="editorStatus.running ? 'disabled' : 'bling'"
+          @click="runRobotTest()">
+          <div class="pr-3xsmall weigh-black">{{ editorStatus.running ? '...' : 'Run' }}</div>
           <play-icon color="black" size="1.3rem" />
         </button>
         <!-- <button @click="copyProject()" style="margin-left: var(--size-small);" class="theme type-center">
@@ -138,49 +141,69 @@
     </div>
     <div
       id="monaco-container"
-      :class="{['tab-change-animation']: isChangingTab, ['disabled']: isLoadingProject, ['full-screen-editor']: isFullEditor}"
+      :class="{['tab-change-animation']: editorStatus.changingTab, ['disabled']: editorStatus.loading, ['full-screen-editor']: isFullEditor}"
       :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''"/>
     <transition name="opacity">
       <div v-if="output !== ''" >
-        <h4 class="mt-medium" :class="isFullEditor ? 'px-medium' : ''">Console output</h4>
+        <h4
+          class="mt-medium"
+          :class="[isFullEditor ? 'px-medium' : '', $store.state.isMobile ? 'ml-2xsmall' : 'ml-medium']">
+          Console output
+        </h4>
         <pre
-          class="console bg-grey-darkest p-small"
-          :class="{ ['running']: isRunning }"
+          class="console bg-grey-darkest p-medium"
+          :class="{ ['running']: editorStatus.running }"
           :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''"
           ref="console"
           id="console"
           ><code
             id="output"
             v-html="output"
+            :class="$store.state.isMobile ? 'type-small' : ''"
             ref="output" /></pre>
       </div>
     </transition>
-    <!-- modal buttons -->
-    <div v-if="output !== ''" class="flex mt-xsmall" :class="isFullEditor ? 'px-medium pb-medium mb-xlarge' : ''">
-      <transition name="opacity">
-        <button v-if="logSrc" class="stroke flex mr-small middle" @click="showLog = true">
-          <document-icon color="white" size="1.25rem" />
-          <div class="ml-2xsmall">
-            log.html
+    <div v-if="editorStatus.running || editorStatus.runCompleted" class="row between" :class="isFullEditor ? 'px-medium pb-small' : ''">
+      <!-- modal buttons -->
+      <div class="col-sm-12 col-md-5 flex height-fit mt-small">
+        <transition name="opacity">
+          <div v-if="logSrc">
+            <button class="stroke small flex mr-small middle" @click="showLog = true">
+              <document-icon color="white" size="1.25rem" />
+              <div class="ml-2xsmall">
+                log.html
+              </div>
+            </button>
           </div>
-        </button>
-      </transition>
-      <transition name="opacity">
-        <button v-if="reportSrc" class="stroke flex middle" @click="showReport = true">
-          <document-icon color="white" size="1.25rem" />
-          <div class="ml-2xsmall">
-            report.html
+        </transition>
+        <transition name="opacity">
+          <div v-if="reportSrc">
+            <button class="stroke small flex middle" @click="showReport = true">
+              <document-icon color="white" size="1.25rem" />
+              <div class="ml-2xsmall">
+                report.html
+              </div>
+            </button>
           </div>
+        </transition>
+      </div>
+      <!-- next project button -->
+      <div v-if="nextProject && editorStatus.runCompleted" class="mt-small">
+        <button
+          class="theme"
+          @click="setProjectFromConfig(nextProject); scrollToTop()">
+          next: {{ nextProject.name }}
         </button>
-      </transition>
+      </div>
+      <div v-else-if="editorStatus.running" style="margin-bottom: 3.25rem" />
     </div>
     <!-- modals -->
     <transition name="opacity">
       <div v-if="showLog || showReport" class="log-modal" @click="showLog = false; showReport = false">
         <div class="row">
-          <div class="col-sm-12 flex end">
-            <button @click="showLog = false; showReport = false">
-              <close-icon size="2rem" color="white" />
+          <div class="col-sm-12 flex end mb-xsmall">
+            <button @click="showLog = false; showReport = false" class="bg-white rounded">
+              <close-icon size="2rem" color="black" class="block" />
             </button>
           </div>
           <iframe id="report" :src="showLog ? logSrc : reportSrc" />
@@ -230,14 +253,17 @@ export default {
     NewTabIcon
   },
   data: () => ({
+    editorStatus: {
+      loading: true,
+      running: false,
+      runCompleted: false,
+      projectModified: false,
+      changingTab: false
+    },
     projectsList: null,
     activeProjectName: null, // the short dropdown name from examples index
     activeProject: null,
-    isLoadingProject: false,
-    projectHasBeenModified: false,
     activeFileName: null,
-    isChangingTab: false,
-    isRunning: false,
     projectDropdownOpen: false,
     filesDropdownOpen: false,
     output: '',
@@ -250,6 +276,12 @@ export default {
   computed: {
     isFullEditor() {
       return this.$route.name === 'Code'
+    },
+    nextProject() {
+      if (!this.projectsList || this.isFullEditor) return null
+      const currentIndex = this.projectsList.findIndex(({ name }) => name === this.activeProjectName)
+      if (currentIndex === undefined || currentIndex === this.projectsList.length - 1) return null
+      return this.projectsList[currentIndex + 1]
     }
   },
   methods: {
@@ -259,6 +291,12 @@ export default {
     clickFn(ev) {
       if (!this.$refs.projectDropdown.contains(ev.target)) this.projectDropdownOpen = false
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
+    },
+    scrollToTop() {
+      const scrollDuration = 400 // ms
+      const { top } = this.$refs.editorContainer.getBoundingClientRect()
+      const target = document.scrollingElement.scrollTop + top - 60
+      scrollToPosition(target, scrollDuration)
     },
     async openMaximized() {
       const compProj = await this.getProjectLink()
@@ -326,8 +364,8 @@ export default {
       }
     },
     async setProjectFromConfig({ name, dir }, activeFileName, isReset, isInitial) {
-      if (this.projectHasBeenModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
-      this.isLoadingProject = true
+      if (this.editorStatus.projectModified && !isReset && !window.confirm('Your code modifications will be lost. Are you sure?')) return
+      this.editorStatus.loading = true
       const project = await getProjectFromLiveDir(dir)
       this.setProject(project, name, activeFileName)
 
@@ -339,9 +377,10 @@ export default {
       history.replaceState(null, null, newUrl)
     },
     setProject(project, name, activeFileName) {
+      this.editorStatus.runCompleted = false
       models = {}
       modelStates = {}
-      project.files.forEach(({ fileName, content, show }) => {
+      project.files.forEach(({ fileName, content }) => {
         const extension = fileName.split('.').at(-1)
         const langId = languages.find(({ extensions }) => extensions.includes(extension))?.id
         const model = monaco.editor.createModel(content, langId)
@@ -351,12 +390,12 @@ export default {
       this.activeProjectName = name
       this.activeProject = project
       this.setActiveFile(activeFileName || project.files[0].fileName)
-      this.projectHasBeenModified = false
+      this.editorStatus.projectModified = false
       this.copyMessage = null
       this.output = ''
       this.logSrc = null
       this.reportSrc = null
-      this.isLoadingProject = false
+      this.editorStatus.loading = false
     },
     resetProject() {
       const oldViewState = editor.saveViewState()
@@ -375,7 +414,7 @@ export default {
       this.activeFileName = fileName
 
       // transition for changing tab
-      this.isChangingTab = true
+      this.editorStatus.changingTab = true
 
       setTimeout(() => {
         editor.setModel(models[fileName])
@@ -386,20 +425,23 @@ export default {
 
         // event listener for code modification
         editor.getModel().onDidChangeContent((ev) => {
-          this.projectHasBeenModified = true
+          this.editorStatus.projectModified = true
           this.copyMessage = null
         })
       }, 150)
-      setTimeout(() => { this.isChangingTab = false }, 300)
+      setTimeout(() => { this.editorStatus.changingTab = false }, 300)
     },
     runRobotTest(init = false, tcName = '') {
-      window.plausible('Run code', { props: { projectName: `${this.activeProjectName}${this.projectHasBeenModified ? ' (modified)' : ''}` } })
+      window.plausible('Run code', { props: { projectName: `${this.activeProjectName}${this.editorStatus.projectModified ? ' (modified)' : ''}` } })
+      this.logSrc = null
+      this.reportSrc = null
       this.output = ' '
+      this.editorStatus.runCompleted = false
       this.$nextTick(() => {
         // scroll output visible and run code after that
         const scrollDuration = 400 // ms
         const { bottom } = this.$refs.console.getBoundingClientRect()
-        const target = bottom + document.scrollingElement.scrollTop - window.innerHeight + 130
+        const target = bottom + document.scrollingElement.scrollTop - window.innerHeight + 120
         scrollToPosition(target, scrollDuration)
         const files = Object.entries(models).map((model) => {
           return {
@@ -407,7 +449,7 @@ export default {
             content: model[1].getValue()
           }
         })
-        this.isRunning = true
+        this.editorStatus.running = true
         setTimeout(() => { runRobot(files, init, tcName) }, scrollDuration)
       })
     }
@@ -510,7 +552,8 @@ export default {
     window.addEventListener('writeLog', ({ src }) => {
       // todo: differentiate testFinished and writeLog
       this.logSrc = src
-      this.isRunning = false
+      this.editorStatus.running = false
+      this.editorStatus.runCompleted = true
       this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('writeReport', ({ src }) => {
@@ -553,6 +596,7 @@ export default {
   #monaco-container {
     height: 60vh;
     position: relative;
+    background-color: var(--color-background-darkmode);
   }
   #monaco-container.full-screen-editor {
     height: calc(100vh - 7rem);
@@ -605,9 +649,9 @@ export default {
   }
   .log-modal > div {
     width: 1090px;
-    max-width: calc(100% - 5rem);
-    margin: 5rem auto;
-    height: calc(100% - 10rem);
+    max-width: calc(100% - 2rem);
+    margin: 0.75rem auto;
+    height: calc(100% - 4.5rem);
   }
   iframe {
     width: 100%;

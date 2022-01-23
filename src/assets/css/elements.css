@@ -121,16 +121,15 @@ button.small {
 button.bling {
     background: linear-gradient(
       90deg,
-      var(--color-white) 25%,
-      #9ddad7 40%,
-      #9ddad7 60%,
-      var(--color-white) 75%
+      var(--color-white) 35%,
+      var(--color-theme) 40%,
+      var(--color-theme) 60%,
+      var(--color-white) 65%
     );
     background-size: 300%;
     background-position: 110% 50%;
     border-radius: var(--border-radius-rounded);
-    animation: moveGradient 2.5s infinite;
-    animation-delay: 4s;
+    animation: moveGradient 2s infinite;
     animation-timing-function: cubic-bezier(.9,0,.1,1);
 }
 @keyframes moveGradient {
