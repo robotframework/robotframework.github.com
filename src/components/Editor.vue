@@ -61,6 +61,7 @@
         </div>
         <!-- version dropdown -->
         <div
+          v-if="RFVersions"
           class="dropdown relative"
           :class="$store.state.isMobile ? 'mt-large' : 'mt-xsmall'"
           ref="versionDropdown">
@@ -248,7 +249,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir } from 'Code'
+import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
@@ -306,8 +307,9 @@ export default {
     showLog: false,
     showReport: false,
     copyMessage: null,
-    RFVersions: ['stable', 'development'],
-    selectedRFVersion: 'stable',
+    RFVersions: [],
+    selectedRFVersion: '',
+    reinstallRF: false,
     versionDropdownOpen: false
   }),
   computed: {
@@ -488,7 +490,9 @@ export default {
           }
         })
         this.editorStatus.running = true
-        setTimeout(() => { runRobot(files, init, tcName) }, scrollDuration)
+        const init = this.reinstallRF
+        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion) }, scrollDuration)
+        this.reinstallRF = false
       })
     }
   },
@@ -503,6 +507,7 @@ export default {
     },
     selectedRFVersion() {
       console.log(this.selectedRFVersion)
+      this.reinstallRF = true
     }
   },
   mounted() {
@@ -620,6 +625,17 @@ export default {
           this.setProjectFromConfig(project)
         } else {
           this.setProjectFromConfig(list[0], null, null, true)
+        }
+      })
+    getRobotFrameworkVersions()
+      .then((allVersions) => {
+        this.RFVersions = allVersions
+          .filter((version) => {
+            return version.match(/^(3\.[12][\d.]*|[4-9][\d.]*)$/)
+          })
+        this.selectedRFVersion = this.RFVersions.at(0)
+        if (this.RFVersions[0] !== allVersions[0]) {
+          this.RFVersions.unshift(allVersions[0])
         }
       })
   },

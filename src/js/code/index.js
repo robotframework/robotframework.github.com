@@ -6,6 +6,12 @@ const getProjectsList = () => new Promise((resolve) => {
     .then((json) => resolve(json))
 })
 
+const getRobotFrameworkVersions = () => new Promise((resolve) => {
+  fetch('https://pypi.org/pypi/robotframework/json')
+    .then((res) => res.json())
+    .then((json) => resolve(Object.keys(json.releases).reverse()))
+})
+
 const getProjectFromGitHub = async(ghURL) => {
   const [url, user, repo, branch, path] = ghURL.match(/^(?:https:\/\/github\.com\/(.+?)\/(.+?)(?:\/tree\/(.+?)(?:\/(.+?))?)?)?\/?$/)
   console.log(`Fetching example from GitHub project: ${url}`)
@@ -48,5 +54,6 @@ export {
   getProjectsList,
   getProjectFromLiveDir,
   getProjectFromGitHub,
-  getProject
+  getProject,
+  getRobotFrameworkVersions
 }

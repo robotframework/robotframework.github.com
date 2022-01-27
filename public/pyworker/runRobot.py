@@ -53,11 +53,14 @@ class Listener:
 try:
     import robot
 except ImportError:
-    js.postMessage(json.dumps({"std_output": "Install Robot Framework Stack Trace\n"}))
     js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
-    await micropip.install("robotframework-stacktrace")
-    import robot
-
+    rf_version = f'=={version}' if version else ''
+    try:
+        await micropip.install(f"robotframework{rf_version}")
+        import robot
+    except Exception as e:
+        js.console.log(f"Robot Run Exception: {e}")
+        js.console.log(traceback.format_exc())
     js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:

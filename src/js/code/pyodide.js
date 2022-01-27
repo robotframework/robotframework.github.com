@@ -71,10 +71,11 @@ function asyncRun(script, context, onMessage, initialize) {
   })
 }
 
-export async function runRobot(files, initialize = false, testCaseName = '') {
+export async function runRobot(files, initialize, testCaseName = '', version = '') {
+  console.log(`init: ${initialize}`)
   clearOutput()
   writeToOutput('Initializing...\n')
-  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName }, (data) => {
+  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName, version: version }, (data) => {
     data = JSON.parse(data)
     writeToOutput(data.std_output)
     if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {

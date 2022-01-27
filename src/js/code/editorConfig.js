@@ -50,7 +50,9 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     'TRY',
     'EXCEPT',
     'FINALLY',
-    'RETURN'
+    'RETURN',
+    'BREAK',
+    'CONTINUE'
   ],
   brackets: [
     { open: '{', close: '}', token: 'delimiter.curly' },
@@ -80,7 +82,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       ]
     ],
     setting: [
-      [/^(?: {2,}| ?\t ?)+\[(?:Documentation|Tags|Template|Tags)]/, 'tag', '@popall'],
+      [/^(?: {2,}| ?\t ?)+\[(?:Documentation|Tags|Template|Tags|Arguments)]/, 'tag', '@popall'],
       [/^(?: {2,}| ?\t ?)+\[(?:Setup|Teardown)]/, 'tag', '@keywordAssignment']
     ],
     tc_kw_definition: [
@@ -104,6 +106,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     ],
     varBodyAssignment: [
       [/\{/, 'delimiter.curly.meta.varBody2', '@varBody'],
+      [/\}(?: {2,}| ?\t ?)+[$&%@](?=\{)/, 'delimiter.curly.meta.vars1', '@varBodyAssignment'],
       [/\}=?/, 'delimiter.curly.meta.varBody4', '@keywordAssignment'],
       [/\n| {2}/, 'delimiter.meta.varBody5', '@popall']
     ],
@@ -157,7 +160,7 @@ const KeywordsMatcher = /^(?:\* ?)+(?:Keywords? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$)
 const CommentsMatcher = /^(?:\* ?)+(?:Comments? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$).*)?$/i
 const VariablesMatcher = /^(?:\* ?)+(?:Variables? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$).*)?$/i
 
-const KeywordPosMatcher = /^(?: {2,}| ?\t ?)+([$&%@]\{.*?\} ?=?(?: {2,}| ?\t ?))?.*?(?= {2,}| ?\t ?|$)/
+const KeywordPosMatcher = /^(?: {2,}| ?\t ?)+([$&%@]\{.*?\} ?=?(?: {2,}| ?\t ?))*.*?(?= {2,}| ?\t ?|$)/
 
 function createKeywordProposals(range, libraries) {
   function getKeywordProp(keyword, library) {
