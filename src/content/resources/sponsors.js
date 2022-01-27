@@ -103,13 +103,6 @@ export default () => ([
     description: 'Henix is a French consulting company specializing in software quality assurance. By offering a wide range of services including test automation using Robot Framework, it has become the leading pure player test company in France. Since 2011, Henix is the publisher of the Squash Open Source testing suite. Made by testers for testers, it interfaces natively with Robot Framework to ease test automation management as efficiently as manual tests.'
   },
   {
-    title: 'hiq',
-    href: 'https://www.hiqfinland.fi/',
-    img: 'hiq.png',
-    description: `
-      HiQ is a Nordic ICT service and consultancy company focusing on streamlining our customers' businesses and simplifying people's lives. We are specialists in demanding e-services, process integration and automation, quality assurance and business-critical IT.`
-  },
-  {
     title: 'humanitec',
     href: 'https://humanitec.com/',
     img: 'humanitec.png',
