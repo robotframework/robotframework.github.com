@@ -1,7 +1,7 @@
 <template>
   <div class="bg-grey-dark color-white editor-container" ref="editorContainer">
     <div :class="isFullEditor ? 'container px-small' : ''">
-      <div class="row between">
+      <div class="row between" :class="isFullEditor ? 'pt-small' : ''">
         <div class="row">
           <!-- project dropdown -->
           <div
@@ -112,7 +112,7 @@
     <div
       class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin"
       :class="{['disabled']: editorStatus.loading}"
-      :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
+      :style="$store.state.isMobile && !isFullEditor ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
         <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
