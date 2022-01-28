@@ -21,7 +21,7 @@ function loadFileToPythonProgram() {
 loadFileToPythonProgram()
 
 function updateLogHtml(html) {
-  const iframeContent = escape(html
+  const iframeContent = encodeURIComponent(html
     .replace(/<a href="#"><\/a>/is, '')
     .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
   writeLogEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
@@ -29,7 +29,7 @@ function updateLogHtml(html) {
 }
 
 function updateReportHtml(html) {
-  const iframeContent = escape(html
+  const iframeContent = encodeURIComponent(html
     .replace(/<a href="#"><\/a>/is, '')
     .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
   writeReportEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
