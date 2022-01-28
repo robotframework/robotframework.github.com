@@ -132,10 +132,6 @@ try:
         sys.stdout = sys.__stdout__
         js.postMessage(json.dumps({"std_output": std_output}))
 
-    js.console.log(f"Files in working dir: {os.listdir('.')}")
-    js.console.log(f"Files in root dir: {os.listdir('/')}")
-
-
     with open("/log.html", "r", encoding="UTF-8") as f:
         log_html = str(f.read())
 
