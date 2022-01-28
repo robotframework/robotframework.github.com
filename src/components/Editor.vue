@@ -596,14 +596,15 @@ export default {
     window.addEventListener('writeOutput', ({ text }) => { this.output += text })
     window.addEventListener('clearOutput', () => { this.output = '' })
     window.addEventListener('writeLog', ({ src }) => {
-      // todo: differentiate testFinished and writeLog
       this.logSrc = src
-      this.editorStatus.running = false
-      this.editorStatus.runCompleted = true
-      this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('writeReport', ({ src }) => {
       this.reportSrc = src
+    })
+    window.addEventListener('finished', ({ src }) => {
+      this.editorStatus.running = false
+      this.editorStatus.runCompleted = true
+      this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('keydown', ({ key }) => {
       if (key === 'Escape') {

@@ -10,6 +10,7 @@ const writeOutputEvent = new Event('writeOutput')
 const clearOutputEvent = new Event('clearOutput')
 const writeLogEvent = new Event('writeLog')
 const writeReportEvent = new Event('writeReport')
+const writeFinishEvent = new Event('finished')
 
 function loadFileToPythonProgram() {
   fetch(runRobotPyPath)
@@ -64,6 +65,8 @@ function asyncRun(script, context, onMessage, initialize) {
       if (Object.prototype.hasOwnProperty.call(data, 'results')) {
         console.log('FINISHED')
         resolve(data)
+        writeFinishEvent.returnCode = data.returnCode
+        window.dispatchEvent(writeFinishEvent)
       } else {
         onMessage(data)
       }
