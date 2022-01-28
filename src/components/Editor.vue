@@ -252,7 +252,7 @@
 import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
-import { getTestCaseRanges } from 'Code/editorConfig.js'
+import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
 import * as LZString from 'Code/lz-string'
@@ -424,6 +424,7 @@ export default {
         const extension = fileName.split('.').at(-1)
         const langId = languages.find(({ extensions }) => extensions.includes(extension))?.id
         const model = monaco.editor.createModel(content, langId)
+        model.name = fileName
         model.updateOptions({ tabSize: 4 })
         models[fileName] = model
       })
@@ -613,6 +614,9 @@ export default {
       }
     })
     window.addEventListener('click', this.clickFn)
+    window.addEventListener('addLibdoc', ({ libdoc }) => {
+      addLibrary(JSON.parse(libdoc))
+    })
     getProjectsList()
       .then((list) => {
         this.projectsList = list

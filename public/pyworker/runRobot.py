@@ -12,6 +12,7 @@ from io import StringIO
 
 try:
     import robot
+    from robot.libdocpkg import LibraryDocumentation
 except ImportError:
     js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
     rf_version = f"=={version}" if version else ""
@@ -19,6 +20,7 @@ except ImportError:
         await micropip.install(f"robotframework{rf_version}")
         time.sleep(1)
         import robot
+        from robot.libdocpkg import LibraryDocumentation
     except Exception as e:
         js.console.log(f"Robot Run Exception: {e}")
         js.console.log(traceback.format_exc())
@@ -43,6 +45,14 @@ class Listener:
     def _post_message(self):
         js.postMessage(json.dumps({"std_output": sys.stdout.getvalue()}))
         sys.__stdout__.truncate(0)
+
+    def library_import(self, name, attrs):
+        libdoc = LibraryDocumentation(attrs["source"])
+        js.postMessage(json.dumps({"libdocJson": libdoc.to_json()}))
+
+    def resource_import(self, name, attrs):
+        libdoc = LibraryDocumentation(attrs["source"])
+        js.postMessage(json.dumps({"libdocJson": libdoc.to_json()}))
 
     def start_suite(self, name, args):
         self._post_message()
