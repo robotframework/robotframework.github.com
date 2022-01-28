@@ -5,9 +5,25 @@ import json
 import os
 import shutil
 import traceback
+import time
 
 from importlib import import_module, reload
 from io import StringIO
+
+try:
+    import robot
+except ImportError:
+    js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
+    rf_version = f"=={version}" if version else ""
+    try:
+        await micropip.install(f"robotframework{rf_version}")
+        time.sleep(1)
+        import robot
+    except Exception as e:
+        js.console.log(f"Robot Run Exception: {e}")
+        js.console.log(traceback.format_exc())
+    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
+
 
 os.chdir("/")
 dirname = "robot_files"
@@ -49,19 +65,6 @@ class Listener:
     def close(self):
         self._post_message()
 
-
-try:
-    import robot
-except ImportError:
-    js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
-    rf_version = f"=={version}" if version else ""
-    try:
-        await micropip.install(f"robotframework{rf_version}")
-        import robot
-    except Exception as e:
-        js.console.log(f"Robot Run Exception: {e}")
-        js.console.log(traceback.format_exc())
-    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:
 
