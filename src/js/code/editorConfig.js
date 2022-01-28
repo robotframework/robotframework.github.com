@@ -50,7 +50,9 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     'TRY',
     'EXCEPT',
     'FINALLY',
-    'RETURN'
+    'RETURN',
+    'BREAK',
+    'CONTINUE'
   ],
   brackets: [
     { open: '{', close: '}', token: 'delimiter.curly' },
@@ -80,7 +82,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       ]
     ],
     setting: [
-      [/^(?: {2,}| ?\t ?)+\[(?:Documentation|Tags|Template|Tags)]/, 'tag', '@popall'],
+      [/^(?: {2,}| ?\t ?)+\[(?:Documentation|Tags|Template|Tags|Arguments)]/, 'tag', '@popall'],
       [/^(?: {2,}| ?\t ?)+\[(?:Setup|Teardown)]/, 'tag', '@keywordAssignment']
     ],
     tc_kw_definition: [
@@ -104,6 +106,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     ],
     varBodyAssignment: [
       [/\{/, 'delimiter.curly.meta.varBody2', '@varBody'],
+      [/\}(?: {2,}| ?\t ?)+[$&%@](?=\{)/, 'delimiter.curly.meta.vars1', '@varBodyAssignment'],
       [/\}=?/, 'delimiter.curly.meta.varBody4', '@keywordAssignment'],
       [/\n| {2}/, 'delimiter.meta.varBody5', '@popall']
     ],
@@ -126,7 +129,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       [/.*?(?= {2}|[$&%@]\{|\])/, 'variable.meta.dictKey4', '@pop']
     ],
     keyword: [
-      [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
+      [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN|BREAK|WHILE|CONTINUE)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
       [/^(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keyword1', '@popall'],
       [/^(?:(?:(?: {2,}| ?\t ?)(?:[$&@]\{(?:.*?)\}(?: ?=)))*(?: {2,}| ?\t ?))(.+?)(?= {2,}| ?\t ?|$)/, 'identifier.keyword3', '@popall']
     ],
@@ -156,8 +159,7 @@ const TestCasesMatcher = /^(?:\* ?)+(?:Test Cases?|Tasks?) ?(?:\* ?)*(?:(?: {2,}
 const KeywordsMatcher = /^(?:\* ?)+(?:Keywords? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$).*)?$/i
 const CommentsMatcher = /^(?:\* ?)+(?:Comments? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$).*)?$/i
 const VariablesMatcher = /^(?:\* ?)+(?:Variables? ?)(?:\* ?)*(?:(?: {2,}| ?\t| ?$).*)?$/i
-
-const KeywordPosMatcher = /^(?: {2,}| ?\t ?)+([$&%@]\{.*?\} ?=?(?: {2,}| ?\t ?))?.*?(?= {2,}| ?\t ?|$)/
+const KeywordPosMatcher = /^(?: {2,}| ?\t ?)+([$&%@]\{.*?\} ?=?(?: {2,}| ?\t ?))*.*?(?= {2,}| ?\t ?|$)/
 
 function createKeywordProposals(range, libraries) {
   function getKeywordProp(keyword, library) {
@@ -264,6 +266,72 @@ function createSettingsProposals(settingsLines, range) {
   var proposals = []
   for (const setting of [...propSettings, ...notSetSettings]) {
     proposals.push(getSettingsProp(setting))
+  }
+  return proposals
+}
+
+function createTCKWSettingProposals(range, currentTable) {
+  function getTCSKWSettingsProp(name, type) {
+    return {
+      label: name,
+      kind: type,
+      documentation: '',
+      insertText: name,
+      range: {
+        startLineNumber: range.startLineNumber,
+        endLineNumber: range.endLineNumber,
+        startColumn: 5,
+        endColumn: 5
+      }
+    }
+  }
+  const lines = []
+  var existingSettings = []
+  for (const { line } of lines) {
+    var matcher = line.match(/^(?: {2,}| ?\t ?)+(\[(?:Documentation|Template|Tags|Arguments|Setup|Teardown)])/)
+    if (matcher) {
+      console.log(matcher)
+      existingSettings.push(matcher[1])
+    }
+  }
+
+  const testCaseSettings = [
+    '[Documentation]    ',
+    '[Tags]    ',
+    '[Template]    ',
+    '[Setup]    ',
+    '[Teardown]    '
+  ]
+
+  const keywordSettings = [
+    '[Documentation]    ',
+    '[Tags]    ',
+    '[Arguments]    ',
+    '[Teardown]    '
+  ]
+
+  const langFeatures = [
+    'IF    ',
+    'ELSE',
+    'ELSE IF    ',
+    'FOR    ',
+    'END',
+    'WHILE    ',
+    'RETURN    ',
+    'TRY',
+    'EXCEPT    ',
+    'FINALLY',
+    'BREAK',
+    'CONTINUE'
+  ]
+
+  const settingsList = (currentTable === Keywords) ? keywordSettings : testCaseSettings
+  var proposals = []
+  for (const setting of settingsList) {
+    proposals.push(getTCSKWSettingsProp(setting, monaco.languages.CompletionItemKind.Property))
+  }
+  for (const statement of langFeatures) {
+    proposals.push(getTCSKWSettingsProp(statement, monaco.languages.CompletionItemKind.Keyword))
   }
   return proposals
 }
@@ -419,15 +487,15 @@ monaco.languages.registerCompletionItemProvider('robotframework', {
     }
 
     if (keyword && (currentTable === TestCases || currentTable === Keywords)) {
-      const word = model.getWordUntilPosition(position) // TODO: here search for Keyword with spacces not words...
+      // const word = model.getWordUntilPosition(position) // TODO: here search for Keyword with spacces not words...
       const range = {
         startLineNumber: position.lineNumber,
         endLineNumber: position.lineNumber,
-        startColumn: word.startColumn,
-        endColumn: word.endColumn
+        startColumn: 5,
+        endColumn: 5
       }
       return {
-        suggestions: createKeywordProposals(range, importedLibraries)
+        suggestions: [...createKeywordProposals(range, importedLibraries), ...createTCKWSettingProposals(range, currentTable)]
       }
     }
   }

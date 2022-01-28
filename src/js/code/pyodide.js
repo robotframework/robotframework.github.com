@@ -10,6 +10,7 @@ const writeOutputEvent = new Event('writeOutput')
 const clearOutputEvent = new Event('clearOutput')
 const writeLogEvent = new Event('writeLog')
 const writeReportEvent = new Event('writeReport')
+const writeFinishEvent = new Event('finished')
 
 function loadFileToPythonProgram() {
   fetch(runRobotPyPath)
@@ -20,7 +21,7 @@ function loadFileToPythonProgram() {
 loadFileToPythonProgram()
 
 function updateLogHtml(html) {
-  const iframeContent = escape(html
+  const iframeContent = encodeURIComponent(html
     .replace(/<a href="#"><\/a>/is, '')
     .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
   writeLogEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
@@ -28,7 +29,7 @@ function updateLogHtml(html) {
 }
 
 function updateReportHtml(html) {
-  const iframeContent = escape(html
+  const iframeContent = encodeURIComponent(html
     .replace(/<a href="#"><\/a>/is, '')
     .replace(/\{\{if source\}\}.*?<\/tr>.*?\{\{\/if\}\}/is, ''))
   writeReportEvent.src = 'data:text/html;charset=utf-8,' + iframeContent
@@ -64,6 +65,8 @@ function asyncRun(script, context, onMessage, initialize) {
       if (Object.prototype.hasOwnProperty.call(data, 'results')) {
         console.log('FINISHED')
         resolve(data)
+        writeFinishEvent.returnCode = data.returnCode
+        window.dispatchEvent(writeFinishEvent)
       } else {
         onMessage(data)
       }
@@ -71,10 +74,11 @@ function asyncRun(script, context, onMessage, initialize) {
   })
 }
 
-export async function runRobot(files, initialize = false, testCaseName = '') {
+export async function runRobot(files, initialize, testCaseName = '', version = '') {
+  console.log(`init: ${initialize}`)
   clearOutput()
   writeToOutput('Initializing...\n')
-  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName }, (data) => {
+  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName, version: version }, (data) => {
     data = JSON.parse(data)
     writeToOutput(data.std_output)
     if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {

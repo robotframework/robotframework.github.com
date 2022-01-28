@@ -1,61 +1,96 @@
 <template>
   <div class="bg-grey-dark color-white editor-container" ref="editorContainer">
     <div :class="isFullEditor ? 'container px-small' : ''">
-      <div class="row">
-        <!-- project dropdown -->
+      <div class="row between" :class="isFullEditor ? 'pt-small' : ''">
+        <div class="row">
+          <!-- project dropdown -->
+          <div
+            v-if="projectsList"
+            class="dropdown relative mr-xsmall mt-xsmall"
+            ref="projectDropdown">
+            <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+              <transition name="opacity" mode="out-in">
+                <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
+                  {{ activeProjectName }}
+                  <span v-if="editorStatus.projectModified" class="color-alert">(modified)</span>
+                </div>
+              </transition>
+              <chevron-icon
+                size="1.5rem"
+                color="white"
+                :direction="projectDropdownOpen ? 'up' : 'down'" />
+            </button>
+            <transition name="fade">
+              <div
+                v-if="projectDropdownOpen"
+                class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
+                <button
+                  v-for="project in projectsList"
+                  :key="project.name"
+                  class="block mb-xsmall color-white type-small"
+                  :class="activeProjectName === project.name ? 'disabled' : ''"
+                  @click="setProjectFromConfig(project); projectDropdownOpen = false">
+                  {{ project.name }}
+                </button>
+              </div>
+            </transition>
+          </div>
+          <div class="flex mt-xsmall">
+            <transition name="opacity">
+              <button
+                v-if="activeProjectName !== 'Custom code' && editorStatus.projectModified"
+                class="alert small mr-xsmall"
+                @click="resetProject(); editorStatus.projectModified = false">
+                Reset
+              </button>
+            </transition>
+            <button
+              class="stroke mr-xsmall small flex middle"
+              @click="copyProject()">
+              <copy-icon size="1rem" color="white" />
+              <div class="ml-2xsmall">Share</div>
+            </button>
+            <button
+              v-if="!isFullEditor"
+              class="stroke small flex middle"
+              @click="openMaximized()">
+              <new-tab-icon size="1rem" color="white" />
+              <div class="ml-2xsmall">Open Maximized</div>
+            </button>
+          </div>
+        </div>
+        <!-- version dropdown -->
         <div
-          v-if="projectsList"
-          class="dropdown relative mr-xsmall mt-xsmall"
-          ref="projectDropdown">
-          <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+          v-if="RFVersions"
+          class="dropdown relative"
+          :class="$store.state.isMobile ? 'mt-large' : 'mt-xsmall'"
+          ref="versionDropdown">
+          <label class="absolute type-small" style="top: -1.5rem;">version</label>
+          <button class="stroke small flex middle between bg-grey-darkest" style="min-width: 7.5rem;" @click="versionDropdownOpen = !versionDropdownOpen">
             <transition name="opacity" mode="out-in">
-              <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
-                {{ activeProjectName }}
-                <span v-if="editorStatus.projectModified" class="color-alert">(modified)</span>
+              <div class="mr-3xsmall ml-3xsmall" :key="activeProjectName">
+                {{ selectedRFVersion }}
               </div>
             </transition>
             <chevron-icon
               size="1.5rem"
               color="white"
-              :direction="projectDropdownOpen ? 'up' : 'down'" />
+              :direction="versionDropdownOpen ? 'up' : 'down'" />
           </button>
           <transition name="fade">
             <div
-              v-if="projectDropdownOpen"
-              class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
+              v-if="versionDropdownOpen"
+              class="dropdown-content absolute bg-grey-darkest px-xsmall pb-none pt-small">
               <button
-                v-for="project in projectsList"
-                :key="project.name"
+                v-for="version in RFVersions"
+                :key="version"
                 class="block mb-xsmall color-white type-small"
-                :class="activeProjectName === project.name ? 'disabled' : ''"
-                @click="setProjectFromConfig(project); projectDropdownOpen = false">
-                {{ project.name }}
+                :class="selectedRFVersion === version ? 'disabled' : ''"
+                @click="selectedRFVersion = version; versionDropdownOpen = false">
+                {{ version }}
               </button>
             </div>
           </transition>
-        </div>
-        <div class="flex mt-xsmall">
-          <transition name="opacity">
-            <button
-              v-if="activeProjectName !== 'Custom code' && editorStatus.projectModified"
-              class="alert small mr-xsmall"
-              @click="resetProject(); editorStatus.projectModified = false">
-              Reset
-            </button>
-          </transition>
-          <button
-            class="stroke mr-xsmall small flex middle"
-            @click="copyProject()">
-            <copy-icon size="1rem" color="white" />
-            <div class="ml-2xsmall">Share</div>
-          </button>
-          <button
-            v-if="!isFullEditor"
-            class="stroke small flex middle"
-            @click="openMaximized()">
-            <new-tab-icon size="1rem" color="white" />
-            <div class="ml-2xsmall">Open Maximized</div>
-          </button>
         </div>
       </div>
       <div
@@ -63,7 +98,7 @@
         class="flex mb-small mt-2xsmall copy-message"
         :class="copyMessage?.success ? 'color-green': 'color-red'"
         style="font-size: var(--type-xsmall);">
-        {{copyMessage?.message}}
+        {{ copyMessage?.message }}
       </div>
       <!-- project description -->
       <transition name="opacity" mode="out-in">
@@ -78,7 +113,7 @@
     <div
       class="flex between bottom p-xsmall mt-medium bg-grey-darkest border-bottom-theme border-thin"
       :class="{['disabled']: editorStatus.loading}"
-      :style="$store.state.isMobile ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
+      :style="$store.state.isMobile && !isFullEditor ? 'margin-left: -1rem; margin-right: -1rem;' : ''">
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
         <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
@@ -214,7 +249,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir } from 'Code'
+import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges } from 'Code/editorConfig.js'
@@ -271,7 +306,11 @@ export default {
     reportSrc: null,
     showLog: false,
     showReport: false,
-    copyMessage: null
+    copyMessage: null,
+    RFVersions: [],
+    selectedRFVersion: '',
+    reinstallRF: false,
+    versionDropdownOpen: false
   }),
   computed: {
     isFullEditor() {
@@ -291,6 +330,7 @@ export default {
     clickFn(ev) {
       if (!this.$refs.projectDropdown.contains(ev.target)) this.projectDropdownOpen = false
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
+      if (this.$refs.versionDropdown && !this.$refs.versionDropdown.contains(ev.target)) this.versionDropdown = false
     },
     scrollToTop() {
       const scrollDuration = 400 // ms
@@ -450,7 +490,9 @@ export default {
           }
         })
         this.editorStatus.running = true
-        setTimeout(() => { runRobot(files, init, tcName) }, scrollDuration)
+        const init = this.reinstallRF
+        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion) }, scrollDuration)
+        this.reinstallRF = false
       })
     }
   },
@@ -462,6 +504,10 @@ export default {
     showReport() {
       if (this.showReport) document.body.style.overflow = 'hidden'
       else document.body.style.overflow = 'visible'
+    },
+    selectedRFVersion() {
+      console.log(this.selectedRFVersion)
+      this.reinstallRF = true
     }
   },
   mounted() {
@@ -550,14 +596,15 @@ export default {
     window.addEventListener('writeOutput', ({ text }) => { this.output += text })
     window.addEventListener('clearOutput', () => { this.output = '' })
     window.addEventListener('writeLog', ({ src }) => {
-      // todo: differentiate testFinished and writeLog
       this.logSrc = src
-      this.editorStatus.running = false
-      this.editorStatus.runCompleted = true
-      this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('writeReport', ({ src }) => {
       this.reportSrc = src
+    })
+    window.addEventListener('finished', ({ src }) => {
+      this.editorStatus.running = false
+      this.editorStatus.runCompleted = true
+      this.$nextTick(() => { this.$refs.console.scrollTop = this.$refs.console.scrollHeight })
     })
     window.addEventListener('keydown', ({ key }) => {
       if (key === 'Escape') {
@@ -579,6 +626,17 @@ export default {
           this.setProjectFromConfig(project)
         } else {
           this.setProjectFromConfig(list[0], null, null, true)
+        }
+      })
+    getRobotFrameworkVersions()
+      .then((allVersions) => {
+        this.RFVersions = allVersions
+          .filter((version) => {
+            return version.match(/^(3\.[12][\d.]*|[4-9][\d.]*)$/)
+          })
+        this.selectedRFVersion = this.RFVersions.at(0)
+        if (this.RFVersions[0] !== allVersions[0]) {
+          this.RFVersions.unshift(allVersions[0])
         }
       })
   },

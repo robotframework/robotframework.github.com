@@ -5,14 +5,30 @@ import json
 import os
 import shutil
 import traceback
+import time
 
 from importlib import import_module, reload
 from io import StringIO
 
-os.chdir('/')
-dirname = 'robot_files'
+try:
+    import robot
+except ImportError:
+    js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
+    rf_version = f"=={version}" if version else ""
+    try:
+        await micropip.install(f"robotframework{rf_version}")
+        time.sleep(1)
+        import robot
+    except Exception as e:
+        js.console.log(f"Robot Run Exception: {e}")
+        js.console.log(traceback.format_exc())
+    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
+
+
+os.chdir("/")
+dirname = "robot_files"
 if os.path.exists(dirname):
-    js.console.log('Clean up working dir.')
+    js.console.log("Clean up working dir.")
     shutil.rmtree(dirname)
 os.makedirs(dirname)
 os.chdir(dirname)
@@ -51,27 +67,18 @@ class Listener:
 
 
 try:
-    import robot
-except ImportError:
-    js.postMessage(json.dumps({"std_output": "Install Robot Framework Stack Trace\n"}))
-    js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
-    await micropip.install("robotframework-stacktrace")
-    import robot
 
-    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
-
-try:
     def write_file(file):
-        with open(file['fileName'], "w") as f:
+        with open(file["fileName"], "w") as f:
             js.console.log(f'Writing file {file["fileName"]} to folder {dirname}.')
-            f.writelines(file['content'])
+            f.writelines(file["content"])
 
     file_list = json.loads(file_catalog)
 
     for file in file_list:
         write_file(file)
-    js.console.log(F"Files in working dir: {os.listdir('.')}")
-
+    js.console.log(f"Files in working dir: {os.listdir('.')}")
+    result = -2
 
     try:
         if test_case_name:
@@ -79,7 +86,7 @@ try:
             testcli = f' --test "{test_case_name}"'
         else:
             kwargs = {}
-            testcli = ''
+            testcli = ""
 
         js.postMessage(
             json.dumps(
@@ -94,7 +101,9 @@ try:
         sys.stdout = sys.__stdout__ = StringIO()
         sys.stderr = sys.__stderr__ = sys.__stdout__
         for file in file_list:
-            file_name, file_ext = os.path.splitext(file["fileName"])  # TODO: does not work correctly
+            file_name, file_ext = os.path.splitext(
+                file["fileName"]
+            )  # TODO: does not work correctly
             if file_ext == ".py":
                 js.console.log(f'reimporting: {file["fileName"]}')
                 m = import_module(file_name)
@@ -110,7 +119,7 @@ try:
             skip="SKIP",
             removekeywords="tag:REMOVE",
             flattenkeywords="tag:FLAT",
-            **kwargs
+            **kwargs,
         )
         js.console.log(f"result: {result}")
     except Exception as e:
@@ -123,17 +132,18 @@ try:
         sys.stdout = sys.__stdout__
         js.postMessage(json.dumps({"std_output": std_output}))
 
-    with open("log.html", "r") as f:
+    with open("/log.html", "r", encoding="UTF-8") as f:
         log_html = str(f.read())
 
-    with open("report.html", "r") as f:
+    with open("/report.html", "r") as f:
         report_html = str(f.read())
 
     js.postMessage(
-        json.dumps({"log_html": log_html, "report_html": report_html, "std_output": std_output, "finished": True})
+        json.dumps(
+            {"log_html": log_html, "report_html": report_html, "std_output": std_output}
+        )
     )
 
 except Exception as e:
     print("Exception:")
     js.console.log(traceback.format_exc())
-
