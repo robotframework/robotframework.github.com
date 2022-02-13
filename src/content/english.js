@@ -65,7 +65,7 @@ export default () => ({
           description: 'Annual conference'
         },
         {
-          name: 'Youtube',
+          name: 'YouTube',
           url: 'https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg',
           description: 'Conference talks archived'
         },
