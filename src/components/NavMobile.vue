@@ -116,7 +116,7 @@
     <div
       v-if="isOpen"
       class="menu-background"
-      @click="isOpen = false" />
+      @click="isOpen = false; docsOpen = false; linksOpen = false;" />
   </transition>
 </template>
 

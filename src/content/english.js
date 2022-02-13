@@ -65,6 +65,11 @@ export default () => ({
           description: 'Annual conference'
         },
         {
+          name: 'Youtube',
+          url: 'https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg',
+          description: 'Conference talks archived'
+        },
+        {
           name: 'Shop',
           url: 'https://reddyshop.co/robotframework/',
           description: 'Support the development'
