@@ -37,7 +37,7 @@ export default () => ([
   },
   {
     name: 'Remote',
-    href: 'httpss://github.com/robotframework/RemoteInterface',
+    href: 'https://github.com/robotframework/RemoteInterface',
     description: 'Special library acting as a proxy between Robot Framework and libraries elsewhere. Actual libraries can be running on different machines and be implemented using any programming language supporting XML-RPC protocol.',
     tags: ['library']
   },
