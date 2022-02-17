@@ -468,7 +468,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "d5e64931b1a5b235911fd02b594a3921",
+    "revision": "93cf5163b6be216b77549fb76b1e7c56",
     "url": "/index.html"
   },
   {
@@ -520,8 +520,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-7532b3ea.7e881d12.js"
   },
   {
-    "revision": "5e785a0e3ce7882ad2b8",
-    "url": "/js/chunk-vendors.4ebdc2bf.js"
+    "revision": "9c5442b1ae28eaf6170d",
+    "url": "/js/chunk-vendors.bc1cb612.js"
   },
   {
     "revision": "15e52ae38f71b0de0fcef6fed9186133",
