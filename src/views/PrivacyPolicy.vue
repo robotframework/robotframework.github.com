@@ -57,7 +57,7 @@
         Business ID: 2754775-1<br>
         Pohjoinen Rautatiekatu 25, 00100 Helsinki
         <a href="https://robotframework.org/">https://robotframework.org/</a><br>
-        Contact person: Ismo Aro, Chairman of The Board, +358 50 486 1934<br>
+        Contact person: René Rohner, Chairman of The Board, +49 173 7089491<br>
         chair@robotframework.org
       </p>
       <h3>
