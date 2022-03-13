@@ -78,13 +78,6 @@ export default () => ([
     description: '5G testing, E2E automation and network quality assurance.'
   },
   {
-    title: 'facile',
-    href: 'https://www.facile.it/',
-    img: 'facile.png',
-    description: `
-      Facile.it, Italy's leading price comparison company for insurance, financial services, utilities and internet providers. The company, founded in 2008, helps approximately 3 million users every month compare prices and save money on crucial elements of their household expenditure. Facile.it is an internet company with more than 300 employees in its Milano Headquarters and 1,000 total, and generated revenues of €106 million in 2019, growing more than 20% on top line with organic growth.`
-  },
-  {
     title: 'finnair',
     href: 'https://www.finnair.com/',
     img: 'finnair.png',
