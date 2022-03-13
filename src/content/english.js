@@ -1,6 +1,6 @@
 export default () => ({
   langName: 'English',
-  newsBanner: '📣 <a href="https://robocon.io/">RoboCon 2022 tickets available!</a> 📣',
+  newsBanner: '📣 <a href="https://robocon.io/#talks">RoboCon 2022 talks have been published!</a> 📣',
   navbar: {
     items: [
       {
