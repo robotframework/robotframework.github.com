@@ -145,15 +145,36 @@
           </transition>
         </div>
         <!-- file tabs (desktop) -->
-        <div v-else :key="activeProjectName">
-          <button
+        <div
+          v-else
+          :key="activeProjectName"
+          class="flex">
+          <div
             v-for="{ fileName, hidden } in activeProject?.files"
             :key="fileName"
-            v-show="!hidden"
+            v-show="!hidden">
+            <div
+              v-if="fileBeingRenamed !== fileName"
+              class="flex stroke small m-2xsmall bg-grey-darkest"
+              :class="activeFileName === fileName ? 'active' : 'primary'"
+              @click="setActiveFile(fileName)">
+              <div>
+                {{ fileName }}
+              </div>
+              <button @click="fileBeingRenamed = fileName; editorStatus.renameNewName = fileName">
+                <edit-icon color="hover-theme" />
+              </button>
+            </div>
+            <input
+              v-else
+              v-model="editorStatus.renameNewName"
+              class="border-white border-thin rounded small m-2xsmall bg-grey-darkest"
+              type="text" />
+          </div>
+          <button
             class="stroke small m-2xsmall bg-grey-darkest"
-            :class="activeFileName === fileName ? 'active' : 'primary'"
             @click="setActiveFile(fileName)">
-            {{ fileName }}
+            +
           </button>
         </div>
       </transition>
@@ -262,6 +283,7 @@ import DocumentIcon from './icons/DocumentIcon.vue'
 import CopyIcon from './icons/CopyIcon.vue'
 import CloseIcon from './icons/CloseIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
+import EditIcon from './icons/EditIcon.vue'
 let editor = {}
 let codeLens = null
 let models = {}
@@ -285,7 +307,8 @@ export default {
     DocumentIcon,
     CopyIcon,
     CloseIcon,
-    NewTabIcon
+    NewTabIcon,
+    EditIcon
   },
   data: () => ({
     editorStatus: {
@@ -293,7 +316,9 @@ export default {
       running: false,
       runCompleted: false,
       projectModified: false,
-      changingTab: false
+      changingTab: false,
+      fileBeingRenamed: null,
+      renameNewName: ''
     },
     projectsList: null,
     activeProjectName: null, // the short dropdown name from examples index
