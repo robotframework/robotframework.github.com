@@ -310,7 +310,7 @@ export default () => ([
   {
     name: 'WatchUI',
     href: 'https://github.com/Tesena-smart-testing/WatchUI',
-    description: 'Visual testing library for visual difference testing as well as image content testing (including PDF documents). Runs on Selenium to generate screenshots, uses PyMuPDF to process PDFs and Tesseract OCR to recognize text.',
+    description: 'Visual testing library for visual difference testing as well as image content testing (including PDF documents). WatchUI works with any UI automation library and compares provided screenshots. It could be used with SeleniumLibrary, Browser library, Sikuli, Appium, or any other UI library where visual validation is required. It also uses PyMuPDF to process PDFs and Tesseract OCR to recognize text.',
     tags: ['ui']
   }
 ])
