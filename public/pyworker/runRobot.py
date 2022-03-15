@@ -47,12 +47,18 @@ class Listener:
         sys.__stdout__.truncate(0)
 
     def library_import(self, name, attrs):
-        libdoc = LibraryDocumentation(attrs["source"])
-        js.postMessage(json.dumps({"libdocJson": libdoc.to_json()}))
+        self._gen_libdoc(attrs["source"])
 
     def resource_import(self, name, attrs):
-        libdoc = LibraryDocumentation(attrs["source"])
-        js.postMessage(json.dumps({"libdocJson": libdoc.to_json()}))
+        self._gen_libdoc(attrs["source"])
+
+    def _gen_libdoc(self, source):
+        try:
+            if not robot.__version__.startswith("3"):
+                libdoc = LibraryDocumentation(source)
+                js.postMessage(json.dumps({"libdocJson": libdoc.to_json()}))
+        except:
+            pass
 
     def start_suite(self, name, args):
         self._post_message()

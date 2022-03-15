@@ -404,7 +404,7 @@ function getImportedLibraries(settingsTable) {
   for (const { line } of settingsTable) {
     var libMatch = line.match(/^(?:Resource(?: {2,}| ?\t ?)+(\w+?)(?:\.resource)?|Library(?: {2,}| ?\t ?)+(\w+?)(?:\.py)?)(?: {2,}| ?\t ?|$)+/i)
     if (libMatch) {
-      imports.push(libMatch[1])
+      imports.push(libMatch[1] || libMatch[2])
     }
   }
   return imports
