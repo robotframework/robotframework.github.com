@@ -32,6 +32,9 @@ const getProject = async(projectUrl) => {
   const configFile = await fetch(projectUrl + '/config.json')
     .then(response => response.json())
   var project = { name: configFile.name, files: [], description: '' }
+  if (configFile.robotVersion) {
+    project.robotVersion = configFile.robotVersion
+  }
   const descriptionFileName = configFile.description
   if (descriptionFileName) {
     project.description = await fetch(projectUrl + '/' + descriptionFileName)

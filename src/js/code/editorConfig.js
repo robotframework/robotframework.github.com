@@ -6,9 +6,13 @@ async function loadLibrary(libFile) {
   await fetch(libFile)
     .then(response => response.json())
     .then(result => {
-      Libraries[result.name] = result
-      console.log(`LibDoc of "${result.name}" loaded...`)
+      addLibrary(result)
     })
+}
+
+export function addLibrary(libdocJson) {
+  Libraries[libdocJson.name] = libdocJson
+  console.log(`LibDoc of "${libdocJson.name}" loaded...`)
 }
 
 const promiseBuiltIn = loadLibrary('https://robotframework.org/robotframework/latest/libdoc/BuiltIn.json')
@@ -398,9 +402,9 @@ function isAtKeywordPos(currentLine) {
 function getImportedLibraries(settingsTable) {
   var imports = []
   for (const { line } of settingsTable) {
-    var libMatch = line.match(/^Library(?: {2,}| ?\t ?)+(\w+?)(?:\.py)?(?: {2,}| ?\t ?|$)+/i)
+    var libMatch = line.match(/^(?:Resource(?: {2,}| ?\t ?)+(\w+?)(?:\.resource)?|Library(?: {2,}| ?\t ?)+(\w+?)(?:\.py)?)(?: {2,}| ?\t ?|$)+/i)
     if (libMatch) {
-      imports.push(libMatch[1])
+      imports.push(libMatch[1] || libMatch[2])
     }
   }
   return imports
@@ -432,7 +436,7 @@ function getTestCases(testCaseLines) {
 }
 
 monaco.languages.registerCompletionItemProvider('robotframework', {
-  provideCompletionItems: function(model, position) {
+  provideCompletionItems: (model, position) => {
     const textUntilPosition = model.getValueInRange({
       startLineNumber: 1,
       startColumn: 1,
@@ -444,7 +448,11 @@ monaco.languages.registerCompletionItemProvider('robotframework', {
 
     const currentTable = getCurrentTable(textLinesUntilPosition)
     const tableContent = getTables(model)
-    const importedLibraries = (Settings in tableContent) ? getImportedLibraries(tableContent[Settings]) : []
+    var importedLibraries = (Settings in tableContent) ? getImportedLibraries(tableContent[Settings]) : []
+    const fileName = model.name.match(/(.*?)\.resource/)
+    if (fileName) {
+      importedLibraries.push(fileName[1])
+    }
     const existingTables = Object.keys(tableContent)
 
     const keyword = isAtKeywordPos(currentLine)

@@ -252,7 +252,7 @@
 import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
-import { getTestCaseRanges } from 'Code/editorConfig.js'
+import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { marked } from 'marked'
 import * as LZString from 'Code/lz-string'
@@ -371,7 +371,8 @@ export default {
         name: this.activeProjectName,
         description: '',
         files: files.filter(({ hidden }) => !hidden),
-        derivedProject: isOfficialProject
+        derivedProject: isOfficialProject,
+        robotVersion: this.selectedRFVersion
       }
       console.log(project)
       var strProj = JSON.stringify(project)
@@ -397,6 +398,7 @@ export default {
         if (project.files.length) {
           proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
         }
+        proj.robotVersion = project.robotVersion
         this.setProject(proj, proj.name)
       } else {
         project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
@@ -424,11 +426,15 @@ export default {
         const extension = fileName.split('.').at(-1)
         const langId = languages.find(({ extensions }) => extensions.includes(extension))?.id
         const model = monaco.editor.createModel(content, langId)
+        model.name = fileName
         model.updateOptions({ tabSize: 4 })
         models[fileName] = model
       })
       this.activeProjectName = name
       this.activeProject = project
+      if (project.robotVersion) {
+        this.selectedRFVersion = project.robotVersion
+      }
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.editorStatus.projectModified = false
       this.copyMessage = null
@@ -613,6 +619,9 @@ export default {
       }
     })
     window.addEventListener('click', this.clickFn)
+    window.addEventListener('addLibdoc', ({ libdoc }) => {
+      addLibrary(JSON.parse(libdoc))
+    })
     getProjectsList()
       .then((list) => {
         this.projectsList = list

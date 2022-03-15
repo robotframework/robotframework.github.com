@@ -11,6 +11,7 @@ const clearOutputEvent = new Event('clearOutput')
 const writeLogEvent = new Event('writeLog')
 const writeReportEvent = new Event('writeReport')
 const writeFinishEvent = new Event('finished')
+const addLibraryEvent = new Event('addLibdoc')
 
 function loadFileToPythonProgram() {
   fetch(runRobotPyPath)
@@ -86,6 +87,10 @@ export async function runRobot(files, initialize, testCaseName = '', version = '
     }
     if (Object.prototype.hasOwnProperty.call(data, 'report_html')) {
       updateReportHtml(data.report_html)
+    }
+    if (Object.prototype.hasOwnProperty.call(data, 'libdocJson')) {
+      addLibraryEvent.libdoc = data.libdocJson
+      window.dispatchEvent(addLibraryEvent)
     }
   }, initialize)
 }
