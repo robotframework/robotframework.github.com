@@ -207,7 +207,7 @@ export default () => ([
   },
   {
     name: 'ScreenCapLibrary',
-    href: 'https://github.com/mihaiparvu/ScreenCapLibrary',
+    href: 'https://github.com/rticau/ScreenCapLibrary',
     description: 'Taking screenshots and video recording. Similar functionality as Screenshot standard library, with some additional features.',
     tags: ['ui']
   },
