@@ -237,6 +237,12 @@ export default () => ([
     description: 'Sleep Number Labs is a subsidiary of Sleep Number Corporation, the creators of the Sleep Number bed. Sleep Number Labs, the pioneers of biometric sensor sleep solutions and sleep-monitoring technologies, was acquired by Sleep Number in 2015. Sleep Number Labs has been foundational in elevating Sleep Number’s sleep innovation leadership and is quickly transforming the Sleep Number 360® smart bed into the hub of health and wellness.'
   },
   {
+    title: 'smartdocs',
+    href: 'https://www.smartdocs.ai',
+    img: 'smartdocs.png',
+    description: 'Smart Docs Procurement Platform empowers companies around the world to help optimize and streamline their procurement processes. SmartDocs uses Al/ML models and provides a comprehensive set of controls to help Enterprise Procurement teams to monitor and manage procurement operations. By providing an awesome user experience, SmartDocs eliminates the hurdles and complexities of enterprise procurement processes.'
+  },
+  {
     title: 'symbio',
     href: 'https://www.symbio.com/',
     img: 'symbio.png',

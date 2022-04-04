@@ -7,10 +7,10 @@
           target="_blank"
           class="color-white">
           <div>
-            Fundraiser:
+            Unicef fundraiser:
           </div>
           <div>
-            Virtual workshop to help children in Ukraine
+            Help children in Ukraine
           </div>
         </a>
       </div>
