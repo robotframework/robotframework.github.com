@@ -70,11 +70,6 @@ export default () => ({
           description: 'Conference talks archived'
         },
         {
-          name: 'Shop',
-          url: 'https://reddyshop.co/robotframework/',
-          description: 'Support the development'
-        },
-        {
           name: 'RPA',
           url: 'https://robotframework.org/rpa/',
           description: 'Robotic process automation'
