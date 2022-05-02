@@ -24,6 +24,12 @@ export default () => ([
     tags: ['editor']
   },
   {
+    name: 'RobotCode',
+    description: 'RobotFramework support for Visual Studio Code, including features like code completion, navigation, refactoring, usage analysis, debugging, test explorer, test execution and more!',
+    href: 'https://github.com/d-biehl/robotcode',
+    tags: ['editor']
+  },
+  {
     name: 'Emacs major mode',
     description: 'Emacs major mode for editing tests.',
     href: 'https://github.com/sakari/robot-mode',
