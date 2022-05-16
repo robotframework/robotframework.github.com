@@ -1,6 +1,6 @@
 export default () => ({
   langName: 'English',
-  newsBanner: '🎟️ Limited offer: <a href="https://robocon.io/" style="color: #fe4bd2">RoboCon22</a> tickets <a href="https://tickets.robotframework.org/rc2022/redeem?voucher=ROBOCON-SALE-50-OFF" style="color: #fe4bd2">50% off!</a> 🎟️',
+  newsBanner: '',
   navbar: {
     items: [
       {
