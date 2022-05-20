@@ -1,6 +1,6 @@
 export default () => ({
   langName: 'English',
-  newsBanner: '',
+  newsBanner: 'Robot Framework is conducting a survey about its documentation and community. If you have a few minutes, please answer the <a href="https://my.forms.app/form/627a0185b838185b93631641">survey here!</a>',
   navbar: {
     items: [
       {
