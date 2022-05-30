@@ -7,10 +7,10 @@
     </router-link>
     <div class="container row">
       <router-link :to="{ name: 'Home' }" class="color-theme font-title">
-        ../
+        RBTFRMWRK
       </router-link>
       <div class="font-title color-white type-uppercase line-height-body">
-        {{ title }}
+        /{{ title }}
       </div>
     </div>
   </div>

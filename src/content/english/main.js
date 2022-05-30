@@ -1,4 +1,9 @@
+import foundation from './foundation'
+import rpa from './rpa'
+
 export default () => ({
+  ...foundation(),
+  ...rpa(),
   langName: 'English',
   newsBanner: 'Robot Framework is conducting a survey about its documentation and community. If you have a few minutes, please answer the <a href="https://my.forms.app/form/627a0185b838185b93631641">survey here!</a>',
   navbar: {
@@ -161,76 +166,10 @@ export default () => ({
       Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
       please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
       <p>To start using Robot Framework in a project of your own, please also check tabs "Install" and "Learn".</p>`,
-    // body:
-    //   `<p>Using Robot Framework is completely free, no strings attached.
-    //   Due to its expandable open source nature Robot Framework is extremely
-    //   versatile for various test and RPA cases. Using it does not require expert skills in coding.</p>
-    //   <p>Here's a quick introduction to get you started with Robot Framework. </p>`,
     tabs: [
       {
         name: 'Editor'
       },
-      // old example-tab in case text is still needed
-      /* {
-        name: 'Examples',
-        description: `<p>This is a simple example to illustrate how Robot Framework works.
-        The example is based on the <a href="/demoapp" target="_blank">Demo App</a> which
-        we encourage to check for more details and to try it out yourself.</p>
-<robot>*** Settings ***
-Documentation     A test suite for valid login.
-...
-...               Keywords are imported from the resource file
-Resource          resource.robot
-
-*** Test Cases ***
-Valid Login
-    Open Login Page
-    Input Credentials    robot    overloard
-    Submit Credentials
-    Welcome Page Should Be Open
-</robot>
-        <p>The test case uses imported keywords such as <span class="hljs">Open Login Page</span> that
-        abstract the inner workings and enable the test to be easily readable with natural language.</p>
-        <p>Below you'll see the <span class="hljs">resource.robot</span> file. It is extended with
-        <a href="https://robotframework-browser.org" target="_blank">Browser library</a>
-        that provides lots of useful keywords for web testing such as <span class="hljs">New Page</span>.
-        Keywords are composable, meaning you can define new keywords that use pre-existing keywords.</p>
-        <robot>*** Settings ***
-Documentation     Reusable keywords and variables.
-Library           Browser
-
-*** Variables ***
-\${DEMO_URL}      https://robotframework.org/demoapp
-\${BROWSER_TYPE}  webkit
-
-*** Keywords ***
-Open Login Page
-    New Browser  \${BROWSER_TYPE}
-    New Page    \${DEMO_URL}
-    Login Page Should Be Open
-
-Login Page Should Be Open
-    Get Url   ==    \${DEMO_URL}
-    Get Title   ==    Robot Framework
-
-Input Credentials
-    [Arguments]    \${username}    \${password}
-    Type Text    text=Username    \${username}
-    Type Text    text=Password    \${password}
-
-Submit Credentials
-    Click    input[type=submit]
-
-Welcome Page Should Be Open
-    Get Url   ==   \${DEMO URL}
-    Get Text   body   ==   I salute you, Robot overloard!
-    Get Title  ==    Robots rule</robot>
-        <p>After running the test a log file will be generated. The log file contains
-        the test results and information about the run.</p>
-        <a href="./example/log.html" target="_blank">Example log file</a>.
-        <a href="./example/example.robot" target="_blank">example.robot</a>.
-        <a href="./example/resource.robot" target="_blank">resource.robot</a>.`
-      }, */
       {
         name: 'Install',
         description: `
@@ -334,74 +273,5 @@ Welcome Page Should Be Open
       <a href="https://github.com/robotframework/robotframework.github.com/pulls">pull request</a> or an
       <a href="https://github.com/robotframework/robotframework.github.com/issues">issue</a>.`
     // list of users is found in ./resources/users.js
-  },
-  foundation: {
-    lead: `<p class="lead">Robot Framework Foundation is a non-profit consortium that fosters the growth of Robot Framework.
-    It was founded by companies with a common interest to ensure the development of Robot Framework now and in
-    the future. We are always looking for new members to join.</p>`,
-    benefitsAndCost: {
-      title: 'Benefits and cost',
-      body: `<p>When your company becomes a member you will:</p>
-      <ol>
-        <li>Ensure Robot Framework is maintained and developed</li>
-        <li>Get visibility about your membership for your company if you wish</li>
-        <li>Gain ability to participate in decision making</li>
-        <li>Get all this for an affordable price per user</li>
-      </ol>
-      <h3>Annual Fees</h3>
-      <p>Annual fee is determined by how many Robot Framework users are in your organization:</p>
-      <table class="col-sm-12 col-md-6">
-        <tr>
-          <th>Users</th>
-          <th>Fee</th>
-        </tr>
-        <tr>
-          <td>1-2</td>
-          <td>500€</td>
-        <tr>
-          <td>3-10</td>
-          <td>1500€</td>
-        </tr>
-        <tr>
-          <td>11-50</td>
-          <td>3000€</td>
-        </tr>
-        <tr>
-          <td>51-250</td>
-          <td>6000€</td>
-        </tr>
-        <tr>
-          <td>251-</td>
-          <td>12000€</td>
-        </tr>
-      </table>
-
-`
-    },
-    howToJoin: {
-      title: 'How to join',
-      body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
-      <ol>
-        <li>Fill in <a href="https://forms.gle/Mek9HQ1Ni31SeW1NA" target="_blank">the application</a></li>
-        <li>Robot Framework Foundation board will make a voting according to our rules</li>
-        <li>You are added to the webpage and mailing list, when you are accepted</li>
-        <li>Welcome to make the world of Open Source and Automation better!</li>
-      </ol>
-      <p>If you have any questions related to the membership, please send an email to
-      <a href="mailto:robotframework-foundation{at}{'@'}{at}googlegroups.com">robotframework-foundation{at}{'@'}{at}googlegroups.com</a>
-      and we will get back to you.</p>
-      <h3>For existing members</h3>
-      <p>If your contact person changes and for other such matters, please contact <a href="mailto:admin{at}{'@'}{at}robotframework.org">admin{at}{'@'}{at}robotframework.org</a></p>
-      `
-    },
-    whatWeDo: {
-      title: 'What we do',
-      body: `<p>We sponsor the development of Robot Framework. Sponsoring other projects in the wider
-      Robot Framework ecosystem can also be considered. We take care of the overall Robot Framework infrastructure
-      including public websites, email lists and CI servers. We promote Robot Framework by organizing meetups and
-      the yearly conference <a href="https://robocon.io/">RoboCon</a>.
-      <br><a href="https://forum.robotframework.org/t/robot-framework-foundation-unfolded/276">Read more..</a></p>
-      <h3>Robot Framework Foundation Members</h3>`
-    }
   }
 })

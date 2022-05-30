@@ -1,4 +1,4 @@
-import english from './english.js'
+import english from './english/main.js'
 import german from './german.js'
 import portugese from './portugese.js'
 import french from './french.js'

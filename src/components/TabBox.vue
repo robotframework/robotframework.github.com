@@ -22,6 +22,7 @@
         <div
           v-if="!includesRobotCode && !$slots[`tab-${activeTabIndex + 1}`]"
           :key="activeTab.name"
+          class="w-100"
           v-html="activeTab.description" />
         <!-- highlights rf syntax that has tags <robot></robot> -->
         <div v-else-if="includesRobotCode">
@@ -57,6 +58,10 @@ export default {
     tabs: {
       type: Array,
       required: true
+    },
+    defaultTab: {
+      type: Number,
+      required: false
     }
   },
   data: () => ({
@@ -79,6 +84,8 @@ export default {
     }
   },
   created() {
+    // use default tab if set
+    if (this.defaultTab) this.activeTabIndex = this.defaultTab
     // if url contains searchParam, open specific tab
     if (window.location.hash !== '#getting-started') return
     const param = new URLSearchParams(window.location.search)
@@ -92,8 +99,10 @@ export default {
         window.plausible('Interact', { props: { element: 'Learning' } })
         this.eventSent = true
       }
-      const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=${this.activeTabIndex}#getting-started`
-      history.replaceState(null, null, newUrl)
+      if (!this.defaultTab) {
+        const newUrl = `${window.location.href.split('?')[0].split('#')[0]}?tab=${this.activeTabIndex}#getting-started`
+        history.replaceState(null, null, newUrl)
+      }
     }
   }
 }

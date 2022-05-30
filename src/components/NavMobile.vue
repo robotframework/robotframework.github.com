@@ -198,9 +198,9 @@ export default {
 }
 
 .hamburger {
-  margin: 16px;
-  width: 32px;
-  height: 24px;
+  margin: 1rem;
+  width: 2rem;
+  height: 1.5rem;
   position: relative;
   transform: rotate(0deg);
   transition: .2s ease-in-out;
@@ -209,7 +209,7 @@ export default {
 .hamburger span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 0.25rem;
   width: 100%;
   background: var(--color-white);
   border-radius: 1px;
@@ -222,13 +222,13 @@ export default {
   top: 0;
 }
 .hamburger span:nth-child(2),.hamburger span:nth-child(3) {
-  top: 10px;
+  top: 0.625rem;
 }
 .hamburger span:nth-child(4) {
-  top: 20px;
+  top: 1.25rem;
 }
 .hamburger.open span:nth-child(1) {
-  top: 10px;
+  top: 0.625rem;
   width: 0%;
   left: 50%;
 }
@@ -239,7 +239,7 @@ export default {
   transform: rotate(-45deg);
 }
 .hamburger.open span:nth-child(4) {
-  top: 10px;
+  top: 0.625rem;
   width: 0%;
   left: 50%;
 }

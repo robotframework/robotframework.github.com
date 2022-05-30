@@ -24,10 +24,6 @@
     font-weight: 600;
 }
 
-html {
-    font-size: var(--size-base-lg);
-}
-
 h1, h2, h3, h4 {
     font-family: var(--font-title);
     line-height: var(--line-height-headers);
@@ -89,10 +85,10 @@ button {
 }
 
 pre:not(.console) {
-    border: 0.1rem inset var(--color-theme);
-    padding: var(--size-3xsmall);
-    width: fit-content;
-    background-color: rgba(0, 0, 0, 0.1);
+    border: 0.1rem solid var(--color-theme);
+    padding: var(--size-xsmall);
+    max-width: 100%;
+    background-color: rgba(100, 100, 100, 0.1);
     overflow: auto;
 }
 
@@ -148,6 +144,10 @@ li {
 
 .line-height-1 {
     line-height: 1;
+}
+
+.line-height-small {
+    line-height: var(--line-height-small);
 }
 
 .line-height-body {

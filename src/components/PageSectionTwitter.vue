@@ -9,7 +9,7 @@
     </div>
     <div
       class="col-sm-12 col-lg-6"
-      :class="!$store.state.isMobile ? 'pr-large pt-2xsmall' : ''"
+      :class="$store.state.isDesktop ? 'pr-large pt-2xsmall' : ''"
       style="height: fit-content;"
       ref="body">
       <p v-html="body" />

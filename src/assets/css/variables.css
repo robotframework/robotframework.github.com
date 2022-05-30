@@ -7,7 +7,7 @@
 
     --color-white: #f5f5f5;
     --color-grey-light: #e7e7e7;
-    --color-grey: #e2e2e2;
+    --color-grey: #c6c6c6;
     --color-grey-dark: #292f33;
     --color-black: #000000; /* body text */
     --color-link: #00c0b5;
@@ -19,7 +19,7 @@
     --bp-lg: 1400px; /* desktop breakpoint */
 
     --layout-container-max-width: 1400px;
-    --layout-container-narrow-max-width: 800px;
+    --layout-container-narrow-max-width: 720px;
     --container-padding: 0;
 
     /* fonts */
@@ -31,7 +31,7 @@
     /* font sizes */
     --size-base-lg: 16px;
     --size-base-md: 2.5vw;
-    --size-base-sm: 4.5vw;
+    --size-base-sm: 3.5vw;
 
     --type-xsmall: 0.75rem;
     --type-small: 0.875rem; /* label */

@@ -6,7 +6,7 @@
       <div
         class="col-sm-12 col-lg-3"
         :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
-        <h2 :id="titleId">
+        <h2 :id="titleId" :class="longTitle && 'type-large'">
           {{ title }}
         </h2>
       </div>
@@ -38,6 +38,10 @@ export default {
     titleId: {
       type: String,
       required: true
+    },
+    longTitle: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -51,9 +55,6 @@ export default {
     height: 100px;
     visibility: hidden;
     pointer-events: none;
-  }
-  h2 {
-    clip-path: polygon(0 calc(100% - 2rem), 100% calc(100% - 2rem), 100% 100%, 0% 100%)
   }
   @media screen and (max-width: 700px) {
     h2::before {

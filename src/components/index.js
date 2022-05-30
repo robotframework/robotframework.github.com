@@ -20,6 +20,7 @@ import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
 import RobotIcon from './icons/RobotIcon.vue'
+import DocumentIcon from './icons/DocumentIcon.vue'
 
 export {
   NewsBanner,
@@ -43,5 +44,6 @@ export {
   GlobeIcon,
   ChevronIcon,
   NewTabIcon,
-  RobotIcon
+  RobotIcon,
+  DocumentIcon
 }

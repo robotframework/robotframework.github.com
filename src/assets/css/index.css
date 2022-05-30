@@ -13,6 +13,7 @@ html, body {
     min-height: 100vh;
     line-height: var(--line-height-body);
     background-color: var(--color-background);
+    font-size: var(--size-base-lg);
 }
 
 #app {
@@ -59,5 +60,17 @@ body:not(.accessible) * {
     
     #app {
         color: var(--color-grey-light);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html, body {
+        font-size: var(--size-base-md);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    html, body {
+        font-size: var(--size-base-sm);
     }
 }

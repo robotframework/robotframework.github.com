@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Foundation from '../views/Foundation.vue'
+import RPA from '../views/RPA.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
 import Users from '../views/Users.vue'
@@ -13,6 +14,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/foundation',
+    name: 'Foundation',
+    component: Foundation
+  },
+  {
+    path: '/rpa2',
+    name: 'RPA',
+    component: RPA
   },
   {
     path: '/foundation',

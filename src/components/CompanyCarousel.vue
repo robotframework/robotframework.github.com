@@ -5,7 +5,7 @@
     </h4>
     <div class="row carousel-container pt-small pb-small bg-white bg-grey-dark-darkmode card">
       <button
-        class="col-sm-2 col-md-1 flex center middle"
+        class="col-sm-1 flex center middle"
         aria-label="previous testimonial"
         @click="setActiveCompany(-1)">
         <chevron-icon size="3rem" :color="isDarkMode ? 'white' : 'black'" />
@@ -13,22 +13,23 @@
       <transition :name="direction === 1 ? 'fade-left' : 'fade-right'" mode="out-in">
         <div
           :key="activeCompanyIndex"
-          class="col-sm-8 col-md-10 row middle"
+          class="col-sm-10 row middle"
           :style="!$store.state.isMobile ? 'height: 10rem;' : ''">
           <div
-            class="col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-0"
+            class="col-sm-12 col-md-3 col-md-offset-0"
             :class="$store.state.isMobile ? 'mb-medium' : ''">
             <div
               class="img-container"
               :style="`background-image: url(${publicPath}img/carousel-company-icons/${activeCompany.imgName})`" />
           </div>
           <div
-            class="col-sm-12 col-md-9 type-italic type-small description"
-            v-html="activeCompany.description" />
+            class="col-sm-12 col-md-9 type-italic description type-small"
+            v-html="activeCompany.description">
+          </div>
         </div>
       </transition>
       <button
-        class="col-sm-2 col-md-1 type-right flex center middle"
+        class="col-sm-1 type-right flex center middle"
         aria-label="next testimonial"
         @click="setActiveCompany(1)">
         <chevron-icon
@@ -158,8 +159,10 @@ export default {
   }
   .description {
     padding-left: var(--size-medium);
+    max-height: 100%;
+    overflow: auto;
   }
-  @media screen and (max-width: 699px) {
+  @media screen and (max-width: 767px) {
     .carousel-container {
       margin-left: -1rem;
       margin-right: -1rem;
