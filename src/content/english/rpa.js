@@ -6,7 +6,7 @@ export default () => ({
         Get started in seconds with <span class="inline-block">Robot Framework RPA</span>
       </h2>
       <h3 class="type-center">
-        Here´s how you set up your first robot project
+        Here´s how you set up your first RPA project
       </h3>`,
       tabs: [
         {
