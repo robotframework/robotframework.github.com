@@ -82,7 +82,8 @@ export default () => ({
         {
           name: 'RPA',
           url: 'https://robotframework.org/rpa/',
-          description: 'Robotic process automation'
+          description: 'Robotic process automation',
+          isRouterLink: true
         }
       ]
     }
@@ -91,7 +92,7 @@ export default () => ({
     title: 'Introduction',
     body:
       `Robot Framework is a generic open source automation framework.
-      It can be used for test automation and robotic process automation (RPA).<br><br>
+      It can be used for test automation and <a href="/rpa/">robotic process automation (RPA)</a>.<br><br>
 
       Robot Framework is supported by <a href="/foundation/">Robot Framework Foundation</a>.
       Many industry-leading companies use the tool in their software development.<br><br>

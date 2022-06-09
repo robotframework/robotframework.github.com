@@ -62,8 +62,8 @@ export default () => ({
     },
     quickstart: {
       title: 'Quickstart',
-      body: `<p>Read Robot Framework RPA quickstart to learn more.
-      (this would link to the new getting started > RPA - still TBD)</p>`
+      body: `<p>Quickstart is still work in progress and will be released later this year.
+      Meanwhile, check User Guide for general <a href="https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-tasks">task creation instructrions</a>!</p>`
     },
     resources: {
       title: 'Resources',

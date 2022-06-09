@@ -21,14 +21,16 @@ const routes = [
     component: Foundation
   },
   {
-    path: '/rpa2',
+    path: '/rpa',
     name: 'RPA',
-    component: RPA
+    component: RPA,
+    meta: { title: 'RPA' }
   },
   {
     path: '/foundation',
     name: 'Foundation',
-    component: Foundation
+    component: Foundation,
+    meta: { title: 'Foundation' }
   },
   {
     path: '/robot-framework-foundation',
@@ -37,22 +39,26 @@ const routes = [
   {
     path: '/privacy-policy',
     name: 'PrivacyPolicy',
-    component: PrivacyPolicy
+    component: PrivacyPolicy,
+    meta: { title: 'Privacy Policy' }
   },
   {
     path: '/code-of-conduct',
     name: 'CoC',
-    component: CoC
+    component: CoC,
+    meta: { title: 'CoC' }
   },
   {
     path: '/users',
     name: 'Users',
-    component: Users
+    component: Users,
+    meta: { title: 'Users' }
   },
   {
     path: '/code',
     name: 'Code',
-    component: Code
+    component: Code,
+    meta: { title: 'Playground' }
   },
   {
     path: '/demoapp',
@@ -62,7 +68,8 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
+    component: NotFound,
+    meta: { title: '404' }
   }
 ]
 
@@ -73,6 +80,13 @@ const router = createRouter({
     if (savedPosition) return savedPosition
     return { top: 0 }
   }
+})
+
+router.afterEach((to, from, next) => {
+  const title = to.meta.title
+  if (title) document.title = `${title} | Robot Framework`
+  else document.title = 'Robot Framework'
+  next()
 })
 
 export default router
