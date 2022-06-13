@@ -36,6 +36,12 @@ export default () => ([
     description: 'Comiq is a Finnish software quality service provider founded in 2003 employing around 60 QA consultants. Our expertise in quality assurance services helps our customers achieve their quality targets for their business critical IT projects.'
   },
   {
+    title: 'continero',
+    href: 'https://www.continero.com/en/',
+    img: 'continero.png',
+    description: 'We are an IT company based in the Brno (Czech Republic), which has existed since 2018. Our primary focus is outsourcing developers and testers to interesting and worldwide projects. We always strive to deliver the best services with a strong emphasis on modern technologies and methodologies.  While doing the outsourcing, our primary vision is to help organizations with software quality and together make better products. We are developing a new testing platform built on the Robot Framework. It is a brand new technology that will enable non-developers and business organizations to create comprehensive automation tests without the knowledge of any programming languages.'
+  },
+  {
     title: 'DB Schenker',
     href: 'https://www.dbschenker.com/global/about/profile',
     img: 'dbchenker.png',
@@ -87,7 +93,7 @@ export default () => ([
     title: 'gofore',
     href: 'https://gofore.com/en/',
     img: 'gofore.png',
-    description: 'Gofore Plc is a Finnish digitalisation specialist with international growth plans. We’re made up of over 700 people across Finland, Germany, Spain, and Estonia – top experts in our industry who are our company’s heart, brain, and hands. We use consulting, coding and design as tools to incite positive change. We care for our people, our customers, and the surrounding world. We rely on RobotFramework at our consulting, coding, design and quality assurance. Learn to know us better at <a href="www.gofore.com">www.gofore.com</a>.'
+    description: 'Gofore Plc is a Finnish digitalisation specialist with international growth plans. We’re made up of over 700 people across Finland, Germany, Spain, and Estonia – top experts in our industry who are our company’s heart, brain, and hands. We use consulting, coding and design as tools to incite positive change. We care for our people, our customers, and the surrounding world. We rely on RobotFramework at our consulting, coding, design and quality assurance. Learn to know us better at <a href="https://www.gofore.com">www.gofore.com</a>.'
   },
   {
     title: 'henix',

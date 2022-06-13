@@ -21,9 +21,7 @@
                 :style="`background-image: url(${publicPath}img/sponsors/${sponsor.img})`" />
             </a>
           </div>
-          <div>
-            {{ sponsor.description }}
-          </div>
+          <div v-html="sponsor.description" />
         </div>
       </div>
     </div>
