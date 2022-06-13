@@ -13,20 +13,23 @@ export default () => ({
           name: 'Windows',
           description: `
 <pre><code><button class="icon-copy">&nbsp;</button><span>curl -o rcc.exe https://downloads.robocorp.com/rcc/releases/latest/windows64/rcc.exe</span>
-  rcc create
+  rcc create example
+  cd example
   rcc run</code></pre>`
         }, {
           name: 'macOS',
           description: `
 <pre><code><button class="icon-copy">&nbsp;</button><span>brew install robocorp/tools/rcc</span>
-  rcc create
+  rcc create example
+  cd example
   rcc run</code></pre>`
         }, {
           name: 'Linux',
           description: `
 <pre><code><button class="icon-copy">&nbsp;</button><span>curl -o rcc https://downloads.robocorp.com/rcc/releases/latest/linux64/rcc</span>
   chmod a+x rcc
-  rcc create
+  rcc create example
+  cd example
   rcc run</code></pre>`
         }
       ]
