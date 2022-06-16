@@ -5,7 +5,7 @@ export default () => ({
   ...foundation(),
   ...rpa(),
   langName: 'English',
-  newsBanner: '',
+  newsBanner: 'Introducing Robot Framework blog! You can read our thoughts of RoboCon 2022 <a href="https://medium.com/{at}{\'@\'}{at}RobotFramework/robocon-2022-epilogue-f1160a89b1ca">in the blogs first post</a>.',
   navbar: {
     items: [
       {
