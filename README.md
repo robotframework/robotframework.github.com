@@ -57,6 +57,8 @@ Steps to do:
 Gitpod will now automatically set up a full development environment with a running development server
 and a full functioning VSCode.
 
+After the startup of the development web server in your Terminal, you can open the page preview.
+
 To open the preview of the robotframework.org page, which you are developing, you can just follow the link in the terminal
 of the started VSCode.
 Just click on `http://localhost:8080/` with the modifier CTRL (Windows & Linux) or CMD (Mac).

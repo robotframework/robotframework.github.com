@@ -5,7 +5,6 @@ vscode:
     - octref.vetur
     - ecmel.vscode-html-css
     - dbaeumer.vscode-eslint
-    - eamodio.gitlens
 ports:
   - port: 8080
     name: Dev Web Preview
