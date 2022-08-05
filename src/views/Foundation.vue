@@ -7,7 +7,9 @@
         v-html="$t('foundation.lead')">
       </div>
       <div
-        class="col-sm-12 col-lg-9 col-lg-offset-3">
+        class="col-sm-12 col-lg-9 col-lg-offset-3"
+        :style="{ 'overflow-x': 'scroll', 'overflow-y' : 'hidden' }"
+      >
         <YouTube
             src="https://www.youtube.com/watch?v=jlhgitypC5Q"
             @ready="onReady"
