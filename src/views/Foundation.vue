@@ -6,6 +6,13 @@
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         v-html="$t('foundation.lead')">
       </div>
+      <div
+        class="col-sm-12 col-lg-9 col-lg-offset-3">
+        <YouTube
+            src="https://www.youtube.com/watch?v=jlhgitypC5Q"
+            @ready="onReady"
+            ref="youtube" />
+      </div>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"
