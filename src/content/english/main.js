@@ -30,7 +30,7 @@ export default () => ({
       items: [
         {
           name: 'User Guide',
-          url: 'https://robotframework.org/robotframework/#user-guide',
+          url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
           description: 'All features explained'
         },
         {

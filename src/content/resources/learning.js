@@ -7,7 +7,7 @@ export default () => ([
   {
     name: 'User Guide',
     description: 'Reference manual explaining all Robot Framework features in detail.',
-    href: 'https://robotframework.org/robotframework/#user-guide'
+    href: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html'
   },
   {
     name: 'Quick Start Guide',
