@@ -245,6 +245,7 @@ export default () => ({
     <a href="/foundation/">Robot Framework Foundation</a>. It consists
     of companies and organizations that want to ensure the continuity of Robot Framework now and
     in the future.</p>
+    <p>Project is hosted at <a href="https://github.com/robotframework/robotframework">GitHub</a></p>
     <p>Thanks to these sponsors, Robot Framework remains completely
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
