@@ -266,12 +266,6 @@ export default () => ([
     tags: ['ftp']
   },
   {
-    name: 'WhiteLibrary',
-    href: 'https://github.com/Omenia/robotframework-whitelibrary',
-    description: 'Automating Windows GUI. Based on White framework, supported technologies include Win32, WinForms, and WPF.',
-    tags: ['ui']
-  },
-  {
     name: 'WADLibrary',
     href: 'https://github.com/Adwisit/WADLibrary',
     description: 'Application testing library that utilizes Win App Driver.',
