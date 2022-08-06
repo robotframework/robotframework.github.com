@@ -166,7 +166,9 @@ export default () => ({
       For more information and to watch previous years' talks, visit
       <a href="https://robocon.io" target="_blank">robocon.io</a> or our
       <a href="https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg" target="_blank">YouTube Channel</a>.</p>
-      <p>To support Robot Framework you can find a T-shirt and a coffee cup from our <a href="https://shop.robotframework.org/" target="_blank">Shop<a>.</p>
+      <p>To support Robot Framework you can find a <a href="https://supergeek.de/de/products/24916-im-the-robot-dark/">&#128085; T-shirt</a>
+      and a <a href="https://supergeek.de/de/products/24915-im-the-robot-bright/1232-tasse-coffee-mug/" target="_blank">&#9749; coffee cup</a>
+      from our <a href="https://shop.robotframework.org/" target="_blank">Shop<a>.</p>
 `,
     links: {
       forum: {
