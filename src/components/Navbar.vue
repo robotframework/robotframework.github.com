@@ -10,7 +10,7 @@
           @click="logoClick" />
       </div>
     </transition>
-    <div class="container row between middle">
+    <div class="container row center middle">
       <div class="flex">
         <transition name="opacity">
         <robot-icon
