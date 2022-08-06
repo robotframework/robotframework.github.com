@@ -185,7 +185,10 @@ export default () => ({
       <p>There is also an annual RoboCon conference that is hosted in Helsinki, Finland.
       RoboCon 2022 will be a hybrid event that can be attended online and in real life.
       For more information and to watch previous years' talks, visit
-      <a href="https://robocon.io" target="_blank">robocon.io</a></p>`,
+      <a href="https://robocon.io" target="_blank">robocon.io</a> or our
+      <a href="https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg" target="_blank">YouTube Channel</a>.</p>
+      <p>To support Robot Framework you can find a T-shirt and a coffee cup from our <a href="https://shop.robotframework.org/" target="_blank">Shop<a>.</p>
+`,
     links: {
       forum: {
         title: 'Forum',
@@ -245,8 +248,8 @@ export default () => ({
     <a href="/foundation/">Robot Framework Foundation</a>. It consists
     of companies and organizations that want to ensure the continuity of Robot Framework now and
     in the future.</p>
-    <p>Project is hosted at <a href="https://github.com/robotframework/robotframework">GitHub</a></p>
-    <p>Thanks to these sponsors, Robot Framework remains completely
+    <p>Project is hosted at <a href="https://github.com/robotframework/robotframework" target="_blank">GitHub</a></p>
+    <p>Thanks to the sponsors, Robot Framework remains completely
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
     sponsorBoxTitle: 'Members of Robot Framework Foundation',
