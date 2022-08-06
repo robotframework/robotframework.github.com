@@ -59,16 +59,6 @@ export default () => ({
           description: 'Source code + issues'
         },
         {
-          name: 'Forum',
-          url: 'https://forum.robotframework.org/',
-          description: 'Discuss Robot Framework'
-        },
-        {
-          name: 'Robocon',
-          url: 'https://robocon.io/',
-          description: 'Annual conference'
-        },
-        {
           name: 'YouTube',
           url: 'https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg',
           description: 'Conference talks archived'
