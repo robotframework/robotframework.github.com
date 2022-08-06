@@ -89,14 +89,12 @@
 
 <script>
 import ChevronIcon from './icons/ChevronIcon.vue'
-import NewTabIcon from './icons/NewTabIcon.vue'
 import RobotIcon from './icons/RobotIcon.vue'
 
 export default {
   name: 'NavMobile',
   components: {
     ChevronIcon,
-    NewTabIcon,
     RobotIcon
   },
   data: () => ({

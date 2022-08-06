@@ -178,10 +178,6 @@ export default () => ({
       slack: {
         title: 'Slack',
         description: 'Community team chat.<br><a href="https://rf-invite.herokuapp.com/" target="_blank">Click for invite!</a>'
-      },
-      openSpace: {
-        title: 'Open space',
-        description: 'Meet the Robot Framework developers and foundation members. Join topics created by others or bring your own. Also in Slack #open-space. <a href="./robot-framework-open-space.ics">ICS file</a>'
       }
     }
   },
