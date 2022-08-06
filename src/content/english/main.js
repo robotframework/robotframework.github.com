@@ -64,12 +64,6 @@ export default () => ({
           description: 'Discuss Robot Framework'
         },
         {
-          name: 'Foundation',
-          url: '/foundation/',
-          description: 'Support the development',
-          isRouterLink: true
-        },
-        {
           name: 'Robocon',
           url: 'https://robocon.io/',
           description: 'Annual conference'
@@ -83,12 +77,6 @@ export default () => ({
           name: 'Shop',
           url: 'https://shop.robotframework.org/',
           description: 'Support the development'
-        },
-        {
-          name: 'RPA',
-          url: 'https://robotframework.org/rpa/',
-          description: 'Robotic process automation',
-          isRouterLink: true
         }
       ]
     }
