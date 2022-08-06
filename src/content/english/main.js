@@ -49,26 +49,6 @@ export default () => ({
           description: 'Build RF extensions'
         }
       ]
-    },
-    dropdownLinks: {
-      name: 'External sites',
-      items: [
-        {
-          name: 'Github',
-          url: 'https://github.com/robotframework/robotframework',
-          description: 'Source code + issues'
-        },
-        {
-          name: 'YouTube',
-          url: 'https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg',
-          description: 'Conference talks archived'
-        },
-        {
-          name: 'Shop',
-          url: 'https://shop.robotframework.org/',
-          description: 'Support the development'
-        }
-      ]
     }
   },
   introduction: {

@@ -3,8 +3,8 @@
     <div
       v-if="isOpen"
       class="menu bg-black pt-xlarge pb-large pl-small pr-small">
-      <transition :name="docsOpen || linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
-        <div v-if="!docsOpen && !linksOpen" key="1" class="mt-medium">
+      <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
+        <div v-if="!docsOpen" key="1" class="mt-medium">
           <div
             v-for="item in $tm('navbar.items')"
             :key="item.name">
@@ -25,39 +25,6 @@
                 {{ $t('navbar.dropdownDocs.name') }}
               </div>
             </button>
-          </div>
-          <button
-            class="flex middle mt-xsmall color-white font-title type-uppercase"
-            style="margin-left: -0.5rem;"
-            @click="linksOpen = true">
-            <chevron-icon direction="right" color="white" size="2rem" />
-            <div>
-              {{ $t('navbar.dropdownLinks.name') }}
-            </div>
-          </button>
-        </div>
-        <div v-else-if="linksOpen" key="2" class="mt-medium">
-          <div
-            v-for="({ name, url, description, isRouterLink }, i) in $tm('navbar.dropdownLinks.items')"
-            :key="name">
-            <div class="flex middle">
-              <a
-                v-if="!isRouterLink"
-                :href="url"
-                target="_blank"
-                rel="noopener noreferrer">
-                {{ name }}
-              </a>
-              <router-link
-                v-if="isRouterLink"
-                :to="{ name: name }">
-                {{ name }}
-              </router-link>
-              <new-tab-icon color="theme" class="ml-2xsmall" />
-            </div>
-            <p class="type-small color-white mt-none" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : 'mb-small'">
-              {{ description }}
-            </p>
           </div>
         </div>
         <div v-else key="3" class="mt-medium">
@@ -80,15 +47,15 @@
   <div
     class="navbar row between bg-black color-white"
     :class="isOpen ? 'open' : ''">
-    <transition :name="docsOpen || linksOpen ? 'fade-left' : 'fade-right'" mode="out-in">
+    <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
       <button
-        v-if="linksOpen || docsOpen"
+        v-if="docsOpen"
         class="color-white font-title type-uppercase ml-2xsmall"
-        @click="linksOpen = false; docsOpen = false">
+        @click="docsOpen = false">
         <div class="flex middle">
           <chevron-icon direction="left" color="white" size="2rem" />
           <div>
-            {{ linksOpen ? $t('navbar.dropdownLinks.name') : $t('navbar.dropdownDocs.name') }}
+            {{ $t('navbar.dropdownDocs.name') }}
           </div>
         </div>
       </button>
@@ -105,7 +72,7 @@
     <button
       class="hamburger"
       :class="isOpen ? 'open' : ''"
-      @click="isOpen = !isOpen; docsOpen = false; linksOpen = false;">
+      @click="isOpen = !isOpen; docsOpen = false;">
       <span></span>
       <span></span>
       <span></span>
@@ -116,7 +83,7 @@
     <div
       v-if="isOpen"
       class="menu-background"
-      @click="isOpen = false; docsOpen = false; linksOpen = false;" />
+      @click="isOpen = false; docsOpen = false;" />
   </transition>
 </template>
 
@@ -134,8 +101,7 @@ export default {
   },
   data: () => ({
     isOpen: false,
-    docsOpen: false,
-    linksOpen: false
+    docsOpen: false
   }),
   methods: {
     scrollTo(el, duration) {

@@ -21,20 +21,17 @@
         </transition>
         <!-- section navigation -->
         <button
-          v-for="(item, i) in $tm('navbar.items')"
+          v-for="(item) in $tm('navbar.items')"
           :key="item.name"
           :name="`go-to-${item.name}`"
-          class="px-small color-white font-title type-no-underline type-uppercase line-height-body"
-          :class="i === $tm('navbar.items').length - 1 ? '' : 'border-right-white'"
+          class="px-small color-white font-title type-no-underline type-uppercase line-height-body border-right-white"
           @click="itemClick(item.id)">
           {{ item.name }}
         </button>
-      </div>
-      <div class="flex">
         <!-- docs -->
         <div class="relative" ref="dropdownDocs">
           <button
-            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button border-right-white"
+            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button"
             :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
             @click="docsDropdownOpen = !docsDropdownOpen">
             <div>
@@ -57,51 +54,6 @@
                   {{ name }}
                 </a>
                 <p class="type-small mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
-                  {{ description }}
-                </p>
-              </div>
-            </div>
-          </transition>
-        </div>
-        <!-- external links -->
-        <div class="relative" ref="dropdownLinks">
-          <button
-            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button"
-            :class="linksDropdownOpen ? 'color-theme' : 'color-white'"
-            @click="linksDropdownOpen = !linksDropdownOpen">
-            <div>
-              {{ $t('navbar.dropdownLinks.name') }}
-            </div>
-            <chevron-icon
-              :color="linksDropdownOpen ? 'theme' : 'white'"
-              :direction="linksDropdownOpen ? 'up' : 'down'"
-              size="1.5rem" />
-          </button>
-          <transition name="fade">
-            <div
-              v-if="linksDropdownOpen"
-              class="dropdown-container bg-black color-white p-small card" style="right: 0.25rem;">
-              <div
-                v-for="({ name, url, description, isRouterLink }, i) in $tm('navbar.dropdownLinks.items')"
-                :key="name">
-                <div class="flex end">
-                  <a
-                    v-if="!isRouterLink"
-                    :href="url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    @click="linkClick(name)">
-                    {{ name }}
-                  </a>
-                  <router-link
-                    v-if="isRouterLink"
-                    :to="{ name: name }"
-                    @click="linkClick(name)">
-                    {{ name }}
-                  </router-link>
-                  <new-tab-icon color="theme" class="ml-2xsmall" />
-                </div>
-                <p class="type-small mt-none type-right" :class="i === $tm('navbar.dropdownLinks.items').length - 1 ? 'mb-none' : ''">
                   {{ description }}
                 </p>
               </div>
@@ -193,7 +145,6 @@ export default {
     },
     onClick(ev) {
       // close dropdowns if clicked outside
-      if (this.$refs.dropdownLinks && !this.$refs.dropdownLinks.contains(ev.target)) this.linksDropdownOpen = false
       if (this.$refs.dropdownDocs && !this.$refs.dropdownDocs.contains(ev.target)) this.docsDropdownOpen = false
     },
     onResize() {
