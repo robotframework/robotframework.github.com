@@ -163,7 +163,6 @@ export default () => ({
       `<p>Robot Framework has a vibrant community of testing enthusiasts around it. Feel free to
       stop by if you have any questions, need advice or would just like to connect with like-minded people!</p>
       <p>There is also an annual RoboCon conference that is hosted in Helsinki, Finland.
-      RoboCon 2022 will be a hybrid event that can be attended online and in real life.
       For more information and to watch previous years' talks, visit
       <a href="https://robocon.io" target="_blank">robocon.io</a> or our
       <a href="https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg" target="_blank">YouTube Channel</a>.</p>
