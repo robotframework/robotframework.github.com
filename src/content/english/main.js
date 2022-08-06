@@ -34,6 +34,11 @@ export default () => ({
           description: 'All features explained'
         },
         {
+          name: 'BuiltIn Library',
+          url: 'https://robotframework.org/robotframework/latest/libraries/BuiltIn.html',
+          description: 'Always available keywords'
+        },
+        {
           name: 'Standard Libraries',
           url: 'https://robotframework.org/robotframework/#standard-libraries',
           description: 'Keyword documentation'
