@@ -23,6 +23,7 @@ export default {
     isDarkMode: false
   }),
   created() {
+    window.plausible('404', { props: { path: document.location.pathname } })
     this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 }
