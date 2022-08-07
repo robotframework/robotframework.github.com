@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import YouTube from 'vue3-youtube'
 // import './registerServiceWorker'
 import router from './router'
 import store from './store'
@@ -55,7 +54,6 @@ const i18n = createI18n({
 })
 
 createApp(App)
-  .component('YouTube', YouTube)
   .use(store)
   .use(router)
   .use(i18n)

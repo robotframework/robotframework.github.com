@@ -60,6 +60,7 @@
           </router-link>
         </button>
       </div>
+      <VideoComponent videoId='2GDrtvz_1Ds'/>
     </page-section>
     <!-- development -->
     <page-section
@@ -90,10 +91,12 @@ import {
   Sponsors,
   Milestones
 } from 'Components'
+import VideoComponent from 'Components/VideoComponent'
 
 export default {
   name: 'App',
   components: {
+    VideoComponent,
     NewsBanner,
     Banner,
     PageFooter,
