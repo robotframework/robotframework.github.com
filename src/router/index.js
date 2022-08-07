@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Foundation from '../views/Foundation.vue'
 import RPA from '../views/RPA.vue'
+import TestAutomation from '../views/TestAutomation'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
 import Users from '../views/Users.vue'
@@ -29,7 +30,7 @@ const routes = [
   {
     path: '/test-automation',
     name: 'Test Automation',
-    component: RPA,
+    component: TestAutomation,
     meta: { title: 'Test Automation' }
   },
   {

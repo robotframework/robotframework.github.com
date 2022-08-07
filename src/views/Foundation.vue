@@ -6,7 +6,7 @@
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         v-html="$t('foundation.lead')">
       </div>
-      <VideoComponent src="https://www.youtube.com/watch?v=jlhgitypC5Q"/>
+      <VideoComponent videoId="jlhgitypC5Q"/>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"

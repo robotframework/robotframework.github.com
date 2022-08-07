@@ -1,9 +1,11 @@
 import foundation from './foundation'
 import rpa from './rpa'
+import testautomation from './testautomation'
 
 export default () => ({
   ...foundation(),
   ...rpa(),
+  ...testautomation(),
   langName: 'English',
   newsBanner: '<a href="https://medium.com/{at}{\'@\'}{at}RobotFramework/robot-framework-foundation-a37a8bcec74f">New blog post: Robot Framework Foundation</a>',
   navbar: {
