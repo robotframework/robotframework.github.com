@@ -27,6 +27,12 @@ const routes = [
     meta: { title: 'RPA' }
   },
   {
+    path: '/test-automation',
+    name: 'Test Automation',
+    component: RPA,
+    meta: { title: 'Test Automation' }
+  },
+  {
     path: '/foundation',
     name: 'Foundation',
     component: Foundation,
