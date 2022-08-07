@@ -10,6 +10,7 @@
       <VideoComponent videoId="SypNjILTRl0"/>
       <VideoComponent videoId="mSR-HPCBeEQ"/>
       <VideoComponent videoId="PFqmZ5GwXgg"/>
+      <VideoComponent videoId="g98m3XpE8gw"/>
       <VideoComponent videoId="Ju90-ewW_gM"/>
     </div>
     <page-footer />
