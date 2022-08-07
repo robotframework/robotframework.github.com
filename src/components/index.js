@@ -15,7 +15,7 @@ import Sponsors from './Sponsors.vue'
 import SponsorsDetailed from './SponsorsDetailed.vue'
 import RobotCode from './RobotCode.vue'
 import Milestones from './Milestones.vue'
-
+import VideoComponent from './VideoComponent'
 import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
@@ -40,7 +40,7 @@ export {
   Sponsors,
   SponsorsDetailed,
   Milestones,
-
+  VideoComponent,
   GlobeIcon,
   ChevronIcon,
   NewTabIcon,

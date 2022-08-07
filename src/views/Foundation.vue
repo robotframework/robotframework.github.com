@@ -6,15 +6,7 @@
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         v-html="$t('foundation.lead')">
       </div>
-      <div
-        class="col-sm-12 col-lg-9 col-lg-offset-3"
-        :style="{ 'overflow-x': 'scroll', 'overflow-y' : 'hidden' }"
-      >
-        <YouTube
-            src="https://www.youtube.com/watch?v=jlhgitypC5Q"
-            @ready="onReady"
-            ref="youtube" />
-      </div>
+      <VideoComponent src="https://www.youtube.com/watch?v=jlhgitypC5Q"/>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"
@@ -37,11 +29,12 @@
 </template>
 
 <script>
-import { NavbarSubPage, PageSection, SponsorsDetailed, PageFooter } from 'Components'
+import { NavbarSubPage, PageFooter, PageSection, SponsorsDetailed, VideoComponent } from 'Components'
 
 export default {
   name: 'Foundation',
   components: {
+    VideoComponent,
     NavbarSubPage,
     PageSection,
     SponsorsDetailed,
