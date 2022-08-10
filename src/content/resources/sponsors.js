@@ -12,6 +12,12 @@ export default () => ([
     description: 'Aktia is a Finnish asset manager, bank and life insurer that has been creating wealth and well-being from one generation to the next already for 200 years. We serve our customers through digital channels everywhere and face-to-face in our offices in the Helsinki region as well as in Oulu, Tampere, Turku and Vaasa regions. Funds in our awarded asset management are sold also internationally to institutional clients. We employ approximately 800 people around Finland. In Aktia Robot Framework is used for test automation to guarantee the quality we deliver to our customers.'
   },
   {
+    title: 'Arvanto',
+    href: 'https://www.arvato-systems.com/',
+    img: 'arvanto.png',
+    description: 'Global IT specialist Arvato Systems supports major companies in Digital Transformation. About 3,100 staff in over 25 locations stand for in-depth technology expertise, industry knowledge, and focus on customer requirements. Working as a team, we develop innovative IT solutions, transition our clients into the Cloud, integrate digital processes, and take on IT systems operation and support. As a part of the Bertelsmann-owned Arvato network, we have the unique capability to work across the entire value chain. Through our strong strategic partner network with global top players such as AWS, Google, Microsoft, and SAP, we continuously strengthen our know-how and leverage the most advanced technology. We Empower Digital Leaders.'
+  },
+  {
     title: 'Botlabs',
     href: 'https://botlabs.fi/en/home/',
     img: 'botlabs.png',
