@@ -43,3 +43,26 @@ When you want to contribute and open a pull request, only commit source file cha
 ```
 
 The page is built with [Vue CLI](https://cli.vuejs.org/).
+
+## Use GitPod.io
+
+With Gitpod you get a free "pop up" dev environment.
+Just register at gitpod with your github account and create a new workspace from your fork.
+
+Steps to do:
+- Fork this page to your own Github account
+- Register at Gitpod.io with your github account
+- Create a new workspace with the url to your fork.
+
+Gitpod will now automatically set up a full development environment with a running development server
+and a full functioning VSCode.
+
+After the startup of the development web server in your Terminal, you can open the page preview.
+
+To open the preview of the robotframework.org page, which you are developing, you can just follow the link in the terminal
+of the started VSCode.
+Just click on `http://localhost:8080/` with the modifier CTRL (Windows & Linux) or CMD (Mac).
+
+Once you are done with your changes you can commit your modifications to your fork and
+create a pull-request to the original repository.
+

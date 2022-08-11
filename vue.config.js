@@ -4,6 +4,9 @@ const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,
+  devServer: {
+    disableHostCheck: true
+  },
   configureWebpack: {
     resolve: {
       alias: {

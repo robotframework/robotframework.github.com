@@ -1,0 +1,13 @@
+tasks:
+  - init: npm install && npm run dev
+vscode:
+  extensions:
+    - octref.vetur
+    - ecmel.vscode-html-css
+    - dbaeumer.vscode-eslint
+ports:
+  - port: 8080
+    name: Dev Web Preview
+    description: Development Preview or robotframework.org
+    onOpen: notify
+    visibility: public
