@@ -225,6 +225,12 @@ export default () => ([
     description: 'Robocorp is set out to change Robotic Process Automation. RPA has the potential to change how millions of people work every day and Robocorp is making it accessible to everyone through license-free open source technologies, delivered from a cloud platform.'
   },
   {
+    title: 'rpamaker',
+    href: 'https://www.rpamaker.com/',
+    img: 'rpamaker.png',
+    description: 'RPAMAKER provides end to end process automation services. We are a client-centric company focused on helping clients confidently walk through the automation journey. We drive our clients to discover, evaluate, develop, host, maintain, support and improve their automations.'
+  },
+  {
     title: 'segron',
     href: 'https://www.segron.com',
     img: 'segron.png',
