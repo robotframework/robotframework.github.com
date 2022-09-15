@@ -212,7 +212,7 @@ export default () => ([
   {
     name: 'RobotMK',
     description: 'RobotMK integrates results of Robot tests into the monitoring system Checkmk. Makes it possible to send alerts if any keyword/test/suite runtime exceeds the allowed runtime or fails. Performance graphs and SLA reports. Web based configuration of Robot parameters. Automatic client deployment rule system ("bakery").',
-    href: 'https://github.com/simonmeggle/robotmk/',
+    href: 'https://github.com/elabit/robotmk/',
     tags: ['']
   },
   {
