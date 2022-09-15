@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code/hello-world/test.robot"
   },
   {
-    "revision": "6ef802064262afde5013",
+    "revision": "72d145fbcf3f088aa359",
     "url": "/css/app.9ccfb12a.css"
   },
   {
@@ -480,12 +480,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "c36fb3aa1258bd9dd0f294557ca3b8de",
+    "revision": "68a651350b7fe41796c17d076e505c8d",
     "url": "/index.html"
   },
   {
-    "revision": "6ef802064262afde5013",
-    "url": "/js/app.daf72bfd.js"
+    "revision": "72d145fbcf3f088aa359",
+    "url": "/js/app.6bcaa82a.js"
   },
   {
     "revision": "7cd97869bc47d69d1381",
