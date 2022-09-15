@@ -98,7 +98,7 @@ export default () => ({
         list: [
           {
             name: 'RPA framework',
-            href: 'https://rpaframework.org',
+            href: 'https://github.com/robocorp/rpaframework',
             description: 'Common RPA functionality in a single library - includes desktop, browser, Excel, PDF, email, and many more capabilities'
           }, {
             name: 'Playwright',

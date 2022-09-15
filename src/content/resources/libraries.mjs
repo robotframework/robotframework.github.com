@@ -195,7 +195,7 @@ export default () => ([
   },
   {
     name: 'RPA framework',
-    href: 'https://www.rpaframework.org/',
+    href: 'https://github.com/robocorp/rpaframework',
     description: 'Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used both with Robot Framework and Python.',
     tags: ['rpa']
   },
