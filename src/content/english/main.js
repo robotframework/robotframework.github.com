@@ -7,13 +7,7 @@ export default () => ({
   ...rpa(),
   ...testautomation(),
   langName: 'English',
-  newsBanner: `
-  <div onclick="window.open('https://robocon.io/germany');" style="cursor: pointer;" class="banner"><h2>ROBOCON <span class="color-white">2022</span> GERMANY</h2>
-  <h3>📣 <span class="color-theme">This October 5th</span> 📣</h3>
-  Ticket sale is open!<br>
-  First RoboCon outside of Finland will be held in Frankfurt am Main!
-
-  </div>`,
+  newsBanner: '',
   navbar: {
     items: [
       {
