@@ -262,7 +262,7 @@ export default () => ([
   },
   {
     title: 'symbio',
-    href: 'https://www.symbio.com/',
+    href: 'https://fi.symbio.com/',
     img: 'symbio.png',
     description: 'Symbio is international co-creation innovation partner. We help our customers create high quality products and future services in digital world. Our core capabilities include software development, test automation, IoT and Connected Car development, QA, embedded development, interoperability and globalization services.'
   },
