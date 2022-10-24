@@ -12,6 +12,12 @@ export default () => ([
     description: 'Aktia is a Finnish asset manager, bank and life insurer that has been creating wealth and well-being from one generation to the next already for 200 years. We serve our customers through digital channels everywhere and face-to-face in our offices in the Helsinki region as well as in Oulu, Tampere, Turku and Vaasa regions. Funds in our awarded asset management are sold also internationally to institutional clients. We employ approximately 800 people around Finland. In Aktia Robot Framework is used for test automation to guarantee the quality we deliver to our customers.'
   },
   {
+    title: 'ams OSRAM',
+    href: 'https://ams-osram.com/',
+    img: 'ams_osram.png',
+    description: 'ams OSRAM is using Robot Framework to automate post silicon verification tasks of our light sensors and IC products.'
+  },
+  {
     title: 'Arvanto',
     href: 'https://www.arvato-systems.com/',
     img: 'arvanto.png',
