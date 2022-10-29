@@ -18,7 +18,7 @@ const getProjectFromGitHub = async(ghURL) => {
   const downloadURL = `https://raw.githubusercontent.com/${user}/${repo}/${branch || 'main'}${(path) ? '/' + path : ''}`
   console.log(downloadURL)
   var project = await getProject(downloadURL)
-  project.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. The code is loaded from the following GitHub Repo.\n<a href="${url}" target="_blank">${url}</a>\n\nIf you run this code it will be executed in your browser.\n\n---\n${project.description}`
+  // project.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. The code is loaded from the following GitHub Repo.\n<a href="${url}" target="_blank">${url}</a>\n\nIf you run this code it will be executed in your browser.\n\n---\n${project.description}`
   return project
 }
 
