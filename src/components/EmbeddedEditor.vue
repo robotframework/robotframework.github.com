@@ -142,11 +142,9 @@
 
 <script>
 import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
-import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
-import { marked } from 'marked'
 import * as LZString from 'Code/lz-string'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
@@ -212,59 +210,8 @@ export default {
     }
   },
   methods: {
-    parseMarkdown(str) {
-      return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
-    },
     clickFn(ev) {
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
-    },
-    scrollToTop() {
-      const scrollDuration = 400 // ms
-      const { top } = this.$refs.editorContainer.getBoundingClientRect()
-      const target = document.scrollingElement.scrollTop + top - 60
-      scrollToPosition(target, scrollDuration)
-    },
-    async openMaximized() {
-      const compProj = await this.getProjectLink()
-      this.$router.push({ name: 'Code', query: { codeProject: compProj } })
-    },
-    async copyProject() {
-      const compProj = await this.getProjectLink()
-      const url = document.location.origin + '/code/?codeProject=' + compProj
-      console.log(url.length)
-      if (url.length > 7400) {
-        this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
-      } else {
-        await navigator.clipboard.writeText(url)
-        this.copyMessage = { message: 'Link copied to clipboard!', success: true }
-      }
-    },
-    async getProjectLink() {
-      const isOfficialProject = this.projectsList.some(({ name }) => name === this.activeProjectName)
-      const files = Object.entries(models).map((model) => {
-        const content = model[1].getValue()
-        const fileFromProject = this.activeProject.files.find(({ fileName }) => fileName === model[0])
-
-        if (fileFromProject.content !== content || !isOfficialProject) {
-          return {
-            fileName: model[0],
-            content: model[1].getValue()
-          }
-        }
-      })
-        .filter((a) => a)
-      const project = {
-        name: this.activeProjectName,
-        description: '',
-        files: files.filter(({ hidden }) => !hidden),
-        derivedProject: isOfficialProject,
-        robotVersion: this.selectedRFVersion
-      }
-      console.log(project)
-      var strProj = JSON.stringify(project)
-      var compProj = LZString.compressToEncodedURIComponent(strProj)
-      console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
-      return compProj
     },
     async setProjectFromGitHub(ghURL) {
       var project = await getProjectFromGitHub(ghURL)
@@ -281,13 +228,9 @@ export default {
             hidden: file.hidden,
             content: project.files.find(({ fileName }) => fileName === file.fileName)?.content || file.content
           }))
-        if (project.files.length) {
-          proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
-        }
         proj.robotVersion = project.robotVersion
         this.setProject(proj, proj.name)
       } else {
-        project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
         this.setProject(project, 'Custom code')
       }
     },
@@ -330,15 +273,18 @@ export default {
       this.editorStatus.loading = false
     },
     resetProject() {
-      const oldViewState = editor.saveViewState()
-      const currentProject = this.projectsList.find(({ name }) => name === this.activeProjectName)
-      this.setProjectFromConfig(currentProject, this.activeFileName, true)
-        .then(() => {
-          editor.restoreViewState(oldViewState)
-          this.output = ''
-          this.logSrc = null
-          this.reportSrc = null
-        })
+      const list = this.projectsList
+      const urlParams = (new URL(document.location)).searchParams
+      if (urlParams.get('codeProject')) {
+        this.setProjectsFromURL(urlParams.get('codeProject'))
+      } else if (urlParams.get('code-gh-url')) {
+        this.setProjectFromGitHub(urlParams.get('code-gh-url'))
+      } else if (urlParams.get('example')) {
+        const project = list.find(({ name }) => name === urlParams.get('example'))
+        this.setProjectFromConfig(project)
+      } else {
+        this.setProjectFromConfig(list[0], null, null, true)
+      }
     },
     setActiveFile(fileName) {
       // save previous file state
@@ -434,6 +380,7 @@ export default {
       run: (ed) => { this.runRobotTest() }
     })
     var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
+    var commandResetSuite = editor.addCommand(0, (ctx, tcName) => { this.resetProject() }, '')
 
     codeLens = monaco.languages.registerCodeLensProvider('robotframework', {
       provideCodeLenses: function(model, token) {
@@ -471,6 +418,20 @@ export default {
             arguments: []
           }
         })
+        lenses.push({
+          range: {
+            startLineNumber: 1,
+            startColumn: 2,
+            endLineNumber: 2,
+            endColumn: 2
+          },
+          command: {
+            id: commandResetSuite,
+            title: 'Reset Test Suite',
+            tooltip: 'Run Full Test Suite',
+            arguments: []
+          }
+        })
         return {
           lenses: lenses,
           dispose: () => {}
@@ -503,6 +464,9 @@ export default {
     window.addEventListener('click', this.clickFn)
     window.addEventListener('addLibdoc', ({ libdoc }) => {
       addLibrary(JSON.parse(libdoc))
+    })
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      monaco.editor.setTheme(event.matches ? 'rf-dark' : 'rf-light')
     })
     getProjectsList()
       .then((list) => {
