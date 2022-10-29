@@ -7,6 +7,7 @@ import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import CoC from '../views/CoC.vue'
 import Users from '../views/Users.vue'
 import Code from '../views/Code.vue'
+import Embed from '../views/Embed.vue'
 import Demoapp from '../views/Demoapp.vue'
 import NotFound from '../views/NotFound.vue'
 
@@ -66,6 +67,12 @@ const routes = [
     name: 'Code',
     component: Code,
     meta: { title: 'Playground' }
+  },
+  {
+    path: '/embed',
+    name: 'Embed',
+    component: Embed,
+    meta: { title: 'EmbeddedCode' }
   },
   {
     path: '/demoapp',

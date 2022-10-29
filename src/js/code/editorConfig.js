@@ -35,6 +35,20 @@ monaco.editor.defineTheme('rf-dark', {
     'editor.background': '#222222'
   }
 })
+monaco.editor.defineTheme('rf-light', {
+  base: 'vs',
+  inherit: true,
+  rules: [
+    { background: 'f0f0f0' },
+    { token: 'delimiter', foreground: '3b94d9', fontStyle: 'italic' },
+    { token: 'variable', foreground: '0707f7', fontStyle: 'italic' },
+    { token: 'string', foreground: '448C27', fontStyle: '' },
+    { token: 'type.robotframework', foreground: '060d7f', fontStyle: 'italic' }
+  ],
+  colors: {
+    'editor.background': '#f0f0f0'
+  }
+})
 
 monaco.languages.register({ id: 'robotframework' })
 monaco.languages.setMonarchTokensProvider('robotframework', {
