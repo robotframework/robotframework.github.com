@@ -1,6 +1,5 @@
 const path = require('path')
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
-const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,

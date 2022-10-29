@@ -99,14 +99,12 @@
 </template>
 
 <script>
-import NewTabIcon from './icons/NewTabIcon.vue'
 import RobotIcon from './icons/RobotIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 
 export default {
   name: 'Navbar',
   components: {
-    NewTabIcon,
     RobotIcon,
     ChevronIcon
   },
