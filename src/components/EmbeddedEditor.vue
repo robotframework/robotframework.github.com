@@ -273,6 +273,7 @@ export default {
       this.editorStatus.loading = false
     },
     resetProject() {
+      this.reinstallRF = true
       const list = this.projectsList
       const urlParams = (new URL(document.location)).searchParams
       if (urlParams.get('codeProject')) {
