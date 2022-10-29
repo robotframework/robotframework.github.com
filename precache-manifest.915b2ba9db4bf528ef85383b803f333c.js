@@ -12,12 +12,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code/hello-world/test.robot"
   },
   {
-    "revision": "cca4408414932236ed07",
-    "url": "/css/app.9ccfb12a.css"
+    "revision": "61403407ac4ddf6aac9b",
+    "url": "/css/app.aa5f0e96.css"
   },
   {
-    "revision": "ea68b2f955a263d49f4c",
-    "url": "/css/chunk-f73cff1e.28289fc0.css"
+    "revision": "257698151ca5d43193f0",
+    "url": "/css/chunk-769742de.70db8ad1.css"
+  },
+  {
+    "revision": "ae3729fbd147a192f4fc",
+    "url": "/css/chunk-b791df1a.8f4db155.css"
+  },
+  {
+    "revision": "9d3fa3d30b6e8dffdb4d",
+    "url": "/css/chunk-fbc6cfae.e352bf11.css"
   },
   {
     "revision": "526aa7977edefac832792e28c786ebab",
@@ -484,12 +492,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "42b97dd80eb7c615f981e1f504302669",
+    "revision": "3dd6072dd21d102f364e3e73cc7b3c1d",
     "url": "/index.html"
   },
   {
-    "revision": "cca4408414932236ed07",
-    "url": "/js/app.51719936.js"
+    "revision": "61403407ac4ddf6aac9b",
+    "url": "/js/app.0ddb3648.js"
   },
   {
     "revision": "7cd97869bc47d69d1381",
@@ -532,8 +540,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-7532b3ea.7e881d12.js"
   },
   {
-    "revision": "ea68b2f955a263d49f4c",
-    "url": "/js/chunk-f73cff1e.98d55f47.js"
+    "revision": "257698151ca5d43193f0",
+    "url": "/js/chunk-769742de.31378832.js"
+  },
+  {
+    "revision": "ae3729fbd147a192f4fc",
+    "url": "/js/chunk-b791df1a.4c308d97.js"
+  },
+  {
+    "revision": "9d3fa3d30b6e8dffdb4d",
+    "url": "/js/chunk-fbc6cfae.b506c995.js"
   },
   {
     "revision": "9c5442b1ae28eaf6170d",
