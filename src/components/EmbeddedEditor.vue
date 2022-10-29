@@ -96,7 +96,7 @@
           ><code
             id="output"
             v-html="output"
-            :class="$store.state.isMobile ? 'type-xsmall' : ''"
+            class="code-xsmall"
             ref="output" /></pre>
       </div>
       <!-- modal buttons -->
@@ -592,6 +592,13 @@ export default {
   .opacity-enter-from,
   .opacity-leave-to {
     opacity: 0;
+  }
+  .code-xsmall {
+    font-size: var(--type-xsmall);
+  }
+  code {
+    line-height: 1.5;
+    display: block;
   }
   @keyframes fade {
     0% {
