@@ -195,6 +195,8 @@ export default {
     copyMessage: null,
     RFVersions: [],
     selectedRFVersion: '',
+    robotArgs: {},
+    requirements: [],
     reinstallRF: false,
     versionDropdownOpen: false
   }),
@@ -264,6 +266,12 @@ export default {
       if (project.robotVersion) {
         this.selectedRFVersion = project.robotVersion
       }
+      if (project.robotArgs) {
+        this.robotArgs = project.robotArgs
+      }
+      if (project.requirements) {
+        this.requirements = project.requirements
+      }
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.editorStatus.projectModified = false
       this.copyMessage = null
@@ -325,7 +333,7 @@ export default {
         })
         this.editorStatus.running = true
         const init = this.reinstallRF
-        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion) }, 0)
+        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion, this.robotArgs, this.requirements) }, 0)
         this.reinstallRF = false
       })
     }

@@ -35,6 +35,12 @@ const getProject = async(projectUrl) => {
   if (configFile.robotVersion) {
     project.robotVersion = configFile.robotVersion
   }
+  if (configFile.robotArgs) {
+    project.robotArgs = configFile.robotArgs
+  }
+  if (configFile.requirements) {
+    project.requirements = configFile.requirements
+  }
   const descriptionFileName = configFile.description
   if (descriptionFileName) {
     project.description = await fetch(projectUrl + '/' + descriptionFileName)

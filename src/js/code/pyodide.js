@@ -75,22 +75,30 @@ function asyncRun(script, context, onMessage, initialize) {
   })
 }
 
-export async function runRobot(files, initialize, testCaseName = '', version = '') {
+export async function runRobot(files, initialize, testCaseName = '', version = '', robotArgs = {}, requirements = []) {
   console.log(`init: ${initialize}`)
   clearOutput()
   writeToOutput('Initializing...\n')
-  await asyncRun(pythonProgram, { file_catalog: JSON.stringify(files), test_case_name: testCaseName, version: version }, (data) => {
-    data = JSON.parse(data)
-    writeToOutput(data.std_output)
-    if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {
-      updateLogHtml(data.log_html)
-    }
-    if (Object.prototype.hasOwnProperty.call(data, 'report_html')) {
-      updateReportHtml(data.report_html)
-    }
-    if (Object.prototype.hasOwnProperty.call(data, 'libdocJson')) {
-      addLibraryEvent.libdoc = data.libdocJson
-      window.dispatchEvent(addLibraryEvent)
-    }
-  }, initialize)
+  await asyncRun(
+    pythonProgram, {
+      file_catalog: JSON.stringify(files),
+      test_case_name: testCaseName,
+      version: version,
+      robot_args: JSON.stringify(robotArgs),
+      requirements: JSON.stringify(requirements)
+    }, (data) => {
+      data = JSON.parse(data)
+      writeToOutput(data.std_output)
+      if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {
+        updateLogHtml(data.log_html)
+      }
+      if (Object.prototype.hasOwnProperty.call(data, 'report_html')) {
+        updateReportHtml(data.report_html)
+      }
+      if (Object.prototype.hasOwnProperty.call(data, 'libdocJson')) {
+        addLibraryEvent.libdoc = data.libdocJson
+        window.dispatchEvent(addLibraryEvent)
+      }
+    }, initialize
+  )
 }
