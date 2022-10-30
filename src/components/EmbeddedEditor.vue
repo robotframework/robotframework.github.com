@@ -3,11 +3,11 @@
     <transition name="fade">
       <div v-show="!(editorStatus.running || editorStatus.runCompleted)">
         <div
-          class="flex between bottom p-xsmall border-bottom-theme border-thin"
+          class="button-bar flex between bottom p-xsmall border-bottom-theme border-thin"
           :class="{['disabled']: editorStatus.loading}">
           <transition name="opacity" mode="out-in">
             <!-- file dropdown (mobile) -->
-            <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
+            <div v-if="$store.state.isMobile || activeProject?.files.length > 2" class="dropdown relative mr-xsmall" ref="fileDropdown">
               <button class="bg-grey-darkest stroke small flex middle between" @click="filesDropdownOpen = !filesDropdownOpen">
                 <transition name="opacity" mode="out-in">
                   <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
@@ -69,7 +69,7 @@
     <div v-show="editorStatus.running || editorStatus.runCompleted" class="row between" :class="isFullEditor ? 'px-medium pb-small' : ''">
       <div>
         <div
-          class="flex between bottom p-xsmall border-bottom-theme border-thin"
+          class="button-bar flex between bottom p-xsmall border-bottom-theme border-thin"
           :class="{['disabled']: editorStatus.loading}">
           <h4
             :class="[isFullEditor ? 'px-medium' : '', $store.state.isMobile ? 'ml-2xsmall' : 'ml-medium']">
@@ -97,10 +97,11 @@
             id="output"
             v-html="output"
             class="code-xsmall"
-            ref="output" /></pre>
+            ref="output" />
+        </pre>
       </div>
       <!-- modal buttons -->
-      <div class="col-sm-12 col-md-5 flex height-fit p-xsmall">
+      <div class="button-bar border-top-theme border-thin col-sm-12 col-md-5 flex height-fit p-xsmall">
         <transition name="opacity">
           <div v-if="logSrc">
             <button class="bg-grey-darkest stroke small flex mr-small middle" @click="showLog = true">
@@ -516,11 +517,11 @@ export default {
     width: 100%;
   }
   #monaco-container {
-    height: 90vh;
+    height: calc(100vh - 3.6rem);
     position: relative;
   }
   #monaco-container.full-screen-editor {
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 7.2rem);
   }
   .dropdown {
     height: fit-content;
@@ -550,7 +551,7 @@ export default {
     margin-bottom: var(--size-2xsmall);
   }
   .console {
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 7.3rem);
     width: 100vw;
     overflow: auto;
   }
@@ -607,6 +608,9 @@ export default {
   code {
     line-height: 1.5;
     display: block;
+  }
+  .button-bar {
+    height: 3.6rem;
   }
   @keyframes fade {
     0% {
