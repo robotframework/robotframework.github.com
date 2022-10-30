@@ -10,22 +10,30 @@ import time
 from importlib import import_module, reload
 from io import StringIO
 
+
+def log(message):
+    js.postMessage(json.dumps({"std_output": message}))
+
+
+requirements_list = json.loads(requirements)
+
 try:
     import robot
     from robot.libdocpkg import LibraryDocumentation
 except ImportError:
-    js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
+    log(f"Install Robot Framework")
     rf_version = f"=={version}" if version else ""
     try:
-        await micropip.install(f"robotframework{rf_version}")
+        await micropip.install(requirements_list or f"robotframework{rf_version}")
         time.sleep(1)
         import robot
         from robot.libdocpkg import LibraryDocumentation
     except Exception as e:
         js.console.log(f"Robot Run Exception: {e}")
         js.console.log(traceback.format_exc())
-    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
-
+    log(f" = version {robot.__version__}\n")
+    if requirements_list:
+        log(f"Installed Requirements: {requirements_list}\n")
 
 os.chdir("/")
 dirname = "robot_files"
@@ -43,7 +51,7 @@ class Listener:
     ROBOT_LISTENER_API_VERSION = 2
 
     def _post_message(self):
-        js.postMessage(json.dumps({"std_output": sys.stdout.getvalue()}))
+        log(sys.stdout.getvalue())
         sys.__stdout__.truncate(0)
 
     def library_import(self, name, attrs):
@@ -90,6 +98,7 @@ try:
             f.writelines(file["content"])
 
     file_list = json.loads(file_catalog)
+    robot_arguments = json.loads(robot_args)
 
     for file in file_list:
         write_file(file)
@@ -104,14 +113,13 @@ try:
             kwargs = {}
             testcli = ""
 
-        js.postMessage(
-            json.dumps(
-                {
-                    "std_output": f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
-                    f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n"
-                }
-            )
-        )
+        if robot_arguments:
+            log(f"Robot Run Arguments: {robot_args}\n")
+            log(f"\nRunning Robot Framework:\n")
+        else:
+            log(f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
+                f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n")
+
         org_stdout = sys.__stdout__
         org_stderr = sys.__stderr__
         sys.stdout = sys.__stdout__ = StringIO()
@@ -124,19 +132,25 @@ try:
                 js.console.log(f'reimporting: {file["fileName"]}')
                 m = import_module(file_name)
                 m = reload(m)
-
-        result = robot.run(
-            ".",
-            consolecolors="ansi",
-            listener=[Listener()],  # "RobotStackTracer",
-            loglevel="TRACE:INFO",
-            # include="INCL",
-            exclude="EXCL",
-            skip="SKIP",
-            removekeywords="tag:REMOVE",
-            flattenkeywords="tag:FLAT",
-            **kwargs,
-        )
+        if robot_arguments:
+            robot_arguments["listener"] = [Listener()] + robot_arguments.get("listener", [])
+            robot_arguments["consolecolors"] = "ansi"
+            result = robot.run(
+                ".",
+                **robot_arguments
+            )
+        else:
+            result = robot.run(
+                ".",
+                consolecolors="ansi",
+                listener=[Listener()],
+                loglevel="TRACE:INFO",
+                exclude="EXCL",
+                skip="SKIP",
+                removekeywords="tag:REMOVE",
+                flattenkeywords="tag:FLAT",
+                **kwargs,
+            )
         js.console.log(f"result: {result}")
     except Exception as e:
         js.console.log(f"Robot Run Exception: {e}")
@@ -146,7 +160,7 @@ try:
         std_output = sys.__stdout__.getvalue()
         sys.__stdout__ = org_stdout
         sys.stdout = sys.__stdout__
-        js.postMessage(json.dumps({"std_output": std_output}))
+        log(std_output)
 
     with open("/log.html", "r", encoding="UTF-8") as f:
         log_html = str(f.read())

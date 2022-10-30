@@ -12,16 +12,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code/hello-world/test.robot"
   },
   {
-    "revision": "2755bc9a3b293041f1ae",
+    "revision": "0a11c8dec9f259522fb8",
     "url": "/css/app.aa5f0e96.css"
   },
   {
-    "revision": "257698151ca5d43193f0",
-    "url": "/css/chunk-769742de.70db8ad1.css"
+    "revision": "b4cb8bd65a7e1f9eb205",
+    "url": "/css/chunk-2bcb5325.8601a43d.css"
   },
   {
-    "revision": "2cb578d39e878b4143e1",
-    "url": "/css/chunk-a00fef2a.a5c65995.css"
+    "revision": "9e86c6cff1a6544cf2fc",
+    "url": "/css/chunk-769742de.70db8ad1.css"
   },
   {
     "revision": "ae3729fbd147a192f4fc",
@@ -492,12 +492,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "2475bc1bf5afe2a8f37c6dab9ce41ad0",
+    "revision": "0a7cb55f8150e54be312e7927f25b1e8",
     "url": "/index.html"
   },
   {
-    "revision": "2755bc9a3b293041f1ae",
-    "url": "/js/app.10ea243c.js"
+    "revision": "0a11c8dec9f259522fb8",
+    "url": "/js/app.124b560d.js"
+  },
+  {
+    "revision": "b4cb8bd65a7e1f9eb205",
+    "url": "/js/chunk-2bcb5325.2d06e6c8.js"
   },
   {
     "revision": "7cd97869bc47d69d1381",
@@ -540,12 +544,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-7532b3ea.7e881d12.js"
   },
   {
-    "revision": "257698151ca5d43193f0",
-    "url": "/js/chunk-769742de.31378832.js"
-  },
-  {
-    "revision": "2cb578d39e878b4143e1",
-    "url": "/js/chunk-a00fef2a.f500ed00.js"
+    "revision": "9e86c6cff1a6544cf2fc",
+    "url": "/js/chunk-769742de.6a462276.js"
   },
   {
     "revision": "ae3729fbd147a192f4fc",
@@ -576,7 +576,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pyworker/py_worker.js"
   },
   {
-    "revision": "77d790dce2dbad39f5be1eb0a1e7afca",
+    "revision": "65923f88aeaf43f936179491c71e6fce",
     "url": "/pyworker/runRobot.py"
   },
   {
