@@ -179,7 +179,7 @@ export default () => ({
       },
       slack: {
         title: 'Slack',
-        description: 'Community team chat.<br><a href="https://rf-invite.herokuapp.com/" target="_blank">Click for invite!</a>'
+        description: 'Community team chat.<br><a href="https://slack.robotframework.org/" target="_blank">Click for invite!</a>'
       }
     }
   },
