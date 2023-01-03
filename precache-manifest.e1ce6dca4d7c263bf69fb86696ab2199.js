@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code/hello-world/test.robot"
   },
   {
-    "revision": "dd98dff8b53d4047a24e",
+    "revision": "327612b6a578779b8f3c",
     "url": "/css/app.aa5f0e96.css"
   },
   {
@@ -126,10 +126,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "19dd27f67e163ce3b22f573c8ff845a9",
     "url": "/img/carousel-company-icons/Wartsila.svg"
-  },
-  {
-    "revision": "a9121c5902617825ffaee4b454f87eb2",
-    "url": "/img/sponsors/aito.png"
   },
   {
     "revision": "3514f30854191f82482b140c5f075537",
@@ -260,10 +256,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/sponsors/oura.png"
   },
   {
-    "revision": "09a2c172969f7dd02d7ca23bc90f8011",
-    "url": "/img/sponsors/ouro.png"
-  },
-  {
     "revision": "8508ba8f3b93382dc3a215a78af94d25",
     "url": "/img/sponsors/qentinel.png"
   },
@@ -274,6 +266,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "76d024a86c588f900414396b6dd7f632",
     "url": "/img/sponsors/reaktor.png"
+  },
+  {
+    "revision": "ae61cc2b49ec0711fe0244c048313333",
+    "url": "/img/sponsors/relex.png"
   },
   {
     "revision": "b7620c520b6e5998c11aefe584be7fbc",
@@ -294,10 +290,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8eb43b1e87cf29bca83c08f5fdeda825",
     "url": "/img/sponsors/siili.png"
-  },
-  {
-    "revision": "41b200dc3619f5e9870892efd07e67ee",
-    "url": "/img/sponsors/sleepnumberlabs.png"
   },
   {
     "revision": "a9b217da635c8cac709c9fabee3b13cc",
@@ -492,12 +484,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "c7c147c61b140e3a4fcf28eb5fff4ac6",
+    "revision": "a46b3cd654516496120c4de46b928d87",
     "url": "/index.html"
   },
   {
-    "revision": "dd98dff8b53d4047a24e",
-    "url": "/js/app.d1a8e946.js"
+    "revision": "327612b6a578779b8f3c",
+    "url": "/js/app.148e3005.js"
   },
   {
     "revision": "a6b646d8367e03c47155",
