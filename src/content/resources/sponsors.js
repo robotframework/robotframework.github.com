@@ -1,11 +1,5 @@
 export default () => ([
   {
-    title: 'Aito Intelligence',
-    href: 'https://aito.ai/rpa/',
-    img: 'aito.png',
-    description: 'Aito provides predictions for intelligent automation. Robot software developers can use Aito’s machine learning faster and cost effectively to add intelligence to their workflows. Aito combines a database and machine learning to run together, removing loads of burdens of traditional machine learning projects.'
-  },
-  {
     title: 'Aktia',
     href: 'https://www.aktia.fi/',
     img: 'aktia.png',
@@ -200,12 +194,6 @@ export default () => ([
     description: 'Oura Health Ltd. is a Finnish health technology company, best known for the Oura Ring, a smart ring used to track sleep and physical activities.'
   },
   {
-    title: 'ouro',
-    href: 'https://www.ouro.fi/',
-    img: 'ouro.png',
-    description: 'Ouro is a Finnish company providing software automation solutions, including test automation and CI/CD pipeline development. We enable our customers to use modern software development tools, methods and practices.'
-  },
-  {
     title: 'qentinel',
     href: 'https://qentinel.fi/',
     img: 'qentinel.png',
@@ -223,6 +211,12 @@ export default () => ([
     href: 'https://reaktor.fi/',
     img: 'reaktor.png',
     description: 'Reaktor is a creative technology house that constructs exceptional digital services. We build services for clients specializing in finance, retail, media, telecommunications, in-flight services and the public sector.'
+  },
+  {
+    title: 'relex',
+    href: 'https://www.relexsolutions.com/',
+    img: 'relex.png',
+    description: 'RELEX Solutions provides market-leading software optimising supply chain and retail planning to reduce the carbon footprint. Our QA teams use Robot Framework in test automation against APIs and user interfaces, among other good test automation tools the teams find valuable.'
   },
   {
     title: 'robocorp',
@@ -253,12 +247,6 @@ export default () => ([
     href: 'https://www.siili.com/',
     img: 'siili.png',
     description: 'We are a modern, full-service technology company. We help you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise.'
-  },
-  {
-    title: 'sleep number labs',
-    href: 'https://www.sleepnumberlabs.com/index.html',
-    img: 'sleepnumberlabs.png',
-    description: 'Sleep Number Labs is a subsidiary of Sleep Number Corporation, the creators of the Sleep Number bed. Sleep Number Labs, the pioneers of biometric sensor sleep solutions and sleep-monitoring technologies, was acquired by Sleep Number in 2015. Sleep Number Labs has been foundational in elevating Sleep Number’s sleep innovation leadership and is quickly transforming the Sleep Number 360® smart bed into the hub of health and wellness.'
   },
   {
     title: 'smartdocs',
