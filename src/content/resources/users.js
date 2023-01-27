@@ -299,5 +299,13 @@ export default () => ([
     imgName: 'zymr.png',
     text: `Zymr has deep expertise in the Robot Framework and using it extensively for automating
       the test cases for the clients in various industries. It has been used within Docker and other containers.`
+  },
+  {
+    title: 'Medical Billing Wholesalers',
+    href: 'https://www.medicalbillingwholesalers.com/',
+    imgName: 'medical_billing.png',
+    text: `Consumed by our purpose of being the most agile healthcare services company in the world, 
+      we have created a strong delivery model combining the knowledge of our people with market-leading 
+      technologies to deliver great revenue cycle outcomes to our customers.`
   }
 ])
