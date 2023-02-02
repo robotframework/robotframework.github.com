@@ -31,6 +31,11 @@ export default () => ({
       name: 'Docs',
       items: [
         {
+          name: 'Guides (new)',
+          url: 'https://docs.robotframework.org/docs',
+          description: 'How to start'
+        },
+        {
           name: 'User Guide',
           url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
           description: 'All features explained'
@@ -131,7 +136,7 @@ export default () => ({
       <p>Below you'll find a live Robot Framework editor with embedded <a href="https://pyodide.org/en/stable/" target="_blank">WASM Python</a> environment to run it online.
       Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
       please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
-      <p>To start using Robot Framework in a project of your own, please also check tabs "Install" and "Learn".</p>`,
+      <p>To start using Robot Framework in a project of your own, please check tabs "Install" and "Learn". Also be sure to visit the new <a href="https://docs.robotframework.org/">Robot Framework Docs</a>!</p>`,
     tabs: [
       {
         name: 'Editor'

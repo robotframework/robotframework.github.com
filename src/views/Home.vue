@@ -7,7 +7,7 @@
     class="mb-small mt-small" />
   <div
     v-else
-    class="mb-medium" />
+    class="" />
   <div class="container mb-xlarge">
     <!-- introduction -->
     <page-section-twitter

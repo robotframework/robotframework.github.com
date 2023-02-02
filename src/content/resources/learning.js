@@ -1,8 +1,8 @@
 export default () => ([
   {
-    name: 'Installation Instructions',
-    description: 'Complete installation instructions.',
-    href: 'https://github.com/robotframework/robotframework/blob/master/INSTALL.rst'
+    name: 'Robot Framework Docs',
+    description: 'Learn with guides and examples that cover Robot Framework all the way from installation to advanced usage.',
+    href: 'https://docs.robotframework.org/'
   },
   {
     name: 'User Guide',
@@ -10,9 +10,9 @@ export default () => ([
     href: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html'
   },
   {
-    name: 'Quick Start Guide',
-    description: 'Introduces the most important features of Robot Framework and acts as an executable demo.',
-    href: 'https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst'
+    name: 'Public API',
+    description: 'Public API for writing your own tools against Robot Framework.',
+    href: 'https://robot-framework.readthedocs.org/en/latest/'
   },
   {
     name: 'How to write good test cases',
@@ -23,11 +23,6 @@ export default () => ([
     name: 'Dos And Don\'ts',
     description: 'Slide set loosely based on \'How to write good test cases\' guidelines.',
     href: 'https://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts'
-  },
-  {
-    name: 'Public API',
-    description: 'Public API for writing your own tools against Robot Framework.',
-    href: 'https://robot-framework.readthedocs.org/en/latest/'
   },
   {
     name: 'Introduction Slides',
