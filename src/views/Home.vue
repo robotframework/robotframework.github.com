@@ -1,5 +1,6 @@
 <template>
   <nav-mobile />
+  <robocon-banner />
   <banner />
   <navbar class="nav-desktop" />
   <news-banner
@@ -89,7 +90,8 @@ import {
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones
+  Milestones,
+  RoboconBanner
 } from 'Components'
 import VideoComponent from 'Components/VideoComponent'
 
@@ -110,6 +112,7 @@ export default {
     TabBox,
     Sponsors,
     Milestones,
+    RoboconBanner,
     MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }
