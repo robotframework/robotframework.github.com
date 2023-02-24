@@ -20,7 +20,7 @@
           <div>
             Finland
           </div>
-          <a href="mailto:robotframework-foundation@googlegroups.com">
+          <a href="mailto:board@robotframework.org">
             Contact
           </a>
         </div>

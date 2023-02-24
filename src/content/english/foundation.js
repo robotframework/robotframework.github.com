@@ -50,7 +50,7 @@ export default () => ({
         <li>Welcome to make the world of Open Source and Automation better!</li>
       </ol>
       <p>If you have any questions related to the membership, please send an email to
-      <a href="mailto:robotframework-foundation{at}{'@'}{at}googlegroups.com">robotframework-foundation{at}{'@'}{at}googlegroups.com</a>
+      <a href="mailto:board{at}{'@'}{at}robotframework.org">board{at}{'@'}{at}robotframework.org</a>
       and we will get back to you.</p>
       <h3>For existing members</h3>
       <p>If your contact person changes and for other such matters, please contact <a href="mailto:admin{at}{'@'}{at}robotframework.org">admin{at}{'@'}{at}robotframework.org</a></p>

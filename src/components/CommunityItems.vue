@@ -74,7 +74,7 @@ export default {
           description: this.$t('community.links.forum.description')
         }, {
           imgName: 'Slack',
-          href: 'https://robotframework.slack.com/',
+          href: 'https://slack.robotframework.org',
           title: this.$t('community.links.slack.title'),
           description: this.$t('community.links.slack.description')
         }, {

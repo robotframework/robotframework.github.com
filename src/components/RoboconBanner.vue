@@ -22,7 +22,7 @@
       </div>
     </div>
     <a class="type-large color-robocon" href="https://robocon.io/">
-      Get your discounted ticket!
+      Get your ticket here!
     </a>
   </div>
 </template>
