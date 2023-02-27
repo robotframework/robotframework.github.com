@@ -78,6 +78,12 @@ export default () => ([
     description: 'Eliga is a one-man company owned and operated by Pekka Klärck, the original author and lead developer of Robot Framework. It offers first class training and consulting services related to using and extending Robot Framework, test automation in general and Python programming.'
   },
   {
+    title: 'enqore',
+    href: 'https://www.enqore.tech/',
+    img: 'enqore.png',
+    description: 'Being able to rely on IT without a second thought. That is the objective of Enqore. The company helps organisations to be agile, to respond to new challenges and to be prepared for the unknown. With Test Automation Engineering in an Agile environment, this business ensures that every delivery to production proceeds without a hitch. Enqore does this at various levels: within teams that develop software in an Agile manner, with teams responsible for the CI/CD pipeline and at the level where the testing strategy is determined. Enqore is part of Conflux'
+  },
+  {
     title: 'etteplan',
     href: 'https://www.etteplan.com/services/testing-and-test-laboratory/software-test-automation',
     img: 'etteplan.png',
@@ -247,6 +253,12 @@ export default () => ([
     href: 'https://www.siili.com/',
     img: 'siili.png',
     description: 'We are a modern, full-service technology company. We help you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise.'
+  },
+  {
+    title: 'simplr',
+    href: 'https://simplr.company/',
+    img: 'simplr.png',
+    description: 'Simplr is a software development company focused on creating applications and tooling to best match the requirements of users. At Simplr we value open-source culture and endorse our employees to create and contribute to projects they use and enjoy. In addition to working on open source, we deliver high quality solutions matching the needs of our clients.'
   },
   {
     title: 'smartdocs',
