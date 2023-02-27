@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code/hello-world/test.robot"
   },
   {
-    "revision": "390011bab0f14e9c98bf",
+    "revision": "90e202704c3ed8253654",
     "url": "/css/app.7abb40ef.css"
   },
   {
@@ -180,6 +180,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/sponsors/eliga.png"
   },
   {
+    "revision": "4ab414d2561d03915fa0093a658541f9",
+    "url": "/img/sponsors/enqore.png"
+  },
+  {
     "revision": "d92b7add2d4345949e8a99d4669aec2e",
     "url": "/img/sponsors/etteplan.png"
   },
@@ -290,6 +294,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8eb43b1e87cf29bca83c08f5fdeda825",
     "url": "/img/sponsors/siili.png"
+  },
+  {
+    "revision": "42cb39e2c740143eb668896b9c454aaa",
+    "url": "/img/sponsors/simplr.png"
   },
   {
     "revision": "a9b217da635c8cac709c9fabee3b13cc",
@@ -484,12 +492,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/users/zymr.png"
   },
   {
-    "revision": "b10112524e73c5abd8d738752ef10cf0",
+    "revision": "45e500a9214f151745021e45617301aa",
     "url": "/index.html"
   },
   {
-    "revision": "390011bab0f14e9c98bf",
-    "url": "/js/app.2783435e.js"
+    "revision": "90e202704c3ed8253654",
+    "url": "/js/app.0f232f8a.js"
   },
   {
     "revision": "a6b646d8367e03c47155",
