@@ -1,6 +1,5 @@
 <template>
   <nav-mobile />
-  <robocon-banner />
   <banner />
   <navbar class="nav-desktop" />
   <news-banner
