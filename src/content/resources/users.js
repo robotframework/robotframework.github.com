@@ -299,5 +299,12 @@ export default () => ([
     imgName: 'zymr.png',
     text: `Zymr has deep expertise in the Robot Framework and using it extensively for automating
       the test cases for the clients in various industries. It has been used within Docker and other containers.`
+  },
+  {
+    title: 'SMART SYNERGIES',
+    href: 'https://www.smart-synergies.eu/',
+    imgName: 'SMART.png',
+    text: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial 
+      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
   }
 ])
