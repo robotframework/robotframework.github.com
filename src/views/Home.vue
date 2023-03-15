@@ -1,13 +1,8 @@
 <template>
   <nav-mobile />
   <banner />
+  <news-banner v-if="$te('newsBanner') && $t('newsBanner') !== ''" />
   <navbar class="nav-desktop" />
-  <news-banner
-    v-if="$te('newsBanner') && $t('newsBanner') !== ''"
-    class="mb-small mt-small" />
-  <div
-    v-else
-    class="" />
   <div class="container mb-xlarge">
     <!-- introduction -->
     <page-section-twitter

@@ -7,7 +7,7 @@ export default () => ({
   ...rpa(),
   ...testautomation(),
   langName: 'English',
-  newsBanner: '',
+  newsBanner: 'Answer the <a href="https://forms.gle/8oM4kioeJe3fWFyF8">Community Survey</a> and help us make the tool and the community even better.<div class="type-xsmall mt-xsmall">Please respond by 26.3.2023. Thank you for your time!</div>',
   navbar: {
     items: [
       {

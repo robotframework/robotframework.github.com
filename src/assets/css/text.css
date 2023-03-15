@@ -184,6 +184,9 @@ li {
 .font-body {
     font-family: var(--font-body);
 }
+.font-code {
+    font-family: 'Courier Code';
+}
 
 .type-nowrap {
     white-space: nowrap;
