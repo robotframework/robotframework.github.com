@@ -52,9 +52,13 @@ const routes = [
   },
   {
     path: '/code-of-conduct',
+    redirect: { name: 'CoC' }
+  },
+  {
+    path: '/code-of-ethics',
     name: 'CoC',
     component: CoC,
-    meta: { title: 'CoC' }
+    meta: { title: 'Code of Ethics' }
   },
   {
     path: '/users',
@@ -100,7 +104,7 @@ router.afterEach((to, from, next) => {
   const title = to.meta.title
   if (title) document.title = `${title} | Robot Framework`
   else document.title = 'Robot Framework'
-  next()
+  return true
 })
 
 export default router

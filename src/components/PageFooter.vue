@@ -129,7 +129,7 @@
             </div>
             <div>
               <router-link :to="{ name: 'CoC' }">
-                Code of Conduct
+                Code of Ethics
               </router-link>
             </div>
           </div>

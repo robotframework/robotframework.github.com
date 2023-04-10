@@ -51,11 +51,11 @@
         <community-items />
         <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
           <router-link :to="{ name: 'CoC' }" class="type-no-underline">
-            Code of Conduct
+            Code of Ethics
           </router-link>
         </button>
+        <video-component videoId='2GDrtvz_1Ds' class="col-sm-12 mt-small" />
       </div>
-      <VideoComponent videoId='2GDrtvz_1Ds'/>
     </page-section>
     <!-- development -->
     <page-section

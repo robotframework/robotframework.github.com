@@ -1,5 +1,11 @@
 export default () => ([
   {
+    title: 'ABB',
+    href: 'https://new.abb.com/',
+    img: 'abb.png',
+    description: 'ABB is a leading global technology company that energizes the transformation of society and industry to achieve a more productive, sustainable future. ABB employs about 5000 people in Finland. We use Robot Framework for hardware and software testing of multiple product lines, including variable frequency drives and power distribution automation.'
+  },
+  {
     title: 'Aktia',
     href: 'https://www.aktia.fi/',
     img: 'aktia.png',
@@ -28,6 +34,12 @@ export default () => ([
     href: 'https://www.capgemini.com',
     img: 'capgemini.png',
     description: 'Capgemini Netherlands is at the forefront of innovation to address the entire breadth of clients’ opportunities in the evolving world of cloud, digital and platforms. Building on its strong 50-year heritage and deep industry-specific expertise, Capgemini enables organizations to realize their business ambitions through an array of services from strategy to operations.'
+  },
+  {
+    title: 'cgi',
+    href: 'https://www.cgi.com/en/intelligence-automation',
+    img: 'cgi.png',
+    description: 'Founded in 1976, CGI is among the largest IT and business consulting services firms in the world. We are insights-driven and outcomes-based to help accelerate returns on your investments. CGI is privileged to work with clients around the world to use technology to support the vital workings of society and create a better future for all.'
   },
   {
     title: 'cisco',
@@ -211,6 +223,12 @@ export default () => ([
     img: 'qfactory.png',
     description: `
     Q-Factory is specialized in test automation and quality assurance services. Our expertise is based on strong project experience, and extensive testing and test tool knowledge. We emphasize on early software quality and we help fixing quality issues when it's most economical – before they are made.`
+  },
+  {
+    title: 'qubilea',
+    href: 'https://qubilea.fi/en/',
+    img: 'qubilea.png',
+    description: 'Qubilea is Finnish software quality assurance company, offering consulting services in software testing and test automation solutions.'
   },
   {
     title: 'reaktor',
