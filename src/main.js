@@ -23,7 +23,7 @@ import {
   users,
   sponsors
 } from './content'
-var hljsDefineRobot = require('./js/robot-highlight.js')
+import hljsDefineRobot from './js/robot-highlight.js'
 
 hljsDefineRobot(hljs)
 
