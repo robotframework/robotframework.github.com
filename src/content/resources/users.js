@@ -278,15 +278,6 @@ export default () => ([
       run speed while still keeping high reliability.`
   },
   {
-    title: 'Wärtsilä Digital Technologies',
-    href: 'https://www.wartsila.com/',
-    imgName: 'wartsila.png',
-    text: `Wärtsilä Digital Technologies uses Robot to automate various types of testing. API
-      testing, component testing, functional and system tests are used to ensure the highest quality
-      of a wide variety of software. The Robot Framework helps us automate testing of mobile
-      applications, web applications and cross-platform desktop applications.`
-  },
-  {
     title: 'Zilogic',
     href: 'https://www.zilogic.com',
     imgName: 'zilogic.png',
