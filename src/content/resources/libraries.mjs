@@ -53,7 +53,7 @@ export default () => ([
   },
   {
     name: 'Database Library (Python)',
-    href: 'https://github.com/franz-see/Robotframework-Database-Library',
+    href: 'https://github.com/MarketSquare/Robotframework-Database-Library',
     description: 'Python based library for database testing. Works with any Python interpreter, including Jython.',
     tags: ['db']
   },

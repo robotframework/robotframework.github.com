@@ -121,11 +121,6 @@ export default () => ({
         name: 'Nokia',
         description: 'Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces.',
         imgName: 'Nokia.svg'
-      },
-      {
-        name: 'Wärtsilä',
-        description: 'Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software.',
-        imgName: 'Wartsila.svg'
       }
     ]
   },
