@@ -194,6 +194,12 @@ export default () => ([
     tags: ['windows', 'ui']
   },
   {
+    name: 'Robotframework-MailClientLibrary',
+    href: 'https://github.com/noubar/RobotFramework-MailClientLibrary',
+    description: 'The Robotframework-MailClientLibrary is a keyword-based mail client library that supports testing of mail protocols, including IMAP, POP3, and SMTP with or without SSL connection.',
+    tags: ['mail', 'imap', 'smtp', 'pop3', 'ssl']
+    },
+  {
     name: 'RPA framework',
     href: 'https://github.com/robocorp/rpaframework',
     description: 'Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used both with Robot Framework and Python.',
