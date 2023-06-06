@@ -279,6 +279,12 @@ export default () => ([
     description: 'Simplr is a software development company focused on creating applications and tooling to best match the requirements of users. At Simplr we value open-source culture and endorse our employees to create and contribute to projects they use and enjoy. In addition to working on open source, we deliver high quality solutions matching the needs of our clients.'
   },
   {
+    title: 'Slovenská sporiteľňa',
+    href: 'https://www.slsp.sk/',
+    img: 'slsp.png',
+    description: 'Slovenská sporiteľňa is the largest commercial bank in Slovakia, servicing more than 2.2 million clients. For a long time, it keeps its leadership in the area of total assets, credits, client‘s deposits, number of branches and ATMs. It offers its comprehensive services in more than 190 branches and 8 commercial centers in Slovakia. The long-term tradition, trust, and customer satisfaction combined with the know-how and experience of its owner have created good prerequisites for the bank´s success in the Slovak and European banking market. From 2001 on, Slovenská sporiteľňa became a member of Erste Group, that operates in 7 European countries. Slovenská sporiteľňa focuses on digital innovations and value-added services. Robot Framework plays a key role in test automation and RPA solutions.'
+  },
+  {
     title: 'smartdocs',
     href: 'https://www.smartdocs.ai',
     img: 'smartdocs.png',
@@ -313,11 +319,5 @@ export default () => ([
     href: 'https://www.veikkaus.fi/',
     img: 'veikkaus.png',
     description: 'Almost all adult Finns play our games; at Veikkaus we have over two million loyal customers. Thanks to the players, over one billion euros a year are accumulated for the common good. Robot Framework plays a key role in our test automation and RPA.'
-  },
-  {
-    title: 'Slovenská sporiteľňa',
-    href: 'https://www.slsp.sk/',
-    img: 'slsp.png',
-    description: 'Slovenská sporiteľňa is the largest commercial bank in Slovakia, servicing more than 2.2 million clients. For a long time, it keeps its leadership in the area of total assets, credits, client‘s deposits, number of branches and ATMs. It offers its comprehensive services in more than 190 branches and 8 commercial centers in Slovakia. The long-term tradition, trust, and customer satisfaction combined with the know-how and experience of its owner have created good prerequisites for the bank´s success in the Slovak and European banking market. From 2001 on, Slovenská sporiteľňa became a member of Erste Group, that operates in 7 European countries. Slovenská sporiteľňa focuses on digital innovations and value-added services. Robot Framework plays a key role in test automation and RPA solutions.'
   }
 ])
