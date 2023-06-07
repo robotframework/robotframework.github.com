@@ -108,12 +108,6 @@ export default () => ([
     description: '5G testing, E2E automation and network quality assurance.'
   },
   {
-    title: 'finnair',
-    href: 'https://www.finnair.com/',
-    img: 'finnair.png',
-    description: 'Finnair is using Robot Framework to support Finnair digital platform development.'
-  },
-  {
     title: 'gofore',
     href: 'https://gofore.com/en/',
     img: 'gofore.png',
@@ -160,12 +154,6 @@ export default () => ([
     href: 'https://www.luotocompany.fi/',
     img: 'luoto.png',
     description: 'Full-stack software development company that focus on high quality. Interest in data and AI/ML also. Luoto has one of a kind, modern organization structure through full partner program, with lean management and sharp focus on customer experience. Our customers will get best 10% of IT specialist in market, who own the customer experience.'
-  },
-  {
-    title: 'meliora',
-    href: 'https://www.melioratestlab.com/',
-    img: 'meliora.png',
-    description: 'Meliora Ltd develops Meliora Testlab, a cutting edge test management tool. Testlab integrates with Robot Framework to leanly give full visibility on quality – seamlessly integrating manual and automated testing efforts with specifications and issues.'
   },
   {
     title: 'nets',
