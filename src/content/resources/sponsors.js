@@ -200,6 +200,12 @@ export default () => ([
     description: 'Oura Health Ltd. is a Finnish health technology company, best known for the Oura Ring, a smart ring used to track sleep and physical activities.'
   },
   {
+    title: 'posti',
+    href: 'https://www.posti.com/',
+    img: 'posti.png',
+    description: 'Posti is one of the leading delivery and fulfillment companies in Finland, Sweden and Baltics. We tend to the smoothness of our customers’ everyday lives and business by offering a wide range of postal, logistics, freight, and eCommerce services. We have the widest network coverage in Finland, and we visit around three million households and companies every weekday. We actively use Robot Framework in the test automation suites, improving quality and allowing for increased speed of developing new features for our many products.'
+  },
+  {
     title: 'qentinel',
     href: 'https://qentinel.fi/',
     img: 'qentinel.png',
@@ -247,6 +253,12 @@ export default () => ([
     href: 'https://www.segron.com',
     img: 'segron.png',
     description: 'SEGRON provides Beyond End2End Test Automation solutions for communication networks. Our unique Automated Test Framework approach can orchestrate real-time testing with Out-of-the-Box end-user devices (iOS and Android smartphones and IoT devices). We strive to offer the industry expertise and reliable service that businesses look for in a long-term test automation partner.'
+  },
+  {
+    title: 'sepp.med',
+    href: 'https://www.seppmed.de/en/',
+    img: 'seppmed.png',
+    description: 'Digitalization boosted by sepp.med quality Software development, quality assurance and testing for security-critical fields – for more than 40 years. sepp.med is an it-consultancy, an it-service provider and also a tool manufacturer. With and for our customers, we shape the digitalization of the future. This starts with consulting on possible regulatory requirements, standards and guidelines (ISO/IEC, SPICE, FDA or MDR), includes requirements and project management and covers also the whole development process including reliable test concepts and test execution. Using the expertise and scalability of our agile software factory or our agile test factory we also take over entire development or test projects. Furthermore, we are happy to share our knowledge about software development and test processes in open or individual trainings within our ISTQB® accredited training academy.'
   },
   {
     title: 'signant health',
