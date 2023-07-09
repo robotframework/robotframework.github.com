@@ -102,7 +102,7 @@ export default () => ({
         imgName: 'Finnair.svg'
       },
       {
-        title: 'Finnish Tax Administration',
+        name: 'Finnish Tax Administration',
         description: `Finnish Tax Administration is using Robot Framework in multiple projects.
         Robot Framework is one of the core tools in their development to make Quality Assurance and Automation.`,
         imgName: 'Vero.svg'

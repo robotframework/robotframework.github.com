@@ -5,14 +5,16 @@
   <navbar class="nav-desktop" />
   <div class="container mb-xlarge">
     <!-- introduction -->
-    <page-section-twitter
+    <page-section
       title-id="introduction"
-      :title="$t('introduction.title')"
-      :body="$t('introduction.body')">
-      <div class="mt-small mb-small">
-        <company-carousel />
+      :title="$t('introduction.title')">
+      <div class="col-sm-12 col-lg-9 row">
+        <div class="col-sm-12 col-lg-8 pr-small" v-html="$t('introduction.body')" />
+        <div class="col-lg-4 pt-xsmall">
+          <company-carousel />
+        </div>
       </div>
-    </page-section-twitter>
+    </page-section>
     <!-- getting started -->
     <page-section
       title-id="getting-started"
