@@ -51,6 +51,9 @@
     border-top: solid 0.2rem var(--color-white);
 }
 
+.border-light {
+    border-width: 0.1rem;
+}
 .border-thin {
     border-width: 0.05rem;
 }

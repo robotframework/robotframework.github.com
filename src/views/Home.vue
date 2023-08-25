@@ -1,23 +1,20 @@
 <template>
   <nav-mobile />
   <banner />
+  <news-banner v-if="$te('newsBanner') && $t('newsBanner') !== ''" />
   <navbar class="nav-desktop" />
-  <news-banner
-    v-if="$te('newsBanner') && $t('newsBanner') !== ''"
-    class="mb-small mt-small" />
-  <div
-    v-else
-    class="mb-medium" />
   <div class="container mb-xlarge">
     <!-- introduction -->
-    <page-section-twitter
+    <page-section
       title-id="introduction"
-      :title="$t('introduction.title')"
-      :body="$t('introduction.body')">
-      <div class="mt-small mb-small">
-        <company-carousel />
+      :title="$t('introduction.title')">
+      <div class="col-sm-12 col-lg-9 row">
+        <div class="col-sm-12 col-lg-8 pr-small" v-html="$t('introduction.body')" />
+        <div class="col-lg-4 pt-xsmall">
+          <company-carousel />
+        </div>
       </div>
-    </page-section-twitter>
+    </page-section>
     <!-- getting started -->
     <page-section
       title-id="getting-started"
@@ -56,11 +53,11 @@
         <community-items />
         <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
           <router-link :to="{ name: 'CoC' }" class="type-no-underline">
-            Code of Conduct
+            Code of Ethics
           </router-link>
         </button>
+        <video-component videoId='2GDrtvz_1Ds' class="col-sm-12 mt-small" />
       </div>
-      <VideoComponent videoId='2GDrtvz_1Ds'/>
     </page-section>
     <!-- development -->
     <page-section
@@ -89,7 +86,8 @@ import {
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones
+  Milestones,
+  RoboconBanner
 } from 'Components'
 import VideoComponent from 'Components/VideoComponent'
 
@@ -110,6 +108,7 @@ export default {
     TabBox,
     Sponsors,
     Milestones,
+    RoboconBanner,
     MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }

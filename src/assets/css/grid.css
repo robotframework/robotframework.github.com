@@ -51,6 +51,10 @@
   flex-wrap: wrap;
 }
 
+.gap-2xsmall {
+  gap: var(--size-2xsmall);
+}
+
 .nowrap {
   flex-wrap: nowrap;
 }

@@ -228,10 +228,10 @@ export default () => ([
       software for Trucks and Automated Guided Vehicles (AGV’s).`
   },
   {
-    title: 'Ryerson',
-    href: 'https://www.ryerson.ca/',
-    imgName: 'ryerson.png',
-    text: `Ryerson University uses Robot Framework to conduct desktop and mobile
+    title: 'Toronto Metropolitan University',
+    href: 'https://www.torontomu.ca/',
+    imgName: 'tmu_logo.png',
+    text: `Toronto Metropolitan University uses Robot Framework to conduct desktop and mobile
       browser testing for its suite of applications that serve both students and staff.`
   },
 
@@ -278,15 +278,6 @@ export default () => ([
       run speed while still keeping high reliability.`
   },
   {
-    title: 'Wärtsilä Digital Technologies',
-    href: 'https://www.wartsila.com/',
-    imgName: 'wartsila.png',
-    text: `Wärtsilä Digital Technologies uses Robot to automate various types of testing. API
-      testing, component testing, functional and system tests are used to ensure the highest quality
-      of a wide variety of software. The Robot Framework helps us automate testing of mobile
-      applications, web applications and cross-platform desktop applications.`
-  },
-  {
     title: 'Zilogic',
     href: 'https://www.zilogic.com',
     imgName: 'zilogic.png',
@@ -307,5 +298,12 @@ export default () => ([
     text: `Consumed by our purpose of being the most agile healthcare services company in the world, 
       we have created a strong delivery model combining the knowledge of our people with market-leading 
       technologies to deliver great revenue cycle outcomes to our customers.`
+  },
+  {
+    title: 'SMART SYNERGIES',
+    href: 'https://www.smart-synergies.eu/',
+    imgName: 'SMART.png',
+    text: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial 
+      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
   }
 ])

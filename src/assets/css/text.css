@@ -23,6 +23,10 @@
     font-display: swap;
     font-weight: 600;
 }
+@font-face {
+    font-family: RBCN;
+    src: url('~Fonts/RBCN23.woff2') format('woff');
+}
 
 h1, h2, h3, h4 {
     font-family: var(--font-title);
@@ -179,6 +183,9 @@ li {
 }
 .font-body {
     font-family: var(--font-body);
+}
+.font-code {
+    font-family: 'Courier Code';
 }
 
 .type-nowrap {

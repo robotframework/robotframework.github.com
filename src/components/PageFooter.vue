@@ -20,7 +20,7 @@
           <div>
             Finland
           </div>
-          <a href="mailto:robotframework-foundation@googlegroups.com">
+          <a href="mailto:board@robotframework.org">
             Contact
           </a>
         </div>
@@ -129,7 +129,7 @@
             </div>
             <div>
               <router-link :to="{ name: 'CoC' }">
-                Code of Conduct
+                Code of Ethics
               </router-link>
             </div>
           </div>

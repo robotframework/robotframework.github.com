@@ -1,5 +1,11 @@
 export default () => ([
   {
+    title: 'ABB',
+    href: 'https://new.abb.com/',
+    img: 'abb.png',
+    description: 'ABB is a leading global technology company that energizes the transformation of society and industry to achieve a more productive, sustainable future. ABB employs about 5000 people in Finland. We use Robot Framework for hardware and software testing of multiple product lines, including variable frequency drives and power distribution automation.'
+  },
+  {
     title: 'Aktia',
     href: 'https://www.aktia.fi/',
     img: 'aktia.png',
@@ -28,6 +34,12 @@ export default () => ([
     href: 'https://www.capgemini.com',
     img: 'capgemini.png',
     description: 'Capgemini Netherlands is at the forefront of innovation to address the entire breadth of clients’ opportunities in the evolving world of cloud, digital and platforms. Building on its strong 50-year heritage and deep industry-specific expertise, Capgemini enables organizations to realize their business ambitions through an array of services from strategy to operations.'
+  },
+  {
+    title: 'cgi',
+    href: 'https://www.cgi.com/en/intelligence-automation',
+    img: 'cgi.png',
+    description: 'Founded in 1976, CGI is among the largest IT and business consulting services firms in the world. We are insights-driven and outcomes-based to help accelerate returns on your investments. CGI is privileged to work with clients around the world to use technology to support the vital workings of society and create a better future for all.'
   },
   {
     title: 'cisco',
@@ -78,6 +90,12 @@ export default () => ([
     description: 'Eliga is a one-man company owned and operated by Pekka Klärck, the original author and lead developer of Robot Framework. It offers first class training and consulting services related to using and extending Robot Framework, test automation in general and Python programming.'
   },
   {
+    title: 'enqore',
+    href: 'https://www.enqore.tech/',
+    img: 'enqore.png',
+    description: 'Being able to rely on IT without a second thought. That is the objective of Enqore. The company helps organisations to be agile, to respond to new challenges and to be prepared for the unknown. With Test Automation Engineering in an Agile environment, this business ensures that every delivery to production proceeds without a hitch. Enqore does this at various levels: within teams that develop software in an Agile manner, with teams responsible for the CI/CD pipeline and at the level where the testing strategy is determined. Enqore is part of Conflux'
+  },
+  {
     title: 'etteplan',
     href: 'https://www.etteplan.com/services/testing-and-test-laboratory/software-test-automation',
     img: 'etteplan.png',
@@ -88,12 +106,6 @@ export default () => ([
     href: 'https://www.f2gsolutions.com',
     img: 'f2g.png',
     description: '5G testing, E2E automation and network quality assurance.'
-  },
-  {
-    title: 'finnair',
-    href: 'https://www.finnair.com/',
-    img: 'finnair.png',
-    description: 'Finnair is using Robot Framework to support Finnair digital platform development.'
   },
   {
     title: 'gofore',
@@ -144,12 +156,6 @@ export default () => ([
     description: 'Full-stack software development company that focus on high quality. Interest in data and AI/ML also. Luoto has one of a kind, modern organization structure through full partner program, with lean management and sharp focus on customer experience. Our customers will get best 10% of IT specialist in market, who own the customer experience.'
   },
   {
-    title: 'meliora',
-    href: 'https://www.melioratestlab.com/',
-    img: 'meliora.png',
-    description: 'Meliora Ltd develops Meliora Testlab, a cutting edge test management tool. Testlab integrates with Robot Framework to leanly give full visibility on quality – seamlessly integrating manual and automated testing efforts with specifications and issues.'
-  },
-  {
     title: 'nets',
     href: 'https://www.nets.eu/',
     img: 'nets.png',
@@ -194,6 +200,12 @@ export default () => ([
     description: 'Oura Health Ltd. is a Finnish health technology company, best known for the Oura Ring, a smart ring used to track sleep and physical activities.'
   },
   {
+    title: 'posti',
+    href: 'https://www.posti.com/',
+    img: 'posti.png',
+    description: 'Posti is one of the leading delivery and fulfillment companies in Finland, Sweden and Baltics. We tend to the smoothness of our customers’ everyday lives and business by offering a wide range of postal, logistics, freight, and eCommerce services. We have the widest network coverage in Finland, and we visit around three million households and companies every weekday. We actively use Robot Framework in the test automation suites, improving quality and allowing for increased speed of developing new features for our many products.'
+  },
+  {
     title: 'qentinel',
     href: 'https://qentinel.fi/',
     img: 'qentinel.png',
@@ -205,6 +217,12 @@ export default () => ([
     img: 'qfactory.png',
     description: `
     Q-Factory is specialized in test automation and quality assurance services. Our expertise is based on strong project experience, and extensive testing and test tool knowledge. We emphasize on early software quality and we help fixing quality issues when it's most economical – before they are made.`
+  },
+  {
+    title: 'qubilea',
+    href: 'https://qubilea.fi/en/',
+    img: 'qubilea.png',
+    description: 'Qubilea is Finnish software quality assurance company, offering consulting services in software testing and test automation solutions.'
   },
   {
     title: 'reaktor',
@@ -237,6 +255,12 @@ export default () => ([
     description: 'SEGRON provides Beyond End2End Test Automation solutions for communication networks. Our unique Automated Test Framework approach can orchestrate real-time testing with Out-of-the-Box end-user devices (iOS and Android smartphones and IoT devices). We strive to offer the industry expertise and reliable service that businesses look for in a long-term test automation partner.'
   },
   {
+    title: 'sepp.med',
+    href: 'https://www.seppmed.de/en/',
+    img: 'seppmed.png',
+    description: 'Digitalization boosted by sepp.med quality Software development, quality assurance and testing for security-critical fields – for more than 40 years. sepp.med is an it-consultancy, an it-service provider and also a tool manufacturer. With and for our customers, we shape the digitalization of the future. This starts with consulting on possible regulatory requirements, standards and guidelines (ISO/IEC, SPICE, FDA or MDR), includes requirements and project management and covers also the whole development process including reliable test concepts and test execution. Using the expertise and scalability of our agile software factory or our agile test factory we also take over entire development or test projects. Furthermore, we are happy to share our knowledge about software development and test processes in open or individual trainings within our ISTQB® accredited training academy.'
+  },
+  {
     title: 'signant health',
     href: 'https://signanthealth.com',
     img: 'signant.png',
@@ -247,6 +271,18 @@ export default () => ([
     href: 'https://www.siili.com/',
     img: 'siili.png',
     description: 'We are a modern, full-service technology company. We help you create better business and meaningful digital experiences by combining strategic insight, creative design, data management, and technology expertise.'
+  },
+  {
+    title: 'simplr',
+    href: 'https://simplr.company/',
+    img: 'simplr.png',
+    description: 'Simplr is a software development company focused on creating applications and tooling to best match the requirements of users. At Simplr we value open-source culture and endorse our employees to create and contribute to projects they use and enjoy. In addition to working on open source, we deliver high quality solutions matching the needs of our clients.'
+  },
+  {
+    title: 'Slovenská sporiteľňa',
+    href: 'https://www.slsp.sk/',
+    img: 'slsp.png',
+    description: 'Slovenská sporiteľňa is the largest commercial bank in Slovakia, servicing more than 2.2 million clients. For a long time, it keeps its leadership in the area of total assets, credits, client‘s deposits, number of branches and ATMs. It offers its comprehensive services in more than 190 branches and 8 commercial centers in Slovakia. The long-term tradition, trust, and customer satisfaction combined with the know-how and experience of its owner have created good prerequisites for the bank´s success in the Slovak and European banking market. From 2001 on, Slovenská sporiteľňa became a member of Erste Group, that operates in 7 European countries. Slovenská sporiteľňa focuses on digital innovations and value-added services. Robot Framework plays a key role in test automation and RPA solutions.'
   },
   {
     title: 'smartdocs',
