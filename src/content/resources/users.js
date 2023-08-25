@@ -292,6 +292,14 @@ export default () => ([
       the test cases for the clients in various industries. It has been used within Docker and other containers.`
   },
   {
+    title: 'Medical Billing Wholesalers',
+    href: 'https://www.medicalbillingwholesalers.com/',
+    imgName: 'medical_billing.png',
+    text: `Consumed by our purpose of being the most agile healthcare services company in the world, 
+      we have created a strong delivery model combining the knowledge of our people with market-leading 
+      technologies to deliver great revenue cycle outcomes to our customers.`
+  },
+  {
     title: 'SMART SYNERGIES',
     href: 'https://www.smart-synergies.eu/',
     imgName: 'SMART.png',
