@@ -1619,11 +1619,11 @@ export default {
                   'Rocla is using Robot Framework widely in development and testing of the software for Trucks and Automated Guided Vehicles (AGV’s).'
               },
               {
-                title: 'ryerson',
-                href: 'https://www.ryerson.ca/',
-                img: require('@/assets/img/users/ryerson.png'),
+                title: 'Toronto Metropolitan University',
+                href: 'https://www.torontomu.ca//',
+                img: require('@/assets/img/users/tmu_logo.png'),
                 text:
-                  'Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff.'
+                  'Toronto Metropolitan University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff.'
               },
 
               {
