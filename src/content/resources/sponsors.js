@@ -178,7 +178,7 @@ export default () => ([
     title: 'northcode',
     href: 'https://www.northcode.fi/',
     img: 'northcode.png',
-    description: 'We do everything related to Software Automation (SA). DevOps, DevSecOps, Robotic Process Automation, Test Automation, CI/CD etc, you name it and we do it! We have a disruptive model in the way how we see the company as a community. The cornerstones of the model are ownership, fairness and transparency. Automation is the catalyst for technical revolution. SA frees people to work with more complex matters in order to achieve prosperity for mankind!'
+    description: 'We are a consulting company that offers DevSecOps services.<br><br>The foundation of our operations is our epic ownership model, where every employee is also a shareholder in the company.'
   },
   {
     title: 'op',
@@ -204,6 +204,12 @@ export default () => ([
     href: 'https://www.posti.com/',
     img: 'posti.png',
     description: 'Posti is one of the leading delivery and fulfillment companies in Finland, Sweden and Baltics. We tend to the smoothness of our customers’ everyday lives and business by offering a wide range of postal, logistics, freight, and eCommerce services. We have the widest network coverage in Finland, and we visit around three million households and companies every weekday. We actively use Robot Framework in the test automation suites, improving quality and allowing for increased speed of developing new features for our many products.'
+  },
+  {
+    title: 'prove',
+    href: 'https://www.prove.fi/',
+    img: 'prove.png',
+    description: "Prove is a trailblazer in the wildly unpredictable and fast-paced world of tech, where we excel as leaders in software testing. Specializing in those high-stakes moments characterized by tight deadlines and limited information, Prove delivers state-of-the-art software testing results. Our philosophy is simple: software quality is mental health. Everybody, from coder to client, is happier when software works. Everyone wants to play on the winning team. With Prove on your side, you're not just ensuring that your software development soars—you're also investing in peace of mind for your team and your customers."
   },
   {
     title: 'qentinel',
