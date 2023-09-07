@@ -265,7 +265,7 @@ export default () => ([
     href: 'https://www.tesena.com/',
     imgName: 'tesena.png',
     text: `Testing is not just something we do. It is everything we do.
-      We help companies reveal bugs in their software and save costs thanks to our know-how. 
+      We help companies reveal bugs in their software and save costs thanks to our know-how.
       We are leaders in the testing community, providing training courses, events and inspiration in the field of software testing.`
   },
   {
@@ -295,15 +295,8 @@ export default () => ([
     title: 'Medical Billing Wholesalers',
     href: 'https://www.medicalbillingwholesalers.com/',
     imgName: 'medical_billing.png',
-    text: `Consumed by our purpose of being the most agile healthcare services company in the world, 
-      we have created a strong delivery model combining the knowledge of our people with market-leading 
+    text: `Consumed by our purpose of being the most agile healthcare services company in the world,
+      we have created a strong delivery model combining the knowledge of our people with market-leading
       technologies to deliver great revenue cycle outcomes to our customers.`
-  },
-  {
-    title: 'SMART SYNERGIES',
-    href: 'https://www.smart-synergies.eu/',
-    imgName: 'SMART.png',
-    text: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial 
-      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
   }
 ])

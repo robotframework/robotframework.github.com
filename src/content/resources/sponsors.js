@@ -297,6 +297,13 @@ export default () => ([
     description: 'Smart Docs Procurement Platform empowers companies around the world to help optimize and streamline their procurement processes. SmartDocs uses Al/ML models and provides a comprehensive set of controls to help Enterprise Procurement teams to monitor and manage procurement operations. By providing an awesome user experience, SmartDocs eliminates the hurdles and complexities of enterprise procurement processes.'
   },
   {
+    title: 'smart synergies',
+    href: 'https://www.smart-synergies.eu/',
+    img: 'smartsynergies.png',
+    description: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial
+      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
+  },
+  {
     title: 'symbio',
     href: 'https://fi.symbio.com/',
     img: 'symbio.png',
