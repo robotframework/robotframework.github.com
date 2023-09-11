@@ -254,6 +254,13 @@ export default () => ([
       solution for testing multiple interfaces and technologies with a single tool.`
   },
   {
+    title: 'Smart Synergies',
+    href: 'https://www.smart-synergies.eu/',
+    imgName: 'smartsynergies.png',
+    text: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial 
+      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
+  },
+  {
     title: 'Testmo',
     href: 'https://www.testmo.com/',
     imgName: 'testmo.png',

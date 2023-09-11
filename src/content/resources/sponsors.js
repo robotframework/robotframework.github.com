@@ -156,10 +156,10 @@ export default () => ([
     description: 'Full-stack software development company that focus on high quality. Interest in data and AI/ML also. Luoto has one of a kind, modern organization structure through full partner program, with lean management and sharp focus on customer experience. Our customers will get best 10% of IT specialist in market, who own the customer experience.'
   },
   {
-    title: 'nets',
-    href: 'https://www.nets.eu/',
-    img: 'nets.png',
-    description: 'At Nets, we see easier products and solutions as the foundation for growth and progress – both in commerce and society. With 2,400 employees located in Denmark, Norway, Finland, Sweden and Estonia, we help financial institutions, businesses and merchants across the Nordic and Baltic regions make tomorrow a little easier for their customers while delivering unrivalled security and stability. Powering a tomorrow that’s easier than today. This is what drives us.'
+    title: 'nexi',
+    href: 'https://www.nexigroup.com/en/',
+    img: 'nexi.png',
+    description: 'Nexi Digital Finland is a software development and innovation centre for Nexi Group located in Espoo, Finland. <br>As a part of one of the biggest European PayTech companies, we drive the product development of digital in-store payment products and services. First of its kind in the Nordics, Nexi Digital Finland development hub aims to bring pioneering solutions to support Nexi Group shape the future of the payment industry. <br>Nexi Group is the merger and integration of Nexi, Nets and Sia and has operations in over 25 European countries. More than 10 000 professionals in Nexi Group work towards the transition of a cashless Europe by making every payment digital.'
   },
   {
     title: 'nokia',
