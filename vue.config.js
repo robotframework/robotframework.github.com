@@ -2,6 +2,7 @@ const path = require('path')
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 module.exports = {
+  outputDir: 'docs',
   productionSourceMap: false,
   devServer: {
     allowedHosts: 'all'
