@@ -212,6 +212,12 @@ export default () => ([
     description: "Prove is a trailblazer in the wildly unpredictable and fast-paced world of tech, where we excel as leaders in software testing. Specializing in those high-stakes moments characterized by tight deadlines and limited information, Prove delivers state-of-the-art software testing results. Our philosophy is simple: software quality is mental health. Everybody, from coder to client, is happier when software works. Everyone wants to play on the winning team. With Prove on your side, you're not just ensuring that your software development soars—you're also investing in peace of mind for your team and your customers."
   },
   {
+    title: 'provinzial',
+    href: 'https://www.provinzial.de/',
+    img: 'provinzial.png',
+    description: 'The Provinzial Holding AG is the second largest insurance group in Germany. We ensure what is dear to our customers. We gain our strength from the regional ties of our subsidiaries. For more than 300 years, we are where our customers are. Today, more than five million private and corporate customers place their trust in us. What makes us special is our regionality and proximity. Our advisors are at most a few minutes away from our customers and can be reached through our many digital channels at any time. Furthermore, we put great importance on sustainability and commitment to the regions that are firmly anchored in our corporate values. Whether in the field of art and culture, sports sponsorship or security: We engage ourselves - and we do so in many different areas.'
+  },
+  {
     title: 'qentinel',
     href: 'https://qentinel.fi/',
     img: 'qentinel.png',
