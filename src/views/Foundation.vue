@@ -47,6 +47,9 @@ export default {
     PageSection,
     SponsorsDetailed,
     PageFooter
-  }
+  },
+  data: () => ({
+    publicPath: process.env.BASE_URL
+  })
 }
 </script>
