@@ -1,7 +1,6 @@
 <template>
   <nav-mobile />
   <banner />
-  <news-banner v-if="$te('newsBanner') && $t('newsBanner') !== ''" />
   <navbar class="nav-desktop" />
   <div class="container mb-xlarge">
     <!-- introduction -->
@@ -9,9 +8,12 @@
       title-id="introduction"
       :title="$t('introduction.title')">
       <div class="col-sm-12 col-lg-9 row">
-        <div class="col-sm-12 col-lg-8 pr-small" v-html="$t('introduction.body')" />
-        <div class="col-lg-4 pt-xsmall">
-          <company-carousel />
+        <div class="col-sm-12 col-lg-8 pr-small">
+          <div v-html="$t('introduction.body')" id="intro-text" class="mb-small" />
+          <!-- <company-carousel /> -->
+        </div>
+        <div class="col-lg-4 pt-2xsmall">
+          <news />
         </div>
       </div>
     </page-section>
@@ -74,20 +76,17 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import {
-  NewsBanner,
   Banner,
   PageFooter,
   Navbar,
   NavMobile,
   PageSection,
-  PageSectionTwitter,
-  CompanyCarousel,
+  News,
   CommunityItems,
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones,
-  RoboconBanner
+  Milestones
 } from 'Components'
 import VideoComponent from 'Components/VideoComponent'
 
@@ -95,20 +94,17 @@ export default {
   name: 'App',
   components: {
     VideoComponent,
-    NewsBanner,
     Banner,
     PageFooter,
     Navbar,
     NavMobile,
     PageSection,
-    PageSectionTwitter,
-    CompanyCarousel,
+    News,
     CommunityItems,
     ResourceBox,
     TabBox,
     Sponsors,
     Milestones,
-    RoboconBanner,
     MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }

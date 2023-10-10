@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.21.3",
+    "@contentful/rich-text-html-renderer": "^16.2.0",
     "@highlightjs/vue-plugin": "2.1.0",
+    "contentful": "^10.6.1",
     "core-js": "^3.6.5",
     "date-fns": "2.27.0",
     "highlight.js": "11.2.0",
