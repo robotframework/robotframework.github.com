@@ -153,6 +153,12 @@ export default () => ([
     tags: ['iot']
   },
   {
+    name: 'OracleDBLibrary',
+    href: 'https://github.com/adeliogullari/robotframework-oracledb-library',
+    description: 'A database testing library for Robot Framework that utilizes the python-oracledb tool internally.',
+    tags: ['db', 'oracle', 'oracledb']
+  },
+  {
     name: 'PuppeteerLibrary',
     href: 'https://github.com/qahive/robotframework-puppeteer',
     description: 'Web testing using Puppeteer tool internally.',
