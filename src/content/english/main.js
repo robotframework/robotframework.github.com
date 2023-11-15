@@ -146,7 +146,7 @@ export default () => ({
           during installation.</p>
           <p>Installing Robot Framework with pip is simple:
           <pre class="line">pip install robotframework</pre></p>
-          <p>To check that the installation was succesful, run
+          <p>To check that the installation was successful, run
           <pre class="line">robot --version</pre></p>
           <p>For a full guide, please see
           <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.

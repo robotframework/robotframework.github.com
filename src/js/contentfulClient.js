@@ -16,3 +16,15 @@ export const getNews = async() => {
     })))
   return items
 }
+
+export const getEvents = async() => {
+  const items = await client
+    .getEntries({
+      content_type: 'event'
+    })
+    .then(({ items }) => items.map(({ fields }) => ({
+      ...fields,
+      image: fields.image?.fields
+    })))
+  return items
+}

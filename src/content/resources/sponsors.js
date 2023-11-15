@@ -42,6 +42,12 @@ export default () => ([
     description: 'Founded in 1976, CGI is among the largest IT and business consulting services firms in the world. We are insights-driven and outcomes-based to help accelerate returns on your investments. CGI is privileged to work with clients around the world to use technology to support the vital workings of society and create a better future for all.'
   },
   {
+    title: 'checkmk',
+    href: 'https://checkmk.com/',
+    img: 'checkmk.png',
+    description: 'Checkmk is one of the leading tools for service monitoring of IT infrastructure. Developed in Python and C++, the software is used worldwide to monitor servers, networks, applications, public clouds, containers, storage, databases and environmental sensors. With Synthetic Monitoring based on Robotmk, Checkmk administrators can keep an eye on the availability, performance and functionality of their business-critical applications.'
+  },
+  {
     title: 'cisco',
     href: 'https://www.cisco.com/',
     img: 'cisco.png',
