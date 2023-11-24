@@ -108,6 +108,12 @@ export default () => ([
     description: 'Etteplan is a specialist in industrial equipment engineering, embedded systems and IoT and technical documentation solutions and services with deep knowledge in QA from network edge to cloud in Nordics. Etteplan provides also consulting services in test automation and QA process development.'
   },
   {
+    title: 'eucon',
+    href: 'https://www.eucon.com/en/',
+    img: 'eucon.png',
+    description: 'Eucon is a digital pioneer and expert in data-driven decision making. We combine comprehensive market data and in-depth expert knowledge with modern technologies such as Artificial Intelligence and Robotic Process Automation. Using data intelligence, we create the basis for smart decisions and support our customers in the automotive, insurance and real estate industries in further digitalizing and automating their business processes. Eucon was founded in Münster in 1997. With over 500 people in offices in Europe, North and Latin America, and Asia-Pacific, the international team serves around 250 customers in more than 80 countries.'
+  },
+  {
     title: 'F2G Solutions',
     href: 'https://www.f2gsolutions.com',
     img: 'f2g.png',
