@@ -14,10 +14,10 @@
       </div>
       <div class="col-sm-12">
         <div class="line-height-1 title-robocon">
-          RBCN<span class="color-robocon">23</span>
+          RBCN<span class="color-robocon">24</span>
         </div>
         <div class="line-height-1 mb-small" style="font-size: 1.5rem;">
-          ONLINE CONFERENCE
+          HELSINKI CONFERENCE
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default {
   name: 'BannerRobocon',
   data: () => ({
     timeNow: new Date(),
-    eventDate: new Date('2023-03-01T09:00Z')
+    eventDate: new Date('2024-02-06T09:00Z')
   }),
   computed: {
     countdown() {
@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .color-robocon {
-  color: #ff9f00;
+  color: #b861ff;
 }
 .title-robocon {
   font-family: RBCN;
