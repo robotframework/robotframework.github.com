@@ -1,6 +1,6 @@
 <template>
   <nav-mobile />
-  <robocon-banner-countdown />
+  <robocon-banner />
   <banner />
   <navbar class="nav-desktop" />
   <div class="container mb-xlarge">
@@ -77,7 +77,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import {
-  RoboconBannerCountdown,
+  RoboconBanner,
   Banner,
   PageFooter,
   Navbar,
@@ -96,7 +96,7 @@ export default {
   name: 'App',
   components: {
     VideoComponent,
-    RoboconBannerCountdown,
+    RoboconBanner,
     Banner,
     PageFooter,
     Navbar,

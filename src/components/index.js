@@ -1,6 +1,6 @@
 import News from './News.vue'
 import Banner from './Banner.vue'
-import RoboconBannerCountdown from './RoboconBannerCountdown.vue'
+import RoboconBanner from './RoboconBannerTickets.vue'
 import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
 import NavbarSubPage from './NavbarSubPage.vue'
@@ -26,7 +26,7 @@ import DocumentIcon from './icons/DocumentIcon.vue'
 export {
   News,
   Banner,
-  RoboconBannerCountdown,
+  RoboconBanner,
   PageFooter,
   Navbar,
   NavbarSubPage,
