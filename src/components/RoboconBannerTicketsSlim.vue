@@ -1,5 +1,5 @@
 <template>
-      <div class="font-title bg-black color-white type-left">
+      <div class="font-title bg-black color-white type-left type-slimbanner">
         <div class="mt-small" style="float: left">
           Tickets for <span class="type-uppercase color-robocon">Robocon 2024</span> are on sale now!
         </div>
@@ -14,7 +14,7 @@
   color: #b861ff;
 }
 
-.type-vcenter {
-  vertical-align: middle;
+.type-slimbanner {
+  font-size: var(--type-large);
 }
 </style>
