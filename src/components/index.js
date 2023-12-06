@@ -1,6 +1,6 @@
 import News from './News.vue'
 import Banner from './Banner.vue'
-import RoboconBanner from './RoboconBannerTickets.vue'
+import RoboconBanner from './RoboconBannerTicketsSlim.vue'
 import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
 import NavbarSubPage from './NavbarSubPage.vue'
