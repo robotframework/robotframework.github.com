@@ -2,14 +2,6 @@
   <div>
     <navbar-sub-page title="Foundation" />
     <div class="container mb-3xlarge">
-      <div class="col-lg-offset-3 pt-large">
-        <div class="mt-small">
-          <a href="https://testcon.lt/">
-            <img :src="`${publicPath}img/TestCon-banner.png`" style="max-width: 100%" />
-          </a>
-          <i>Robot Framework Foundation is going to TestCon - come say hi!</i>
-        </div>
-      </div>
       <div
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         v-html="$t('foundation.lead')">
