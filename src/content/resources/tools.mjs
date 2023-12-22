@@ -18,12 +18,6 @@ export default () => ([
     tags: ['editor']
   },
   {
-    name: 'Eclipse plugin',
-    description: 'Robot Framework plugin for Eclipse IDE.',
-    href: 'https://github.com/NitorCreations/RobotFramework-EclipseIDE/wiki',
-    tags: ['editor']
-  },
-  {
     name: 'RobotCode',
     description: 'RobotFramework support for Visual Studio Code, including features like code completion, navigation, refactoring, usage analysis, debugging, test explorer, test execution and more!',
     href: 'https://github.com/d-biehl/robotcode',
