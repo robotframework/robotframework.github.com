@@ -12,16 +12,16 @@ export default () => ([
     description: 'Aktia is a Finnish asset manager, bank and life insurer that has been creating wealth and well-being from one generation to the next already for 200 years. We serve our customers through digital channels everywhere and face-to-face in our offices in the Helsinki region as well as in Oulu, Tampere, Turku and Vaasa regions. Funds in our awarded asset management are sold also internationally to institutional clients. We employ approximately 800 people around Finland. In Aktia Robot Framework is used for test automation to guarantee the quality we deliver to our customers.'
   },
   {
+    title: 'Alten',
+    href: 'https://www.alten.fi/en/',
+    img: 'alten.png',
+    description: ''
+  },
+  {
     title: 'ams OSRAM',
     href: 'https://ams-osram.com/',
     img: 'ams_osram.png',
     description: 'ams OSRAM is using Robot Framework to automate post silicon verification tasks of our light sensors and IC products.'
-  },
-  {
-    title: 'Arvanto',
-    href: 'https://www.arvato-systems.com/',
-    img: 'arvanto.png',
-    description: 'Global IT specialist Arvato Systems supports major companies in Digital Transformation. About 3,100 staff in over 25 locations stand for in-depth technology expertise, industry knowledge, and focus on customer requirements. Working as a team, we develop innovative IT solutions, transition our clients into the Cloud, integrate digital processes, and take on IT systems operation and support. As a part of the Bertelsmann-owned Arvato network, we have the unique capability to work across the entire value chain. Through our strong strategic partner network with global top players such as AWS, Google, Microsoft, and SAP, we continuously strengthen our know-how and leverage the most advanced technology. We Empower Digital Leaders.'
   },
   {
     title: 'Botlabs',
@@ -54,12 +54,6 @@ export default () => ([
     description: 'Cisco’s Customer Experience (CX) supports the testing & validation of Cisco and 3rd party solutions deployed by our customers. This includes Solution Validation Services (SVS) delivered both on Cisco-premise and customer-premise as part of a NetDevOps (CI/CD) process where continuous validation accelerates technology adoption, de-risks IT deployments, changes and upgrades, and ensures complex migrations are transparent.'
   },
   {
-    title: 'comiq',
-    href: 'https://comiq.fi/',
-    img: 'comiq.png',
-    description: 'Comiq is a Finnish software quality service provider founded in 2003 employing around 60 QA consultants. Our expertise in quality assurance services helps our customers achieve their quality targets for their business critical IT projects.'
-  },
-  {
     title: 'continero',
     href: 'https://www.continero.com/en/',
     img: 'continero.png',
@@ -70,12 +64,6 @@ export default () => ([
     href: 'https://www.dbschenker.com/global/about/profile',
     img: 'dbchenker.png',
     description: 'DB Schenker is the world’s largest global logistics provider. The company manages IT development across Technology Solution Center hubs located in Warsaw (PL), Nanjing (CN) and Delhi (IN). To keep high quality of delivered IT solutions, we use a RobotFramework to ensure fast and reliable regression testing for both our legacy and agile projects. Our experts ensure transparency in delivered quality and continuously improve their framework.'
-  },
-  {
-    title: 'deutsche post adress',
-    href: 'https://www.deutschepost.de/de/p/postadress.html',
-    img: 'deutschepost.png',
-    description: 'Deutsche Post Adress GmbH & Co. KG is the leading specialist for data quality solutions in Germany. It’s a joint venture between Deutsche Post, the biggest logistical and postal company in the world, and Bertelsmann, the largest media company in Europe. With our services we ensure the success of a company’s dialogue marketing by correcting, updating and managing their addresses. Since 2014 we are using the robot framework for test and process automation.'
   },
   {
     title: 'digia',
@@ -206,12 +194,6 @@ export default () => ([
     description: 'OpusCapita enables organizations to sell, buy and pay quickly and securely, with a real-time view of their business. Over 3000 customers in over 100 countries use our source-to-pay, cash management and product information management solutions to connect, transact and grow.'
   },
   {
-    title: 'oura',
-    href: 'https://ouraring.com',
-    img: 'oura.png',
-    description: 'Oura Health Ltd. is a Finnish health technology company, best known for the Oura Ring, a smart ring used to track sleep and physical activities.'
-  },
-  {
     title: 'posti',
     href: 'https://www.posti.com/',
     img: 'posti.png',
@@ -259,12 +241,6 @@ export default () => ([
     href: 'https://www.relexsolutions.com/',
     img: 'relex.png',
     description: 'RELEX Solutions provides market-leading software optimising supply chain and retail planning to reduce the carbon footprint. Our QA teams use Robot Framework in test automation against APIs and user interfaces, among other good test automation tools the teams find valuable.'
-  },
-  {
-    title: 'robocorp',
-    href: 'https://robocorp.com/',
-    img: 'robocorp.png',
-    description: 'Robocorp is set out to change Robotic Process Automation. RPA has the potential to change how millions of people work every day and Robocorp is making it accessible to everyone through license-free open source technologies, delivered from a cloud platform.'
   },
   {
     title: 'rpamaker',
