@@ -123,7 +123,7 @@ export default () => ([
     title: 'humanitec',
     href: 'https://humanitec.com/',
     img: 'humanitec.png',
-    description: 'Humanitec is a software engineering company based in Berlin, Germany. Our team is building a platform to automate the continuous delivery process for Kubernetes-native applications. We believe that every developer in a team should be able to deploy apps to cloud resources without having to learn all the technical details and that DevOps experts should focus on what really matters and not on repetitive tasks. Our overall goal is to develop an open DevOps API to master Continuous Delivery.'
+    description: 'Humanitec is a VC-financed company that drives developer productivity by radically simplifying how organizations deliver software at scale. The Humanitec Platform Orchestrator is the fastest, most reliable way to build an enterprise-grade Internal Developer Platform (IDP). The orchestrator dynamically generates app and infra configurations with every new deployment, driving standardization across the entire software delivery lifecycle. This means no more ticket ops or waiting times for developers, resulting 4x higher deployment frequency and 30% faster time to market.'
   },
   {
     title: 'imbus',
