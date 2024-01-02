@@ -11,14 +11,16 @@
         </h2>
       </div>
       <div
+        v-if="body !== ''"
         class="col-sm-12 col-lg-9"
         :class="$store.state.isMobile ? '' : 'pt-2xsmall'"
         v-html="body" />
+        <slot v-else />
     </div>
     <div
       class="row"
       :class="$store.state.isMobile ? '' : 'pl-small pr-small'">
-      <slot />
+      <slot v-if="body !== ''"/>
     </div>
   </div>
 </template>

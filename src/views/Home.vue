@@ -1,23 +1,23 @@
 <template>
   <nav-mobile />
+  <robocon-banner />
   <banner />
   <navbar class="nav-desktop" />
-  <news-banner
-    v-if="$te('newsBanner') && $t('newsBanner') !== ''"
-    class="mb-small mt-small" />
-  <div
-    v-else
-    class="mb-medium" />
   <div class="container mb-xlarge">
     <!-- introduction -->
-    <page-section-twitter
+    <page-section
       title-id="introduction"
-      :title="$t('introduction.title')"
-      :body="$t('introduction.body')">
-      <div class="mt-small mb-small">
-        <company-carousel />
+      :title="$t('introduction.title')">
+      <div class="col-sm-12 col-lg-9 row">
+        <div class="col-sm-12 col-lg-8 pr-small">
+          <div v-html="$t('introduction.body')" id="intro-text" class="mb-small" />
+          <!-- <company-carousel /> -->
+        </div>
+        <div class="col-lg-4 pt-2xsmall">
+          <news />
+        </div>
       </div>
-    </page-section-twitter>
+    </page-section>
     <!-- getting started -->
     <page-section
       title-id="getting-started"
@@ -56,11 +56,11 @@
         <community-items />
         <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
           <router-link :to="{ name: 'CoC' }" class="type-no-underline">
-            Code of Conduct
+            Code of Ethics
           </router-link>
         </button>
+        <video-component videoId='2GDrtvz_1Ds' class="col-sm-12 mt-small" />
       </div>
-      <VideoComponent videoId='2GDrtvz_1Ds'/>
     </page-section>
     <!-- development -->
     <page-section
@@ -77,14 +77,13 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import {
-  NewsBanner,
+  RoboconBanner,
   Banner,
   PageFooter,
   Navbar,
   NavMobile,
   PageSection,
-  PageSectionTwitter,
-  CompanyCarousel,
+  News,
   CommunityItems,
   ResourceBox,
   TabBox,
@@ -97,14 +96,13 @@ export default {
   name: 'App',
   components: {
     VideoComponent,
-    NewsBanner,
+    RoboconBanner,
     Banner,
     PageFooter,
     Navbar,
     NavMobile,
     PageSection,
-    PageSectionTwitter,
-    CompanyCarousel,
+    News,
     CommunityItems,
     ResourceBox,
     TabBox,

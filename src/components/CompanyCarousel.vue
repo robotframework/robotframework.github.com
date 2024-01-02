@@ -1,8 +1,8 @@
 <template>
   <div v-if="activeCompany">
-    <h4>
+    <!-- <h4>
       {{ $t('introduction.usedByTitle') }}
-    </h4>
+    </h4> -->
     <div class="row carousel-container pt-small pb-small bg-white bg-grey-dark-darkmode card">
       <button
         class="col-sm-1 flex center middle"
@@ -14,7 +14,7 @@
         <div
           :key="activeCompanyIndex"
           class="col-sm-10 row middle"
-          :style="!$store.state.isMobile ? 'height: 10rem;' : ''">
+          :style="!$store.state.isMobile ? 'height: 13rem;' : ''">
           <div
             class="col-sm-12 col-md-3 col-md-offset-0"
             :class="$store.state.isMobile ? 'mb-medium' : ''">
@@ -52,9 +52,9 @@
       <div class="row between">
         <button
           v-for="(company, i) in companiesShuffled.slice(5, 10)"
-          :key="company.name"
-          :aria-label="`${company.name} testimonial`"
-          :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
+          :key="company?.name"
+          :aria-label="`${company?.name} testimonial`"
+          :style="`background-image: url(${publicPath}img/carousel-company-icons/${company?.imgName}); ${!company.name && 'opacity: 0; pointer-events: none;'}`"
           class="img-container-small bg-white card mt-small"
           :class="activeCompanyIndex === i + 5 ? 'logo-active border-black border-thin' : ''"
           @click="activeCompanyIndex = i + 5" />
@@ -65,7 +65,7 @@
         v-for="(company, i) in companiesShuffled"
         :key="company.name"
         :aria-label="`${company.name} testimonial`"
-        :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName})`"
+        :style="`background-image: url(${publicPath}img/carousel-company-icons/${company.imgName}); ${!company.name && 'opacity: 0; pointer-events: none;'}`"
         class="img-container-small bg-white card mt-small"
         :class="[
           activeCompanyIndex === i ? 'logo-active border-black border-thin' : '',
@@ -100,9 +100,6 @@ export default {
   computed: {
     activeCompany() {
       return this.$tm('introduction.companies')[this.activeCompanyIndex]
-    },
-    numberOfCompanies() {
-      return this.$tm('introduction.companies').length
     }
   },
   methods: {
@@ -131,7 +128,7 @@ export default {
       const j = Math.floor(Math.random() * (i + 1));
       [companies[i], companies[j]] = [companies[j], companies[i]]
     }
-    this.companiesShuffled = companies
+    this.companiesShuffled = [...companies, {}]
     this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 }

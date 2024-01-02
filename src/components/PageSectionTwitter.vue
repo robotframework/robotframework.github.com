@@ -1,5 +1,5 @@
 <template>
-  <div class="border-top-theme row p-small pb-none">
+  <div class="row p-small pb-none">
     <div
       class="col-sm-12 col-lg-3"
       :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
@@ -71,6 +71,7 @@ export default {
 <style scoped>
   .twitter {
     overflow: scroll;
+    border-radius: 0.75rem;
   }
   h2::before {
     display: block;

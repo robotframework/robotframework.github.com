@@ -1,5 +1,6 @@
-import NewsBanner from './NewsBanner.vue'
+import News from './News.vue'
 import Banner from './Banner.vue'
+import RoboconBanner from './RoboconBannerTicketsSlim.vue'
 import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
 import NavbarSubPage from './NavbarSubPage.vue'
@@ -23,8 +24,9 @@ import RobotIcon from './icons/RobotIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
 
 export {
-  NewsBanner,
+  News,
   Banner,
+  RoboconBanner,
   PageFooter,
   Navbar,
   NavbarSubPage,

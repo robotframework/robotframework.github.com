@@ -10,25 +10,27 @@
           @click="logoClick" />
       </div>
     </transition>
-    <div class="container row center middle">
-      <div class="flex">
+    <div class="container row middle pr-small">
+      <div class="col-sm-3 flex">
         <transition name="opacity">
-        <robot-icon
-          v-if="iconInContainer"
-          size="1.75rem"
-          class="rf-icon-rotation cursor-pointer"
-          @click="logoClick" />
+          <robot-icon
+            v-if="navSticky && iconInContainer"
+            size="1.75rem"
+            class="rf-icon-rotation cursor-pointer"
+            @click="logoClick" />
         </transition>
-        <!-- section navigation -->
+      </div>
+      <div class="flex">
+        <!-- internal page navigation -->
         <button
-          v-for="(item) in $tm('navbar.items')"
+          v-for="(item, i) in $tm('navbar.items')"
           :key="item.name"
           :name="`go-to-${item.name}`"
-          class="px-small color-white font-title type-no-underline type-uppercase line-height-body border-right-white"
+          class="color-white font-title type-no-underline type-uppercase line-height-body border-right-white border-light"
+          :class="i === 0 ? 'pl-xsmall pr-small' : 'px-small'"
           @click="itemClick(item.id)">
           {{ item.name }}
         </button>
-        <!-- docs -->
         <div class="relative" ref="dropdownDocs">
           <button
             class="flex middle px-small font-title type-uppercase line-height-body dropdown-button"
@@ -180,11 +182,23 @@ export default {
 </script>
 
 <style scoped>
-  button {
+  button, a {
     transition: color 0.2s;
   }
-  button:hover {
+  svg {
+    transition: fill 0.2s;
+  }
+  button:hover, a:hover {
     color: var(--color-theme) !important;
+  }
+  a {
+    text-underline-offset: 0.25rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:hover > svg {
+    fill: var(--color-theme) !important;
   }
   .navbar {
     position: sticky;

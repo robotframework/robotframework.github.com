@@ -6,7 +6,7 @@
         class="col-sm-12 col-lg-9 col-lg-offset-3"
         v-html="$t('foundation.lead')">
       </div>
-      <VideoComponent videoId="jlhgitypC5Q"/>
+      <VideoComponent videoId="jlhgitypC5Q" class="col-sm-12 col-lg-9 col-lg-offset-3"/>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"
@@ -39,6 +39,9 @@ export default {
     PageSection,
     SponsorsDetailed,
     PageFooter
-  }
+  },
+  data: () => ({
+    publicPath: process.env.BASE_URL
+  })
 }
 </script>

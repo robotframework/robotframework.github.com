@@ -53,7 +53,7 @@ export default () => ([
   },
   {
     name: 'Database Library (Python)',
-    href: 'https://github.com/franz-see/Robotframework-Database-Library',
+    href: 'https://github.com/MarketSquare/Robotframework-Database-Library',
     description: 'Python based library for database testing. Works with any Python interpreter, including Jython.',
     tags: ['db']
   },
@@ -153,6 +153,12 @@ export default () => ([
     tags: ['iot']
   },
   {
+    name: 'OracleDBLibrary',
+    href: 'https://github.com/adeliogullari/robotframework-oracledb-library',
+    description: 'A database testing library for Robot Framework that utilizes the python-oracledb tool internally.',
+    tags: ['db', 'oracle', 'oracledb']
+  },
+  {
     name: 'PuppeteerLibrary',
     href: 'https://github.com/qahive/robotframework-puppeteer',
     description: 'Web testing using Puppeteer tool internally.',
@@ -193,6 +199,12 @@ export default () => ([
     description: 'Robotframework-FlaUI is a keyword based user interface automation testing library for Windows applications like Win32, WinForms, WPF or Store Apps. It\'s based on the FlaUI user interface automation library.',
     tags: ['windows', 'ui']
   },
+  {
+    name: 'Robotframework-MailClientLibrary',
+    href: 'https://github.com/noubar/RobotFramework-MailClientLibrary',
+    description: 'The Robotframework-MailClientLibrary is a keyword-based mail client library that supports testing of mail protocols, including IMAP, POP3, and SMTP with or without SSL connection.',
+    tags: ['mail', 'imap', 'smtp', 'pop3', 'ssl']
+    },
   {
     name: 'RPA framework',
     href: 'https://github.com/robocorp/rpaframework',

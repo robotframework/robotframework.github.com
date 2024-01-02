@@ -102,8 +102,6 @@ function hljsDefineRobot(hljs) {
   };
 }
 
-module.exports = function(hljs) {
-    hljs.registerLanguage('robot', hljsDefineRobot);
-};
-
-module.exports.definer = hljsDefineRobot;
+export default (hljs) => {
+    hljs.registerLanguage('robot', hljsDefineRobot)
+}

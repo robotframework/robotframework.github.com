@@ -31,6 +31,11 @@ export default () => ({
       name: 'Docs',
       items: [
         {
+          name: 'Guides (new)',
+          url: 'https://docs.robotframework.org/docs',
+          description: 'How to start'
+        },
+        {
           name: 'User Guide',
           url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
           description: 'All features explained'
@@ -97,7 +102,7 @@ export default () => ({
         imgName: 'Finnair.svg'
       },
       {
-        title: 'Finnish Tax Administration',
+        name: 'Finnish Tax Administration',
         description: `Finnish Tax Administration is using Robot Framework in multiple projects.
         Robot Framework is one of the core tools in their development to make Quality Assurance and Automation.`,
         imgName: 'Vero.svg'
@@ -116,11 +121,6 @@ export default () => ({
         name: 'Nokia',
         description: 'Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces.',
         imgName: 'Nokia.svg'
-      },
-      {
-        name: 'Wärtsilä',
-        description: 'Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software.',
-        imgName: 'Wartsila.svg'
       }
     ]
   },
@@ -131,7 +131,7 @@ export default () => ({
       <p>Below you'll find a live Robot Framework editor with embedded <a href="https://pyodide.org/en/stable/" target="_blank">WASM Python</a> environment to run it online.
       Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
       please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
-      <p>To start using Robot Framework in a project of your own, please also check tabs "Install" and "Learn".</p>`,
+      <p>To start using Robot Framework in a project of your own, please check tabs "Install" and "Learn". Also be sure to visit the new <a href="https://docs.robotframework.org/">Robot Framework Docs</a>!</p>`,
     tabs: [
       {
         name: 'Editor'
@@ -146,7 +146,7 @@ export default () => ({
           during installation.</p>
           <p>Installing Robot Framework with pip is simple:
           <pre class="line">pip install robotframework</pre></p>
-          <p>To check that the installation was succesful, run
+          <p>To check that the installation was successful, run
           <pre class="line">robot --version</pre></p>
           <p>For a full guide, please see
           <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.
@@ -179,7 +179,7 @@ export default () => ({
       },
       slack: {
         title: 'Slack',
-        description: 'Community team chat.<br><a href="https://slack.robotframework.org/" target="_blank">Click for invite!</a>'
+        description: 'Community team chat.<br><a href="https://rf-invite.herokuapp.com/" target="_blank">Click for invite!</a>'
       }
     }
   },

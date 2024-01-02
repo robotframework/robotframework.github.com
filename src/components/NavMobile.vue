@@ -2,9 +2,9 @@
   <transition name="fade">
     <div
       v-if="isOpen"
-      class="menu bg-black pt-xlarge pb-large pl-small pr-small">
+      class="menu bg-black pt-xlarge pb-large pr-small" style="padding-left: 3.75rem">
       <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
-        <div v-if="!docsOpen" key="1" class="mt-medium">
+        <div v-if="!docsOpen" key="1" class="mt-small">
           <div
             v-for="item in $tm('navbar.items')"
             :key="item.name">
@@ -17,8 +17,8 @@
           </div>
           <div>
             <button
-              class="flex middle mt-medium mb-small color-white font-title type-uppercase"
-              style="margin-left: -0.5rem;"
+              class="flex middle mt-medium color-white font-title type-uppercase"
+              style="margin-left: -0.5rem"
               @click="docsOpen = true">
               <chevron-icon direction="right" color="white" size="2rem" />
               <div>
@@ -28,11 +28,15 @@
           </div>
         </div>
         <div v-else key="3" class="mt-medium">
+          <button class="type-uppercase font-title flex middle mb-medium" style="margin-left: -0.5rem" @click="docsOpen = false">
+            <chevron-icon direction="left" color="white" size="2rem" />
+            {{ $t('navbar.dropdownDocs.name') }}
+          </button>
           <div
             v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
             :key="name">
             <div class="flex middle">
-              <a :href="url">
+              <a :href="url" class="line-height-1">
                 {{ name }}
               </a>
             </div>
@@ -47,28 +51,12 @@
   <div
     class="navbar row between bg-black color-white"
     :class="isOpen ? 'open' : ''">
-    <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
-      <button
-        v-if="docsOpen"
-        class="color-white font-title type-uppercase ml-2xsmall"
-        @click="docsOpen = false">
-        <div class="flex middle">
-          <chevron-icon direction="left" color="white" size="2rem" />
-          <div>
-            {{ $t('navbar.dropdownDocs.name') }}
-          </div>
-        </div>
-      </button>
-      <div
-        v-else
-        class="flex middle">
-        <robot-icon size="2rem" class="ml-small" @click="scrollTo(null, 400)" />
-        <div
-          class="font-title ml-xsmall">
-          ROBOT FRAMEWORK
-        </div>
+    <div class="flex middle">
+      <robot-icon size="2rem" class="ml-small" @click="scrollTo(null, 400)" />
+      <div class="font-title ml-xsmall">
+        ROBOT FRAMEWORK
       </div>
-    </transition>
+    </div>
     <button
       class="hamburger"
       :class="isOpen ? 'open' : ''"

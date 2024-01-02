@@ -365,6 +365,7 @@ export default {
             content: model[1].getValue()
           }
         }
+        return null
       })
         .filter((a) => a)
       const project = {

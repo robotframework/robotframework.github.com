@@ -17,7 +17,6 @@ export default {
 </script>
 
 <style scoped>
-
   .title::first-line {
     color: var(--color-white);
   }
