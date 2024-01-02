@@ -204,8 +204,8 @@ export default () => ([
     tags: ['']
   },
   {
-    name: 'RobotMK',
-    description: 'RobotMK integrates results of Robot tests into the monitoring system Checkmk. Makes it possible to send alerts if any keyword/test/suite runtime exceeds the allowed runtime or fails. Performance graphs and SLA reports. Web based configuration of Robot parameters. Automatic client deployment rule system ("bakery").',
+    name: 'Robotmk',
+    description: 'With Robotmk, arbitrary Robot Framework tests can be seamlessly integrated into the Checkmk monitoring tool. In addition to server and network metrics, Checkmk administrators also get worthful insights about on how well business applications are performing from the users point of view ("End-2-End Monitoring"). Robotmk can flexibly monitor and graph the runtimes of tests and keywords, and also alert when related SLAs are violated.',
     href: 'https://github.com/elabit/robotmk/',
     tags: ['']
   },
