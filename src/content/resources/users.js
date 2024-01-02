@@ -228,6 +228,15 @@ export default () => ([
       software for Trucks and Automated Guided Vehicles (AGV’s).`
   },
   {
+    title: 'RunWhen',
+    href: 'https://www.runwhen.com/',
+    imgName: 'runwhen.png',
+    text: `RunWhen has built a platform for Social Reliability Engineering that allows 
+    organizations to collaboratively build and scale their Site Reliability Engineering practices. 
+    The RunWhen platform uses Robot Framework to power its open source & community-driven 
+    Service Level Indicator, Service Level Objective, and Task Automation codebundles.`
+  },
+  {
     title: 'Toronto Metropolitan University',
     href: 'https://www.torontomu.ca/',
     imgName: 'tmu_logo.png',
