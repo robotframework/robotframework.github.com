@@ -237,11 +237,13 @@ export default () => ([
     Service Level Indicator, Service Level Objective, and Task Automation codebundles.`
   },
   {
-    title: 'Ryerson',
-    href: 'https://www.ryerson.ca/',
-    imgName: 'ryerson.png',
-    text: `Ryerson University uses Robot Framework to conduct desktop and mobile browser testing for its suite of applications that serve both students and staff.`
+    title: 'Toronto Metropolitan University',
+    href: 'https://www.torontomu.ca/',
+    imgName: 'tmu_logo.png',
+    text: `Toronto Metropolitan University uses Robot Framework to conduct desktop and mobile
+      browser testing for its suite of applications that serve both students and staff.`
   },
+
   {
     title: 'Salicru',
     href: 'https://www.salicru.com',
