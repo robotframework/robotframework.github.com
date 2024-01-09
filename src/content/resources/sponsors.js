@@ -108,6 +108,13 @@ export default () => ([
     description: '5G testing, E2E automation and network quality assurance.'
   },
   {
+    title: 'fresenius',
+    href: 'https://www.freseniusmedicalcare.fi/',
+    img: 'fresenius.png',
+    description: `Fresenius Medical Care is the world's leading provider of products and services for individuals with renal diseases of which around 3.9 million patients worldwide regularly undergo dialysis treatment.
+    <br>"At Fresenius Medical, we leverage the power of Robot Framework for our product verification processes Robot Framework empowers us to achieve faster and more reliable testing, ultimately contributing to the enhancement of our product development processes."`
+  },
+  {
     title: 'gofore',
     href: 'https://gofore.com/en/',
     img: 'gofore.png',
