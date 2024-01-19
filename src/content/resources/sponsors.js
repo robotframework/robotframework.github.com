@@ -15,7 +15,7 @@ export default () => ([
     title: 'Alten',
     href: 'https://www.alten.fi/en/',
     img: 'alten.png',
-    description: ''
+    description: 'ALTEN Finland Oy provides a wide range of engineering and IT services, especially for industry and other private sectors as well as public administration. We employ 600 top experts in 13 locations. We are part of the ALTEN Group, which employs more than 54 000 professionals in 30 countries around the world.'
   },
   {
     title: 'ams OSRAM',
