@@ -91,7 +91,7 @@ export default () => ([
   },
   {
     title: 'etteplan',
-    href: 'https://www.etteplan.com/services/testing-and-test-laboratory/software-test-automation',
+    href: 'https://www.etteplan.com/services/software-and-embedded-services/software-services/software-testing/',
     img: 'etteplan.png',
     description: 'Etteplan is a specialist in industrial equipment engineering, embedded systems and IoT and technical documentation solutions and services with deep knowledge in QA from network edge to cloud in Nordics. Etteplan provides also consulting services in test automation and QA process development.'
   },
