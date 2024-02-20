@@ -309,6 +309,8 @@ export default {
     copyMessage: null,
     RFVersions: [],
     selectedRFVersion: '',
+    robotArgs: {},
+    requirements: [],
     reinstallRF: false,
     versionDropdownOpen: false
   }),
@@ -328,7 +330,7 @@ export default {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
     clickFn(ev) {
-      if (!this.$refs.projectDropdown.contains(ev.target)) this.projectDropdownOpen = false
+      if (!this.$refs.projectDropdown?.contains(ev.target)) this.projectDropdownOpen = false
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
       if (this.$refs.versionDropdown && !this.$refs.versionDropdown.contains(ev.target)) this.versionDropdown = false
     },
@@ -373,21 +375,24 @@ export default {
         description: '',
         files: files.filter(({ hidden }) => !hidden),
         derivedProject: isOfficialProject,
-        robotVersion: this.selectedRFVersion
+        robotVersion: this.selectedRFVersion,
+        robotArgs: this.robotArgs,
+        requirements: this.requirements
       }
       console.log(project)
-      var strProj = JSON.stringify(project)
-      var compProj = LZString.compressToEncodedURIComponent(strProj)
+      const strProj = JSON.stringify(project)
+      const compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
       return compProj
     },
     async setProjectFromGitHub(ghURL) {
-      var project = await getProjectFromGitHub(ghURL)
+      const project = await getProjectFromGitHub(ghURL)
       this.setProject(project, 'Custom code')
     },
     async setProjectsFromURL(codeProject) {
       const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
-      var project = JSON.parse(strProj)
+      const project = JSON.parse(strProj)
+      console.log(project)
       if (project.derivedProject) {
         const proj = await getProjectFromLiveDir(this.projectsList.find(({ name }) => name === project.name).dir)
         proj.files = proj.files
@@ -400,6 +405,7 @@ export default {
           proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
         }
         proj.robotVersion = project.robotVersion
+        console.log(proj)
         this.setProject(proj, proj.name)
       } else {
         project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
@@ -435,6 +441,12 @@ export default {
       this.activeProject = project
       if (project.robotVersion) {
         this.selectedRFVersion = project.robotVersion
+      }
+      if (project.robotArgs) {
+        this.robotArgs = project.robotArgs
+      }
+      if (project.requirements) {
+        this.requirements = project.requirements
       }
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.editorStatus.projectModified = false
@@ -498,7 +510,7 @@ export default {
         })
         this.editorStatus.running = true
         const init = this.reinstallRF
-        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion) }, scrollDuration)
+        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion, this.robotArgs, this.requirements) }, scrollDuration)
         this.reinstallRF = false
       })
     }
@@ -552,7 +564,7 @@ export default {
       contextMenuOrder: 0,
       run: (ed) => { this.runRobotTest() }
     })
-    var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
+    const commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
 
     codeLens = monaco.languages.registerCodeLensProvider('robotframework', {
       provideCodeLenses: function(model, token) {
@@ -573,7 +585,7 @@ export default {
           }
         }
         const testCases = getTestCaseRanges(model)
-        var lenses = testCases.map((testCase) => {
+        const lenses = testCases.map((testCase) => {
           return getTestCaseLense(testCase)
         })
         lenses.push({
@@ -591,7 +603,7 @@ export default {
           }
         })
         return {
-          lenses: lenses,
+          lenses,
           dispose: () => {}
         }
       },
