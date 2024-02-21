@@ -654,7 +654,7 @@ export default {
       .then((allVersions) => {
         this.RFVersions = allVersions
           .filter((version) => {
-            return version.match(/^(3\.[12][\d.]*|[4-9][\d.]*)$/)
+            return version.match(/^(3\.2[\d.]*|[4-9][\d.]*)$/)
           })
         this.selectedRFVersion = this.RFVersions.at(0)
         if (this.RFVersions[0] !== allVersions[0]) {

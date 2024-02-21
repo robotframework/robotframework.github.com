@@ -29,7 +29,7 @@ const getProjectFromLiveDir = async(projectDir) => {
 
 const getProject = async(projectUrl) => {
   console.log(`Loading data from ${projectUrl}`)
-  const configFile = await fetch(projectUrl + '/config.json')
+  const configFile = await fetch(`${projectUrl}/config.json?token=${Date.now()}`)
     .then(response => response.json())
   const project = { name: configFile.name, files: [], description: '' }
   if (configFile.robotVersion) {

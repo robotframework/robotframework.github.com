@@ -4,24 +4,30 @@
 // Setup your project to serve `py-worker.js`. You should also serve
 // `pyodide.js`, and all its associated `.asm.js`, `.data`, `.json`,
 // and `.wasm` files as well:
-importScripts('https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js')
+importScripts('https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js')
 
 async function loadPyodideAndPackages() {
   console.log('LOAD Pyodide')
   const start = Date.now()
   if (!self.pyodide) {
     self.pyodide = await loadPyodide({
-      indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.18.1/full/'
+      indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.22.1/full/'
     })
   }
   console.log(`LOAD Mircopip after ${Date.now() - start}ms`)
-  await self.pyodide.loadPackage(['micropip'])
+  const UNVENDORED_STDLIBS = [
+    "ssl",
+    "lzma",
+    "hashlib"
+  ]
+  await self.pyodide.loadPackage('micropip')
+  await self.pyodide.loadPackage(UNVENDORED_STDLIBS)
   console.log(`DONE after ${Date.now() - start}ms`)
   self.pyodide.globals.set('init_globals', Array.from(self.pyodide.globals.toJs().keys()))
 }
 const pyodideReadyPromise = loadPyodideAndPackages()
 
-self.onmessage = async(event) => {
+self.onmessage = async (event) => {
   await pyodideReadyPromise
   self.pyodide.runPython(`
 import js

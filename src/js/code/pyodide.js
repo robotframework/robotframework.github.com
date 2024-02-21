@@ -87,7 +87,14 @@ export async function runRobot(files, initialize, testCaseName = '', version = '
       robot_args: JSON.stringify(robotArgs),
       requirements: JSON.stringify(requirements)
     }, (data) => {
-      data = JSON.parse(data)
+      try {
+        data = JSON.parse(data)
+      } catch (error) {
+        console.log('Error parsing JSON')
+        console.error(error)
+        console.log(data)
+        return
+      }
       writeToOutput(data.std_output)
       if (Object.prototype.hasOwnProperty.call(data, 'log_html')) {
         updateLogHtml(data.log_html)
