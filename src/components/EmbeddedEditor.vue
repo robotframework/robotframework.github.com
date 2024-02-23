@@ -324,7 +324,8 @@ export default {
       if (project.requirements) {
         this.requirements = project.requirements
       }
-      this.setActiveFile(activeFileName || project.files[0].fileName)
+      const visibleFiles = project.files.filter(({ hidden }) => !hidden)
+      this.setActiveFile(activeFileName || visibleFiles[0].fileName)
       this.editorStatus.projectModified = false
       this.copyMessage = null
       this.output = ''
