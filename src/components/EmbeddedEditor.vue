@@ -230,9 +230,12 @@ export default {
       console.log(url.length)
       if (url.length > 7400) {
         this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
+        console.log(this.copyMessage.message)
+        await navigator.clipboard.writeText(url)
       } else {
         await navigator.clipboard.writeText(url)
         this.copyMessage = { message: 'Link copied to clipboard!', success: true }
+        console.log(this.copyMessage.message)
       }
     },
     async getProjectLink() {
@@ -244,7 +247,8 @@ export default {
         if (fileFromProject.content !== content || !isOfficialProject) {
           return {
             fileName: model[0],
-            content: model[1].getValue()
+            content: model[1].getValue(),
+            hidden: fileFromProject.hidden
           }
         }
         return null
