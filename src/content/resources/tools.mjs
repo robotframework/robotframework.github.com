@@ -54,12 +54,6 @@ export default () => ([
     tags: ['editor']
   },
   {
-    name: 'RED',
-    description: 'Eclipse based editor with a debugger by Nokia.',
-    href: 'https://github.com/nokia/RED',
-    tags: ['editor']
-  },
-  {
     name: 'Language Server for PyCharm',
     description: 'PyCharm LSP plugin - syntax highlight, code completion, and other LSP features for PyCharm.',
     href: 'https://plugins.jetbrains.com/plugin/16086-robot-framework-language-server',
