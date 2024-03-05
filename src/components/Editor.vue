@@ -8,7 +8,7 @@
             v-if="projectsList"
             class="dropdown relative mr-xsmall mt-xsmall"
             ref="projectDropdown">
-            <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+            <button id="project-drop-down" class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
               <transition name="opacity" mode="out-in">
                 <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
                   {{ activeProjectName }}
@@ -23,6 +23,7 @@
             <transition name="fade">
               <div
                 v-if="projectDropdownOpen"
+                id="project-dropdown-content"
                 class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
                 <button
                   v-for="project in projectsList"
@@ -39,12 +40,14 @@
             <transition name="opacity">
               <button
                 v-if="activeProjectName !== 'Custom code' && editorStatus.projectModified"
+                id="reset-project-button"
                 class="alert small mr-xsmall"
                 @click="resetProject(); editorStatus.projectModified = false">
                 Reset
               </button>
             </transition>
             <button
+              id="copy-project-button"
               class="stroke mr-xsmall small flex middle"
               @click="copyProject()">
               <copy-icon size="1rem" color="white" />
@@ -52,6 +55,7 @@
             </button>
             <button
               v-if="!isFullEditor"
+              id="open-maximized-button"
               class="stroke small flex middle"
               @click="openMaximized()">
               <new-tab-icon size="1rem" color="white" />
@@ -66,7 +70,11 @@
           :class="$store.state.isMobile ? 'mt-large' : 'mt-xsmall'"
           ref="versionDropdown">
           <label class="absolute type-small" style="top: -1.5rem;">version</label>
-          <button class="stroke small flex middle between bg-grey-darkest" style="min-width: 7.5rem;" @click="versionDropdownOpen = !versionDropdownOpen">
+          <button
+            id="version-drop-down"
+            class="stroke small flex middle between bg-grey-darkest"
+            style="min-width: 7.5rem;"
+            @click="versionDropdownOpen = !versionDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-3xsmall" :key="activeProjectName">
                 {{ selectedRFVersion }}
@@ -80,6 +88,7 @@
           <transition name="fade">
             <div
               v-if="versionDropdownOpen"
+              id="version-dropdown-content"
               class="dropdown-content absolute bg-grey-darkest px-xsmall pb-none pt-small">
               <button
                 v-for="version in RFVersions"
@@ -117,7 +126,10 @@
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
         <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
-          <button class="stroke small flex middle between bg-grey-darkest" @click="filesDropdownOpen = !filesDropdownOpen">
+          <button
+            id="file-drop-down"
+            class="stroke small flex middle between bg-grey-darkest"
+            @click="filesDropdownOpen = !filesDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
                 {{ activeFileName }}
@@ -131,6 +143,7 @@
           <transition name="fade">
             <div
               v-if="filesDropdownOpen"
+              id="file-dropdown-content"
               class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
               <button
                 v-for="{ fileName, hidden } in activeProject?.files"
@@ -148,6 +161,7 @@
         <div v-else :key="activeProjectName">
           <button
             v-for="{ fileName, hidden } in activeProject?.files"
+            :id="'file-tab-' + fileName"
             :key="fileName"
             v-show="!hidden"
             class="stroke small m-2xsmall bg-grey-darkest"
@@ -162,6 +176,7 @@
         <button
           class="theme flex middle"
           :class="editorStatus.running ? 'disabled' : 'bling'"
+          id="run-button"
           @click="runRobotTest()">
           <div class="pr-3xsmall weigh-black">{{ editorStatus.running ? '...' : 'Run' }}</div>
           <play-icon color="black" size="1.3rem" />
@@ -203,7 +218,7 @@
       <div class="col-sm-12 col-md-5 flex height-fit mt-small">
         <transition name="opacity">
           <div v-if="logSrc">
-            <button class="stroke small flex mr-small middle" @click="showLog = true">
+            <button id="log.html-button" class="stroke small flex mr-small middle" @click="showLog = true">
               <document-icon color="white" size="1.25rem" />
               <div class="ml-2xsmall">
                 log.html
@@ -213,7 +228,7 @@
         </transition>
         <transition name="opacity">
           <div v-if="reportSrc">
-            <button class="stroke small flex middle" @click="showReport = true">
+            <button id="report.html-button" class="stroke small flex middle" @click="showReport = true">
               <document-icon color="white" size="1.25rem" />
               <div class="ml-2xsmall">
                 report.html
