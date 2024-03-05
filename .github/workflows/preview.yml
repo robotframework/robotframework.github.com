@@ -17,7 +17,7 @@ jobs:
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          dist: dist
+          dist: docs
           build: |
             echo "Has build already"
       - name: Get the preview_url
