@@ -204,17 +204,17 @@ export default () => ([
     href: 'https://github.com/noubar/RobotFramework-MailClientLibrary',
     description: 'The Robotframework-MailClientLibrary is a keyword-based mail client library that supports testing of mail protocols, including IMAP, POP3, and SMTP with or without SSL connection.',
     tags: ['mail', 'imap', 'smtp', 'pop3', 'ssl']
-    },
-  {
-    name: 'RPA framework',
-    href: 'https://github.com/robocorp/rpaframework',
-    description: 'Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used both with Robot Framework and Python.',
-    tags: ['rpa']
   },
   {
     name: 'SapGuiLibrary',
     href: 'https://github.com/frankvanderkuur/robotframework-sapguilibrary/',
     description: 'Testing the SAPGUI client using the internal SAP Scripting Engine',
+    tags: ['ui', 'sap']
+  },
+  {
+    name: 'RoboSAPiens',
+    href: 'https://github.com/imbus/robotframework-robosapiens',
+    description: '<a href="https://github.com/imbus/robotframework-robosapiens" target="_blank">RoboSAPiens</a> is a library for automating the Windows SAP GUI. Its key innovation (compared to <a href="https://github.com/frankvanderkuur/robotframework-sapguilibrary/" target="_blank">SapGuiLibrary</a>) is that UI elements can be selected using the texts in the GUI. No need to use a third-party tool to find some XPath-like selectors. Moreover, RoboSAPiens is under active development.',
     tags: ['ui', 'sap']
   },
   {

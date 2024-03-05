@@ -60,12 +60,6 @@ export default () => ([
     tags: ['editor']
   },
   {
-    name: 'Language Server for VS Code',
-    description: 'VS Code LSP extension - syntax highlight, linting, code completion, debugging, and more',
-    href: 'https://marketplace.visualstudio.com/items?itemName=robocorptech.robotframework-lsp',
-    tags: ['editor']
-  },
-  {
     name: 'Language Server for PyCharm',
     description: 'PyCharm LSP plugin - syntax highlight, code completion, and other LSP features for PyCharm.',
     href: 'https://plugins.jetbrains.com/plugin/16086-robot-framework-language-server',
