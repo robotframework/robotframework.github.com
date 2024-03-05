@@ -190,7 +190,7 @@ export default () => ([
   },
   {
     name: 'Robotframework-faker',
-    href: 'https://github.com/guykisel/robotframework-faker',
+    href: 'https://github.com/MarketSquare/robotframework-faker',
     description: 'Library for <a href="https://github.com/joke2k/faker" target="_blank">Faker</a>, a fake test data generator.'
   },
   {
