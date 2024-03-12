@@ -62,6 +62,9 @@
             </div>
           </transition>
         </div>
+        <div style="height: 1.7rem;">
+          <a class="github-button" href="https://github.com/robotframework/robotframework" data-color-scheme="dark_high_contrast" data-show-count="true" data-size="large" aria-label="Robot Framework GitHub Stars">Star</a>
+        </div>
       </div>
     </div>
     <!-- lang - disabled for now
