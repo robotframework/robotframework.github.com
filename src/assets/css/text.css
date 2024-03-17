@@ -118,7 +118,6 @@ p {
 
 p.lead {
     font-size: var(--type-large);
-    margin: var(--size-2xlarge) 0;
     font-family: var(--font-title);
     line-height: var(--line-height-lead);
 }

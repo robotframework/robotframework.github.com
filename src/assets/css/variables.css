@@ -38,7 +38,7 @@
     --type-body: 1rem; /* p and h3 */
     --type-large: 1.15rem; /* h2 */
     --type-xlarge: 1.6rem; /* h2 */
-    --type-2xlarge: 4rem; /* h1 */
+    --type-2xlarge: 3rem; /* h1 */
 
     /* font weights */
     --weight-light: 300;

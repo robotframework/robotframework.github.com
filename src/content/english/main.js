@@ -61,19 +61,19 @@ export default () => ({
   introduction: {
     title: 'Introduction',
     body:
-      `Robot Framework is a generic open source automation framework.
-      It can be used for <a href="/test-automation/">test automation</a> and robotic process automation (RPA).<br><br>
+      `<p>Robot Framework is a generic open source automation framework.
+      It can be used for <a href="/test-automation/">test automation</a> and robotic process automation (RPA).</p>
 
-      Robot Framework is supported by <a href="/foundation/">Robot Framework Foundation</a>.
-      Many industry-leading companies use the tool in their software development.<br><br>
+      <p>Robot Framework is supported by <a href="/foundation/">Robot Framework Foundation</a>.
+      Many industry-leading companies use the tool in their software development.</p>
 
-      Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
+      <p>Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
       other tool to create powerful and flexible automation solutions.
-      Robot Framework is free to use without licensing costs.<br><br>
+      Robot Framework is free to use without licensing costs.</p>
 
-      Robot Framework has an easy syntax, utilizing human-readable keywords. Its capabilities can be extended
+      <p>Robot Framework has an easy syntax, utilizing human-readable keywords. Its capabilities can be extended
       by libraries implemented with Python, Java or many other programming languages.
-      Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
+      Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.</p>`,
     usedByTitle: 'Robot Framework is used by...',
     companies: [
       {

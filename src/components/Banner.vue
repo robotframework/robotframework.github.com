@@ -1,7 +1,7 @@
 <template>
   <div class="row bg-theme center p-medium">
     <div>
-      <h1 class="title">
+      <h1 class="title" style="font-size: 4rem;">
         ROBOT<br>
         FRAME<br>
         WORK<div style="font-size: 2.5rem; transform: translateY(-.5rem); display: inline-block;">🇺🇦</div>
