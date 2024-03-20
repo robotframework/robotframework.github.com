@@ -256,6 +256,12 @@ export default () => ([
     description: 'RPAMAKER provides end to end process automation services. We are a client-centric company focused on helping clients confidently walk through the automation journey. We drive our clients to discover, evaluate, develop, host, maintain, support and improve their automations.'
   },
   {
+    title: 'SANAE',
+    href: 'https://sanae.sk/',
+    img: 'SANAE.png',
+    description: 'SANAE is a well-established provider of software testing and QA solutions. This includes audit of test processes, test management, and support of test automation approaches using robotic testing. We believe that true success can be reached by cooperation and networking rather than through competition. Therefore apart from the main area of business, we are working hard to build, maintain, and enlarge a community of testers in the Bratislava region and beyond. This effort resulted in SANAE Software Testing BEER.EX, a conference focused on QA and software testing that has been running since 2019.'
+  },
+  {
     title: 'segron',
     href: 'https://www.segron.com',
     img: 'segron.png',
