@@ -60,6 +60,12 @@ export default () => ([
     description: 'We are an IT company based in the Brno (Czech Republic), which has existed since 2018. Our primary focus is outsourcing developers and testers to interesting and worldwide projects. We always strive to deliver the best services with a strong emphasis on modern technologies and methodologies.  While doing the outsourcing, our primary vision is to help organizations with software quality and together make better products. We are developing a new testing platform built on the Robot Framework. It is a brand new technology that will enable non-developers and business organizations to create comprehensive automation tests without the knowledge of any programming languages.'
   },
   {
+    title: 'copado',
+    href: 'https://www.copado.com/product-overview/copado-robotic-testing',
+    img: 'copado.png',
+    description: 'Copado Robotic Testing empowers 175+ global customers to deliver lightning-fast test automation and software delivery across web, mobile, UI, API and desktop applications. This low-code, multi-cloud testing solution is embedded into Copado’s DevOps platform to derisk deployments, safeguard business processes and enable true end-to-end testing throughout Salesforce, SAP, ServiceNow and beyond.'
+  },
+  {
     title: 'DB Schenker',
     href: 'https://www.dbschenker.com/global/about/profile',
     img: 'dbchenker.png',
@@ -217,12 +223,6 @@ export default () => ([
     href: 'https://www.provinzial.de/',
     img: 'provinzial.png',
     description: 'The Provinzial Holding AG is the second largest insurance group in Germany. We ensure what is dear to our customers. We gain our strength from the regional ties of our subsidiaries. For more than 300 years, we are where our customers are. Today, more than five million private and corporate customers place their trust in us. What makes us special is our regionality and proximity. Our advisors are at most a few minutes away from our customers and can be reached through our many digital channels at any time. Furthermore, we put great importance on sustainability and commitment to the regions that are firmly anchored in our corporate values. Whether in the field of art and culture, sports sponsorship or security: We engage ourselves - and we do so in many different areas. '
-  },
-  {
-    title: 'qentinel',
-    href: 'https://qentinel.fi/',
-    img: 'qentinel.png',
-    description: 'Qentinel is the leading robotic software testing company applying system thinking and AI to maximize value creation. We have over hundred enthusiastic specialists who create the next generation of automated QA without humans in the loop. We believe your business is as good as software driving it.'
   },
   {
     title: 'qfactory',
