@@ -139,6 +139,12 @@ export default () => ([
     description: 'Humanitec is a VC-financed company that drives developer productivity by radically simplifying how organizations deliver software at scale. The Humanitec Platform Orchestrator is the fastest, most reliable way to build an enterprise-grade Internal Developer Platform (IDP). The orchestrator dynamically generates app and infra configurations with every new deployment, driving standardization across the entire software delivery lifecycle. This means no more ticket ops or waiting times for developers, resulting 4x higher deployment frequency and 30% faster time to market.'
   },
   {
+    title: 'igventure',
+    href: 'https://www.igventure.com/index.html',
+    img: 'igventure.png',
+    description: 'Igventure is providing ERP and automation consulting for the industry leading companies. We have introduced most agile concept for data driven management in the markets. Methods, processes and tools are managed as information accounts, similar kind of way as in financial management with chart of accounts. ᗩccounts is highly adaptive, scalalable and independent of business domains or sectors. We use Robot Framework automating ᗩccounts and ERP like SAP.'
+  },
+  {
     title: 'imbus',
     href: 'https://www.imbus.de/softwaretest/',
     img: 'imbus.png',
