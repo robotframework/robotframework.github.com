@@ -329,6 +329,12 @@ export default () => ([
     description: 'Symbio is international co-creation innovation partner. We help our customers create high quality products and future services in digital world. Our core capabilities include software development, test automation, IoT and Connected Car development, QA, embedded development, interoperability and globalization services.'
   },
   {
+    title: 'tesena',
+    href: 'https://www.tesena.com/en',
+    img: 'tesena.png',
+    description: 'Tesena is based in the Czech Republic, with offices in both Slovakia and Austria. We have been helping our clients with their software testing and quality engineering challenges through both consulting and training services for over 10 years. We love Robot Framework.'
+  },
+  {
     title: 'testimate',
     href: 'https://www.testimate.fi/',
     img: 'testimate.png',
