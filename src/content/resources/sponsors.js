@@ -157,6 +157,12 @@ export default () => ([
     description: 'The ING Group is a Dutch multinational banking and financial services corporation headquartered in Amsterdam. Its primary businesses are retail banking, direct banking, commercial banking, investment banking, wholesale banking, private banking, asset management, and insurance services. At the heart of the bank in the Netherlands, NL Corebank we use Robot Framework to test our applications.'
   },
   {
+    title: 'it@M',
+    href: 'https://opensource.muenchen.de/',
+    img: 'itm.png',
+    description: 'it@M is an in-house operation within the IT department of the City of Munich. The Robot Framework is used for various tasks. For example as a test framework in our Digital Twin or as an automatic tool for Windows client installation, furthermore it is also integrated into our Checkmk.'
+  },
+  {
     title: 'knowit',
     href: 'https://www.knowit.fi/',
     img: 'knowit.png',
