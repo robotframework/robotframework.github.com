@@ -1,8 +1,27 @@
 <template>
+  <div
+    class="navbar row between bg-black color-white px-medium py-xsmall"
+    :class="isOpen ? 'open' : ''">
+    <div class="flex middle">
+      <robot-icon size="2rem" @click="scrollTo(null, 400)" />
+      <div class="font-title ml-xsmall">
+        ROBOT FRAMEWORK
+      </div>
+    </div>
+    <button
+      class="hamburger"
+      :class="isOpen ? 'open' : ''"
+      @click="isOpen = !isOpen; docsOpen = false;">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
   <transition name="fade">
     <div
       v-if="isOpen"
-      class="menu bg-black pt-xlarge pb-large pr-small" style="padding-left: 3.75rem">
+      class="menu bg-black pt-xlarge pb-large pr-small" style="padding-left: 4.25rem">
       <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
         <div v-if="!docsOpen" key="1" class="mt-small">
           <div
@@ -10,27 +29,27 @@
             :key="item.name">
             <button
               :name="`go-to-${item.name}`"
-              class="mb-small mt-xsmall color-white font-title type-uppercase"
+              class="mb-xsmall mt-xsmall color-white font-title type-uppercase"
               @click="scrollTo(item.id, 400); isOpen = false">
               {{ item.name }}
             </button>
           </div>
           <div>
             <button
-              class="flex middle mt-medium color-white font-title type-uppercase"
+              class="flex middle mt-large mb-small color-theme font-title type-uppercase type-large"
               style="margin-left: -0.5rem"
               @click="docsOpen = true">
-              <chevron-icon direction="right" color="white" size="2rem" />
+              <chevron-icon direction="right" color="theme" size="1.5rem" />
               <div>
-                {{ $t('navbar.dropdownDocs.name') }}
+                DOCS
               </div>
             </button>
           </div>
         </div>
         <div v-else key="3" class="mt-medium">
-          <button class="type-uppercase font-title flex middle mb-medium" style="margin-left: -0.5rem" @click="docsOpen = false">
-            <chevron-icon direction="left" color="white" size="2rem" />
-            {{ $t('navbar.dropdownDocs.name') }}
+          <button class="type-uppercase font-title color-theme type-large flex middle mb-medium" style="margin-left: -0.5rem" @click="docsOpen = false">
+            <chevron-icon direction="left" color="theme" size="1.5rem" />
+            DOCS
           </button>
           <div
             v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
@@ -48,25 +67,6 @@
       </transition>
     </div>
   </transition>
-  <div
-    class="navbar row between bg-black color-white"
-    :class="isOpen ? 'open' : ''">
-    <div class="flex middle">
-      <robot-icon size="2rem" class="ml-small" @click="scrollTo(null, 400)" />
-      <div class="font-title ml-xsmall">
-        ROBOT FRAMEWORK
-      </div>
-    </div>
-    <button
-      class="hamburger"
-      :class="isOpen ? 'open' : ''"
-      @click="isOpen = !isOpen; docsOpen = false;">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
   <transition name="opacity">
     <div
       v-if="isOpen"
@@ -150,7 +150,7 @@ export default {
 }
 
 .hamburger {
-  margin: 1rem;
+  margin: 0.5rem;
   width: 2rem;
   height: 1.5rem;
   position: relative;

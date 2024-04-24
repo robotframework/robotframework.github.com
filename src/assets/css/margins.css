@@ -227,6 +227,10 @@
     margin-left: var(--size-medium);
     margin-right: var(--size-medium);
 }
+.mx-negative-medium {
+    margin-left: calc(var(--size-medium) * -1);
+    margin-right: calc(var(--size-medium) * -1);
+}
 
 .mx-large {
     margin-left: var(--size-large);

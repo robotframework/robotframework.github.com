@@ -5,7 +5,7 @@
       <div>FRAME</div>
       <div class="flex">
         WORK
-        <robot-icon size="4.6rem" color="black" style="transform: translate(0.5rem, 1rem);" />
+        <robot-icon class="icon" color="black" style="transform: translate(0.5rem, 1rem);" />
       </div>
     </h1>
   </div>
@@ -40,6 +40,15 @@ export default {
       flex-wrap: wrap;
       font-size: 20vw;
       padding: 14.25vw;
+      transform: translateX(-1.75vw);
+    }
+  }
+  .icon {
+    width: 4.6rem;
+    height: 4.6rem;
+    @media screen and (max-width: 769px) {
+      width: 16.5vw;
+      height: 16.5vw;
     }
   }
 </style>

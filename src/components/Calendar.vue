@@ -3,8 +3,8 @@
     class="inner-calendar-container card bg-secondary"
     :class="expanded ? 'expanded' : 'minified'"
     ref="container">
-    <div class="flex between px-medium py-xsmall">
-      <h2 class="type-xlarge color-text mb-none">
+    <div class="flex between p-medium">
+      <h2 class="type-large color-text mb-none">
         Events
       </h2>
       <button class="flex middle" @click="filtersOpen = !filtersOpen">
@@ -88,7 +88,7 @@
         </details>
       </article>
     </template>
-    <button v-if="!expanded" class="expand color-text" @click="expand()">
+    <button v-if="!expanded" class="expand color-text" @click="expand($event.target.parentElement)">
       Expand
     </button>
   </div>
@@ -176,10 +176,11 @@ export default {
         return scrollHeight > clientHeight || scrollWidth > clientWidth
       })
     },
-    expand() {
+    expand(target) {
       if (!this.expanded) {
         setTimeout(() => {
-          this.$refs.container.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+          const bottomVisible = (window.innerHeight - target.getBoundingClientRect().bottom) > 30
+          if (!bottomVisible) this.$refs.container.scrollIntoView({ behavior: 'smooth', block: 'end' })
         }, 1)
       }
       this.expanded = true
@@ -217,6 +218,16 @@ export default {
       overflow: auto;
       height: 80vh;
     }
+  }
+  .inner-calendar-container:not(.expanded)::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    pointer-events: none;
+    background: linear-gradient(transparent 80%, #1a1a1a 100%);
   }
 
   .title {
@@ -267,6 +278,13 @@ export default {
     background-color: color-mix(in srgb, var(--color-bg) 70%, transparent);
     font-size: 1.25rem;
     backdrop-filter: blur(2px);
+    z-index: 2;
+  }
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
   }
   summary {
     display: block;

@@ -18,8 +18,8 @@
     <!-- getting started -->
     <page-section
       title-id="getting-started"
-      :title="$t('gettingStarted.title')"
-      :body="$t('gettingStarted.body')">
+      :title="$t('gettingStarted.title')">
+      <div v-html="$t('gettingStarted.body')" class="body" />
       <tab-box
         :tabs="$tm('gettingStarted.tabs')">
         <template v-slot:tab-1>
@@ -40,16 +40,16 @@
     <!-- resources -->
     <page-section
       title-id="resources"
-      :title="$t('resources.title')"
-      :body="$t('resources.body')">
+      :title="$t('resources.title')">
+      <div v-html="$t('resources.body')" class="body" />
       <resource-box />
     </page-section>
     <hr class="theme">
     <!-- community -->
     <page-section
       title-id="community"
-      :title="$t('community.title')"
-      :body="$t('community.body')">
+      :title="$t('community.title')">
+      <div v-html="$t('community.body')" class="body" />
       <community-items />
       <button class="theme mt-medium" :class="$store.state.isMobile ? 'ml-xsmall' : ''">
         <router-link :to="{ name: 'CoC' }" class="type-no-underline">
@@ -62,8 +62,8 @@
     <!-- development -->
     <page-section
       title-id="development"
-      :title="$t('development.title')"
-      :body="$t('development.body')">
+      :title="$t('development.title')">
+      <div v-html="$t('development.body')" class="body" />
       <sponsors />
       <milestones />
     </page-section>
@@ -116,12 +116,15 @@ export default {
     display: none;
   }
   .calendar-container {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .news-container {
     padding-left: 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+  }
+  .body {
+    padding-inline: 1.5rem;
   }
 }
 @media screen and (min-width: 1025px) {

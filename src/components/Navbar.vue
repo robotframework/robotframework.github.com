@@ -44,14 +44,13 @@
         <transition name="fade">
           <div
             v-if="docsDropdownOpen"
-            class="dropdown-container bg-black color-white p-large card">
+            class="dropdown-container bg-black color-white p-large pt-xsmall card">
             <div
-              v-for="({ name, url, description, large }, i) in $tm('navbar.dropdownDocs.items')"
+              v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
               :key="name"
-              :class="large ? 'border-bottom-white border-thin pb-small mb-small' : 'mt-medium'">
+              class="mt-medium">
               <a :href="url"
                 class="type-no-underline"
-                :class="large ? 'type-xlarge' : ''"
                 @click="linkClick(name)">
                 {{ name }}
               </a>

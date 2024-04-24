@@ -148,4 +148,5 @@ button.bling {
 hr.theme {
     border: solid 2px var(--color-theme);
     border-radius: 4px;
+    margin: 0;
 }

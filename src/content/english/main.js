@@ -53,7 +53,7 @@ export default () => ({
         {
           name: 'Public API',
           url: 'https://robot-framework.readthedocs.io/en/stable/',
-          description: 'Extending the framework'
+          description: 'Write extensions'
         }
       ]
     }

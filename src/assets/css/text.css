@@ -55,7 +55,7 @@ h2 {
     font-size: var(--type-xlarge);
     color: var(--color-theme);
     font-weight: var(--weight-bold);
-    margin-bottom: var(--size-medium);
+    margin-bottom: var(--size-small);
     line-height: var(--line-height-h2);
     text-transform: uppercase;
 }

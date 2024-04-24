@@ -4,8 +4,8 @@
     :class="expanded ? 'expanded' : ''"
     :style="{opacity: news.length === 0 ? 0.5 : 1}"
     ref="container">
-    <div class="flex between px-medium py-xsmall">
-      <h2 class="type-xlarge color-text mb-none">
+    <div class="flex between p-medium">
+      <h2 class="type-large color-text mb-none">
         News
       </h2>
       <a href="https://seu2.cleverreach.com/f/362604-365504/" class="newsletter">
@@ -33,7 +33,7 @@
         </div>
       </article>
     </template>
-    <button v-if="!expanded" class="expand color-text" @click="expand()">
+    <button v-if="!expanded" class="expand color-text" @click="expand($event.target.parentElement)">
       Expand
     </button>
   </div>
@@ -68,10 +68,11 @@ export default {
         }
       })
     },
-    expand() {
+    expand(target) {
       this.expanded = true
       setTimeout(() => {
-        this.$refs.container.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        const bottomVisible = (window.innerHeight - target?.getBoundingClientRect()?.bottom) > 30
+        if (!bottomVisible) this.$refs.container.scrollIntoView({ behavior: 'smooth', block: 'end' })
       }, 1)
     }
   }
@@ -90,6 +91,16 @@ export default {
       height: 80vh;
     }
   }
+  .inner-news-container:not(.expanded)::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    pointer-events: none;
+    background: linear-gradient(transparent 80%, #1a1a1a 100%);
+  }
   img.main {
     width: 100%;
     border-radius: 0.25rem;
@@ -100,8 +111,8 @@ export default {
     width: 100%;
     text-align: center;
     padding-block: 0.75rem;
-    background-color: color-mix(in srgb, var(--color-bg) 70%, transparent);
     font-size: 1.25rem;
     backdrop-filter: blur(2px);
+    z-index: 2;
   }
 </style>

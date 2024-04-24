@@ -45,21 +45,26 @@ export default {
     visibility: hidden;
     pointer-events: none;
   }
-  .body {
-    margin-bottom: 2rem;
-  }
   @media screen and (max-width: 1024px) {
+    .section-container {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
     h2::before {
       margin-top: -30px;
       height: 30px;
     }
-    .section-container {
-      padding: 1rem;
+    h2 {
+      padding-inline: 1.5rem;
     }
   }
   @media screen and (min-width: 1025px) {
+    .section-container {
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
     .title {
-      padding-left: 0.5rem;
+      padding-left: 1rem;
     }
     .body {
       padding-right: 1rem;
