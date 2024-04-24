@@ -187,6 +187,12 @@ export default () => ([
     description: 'Nexi Digital Finland is a software development and innovation centre for Nexi Group located in Espoo, Finland. <br>As a part of one of the biggest European PayTech companies, we drive the product development of digital in-store payment products and services. First of its kind in the Nordics, Nexi Digital Finland development hub aims to bring pioneering solutions to support Nexi Group shape the future of the payment industry. <br>Nexi Group is the merger and integration of Nexi, Nets and Sia and has operations in over 25 European countries. More than 10 000 professionals in Nexi Group work towards the transition of a cashless Europe by making every payment digital.'
   },
   {
+    title: 'niceproject',
+    href: 'https://niceproject.eu/',
+    img: 'niceproject.png',
+    description: 'NiceProject is a dynamic IT company focused on delivering top-notch project solutions. Emphasising a customer-centric approach, they specialise in delivering end-to-end project solutions that not only meet but exceed customer expectations.  Their core values of innovation, creativity, and efficiency are reflected in their commitment to achieving exceptional results for long-term success. Furthermore, NiceProject is playing a pivotal role in fostering the Robot Framework community in Poland by organising conferences since 2022. Wrobocon conference aims  at unleashing the potential of intelligent automation. This partnership with the Robot Framework Foundation highlights their dedication to advancing the field of test automation and their contribution to building a vibrant professional community.'
+  },
+  {
     title: 'nokia',
     href: 'https://www.nokia.com/',
     img: 'nokia.png',
