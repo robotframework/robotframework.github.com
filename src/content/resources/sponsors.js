@@ -219,12 +219,6 @@ export default () => ([
       OP Financial Group is Finland's largest financial services group whose mission is to promote the sustainable prosperity, security and wellbeing of its owner-customers and business environment. The Group has a staff of 12,000 and almost 2 million owner-customers. OP uses Robot Framework for improving our agile testing quality and CI/CD, as well for bringing more customer satisfaction with the RPA capabilities.`
   },
   {
-    title: 'opuscapita',
-    href: 'https://www.opuscapita.com/',
-    img: 'opuscapita.png',
-    description: 'OpusCapita enables organizations to sell, buy and pay quickly and securely, with a real-time view of their business. Over 3000 customers in over 100 countries use our source-to-pay, cash management and product information management solutions to connect, transact and grow.'
-  },
-  {
     title: 'posti',
     href: 'https://www.posti.com/',
     img: 'posti.png',
