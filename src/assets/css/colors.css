@@ -96,3 +96,14 @@
         color: var(--color-white);
     }
 }
+
+/* updated color classes for more straightforward darkmode support */
+.color-text {
+    color: var(--color-text);
+}
+.color-link {
+    color: var(--color-link);
+}
+.bg-secondary {
+    background-color: var(--color-background-secondary);
+}

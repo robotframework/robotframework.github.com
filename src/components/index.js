@@ -1,4 +1,5 @@
 import News from './News.vue'
+import Calendar from './Calendar.vue'
 import Banner from './Banner.vue'
 import PageFooter from './PageFooter.vue'
 import Navbar from './Navbar.vue'
@@ -24,6 +25,7 @@ import DocumentIcon from './icons/DocumentIcon.vue'
 
 export {
   News,
+  Calendar,
   Banner,
   PageFooter,
   Navbar,

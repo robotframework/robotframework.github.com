@@ -7,6 +7,10 @@
 .card:hover {
     box-shadow: 2px 4px 4px -1px rgba(0,0,0,0.16),
     6px 6px 20px -1px rgba(107, 84, 84, 0.1);
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 3px 5px 8px -1px rgba(0,0,0,0.2),
+        6px 6px 20px -1px rgba(0, 0, 0, 0.1);
+    }
 }
 .card.sharp {
     border-radius: 0;
@@ -139,4 +143,9 @@ button.bling {
     100% {
         background-position: -10% 50%;
     }
+}
+
+hr.theme {
+    border: solid 2px var(--color-theme);
+    border-radius: 4px;
 }

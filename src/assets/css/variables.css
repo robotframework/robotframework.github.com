@@ -3,6 +3,9 @@
     --color-theme-dark: #09504d; /* for theme color dark */
     --color-alert: #ff9f94;
     --color-background: #f0f0f0;
+    --color-background-secondary: #fff;
+
+    --color-text: #000000;
     --color-background-darkmode: #222222;
 
     --color-white: #f5f5f5;
@@ -10,7 +13,7 @@
     --color-grey: #c6c6c6;
     --color-grey-dark: #292f33;
     --color-black: #000000; /* body text */
-    --color-link: #00c0b5;
+    --color-link: #00857e;
     --color-link-visited: #578a88;
 
     --color-red: #d32f2f;
@@ -67,4 +70,12 @@
     --size-3xlarge: 8rem;
 
     --border-radius-rounded: 0.2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #f0f0f0;
+        --color-link: #00c0b5;
+        --color-background-secondary: #2b2b2b;
+    }
 }
