@@ -9,16 +9,13 @@
       ['fill-theme']: color === 'theme'
     }">
     <path
-      d="M0 0h24v24H0V0z"
-      fill="none" />
-    <path
-      d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5" />
   </svg>
 </template>
 
 <script>
 export default {
-  name: 'NewTabIcon',
+  name: 'MarkerIcon',
   props: {
     color: {
       type: String,

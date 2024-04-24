@@ -49,3 +49,12 @@ ul {
 form {
 	display: contents;
 }
+fieldset {
+	border: 2px double var(--color-text);
+	padding: 0.5rem 1rem;
+}
+legend {
+	line-height: 1;
+	padding-inline: 0.5rem;
+	margin-left: 0.75rem;
+}
