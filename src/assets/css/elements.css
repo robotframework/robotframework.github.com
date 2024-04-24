@@ -1,15 +1,23 @@
 .card {
     border-radius: var(--border-radius-rounded);
-    box-shadow: 2px 4px 3px -1px rgba(0,0,0,0.1),
-    6px 6px 15px -1px rgba(0,0,0,0.04);
+    box-shadow: 3px 5px 3px 0 rgba(0,0,0,0.1),
+        6px 6px 15px -1px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;
 }
 .card:hover {
-    box-shadow: 2px 4px 4px -1px rgba(0,0,0,0.16),
-    6px 6px 20px -1px rgba(107, 84, 84, 0.1);
+    box-shadow: 3px 5px 8px 4px rgba(0,0,0,0.1),
+        6px 6px 15px -1px rgba(0,0,0,0.1);
 }
 .card.sharp {
     border-radius: 0;
+}
+
+.drop-shadow {
+    filter: drop-shadow(3px 5px 3px rgba(0,0,0,0.1)) drop-shadow(6px 6px 15px rgba(0,0,0,0.04));
+    transition: filter 0.2s;
+}
+.drop-shadow:hover {
+    filter: drop-shadow(3px 5px 8px rgba(0,0,0,0.1)) drop-shadow(6px 6px 15px rgba(0,0,0,0.1));
 }
 
 .rounded {
@@ -38,6 +46,9 @@
 .border-bottom-white {
     border-bottom: solid 0.2rem var(--color-white);
 }
+.border-bottom-bg {
+    border-bottom: solid 0.2rem var(--color-bg);
+}
 .border-left-theme {
     border-left: solid 0.2rem var(--color-theme);
 }
@@ -49,6 +60,9 @@
 }
 .border-top-white {
     border-top: solid 0.2rem var(--color-white);
+}
+.border-top-bg {
+    border-top: solid 0.2rem var(--color-bg);
 }
 
 .border-light {
@@ -63,6 +77,7 @@ button.theme, button.stroke, button.alert {
     transition: 0.2s color, 0.1s background-color, box-shadow 0.1s;
     font-family: var(--font-title);
     padding: var(--size-2xsmall) var(--size-small);
+    cursor: pointer;
 }
 button.theme {
     color: var(--color-black);
@@ -100,8 +115,7 @@ button.theme.active > svg {
     fill: var(--color-white);
 }
 button.stroke.active {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: inset 2px 3px 2px -1px rgba(0,0,0,0.2);
 }
 
@@ -139,4 +153,9 @@ button.bling {
     100% {
         background-position: -10% 50%;
     }
+}
+
+hr.theme {
+    border: solid 2px var(--color-theme);
+    border-radius: 4px;
 }

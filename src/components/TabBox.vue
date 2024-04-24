@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-grey-dark card"
+    class="color-bg-lighter card"
     :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
     <!-- tab buttons -->
     <div class="row">

@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style scoped>
+  svg {
+    flex-shrink: 0;
+  }
   .fill-white {
     fill: var(--color-white);
   }

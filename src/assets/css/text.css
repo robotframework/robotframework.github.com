@@ -57,7 +57,6 @@ h2 {
     font-weight: var(--weight-bold);
     margin-bottom: var(--size-medium);
     line-height: var(--line-height-h2);
-    text-transform: uppercase;
 }
 
 h3 {

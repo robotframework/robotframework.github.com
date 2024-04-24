@@ -51,6 +51,9 @@
   flex-wrap: wrap;
 }
 
+.gap-xsmall {
+  gap: var(--size-xsmall);
+}
 .gap-2xsmall {
   gap: var(--size-2xsmall);
 }

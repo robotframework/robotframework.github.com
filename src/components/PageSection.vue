@@ -1,26 +1,13 @@
 <template>
-  <div
-    class="border-top-theme mt-xlarge section-container"
-    tabindex="-1">
-    <div class="row p-small pb-none">
-      <div
-        class="col-sm-12 col-lg-3"
-        :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
-        <h2 :id="titleId" :class="longTitle && 'type-large'">
-          {{ title }}
-        </h2>
-      </div>
-      <div
-        v-if="body !== ''"
-        class="col-sm-12 col-lg-9"
-        :class="$store.state.isMobile ? '' : 'pt-2xsmall'"
-        v-html="body" />
-        <slot v-else />
+  <div class="row section-container">
+    <div class="col-sm-12 col-lg-2 title">
+      <h2 :id="titleId">
+        {{ title }}
+      </h2>
     </div>
-    <div
-      class="row"
-      :class="$store.state.isMobile ? '' : 'pl-small pr-small'">
-      <slot v-if="body !== ''"/>
+    <div class="col-sm-12 col-lg-10 body">
+      <div v-html="body" />
+      <slot />
     </div>
   </div>
 </template>
@@ -44,6 +31,10 @@ export default {
     longTitle: {
       type: Boolean,
       default: false
+    },
+    wide: {
+      type: Boolean,
+      defaul: false
     }
   }
 }
@@ -58,10 +49,21 @@ export default {
     visibility: hidden;
     pointer-events: none;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1024px) {
     h2::before {
       margin-top: -30px;
       height: 30px;
+    }
+    .section-container {
+      padding: 1rem;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .title {
+      padding-left: 0.5rem;
+    }
+    .body {
+      padding-right: 1rem;
     }
   }
 </style>

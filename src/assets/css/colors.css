@@ -1,10 +1,41 @@
-/* brand colors */
-
+/* new */
+.color-text {
+    color: var(--color-text);
+}
 .color-theme {
     color: var(--color-theme);
 }
+.color-bg {
+    background-color: var(--color-bg);
+}
+.color-bg-lighter {
+    background-color: var(--color-bg-lighter);
+}
+.color-bg-darker {
+    background-color: var(--color-bg-darker);
+}
+
 .bg-theme {
     background-color: var(--color-theme);
+}
+.bg-theme-light {
+    background-color: var(--color-theme-light);
+}
+.bg-theme-dark {
+    background-color: var(--color-theme-dark);
+}
+
+.color-text {
+    color: var(--color-text);
+}
+.color-text-invert {
+    color: var(--color-bg);
+}
+.color-bg {
+    background-color: var(--color-bg);
+}
+.color-bg-invert {
+    background-color: var(--color-text);
 }
 
 .color-alert {
@@ -15,7 +46,6 @@
 }
 
 /* basic colors */
-
 .color-black {
     color: var(--color-black);
 }
@@ -78,21 +108,4 @@
 
 .hover-bright:hover {
     filter: brightness(1.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
-
-    .bg-white-darkmode {
-        background-color: var(--color-white);
-    }
-    .bg-grey-dark-darkmode {
-        color-scheme: dark;
-        background-color: var(--color-grey-dark);
-    }
-    .color-white-darkmode {
-        color: var(--color-white);
-    }
 }

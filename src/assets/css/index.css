@@ -4,10 +4,10 @@
 @import 'margins.css';
 @import 'elements.css';
 @import 'paddings.css';
-@import 'colors.css';
 @import 'text.css';
 @import 'modifiers.css';
 @import 'transitions.css';
+@import 'colors.css';
 
 html, body {
     min-height: 100vh;

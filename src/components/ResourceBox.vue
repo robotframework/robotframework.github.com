@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="bg-grey-dark color-white card"
+      class="color-bg-lighter color-white card"
       :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
       <div class="row">
         <button

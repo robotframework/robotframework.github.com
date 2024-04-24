@@ -52,7 +52,7 @@
     class="navbar row between bg-black color-white"
     :class="isOpen ? 'open' : ''">
     <div class="flex middle">
-      <robot-icon size="2rem" class="ml-small" @click="scrollTo(null, 400)" />
+      <robot-icon size="2rem" class="ml-medium" @click="scrollTo(null, 400)" />
       <div class="font-title ml-xsmall">
         ROBOT FRAMEWORK
       </div>

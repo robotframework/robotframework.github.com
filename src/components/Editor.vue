@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-dark color-white editor-container" ref="editorContainer">
+  <div class="editor-container" ref="editorContainer">
     <div :class="isFullEditor ? 'container px-small' : ''">
       <div class="row between" :class="isFullEditor ? 'pt-small' : ''">
         <div class="row">

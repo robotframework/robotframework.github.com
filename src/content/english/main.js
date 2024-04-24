@@ -11,7 +11,7 @@ export default () => ({
   navbar: {
     items: [
       {
-        name: 'Getting started',
+        name: 'Get started',
         id: 'getting-started'
       },
       {
@@ -31,36 +31,51 @@ export default () => ({
       name: 'Docs',
       items: [
         {
-          name: 'Guides (new)',
+          name: 'Guides',
           url: 'https://docs.robotframework.org/docs',
-          description: 'How to start'
+          description: 'Start here',
+          large: true
         },
         {
           name: 'User Guide',
           url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
-          description: 'All features explained'
+          description: 'Original handbook'
         },
         {
-          name: 'BuiltIn Library',
+          name: 'Keywords',
           url: 'https://robotframework.org/robotframework/latest/libraries/BuiltIn.html',
-          description: 'Always available keywords'
+          description: 'built-in'
         },
         {
-          name: 'Standard Libraries',
+          name: 'Libraries',
           url: 'https://robotframework.org/robotframework/#standard-libraries',
-          description: 'Keyword documentation'
+          description: 'built-in'
         },
         {
           name: 'Public API',
           url: 'https://robot-framework.readthedocs.io/en/stable/',
-          description: 'Build RF extensions'
+          description: 'Extending RF'
         }
       ]
     }
   },
   introduction: {
     title: 'Introduction',
-    body:
+    body: `
+    <p>
+      Robot Framework is an open source automation framework for test automation and <a href="https://docs.robotframework.org/docs/getting_started/rpa">robotic process automation (RPA)</a>.
+      It is supported by the <a href="/foundation/">Robot Framework Foundation</a> and <a href="/users">widely used</a> in the industry.
+      </p>
+      <p>
+        Its <a href="https://docs.robotframework.org/docs/style_guide">human-friendly and versalite syntax</a> uses keywords and supports <a href="https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library">extending through libraries</a> in
+        Python, Java, and other languages.
+      </p>
+      <p class="mb-none">
+      It integrates with other tools for comprehensive automation without licensing fees,
+      bolstered by a rich community with hundreds of <a href="#resources">3rd party libraries</a>.
+    </p>
+    `,
+    body2:
       `<p>Robot Framework is a generic open source automation framework.
       It can be used for <a href="/test-automation/">test automation</a> and robotic process automation (RPA).</p>
 
@@ -125,11 +140,11 @@ export default () => ({
     ]
   },
   gettingStarted: {
-    title: 'Getting Started',
+    title: 'Get Started',
     body:
       `<cite>Code is worth a thousand words.</cite>
-      <p>Below you'll find a live Robot Framework editor with embedded <a href="https://pyodide.org/en/stable/" target="_blank">WASM Python</a> environment to run it online.
-      Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
+      <p>Below you'll find a live Robot Framework editor.
+      Feel free to experiment with it! If you find bugs,
       please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
       <p>To start using Robot Framework in a project of your own, please check tabs "Install" and "Learn". Also be sure to visit the new <a href="https://docs.robotframework.org/">Robot Framework Docs</a>!</p>`,
     tabs: [
@@ -186,11 +201,11 @@ export default () => ({
   resources: {
     title: 'Resources',
     body:
-      `<p>Robot Framework is open source and supported by <a href="/foundation/">Robot Framework Foundation</a>.
+      `<p class="type-large">Robot Framework is open source and supported by <a href="/foundation/">Robot Framework Foundation</a>.
       There is a huge community of contributors around the tool.
       The software is built with expandability in mind and there are numerous ways to extend
       it's use cases for various needs.</p>
-      <p>If you have created or found a library that you think should be listed here, please
+      <p class="type-small">If you have created or found a library that you think should be listed here, please
       <a href="https://github.com/robotframework/robotframework.github.com" target="_blank">let us know</a>
       by submitting a pull request or an issue. You are also welcome to report unmaintained
       ones that shouldn't be listed anymore.`,
