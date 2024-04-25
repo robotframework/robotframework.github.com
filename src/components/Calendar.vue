@@ -14,6 +14,9 @@
         <filter-icon :color="filtersOpen ? 'theme' : 'text'" class="ml-2xsmall block" size="1rem" />
       </button>
     </div>
+    <div class="px-medium type-small">
+      <i>Includes unofficial events</i>
+    </div>
     <div v-if="filtersOpen" class="p-medium">
       <fieldset class="row mb-xsmall">
         <legend>Types</legend>
