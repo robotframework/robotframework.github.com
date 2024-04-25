@@ -21,7 +21,13 @@
         :key="entry.id"
         class="flex border-bottom-bg p-medium">
         <div class="col-sm-3 pr-xsmall">
-          <img v-if="entry.image" :src="`${entry.image.file.url}${imgUrlParams}`" class="main block" />
+          <picture v-if="entry.image?.file?.url" class="main block">
+            <source :srcset="`${entry.image?.file?.url}${imgUrlParams}`" media="(prefers-color-scheme: light)"/>
+            <source v-if="entry.imageDark" :srcset="`${entry.imageDark.file?.url}${imgUrlParams}`" media="(prefers-color-scheme: dark)"/>
+            <!-- fallback -->
+            <img :src="`${entry.image?.file?.url}${imgUrlParams}`"/>
+          </picture>
+          <robot-icon v-else size="1.75rem" style="float: right"/>
         </div>
         <div class="col-sm-9 pl-xsmall">
           <a v-if="entry.link" :href="entry.link" target="blank" class="mb-none line-height-1">
@@ -42,7 +48,11 @@
 <script>
 import { getNews } from '../js/contentfulClient'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import { RobotIcon } from './icons'
 export default {
+  components: {
+    RobotIcon
+  },
   data: () => ({
     expanded: false,
     news: [],
@@ -103,10 +113,10 @@ export default {
   }
   @media (prefers-color-scheme: dark) {
     .inner-news-container:not(.expanded)::after {
-    background: linear-gradient(transparent 80%, #1a1a1a 100%);
+      background: linear-gradient(transparent 80%, #1a1a1a 100%);
     }
   }
-  img.main {
+  picture.main, picture img {
     width: 100%;
     border-radius: 0.25rem;
   }

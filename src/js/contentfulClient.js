@@ -27,7 +27,8 @@ export const getNews = async() => {
     })
     .then(({ items }) => items.map(({ fields }) => ({
       ...fields,
-      image: fields.image?.fields
+      image: fields.image?.fields,
+      imageDark: fields.imageDark?.fields // optional, for darkmode, eg white text variant
     })))
   return items
 }
