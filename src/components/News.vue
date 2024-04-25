@@ -100,8 +100,10 @@ export default {
     content: '';
     pointer-events: none;
     background: linear-gradient(transparent 80%, #ccc 100%);
-    @media (prefers-color-scheme: dark) {
-      background: linear-gradient(transparent 80%, #1a1a1a 100%);
+  }
+  @media (prefers-color-scheme: dark) {
+    .inner-news-container:not(.expanded)::after {
+    background: linear-gradient(transparent 80%, #1a1a1a 100%);
     }
   }
   img.main {
