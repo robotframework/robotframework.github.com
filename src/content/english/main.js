@@ -232,7 +232,7 @@ export default () => ({
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
     sponsorBoxTitle: 'Members of Robot Framework Foundation',
-    howToJoin: '<a href="/foundation/">How to join</a>'
+    howToJoin: '<a href="/foundation/">Join</a>'
   },
   usersPage: {
     title: 'Users of Robot Framework',

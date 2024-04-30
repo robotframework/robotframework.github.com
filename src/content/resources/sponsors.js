@@ -357,5 +357,11 @@ export default () => ([
     href: 'https://www.veikkaus.fi/',
     img: 'veikkaus.png',
     description: 'Almost all adult Finns play our games; at Veikkaus we have over two million loyal customers. Thanks to the players, over one billion euros a year are accumulated for the common good. Robot Framework plays a key role in our test automation and RPA.'
+  },
+  {
+    title: 'viadee',
+    href: 'https://www.viadee.de/',
+    img: 'viadee.png',
+    description: 'With over 30 years of experience and a team of 200+ experts, viadee excels in holistic IT consulting and software development. Spanning fields including software development, data science & AI, test automation, process management, and organizational development, viadee tailors IT solutions for clients in banking, insurance, logistics, energy, trade, and the public sector. Rooted in values of trust, humanity, and fairness, our focus on resarch and most importantly the high satisfaction of our employees drive our success.'
   }
 ])
