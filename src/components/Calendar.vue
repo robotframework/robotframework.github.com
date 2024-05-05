@@ -71,7 +71,7 @@
           <calendar-icon size="1rem" color="white" class="mr-2xsmall" style="transform: translateY(-2px)" />
           {{ getDateString(new Date(event.date), new Date(event.dateEnd)) }}
         </div>
-        <div v-if="event.location.trim() !== ''" class="flex">
+        <div v-if="event.location && event.location.trim() !== ''" class="flex">
           <marker-icon class="mr-2xsmall" size="1rem" style="transform: translateY(3px)" />
           {{ event.location }}
         </div>
@@ -152,6 +152,9 @@ export default {
     }
   },
   async mounted() {
+    this.$refs.container.addEventListener('click', () => {
+      window.plausible('Interact', { props: { section: 'Calendar' } })
+    }, { passive: true })
     this.events = (await getEvents()).sort((a, b) => {
       if (new Date(a.date) < new Date(b.date)) return -1
       return 1
@@ -180,7 +183,7 @@ export default {
       })
     },
     expand(target) {
-      if (!this.expanded) {
+      if (!this.expanded && target) {
         setTimeout(() => {
           const bottomVisible = (window.innerHeight - target.getBoundingClientRect().bottom) > 30
           if (!bottomVisible) this.$refs.container.scrollIntoView({ behavior: 'smooth', block: 'end' })
