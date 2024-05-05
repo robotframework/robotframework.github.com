@@ -56,7 +56,7 @@ export default {
   data: () => ({
     expanded: false,
     news: [],
-    imgUrlParams: '?w=300&h=300&fit=fill'
+    imgUrlParams: '?w=500&h=500'
   }),
   computed: {
     loading() {
