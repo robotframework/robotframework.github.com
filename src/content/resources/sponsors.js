@@ -335,10 +335,16 @@ export default () => ([
     description: 'Tesena is based in the Czech Republic, with offices in both Slovakia and Austria. We have been helping our clients with their software testing and quality engineering challenges through both consulting and training services for over 10 years. We love Robot Framework.'
   },
   {
+    title: 'testcoders',
+    href: 'https://testcoders.nl/',
+    img: 'testcoders.png',
+    description: 'At TestCoders we believe that test automation contributes to the accelerated development and delivery of valuable software for our customers. This requires a powerful vision, a proven approach and specialists who can successfully roll out (test) automation in Agile/DevOps environments. TestCoders has that vision, the experience, and a team of highly skilled and dedicated test automation engineers. As grateful users of various open-source test automation frameworks, we encourage our professionals to actively contribute to the development of these frameworks.'
+  },
+  {
     title: 'testimate',
     href: 'https://www.testimate.fi/',
     img: 'testimate.png',
-    description: 'Testimate provides comprehensive and independent high-quality software testing services for small and large systems or products. Our employees are versatile testing experts with several years of experience in testing, managing and leading testing and test automation using commercial and open source tools. We know we are good at what we do – and our clients agree!'
+    description: 'Testimate provides comprehensive and independent high-quality software testing services for small and large systems or products. Our employees are versatile testing experts with several years of experience in testing, managing and leading testing and test automation using commercial and open source tools. We know we are good at what we do - and our clients agree!'
   },
   {
     title: 'tietoevry',
