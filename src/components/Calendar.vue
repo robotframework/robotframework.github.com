@@ -3,7 +3,7 @@
     class="inner-calendar-container card bg-secondary"
     :class="expanded ? 'expanded' : 'minified'"
     ref="container">
-    <div class="flex between p-medium">
+    <div class="flex between p-medium pb-small">
       <h2 class="type-large color-text mb-none">
         Events
       </h2>
@@ -14,7 +14,7 @@
         <filter-icon :color="filtersOpen ? 'theme' : 'text'" class="ml-2xsmall block" size="1rem" />
       </button>
     </div>
-    <div class="px-medium type-small">
+    <div class="px-medium type-small mb-small">
       <i>Includes unofficial events</i>
     </div>
     <div v-if="filtersOpen" class="p-medium">
@@ -45,6 +45,10 @@
         <input type="checkbox" id="official" v-model="show.officialOnly" />
         <label for="official" class="ml-2xsmall">Show only official events</label>
       </div>
+      <div class="flex middle col-sm-12">
+        <input type="checkbox" id="CFP" v-model="show.types.CFP" />
+        <label for="CFP" class="ml-2xsmall">List CFPs</label>
+      </div>
     </div>
     <!-- <div class="px-medium pb-small border-bottom-bg">
       <input placeholder="Search by name, date, location..." class="search" />
@@ -54,10 +58,10 @@
     </h3>
     <template v-else>
       <article
-        v-for="(event, i) in filteredEvents"
+        v-for="(event, i) in shownItems"
         :key="event.id"
         :ref="`article-${i}`"
-        class="px-medium py-small border-bottom-bg">
+        class="px-medium py-small">
         <div class="badge">
           {{ event.eventType }}
         </div>
@@ -67,28 +71,47 @@
             {{ event.eventName }}
           </span>
         </a>
-        <div class="flex middle">
-          <calendar-icon size="1rem" color="white" class="mr-2xsmall" style="transform: translateY(-2px)" />
-          {{ getDateString(new Date(event.date), new Date(event.dateEnd)) }}
-        </div>
-        <div v-if="event.location && event.location.trim() !== ''" class="flex">
-          <marker-icon class="mr-2xsmall" size="1rem" style="transform: translateY(3px)" />
-          {{ event.location }}
-        </div>
-        <div v-if="event.online" class="flex middle">
-          <globe-icon class="mr-2xsmall" size="0.85rem" style="transform: translateY(-1px)" />
-          Available Online
-        </div>
-        <div v-if="event.hostedByFoundation" class="flex middle">
-          <robot-icon size="1rem" class="mr-2xsmall" style="transform: translateY(-2px)" />
-          Hosted by Foundation
-        </div>
-        <details v-if="event.description && event.description.trim() !== ''">
-          <summary class="color-link cursor-pointer flex middle" @click="showInfo($event.target.parentElement)">
-            <chevron-icon color="theme" direction="right" class="chevron" size="1.25rem" />
-          </summary>
-          <div v-html="parseDescription(event.description || '')" class="description" />
-        </details>
+        <template v-if="event.eventType !== 'CFP'">
+          <div class="flex middle">
+            <calendar-icon size="1rem" color="white" class="mr-2xsmall" style="transform: translateY(-2px)" />
+            {{ getDateString(new Date(event.date), new Date(event.dateEnd)) }}
+          </div>
+          <div v-if="event.location && event.location.trim() !== ''" class="flex">
+            <marker-icon class="mr-2xsmall" size="1rem" style="transform: translateY(3px)" />
+            {{ event.location }}
+          </div>
+          <div v-if="event.online" class="flex middle">
+            <globe-icon class="mr-2xsmall" size="0.85rem" style="transform: translateY(-1px)" />
+            Available Online
+          </div>
+          <div v-if="event.hostedByFoundation" class="flex middle">
+            <robot-icon size="1rem" class="mr-2xsmall" style="transform: translateY(-2px)" />
+            Hosted by Foundation
+          </div>
+          <details v-if="event.description && event.description.trim() !== ''">
+            <summary class="color-link cursor-pointer flex middle" @click="showInfo($event.target.parentElement)">
+              <chevron-icon color="theme" direction="right" class="chevron" size="1.25rem" />
+            </summary>
+            <div v-html="parseDescription(event.description || '')" class="description" />
+          </details>
+        </template>
+        <template v-else>
+          <div v-if="!isPast(new Date(event.cfpStart))" class="flex middle">
+            <calendar-icon size="1rem" color="white" class="mr-2xsmall" style="transform: translateY(-2px)" />
+            CFP start: {{ getDateString(new Date(event.cfpStart)) }}
+          </div>
+          <div class="flex middle">
+            <calendar-icon size="1rem" color="white" class="mr-2xsmall" style="transform: translateY(-2px)" />
+            CFP end: {{ getDateString(new Date(event.cfpEnd)) }}
+          </div>
+        </template>
+      </article>
+      <article class="px-medium py-small flex center mb-medium">
+        <a href="https://forms.gle/1YnMYwySGtBc5BQn7" class="color-black type-no-underline">
+          <button class="theme block">
+            + Add event
+          </button>
+        </a>
       </article>
     </template>
     <button v-if="!expanded" class="expand color-text" @click="expand($event.target.parentElement)">
@@ -112,7 +135,8 @@ export default {
         Conference: true,
         Workshop: true,
         'Meet-up': true,
-        Tutorial: true
+        Tutorial: true,
+        CFP: false
       },
       past: false,
       officialOnly: false
@@ -138,17 +162,24 @@ export default {
       const index = getMonth(this.selectedDate)
       return monthNames[index]
     },
-    filteredEvents() {
-      const filtered = this.events
+    shownItems() {
+      const events = this.events
         .filter(({ eventType, date }) => {
+          if (!this.show.past && isPast(new Date(date))) return false
           if (!this.show.types.Conference && eventType === 'Conference') return false
           if (!this.show.types['Meet-up'] && eventType === 'Meet-up') return false
           if (!this.show.types.Workshop && eventType === 'Workshop') return false
           if (!this.show.types.Tutorial && eventType === 'Tutorial') return false
-          if (!this.show.past && isPast(new Date(date))) return false
           return true
         })
-      return filtered
+      const cfps = this.events
+        .filter(({ cfpEnd }) => cfpEnd && !isPast(new Date(cfpEnd)))
+        .map((event) => ({
+          ...event,
+          eventType: 'CFP'
+        }))
+      if (this.show.types.CFP) return [...cfps, ...events]
+      return events
     }
   },
   async mounted() {
@@ -161,6 +192,7 @@ export default {
     })
   },
   methods: {
+    isPast,
     parseDescription: (t) => marked.parse(t),
     getDateString(date, dateEnd) {
       const monthIndex = getMonth(date)
