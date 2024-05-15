@@ -15,7 +15,7 @@
       </button>
     </div>
     <div class="px-medium type-small mb-small">
-      <i>Includes unofficial events</i>
+      <i>Includes unsanctioned events</i>
     </div>
     <div v-if="filtersOpen" class="p-medium">
       <fieldset class="row mb-xsmall">
