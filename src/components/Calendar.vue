@@ -43,7 +43,7 @@
       </div>
       <div class="flex middle col-sm-12">
         <input type="checkbox" id="official" v-model="show.officialOnly" />
-        <label for="official" class="ml-2xsmall">Show only official events</label>
+        <label for="official" class="ml-2xsmall">Show only sanctioned events</label>
       </div>
       <div class="flex middle col-sm-12">
         <input type="checkbox" id="CFP" v-model="show.types.CFP" />
@@ -86,7 +86,7 @@
           </div>
           <div v-if="event.hostedByFoundation" class="flex middle">
             <robot-icon size="1rem" class="mr-2xsmall" style="transform: translateY(-2px)" />
-            Hosted by Foundation
+            Sanctioned by Foundation
           </div>
           <details v-if="event.description && event.description.trim() !== ''">
             <summary class="color-link cursor-pointer flex middle" @click="showInfo($event.target.parentElement)">
@@ -164,8 +164,9 @@ export default {
     },
     shownItems() {
       const events = this.events
-        .filter(({ eventType, date }) => {
+        .filter(({ eventType, date, hostedByFoundation }) => {
           if (!this.show.past && isPast(new Date(date))) return false
+          if (this.show.officialOnly && !hostedByFoundation) return false
           if (!this.show.types.Conference && eventType === 'Conference') return false
           if (!this.show.types['Meet-up'] && eventType === 'Meet-up') return false
           if (!this.show.types.Workshop && eventType === 'Workshop') return false
