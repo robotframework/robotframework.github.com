@@ -84,6 +84,12 @@ export default () => ([
     description: 'Eficode is the leading DevOps company in Europe, driving the DevOps and Agile movement and building the future of software development across seven countries with over 400 professionals. Eficode guides customers with DevOps and Agile skills and practices, and enables them to focus on their growth and customers with Eficode ROOT DevOps Platform: a managed service with over 40 preferred tools including Atlassian, Jenkins and Kubernetes; along with our Application Management and Atlassian services.'
   },
   {
+    title: 'elabit',
+    href: 'http://www.elabit.de/',
+    img: 'elabit.png',
+    description: 'ELABIT GmbH is now supporting the Robot Framework tool and community with the annual membership fee. Simon Meggle is CEO of Elabit and the inventor of Robotmk, an integration solution for Robot Framework and the IT monitoring tool Checkmk, which makes Synthetic Monitoring possible.'
+  },
+  {
     title: 'eliga',
     href: 'https://eliga.fi/',
     img: 'eliga.png',
