@@ -164,6 +164,12 @@ export default () => ([
     description: 'Web testing using Puppeteer tool internally.',
     tags: ['web', 'ui']
   },
+	{
+    name: 'PerfmonLibrary',
+    href: 'https://github.com/damies13/robotframework-perfmon/',
+    description: 'provides a simple way to collect windows performance monitor (perfmon) counter statistics from a windows machine.',
+    tags: ['perfmon', 'windows', 'counters', 'performance monitor', 'wmi']
+  },
   {
     name: 'Qweb',
     href: 'https://github.com/qentinelqi/qweb',
