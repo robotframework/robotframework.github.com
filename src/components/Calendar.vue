@@ -3,7 +3,7 @@
     class="inner-calendar-container card bg-secondary"
     :class="expanded ? 'expanded' : 'minified'"
     ref="container">
-    <div class="flex between p-medium pb-small">
+    <div class="flex between p-medium pb-2xsmall">
       <h2 class="type-large color-text mb-none">
         Events
       </h2>
@@ -17,42 +17,41 @@
     <div class="px-medium type-small mb-small">
       <i>Includes unsanctioned events</i>
     </div>
-    <div v-if="filtersOpen" class="p-medium">
-      <fieldset class="row mb-xsmall">
-        <legend>Types</legend>
+    <div class="px-medium pb-2xsmall">
+      <input v-model="findInput" placeholder="Find by name, location, details..." class="search" />
+    </div>
+    <div v-if="filtersOpen" class="p-medium pt-2xsmall">
+      <div class="row mb-2xsmall">
         <div class="flex middle col-sm-6">
           <input type="checkbox" id="conference" v-model="show.types.Conference" />
-          <label for="conference" class="ml-2xsmall">Conference</label>
+          <label for="conference" class="ml-2xsmall">Conferences</label>
         </div>
         <div class="flex middle col-sm-6">
           <input type="checkbox" id="meetup" v-model="show.types['Meet-up']" />
-          <label for="meetup" class="ml-2xsmall">Meet-up</label>
+          <label for="meetup" class="ml-2xsmall">Meet-ups</label>
         </div>
         <div class="flex middle col-sm-6">
           <input type="checkbox" id="tutorial" v-model="show.types.Tutorial" />
-          <label for="tutorial" class="ml-2xsmall">Tutorial</label>
+          <label for="tutorial" class="ml-2xsmall">Tutorials</label>
         </div>
         <div class="flex middle col-sm-6">
           <input type="checkbox" id="workshop" v-model="show.types.Workshop" />
-          <label for="workshop" class="ml-2xsmall">Workshop</label>
+          <label for="workshop" class="ml-2xsmall">Workshops</label>
         </div>
-      </fieldset>
-      <div class="flex middle col-sm-12">
-        <input type="checkbox" id="past" v-model="show.past" />
-        <label for="past" class="ml-2xsmall">Show past events</label>
-      </div>
-      <div class="flex middle col-sm-12">
-        <input type="checkbox" id="official" v-model="show.officialOnly" />
-        <label for="official" class="ml-2xsmall">Show only sanctioned events</label>
       </div>
       <div class="flex middle col-sm-12">
         <input type="checkbox" id="CFP" v-model="show.types.CFP" />
-        <label for="CFP" class="ml-2xsmall">List CFPs</label>
+        <label for="CFP" class="ml-2xsmall">Call for Proposals</label>
+      </div>
+      <div class="flex middle col-sm-12">
+        <input type="checkbox" id="past" v-model="show.past" />
+        <label for="past" class="ml-2xsmall">Past events</label>
+      </div>
+      <div class="flex middle col-sm-12">
+        <input type="checkbox" id="official" v-model="show.officialOnly" />
+        <label for="official" class="ml-2xsmall">Only sanctioned events</label>
       </div>
     </div>
-    <!-- <div class="px-medium pb-small border-bottom-bg">
-      <input placeholder="Search by name, date, location..." class="search" />
-    </div> -->
     <h3 v-if="loading" class="type-medium px-small">
       loading events...
     </h3>
@@ -143,7 +142,8 @@ export default {
     },
     events: [],
     imgUrlParams: '?w=500&h=500',
-    selectedDate: new Date()
+    selectedDate: new Date(),
+    findInput: ''
   }),
   components: {
     CalendarIcon,
@@ -179,8 +179,13 @@ export default {
           ...event,
           eventType: 'CFP'
         }))
-      if (this.show.types.CFP) return [...cfps, ...events]
-      return events
+
+      const filterByString = (list) => {
+        if (this.findInput === '') return list
+        return list.filter((event) => event.searchString.toLowerCase().includes(this.findInput.toLowerCase()))
+      }
+      if (this.show.types.CFP) return filterByString([...cfps, ...events])
+      return filterByString(events)
     }
   },
   async mounted() {
@@ -191,6 +196,16 @@ export default {
       if (new Date(a.date) < new Date(b.date)) return -1
       return 1
     })
+      .map((event) => ({
+        ...event,
+        searchString: `
+          ${event.eventName}
+          ${event.description}
+          ${event.eventType}
+          ${event.location || ''}
+          ${event.link || ''}
+          ${this.getDateString(new Date(event.date), new Date(event.dateEnd))}`
+      }))
   },
   methods: {
     isPast,
@@ -243,8 +258,8 @@ export default {
   }
   .search {
     width: 100%;
-    padding: 0.25rem;
-    background-color: var(--color-bg);
+    padding: 0.5rem;
+    background-color: #00000033;
     color: var(--color-text);
   }
   .inner-calendar-container {

@@ -10,14 +10,14 @@ export default () => ({
         <li>Ensure Robot Framework is maintained and developed</li>
         <li>Get visibility about your membership for your company if you wish</li>
         <li>Gain ability to participate in decision making</li>
-        <li>Get all this for an affordable price per user</li>
+        <li>Get discounted tickets to RoboCon events</li>
       </ol>
-      <h3>Annual Fees</h3>
-      <p>Annual fee is determined by how many Robot Framework users are in your organization:</p>
+      <h3>Annual fee</h3>
+      <p>The pricing is determined by the amount of Robot Framework users in your organization:</p>
       <table class="col-sm-12 col-md-6">
         <tr>
           <th>Users</th>
-          <th>Fee</th>
+          <th>Fee / year</th>
         </tr>
         <tr>
           <td>1-2</td>
