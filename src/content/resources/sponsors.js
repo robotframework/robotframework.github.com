@@ -142,7 +142,7 @@ export default () => ([
     title: 'humanitec',
     href: 'https://humanitec.com/',
     img: 'humanitec.png',
-    description: 'Humanitec is a VC-financed company that drives developer productivity by radically simplifying how organizations deliver software at scale. The Humanitec Platform Orchestrator is the fastest, most reliable way to build an enterprise-grade Internal Developer Platform (IDP). The orchestrator dynamically generates app and infra configurations with every new deployment, driving standardization across the entire software delivery lifecycle. This means no more ticket ops or waiting times for developers, resulting 4x higher deployment frequency and 30% faster time to market.'
+    description: 'Humanitec enables enterprises to build Internal Developer Platforms that drive change at scale. Top-performing platform teams leverage our products and processes to reduce cognitive load and accelerate time to market. DevEx platform engineers use Score and the Portal to enable developer self-service. Infrastructure platform engineers use the Platform Orchestrator and Resource Packs to drive automation and standardization by design.'
   },
   {
     title: 'igventure',
