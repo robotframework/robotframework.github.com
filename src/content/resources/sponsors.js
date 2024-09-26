@@ -187,6 +187,12 @@ export default () => ([
     description: 'Full-stack software development company that focus on high quality. Interest in data and AI/ML also. Luoto has one of a kind, modern organization structure through full partner program, with lean management and sharp focus on customer experience. Our customers will get best 10% of IT specialist in market, who own the customer experience.'
   },
   {
+    title: 'nerdydino',
+    href: 'https://nerdydino.fi/en/',
+    img: 'nerdydino.png',
+    description: 'Nerdy Dino excels in quality assurance (QA) and test automation, with a strong focus on the Robot Framework. They are experts in ensuring robust software through meticulous testing and automation solutions. Their approach is rooted in delivering reliable, high-quality results, tailored to meet the specific needs of each project. Nerdy Dino\'s commitment to transparency, continuous learning, and ethical practices sets them apart, making them a trusted partner for businesses seeking to optimize their software quality.'
+  },
+  {
     title: 'nexi',
     href: 'https://www.nexigroup.com/en/',
     img: 'nexi.png',
