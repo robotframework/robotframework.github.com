@@ -157,6 +157,12 @@ export default () => ([
     description: 'imbus is a German leading solution partner for professional software testing and intelligent software quality assurance. The portfolio includes consulting for process improvement as well as test automation, test tools, and training. Since 1992, imbus has been synonymous with smart test automation.'
   },
   {
+    title: 'indexmine',
+    href: 'https://www.indexnine.com/',
+    img: 'indexmine.png',
+    description: 'Indexnine is a fast-paced specialist technology services firm with a growing reputation for designing, building, and testing software products for some of the most successful born-digital businesses in the US and India. We use Robot framework for Web UI, API And mobile automation to release new features quickly. We believe that quality is important and worth the cost because having a buggy system can be much more expensive in the long run. Our aim is to help organizations set up effective testing processes, no matter their size or the technology they use. Our team has skilled engineers specializing in automation using the Robot Framework, covering web, API, and mobile applications. With our expertise, we ensure efficient and reliable automation solutions tailored to your needs.'
+  },
+  {
     title: 'ing group',
     href: 'https://www.ing.com/Home.htm',
     img: 'ing.png',
