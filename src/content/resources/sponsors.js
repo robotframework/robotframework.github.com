@@ -24,6 +24,12 @@ export default () => ([
     description: 'ams OSRAM is using Robot Framework to automate post silicon verification tasks of our light sensors and IC products.'
   },
   {
+    title: 'bartosz',
+    href: 'https://www.bartosz.nl/',
+    img: 'bartosz.png',
+    description: 'We are Bartosz, groundbreaking specialists in software testing. Every day, we help people, companies, and software systems reach new heights. Driven by an unbounded passion, deep knowledge of our craft, and a love for adding value. From our offices in Veenendaal and The Hague, we work for the top 250 companies in the Netherlands. Our dedicated test consultants go the extra mile for them. Analytical IT professionals who are strong communicators with agility in their DNA. Our testers analyze high-impact applications and systems, uncover risks, and remove barriers, all with one goal: To contribute to our clients\' services.'
+  },
+  {
     title: 'Botlabs',
     href: 'https://botlabs.fi/en/home/',
     img: 'botlabs.png',
