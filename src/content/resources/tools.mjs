@@ -159,7 +159,7 @@ export default () => ([
     name: 'rfswarm',
     description: 'Testing tool that allows you to use Robot Framework test cases for performance or load testing.',
     href: 'https://github.com/damies13/rfswarm',
-    tags: ['perfromance test', 'load test', 'volume test']
+    tags: ['performance test', 'load test', 'volume test']
   },
   {
     name: 'Robot Corder',
