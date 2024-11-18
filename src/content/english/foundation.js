@@ -44,7 +44,7 @@ export default () => ({
       title: 'How to join',
       body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
       <ol>
-        <li>Fill in <a href="https://forms.gle/Mek9HQ1Ni31SeW1NA" target="_blank">the application</a></li>
+        <li>Fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLScOilsVlkYEB9a48OBmFG7NFTstSs5H5rqPEHjruC-gbE-NaQ/viewform" target="_blank">the application</a></li>
         <li>Robot Framework Foundation board will make a voting according to our rules</li>
         <li>You are added to the webpage and mailing list, when you are accepted</li>
         <li>Welcome to make the world of Open Source and Automation better!</li>
