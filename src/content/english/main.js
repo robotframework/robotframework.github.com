@@ -66,7 +66,7 @@ export default () => ({
         It is supported by the <a href="/foundation/">Robot Framework Foundation</a> and <a href="/users">widely used</a> in the industry.
         </p>
         <p>
-          Its <a href="https://docs.robotframework.org/docs/style_guide">human-friendly and versalite syntax</a> uses keywords and supports <a href="https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library">extending through libraries</a> in
+          Its <a href="https://docs.robotframework.org/docs/style_guide">human-friendly and versatile syntax</a> uses keywords and supports <a href="https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library">extending through libraries</a> in
           Python, Java, and other languages.
         </p>
         <p class="mb-none">

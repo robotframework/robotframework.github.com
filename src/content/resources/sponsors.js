@@ -36,6 +36,12 @@ export default () => ([
     description: 'Botlabs provides your company with modern software robotics and digitalization services. We want to humanize people’s work by outsourcing difficult and tedious tasks to robots, giving people time to do what they do best, which is to make decisions and communicate.'
   },
   {
+    title: 'Bqa',
+    href: 'https://bqa.nl/',
+    img: 'bqa.png',
+    description: 'BQA is a no-nonsense company based in the Netherlands focused on providing effective Quality Assurance services through expert software testing and automation. We aim to deliver high-quality products efficiently and champion test automation to accelerate this process. We believe that happy workers are key to our success. By using open-source frameworks like Robot Framework, we ensure that our team has the tools they need to excel, while offering reliable and flexible testing solutions to our clients. At BQA, we strive to create a work environment where employee satisfaction contributes to our overall success, helping our clients to stay Quality Aware and reach their objectives.'
+  },
+  {
     title: 'Capgemini',
     href: 'https://www.capgemini.com',
     img: 'capgemini.png',
