@@ -2,7 +2,7 @@
   <div>
     <navbar-sub-page title="Foundation" />
     <div class="container mb-3xlarge">
-      <h1 class="type-center mt-large mb-large color-white">Robot Framework Foundation</h1>
+      <h1 class="type-center mt-large mb-large color-theme">Robot Framework Foundation</h1>
       <div
         class="col-sm-12 col-lg-8 col-lg-offset-2 mb-large type-center px-small"
         v-html="$t('foundation.lead')">
