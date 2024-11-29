@@ -118,6 +118,12 @@ export default () => ([
     description: 'HTTP level testing using Apache HTTP client. Available also at <a href="https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22robotframework-httprequestlibrary%22" target="_blank">Maven central</a>.',
     tags: ['http', 'java']
   },
+	{
+		name: 'ImageCompare Library',
+		href: 'https://github.com/manykarim/robotframework-imagecompare',
+		description: 'A library for simple screenshot comparison. Supports image files like .png and .jpg. Image Parts can be ignored via simple coordinate masks or area masks.',
+		tags: ['comparison', 'screenshot', 'png', 'jpg']
+	},
   {
     name: 'ImageHorizonLibrary',
     href: 'https://github.com/eficode/robotframework-imagehorizonlibrary#readme',
