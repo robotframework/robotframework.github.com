@@ -29,7 +29,8 @@ const getProjectFromLiveDir = async(projectDir) => {
 
 const getProject = async(projectUrl) => {
   console.log(`Loading data from ${projectUrl}`)
-  const configFile = await fetch(`${projectUrl}/config.json?token=${Date.now()}`)
+  // const configFile = await fetch(`${projectUrl}/config.json?token=${Date.now()}`)
+  const configFile = await fetch(`${projectUrl}/config.json`)
     .then(response => response.json())
   const project = { name: configFile.name, files: [], description: '' }
   if (configFile.robotVersion) {
@@ -48,7 +49,8 @@ const getProject = async(projectUrl) => {
   }
   for (const file of configFile.files) {
     const { fileName, hidden } = file
-    const content = await fetch(`${projectUrl}/${fileName}?token=${Date.now()}`)
+    // const content = await fetch(`${projectUrl}/${fileName}?token=${Date.now()}`)
+    const content = await fetch(`${projectUrl}/${fileName}`)
       .then(response => response.text())
     project.files.push({
       fileName,
