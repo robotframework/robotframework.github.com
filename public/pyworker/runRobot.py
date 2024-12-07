@@ -20,6 +20,7 @@ try:
     try:
         import robot
         from robot.libdocpkg import LibraryDocumentation
+        from robot.conf import RobotSettings
     except ImportError:
         robot = None
 
@@ -32,6 +33,7 @@ try:
             time.sleep(1)
             import robot
             from robot.libdocpkg import LibraryDocumentation
+            from robot.conf import RobotSettings
             log(f" = version {robot.__version__}\n")
         except Exception as e:
             js.console.log(f"Installation Exception: {e}")
@@ -111,6 +113,8 @@ try:
         js.console.log(f"Files in working dir: {os.listdir('.')}")
         result = -2
 
+        console_links_enabled = "ConsoleLinks" in RobotSettings._cli_opts
+
         try:
             if test_case_name:
                 kwargs = {"test": test_case_name}
@@ -122,9 +126,11 @@ try:
             if robot_arguments:
                 log(f"Robot Run Arguments: {robot_args}\n")
                 log(f"\nRunning Robot Framework:\n")
+                robot_arguments["consolelinks"] = 'off'
             else:
                 log(f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
                     f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n")
+                kwargs["consolelinks"] = 'off'
 
             org_stdout = sys.__stdout__
             org_stderr = sys.__stderr__
