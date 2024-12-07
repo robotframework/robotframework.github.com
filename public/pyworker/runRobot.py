@@ -10,7 +10,7 @@ import time
 from importlib import import_module, reload
 from io import StringIO
 from pathlib import Path
-                      
+
 def log(message):
     js.postMessage(json.dumps({"std_output": message}))
 
@@ -26,8 +26,9 @@ try:
 
     if robot is None:
         log(f"Install Robot Framework")
-        rf_version = f"=={version}" if version else ""
-        requirements_list.insert(0, f"robotframework{rf_version}")
+        if not [req for req in requirements_list if req.split('==')[0] == 'robotframework']:
+            rf_version = f"=={version}" if version else ""
+            requirements_list.insert(0, f"robotframework{rf_version}")
         try:
             await micropip.install(requirements_list, keep_going=True)
             time.sleep(1)
@@ -126,11 +127,13 @@ try:
             if robot_arguments:
                 log(f"Robot Run Arguments: {robot_args}\n")
                 log(f"\nRunning Robot Framework:\n")
-                robot_arguments["consolelinks"] = 'off'
+                if console_links_enabled:
+                    robot_arguments["consolelinks"] = 'off'
             else:
                 log(f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
                     f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n")
-                kwargs["consolelinks"] = 'off'
+                if console_links_enabled:
+                    kwargs["consolelinks"] = 'off'
 
             org_stdout = sys.__stdout__
             org_stderr = sys.__stderr__
