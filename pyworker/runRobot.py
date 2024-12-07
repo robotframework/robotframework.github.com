@@ -10,7 +10,7 @@ import time
 from importlib import import_module, reload
 from io import StringIO
 from pathlib import Path
-                      
+
 def log(message):
     js.postMessage(json.dumps({"std_output": message}))
 
@@ -20,18 +20,21 @@ try:
     try:
         import robot
         from robot.libdocpkg import LibraryDocumentation
+        from robot.conf import RobotSettings
     except ImportError:
         robot = None
 
     if robot is None:
         log(f"Install Robot Framework")
-        rf_version = f"=={version}" if version else ""
-        requirements_list.insert(0, f"robotframework{rf_version}")
+        if not [req for req in requirements_list if req.split('==')[0] == 'robotframework']:
+            rf_version = f"=={version}" if version else ""
+            requirements_list.insert(0, f"robotframework{rf_version}")
         try:
             await micropip.install(requirements_list, keep_going=True)
             time.sleep(1)
             import robot
             from robot.libdocpkg import LibraryDocumentation
+            from robot.conf import RobotSettings
             log(f" = version {robot.__version__}\n")
         except Exception as e:
             js.console.log(f"Installation Exception: {e}")
@@ -111,6 +114,8 @@ try:
         js.console.log(f"Files in working dir: {os.listdir('.')}")
         result = -2
 
+        console_links_enabled = "ConsoleLinks" in RobotSettings._cli_opts
+
         try:
             if test_case_name:
                 kwargs = {"test": test_case_name}
@@ -122,9 +127,13 @@ try:
             if robot_arguments:
                 log(f"Robot Run Arguments: {robot_args}\n")
                 log(f"\nRunning Robot Framework:\n")
+                if console_links_enabled:
+                    robot_arguments["consolelinks"] = 'off'
             else:
                 log(f"> robot --loglevel TRACE:INFO --exclude EXCL --skip SKIP\n"
                     f"  --removekeywords tag:REMOVE --flattenkeywords tag:FLAT{testcli} .\n")
+                if console_links_enabled:
+                    kwargs["consolelinks"] = 'off'
 
             org_stdout = sys.__stdout__
             org_stderr = sys.__stderr__
