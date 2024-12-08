@@ -24,12 +24,11 @@ const getProjectFromGitHub = async(ghURL) => {
 
 const getProjectFromLiveDir = async(projectDir) => {
   const projectUrl = `${baseURL}/${projectDir}`
-  return getProject(projectUrl)
+  return await getProject(projectUrl)
 }
 
 const getProject = async(projectUrl) => {
   console.log(`Loading data from ${projectUrl}`)
-  // const configFile = await fetch(`${projectUrl}/config.json?token=${Date.now()}`)
   const configFile = await fetch(`${projectUrl}/config.json`)
     .then(response => response.json())
   const project = { name: configFile.name, files: [], description: '' }
@@ -49,7 +48,6 @@ const getProject = async(projectUrl) => {
   }
   for (const file of configFile.files) {
     const { fileName, hidden } = file
-    // const content = await fetch(`${projectUrl}/${fileName}?token=${Date.now()}`)
     const content = await fetch(`${projectUrl}/${fileName}`)
       .then(response => response.text())
     project.files.push({

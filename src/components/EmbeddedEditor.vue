@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
+import { getProject, getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
@@ -273,6 +273,10 @@ export default {
       const project = await getProjectFromGitHub(ghURL)
       this.setProject(project, 'Custom code')
     },
+    async setProjectFromUrl(url) {
+      const project = await getProject(url)
+      this.setProject(project, 'Custom code')
+    },
     async setProjectsFromURL(codeProject) {
       const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
       const project = JSON.parse(strProj)
@@ -348,6 +352,8 @@ export default {
       } else if (urlParams.get('example')) {
         const project = list.find(({ name }) => name === urlParams.get('example'))
         this.setProjectFromConfig(project)
+      } else if (urlParams.get('code-url')) {
+        this.setProjectFromUrl(urlParams.get('code-url'))
       } else {
         this.setProjectFromConfig(list[0], null, null, true)
       }
@@ -545,6 +551,8 @@ export default {
         } else if (urlParams.get('example')) {
           const project = list.find(({ name }) => name === urlParams.get('example'))
           this.setProjectFromConfig(project)
+        } else if (urlParams.get('code-url')) {
+          this.setProjectFromUrl(urlParams.get('code-url'))
         } else {
           this.setProjectFromConfig(list[0], null, null, true)
         }
