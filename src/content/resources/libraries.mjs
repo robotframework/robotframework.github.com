@@ -98,7 +98,7 @@ export default () => ([
   {
     name: 'DoIP Library',
     href: 'https://github.com/test-fullautomation/robotframework-doip',
-    description: 'DoIP (Diagnostic over Internet Protocol) Keyword Library based on <a href="https://pypi.org/project/doipclient/" target="_blank">doipclient</a>.',
+    description: 'DoIP (Diagnostic over Internet Protocol) keyword library based on <a href="https://pypi.org/project/doipclient/" target="_blank">doipclient</a>.',
     tags: ['embedded', 'automotive']
   },
   {
@@ -322,7 +322,7 @@ export default () => ([
   {
     name: 'UDS Library',
     href: 'https://github.com/test-fullautomation/robotframework-uds',
-    description: 'UDS (Unified Diagnostic Services) Keyword Library based on <a href="https://pypi.org/project/udsoncan/" target="_blank">udsoncan</a>, <a href="https://pypi.org/project/doipclient/" target="_blank">doipclient</a> and <a href="https://pypi.org/project/odxtools/" target="_blank">odxtools</a>.',
+    description: 'UDS (Unified Diagnostic Services) keyword library based on <a href="https://pypi.org/project/udsoncan/" target="_blank">udsoncan</a>, <a href="https://pypi.org/project/doipclient/" target="_blank">doipclient</a> and <a href="https://pypi.org/project/odxtools/" target="_blank">odxtools</a>.',
     tags: ['embedded', 'automotive']
   },
   {
