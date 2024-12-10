@@ -180,6 +180,12 @@ export default () => ([
     tags: ['editor']
   },
   {
+    name: 'RobotFramework AIO (All in One)',
+    description: 'RobotFramework AIO combines test development and execution into a single, integrated environment with VSCodium, Robot Framework, and additional keyword libraries. With just three clicks, a fully pre-configured installation is ready, offering version control to ensure reproducible and predictable test results. This solution simplifies test case development and production testing through seamless integration and continuous updates.',
+    href: 'https://robotframework-aio.org',
+    tags: ['IDTE']
+  },  
+  {
     name: 'Robot Tools',
     description: 'Collection of supporting tools that can be used with Robot Framework.',
     href: 'https://bitbucket.org/robotframework/robottools',
