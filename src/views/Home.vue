@@ -56,7 +56,7 @@
           Code of Ethics
         </router-link>
       </button>
-      <video-component videoId='2GDrtvz_1Ds' class="col-sm-12 mt-small" />
+      <video-component videoId='qbFNSVSRBZ8' class="col-sm-12 mt-small" />
     </page-section>
     <hr class="theme">
     <!-- development -->
