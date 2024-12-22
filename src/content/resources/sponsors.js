@@ -267,6 +267,14 @@ export default () => ([
     description: 'The Provinzial Holding AG is the second largest insurance group in Germany. We ensure what is dear to our customers. We gain our strength from the regional ties of our subsidiaries. For more than 300 years, we are where our customers are. Today, more than five million private and corporate customers place their trust in us. What makes us special is our regionality and proximity. Our advisors are at most a few minutes away from our customers and can be reached through our many digital channels at any time. Furthermore, we put great importance on sustainability and commitment to the regions that are firmly anchored in our corporate values. Whether in the field of art and culture, sports sponsorship or security: We engage ourselves - and we do so in many different areas. '
   },
   {
+    title: 'qacompany',
+    href: 'https://qacompany.nl/',
+    img: 'qacompany.png',
+    description: `
+    QA Company is a visionary Dutch full-service software testing services provider. Services include being a trusted advisor for clients that want to use high-end testing to improve speed and quality of their software development teams. QA Company makes test automation a whole team approach bringing AI and codeless test automation in the comfort zone of more people than just test automation engineers. Using third-party AI-powered testing solutions QA Company solves testing issues deemed unsolvable by traditional testing services providers enabling the client’s development teams to enhance quality and speed of software releases.
+    QA Company is privately owned and has a quality-over-quantity growth approach ensuring every new hire fits the company culture of continuous learning both as a professional and as an individual person. It is cool to work there. Employees are all well seasoned testing professionals. They allow QA Company to provide excellent testing services.`
+  },
+  {
     title: 'qfactory',
     href: 'https://www.q-factory.fi/',
     img: 'qfactory.png',
