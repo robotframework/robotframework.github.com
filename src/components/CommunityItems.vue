@@ -58,7 +58,7 @@ export default {
           description: this.$t('community.links.forum.description')
         }, {
           imgName: 'Slack',
-          href: 'https://rf-invite.herokuapp.com/',
+          href: 'https://robotframework.slack.com/',
           title: this.$t('community.links.slack.title'),
           description: this.$t('community.links.slack.description')
         }, {
