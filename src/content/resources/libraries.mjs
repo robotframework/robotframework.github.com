@@ -107,6 +107,12 @@ export default () => ([
     description: 'Testing Eclipse RCP applications using SWT widgets.'
   },
   {
+    name: 'FastHTTPMock',
+    href: 'https://github.com/leelaprasadv/robotframework-fasthttpmock#readme',
+    description: 'HTTP mock server library for Robot Framework using FastAPI and Uvicorn',
+    tags: ['http', 'mock', 'mockserver']
+  },
+  {
     name: 'FTP library',
     href: 'https://github.com/kowalpy/Robot-Framework-FTP-Library',
     description: 'Testing and using FTP server with Robot Framework.',
