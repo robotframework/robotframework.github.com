@@ -38,7 +38,12 @@ export default () => ({
           <td>251-</td>
           <td>12000€</td>
         </tr>
-      </table>`
+      </table>
+      <div class="alert-box">
+      <h4>How is the amount of users determined?</h4>
+      <p>Include those working directly or indirectly with Robot Framework, such as developers, testers, and managers.</p>
+      <p>1-2 users primarily means freelancers and small companies. If you are unsure, feel free to contact us.</p>
+      </div>`
     },
     howToJoin: {
       title: 'How to join',
