@@ -148,7 +148,7 @@ export default () => ([
   },
   {
     name: 'Mainframe3270 Library',
-    href: 'https://github.com/Altran-PT-GDC/Robot-Framework-Mainframe-3270-Library/blob/master/README.md',
+    href: 'https://github.com/MarketSquare/Robot-Framework-Mainframe-3270-Library/blob/master/README.md',
     description: 'Allows the creation of automated test scripts to test IBM Mainframe 3270.',
     tags: ['ibm']
   },
@@ -178,13 +178,13 @@ export default () => ([
   },
   {
     name: 'Rammbock',
-    href: 'https://github.com/robotframework/Rammbock#readme',
+    href: 'https://github.com/MarketSquare/Rammbock#readme',
     description: 'Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets.',
     tags: ['http']
   },
   {
     name: 'RemoteSwingLibrary',
-    href: 'https://github.com/robotframework/remoteswinglibrary',
+    href: 'https://github.com/MarketSquare/remoteswinglibrary',
     description: 'Testing and connecting to a java process and using SwingLibrary, especially Java Web Start applications.',
     tags: ['java']
   },
@@ -255,19 +255,19 @@ export default () => ([
   },
   {
     name: 'SoapLibrary',
-    href: 'https://github.com/Altran-PT-GDC/Robot-Framework-SOAP-Library',
+    href: 'https://github.com/MarketSquare/Robot-Framework-SOAP-Library',
     description: 'Designed for those who want to work with webservice automation as if they were using SoapUI, make a request through an XML file, and receive the response in another XML file.',
     tags: ['http']
   },
   {
     name: 'SSHLibrary',
-    href: 'https://github.com/robotframework/SSHLibrary',
+    href: 'https://github.com/MarketSquare/SSHLibrary',
     description: 'Enables executing commands on remote machines over an SSH connection. Also supports transfering files using SFTP.',
     tags: ['ftp', 'ssh']
   },
   {
     name: 'SwingLibrary',
-    href: 'https://github.com/robotframework/SwingLibrary/wiki',
+    href: 'https://github.com/MarketSquare/SwingLibrary/wiki',
     description: 'Testing Java applications with Swing GUI.',
     tags: ['java', 'ui']
   },

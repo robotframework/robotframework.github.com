@@ -20,7 +20,7 @@ export default () => ([
   {
     name: 'RobotCode',
     description: 'RobotFramework support for Visual Studio Code, including features like code completion, navigation, refactoring, usage analysis, debugging, test explorer, test execution and more!',
-    href: 'https://github.com/d-biehl/robotcode',
+    href: 'https://github.com/robotcodedev/robotcode',
     tags: ['editor', 'vscode']
   },
   {
@@ -110,7 +110,7 @@ export default () => ([
   {
     name: 'DbBot',
     description: 'Tool for serializing Robot Framework execution results, i.e. output.xml files, into an SQLite database. It serves a good starting point to create your own reporting and analyzing tools.',
-    href: 'https://github.com/robotframework/DbBot',
+    href: 'https://github.com/MarketSquare/DbBot',
     tags: ['']
   },
   {
@@ -184,7 +184,7 @@ export default () => ([
     description: 'RobotFramework AIO combines test development and execution into a single, integrated environment with VSCodium, Robot Framework, and additional keyword libraries. With just three clicks, a fully pre-configured installation is ready, offering version control to ensure reproducible and predictable test results. This solution simplifies test case development and production testing through seamless integration and continuous updates.',
     href: 'https://robotframework-aio.org',
     tags: ['IDTE']
-  },  
+  },
   {
     name: 'Robot Tools',
     description: 'Collection of supporting tools that can be used with Robot Framework.',
