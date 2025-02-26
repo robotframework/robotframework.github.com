@@ -59,6 +59,9 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
     'IF',
     'END',
     'FOR',
+    'WHILE',
+    'VAR',
+    'GROUP',
     'IN',
     'IN RANGE',
     'IN ENUMERATE',
@@ -147,7 +150,7 @@ monaco.languages.setMonarchTokensProvider('robotframework', {
       [/.*?(?= {2}|[$&%@]\{|\])/, 'variable.meta.dictKey4', '@pop']
     ],
     keyword: [
-      [/(?: {2,}| ?\t ?)+(IF|END|FOR|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN|BREAK|WHILE|CONTINUE)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
+      [/(?: {2,}| ?\t ?)+(IF|END|FOR|WHILE|VAR|GROUP|IN|IN RANGE|IN ENUMERATE|IN ZIP|ELSE|ELSE IF|TRY|EXCEPT|FINALLY|RETURN|BREAK|WHILE|CONTINUE)(?= {2,}| ?\t ?|$)/, 'keyword', '@popall'],
       [/^(?: {2,}| ?\t ?)+[^@$%&]*?(?= {2,}| ?\t ?| ?$)/, 'identifier.keyword1', '@popall'],
       [/^(?:(?:(?: {2,}| ?\t ?)(?:[$&@]\{(?:.*?)\}(?: ?=)))*(?: {2,}| ?\t ?))(.+?)(?= {2,}| ?\t ?|$)/, 'identifier.keyword3', '@popall']
     ],
@@ -276,6 +279,7 @@ function createSettingsProposals(settingsLines, range) {
     'Test Teardown',
     'Test Template',
     'Test Timeout',
+    'Test Tags',
     'Force Tags',
     'Default Tags'
   ]
@@ -318,6 +322,7 @@ function createTCKWSettingProposals(range, currentTable, lines) {
     '[Documentation]    ',
     '[Tags]    ',
     '[Arguments]    ',
+    '[Setup]    ',
     '[Teardown]    '
   ]
 
@@ -326,6 +331,8 @@ function createTCKWSettingProposals(range, currentTable, lines) {
     'ELSE',
     'ELSE IF    ',
     'FOR    ',
+    'VAR    ',
+    'GROUP    ',
     'END',
     'WHILE    ',
     'RETURN    ',

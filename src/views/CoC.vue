@@ -9,7 +9,7 @@
       </router-link>
     </div>
     <h2>
-      Robot Framework Code of Conduct
+      Robot Framework Code of Ethics
     </h2>
     <p>
       ROBOT FRAMEWORK FOUNDATION is dedicated to providing a harassment-free experience for everyone,
@@ -18,8 +18,8 @@
       form.
     </p>
     <p>
-      This code of conduct applies to all ROBOT FRAMEWORK spaces, both online and off.
-      Anyone who violates this code of conduct may be sanctioned or expelled from these spaces at the
+      This code of ethics applies to all ROBOT FRAMEWORK spaces, both online and off.
+      Anyone who violates this code of ethics may be sanctioned or expelled from these spaces at the
       discretion of the Robot Framework board.
     </p>
     <p>
@@ -103,7 +103,7 @@
         If you are being harassed by a member of ROBOT FRAMEWORK, notice that someone else is being harassed, or have any other concerns, please contact <a style="display: inline;" href="mailto: awareness@robotframework.org">awareness@robotframework.org</a>. If the person who is harassing you is on the team, they will recuse themselves from handling your incident. We will respond as promptly as we can.
       </li>
       <li>
-        This code of conduct applies to ROBOT FRAMEWORK spaces, but if you are being harassed by a member of ROBOT FRAMEWORK outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by ROBOT FRAMEWORK members seriously. This includes harassment outside our spaces and harassment that took place at any point in time. The abuse team reserves the right to exclude people from ROBOT FRAMEWORK based on their past behaviour, including behaviour outside ROBOT FRAMEWORK spaces and behaviour towards people who are not in ROBOT FRAMEWORK community.
+        This code of ethics applies to ROBOT FRAMEWORK spaces, but if you are being harassed by a member of ROBOT FRAMEWORK outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by ROBOT FRAMEWORK members seriously. This includes harassment outside our spaces and harassment that took place at any point in time. The abuse team reserves the right to exclude people from ROBOT FRAMEWORK based on their past behaviour, including behaviour outside ROBOT FRAMEWORK spaces and behaviour towards people who are not in ROBOT FRAMEWORK community.
       </li>
       <li>
         In order to protect volunteers from abuse and burnout, we reserve the right to reject any report we believe to have been made in bad faith. Reports intended to silence legitimate criticism may be deleted without response.
