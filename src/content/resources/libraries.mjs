@@ -285,7 +285,7 @@ export default () => ([
   },
   {
     name: 'WADLibrary',
-    href: 'https://github.com/Adwisit/WADLibrary',
+    href: 'https://github.com/rogerjagaredev/WADLibrary',
     description: 'Application testing library that utilizes Win App Driver.',
     tags: ['windows']
   },
