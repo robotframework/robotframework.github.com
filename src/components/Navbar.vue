@@ -186,7 +186,7 @@ export default {
     flex-wrap: nowrap;
     position: sticky;
     top: -0.1px;
-    z-index: 2;
+    z-index: 99;
   }
   button, a {
     transition: color 0.2s;
