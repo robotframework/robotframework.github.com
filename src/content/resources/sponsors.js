@@ -30,12 +30,6 @@ export default () => ([
     description: 'We are Bartosz, groundbreaking specialists in software testing. Every day, we help people, companies, and software systems reach new heights. Driven by an unbounded passion, deep knowledge of our craft, and a love for adding value. From our offices in Veenendaal and The Hague, we work for the top 250 companies in the Netherlands. Our dedicated test consultants go the extra mile for them. Analytical IT professionals who are strong communicators with agility in their DNA. Our testers analyze high-impact applications and systems, uncover risks, and remove barriers, all with one goal: To contribute to our clients\' services.'
   },
   {
-    title: 'Botlabs',
-    href: 'https://botlabs.fi/en/home/',
-    img: 'botlabs.png',
-    description: 'Botlabs provides your company with modern software robotics and digitalization services. We want to humanize people’s work by outsourcing difficult and tedious tasks to robots, giving people time to do what they do best, which is to make decisions and communicate.'
-  },
-  {
     title: 'Bqa',
     href: 'https://bqa.nl/',
     img: 'bqa.png',
