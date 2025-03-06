@@ -127,6 +127,12 @@ export default () => ([
     <br>"At Fresenius Medical, we leverage the power of Robot Framework for our product verification processes Robot Framework empowers us to achieve faster and more reliable testing, ultimately contributing to the enhancement of our product development processes."`
   },
   {
+    title: 'gobigger',
+    href: 'https://go-bigger.de/',
+    img: 'gobigger.png',
+    description: 'Go Bigger delivers quality training, managed testing services and consulting as experts in testing. They are dedicated to empowering development and testing teams by providing access to expert testing knowledge, hands-on training, and efficient testing processes to ensure the quality and success of their digital products. Go Bigger promises to equip teams and individuals with up-to-date knowledge and reliable processes to excel in building and testing high-quality digital products. They actively utilise the Robot Framework for test automation with their clients and are working towards offering resources for Robot Framework certification.'
+  },
+  {
     title: 'gofore',
     href: 'https://gofore.com/en/',
     img: 'gofore.png',
