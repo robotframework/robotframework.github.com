@@ -30,11 +30,6 @@ export default () => ([
     href: 'https://www.slideshare.net/pekkaklarck/robot-framework-introduction'
   },
   {
-    name: 'RPA tutorials',
-    description: 'Robocorp RPA tutorials, courses, and guidelines',
-    href: 'https://robocorp.com/docs/courses'
-  },
-  {
     name: 'Robot Framework katas',
     description: 'Series of exercises and examples how to get started with test automation. No prior knowledge of test automation required.',
     href: 'https://github.com/eficode-academy/rf-katas'
@@ -58,11 +53,6 @@ export default () => ([
     name: 'Demo: Using C with Robot Framework',
     description: 'This simple example demonstrates how to use C language from Robot Framework test libraries.',
     href: 'https://bitbucket.org/robotframework/cdemo'
-  },
-  {
-    name: 'Demo: Robot Framework RPA example projects',
-    description: 'A library of sample RPA projects and code snippets built on Robot Framework',
-    href: 'https://robocorp.com/portal/'
   },
   {
     name: 'Demo: Remote interface',

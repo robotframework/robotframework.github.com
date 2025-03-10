@@ -1,23 +1,12 @@
 <template>
-  <div
-    class="border-top-theme mt-xlarge section-container"
-    tabindex="-1">
-    <div class="row p-small pb-none">
-      <div
-        class="col-sm-12 col-lg-3"
-        :class="$store.state.isMobile ? '' : 'pt-3xsmall'">
-        <h2 :id="titleId" :class="longTitle && 'type-large'">
-          {{ title }}
-        </h2>
-      </div>
-      <div
-        class="col-sm-12 col-lg-9"
-        :class="$store.state.isMobile ? '' : 'pt-2xsmall'"
-        v-html="body" />
+  <div class="row section-container">
+    <div class="col-sm-12 col-lg-2 title">
+      <h2 :id="titleId">
+        {{ title }}
+      </h2>
     </div>
-    <div
-      class="row"
-      :class="$store.state.isMobile ? '' : 'pl-small pr-small'">
+    <div class="col-sm-12 col-lg-10 body">
+      <div v-html="body" />
       <slot />
     </div>
   </div>
@@ -56,10 +45,29 @@ export default {
     visibility: hidden;
     pointer-events: none;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1024px) {
+    .section-container {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
     h2::before {
       margin-top: -30px;
       height: 30px;
+    }
+    h2 {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .section-container {
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
+    .title {
+      padding-left: 1rem;
+    }
+    .body {
+      padding-right: 1rem;
     }
   }
 </style>

@@ -228,10 +228,19 @@ export default () => ([
       software for Trucks and Automated Guided Vehicles (AGV’s).`
   },
   {
-    title: 'Ryerson',
-    href: 'https://www.ryerson.ca/',
-    imgName: 'ryerson.png',
-    text: `Ryerson University uses Robot Framework to conduct desktop and mobile
+    title: 'RunWhen',
+    href: 'https://www.runwhen.com/',
+    imgName: 'runwhen.png',
+    text: `RunWhen has built a platform for Social Reliability Engineering that allows 
+    organizations to collaboratively build and scale their Site Reliability Engineering practices. 
+    The RunWhen platform uses Robot Framework to power its open source & community-driven 
+    Service Level Indicator, Service Level Objective, and Task Automation codebundles.`
+  },
+  {
+    title: 'Toronto Metropolitan University',
+    href: 'https://www.torontomu.ca/',
+    imgName: 'tmu_logo.png',
+    text: `Toronto Metropolitan University uses Robot Framework to conduct desktop and mobile
       browser testing for its suite of applications that serve both students and staff.`
   },
 
@@ -254,6 +263,13 @@ export default () => ([
       solution for testing multiple interfaces and technologies with a single tool.`
   },
   {
+    title: 'Smart Synergies',
+    href: 'https://www.smart-synergies.eu/',
+    imgName: 'smartsynergies.png',
+    text: `Smart Synergies promotes Robotframework as the "Swiss Army Knife" of Software testing tools in the wide and open seas of commercial 
+      and open-source software testing tools and applies it since 2014 with great success to its customer's test automation projects. Smart Synergies delivers end-2-end test automation services from building pilots demoing Robotframeworks powers to making it part of the continuous integration pipeline, from creating test automation strategies to designing and implementing test scenarios and cases.`
+  },
+  {
     title: 'Testmo',
     href: 'https://www.testmo.com/',
     imgName: 'testmo.png',
@@ -265,7 +281,7 @@ export default () => ([
     href: 'https://www.tesena.com/',
     imgName: 'tesena.png',
     text: `Testing is not just something we do. It is everything we do.
-      We help companies reveal bugs in their software and save costs thanks to our know-how. 
+      We help companies reveal bugs in their software and save costs thanks to our know-how.
       We are leaders in the testing community, providing training courses, events and inspiration in the field of software testing.`
   },
   {
@@ -276,15 +292,6 @@ export default () => ([
       complex interoperability testing, involving API, desktop, mobile, web, network devices and
       special hardware. With this framework, we can easily expand testing scopes, improve automation
       run speed while still keeping high reliability.`
-  },
-  {
-    title: 'Wärtsilä Digital Technologies',
-    href: 'https://www.wartsila.com/',
-    imgName: 'wartsila.png',
-    text: `Wärtsilä Digital Technologies uses Robot to automate various types of testing. API
-      testing, component testing, functional and system tests are used to ensure the highest quality
-      of a wide variety of software. The Robot Framework helps us automate testing of mobile
-      applications, web applications and cross-platform desktop applications.`
   },
   {
     title: 'Zilogic',
@@ -299,5 +306,13 @@ export default () => ([
     imgName: 'zymr.png',
     text: `Zymr has deep expertise in the Robot Framework and using it extensively for automating
       the test cases for the clients in various industries. It has been used within Docker and other containers.`
+  },
+  {
+    title: 'Medical Billing Wholesalers',
+    href: 'https://www.medicalbillingwholesalers.com/',
+    imgName: 'medical_billing.png',
+    text: `Consumed by our purpose of being the most agile healthcare services company in the world,
+      we have created a strong delivery model combining the knowledge of our people with market-leading
+      technologies to deliver great revenue cycle outcomes to our customers.`
   }
 ])

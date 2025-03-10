@@ -8,7 +8,7 @@
             v-if="projectsList"
             class="dropdown relative mr-xsmall mt-xsmall"
             ref="projectDropdown">
-            <button class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
+            <button id="project-drop-down" class="stroke small flex middle between bg-grey-darkest" @click="projectDropdownOpen = !projectDropdownOpen">
               <transition name="opacity" mode="out-in">
                 <div class="mr-3xsmall ml-2xsmall" :key="activeProjectName">
                   {{ activeProjectName }}
@@ -23,6 +23,7 @@
             <transition name="fade">
               <div
                 v-if="projectDropdownOpen"
+                id="project-dropdown-content"
                 class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
                 <button
                   v-for="project in projectsList"
@@ -39,12 +40,14 @@
             <transition name="opacity">
               <button
                 v-if="activeProjectName !== 'Custom code' && editorStatus.projectModified"
+                id="reset-project-button"
                 class="alert small mr-xsmall"
                 @click="resetProject(); editorStatus.projectModified = false">
                 Reset
               </button>
             </transition>
             <button
+              id="copy-project-button"
               class="stroke mr-xsmall small flex middle"
               @click="copyProject()">
               <copy-icon size="1rem" color="white" />
@@ -52,6 +55,7 @@
             </button>
             <button
               v-if="!isFullEditor"
+              id="open-maximized-button"
               class="stroke small flex middle"
               @click="openMaximized()">
               <new-tab-icon size="1rem" color="white" />
@@ -66,7 +70,11 @@
           :class="$store.state.isMobile ? 'mt-large' : 'mt-xsmall'"
           ref="versionDropdown">
           <label class="absolute type-small" style="top: -1.5rem;">version</label>
-          <button class="stroke small flex middle between bg-grey-darkest" style="min-width: 7.5rem;" @click="versionDropdownOpen = !versionDropdownOpen">
+          <button
+            id="version-drop-down"
+            class="stroke small flex middle between bg-grey-darkest"
+            style="min-width: 7.5rem;"
+            @click="versionDropdownOpen = !versionDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-3xsmall" :key="activeProjectName">
                 {{ selectedRFVersion }}
@@ -80,6 +88,7 @@
           <transition name="fade">
             <div
               v-if="versionDropdownOpen"
+              id="version-dropdown-content"
               class="dropdown-content absolute bg-grey-darkest px-xsmall pb-none pt-small">
               <button
                 v-for="version in RFVersions"
@@ -117,7 +126,10 @@
       <transition name="opacity" mode="out-in">
         <!-- file dropdown (mobile) -->
         <div v-if="$store.state.isMobile" class="dropdown relative mr-xsmall" ref="fileDropdown">
-          <button class="stroke small flex middle between bg-grey-darkest" @click="filesDropdownOpen = !filesDropdownOpen">
+          <button
+            id="file-drop-down"
+            class="stroke small flex middle between bg-grey-darkest"
+            @click="filesDropdownOpen = !filesDropdownOpen">
             <transition name="opacity" mode="out-in">
               <div class="mr-3xsmall ml-2xsmall" :key="activeFileName">
                 {{ activeFileName }}
@@ -131,6 +143,7 @@
           <transition name="fade">
             <div
               v-if="filesDropdownOpen"
+              id="file-dropdown-content"
               class="dropdown-content absolute bg-grey-darkest px-small pb-none pt-small">
               <button
                 v-for="{ fileName, hidden } in activeProject?.files"
@@ -148,6 +161,7 @@
         <div v-else :key="activeProjectName">
           <button
             v-for="{ fileName, hidden } in activeProject?.files"
+            :id="'file-tab-' + fileName"
             :key="fileName"
             v-show="!hidden"
             class="stroke small m-2xsmall bg-grey-darkest"
@@ -162,6 +176,7 @@
         <button
           class="theme flex middle"
           :class="editorStatus.running ? 'disabled' : 'bling'"
+          id="run-button"
           @click="runRobotTest()">
           <div class="pr-3xsmall weigh-black">{{ editorStatus.running ? '...' : 'Run' }}</div>
           <play-icon color="black" size="1.3rem" />
@@ -203,7 +218,7 @@
       <div class="col-sm-12 col-md-5 flex height-fit mt-small">
         <transition name="opacity">
           <div v-if="logSrc">
-            <button class="stroke small flex mr-small middle" @click="showLog = true">
+            <button id="log.html-button" class="stroke small flex mr-small middle" @click="showLog = true">
               <document-icon color="white" size="1.25rem" />
               <div class="ml-2xsmall">
                 log.html
@@ -213,7 +228,7 @@
         </transition>
         <transition name="opacity">
           <div v-if="reportSrc">
-            <button class="stroke small flex middle" @click="showReport = true">
+            <button id="report.html-button" class="stroke small flex middle" @click="showReport = true">
               <document-icon color="white" size="1.25rem" />
               <div class="ml-2xsmall">
                 report.html
@@ -249,7 +264,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
+import { getProject, getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { scrollToPosition } from 'Js/scroll.js'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
@@ -309,6 +324,8 @@ export default {
     copyMessage: null,
     RFVersions: [],
     selectedRFVersion: '',
+    robotArgs: {},
+    requirements: [],
     reinstallRF: false,
     versionDropdownOpen: false
   }),
@@ -328,7 +345,7 @@ export default {
       return marked.parse(str).replace('<h1', '<h2').replace('</h1', '</h2') // no h1 here plz
     },
     clickFn(ev) {
-      if (!this.$refs.projectDropdown.contains(ev.target)) this.projectDropdownOpen = false
+      if (!this.$refs.projectDropdown?.contains(ev.target)) this.projectDropdownOpen = false
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
       if (this.$refs.versionDropdown && !this.$refs.versionDropdown.contains(ev.target)) this.versionDropdown = false
     },
@@ -365,6 +382,7 @@ export default {
             content: model[1].getValue()
           }
         }
+        return null
       })
         .filter((a) => a)
       const project = {
@@ -372,21 +390,28 @@ export default {
         description: '',
         files: files.filter(({ hidden }) => !hidden),
         derivedProject: isOfficialProject,
-        robotVersion: this.selectedRFVersion
+        robotVersion: this.selectedRFVersion,
+        robotArgs: this.robotArgs,
+        requirements: this.requirements
       }
       console.log(project)
-      var strProj = JSON.stringify(project)
-      var compProj = LZString.compressToEncodedURIComponent(strProj)
+      const strProj = JSON.stringify(project)
+      const compProj = LZString.compressToEncodedURIComponent(strProj)
       console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
       return compProj
     },
     async setProjectFromGitHub(ghURL) {
-      var project = await getProjectFromGitHub(ghURL)
+      const project = await getProjectFromGitHub(ghURL)
+      this.setProject(project, 'Custom code')
+    },
+    async setProjectFromUrl(url) {
+      const project = await getProject(url)
       this.setProject(project, 'Custom code')
     },
     async setProjectsFromURL(codeProject) {
       const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
-      var project = JSON.parse(strProj)
+      const project = JSON.parse(strProj)
+      console.log(project)
       if (project.derivedProject) {
         const proj = await getProjectFromLiveDir(this.projectsList.find(({ name }) => name === project.name).dir)
         proj.files = proj.files
@@ -399,6 +424,7 @@ export default {
           proj.description = `## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content. \n\nIf you run this code it will be executed in your browser.\n\n---\n${proj.description}`
         }
         proj.robotVersion = project.robotVersion
+        console.log(proj)
         this.setProject(proj, proj.name)
       } else {
         project.description = '## ⚠️ Caution: User Created Content\n\nBe aware that this code is created by a user of that page and not by Robot Framework Foundation. Therefore we are not liable for the content.\n\nIf you run this code it will be executed in your browser.'
@@ -434,6 +460,12 @@ export default {
       this.activeProject = project
       if (project.robotVersion) {
         this.selectedRFVersion = project.robotVersion
+      }
+      if (project.robotArgs) {
+        this.robotArgs = project.robotArgs
+      }
+      if (project.requirements) {
+        this.requirements = project.requirements
       }
       this.setActiveFile(activeFileName || project.files[0].fileName)
       this.editorStatus.projectModified = false
@@ -497,7 +529,7 @@ export default {
         })
         this.editorStatus.running = true
         const init = this.reinstallRF
-        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion) }, scrollDuration)
+        setTimeout(() => { runRobot(files, init, tcName, this.selectedRFVersion, this.robotArgs, this.requirements) }, scrollDuration)
         this.reinstallRF = false
       })
     }
@@ -551,7 +583,7 @@ export default {
       contextMenuOrder: 0,
       run: (ed) => { this.runRobotTest() }
     })
-    var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
+    const commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
 
     codeLens = monaco.languages.registerCodeLensProvider('robotframework', {
       provideCodeLenses: function(model, token) {
@@ -572,7 +604,7 @@ export default {
           }
         }
         const testCases = getTestCaseRanges(model)
-        var lenses = testCases.map((testCase) => {
+        const lenses = testCases.map((testCase) => {
           return getTestCaseLense(testCase)
         })
         lenses.push({
@@ -590,7 +622,7 @@ export default {
           }
         })
         return {
-          lenses: lenses,
+          lenses,
           dispose: () => {}
         }
       },
@@ -633,6 +665,8 @@ export default {
         } else if (urlParams.get('example')) {
           const project = list.find(({ name }) => name === urlParams.get('example'))
           this.setProjectFromConfig(project)
+        } else if (urlParams.get('code-url')) {
+          this.setProjectFromUrl(urlParams.get('code-url'))
         } else {
           this.setProjectFromConfig(list[0], null, null, true)
         }
@@ -641,7 +675,7 @@ export default {
       .then((allVersions) => {
         this.RFVersions = allVersions
           .filter((version) => {
-            return version.match(/^(3\.[12][\d.]*|[4-9][\d.]*)$/)
+            return version.match(/^(3\.2[\d.]*|[4-9][\d.]*)$/)
           })
         this.selectedRFVersion = this.RFVersions.at(0)
         if (this.RFVersions[0] !== allVersions[0]) {

@@ -10,14 +10,14 @@ export default () => ({
         <li>Ensure Robot Framework is maintained and developed</li>
         <li>Get visibility about your membership for your company if you wish</li>
         <li>Gain ability to participate in decision making</li>
-        <li>Get all this for an affordable price per user</li>
+        <li>Get discounted tickets to RoboCon events</li>
       </ol>
-      <h3>Annual Fees</h3>
-      <p>Annual fee is determined by how many Robot Framework users are in your organization:</p>
+      <h3>Annual fee</h3>
+      <p>The pricing is determined by the amount of Robot Framework users in your organization:</p>
       <table class="col-sm-12 col-md-6">
         <tr>
           <th>Users</th>
-          <th>Fee</th>
+          <th>Fee / year</th>
         </tr>
         <tr>
           <td>1-2</td>
@@ -38,13 +38,18 @@ export default () => ({
           <td>251-</td>
           <td>12000€</td>
         </tr>
-      </table>`
+      </table>
+      <div class="alert-box">
+      <h4>How is the amount of users determined?</h4>
+      <p>Include those working directly or indirectly with Robot Framework, such as developers, testers, and managers.</p>
+      <p>1-2 users primarily means freelancers and small companies. If you are unsure, feel free to contact us.</p>
+      </div>`
     },
     howToJoin: {
       title: 'How to join',
       body: `<p>If you'd like to become a member of Robot Framework Foundation, please</p>
       <ol>
-        <li>Fill in <a href="https://forms.gle/Mek9HQ1Ni31SeW1NA" target="_blank">the application</a></li>
+        <li>Fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLScOilsVlkYEB9a48OBmFG7NFTstSs5H5rqPEHjruC-gbE-NaQ/viewform" target="_blank">the application</a></li>
         <li>Robot Framework Foundation board will make a voting according to our rules</li>
         <li>You are added to the webpage and mailing list, when you are accepted</li>
         <li>Welcome to make the world of Open Source and Automation better!</li>

@@ -2,7 +2,7 @@
   <div>
     <div
       class="bg-grey-dark color-white card"
-      :class="$store.state.isMobile ? 'p-small pt-medium sharp' : 'p-large'">
+      :class="$store.state.isMobile ? 'p-medium pt-medium sharp' : 'p-large'">
       <div class="row">
         <button
           v-for="({ name, key }, i) in $tm('resources.tabs')"

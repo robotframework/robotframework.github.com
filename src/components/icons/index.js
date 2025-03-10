@@ -5,6 +5,9 @@ import RobotIcon from './RobotIcon.vue'
 import DocumentIcon from './DocumentIcon.vue'
 import TwitterIcon from './TwitterIcon.vue'
 import RetweetIcon from './RetweetIcon.vue'
+import CalendarIcon from './CalendarIcon.vue'
+import FilterIcon from './FilterIcon.vue'
+import MarkerIcon from './MarkerIcon.vue'
 
 export {
   GlobeIcon,
@@ -13,5 +16,8 @@ export {
   RobotIcon,
   DocumentIcon,
   TwitterIcon,
-  RetweetIcon
+  RetweetIcon,
+  CalendarIcon,
+  FilterIcon,
+  MarkerIcon
 }

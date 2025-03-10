@@ -1,6 +1,6 @@
 <template>
   <svg
-    viewBox="0 0 24 24"
+    viewBox="3 3 18 18"
     :width="size"
     :height="size"
     :fill="fillColor"

@@ -18,15 +18,9 @@ export default () => ([
     tags: ['editor']
   },
   {
-    name: 'Eclipse plugin',
-    description: 'Robot Framework plugin for Eclipse IDE.',
-    href: 'https://github.com/NitorCreations/RobotFramework-EclipseIDE/wiki',
-    tags: ['editor']
-  },
-  {
     name: 'RobotCode',
     description: 'RobotFramework support for Visual Studio Code, including features like code completion, navigation, refactoring, usage analysis, debugging, test explorer, test execution and more!',
-    href: 'https://github.com/d-biehl/robotcode',
+    href: 'https://github.com/robotcodedev/robotcode',
     tags: ['editor', 'vscode']
   },
   {
@@ -57,18 +51,6 @@ export default () => ([
     name: 'Notepad++',
     description: 'Syntax highlighting for Notepad++.',
     href: 'https://github.com/vkosuri/npp-robot',
-    tags: ['editor']
-  },
-  {
-    name: 'RED',
-    description: 'Eclipse based editor with a debugger by Nokia.',
-    href: 'https://github.com/nokia/RED',
-    tags: ['editor']
-  },
-  {
-    name: 'Language Server for VS Code',
-    description: 'VS Code LSP extension - syntax highlight, linting, code completion, debugging, and more',
-    href: 'https://marketplace.visualstudio.com/items?itemName=robocorptech.robotframework-lsp',
     tags: ['editor']
   },
   {
@@ -128,7 +110,7 @@ export default () => ([
   {
     name: 'DbBot',
     description: 'Tool for serializing Robot Framework execution results, i.e. output.xml files, into an SQLite database. It serves a good starting point to create your own reporting and analyzing tools.',
-    href: 'https://github.com/robotframework/DbBot',
+    href: 'https://github.com/MarketSquare/DbBot',
     tags: ['']
   },
   {
@@ -198,6 +180,12 @@ export default () => ([
     tags: ['editor']
   },
   {
+    name: 'RobotFramework AIO (All in One)',
+    description: 'RobotFramework AIO combines test development and execution into a single, integrated environment with VSCodium, Robot Framework, and additional keyword libraries. With just three clicks, a fully pre-configured installation is ready, offering version control to ensure reproducible and predictable test results. This solution simplifies test case development and production testing through seamless integration and continuous updates.',
+    href: 'https://robotframework-aio.org',
+    tags: ['IDTE']
+  },
+  {
     name: 'Robot Tools',
     description: 'Collection of supporting tools that can be used with Robot Framework.',
     href: 'https://bitbucket.org/robotframework/robottools',
@@ -210,8 +198,8 @@ export default () => ([
     tags: ['']
   },
   {
-    name: 'RobotMK',
-    description: 'RobotMK integrates results of Robot tests into the monitoring system Checkmk. Makes it possible to send alerts if any keyword/test/suite runtime exceeds the allowed runtime or fails. Performance graphs and SLA reports. Web based configuration of Robot parameters. Automatic client deployment rule system ("bakery").',
+    name: 'Robotmk',
+    description: 'With Robotmk, arbitrary Robot Framework tests can be seamlessly integrated into the Checkmk monitoring tool. In addition to server and network metrics, Checkmk administrators also get worthful insights about on how well business applications are performing from the users point of view ("End-2-End Monitoring"). Robotmk can flexibly monitor and graph the runtimes of tests and keywords, and also alert when related SLAs are violated.',
     href: 'https://github.com/elabit/robotmk/',
     tags: ['']
   },

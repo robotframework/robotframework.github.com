@@ -1,0 +1,63 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Europe/Helsinki
+X-LIC-LOCATION:Europe/Helsinki
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0300
+TZNAME:EEST
+DTSTART:19700329T030000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0200
+TZNAME:EET
+DTSTART:19701025T040000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Helsinki:20201030T160000
+DTEND;TZID=Europe/Helsinki:20201030T170000
+RRULE:FREQ=MONTHLY;UNTIL=20230709T235959Z;BYDAY=-1FR
+DTSTAMP:20201028T140630Z
+ORGANIZER;CN=Robot Framework Foundation events:mailto:c_cvo6kq3s972o7633u2n
+ f6u1v7o@group.calendar.google.com
+UID:jo7pitt3vtmk52tafghu4hbpie_R20201030T140000@google.com
+X-MICROSOFT-CDO-OWNERAPPTID:2016781638
+CREATED:20200525T084549Z
+DESCRIPTION:Hello all\,\nLet's have an open session where we can talk about
+  the Robot Framework and Robot Framework Foundation related topics. Discuss
+ ions are free formed and informal. This invitation can be freely distribute
+ d inside the Robot Framework community. Topics can be anything\, which you 
+ want to talk about with the rest of community members. Please add your topi
+ c and your name.\nTopics:\nhttps://docs.google.com/document/d/1KXEACIO1sSHr
+ wwXsuVmY2mf4OIvMneagae8Vwjdu5zw/edit?usp=sharing\n\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPlease do
+  not edit this section of the description.\n\nThis event has a video call.\
+ nJoin: https://meet.google.com/zqm-izqo-uyk\n(FI) +358 9 23132808 PIN: 6875
+ 39337#\nView more phone numbers: https://tel.meet/zqm-izqo-uyk?pin=47441780
+ 41718&hs=7\n\nView your event at https://www.google.com/calendar/event?acti
+ on=VIEW&eid=am83cGl0dDN2dG1rNTJ0YWZnaHU0aGJwaWVfUjIwMjAxMDMwVDE0MDAwMCByZW5
+ lLnJvaG5lckBpbWJ1cy5kZQ&tok=NTQjY19jdm82a3Ezczk3Mm83NjMzdTJuZjZ1MXY3b0Bncm9
+ 1cC5jYWxlbmRhci5nb29nbGUuY29tZDNmZjNjMzk4MzdkOWI1MzBlZDM3MWZkZWIzZGY2MGYxYz
+ VkNWZhMg&ctz=Europe%2FHelsinki&hl=en&es=0.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20201028T140625Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Robot Framework Foundation: "Open" Space
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:This is an event reminder
+TRIGGER:-P0DT0H15M0S
+END:VALARM
+END:VEVENT
+END:VCALENDAR

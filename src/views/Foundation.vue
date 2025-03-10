@@ -2,11 +2,19 @@
   <div>
     <navbar-sub-page title="Foundation" />
     <div class="container mb-3xlarge">
+      <h1 class="type-center mt-large mb-large color-theme">Robot Framework Foundation</h1>
       <div
-        class="col-sm-12 col-lg-9 col-lg-offset-3"
+        class="col-sm-12 col-lg-8 col-lg-offset-2 mb-large type-center px-small"
         v-html="$t('foundation.lead')">
       </div>
-      <VideoComponent videoId="jlhgitypC5Q"/>
+      <div class="col-sm-12 col-lg-8 col-lg-offset-2 px-small">
+        <video controls preload="metadata" style="width: 100%;" class="card border-theme border-light" poster="/video/foundation_poster.webp" onclick="this.play()">
+          <source src="/video/foundation.webm" type="video/webm" media="(min-width: 1200px)" />
+          <source src="/video/foundation_compat.mp4" type="video/mp4" media="(min-width: 1200px)" />
+          <source src="/video/foundation_mobile.webm" type="video/webm" />
+          <source src="/video/foundation_mobile_compat.mp4" type="video/mp4" />
+        </video>
+      </div>
       <page-section
         title-id="benefits-and-cost"
         :title="$t('foundation.benefitsAndCost.title')"
@@ -21,7 +29,7 @@
         title-id="what-we-do"
         :title="$t('foundation.whatWeDo.title')"
         :body="$t('foundation.whatWeDo.body')">
-        <sponsors-detailed class="col-sm-12 col-lg-9 col-lg-offset-3" />
+        <sponsors-detailed class="" />
       </page-section>
     </div>
     <page-footer />
@@ -29,16 +37,18 @@
 </template>
 
 <script>
-import { NavbarSubPage, PageFooter, PageSection, SponsorsDetailed, VideoComponent } from 'Components'
+import { NavbarSubPage, PageFooter, PageSection, SponsorsDetailed } from 'Components'
 
 export default {
   name: 'Foundation',
   components: {
-    VideoComponent,
     NavbarSubPage,
     PageSection,
     SponsorsDetailed,
     PageFooter
-  }
+  },
+  data: () => ({
+    publicPath: process.env.BASE_URL
+  })
 }
 </script>

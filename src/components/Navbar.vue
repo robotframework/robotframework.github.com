@@ -1,69 +1,68 @@
 <template>
   <div
     ref="nav"
-    class="flex navbar bg-black color-white p-xsmall">
-    <transition name="opacity">
-      <div v-if="navSticky && !iconInContainer">
-        <robot-icon
-          size="1.75rem"
-          class="absolute rf-icon-rotation cursor-pointer"
-          @click="logoClick" />
+    class="navbar bg-black color-white p-xsmall">
+    <!-- NAV LEFT SIDE -->
+    <div class="flex middle">
+      <button @click="logoClick" name="scroll to beginning" class="rf-icon flex">
+        <robot-icon size="1.75rem" />
+      </button>
+      <!-- internal page navigation -->
+      <button
+        v-for="(item, i) in $tm('navbar.items')"
+        :key="item.name"
+        :name="`go-to-${item.name}`"
+        class="color-white font-title type-small type-no-underline type-uppercase px-small"
+        :class="i !== 3 ? 'border-right-white border-light' : ''"
+        @click="itemClick(item.id)">
+        {{ item.name }}
+      </button>
+    </div>
+    <!-- NAV RIGHT SIDE -->
+    <div class="flex middle">
+      <div style="height: 1rem;">
+        <a class="github-button" href="https://github.com/robotframework/robotframework" data-color-scheme="dark_high_contrast" data-show-count="true" aria-label="Robot Framework GitHub Stars">Star</a>
       </div>
-    </transition>
-    <div class="container row middle pr-small">
-      <div class="col-sm-3 flex">
-        <transition name="opacity">
-          <robot-icon
-            v-if="navSticky && iconInContainer"
-            size="1.75rem"
-            class="rf-icon-rotation cursor-pointer"
-            @click="logoClick" />
-        </transition>
-      </div>
-      <div class="flex">
-        <!-- internal page navigation -->
+      <router-link
+        class="color-white font-title type-uppercase type-no-underline px-medium"
+        :to="{name: 'Foundation'}">
+        Foundation
+      </router-link>
+      <div class="relative" ref="dropdownDocs">
         <button
-          v-for="(item, i) in $tm('navbar.items')"
-          :key="item.name"
-          :name="`go-to-${item.name}`"
-          class="color-white font-title type-no-underline type-uppercase line-height-body border-right-white border-light"
-          :class="i === 0 ? 'pl-xsmall pr-small' : 'px-small'"
-          @click="itemClick(item.id)">
-          {{ item.name }}
+          class="flex middle font-title type-uppercase line-height-body dropdown-button"
+          :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
+          @click="docsDropdownOpen = !docsDropdownOpen">
+          <div>
+            {{ $t('navbar.dropdownDocs.name') }}
+          </div>
+          <chevron-icon
+            :color="docsDropdownOpen ? 'theme' : 'white'"
+            :direction="docsDropdownOpen ? 'up' : 'down'"
+            size="1rem" />
         </button>
-        <div class="relative" ref="dropdownDocs">
-          <button
-            class="flex middle px-small font-title type-uppercase line-height-body dropdown-button"
-            :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
-            @click="docsDropdownOpen = !docsDropdownOpen">
-            <div>
-              {{ $t('navbar.dropdownDocs.name') }}
-            </div>
-            <chevron-icon
-              :color="docsDropdownOpen ? 'theme' : 'white'"
-              :direction="docsDropdownOpen ? 'up' : 'down'"
-              size="1.5rem" />
-          </button>
-          <transition name="fade">
+        <transition name="fade">
+          <div
+            v-if="docsDropdownOpen"
+            class="dropdown-container bg-black color-white p-large pt-xsmall card">
             <div
-              v-if="docsDropdownOpen"
-              class="dropdown-container bg-black color-white p-small card" style="left: 0.25rem;">
-              <div
-                v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
-                :key="name">
-                <a :href="url"
-                  @click="linkClick(name)">
-                  {{ name }}
-                </a>
-                <p class="type-small mt-none" :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
-                  {{ description }}
-                </p>
+              v-for="({ name, url, description }, i) in $tm('navbar.dropdownDocs.items')"
+              :key="name"
+              class="mt-medium">
+              <a :href="url"
+                class="type-no-underline"
+                @click="linkClick(name)">
+                {{ name }}
+              </a>
+              <div :class="i === $tm('navbar.dropdownDocs.items').length - 1 ? 'mb-none' : ''">
+                {{ description }}
               </div>
             </div>
-          </transition>
-        </div>
+          </div>
+        </transition>
       </div>
     </div>
+  </div>
     <!-- lang - disabled for now
     <button
       class="border-left-white font-title type-uppercase pl-small relative line-height-body"
@@ -97,7 +96,6 @@
         </div>
       </transition>
     </button> -->
-  </div>
 </template>
 
 <script>
@@ -182,6 +180,14 @@ export default {
 </script>
 
 <style scoped>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: -0.1px;
+    z-index: 99;
+  }
   button, a {
     transition: color 0.2s;
   }
@@ -200,34 +206,20 @@ export default {
   a:hover > svg {
     fill: var(--color-theme) !important;
   }
-  .navbar {
-    position: sticky;
-    top: -1px;
-    z-index: 2;
-  }
-  .tiny-logo-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .tiny-logo-container > img {
-    margin-top: 0.1rem;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
   .dropdown-container {
     position: absolute;
-    top: calc(100% + 1rem);
+    top: calc(100% + 1.5rem);
+    right: 0;
     width: max-content;
   }
   .dropdown-container a {
     display: block;
     line-height: 1;
   }
-  .rf-icon-rotation {
+  .rf-icon {
     transition: transform 0.2s;
   }
-  .rf-icon-rotation:hover {
+  .rf-icon:hover {
     transform: rotate(90deg);
   }
 </style>

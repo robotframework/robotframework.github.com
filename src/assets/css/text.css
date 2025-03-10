@@ -55,7 +55,7 @@ h2 {
     font-size: var(--type-xlarge);
     color: var(--color-theme);
     font-weight: var(--weight-bold);
-    margin-bottom: var(--size-medium);
+    margin-bottom: var(--size-small);
     line-height: var(--line-height-h2);
     text-transform: uppercase;
 }
@@ -118,7 +118,6 @@ p {
 
 p.lead {
     font-size: var(--type-large);
-    margin: var(--size-2xlarge) 0;
     font-family: var(--font-title);
     line-height: var(--line-height-lead);
 }
@@ -183,6 +182,9 @@ li {
 }
 .font-body {
     font-family: var(--font-body);
+}
+.font-code {
+    font-family: 'Courier Code';
 }
 
 .type-nowrap {

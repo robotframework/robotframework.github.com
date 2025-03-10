@@ -51,6 +51,12 @@
           <!-- run buttons -->
           <div v-if="!editorStatus.loading" class="flex">
             <button
+              class="stroke mr-xsmall small flex middle"
+              aria-label="Share code"
+              @click="copyProject()">
+              <copy-icon size="1rem" color="white" />
+            </button>
+            <button
               class="theme flex middle"
               :class="editorStatus.running ? 'disabled' : 'bling'"
               @click="runRobotTest()">
@@ -101,7 +107,7 @@
         </pre>
       </div>
       <!-- modal buttons -->
-      <div class="button-bar border-top-theme border-thin col-sm-12 col-md-5 flex height-fit p-xsmall">
+      <div class="button-bar border-top-theme border-thin col-sm-12 flex height-fit p-xsmall">
         <transition name="opacity">
           <div v-if="logSrc">
             <button class="bg-grey-darkest stroke small flex mr-small middle" @click="showLog = true">
@@ -142,7 +148,7 @@
 </template>
 
 <script>
-import { getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
+import { getProject, getProjectsList, getProjectFromGitHub, getProjectFromLiveDir, getRobotFrameworkVersions } from 'Code'
 import { runRobot } from 'Code/pyodide.js'
 import { getTestCaseRanges, addLibrary } from 'Code/editorConfig.js'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
@@ -150,6 +156,7 @@ import * as LZString from 'Code/lz-string'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
+import CopyIcon from './icons/CopyIcon.vue'
 import CloseIcon from './icons/CloseIcon.vue'
 let editor = {}
 let codeLens = null
@@ -172,6 +179,7 @@ export default {
     ChevronIcon,
     PlayIcon,
     DocumentIcon,
+    CopyIcon,
     CloseIcon
   },
   data: () => ({
@@ -216,13 +224,63 @@ export default {
     clickFn(ev) {
       if (this.$refs.fileDropdown && !this.$refs.fileDropdown.contains(ev.target)) this.filesDropdownOpen = false
     },
+    async copyProject() {
+      const compProj = await this.getProjectLink()
+      const url = document.location.origin + '/embed/?codeProject=' + compProj
+      console.log(url.length)
+      if (url.length > 7400) {
+        this.copyMessage = { message: `Code to be shared is too long! ~${url.length - 7400} too many characters...`, success: false }
+        console.log(this.copyMessage.message)
+        await navigator.clipboard.writeText(url)
+      } else {
+        await navigator.clipboard.writeText(url)
+        this.copyMessage = { message: 'Link copied to clipboard!', success: true }
+        console.log(this.copyMessage.message)
+      }
+    },
+    async getProjectLink() {
+      const isOfficialProject = this.projectsList.some(({ name }) => name === this.activeProjectName)
+      const files = Object.entries(models).map((model) => {
+        const content = model[1].getValue()
+        const fileFromProject = this.activeProject.files.find(({ fileName }) => fileName === model[0])
+
+        if (fileFromProject.content !== content || !isOfficialProject) {
+          return {
+            fileName: model[0],
+            content: model[1].getValue(),
+            hidden: fileFromProject.hidden
+          }
+        }
+        return null
+      })
+        .filter((a) => a)
+      const project = {
+        name: this.activeProjectName,
+        description: '',
+        files: files.filter(({ hidden }) => !hidden),
+        derivedProject: isOfficialProject,
+        robotVersion: this.selectedRFVersion,
+        robotArgs: this.robotArgs,
+        requirements: this.requirements
+      }
+      console.log(project)
+      const strProj = JSON.stringify(project)
+      const compProj = LZString.compressToEncodedURIComponent(strProj)
+      console.log(`Size of compressed Base 64 fileCatalog is: ${compProj.length} (${compProj.length / (strProj.length / 100)}%)`)
+      return compProj
+    },
     async setProjectFromGitHub(ghURL) {
-      var project = await getProjectFromGitHub(ghURL)
+      const project = await getProjectFromGitHub(ghURL)
+      this.setProject(project, 'Custom code')
+    },
+    async setProjectFromUrl(url) {
+      const project = await getProject(url)
       this.setProject(project, 'Custom code')
     },
     async setProjectsFromURL(codeProject) {
       const strProj = LZString.decompressFromEncodedURIComponent(codeProject)
-      var project = JSON.parse(strProj)
+      const project = JSON.parse(strProj)
+      console.log(project)
       if (project.derivedProject) {
         const proj = await getProjectFromLiveDir(this.projectsList.find(({ name }) => name === project.name).dir)
         proj.files = proj.files
@@ -232,6 +290,7 @@ export default {
             content: project.files.find(({ fileName }) => fileName === file.fileName)?.content || file.content
           }))
         proj.robotVersion = project.robotVersion
+        console.log(proj)
         this.setProject(proj, proj.name)
       } else {
         this.setProject(project, 'Custom code')
@@ -273,7 +332,8 @@ export default {
       if (project.requirements) {
         this.requirements = project.requirements
       }
-      this.setActiveFile(activeFileName || project.files[0].fileName)
+      const visibleFiles = project.files.filter(({ hidden }) => !hidden)
+      this.setActiveFile(activeFileName || visibleFiles[0].fileName)
       this.editorStatus.projectModified = false
       this.copyMessage = null
       this.output = ''
@@ -292,6 +352,8 @@ export default {
       } else if (urlParams.get('example')) {
         const project = list.find(({ name }) => name === urlParams.get('example'))
         this.setProjectFromConfig(project)
+      } else if (urlParams.get('code-url')) {
+        this.setProjectFromUrl(urlParams.get('code-url'))
       } else {
         this.setProjectFromConfig(list[0], null, null, true)
       }
@@ -357,7 +419,7 @@ export default {
     const theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'rf-dark' : 'rf-light'
     editor = monaco.editor.create(document.getElementById('monaco-container'), {
       language: 'robotframework',
-      theme: theme,
+      theme,
       wordWrap: 'off',
       automaticLayout: true,
       minimap: {
@@ -389,8 +451,8 @@ export default {
       contextMenuOrder: 0,
       run: (ed) => { this.runRobotTest() }
     })
-    var commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
-    var commandResetSuite = editor.addCommand(0, (ctx, tcName) => { this.resetProject() }, '')
+    const commandRunSuite = editor.addCommand(0, (ctx, tcName) => { this.runRobotTest(false, tcName) }, '')
+    const commandResetSuite = editor.addCommand(0, (ctx, tcName) => { this.resetProject() }, '')
 
     codeLens = monaco.languages.registerCodeLensProvider('robotframework', {
       provideCodeLenses: function(model, token) {
@@ -411,7 +473,7 @@ export default {
           }
         }
         const testCases = getTestCaseRanges(model)
-        var lenses = testCases.map((testCase) => {
+        const lenses = testCases.map((testCase) => {
           return getTestCaseLense(testCase)
         })
         lenses.push({
@@ -443,7 +505,7 @@ export default {
           }
         })
         return {
-          lenses: lenses,
+          lenses,
           dispose: () => {}
         }
       },
@@ -489,6 +551,8 @@ export default {
         } else if (urlParams.get('example')) {
           const project = list.find(({ name }) => name === urlParams.get('example'))
           this.setProjectFromConfig(project)
+        } else if (urlParams.get('code-url')) {
+          this.setProjectFromUrl(urlParams.get('code-url'))
         } else {
           this.setProjectFromConfig(list[0], null, null, true)
         }

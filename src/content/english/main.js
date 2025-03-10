@@ -11,7 +11,7 @@ export default () => ({
   navbar: {
     items: [
       {
-        name: 'Getting started',
+        name: 'Get started',
         id: 'getting-started'
       },
       {
@@ -31,49 +31,49 @@ export default () => ({
       name: 'Docs',
       items: [
         {
-          name: 'Guides (new)',
+          name: 'Guides',
           url: 'https://docs.robotframework.org/docs',
-          description: 'How to start'
+          description: 'Start here'
         },
         {
           name: 'User Guide',
           url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
-          description: 'All features explained'
+          description: 'Original handbook'
         },
         {
-          name: 'BuiltIn Library',
+          name: 'Keywords',
           url: 'https://robotframework.org/robotframework/latest/libraries/BuiltIn.html',
-          description: 'Always available keywords'
+          description: 'Built-in keywords'
         },
         {
-          name: 'Standard Libraries',
+          name: 'Libraries',
           url: 'https://robotframework.org/robotframework/#standard-libraries',
-          description: 'Keyword documentation'
+          description: 'Standard libraries'
         },
         {
           name: 'Public API',
           url: 'https://robot-framework.readthedocs.io/en/stable/',
-          description: 'Build RF extensions'
+          description: 'Write extensions'
         }
       ]
     }
   },
   introduction: {
     title: 'Introduction',
-    body:
-      `Robot Framework is a generic open source automation framework.
-      It can be used for <a href="/test-automation/">test automation</a> and <a href="/rpa/">robotic process automation (RPA)</a>.<br><br>
-
-      Robot Framework is supported by <a href="/foundation/">Robot Framework Foundation</a>.
-      Many industry-leading companies use the tool in their software development.<br><br>
-
-      Robot Framework is open and extensible. Robot Framework can be integrated with virtually any
-      other tool to create powerful and flexible automation solutions.
-      Robot Framework is free to use without licensing costs.<br><br>
-
-      Robot Framework has an easy syntax, utilizing human-readable keywords. Its capabilities can be extended
-      by libraries implemented with Python, Java or many other programming languages.
-      Robot Framework has a rich ecosystem around it, consisting of libraries and tools that are developed as separate projects.`,
+    body: `
+      <p>
+        Robot Framework is an open source automation framework for test automation and <a href="https://docs.robotframework.org/docs/getting_started/rpa">robotic process automation (RPA)</a>.
+        It is supported by the <a href="/foundation/">Robot Framework Foundation</a> and <a href="/users">widely used</a> in the industry.
+        </p>
+        <p>
+          Its <a href="https://docs.robotframework.org/docs/style_guide">human-friendly and versatile syntax</a> uses keywords and supports <a href="https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library">extending through libraries</a> in
+          Python, Java, and other languages.
+        </p>
+        <p class="mb-none">
+        It integrates with other tools for comprehensive automation without licensing fees,
+        bolstered by a rich community with hundreds of <a href="#resources">3rd party libraries</a>.
+      </p>
+    `,
     usedByTitle: 'Robot Framework is used by...',
     companies: [
       {
@@ -102,7 +102,7 @@ export default () => ({
         imgName: 'Finnair.svg'
       },
       {
-        title: 'Finnish Tax Administration',
+        name: 'Finnish Tax Administration',
         description: `Finnish Tax Administration is using Robot Framework in multiple projects.
         Robot Framework is one of the core tools in their development to make Quality Assurance and Automation.`,
         imgName: 'Vero.svg'
@@ -121,20 +121,15 @@ export default () => ({
         name: 'Nokia',
         description: 'Robot Framework was initially developed at Nokia Networks and it is used extensively around the whole company. It is used for testing different devices, software systems and protocols via GUIs, APIs and various other interfaces.',
         imgName: 'Nokia.svg'
-      },
-      {
-        name: 'Wärtsilä',
-        description: 'Wärtsilä Digital Technologies uses Robot to automate various types of testing. API testing, component testing, functional and system tests are used to ensure the highest quality of a wide variety of software.',
-        imgName: 'Wartsila.svg'
       }
     ]
   },
   gettingStarted: {
-    title: 'Getting Started',
+    title: 'Get Started',
     body:
       `<cite>Code is worth a thousand words.</cite>
-      <p>Below you'll find a live Robot Framework editor with embedded <a href="https://pyodide.org/en/stable/" target="_blank">WASM Python</a> environment to run it online.
-      Feel free to experiment with it! <b>NOTE: This is the editor's first release.</b> If you find bugs,
+      <p>Below you'll find a live Robot Framework editor.
+      Feel free to experiment with it! If you find bugs,
       please report them in <a href="https://github.com/robotframework/robotframework.github.com/issues" target="_blank">Github issues.</a></p>
       <p>To start using Robot Framework in a project of your own, please check tabs "Install" and "Learn". Also be sure to visit the new <a href="https://docs.robotframework.org/">Robot Framework Docs</a>!</p>`,
     tabs: [
@@ -151,7 +146,7 @@ export default () => ({
           during installation.</p>
           <p>Installing Robot Framework with pip is simple:
           <pre class="line">pip install robotframework</pre></p>
-          <p>To check that the installation was succesful, run
+          <p>To check that the installation was successful, run
           <pre class="line">robot --version</pre></p>
           <p>For a full guide, please see
           <a href="https://github.com/robotframework/robotframework/blob/master/INSTALL.rst" target="_blank">Installation instructions</a>.
@@ -237,7 +232,7 @@ export default () => ({
     free to use while being actively maintained and developed. Foundation also covers other
     related expenses such as the development of this website and organizing various meetups.`,
     sponsorBoxTitle: 'Members of Robot Framework Foundation',
-    howToJoin: '<a href="/foundation/">How to join</a>'
+    howToJoin: '<a href="/foundation/">Join</a>'
   },
   usersPage: {
     title: 'Users of Robot Framework',

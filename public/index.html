@@ -6,32 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robot Framework</title>
     <meta name=description content="Generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA).">
-    <meta name="theme-color" content="#00c0b5">
+    <meta name="theme-color" content="#000000">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <script defer data-domain="robotframework.org" src="https://plausible.io/js/plausible.outbound-links.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
+    <script defer src="/scripts/gh-pages-spa.js"></script>
+    <script src="/scripts/stars-tag.js"></script>
   </head>
   <body>
     <noscript>

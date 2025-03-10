@@ -8,7 +8,10 @@
     "dev": "vue-cli-service serve"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@contentful/rich-text-html-renderer": "^16.2.0",
     "@highlightjs/vue-plugin": "2.1.0",
+    "contentful": "^10.6.1",
     "core-js": "^3.6.5",
     "date-fns": "2.27.0",
     "highlight.js": "11.2.0",
@@ -22,20 +25,19 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-eslint": "~4.5.15",
-    "@vue/cli-plugin-pwa": "~4.5.15",
-    "@vue/cli-plugin-router": "~4.5.15",
-    "@vue/cli-plugin-vuex": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-plugin-eslint": "5.0.8",
+    "@vue/cli-plugin-pwa": "5.0.8",
+    "@vue/cli-plugin-router": "5.0.8",
+    "@vue/cli-plugin-vuex": "5.0.8",
+    "@vue/cli-service": "5.0.8",
     "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "@vue/eslint-config-standard": "8.0.1",
+    "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^9.2.0"
   }
 }
