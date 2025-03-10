@@ -112,6 +112,12 @@ export default () => ([
     description: 'Testing and using FTP server with Robot Framework.',
     tags: ['ftp']
   },
+	{
+		name: 'Robot gRPC',
+		href: 'https://github.com/opencord/grpc-robot',
+		description: 'Allows sending/receiving messages in a gRPC event stream.',
+		tags: ['gRPC']
+	},
   {
     name: 'HTTP RequestsLibrary (Python)',
     href: 'https://github.com/MarketSquare/robotframework-requests#readme',
