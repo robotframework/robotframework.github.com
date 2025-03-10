@@ -78,6 +78,12 @@ export default () => ([
     description: 'DB Schenker is the world’s largest global logistics provider. The company manages IT development across Technology Solution Center hubs located in Warsaw (PL), Nanjing (CN) and Delhi (IN). To keep high quality of delivered IT solutions, we use a RobotFramework to ensure fast and reliable regression testing for both our legacy and agile projects. Our experts ensure transparency in delivered quality and continuously improve their framework.'
   },
   {
+    title: 'DFS Deutsche Flugsicherung GmbH',
+    href: 'https://www.dfs.de/homepage/en/',
+    img: 'deutscheflugsicherung.png',
+    description: 'DFS Deutsche Flugsicherung GmbH is the German air navigation service provider. With around 5,800 employees, DFS ensures that millions of passengers reach their destinations safely and efficiently each year. We monitor air traffic in German airspace, ensuring that all aircraft maintain safe distances. Additionally, we contribute to noise reduction through intelligent flight routes and low-noise procedures. Our work is based on teamwork and technical innovations to ensure the safety and efficiency of air traffic. To secure our software, we also utilize the Robot Framework, enhancing our operational reliability and performance.'
+  },
+  {
     title: 'digia',
     href: 'https://www.digia.com/',
     img: 'digia.png',
