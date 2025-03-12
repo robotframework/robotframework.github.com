@@ -385,6 +385,12 @@ export default () => ([
     description: 'Testimate provides comprehensive and independent high-quality software testing services for small and large systems or products. Our employees are versatile testing experts with several years of experience in testing, managing and leading testing and test automation using commercial and open source tools. We know we are good at what we do - and our clients agree!'
   },
   {
+    title: 'testsmith',
+    href: 'https://www.testsmith.io/en',
+    img: 'testsmith.png',
+    description: 'At Testsmith, I am passionate about software test automation and performance testing. With this passion, I’ve built a broad training portfolio, focusing on open-source tools and frameworks to help testers improve their skills. I also created practicesoftwaretesting.com as a hands-on platform for aspiring software testers to explore new techniques, tools, and frameworks in a practical way. My goal is to empower testers with real-world knowledge and experience, helping them grow in their careers.'
+  },
+  {
     title: 'tietoevry',
     href: 'https://www.tietoevry.com/',
     img: 'tietoevry.png',
