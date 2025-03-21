@@ -336,5 +336,17 @@ export default () => ([
     href: 'https://github.com/Tesena-smart-testing/WatchUI',
     description: 'Visual testing library for visual difference testing as well as image content testing (including PDF documents). Runs on Selenium to generate screenshots, uses PyMuPDF to process PDFs and Tesseract OCR to recognize text.',
     tags: ['ui']
+  },
+  {
+    name: 'KubeLibrary',
+    href: 'https://github.com/devopsspiral/KubeLibrary',
+    description: 'A library to interact with the Kubernetes API',
+    tags: ['cloud', 'infrastructure']
+  },
+  {
+    name: 'Terraform Library',
+    href: 'https://github.com/Nilsty/robotframework-terraformlibrary',
+    description: 'A library providing Infrastructure as Code capabilities via Terrafrom and OpenTofu',
+    tags: ['cloud', 'infrastructure']
   }
 ])
