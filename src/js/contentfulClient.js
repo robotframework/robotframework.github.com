@@ -44,3 +44,11 @@ export const getEvents = async() => {
     })))
   return items
 }
+
+export const getSponsors = async() => {
+  const { items } = await client
+    .getEntries({
+      content_type: 'sponsor'
+    })
+  return items
+}
