@@ -212,6 +212,12 @@ export default () => ([
     tags: ['mail', 'imap', 'smtp', 'pop3', 'ssl']
   },
   {
+    name: 'SerialLibrary',
+    href: 'https://github.com/whosaysni/robotframework-seriallibrary',
+    description: 'A serial port test library for Robot Framework.',
+    tags: ['serial', 'com', 'io']
+  },
+  {
     name: 'SapGuiLibrary',
     href: 'https://github.com/frankvanderkuur/robotframework-sapguilibrary/',
     description: 'Testing the SAPGUI client using the internal SAP Scripting Engine',
