@@ -5,13 +5,30 @@ export default () => ({
     the future. We are always looking for new members to join.</p>`,
     benefitsAndCost: {
       title: 'Benefits and cost',
-      body: `<p>When your company becomes a member you will:</p>
-      <ol>
-        <li>Ensure Robot Framework is maintained and developed</li>
-        <li>Get visibility about your membership for your company if you wish</li>
-        <li>Gain ability to participate in decision making</li>
-        <li>Get discounted tickets to RoboCon events</li>
-      </ol>
+      body: `<h3 class="ml-2xlarge">When your company becomes a member, you will...</h3>
+      <ul class="">
+      <li class="alert-box positive block ml-2xlarge mb-medium">
+        <h4>Ensure the continuity of the Robot Framework Project</h4>
+        <p>Include those working directly or indirectly with Robot Framework, such as developers, testers, and managers.</p>
+        <p>1-2 users primarily means freelancers and small companies. If you are unsure, feel free to contact us.</p>
+      </li>
+      <li class="alert-box positive block ml-2xlarge mb-medium">
+        <h4>Get visibility</h4>
+        <p>Get visibility about your membership for your company if you wish</p>
+      </li>
+      <li class="alert-box positive block ml-2xlarge mb-medium">
+        <h4>Discounted tickets for official events</h4>
+        <ul>
+          <li>Discounted tickets to RoboCon</li>
+          <li>20% discount on the certification exam of the official certificate of Robot Framework, <a href="https://cert.robotframework.org/">RFCP</a></li>
+        </ul>
+      </li>
+      <li class="alert-box positive block ml-2xlarge mb-medium">
+        <h4>Become a certified training provider</h4>
+        <p>Robot Framework's official certificates have accredited companies that offer training for the certification exam.
+        As a Foundation member, your company is welcome to apply!</p>
+      </li>
+      </ul>
       <h3>Annual fee</h3>
       <p>The pricing is determined by the amount of Robot Framework users in your organization:</p>
       <table class="col-sm-12 col-md-6">
@@ -39,10 +56,10 @@ export default () => ({
           <td>12000€</td>
         </tr>
       </table>
-      <div class="alert-box">
-      <h4>How is the amount of users determined?</h4>
-      <p>Include those working directly or indirectly with Robot Framework, such as developers, testers, and managers.</p>
-      <p>1-2 users primarily means freelancers and small companies. If you are unsure, feel free to contact us.</p>
+      <div class="alert-box mt-medium">
+        <h4>How is the amount of users determined?</h4>
+        <p>Include those working directly or indirectly with Robot Framework, such as developers, testers, and managers.</p>
+        <p>1-2 users primarily means freelancers and small companies. If you are unsure, feel free to contact us.</p>
       </div>`
     },
     howToJoin: {
