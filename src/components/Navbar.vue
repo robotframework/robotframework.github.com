@@ -24,13 +24,14 @@
         <a class="github-button" href="https://github.com/robotframework/robotframework" data-color-scheme="dark_high_contrast" data-show-count="true" aria-label="Robot Framework GitHub Stars">Star</a>
       </div>
       <router-link
-        class="color-white font-title type-uppercase type-no-underline px-medium"
+        class="color-white font-title type-uppercase type-no-underline px-small"
         :to="{name: 'Foundation'}">
         Foundation
       </router-link>
+      <a href="https://cert.robotframework.org" class="color-white font-title type-uppercase type-no-underline px-small">Certificate</a>
       <div class="relative" ref="dropdownDocs">
         <button
-          class="flex middle font-title type-uppercase line-height-body dropdown-button"
+          class="flex middle font-title type-uppercase line-height-body dropdown-button px-small"
           :class="docsDropdownOpen ? 'color-theme' : 'color-white'"
           @click="docsDropdownOpen = !docsDropdownOpen">
           <div>

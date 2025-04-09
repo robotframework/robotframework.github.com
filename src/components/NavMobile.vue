@@ -21,32 +21,34 @@
   <transition name="fade">
     <div
       v-if="isOpen"
-      class="menu bg-black pt-xlarge pb-large pr-small" style="padding-left: 4.25rem">
+      class="menu bg-black pt-large pb-large">
       <transition :name="docsOpen ? 'fade-left' : 'fade-right'" mode="out-in">
-        <div v-if="!docsOpen" key="1" class="mt-small">
+        <div v-if="!docsOpen" key="1" class="p-medium">
           <div
             v-for="item in $tm('navbar.items')"
             :key="item.name">
             <button
               :name="`go-to-${item.name}`"
-              class="mb-xsmall mt-xsmall color-white font-title type-uppercase"
+              style="padding-left: 2.75rem"
+              class="mb-xsmall mt-xsmall color-white type-small font-title type-uppercase"
               @click="scrollTo(item.id, 400); isOpen = false">
               {{ item.name }}
             </button>
           </div>
-          <div>
-            <button
-              class="flex middle mt-large mb-small color-theme font-title type-uppercase type-large"
-              style="margin-left: -0.5rem"
-              @click="docsOpen = true">
-              <chevron-icon direction="right" color="theme" size="1.5rem" />
-              <div>
-                DOCS
-              </div>
-            </button>
-          </div>
+          <hr class="my-medium pr-xlarge" />
+          <a href="https://cert.robotframework.org" style="padding-left: 2.75rem" class="block my-xsmall color-white font-title type-uppercase type-no-underline">Certificate</a>
+          <a href="https://robotframework.org/foundation" style="padding-left: 2.75rem" class="block mt-small color-white font-title type-uppercase type-no-underline">Foundation</a>
+          <button
+            class="flex middle mt-large mb-small color-theme font-title type-uppercase type-large"
+            style="padding-left: 2.25rem"
+            @click="docsOpen = true">
+            <chevron-icon direction="right" color="theme" size="1.5rem" />
+            <div>
+              DOCS
+            </div>
+          </button>
         </div>
-        <div v-else key="3" class="mt-medium">
+        <div v-else key="3" class="mt-large pl-xlarge">
           <button class="type-uppercase font-title color-theme type-large flex middle mb-medium" style="margin-left: -0.5rem" @click="docsOpen = false">
             <chevron-icon direction="left" color="theme" size="1.5rem" />
             DOCS
