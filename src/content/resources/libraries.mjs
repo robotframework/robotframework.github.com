@@ -212,6 +212,12 @@ export default () => ([
     tags: ['mail', 'imap', 'smtp', 'pop3', 'ssl']
   },
   {
+    name: 'Robotframework-XmlValidator',
+    href: 'https://github.com/MichaelHallik/robotframework-xmlvalidator',
+    description: 'A Robot Framework test library for validating XML files against XSD schemas, and more.',
+    tags: ['xml', 'xsd', 'xmlschema']
+  },
+  {
     name: 'SapGuiLibrary',
     href: 'https://github.com/frankvanderkuur/robotframework-sapguilibrary/',
     description: 'Testing the SAPGUI client using the internal SAP Scripting Engine',
