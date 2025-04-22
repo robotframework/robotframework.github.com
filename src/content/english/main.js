@@ -36,6 +36,11 @@ export default () => ({
           description: 'Start here'
         },
         {
+          name: 'Syllabus',
+          url: 'https://syllabus.robotframework.org',
+          description: 'Study for cert'
+        },
+        {
           name: 'User Guide',
           url: 'https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html',
           description: 'Original handbook'

@@ -18,10 +18,10 @@
             <a :href="sponsor.href">
               <div
                 class="img-container mb-small"
-                :style="`background-image: url(${publicPath}img/sponsors/${sponsor.img})`" />
+                :style="`background-image: url(${sponsor.fields.logo.fields.file.url})`" />
             </a>
           </div>
-          <div v-html="sponsor.description" />
+          <div v-html="sponsor.fields.description" />
         </div>
       </div>
     </div>
@@ -29,27 +29,31 @@
 </template>
 
 <script>
+import { getSponsors } from '../js/contentfulClient'
+
 export default {
   name: 'SponsorsDetailed',
   data: () => ({
     publicPath: process.env.BASE_URL,
-    columnAmount: 3
+    columnAmount: 3,
+    sponsors: []
   }),
   computed: {
     columns() {
       if (this.columnAmount === 3) {
         return [
-          this.$tm('resourcesList.sponsors').filter((_, i) => i % 3 === 0),
-          this.$tm('resourcesList.sponsors').filter((_, i) => i % 3 === 1),
-          this.$tm('resourcesList.sponsors').filter((_, i) => i % 3 === 2)
+          this.sponsors.filter((_, i) => i % 3 === 0),
+          this.sponsors.filter((_, i) => i % 3 === 1),
+          this.sponsors.filter((_, i) => i % 3 === 2)
         ]
       } else {
-        return [this.$tm('resourcesList.sponsors')]
+        return [this.sponsors]
       }
     }
   },
-  created() {
+  async created() {
     window.addEventListener('resize', this.calculateColumnAmount)
+    this.sponsors = (await getSponsors()).sort((a, b) => a.fields.name < b.fields.name ? -1 : 1)
     this.calculateColumnAmount()
   },
   beforeUnmount() {
