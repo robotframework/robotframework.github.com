@@ -346,7 +346,7 @@ export default () => ([
   {
     name: 'Terraform Library',
     href: 'https://github.com/Nilsty/robotframework-terraformlibrary',
-    description: 'A library providing Infrastructure as Code capabilities via Terrafrom and OpenTofu',
+    description: 'A library providing Infrastructure as Code capabilities via Terraform and OpenTofu',
     tags: ['cloud', 'infrastructure']
   }
 ])
