@@ -58,7 +58,7 @@ const getMilestones = async() => {
     const withIssues = await Promise.all([...milestonesOpen, ...milestonesClosed].map(async(milestone) => await getIssues(milestone)))
 
     fs.writeFileSync(`${destinationFolder}/milestones.js`, JSON.stringify(withIssues))
-    console.log('milestones-file created succesfully!')
+    console.log('milestones-file created successfully!')
   } catch (err) {
     throw new Error(err)
   }
@@ -84,7 +84,7 @@ const getStars = async() => {
     }))
 
     fs.writeFileSync(`${destinationFolder}/stars.js`, JSON.stringify(stripped))
-    console.log('stars-file created succesfully!')
+    console.log('stars-file created successfully!')
   } catch (err) {
     throw new Error(err)
   }
