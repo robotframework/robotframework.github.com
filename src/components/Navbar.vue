@@ -28,7 +28,8 @@
         :to="{name: 'Foundation'}">
         Foundation
       </router-link>
-      <a href="https://cert.robotframework.org" class="color-white font-title type-uppercase type-no-underline px-small">Certificate</a>
+      <a href="https://ambassador.robotframework.org" class="color-white font-title type-uppercase type-no-underline px-small">Ambassador</a>
+      <a href="https://cert.robotframework.org" class="color-white font-title type-uppercase type-no-underline px-small">Cert</a>
       <div class="relative" ref="dropdownDocs">
         <button
           class="flex middle font-title type-uppercase line-height-body dropdown-button px-small"
