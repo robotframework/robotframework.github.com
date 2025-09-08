@@ -17,6 +17,7 @@ import SponsorsDetailed from './SponsorsDetailed.vue'
 import RobotCode from './RobotCode.vue'
 import Milestones from './Milestones.vue'
 import VideoComponent from './VideoComponent'
+import NewsBanner from './NewsBanner'
 import GlobeIcon from './icons/GlobeIcon.vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
@@ -25,6 +26,7 @@ import DocumentIcon from './icons/DocumentIcon.vue'
 
 export {
   News,
+  NewsBanner,
   Calendar,
   Banner,
   PageFooter,

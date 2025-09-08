@@ -7,7 +7,7 @@ export default () => ({
   ...rpa(),
   ...testautomation(),
   langName: 'English',
-  newsBanner: '',
+  newsBanner: 'World Wide Workshop Wednesday <br> October 1st 2025 - <a href="https://wwww.robotframework.org/" target="_blank">Join here</a>',
   navbar: {
     items: [
       {

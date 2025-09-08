@@ -1,4 +1,5 @@
 <template>
+  <news-banner />
   <nav-mobile />
   <navbar class="nav-desktop" />
   <banner />
@@ -85,7 +86,8 @@ import {
   ResourceBox,
   TabBox,
   Sponsors,
-  Milestones
+  Milestones,
+  NewsBanner
 } from 'Components'
 import VideoComponent from 'Components/VideoComponent'
 
@@ -105,6 +107,7 @@ export default {
     TabBox,
     Sponsors,
     Milestones,
+    NewsBanner,
     MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }
