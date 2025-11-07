@@ -2,10 +2,6 @@
   <div>
     <navbar-sub-page title="RPA" />
     <div class="container mb-3xlarge">
-      <div class="container narrow mt-large" ref="tabs">
-        <div v-html="$t('rpa.hero.description')" />
-        <tab-box :tabs="$tm('rpa.hero.tabs')" :default-tab="defaultTab" />
-      </div>
       <page-section
         long-title
         title-id="intro"
