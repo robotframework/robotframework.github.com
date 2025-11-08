@@ -69,7 +69,8 @@ const getStars = async() => {
   // called for every repo in libraries and tools
   const getRepo = async(repoName) => await request(`https://api.github.com/repos/${repoName}`)
   const getRepoName = (url) => {
-    const parts = url.split('github.com/')[1].split('/')
+    const cleanUrl = url.split('#')[0]
+    const parts = cleanUrl.split('github.com/')[1].split('/')
     return `${parts[0]}/${parts[1]}`
   }
   const repos = [...libraries(), ...tools()]
