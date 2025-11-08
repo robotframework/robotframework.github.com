@@ -1,0 +1,131 @@
+/* Styling for the AI-Powered Guides components */
+
+.rfai-container {
+  background-color: var(--color-background-secondary);
+  border-radius: var(--border-radius-rounded);
+  padding: var(--size-medium);
+  margin: var(--size-large) 0;
+  border: 1px solid var(--color-grey-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .rfai-container {
+    border-color: var(--color-grey-dark);
+  }
+}
+
+.rfai-container h3 {
+  margin-top: 0;
+  font-size: var(--type-large);
+  color: var(--color-text);
+  text-transform: none; /* Override default h3 uppercase */
+}
+
+.rfai-container > p {
+  margin-bottom: var(--size-medium);
+}
+
+.rfai-prompt {
+  border-top: 1px solid var(--color-grey-light);
+  padding: var(--size-small) 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rfai-prompt {
+    border-top-color: var(--color-grey-dark);
+  }
+}
+
+.rfai-prompt:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.rfai-prompt:last-of-type {
+  padding-bottom: 0;
+}
+
+.rfai-prompt summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rfai-prompt summary::-webkit-details-marker {
+  display: none;
+}
+
+.rfai-prompt-title {
+  font-weight: var(--weight-bold);
+  font-size: var(--type-body);
+  font-family: var(--font-body);
+}
+
+.rfai-prompt-subtitle {
+  margin-top: var(--size-3xsmall);
+  font-size: var(--type-small);
+}
+
+.rfai-copy-button {
+  background-color: var(--color-theme);
+  color: var(--color-black);
+  border: none;
+  padding: var(--size-2xsmall) var(--size-small);
+  border-radius: var(--border-radius-rounded);
+  cursor: pointer;
+  font-weight: var(--weight-semi-bold);
+  font-family: var(--font-title);
+  transition: background-color 0.2s, filter 0.2s;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.rfai-copy-button:hover {
+  filter: brightness(1.1);
+}
+
+.rfai-copy-button.copied {
+  background-color: var(--color-positive);
+  color: var(--color-white);
+}
+
+.rfai-prompt-content {
+  margin-top: var(--size-small);
+}
+
+.rfai-prompt-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: rgba(100, 100, 100, 0.1);
+  padding: var(--size-xsmall);
+  border-radius: var(--border-radius-rounded);
+  max-height: 400px;
+  overflow-y: auto;
+  border: none;
+}
+
+.rfai-loader, .rfai-error {
+  color: var(--color-text);
+  font-style: italic;
+  padding: var(--size-xsmall);
+}
+
+.rfai-error a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+/* Accessibility class */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -23,6 +23,8 @@ import ChevronIcon from './icons/ChevronIcon.vue'
 import NewTabIcon from './icons/NewTabIcon.vue'
 import RobotIcon from './icons/RobotIcon.vue'
 import DocumentIcon from './icons/DocumentIcon.vue'
+import AIGuidesContainer from './AIGuidesContainer.vue'
+import PromptGuide from './PromptGuide.vue'
 
 export {
   News,
@@ -49,5 +51,7 @@ export {
   ChevronIcon,
   NewTabIcon,
   RobotIcon,
-  DocumentIcon
+  DocumentIcon,
+  AIGuidesContainer,
+  PromptGuide
 }

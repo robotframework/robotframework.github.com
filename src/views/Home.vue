@@ -36,6 +36,7 @@
             </div>
         </template>
       </tab-box>
+      <a-i-guides-container />
     </page-section>
     <hr class="theme">
     <!-- resources -->
@@ -87,7 +88,8 @@ import {
   TabBox,
   Sponsors,
   Milestones,
-  NewsBanner
+  NewsBanner,
+  AIGuidesContainer
 } from 'Components'
 import VideoComponent from 'Components/VideoComponent'
 
@@ -108,6 +110,7 @@ export default {
     Sponsors,
     Milestones,
     NewsBanner,
+    AIGuidesContainer,
     MonacoEditor: defineAsyncComponent(() => import('Components/Editor.vue'))
   }
 }
