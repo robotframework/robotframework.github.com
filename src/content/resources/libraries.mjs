@@ -255,7 +255,7 @@ export default () => ([
   },
   {
     name: 'SikuliLibrary',
-    href: 'https://github.com/rainmanwy/robotframework-SikuliLibrary#readme',
+    href: 'https://github.com/MarketSquare/robotframework-SikuliLibrary#readme',
     description: 'Provides keywords to test UI through <a href="https://sikulix.com/" target="_blank">Sikulix</a>. This library supports Python 2.x and 3.x.',
     tags: ['ui']
   },
