@@ -7,7 +7,7 @@ export default () => ({
   ...rpa(),
   ...testautomation(),
   langName: 'English',
-  newsBanner: '<div style="color: var(--color-theme); font-size: 1.75rem; font-family: var(--font-title);">📣 ROBOCON 2026 📣</div>Speaker slots available!<br><a href="https://www.robocon.io/cfp">Submit your proposal by 19.10.</a>',
+  newsBanner: '',
   navbar: {
     items: [
       {
