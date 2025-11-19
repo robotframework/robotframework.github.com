@@ -159,7 +159,7 @@ export default () => ([
     name: 'rfswarm',
     description: 'Testing tool that allows you to use Robot Framework test cases for performance or load testing.',
     href: 'https://github.com/damies13/rfswarm',
-    tags: ['']
+    tags: ['performance test', 'load test', 'volume test']
   },
   {
     name: 'Robot Corder',
@@ -226,7 +226,7 @@ export default () => ([
     name: 'TestDataTable',
     description: 'Enables you to assign test data variable values from a single set of data to multiple scripts while allowing you to ensure each script has a unique data value.',
     href: 'https://github.com/damies13/TestDataTable',
-    tags: ['']
+    tags: ['test data']
   },
   {
     name: 'Tesults Listener',
