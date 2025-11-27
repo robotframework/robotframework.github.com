@@ -70,7 +70,7 @@
 
 .rfai-copy-button {
   background-color: var(--color-theme);
-  color: var(--color-black);
+  color: var(--color-white);
   border: none;
   padding: var(--size-2xsmall) var(--size-small);
   border-radius: var(--border-radius-rounded);
