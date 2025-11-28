@@ -65,7 +65,7 @@ export default () => ([
   },
   {
     name: 'DebugLibrary',
-    href: 'https://github.com/xyb/robotframework-debuglibrary',
+    href: 'https://github.com/imbus/robotframework-debuglibrary',
     description: 'A debug library for RobotFramework, which can be used as an interactive shell(REPL) also.'
   },
   {
