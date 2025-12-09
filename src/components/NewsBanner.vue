@@ -1,6 +1,7 @@
 <template>
   <div style="background-color: black;">
     <div
+      v-if="$t('newsBanner')"
       class="banner font-code type-center p-2xsmall border-bottom-white border-thin"
       v-html="$t('newsBanner')" />
   </div>
