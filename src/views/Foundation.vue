@@ -29,7 +29,7 @@
         title-id="what-we-do"
         :title="$t('foundation.whatWeDo.title')"
         :body="$t('foundation.whatWeDo.body')">
-        <sponsors-detailed class="" />
+        <!-- <sponsors-detailed class="" /> -->
       </page-section>
     </div>
     <page-footer />
