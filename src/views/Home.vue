@@ -66,7 +66,7 @@
       title-id="development"
       :title="$t('development.title')">
       <div v-html="$t('development.body')" class="body" />
-      <!-- <sponsors /> -->
+      <sponsors />
       <milestones />
     </page-section>
   </div>
