@@ -8,12 +8,12 @@
       <div class="col-sm-12 col-lg-8 col-lg-offset-2 type-large p-medium card bg-secondary">
         <div v-html="$t('introduction.body')" />
       </div>
-      <!-- <div class="col-sm-12 col-lg-3 col-lg-offset-2 calendar-container">
+      <div class="col-sm-12 col-lg-3 col-lg-offset-2 calendar-container">
         <calendar />
       </div>
       <div class="col-sm-12 col-lg-5 pl-medium news-container">
         <news />
-      </div> -->
+      </div>
     </div>
     <hr class="theme">
     <!-- getting started -->

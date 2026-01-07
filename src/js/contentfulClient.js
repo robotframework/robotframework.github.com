@@ -6,49 +6,61 @@ const client = contentful.createClient({
 })
 
 export const monthNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec'
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
 ]
 
+// --------- one cached fetch for *all* entries ---------
+
+let allEntriesPromise = null
+
+export const getEntries = async() => {
+  if (allEntriesPromise) return allEntriesPromise
+
+  allEntriesPromise = (async() => {
+    const pageSize = 1000
+    let skip = 0
+    const all = []
+
+    while (true) {
+      const res = await client.getEntries({ limit: pageSize, skip })
+      all.push(...res.items)
+      skip += res.items.length
+      if (all.length >= res.total || res.items.length === 0) break
+    }
+
+    return all
+  })().catch((err) => {
+    allEntriesPromise = null
+    throw err
+  })
+
+  return allEntriesPromise
+}
+
+const byType = (items, contentTypeId) =>
+  items.filter((e) => e.sys?.contentType?.sys?.id === contentTypeId)
+
 export const getNews = async() => {
-  const items = await client
-    .getEntries({
-      content_type: 'latestNews'
-    })
-    .then(({ items }) => items.map(({ fields }) => ({
-      ...fields,
-      image: fields.image?.fields,
-      imageDark: fields.imageDark?.fields // optional, for darkmode, eg white text variant
-    })))
-  return items
+  const items = byType(await getEntries(), 'latestNews')
+  return items.map(({ fields }) => ({
+    ...fields,
+    image: fields.image?.fields,
+    imageDark: fields.imageDark?.fields
+  }))
 }
 
 export const getEvents = async() => {
-  const items = await client
-    .getEntries({
-      content_type: 'event'
-    })
-    .then(({ items }) => items.map(({ fields }) => ({
-      ...fields,
-      image: fields.image?.fields
-    })))
-  return items
+  const items = byType(await getEntries(), 'event')
+  return items.map(({ fields }) => ({
+    ...fields,
+    image: fields.image?.fields
+  }))
 }
 
 export const getSponsors = async() => {
-  const { items } = await client
-    .getEntries({
-      content_type: 'sponsor'
-    })
-  return items
+  return byType(await getEntries(), 'sponsor')
+}
+
+export const clearEntriesCache = () => {
+  allEntriesPromise = null
 }
