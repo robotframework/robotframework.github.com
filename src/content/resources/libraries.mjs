@@ -348,5 +348,11 @@ export default () => ([
     href: 'https://github.com/Nilsty/robotframework-terraformlibrary',
     description: 'A library providing Infrastructure as Code capabilities via Terraform and OpenTofu',
     tags: ['cloud', 'infrastructure']
-  }
+  },
+  {
+    name: 'Parrot - Embedded Test Automation Framework',
+    href: 'https://github.com/zilogic-systems/parrot',
+    description: 'Collection of libraries for automating the testing of embedded systems, including IoT nodes and sensors, gateways, automotive digital cockpits, telematics platforms, and other ECUs.',
+    tags: ['embedded', 'automotive']
+  },
 ])
