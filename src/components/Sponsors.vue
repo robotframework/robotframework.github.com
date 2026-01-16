@@ -14,7 +14,7 @@
         class="sponsor card mb-small">
           <div
             class="img-container mb-small"
-            :style="`background-image: url(${sponsor.fields.logo.fields.file.url})`" />
+            :style="`background-image: url(${sponsor.fields.logo.fields.file.url}?fm=webp&w=300&h=300)`" />
       </a>
     </div>
     <div class="col-sm-12 type-small type-right pr-small" v-html="$t('development.howToJoin')" />
