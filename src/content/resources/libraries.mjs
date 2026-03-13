@@ -30,6 +30,12 @@ export default () => ([
     tags: ['web']
   },
   {
+    name: 'Clang Library',
+    href: 'https://github.com/maxrossello/robotframework-clang',
+    description: 'Just-in-Time unit testing of C++ code powered by Clang-REPL. No compilation needed.',
+    tags: ['unit', 'c++']
+  },
+  {
     name: 'CncLibrary',
     href: 'https://github.com/eficode/robotframework-cnclibrary',
     description: 'Driving a CNC milling machine.',
