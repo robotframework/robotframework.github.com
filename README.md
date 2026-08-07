@@ -21,7 +21,7 @@ make it even easier for us to add the link. For pull requests, only submit sourc
 
 Robot Framework website is open source software provided under the [Apache License
 2.0](https://apache.org/licenses/LICENSE-2.0).
-
+ 
 ## Robotframework sources
 
 Robot Framework ecosystem front page sources
