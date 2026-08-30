@@ -217,6 +217,12 @@ export default () => ([
     description: 'A Robot Framework test library for validating XML files against XSD schemas, and more.',
     tags: ['xml', 'xsd', 'xmlschema']
   },
+    {
+    name: 'RPALite',
+    href: 'https://github.com/jieliu2000/RPALite',
+    description: 'A Robot Framework UI automation library based on OCR technologies.',
+    tags: ['ui', 'windows', 'linux', 'macos', 'rpa']
+  },
   {
     name: 'SapGuiLibrary',
     href: 'https://github.com/frankvanderkuur/robotframework-sapguilibrary/',
