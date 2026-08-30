@@ -137,6 +137,18 @@ export default () => ([
     tags: ['java']
   },
   {
+    name: 'JenkinsLibrary',
+    href: 'https://github.com/robotframework-thailand/robotframework-jenkinslibrary/blob/master/README.md',
+    description: 'Jenkins wrapper library for robotframework',
+    tags: ['json', 'jsonpath']
+  },
+  {
+    name: 'JSONLibrary',
+    href: 'https://github.com/robotframework-thailand/robotframework-jsonlibrary/blob/master/README.md',
+    description: 'JSONLibrary is a Robot Framework test library for manipulating JSON Object. You can manipulate your JSON object using JSONPath',
+    tags: ['jenkins']
+  },
+  {
     name: 'KiCadLibrary',
     href: 'https://github.com/madworx/robotframework-kicadlibrary#readme',
     description: 'Interacting with KiCad EDA designs.'
@@ -151,6 +163,12 @@ export default () => ([
     href: 'https://github.com/MarketSquare/Robot-Framework-Mainframe-3270-Library/blob/master/README.md',
     description: 'Allows the creation of automated test scripts to test IBM Mainframe 3270.',
     tags: ['ibm']
+  },
+  {
+    name: 'MongoDB-Library',
+    href: 'https://github.com/robotframework-thailand/robotframework-mongodb-library/blob/master/README.md',
+    description: 'A library for interacting with MongoDB from RobotFramework.',
+    tags: ['mongodb']
   },
   {
     name: 'MQTT library',
@@ -181,6 +199,12 @@ export default () => ([
     href: 'https://github.com/MarketSquare/Rammbock#readme',
     description: 'Generic network protocol test library that offers easy way to specify network packets and inspect the results of sent and received packets.',
     tags: ['http']
+  },
+  {
+    name: 'RedisLibrary',
+    href: 'https://github.com/robotframework-thailand/robotframework-redislibrary/blob/master/README.md',
+    description: 'RedisLibrary is a Robot Framework test library which provides keywords for manipulating in-memory data stores in Redis.',
+    tags: ['redis']
   },
   {
     name: 'RemoteSwingLibrary',
