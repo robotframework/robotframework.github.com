@@ -1,0 +1,18 @@
+{
+    "name": "FOR-Loops",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "1_in.robot"
+        },
+        {
+            "fileName": "2_in_enumerate.robot"
+        },
+        {
+            "fileName": "3_in_range.robot"
+        },
+        {
+            "fileName": "4_in_zip.robot"
+        }
+    ]
+}

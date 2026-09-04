@@ -7,6 +7,6 @@ Resource          resource.robot
 *** Test Cases ***
 Valid Login
     Open Login Page
-    Input Credentials    robot    overloard
+    Input Credentials    robot    overlord
     Submit Credentials
     Welcome Page Should Be Open

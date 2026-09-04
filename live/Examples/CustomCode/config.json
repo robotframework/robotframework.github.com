@@ -1,0 +1,21 @@
+{
+    "name": "Custom",
+    "description": "ReadMe.md",
+    "files": [
+        {
+            "fileName": "TestSuite.robot"
+        },
+        {
+            "fileName": "keywords.resource"
+        },
+        {
+            "fileName": "variables.resource"
+        },
+        {
+            "fileName": "PythonKeywords.py"
+        },
+        {
+            "fileName": "PythonVariables.py"
+        }
+    ]
+}

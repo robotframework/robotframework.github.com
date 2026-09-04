@@ -1,0 +1,15 @@
+{
+    "name": "Variables",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "1_Scalar.robot"
+        },
+        {
+            "fileName": "2_Lists.robot"
+        },
+        {
+            "fileName": "3_Dictionaries.robot"
+        }
+    ]
+}

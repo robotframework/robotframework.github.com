@@ -1,0 +1,12 @@
+{
+    "name": "Simple Example 2",
+    "description": "ReadMe.md",
+    "files": [
+        {
+            "fileName": "test.robot"
+        },
+        {
+            "fileName": "keywords.resource"
+        }
+    ]
+}
