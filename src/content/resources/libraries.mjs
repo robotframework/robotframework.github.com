@@ -165,6 +165,36 @@ export default () => ([
     tags: ['db', 'oracle', 'oracledb']
   },
   {
+    name: 'OKW4Robot',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw4robot',
+    description: 'Driver-agnostic keyword library for GUI test automation. One unified set of keywords (SetValue, ClickOn, VerifyValue, ...) for Web, Java Swing and more — drivers are pluggable, locators live in YAML.',
+    tags: ['ui', 'web']
+  },
+  {
+    name: 'OKW API REST',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw-api-rest',
+    description: 'Keyword-driven REST API testing with phase-based workflow, auto type detection, nested JSON via JSONPath, and three match modes (EXACT, WCM, REGX).',
+    tags: ['api', 'rest']
+  },
+  {
+    name: 'OKW Kafka',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw-kafka',
+    description: 'Keyword-driven Apache Kafka integration testing — produce, consume, and verify messages with JSONPath field access, auto-typing, and three match modes.',
+    tags: ['kafka', 'messaging']
+  },
+  {
+    name: 'OKW Remote SSH',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw-remote-ssh',
+    description: 'Deterministic remote command execution and SFTP file transfer via SSH with structured verification (stdout, stderr, exit code).',
+    tags: ['ssh', 'remote']
+  },
+  {
+    name: 'OKW Web Selenium',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw-web-selenium',
+    description: 'Selenium WebDriver plugin for OKW4Robot. Widget-based web testing with YAML locators, automatic synchronization, and polling verification.',
+    tags: ['web', 'ui']
+  },
+  {
     name: 'PuppeteerLibrary',
     href: 'https://github.com/qahive/robotframework-puppeteer',
     description: 'Web testing using Puppeteer tool internally.',
