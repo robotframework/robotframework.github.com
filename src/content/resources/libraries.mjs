@@ -177,6 +177,12 @@ export default () => ([
     tags: ['api', 'rest']
   },
   {
+    name: 'OKW Env Docker',
+    href: 'https://github.com/Hrabovszki1023/robotframework-okw-env-docker',
+    description: 'Docker-based environment provisioning for Robot Framework. Manages container lifecycles with keywords — build, run, stop, remove — using YAML component definitions.',
+    tags: ['environment', 'docker']
+  },
+  {
     name: 'OKW Kafka',
     href: 'https://github.com/Hrabovszki1023/robotframework-okw-kafka',
     description: 'Keyword-driven Apache Kafka integration testing — produce, consume, and verify messages with JSONPath field access, auto-typing, and three match modes.',
