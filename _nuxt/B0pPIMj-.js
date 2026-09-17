@@ -1,0 +1,1 @@
+function a(r,e=!1){switch(r??"theme"){case"none":return"0";case"sm":return"var(--r-sm, 4px)";case"md":return"var(--r-md, 6px)";case"lg":return"var(--r-lg, 8px)";case"full":return e?"50%":"var(--r-pill, 999px)";default:return"var(--r, 6px)"}}export{a as r};
