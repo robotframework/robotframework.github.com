@@ -1,0 +1,1 @@
+import{u as r}from"./B3PrQNew.js";import{r as a,l as o,N as n,z as s,aj as t,Y as m}from"./_cBZAqGc.js";const _=a({__name:"Divider",setup(p){const e=r();return(c,u)=>(m(),o("hr",n(s(t(e))),null,16))}});export{_ as default};

@@ -1,0 +1,894 @@
+# Robot Framework Ambassadors
+
+:hero-banner{eyebrow="Meet the Robot Framework" title="AMBASS​ADORS"}
+
+::page-section{title="What Does An Ambassador Do" width="default"}
+  :::item-row{list-type="wrapping"}
+    ::::page-card{max-width="78" max-width-mobile="100" styling="default"}
+    ### Teach and Support New Learners
+
+    **From first-timers to fast-trackers — you help others get started.**
+
+    Ambassadors support students, answer
+
+    questions, and mentor newcomers who are just discovering Robot Framework.
+
+    You make learning accessible and personal.
+
+    - Mentor new users one-on-one or in public channels
+    - Help students and interns learn Robot Framework through guided support
+    - Answer beginner questions in forums, Slack, or community calls
+    - Share tips and advice for those starting out
+    ::::
+
+    ::::page-card{max-width="22" max-width-mobile="100" styling="unstyled"}
+      :::::image-inline
+      ---
+      centered: true
+      caption: René Rohner giving a workshop during RoboCon 2023.
+      src: https://robotframework.org/img/ambassador/rene-rbcn-2023.jpg
+      ---
+      :::::
+    ::::
+  :::
+
+  :::item-row{list-type="wrapping"}
+    ::::page-card{max-width="25" max-width-mobile="100" styling="unstyled"}
+    :image-inline{caption="Ed Manlove on stage, RoboCon 23" src="https://robotframework.org/img/ambassador/ed-manlove-rbcn-2023.jpg"}
+    ::::
+
+    ::::page-card{max-width="75" max-width-mobile="100" styling="default"}
+    ### Share Knowledge Publicly
+
+    **Talk, write, and show — your voice scales!**
+
+    As an ambassador, you play a key role in spreading knowledge and inspiring others by helping them understand what Robot Framework is capable of.
+
+    Whether you're presenting at events, leading workshops, writing useful content, or creating media, your contributions make the community stronger and more informed.
+    ::::
+  :::
+
+  :::item-row{same-height list-type="scrolling"}
+    ::::page-card{max-width="40" max-width-mobile="90" styling="default"}
+    #### Build the Tools
+
+    **Robot Framework is only as strong as its ecosystem — and you help build it.**
+
+    Ambassadors contribute to the technical side by developing, maintaining, and supporting tools that others depend on.
+
+    - Create or maintain Robot Framework libraries and tools
+    - Contribute to the core or help fix issues
+    - Write documentation and practical examples for tools
+    - Answer user questions related to specific libraries
+    ::::
+
+    ::::page-card{max-width="40" max-width-mobile="90" styling="default"}
+    #### Promote Learning
+
+    **Training matters — and you make it accessible.**
+
+    Ambassadors support formal learning and certification so users can confidently grow their skills and credibility with Robot Framework.
+
+    - Advocate for training and certification in your organization or community
+    - Help others prepare for certification
+    - Encourage your company to become a training or certification partner
+    - Contribute to the development of certification programs
+    ::::
+
+    ::::page-card{max-width="40" max-width-mobile="90" styling="default"}
+    #### **Open new doors**
+
+    Ambassadors help expand Robot Framework into new industries, companies, and domains. You find places where it fits, and help others see the value.
+
+    - Introduce Robot Framework to new industries or market segments
+    - Help companies adopt Robot Framework for the first time
+    - Act as a connector between organizations and community resources
+    - Mentor professionals exploring Robot Framework in new contexts
+    ::::
+  :::
+::
+
+::page-section{title="The Ambassadors" width="default"}
+Unlock the power — [send an inquiry](mailto\:ambassadors@robotframework.org) or reach out directly to someone from the listing below. Please keep in mind that this is volunteer work, so response times may vary.
+
+:ambassadors-list
+::
+
+::page-section{title="Want in? Here's how it works" width="default"}
+The program runs in rolling quarters. You apply anytime, we review applications every quarter.
+
+1. **Apply**
+   Fill in [the application form](https://docs.google.com/forms/d/e/1FAIpQLSfcdKpl8Fb4x6o9aN08dKPhONc2Gtqtnnc5Grbh53xJEvJPAg/viewform?usp=sharing&ouid=116836475553179546044){rel=""nofollow""} with your interests and skills.
+2. **Review**
+   We evaluate your background and motivation during the following quarter.
+3. **Alignment Call**
+   If selected, you'll have a quick chat with us to set expectations and meet your ambassador buddy.
+4. **Candidate Period**
+   You complete two self-chosen activities within a quarter—this shows commitment.
+5. **Welcome Onboard**Once complete, you're officially a Robot Framework Ambassador:
+   1. You'll be listed on the website
+   2. Get RF swag
+   3. Join the ambassador Slack
+   4. Eligible for rewards
+
+### Quarterly Cycle Example
+
+Apply in Q1 → Review in Q2 → Contribute in Q3 → Official Ambassador in Q4
+::
+
+::page-section{title="Expectations and Support" width="default"}
+**What we expect:**
+
+- Stay active and contribute regularly
+- Represent Robot Framework positively and professionally
+- Join quarterly meetings, log your activities
+- Share your work—help others grow
+
+**What you get:**
+
+- Your own profile on the website
+- Swag (including a custom shirt)
+- Access to our ambassador Slack
+- A peer buddy for support
+- Community, visibility, and impact
+::
+
+
+# Code Playground
+
+::robot-editor{.m-4 full-screen}
+::
+
+
+# Code of Ethics
+
+::hero-banner
+---
+center-title: true
+title: Code of Ethics
+title-size: small
+variant: small
+---
+::
+
+::page-section{width="narrow"}
+The Robot Framework Foundation is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, age, race, or religion. We do not tolerate harassment of participants in any form.
+
+This code of ethics applies to all Robot Framework spaces, both online and off. Anyone who violates it may be sanctioned or expelled from those spaces at the discretion of the Robot Framework board.
+
+Some Robot Framework spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by those rules.
+
+If you are being harassed by a member of the Robot Framework community, notice that someone else is being harassed, or have any other concerns, please contact <awareness@robotframework.org>.
+::
+
+::page-section{title="Harassment Includes" width="narrow"}
+- Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, age, race, or religion
+- Unwelcome comments regarding a person's lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment
+- Deliberate misgendering or use of 'dead' or rejected names
+- Gratuitous or off-topic sexual images or behaviour in spaces where they're not appropriate
+- Physical contact and simulated physical contact (for example textual descriptions like "\*hug\*" or "\*backrub\*") without consent or after a request to stop
+- Threats of violence
+- Incitement of violence towards any individual, including encouraging a person to commit suicide or to engage in self-harm
+- Deliberate intimidation
+- Stalking or following
+- Harassing photography or recording, including logging online activity for harassment purposes
+- Sustained disruption of discussion
+- Unwelcome sexual attention
+- A pattern of inappropriate social contact, such as requesting or assuming inappropriate levels of intimacy with others
+- Continued one-on-one communication after requests to cease
+- Deliberate "outing" of any aspect of a person's identity without their consent, except as necessary to protect vulnerable people from intentional abuse
+- Publication of non-harassing private communication
+::
+
+::page-section{width="narrow"}
+The Robot Framework community prioritises marginalised people's safety over privileged people's comfort. The Robot Framework board reserves the right not to act on complaints regarding:
+
+- 'Reverse' -isms, including 'reverse racism', 'reverse sexism', and 'cisphobia'
+- Reasonable communication of boundaries, such as "leave me alone", "go away", or "I'm not discussing this with you"
+- Communicating in a 'tone' you don't find congenial
+- Criticising racist, sexist, cissexist, or otherwise oppressive behaviour or assumptions
+::
+
+::page-section{title="Reporting" width="narrow"}
+- If you are being harassed by a member of the Robot Framework community, notice that someone else is being harassed, or have any other concerns, please contact <awareness@robotframework.org>. If the person harassing you is on the team, they will recuse themselves from handling your incident. We will respond as promptly as we can.
+- This code of ethics applies to Robot Framework spaces, but if you are being harassed by a member of the community outside our spaces, we still want to know about it. We take all good-faith reports of harassment by Robot Framework members seriously — including harassment outside our spaces, and harassment that took place at any point in time. The team reserves the right to exclude people from Robot Framework based on their past behaviour, including behaviour outside our spaces and behaviour towards people who are not in the community.
+- In order to protect volunteers from abuse and burnout, we reserve the right to reject any report we believe to have been made in bad faith. Reports intended to silence legitimate criticism may be deleted without response.
+- We will respect confidentiality requests for the purpose of protecting victims of abuse. At our discretion, we may publicly name a person about whom we have received harassment complaints, or privately warn third parties about them, if we believe that doing so will increase the safety of Robot Framework members or the general public. We will not name harassment victims without their affirmative consent.
+::
+
+::page-section{title="Consequences" width="narrow"}
+- Participants asked to stop any harassing behaviour are expected to comply immediately.
+- If a participant engages in harassing behaviour, the Robot Framework board may take any action they deem appropriate, up to and including expulsion from all Robot Framework spaces and identification of the participant as a harasser to other members or to the general public.
+::
+
+
+# Robot Framework Foundation
+
+::hero-banner
+---
+center-title: true
+eyebrow: More Than A Project
+title: <span class="ink-teal">Robot Framework</span><br>Foundation<br><span
+  class="rf-mark rf-mark--full" ></span>
+title-size: medium
+variant: small
+---
+> **Robot Framework**® **Foundation** is a non-profit consortium that fosters the growth of Robot Framework.
+>
+> It was founded by companies with a common interest to ensure the development of Robot Framework now and in the future.
+>
+> We are always looking for new members to join us.
+::
+
+::page-section{title="What We Do" width="narrow"}
+Robot Framework is free and open source, and it stays that way. The Foundation is
+here to make sure it also stays **well maintained** — paid for by the organisations
+that rely on it, for everyone who uses it.
+
+  :::item-row{same-height list-type="wrapping"}
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### We pay the maintainers
+
+    Developing, releasing and supporting Robot Framework is real work. We fund the
+    people who do it, so the project never has to depend on spare evenings.
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### We back the wider ecosystem
+
+    Robot Framework is more than its core. We can sponsor other projects around it,
+    so the tools and libraries you build on keep moving too.
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### We keep the lights on
+
+    The public websites, documentation and the community platforms everyone relies on —
+    we run them and we pay for them.
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### We bring people together
+
+    Meetups and the yearly conference, [RoboCon](https://robocon.io/){rel=""nofollow""} — where the
+    community learns from each other and meets the people behind the project.
+    ::::
+  :::
+
+Every euro goes back into the tools and the ecosystem; administration is kept to a
+minimum. :br
+And we fund the work — what goes into Robot Framework
+is still decided in the open, by the community.
+
+[Read more about the Foundation, unfolded](https://forum.robotframework.org/t/robot-framework-foundation-unfolded/276){rel=""nofollow""}
+::
+
+::page-section{title="Your Benefits And Cost" width="narrow"}
+### When your company becomes a member, you will…
+
+  :::item-row{same-height list-type="wrapping"}
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### Ensure the continuity of the Robot Framework Project
+
+    Your membership fee funds the maintainers who keep Robot Framework developed, released and supported.
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### Get visibility
+
+    Your company can be listed publicly as a member, if you wish.
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### Discounted tickets for official events
+
+    - Discounted tickets to RoboCon
+    - 20% discount on the certification exam for the official Robot Framework certificate, [RFCP](https://cert.robotframework.org/){rel=""nofollow""}
+    ::::
+
+    ::::page-card{gap="0.33" max-width="50" max-width-mobile="100"}
+    #### Become a certified training provider
+
+    Robot Framework's official certificate has accredited companies that offer training for the exam. As a Foundation member, your company is welcome to apply.
+    ::::
+  :::
+::
+
+::page-section{title="Annual fee" width="narrow"}
+The fee is determined by how many Robot Framework users are in your organisation.
+
+  :::page-card{styling="default"}
+  | Users  | Fee per year |
+  | ------ | ------------ |
+  | 1–2    | €500         |
+  | 3–10   | €1,500       |
+  | 11–50  | €3,000       |
+  | 51–250 | €6,000       |
+  | 251+   | €12,000      |
+  :::
+
+  :::element-details{summary="How is the number of users determined?"}
+  Include everyone working directly or indirectly with Robot Framework — developers, testers and managers alike.
+
+  1–2 users primarily means freelancers and small companies. If you are unsure, get in touch and we will help you place yourself.
+  :::
+::
+
+::page-section{title="How To Join" width="narrow"}
+If you would like to become a member of the Robot Framework Foundation:
+
+1. Fill in [the application](https://docs.google.com/forms/d/e/1FAIpQLScOilsVlkYEB9a48OBmFG7NFTstSs5H5rqPEHjruC-gbE-NaQ/viewform){rel=""nofollow""}
+2. The Foundation board votes on it according to our rules
+3. Once accepted, you are added to the website and the mailing list
+4. Welcome — let's make the world of open source and automation better
+
+Questions about membership? Email <board@robotframework.org>, or book a meeting with the Executive Director below, and we will get back to you.
+
+  :::item-row{centered}
+    ::::page-card
+    ---
+    centered: true
+    max-width: "30"
+    max-width-mobile: "70"
+    styling: unstyled
+    ---
+      :::::image-inline
+      ---
+      centered: true
+      width: 140
+      alt: Miikka Solmela
+      aspect: 1/1
+      click: none
+      rounded: full
+      src: https://robotframework.org/img/ambassadors/miikka-solmela.png
+      ---
+      :::::
+
+    **Miikka Solmela**
+
+    *Executive Director*
+
+      :::::styled-link
+      ---
+      centered: true
+      external: true
+      button-style: secondary
+      href: https://calendly.com/robotframework-ceo
+      label: Book a meeting
+      ---
+      :::::
+    ::::
+  :::
+
+### For existing members
+
+If your contact person changes, or for other membership matters, please contact <admin@robotframework.org>.
+::
+
+::page-section{title="Foundation Members" width="wide"}
+The companies whose membership funds Robot Framework.
+
+:sponsor-grid{folder="foundation-members" variant="detailed"}
+::
+
+
+# Robot Framework
+
+::hero-banner
+---
+backgroundFade: none
+title: <span class="rf-mark rf-mark--full"></span><br><span
+  class="ink-teal">Robot</span><br>Frame&#8203;work<span class="rf-mark
+  rf-mark--tm"></span>
+titleSize: big
+---
+> Robot Framework® is an **open source automation framework** for test automation and [robotic process automation (RPA)](https://docs.robotframework.org/docs/getting_started/rpa){rel=""nofollow""}. It is supported by the [Robot Framework Foundation](https://robotframework.org/foundation) and widely used in the industry.
+>
+> Its [human-friendly and versatile syntax](https://docs.robotframework.org/docs/style_guide){rel=""nofollow""} uses keywords and supports [extending through libraries](https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library){rel=""nofollow""} in Python, Java, and other languages.
+>
+> It integrates with other tools for comprehensive automation without licensing fees, bolstered by a rich community with hundreds of [3rd party libraries](https://robotframework.org/#resources).
+::
+
+::page-section{sticky-title width="narrow"}
+  :::item-row{same-height list-type="wrapping"}
+  :event-calendar{max-width="40" max-width-mobile="100"}
+
+  :news-list{max-width="60" max-width-mobile="100"}
+  :::
+::
+
+:divider
+
+::page-section{sticky-title title="Get Started" width="default"}
+**Code is worth a thousand words.**
+
+Below you'll find a live Robot Framework editor. Feel free to experiment with it — if you find bugs, please report them in [GitHub issues](https://github.com/robotframework/robotframework.github.com/issues){rel=""nofollow""}.
+
+To start using Robot Framework in a project of your own, see the **Install** and **Learn** tabs. And do visit the [Robot Framework Docs](https://docs.robotframework.org/){rel=""nofollow""}.
+
+  :::tab-box
+    ::::tab-panel{icon="robot" label="Editor"}
+    :robot-editor
+    ::::
+
+    ::::tab-panel{icon="python" label="Install"}
+    Robot Framework is implemented with Python, so you need [Python installed](https://www.python.org/downloads/){rel=""nofollow""}. On Windows, make sure to add [Python to PATH](https://docs.python.org/3/using/windows.html#the-full-installer){rel=""nofollow""} during installation.
+
+    Installing Robot Framework with pip is simple:
+
+    ```shellsession [console]
+    $ pip install robotframework
+    Collecting robotframework
+      Downloading robotframework-7.4.2-py3-none-any.whl.metadata (7.6 kB)
+    Downloading robotframework-7.4.2-py3-none-any.whl (807 kB)
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.1/807.1 kB 8.4 MB/s  0:00:00
+    Installing collected packages: robotframework
+    Successfully installed robotframework-7.4.2
+    ```
+
+    To check that the installation was successful, run:
+
+    ```shellsession [console]
+    $ robot --version
+    Robot Framework 7.4.2 (Python 3.12.0 on darwin)
+    ```
+
+    For a full guide, see the [installation instructions](https://github.com/robotframework/robotframework/blob/master/INSTALL.rst){rel=""nofollow""}.
+
+    Now you are ready to write your first tests.
+    ::::
+
+    ::::tab-panel{icon="text" label="Learn"}
+    #### [Robot Framework Docs](https://docs.robotframework.org/){rel=""nofollow""}
+
+    Learn with guides and examples that cover Robot Framework all the way from installation to advanced usage.
+
+    #### [User Guide](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html){rel=""nofollow""}
+
+    Reference manual explaining all Robot Framework features in detail.
+
+    #### [Public API](https://robot-framework.readthedocs.org/en/latest/){rel=""nofollow""}
+
+    Public API for writing your own tools against Robot Framework.
+
+    #### [How to write good test cases](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst){rel=""nofollow""}
+
+    Guidelines for writing good test cases using Robot Framework.
+
+    #### [Dos And Don'ts](https://www.slideshare.net/pekkaklarck/robot-framework-dos-and-donts){rel=""nofollow""}
+
+    Slide set loosely based on 'How to write good test cases' guidelines.
+
+    #### [Introduction Slides](https://www.slideshare.net/pekkaklarck/robot-framework-introduction){rel=""nofollow""}
+
+    Generic Robot Framework introduction slides.
+
+    #### [Robot Framework katas](https://github.com/eficode-academy/rf-katas){rel=""nofollow""}
+
+    Series of exercises and examples how to get started with test automation. No prior knowledge of test automation required.
+
+    #### [Web Demo](https://github.com/robotframework/WebDemo){rel=""nofollow""}
+
+    Demonstrates how to create tests and higher level keywords. The system under test is a simple web page that is tested using SeleniumLibrary.
+
+    #### [Robot Demo](https://github.com/robotframework/RobotDemo){rel=""nofollow""}
+
+    Demonstrates how to create tests and test libraries. The system under test is a simple calculator that is tested using a custom library.
+
+    #### [Demo: ATDD with Robot Framework](https://code.google.com/p/atdd-with-robot-framework/){rel=""nofollow""}
+
+    How to use Robot Framework for Acceptance Test Driven Development (ATDD) a.k.a. Specification by Example.
+
+    #### [Demo: Using C with Robot Framework](https://bitbucket.org/robotframework/cdemo){rel=""nofollow""}
+
+    This simple example demonstrates how to use C language from Robot Framework test libraries.
+
+    #### [Demo: Remote interface](https://github.com/jg8481/robotframework-scala-remote-library){rel=""nofollow""}
+
+    Example demonstrates how to use Robot Framework's [Remote interface](https://github.com/robotframework/RemoteInterface){rel=""nofollow""} to call test libraries written in any programming language.
+    ::::
+  :::
+::
+
+:divider
+
+::page-section{sticky-title title="Resources" width="default"}
+Robot Framework is open source and supported by the [Robot Framework Foundation](https://robotframework.org/foundation). There is a huge community of contributors around the tool. The software is built with expandability in mind, and there are numerous ways to extend its use cases.
+
+If you have created or found a library that you think should be listed here, please [let us know](https://github.com/robotframework/robotframework.github.com){rel=""nofollow""} by submitting a pull request or an issue. You are also welcome to report unmaintained ones that shouldn't be listed any more.
+
+  :::resource-table
+  ---
+  tabs:
+    - label: Libraries
+      source: libraries
+      description: Separately developed external libraries that you install as you
+        need them. Creating your own is straightforward — see creating test
+        libraries in the User Guide.
+    - label: Built-in
+      source: builtin
+      description: Libraries and tools bundled with the framework. These provide the
+        actual automation and testing capabilities.
+    - label: Tools
+      source: tools
+      description: Supporting tools that ease automation work — editors, runners,
+        reporting and integrations.
+  ---
+  :::
+::
+
+:divider
+
+::page-section{sticky-title title="Community" width="narrow"}
+Robot Framework has a vibrant community of testing enthusiasts around it. Stop by if you have questions, need advice, or would just like to connect with like-minded people.
+
+There is also an annual RoboCon conference hosted in Helsinki, Finland. For more information and to watch previous years' talks, visit [robocon.io](https://robocon.io){rel=""nofollow""} or our [YouTube channel](https://www.youtube.com/channel/UCuOaCtN8bI9O_E2VYIumIqg){rel=""nofollow""}.
+
+To support Robot Framework you can find a [T-shirt](https://supergeek.de/de/products/24916-im-the-robot-dark/){rel=""nofollow""} and a [coffee cup](https://supergeek.de/de/products/24915-im-the-robot-bright/1232-tasse-coffee-mug/){rel=""nofollow""} in our [shop](https://shop.robotframework.org/){rel=""nofollow""}.
+
+  :::item-row{same-height list-type="wrapping"}
+    ::::page-card{gap="0.3" max-width="33" max-width-mobile="100"}
+      :::::styled-link
+      ---
+      external: true
+      buttonStyle: ticket
+      href: https://forum.robotframework.org/
+      icon: /img/community/forum.svg
+      iconDark: /img/community/forum-dark.svg
+      label: Forum
+      ---
+      :::::
+
+    Official Robot Framework forum.
+    ::::
+
+    ::::page-card{gap="0.3" max-width="33" max-width-mobile="100"}
+      :::::styled-link
+      ---
+      external: true
+      buttonStyle: ticket
+      class: border-0
+      href: https://robotframework.slack.com/
+      icon: /img/community/slack.svg
+      label: Slack
+      ---
+      :::::
+
+    Community team chat.
+    [Click for invite!](https://slack.robotframework.org/){rel=""nofollow""}
+    ::::
+
+    ::::page-card{gap="0.3" max-width="33" max-width-mobile="100"}
+    **Others**
+
+    - [LinkedIn](https://www.linkedin.com/groups/3710899/){rel=""nofollow""}
+    - [Facebook](https://www.facebook.com/robotframeworkofficial){rel=""nofollow""}
+    - [Mailing list](https://groups.google.com/group/robotframework-users){rel=""nofollow""}
+    ::::
+  :::
+
+  :::modal-button
+  ---
+  buttonStyle: secondary
+  label: Code of Ethics
+  title: Code of Ethics
+  width: auto
+  ---
+    ::::page-section{width="narrow"}
+    The Robot Framework Foundation is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, age, race, or religion. We do not tolerate harassment of participants in any form.
+
+    This code of ethics applies to all Robot Framework spaces, both online and off. Anyone who violates it may be sanctioned or expelled from those spaces at the discretion of the Robot Framework board.
+
+    Some Robot Framework spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by those rules.
+
+    If you are being harassed by a member of the Robot Framework community, notice that someone else is being harassed, or have any other concerns, please contact <awareness@robotframework.org>.
+    ::::
+
+    ::::page-section{title="Harassment Includes" width="narrow"}
+    - Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, age, race, or religion
+    - Unwelcome comments regarding a person's lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment
+    - Deliberate misgendering or use of 'dead' or rejected names
+    - Gratuitous or off-topic sexual images or behaviour in spaces where they're not appropriate
+    - Physical contact and simulated physical contact (for example textual descriptions like "\*hug\*" or "\*backrub\*") without consent or after a request to stop
+    - Threats of violence
+    - Incitement of violence towards any individual, including encouraging a person to commit suicide or to engage in self-harm
+    - Deliberate intimidation
+    - Stalking or following
+    - Harassing photography or recording, including logging online activity for harassment purposes
+    - Sustained disruption of discussion
+    - Unwelcome sexual attention
+    - A pattern of inappropriate social contact, such as requesting or assuming inappropriate levels of intimacy with others
+    - Continued one-on-one communication after requests to cease
+    - Deliberate "outing" of any aspect of a person's identity without their consent, except as necessary to protect vulnerable people from intentional abuse
+    - Publication of non-harassing private communication
+    ::::
+
+    ::::page-section{width="narrow"}
+    The Robot Framework community prioritises marginalised people's safety over privileged people's comfort. The Robot Framework board reserves the right not to act on complaints regarding:
+
+    - 'Reverse' -isms, including 'reverse racism', 'reverse sexism', and 'cisphobia'
+    - Reasonable communication of boundaries, such as "leave me alone", "go away", or "I'm not discussing this with you"
+    - Communicating in a 'tone' you don't find congenial
+    - Criticising racist, sexist, cissexist, or otherwise oppressive behaviour or assumptions
+    ::::
+
+    ::::page-section{title="Reporting" width="narrow"}
+    - If you are being harassed by a member of the Robot Framework community, notice that someone else is being harassed, or have any other concerns, please contact <awareness@robotframework.org>. If the person harassing you is on the team, they will recuse themselves from handling your incident. We will respond as promptly as we can.
+    - This code of ethics applies to Robot Framework spaces, but if you are being harassed by a member of the community outside our spaces, we still want to know about it. We take all good-faith reports of harassment by Robot Framework members seriously — including harassment outside our spaces, and harassment that took place at any point in time. The team reserves the right to exclude people from Robot Framework based on their past behaviour, including behaviour outside our spaces and behaviour towards people who are not in the community.
+    - In order to protect volunteers from abuse and burnout, we reserve the right to reject any report we believe to have been made in bad faith. Reports intended to silence legitimate criticism may be deleted without response.
+    - We will respect confidentiality requests for the purpose of protecting victims of abuse. At our discretion, we may publicly name a person about whom we have received harassment complaints, or privately warn third parties about them, if we believe that doing so will increase the safety of Robot Framework members or the general public. We will not name harassment victims without their affirmative consent.
+    ::::
+
+    ::::page-section{title="Consequences" width="narrow"}
+    - Participants asked to stop any harassing behaviour are expected to comply immediately.
+    - If a participant engages in harassing behaviour, the Robot Framework board may take any action they deem appropriate, up to and including expulsion from all Robot Framework spaces and identification of the participant as a harasser to other members or to the general public.
+    ::::
+  :::
+
+  :::video-embed
+  ---
+  width: 2000
+  class: rounded-lg
+  title: Robot Framework — the community
+  url: https://www.youtube.com/embed/qbFNSVSRBZ8
+  ---
+  :::
+::
+
+:divider
+
+::page-section{sticky-title title="Development" width="default"}
+Development of Robot Framework is funded by the non-profit [Robot Framework Foundation](https://robotframework.org/foundation). It consists of companies and organisations that want to ensure the continuity of Robot Framework now and in the future.
+
+The project is hosted on [GitHub](https://github.com/robotframework/robotframework){rel=""nofollow""}.
+
+Thanks to the sponsors, Robot Framework remains completely free to use while being actively maintained and developed. The Foundation also covers related expenses such as the development of this website and organising various meetups.
+
+  :::page-card
+  ---
+  centered: true
+  external: true
+  accent: ""
+  gap: "0"
+  href: ""
+  link-label: ""
+  max-width: "100"
+  max-width-mobile: "100"
+  styling: default
+  ---
+  #### Members of Robot Framework Foundation
+
+  :sponsor-grid{variant="logos"}
+
+  Interested in joining?
+
+    ::::styled-link
+    ---
+    centered: true
+    buttonStyle: secondary
+    href: https://robotframework.org/foundation
+    label: Visit the Foundation...
+    ---
+    ::::
+  :::
+
+:milestone-list
+::
+
+
+# Privacy Policy
+
+::hero-banner
+---
+center-title: true
+title: Privacy Policy
+title-size: small
+variant: small
+---
+::
+
+::page-section{width="narrow"}
+This Privacy Policy is applicable to the personal data processed by Robot Framework Foundation ("**Robot Framework**" or "**we**") relating to the users of the [Robot Framework website](https://robotframework.org/){rel=""nofollow""} and the [Robocon website](https://robocon.io/){rel=""nofollow""} (hereinafter jointly refered to as "**Service**").
+
+This Privacy Policy is also applicable to personal data processed by Robot Framework in regard to the representatives of our member organizations and other partners, including personal data collected in connection to our marketing activities and events. All of the aforementioned data subjects are hereinafter collectively referred to as "**Users**" or "**you**."
+
+The purpose of this Privacy Policy is to provide you with information about the processing of your personal data in accordance with the General Data Protection Regulation 2016/679 (GDPR).
+
+Please note that this Privacy Policy only applies to processing carried out by Robot Framework as a data controller. This Privacy Policy does not address, and we are not responsible for, the privacy and data processing practices of any third parties.
+
+In regard to Robot Framework documentation available via Github, Github acts as the data controller for any user information. For more information, please see the [Github Privacy Statement](https://help.github.com/en/github/site-policy/github-privacy-statement){rel=""nofollow""}. The payment transactions for purchases of Robot Framework gear are facilitated via the Reddy platform. For more information please see the [Reddy Privacy Statement](https://shop.robotframework.org/privacy-policy){rel=""nofollow""}.
+
+This Privacy Policy may be updated if required in order to reflect the changes in data processing practices or otherwise. The current version can be found on our [website](https://robotframework.org/privacy-policy). We will not make substantial changes to this Privacy Policy or reduce your rights under this Privacy Policy without providing a notice thereof.
+::
+
+::page-section{title="Contact Details" width="narrow"}
+- Robot Framework Ry
+- Business ID: 2754775-1
+- Pohjoinen Rautatiekatu 25, 00100 Helsinki
+- <https://robotframework.org/>{rel=""nofollow""}
+- Contact person: René Rohner, Chairman of The Board, +49 173 7089491
+- <chair@robotframework.org>
+::
+
+::page-section
+---
+title: Personal Data Processed and Sources of Data
+width: narrow
+---
+We collect two types of information concerning our Users: (i) User Data; and (ii) Analytics Data.
+
+User Data is primarily received directly from you either in connection to your use of the Service or in connection to your interaction with us. In certain cases your personal data may also be directly provided to us by the company or organization you represent.
+
+Analytics Data is collected automatically as you use the Service. Although we do not normally use Analytics Data to identify individuals, sometimes individuals can be recognized from it, either alone or when combined or linked with other data. In such situations, Analytics Data shall also be considered to be personal data under applicable laws and we will treat the combined data as personal data.
+
+User Data and Analytics Data typically consist of the following categories of data:
+
+### User Data
+
+- Name;
+- Organisation and work title;
+- Contact information (such as email address, postal address and phone number);
+- Any direct correspondence with Robot Framework;
+- Information relating to your participation to our events, such as event registrations, attendance and cancellations, event feedback and special dietary restrictions you may provide;
+- Purchase and delivery information for orders of [Robot Framework gear](https://shop.robotframework.org/){rel=""nofollow""};
+- Direct marketing opt-outs and opt-ins.
+
+### Analytics Data
+
+- IP address;
+- Device type and model;
+- Operating system;
+- Time of visit;
+- Browser type and version;
+- Language settings.
+::
+
+::page-section{title="Cookies and Analytics Tools" width="narrow"}
+We use various technologies to collect and store Analytics Data and other information when you visit our Service, including [cookies](https://policies.google.com/privacy/key-terms?hl=en&gl=nl){rel=""nofollow""}. These technologies are also used to integrate our social media accounts with the Service.
+
+Cookies are small text files sent and saved on your device that allow us to identify visitors of our websites and facilitate the use of our Service and to create aggregate information of our visitors. The cookies will not harm your device or files. We may use cookies to tailor and improve our Service.
+
+Users may choose to set their web browser to refuse cookies, or to alert when cookies are being sent. For example, the following links provide information on how to adjust the cookie settings on some popular browsers:
+
+- [Safari](https://support.apple.com/kb/PH19214?viewlocale=en_US&locale=en_US){rel=""nofollow""}
+- [Google Chrome](https://support.google.com/chrome/answer/95647?hl=en&p=cpn_cookies){rel=""nofollow""}
+- [Internet Explorer](https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies){rel=""nofollow""}
+- [Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer){rel=""nofollow""}
+
+Please note that some parts of our Service may not function properly if the use of cookies is refused. We use Google Analytics to compile Analytics Data and reports on visitor usage. For an overview of Google Analytics, please visit [Google Analytics](https://www.google.com/analytics/){rel=""nofollow""}. It is possible to opt-out of Google Analytics with the following browser add-on tool: [Google Analytics opt-out add-on](https://support.google.com/analytics/answer/181881?hl=en&ref_topic=2919631){rel=""nofollow""}.
+::
+
+::page-section
+---
+title: Purposes and Legitimate Grounds of Processing
+width: narrow
+---
+### Purposes of processing
+
+*To provide our Service and to carry out our contractual obligations (legal ground: performance of a contract and legitimate interest)*
+
+We process personal data to be able to offer the Service to our Users and to run and maintain our operations. Personal data may be processed in order to carry out our contractual obligations towards the individual User or towards the organization the User represents. We may use the data for example to process member applications or to process orders of Robot Framework gear.
+
+*For our legal obligations (legal ground: compliance with a legal obligation)*
+
+We process personal data to enable us to administer and fulfil our obligations under law. This includes data processed for complying with our accounting obligations and providing information to relevant authorities.
+
+*For claims handling and legal processes (legal ground: legitimate interest)*
+
+We may process personal data in relation to claims handling, debt collection and legal processes. We may also process data for the prevention of fraud, misuse of our services and for data, system and network security.
+
+*For communication and marketing (legal ground: legitimate interest)*
+
+We may process personal data for the purpose of contacting our Users regarding our Service and events and for informing Users of changes in our Service, overall operations or updates to the documentation and tools we provide. We may also process personal data for direct marketing purposes, for example in the form of sending newsletters.
+
+*For quality improvement and trend analysis (legal ground: legitimate interest)*
+
+We may process information regarding your use of the Service to improve the quality of our Service, for example by analysing any trends in the use of our Service. Similarly we may process any feedback provided by you to improve our operations in general. Where possible, we will do this using only aggregated, non-personally identifiable data.
+
+### Legal grounds for processing
+
+- We primarily process personal data on a contractual basis. For individuals acting as representatives of our customer or partner organizations, personal data is primarily processed based on our legitimate interest whilst fulfilling our contractual obligations towards the organisations they represent.
+- We may also process personal data based on our legitimate interests, for example in connection with analytics and marketing. When choosing to use your data on the basis of our legitimate interests, we carefully weigh our own interests against your right to privacy.
+- In certain cases you may be requested to grant your consent for the processing of your personal data. In this event, the legal ground for such processing is your consent. You may withdraw your consent at any time.
+::
+
+::page-section{title="International Transfers" width="narrow"}
+Robot Framework stores personal data primarily within the European Economic Area. However, we have service providers in several geographical locations. As such, we, our service providers may transfer personal data to, or access it in, jurisdictions outside the European Economic Area or outside of your domicile.
+
+We will take steps to ensure that your personal data receives an adequate level of protection in the jurisdictions in which it is processed. We provide adequate protection for the transfers of personal data to countries outside of the European Economic Area through a series of agreements with our service providers based on the [Standard Contractual Clauses](https://ec.europa.eu/info/law/law-topic/data-protection/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en){rel=""nofollow""} or through other appropriate safeguards, such as the [Privacy Shield Framework](https://www.privacyshield.gov/welcome){rel=""nofollow""}.
+::
+
+::page-section{title="Personal Data Recipients" width="narrow"}
+We do not share personal data with third parties outside of Robot Framework's organization unless one of the following circumstances applies:
+
+*For legal reasons*
+
+We may share personal data with third parties outside of our organization if we have a good-faith belief that access to and use of the personal data is reasonably necessary to: (i) meet any applicable law, regulation, and/or court order; (ii) detect, prevent, or otherwise address fraud, security or technical issues; and/or (iii) protect the interests, property or safety of Robot Framework, our Users or the public in accordance with the law. When possible, we will inform you about such transfer and processing.
+
+*To authorized service providers*
+
+We may share personal data to authorized service providers who perform services for us (including data storage, sales, marketing and support services). Our agreements with our service providers include commitments that the service providers agree to limit their use of personal data and to comply with privacy and security standards at least as stringent as the terms of this Privacy Policy.
+
+*For other legitimate reasons*
+
+If Robot Framework is involved in an acquisition or similar reconstructing, we may transfer personal data to the third party involved. However, we will continue to ensure the confidentiality of all personal data. We will give notice to those concerned when the personal data are transferred or become subject to a different privacy policy as soon as reasonably possible.
+
+*With explicit consent*
+
+We may share personal data with third parties outside of our organization for other reasons than the ones mentioned before, when we have your explicit consent to do so. You have the right to withdraw this consent at all times.
+::
+
+::page-section{title="Storage Period" width="narrow"}
+- Robot Framework does not store personal data longer than is legally permitted and necessary for purposes of providing the Service or the relevant parts thereof, or for another individual purpose for which your personal data is being processed. The storage period depends on the nature of the information and the purposes of processing. The maximum period may therefore vary per use.
+- We will store Analytics Data relating to the Service 50 months.
+::
+
+::page-section{title="Your Rights" width="narrow"}
+*Right to access*
+
+You have the right to access your personal data processed by us. You may contact us and we will inform what personal data we have collected and processed regarding you.
+
+*Right to withdraw consent*
+
+In case the processing is based on a consent you have granted to us, you may withdraw the consent at any time. Withdrawing a consent may lead to fewer possibilities to use our Service. The withdrawal of consent does not affect the lawfulness of processing based on consent before its withdrawal.
+
+*Right to rectify*
+
+You have the right to have incorrect or incomplete personal data we have stored about you corrected or completed by contacting us.
+
+*Right to erasure*
+
+You may also ask us to erase your personal data from our systems. We will comply with such request unless we have a legitimate ground to not delete the data.
+
+*Right to object*
+
+You have the right to object to certain use of your personal data if such data are processed for other purposes than necessary for the performance of the Service or for compliance with a legal obligation. If you object to the further processing of your personal data, this may lead to fewer possibilities to use the our Service.
+
+*Right to restriction of processing*
+
+You may request us to restrict processing of personal data for example when your data erasure, rectification or objection requests are pending and/or when we do not have legitimate grounds to process your data. This may however lead to fewer possibilities to use our Service.
+
+*Right to data portability*
+
+You have the right to receive your personal data from us in a structured and commonly used format and to independently transmit those data to a third party.
+
+*How to use the rights*
+
+The above mentioned rights may be used by sending a letter or an e-mail to us on the addresses set out above. We may request the provision of additional information necessary to confirm your identity.
+
+We reserve the right to reject requests that are unreasonably repetitive, excessive or manifestly unfounded.
+::
+
+::page-section{title="Direct Marketing" width="narrow"}
+Notwithstanding any consent granted beforehand for the purposes of direct marketing, you have the right to prohibit us from using your personal data for direct marketing purposes, market research and profiling made for direct marketing purposes by contacting us on the addresses indicated above or by using the unsubscribe possibility offered in connection with any direct marketing messages.
+::
+
+::page-section{title="Information Security" width="narrow"}
+We use administrative, organizational, technical, and physical safeguards to protect the personal data we collect and process. Our security controls are designed to maintain an appropriate level of data confidentiality, integrity, availability, resilience and ability restore the data. We regularly test our systems, and other assets for security vulnerabilities.
+
+Should despite of the security measures, a security breach occur that is likely to have negative effects on your privacy, we will inform you and other affected parties, as well as relevant authorities when required by applicable data protection laws, about the breach as soon as possible.
+::
+
+::page-section{title="Lodging a Complaint" width="narrow"}
+In case you consider our processing of personal data to be inconsistent with the applicable data protection laws, a complaint may be lodged with the local supervisory authority for data protection.
+
+In Finland, the local supervisory authority is the Data Protection Ombudsman (<https://www.tietosuoja.fi>{rel=""nofollow""}).
+::
+
+
+# Users
+
+::hero-banner
+---
+center-title: true
+title: Users of Robot Framework
+title-size: small
+variant: small
+---
+::
+
+::page-section{width="wide"}
+If you'd like your company added here, please submit a [pull request](https://github.com/robotframework/robotframework.github.com/pulls){rel=""nofollow""} or an [issue](https://github.com/robotframework/robotframework.github.com/issues){rel=""nofollow""}.
+
+:user-grid
+::

@@ -1,0 +1,17 @@
+# Robot Framework
+
+> Robot Framework, the open source generic automation framework for test automation and RPA: getting started, documentation, libraries, tools and the Robot Framework Foundation.
+
+## Documentation Sets
+
+- [Robot Framework — full content](https://robotframework.org/llms-full.txt): Every page of the site as a single Markdown document.
+
+## Pages
+
+- [Robot Framework Ambassadors](https://robotframework.org/raw/ambassador.md): Meet the Robot Framework Ambassador community — community leaders sharing knowledge and passion for Robot Framework.
+- [Code Playground](https://robotframework.org/raw/code.md): Write and run Robot Framework test suites in your browser. No install, no setup — the full framework runs locally in the page.
+- [Code of Ethics](https://robotframework.org/raw/code-of-ethics.md): The Robot Framework Foundation is dedicated to a harassment-free experience for everyone. What counts as harassment, how to report it, and what happens next.
+- [Robot Framework Foundation](https://robotframework.org/raw/foundation.md): A non-profit consortium of companies funding the development of Robot Framework, its infrastructure and its community events. Membership is open — here is what it costs and how to join.
+- [Robot Framework](https://robotframework.org/raw/index.md): An open source automation framework for test automation and RPA. Human-readable keyword syntax, extensible in Python, supported by the Robot Framework Foundation and used across the industry.
+- [Privacy Policy](https://robotframework.org/raw/privacy-policy.md): How the Robot Framework Foundation processes personal data under the GDPR — what is collected, why, who receives it, how long it is kept, and your rights.
+- [Users](https://robotframework.org/raw/users.md): Companies and organisations using Robot Framework for test automation and RPA.
