@@ -1,0 +1,1 @@
+import{_ as o}from"./Ct84ilNt.js";import{Y as n,j as s,aC as f,a7 as p}from"./BIhIKTEN.js";const l={__name:"ProseA",props:{href:{type:String,default:""},target:{type:String,default:void 0,required:!1}},setup(e){const t=e;return(r,_)=>{const a=o;return n(),s(a,{href:t.href,target:t.target},{default:f(()=>[p(r.$slots,"default")]),_:3},8,["href","target"])}}};export{l as default};

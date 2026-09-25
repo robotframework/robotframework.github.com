@@ -1,0 +1,1 @@
+import{_ as r}from"./DlAUqK2U.js";import{Y as o,l as t,a7 as a}from"./BIhIKTEN.js";const s={};function l(e,n){return o(),t("table",null,[a(e.$slots,"default")])}const _=r(s,[["render",l]]);export{_ as default};
