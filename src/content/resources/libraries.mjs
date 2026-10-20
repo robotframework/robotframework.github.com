@@ -159,6 +159,12 @@ export default () => ([
     tags: ['iot']
   },
   {
+    name: 'Optics',
+    href: 'https://github.com/mozarkai/optics-framework',
+    description: 'Android, iOS, TV and web testing through Appium, Selenium or Playwright. Element lookup falls back from XPath to text, OCR and image matching.',
+    tags: ['mobile', 'web', 'ui']
+  },
+  {
     name: 'OracleDBLibrary',
     href: 'https://github.com/adeliogullari/robotframework-oracledb-library',
     description: 'A database testing library for Robot Framework that utilizes the python-oracledb tool internally.',
