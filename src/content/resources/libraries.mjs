@@ -348,5 +348,11 @@ export default () => ([
     href: 'https://github.com/Nilsty/robotframework-terraformlibrary',
     description: 'A library providing Infrastructure as Code capabilities via Terraform and OpenTofu',
     tags: ['cloud', 'infrastructure']
+  },
+  {
+    name: 'TableLibrary',
+    href: 'https://github.com/imbus/robotframework-tablelibrary',
+    description: 'A modern library to easily handle tabular data such as CSV ',
+    tags: ['csv', 'parquet', 'excel']
   }
 ])
