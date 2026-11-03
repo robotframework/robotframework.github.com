@@ -144,6 +144,12 @@ export default () => ([
     tags: ['']
   },
   {
+    name: 'Qase Reporter',
+    description: 'Listener that reports Robot Framework test results to Qase test management, linking automated runs to test cases.',
+    href: 'https://github.com/qase-tms/qase-python/tree/main/qase-robotframework',
+    tags: ['']
+  },
+  {
     name: 'RCC',
     description: 'Share your Robot projects with ease. RCC allows you to create, manage, and distribute Python-based self-contained automation packages.',
     href: 'https://github.com/robocorp/rcc',
