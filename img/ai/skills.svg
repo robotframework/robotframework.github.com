@@ -1,0 +1,13 @@
+<svg viewBox="25 14 130 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root { --fg: #121A1C; }
+    @media (prefers-color-scheme: dark) { :root { --fg: #B8E3E0; } }
+    .st { stroke: var(--fg); }
+    .fl { fill: var(--fg); }
+  </style>
+  <rect class="st" x="46" y="46" width="72" height="96" rx="10" stroke-width="10" fill="none"/>
+  <path class="st" d="M62 74H104" stroke-width="8" stroke-linecap="round"/>
+  <path class="st" d="M62 94H104" stroke-width="8" stroke-linecap="round"/>
+  <path class="st" d="M62 114H92" stroke-width="8" stroke-linecap="round"/>
+  <path class="fl" d="M139 46L127.5 49.5L124 61L120.5 49.5L109 46L120.5 42.5L124 31L127.5 42.5Z"/>
+</svg>

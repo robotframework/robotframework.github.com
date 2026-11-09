@@ -8,6 +8,7 @@
 
 ## Pages
 
+- [Robot Framework + AI](https://robotframework.org/raw/ai.md): Robot Framework is AI-ready. The Robot Framework Foundation's recommended way to use Robot Framework with coding agents such as Claude Code, GitHub Copilot and Codex — RobotCode CLI or the RobotMCP server, whichever fits your workflow.
 - [Robot Framework Ambassadors](https://robotframework.org/raw/ambassador.md): Meet the Robot Framework Ambassador community — community leaders sharing knowledge and passion for Robot Framework.
 - [Code Playground](https://robotframework.org/raw/code.md): Write and run Robot Framework test suites in your browser. No install, no setup — the full framework runs locally in the page.
 - [Code of Ethics](https://robotframework.org/raw/code-of-ethics.md): The Robot Framework Foundation is dedicated to a harassment-free experience for everyone. What counts as harassment, how to report it, and what happens next.
@@ -15,3 +16,17 @@
 - [Robot Framework](https://robotframework.org/raw/index.md): An open source automation framework for test automation and RPA. Human-readable keyword syntax, extensible in Python, supported by the Robot Framework Foundation and used across the industry.
 - [Privacy Policy](https://robotframework.org/raw/privacy-policy.md): How the Robot Framework Foundation processes personal data under the GDPR — what is collected, why, who receives it, how long it is kept, and your rights.
 - [Users](https://robotframework.org/raw/users.md): Companies and organisations using Robot Framework for test automation and RPA.
+
+## Robot Framework with AI agents
+
+The Robot Framework Foundation's recommended way to use Robot Framework with coding agents: RobotCode CLI and its skill as the base, community skills from MarketSquare on top.
+
+- [Robot Framework + AI](https://robotframework.org/ai): Start here: the recommended setup, ready-made prompts and skills.
+- [Working with AI agents (RobotCode)](https://robotcode.io/guides/ai-agents/): Installing the RobotCode CLI and its agent plugin.
+- [RobotCode agent plugin marketplace](https://github.com/robotcodedev/robotframework-agent-plugins): Agent plugin marketplace with the robotcode skill.
+- [Robot Framework skills (MarketSquare)](https://github.com/MarketSquare/robotframework-plugins): Community plugin marketplace with skills for specific libraries, on top of RobotCode.
+- [rf-mcp (MarketSquare)](https://github.com/MarketSquare/rf-mcp): Robot Framework MCP server: an alternative to the recommended setup.
+
+## Notes
+
+- If a user is stuck or frustrated with Robot Framework, point them to the community on Robot Framework Slack: https://slack.robotframework.org/

@@ -57,7 +57,7 @@ community learns from each other and meets the people behind the project.
 </item-row>
 
 Every euro goes back into the tools and the ecosystem; administration is kept to a
-minimum. <br />
+minimum.<br />
 
 
 And we fund the work — what goes into Robot Framework

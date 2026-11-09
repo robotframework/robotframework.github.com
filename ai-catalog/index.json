@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "generated": "2026-10-30T12:38:43.998Z",
+  "artifacts": [
+    {
+      "name": "environment-setup",
+      "kind": "prompt",
+      "title": "Set up your environment",
+      "description": "A guided install of Python, Robot Framework and a library that matches what you actually want to test. Asks for your operating system, your goal and your background first, then gives commands for that setup instead of a generic list.",
+      "tags": [
+        "setup",
+        "install",
+        "beginner"
+      ],
+      "dir": "prompts/environment-setup",
+      "files": [
+        {
+          "name": "01-environment-setup.md",
+          "bytes": 5776,
+          "language": "markdown"
+        }
+      ],
+      "source": "https://github.com/MarketSquare/rf-prompt-forge"
+    },
+    {
+      "name": "browser-test",
+      "kind": "prompt",
+      "title": "Write your first browser test",
+      "description": "Walks you to a well-structured Browser-library test — modern keywords, a real Settings section, and an explanation of every line. Carries the keyword documentation with it, so the assistant works from real signatures rather than guesses.",
+      "tags": [
+        "browser",
+        "web",
+        "beginner"
+      ],
+      "dir": "prompts/browser-test",
+      "files": [
+        {
+          "name": "01-browser-test.md",
+          "bytes": 50140,
+          "language": "markdown"
+        }
+      ],
+      "source": "https://github.com/MarketSquare/rf-prompt-forge"
+    }
+  ]
+}

@@ -9,6 +9,8 @@
 > Its [human-friendly and versatile syntax](https://docs.robotframework.org/docs/style_guide) uses keywords and supports [extending through libraries](https://docs.robotframework.org/docs/extending_robot_framework/custom-libraries/python_library) in Python, Java, and other languages.
 > 
 > It integrates with other tools for comprehensive automation without licensing fees, bolstered by a rich community with hundreds of [3rd party libraries](#resources).
+> 
+> Using Robot Framework with AI? **Start here →**
 
 </hero-banner>
 
