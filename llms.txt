@@ -8,7 +8,7 @@
 
 ## Pages
 
-- [Robot Framework + AI](https://robotframework.org/raw/ai.md): Robot Framework is AI-ready. The Robot Framework Foundation's recommended way to use Robot Framework with coding agents such as Claude Code, GitHub Copilot and Codex — RobotCode CLI or the RobotMCP server, whichever fits your workflow.
+- [Robot Framework + AI](https://robotframework.org/raw/ai.md): Robot Framework is AI-ready. The Robot Framework Foundation's recommended way to use Robot Framework with coding agents such as Claude Code, GitHub Copilot and Codex — RobotCode CLI as the base, community skills on top.
 - [Robot Framework Ambassadors](https://robotframework.org/raw/ambassador.md): Meet the Robot Framework Ambassador community — community leaders sharing knowledge and passion for Robot Framework.
 - [Code Playground](https://robotframework.org/raw/code.md): Write and run Robot Framework test suites in your browser. No install, no setup — the full framework runs locally in the page.
 - [Code of Ethics](https://robotframework.org/raw/code-of-ethics.md): The Robot Framework Foundation is dedicated to a harassment-free experience for everyone. What counts as harassment, how to report it, and what happens next.
@@ -25,7 +25,7 @@ The Robot Framework Foundation's recommended way to use Robot Framework with cod
 - [Working with AI agents (RobotCode)](https://robotcode.io/guides/ai-agents/): Installing the RobotCode CLI and its agent plugin.
 - [RobotCode agent plugin marketplace](https://github.com/robotcodedev/robotframework-agent-plugins): Agent plugin marketplace with the robotcode skill.
 - [Robot Framework skills (MarketSquare)](https://github.com/MarketSquare/robotframework-plugins): Community plugin marketplace with skills for specific libraries, on top of RobotCode.
-- [rf-mcp (MarketSquare)](https://github.com/MarketSquare/rf-mcp): Robot Framework MCP server: an alternative to the recommended setup.
+- [RobotMCP (rf-mcp)](https://github.com/manykarim/rf-mcp): Robot Framework MCP server, an alternative to the recommended setup. Moving to github.com/MarketSquare/rf-mcp.
 
 ## Notes
 
