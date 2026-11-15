@@ -147,6 +147,12 @@ export default () => ([
     description: 'Register keywords to run before/after other keywords and suites.'
   },
   {
+    name: 'MaestroLibrary',
+    href: 'https://github.com/ai94iq/robotframework-maestrolibrary',
+    description: 'Android and iOS testing driven by Maestro, with AppiumLibrary-style keywords. No Appium server needed.',
+    tags: ['mobile']
+  },
+  {
     name: 'Mainframe3270 Library',
     href: 'https://github.com/MarketSquare/Robot-Framework-Mainframe-3270-Library/blob/master/README.md',
     description: 'Allows the creation of automated test scripts to test IBM Mainframe 3270.',
