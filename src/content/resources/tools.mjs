@@ -239,5 +239,11 @@ export default () => ([
     description: 'Test management app for Jira that provides the ability to track coverage based on traditional manual test cases, exploratory testing and automation-related results. For automation, users can track detailed results from test scripts implemented with Robot Framework and link them to the respective requirements.',
     href: 'https://www.getxray.app/',
     tags: ['']
+  },
+  {
+    name: 'robotframework-mind',
+    description: 'Exact lookups over Robot Framework test repos: tests by ticket or tag, keyword callers and variables. CLI and desktop app.',
+    href: 'https://github.com/ai94iq/robotframework-mind',
+    tags: ['']
   }
 ])
