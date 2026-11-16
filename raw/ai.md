@@ -2,7 +2,7 @@
 
 > Robot Framework is AI-ready. The Robot Framework Foundation's recommended way to use Robot Framework with coding agents such as Claude Code, GitHub Copilot and Codex — RobotCode CLI as the base, community skills on top.
 
-<hero-banner subtitle="Robot Framework. Your AI agent. Your choice." title="Ready for the AI&nbsp;agent&nbsp;era" title-size="big">
+<hero-banner subtitle="Robot Framework. Your AI agent. Your choice." title="Ready for the AI agent era" title-size="big">
 <item-row list-type="wrapping">
 <page-card styling="unstyled">
 <styled-link button-style="primary" href="#recommended-setup" label="Get started">

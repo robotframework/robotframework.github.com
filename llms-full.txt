@@ -3,7 +3,7 @@
 ::hero-banner
 ---
 subtitle: Robot Framework. Your AI agent. Your choice.
-title: Ready for the AI&nbsp;agent&nbsp;era
+title: Ready for the AI agent era
 title-size: big
 ---
   :::item-row{list-type="wrapping"}
